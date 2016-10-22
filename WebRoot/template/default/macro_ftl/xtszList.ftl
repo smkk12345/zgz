@@ -300,10 +300,8 @@
     <td style="text-align: left">
         <#if role.roleAuthority[12]=="2">
 	        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/roleAuthorityModal.action?roleId=${ROW.id}">权限配置</button>
-	        <#if ROW.defaultRole == "1">
 	       	    <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/roleModal.action?roleId=${ROW.id}">编辑</button>
 	        	<button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/roleDel.action" pname="${ROW.id}">删除</button>
-	        </#if>
         </#if>
     </td>
 </tr>

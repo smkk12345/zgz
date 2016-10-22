@@ -69,6 +69,9 @@ public class HouseBasicService {
 		return houseBasic;
 	}
 	
+	public List<HouseBasic> getListBySection(String section,int currentpage,int pagecount){
+		return houseBasicDao.findList(section,currentpage,pagecount);
+	}
 	
 
 }

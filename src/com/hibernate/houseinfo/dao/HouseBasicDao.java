@@ -25,7 +25,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			s = getSession();
 			list = s.createCriteria(HouseBasic.class).add(
 					Restrictions.eq("id", id))
-					.add(Restrictions.eq("section", section)).list();
+					.add(Restrictions.in("section", section.split(","))).list();
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -50,13 +50,19 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				c.setFirstResult((pageSize)*(currentPage-1));
 				c.setMaxResults(pageSize);
 			}
-			list = c.add(Restrictions.eq("section", section)).list();
+			list = c.add(Restrictions.in("section", section.split(","))).list();
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			s.close();
 		}
 		return list;
+	}
+
+	public List<HouseBasic> getListBySection(String section, int currentpage,
+			int pagecount) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
