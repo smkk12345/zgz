@@ -11,7 +11,6 @@ public class BaseBean implements Serializable {
 	private String id;
 	//创建时间
 	private Date createTime;
-	
 
 	public Date getCreateTime() {
 		return createTime;

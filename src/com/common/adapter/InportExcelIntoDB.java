@@ -25,8 +25,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import com.common.utils.CalendarUtil;
 import com.common.utils.MathUtil;
 import com.common.utils.StringUtils;
-import com.hibernate.sernsorInfo.domain.AoJianDataBean;
-import com.hibernate.sernsorInfo.domain.SensorDataBean;
+
 import com.spring.ServiceManager;
 
 public class InportExcelIntoDB {
@@ -93,14 +92,11 @@ public class InportExcelIntoDB {
 		HSSFWorkbook wb = new HSSFWorkbook(fs);
 
 		HSSFCell cell = null;
-		AoJianDataBean bean;
 		//sheet頁
 		for (int sheetIndex = 0; sheetIndex < wb.getNumberOfSheets(); sheetIndex++) {
 
 			HSSFSheet st = wb.getSheetAt(sheetIndex);
 			
-			bean = new AoJianDataBean();
-			bean.setZyAoJianGrainNum("402881eb4ee20f04014ee21173770002");
 			// 第一行为厫间数据，取基本数据
 				
 			for (int rowIndex = ignoreRows; rowIndex <= st.getLastRowNum(); rowIndex++) {
@@ -112,37 +108,37 @@ public class InportExcelIntoDB {
 					continue;
 				}
 				//基本信息塞进去
-				if(rowIndex==0){
-					for (short columnIndex = 0; columnIndex <= row.getLastCellNum(); columnIndex++) {
-						cell = row.getCell(columnIndex);
-						if(columnIndex==1){
-							bean.setAoJianTem(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
-						}
-						else if(columnIndex==3){
-							bean.setAoJianhumidity(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
-						}
-						else if(columnIndex==5){
-							bean.setOuterTem(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
-						}
-						else if(columnIndex==7){
-							bean.setOuterHumidity(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
-						}
-						else if(columnIndex==9){
-							Date date = cell.getDateCellValue();
-							String dataStr = CalendarUtil.formatStr(date, CalendarUtil.DATE_FORMAT_MODE4);
-							try {
-								Date fmtDate = CalendarUtil.formatDate(dataStr, CalendarUtil.DATE_FORMAT_MODE4);
-								bean.setStartDate(fmtDate);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						}else{
-							continue;
-						}
-					}
-//					bean = ServiceManager.getAoJianBlockService().save(bean);
-					continue;
-				}
+//				if(rowIndex==0){
+//					for (short columnIndex = 0; columnIndex <= row.getLastCellNum(); columnIndex++) {
+//						cell = row.getCell(columnIndex);
+//						if(columnIndex==1){
+//							bean.setAoJianTem(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
+//						}
+//						else if(columnIndex==3){
+//							bean.setAoJianhumidity(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
+//						}
+//						else if(columnIndex==5){
+//							bean.setOuterTem(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
+//						}
+//						else if(columnIndex==7){
+//							bean.setOuterHumidity(MathUtil.getFormatData(cell.getNumericCellValue(), 1));
+//						}
+//						else if(columnIndex==9){
+//							Date date = cell.getDateCellValue();
+//							String dataStr = CalendarUtil.formatStr(date, CalendarUtil.DATE_FORMAT_MODE4);
+//							try {
+//								Date fmtDate = CalendarUtil.formatDate(dataStr, CalendarUtil.DATE_FORMAT_MODE4);
+//								bean.setStartDate(fmtDate);
+//							} catch (Exception e) {
+//								e.printStackTrace();
+//							}
+//						}else{
+//							continue;
+//						}
+//					}
+////					bean = ServiceManager.getAoJianBlockService().save(bean);
+//					continue;
+//				}
 				//第二行 也都是垃圾数据   不要
 				if(rowIndex==1){
 					continue;
@@ -273,31 +269,31 @@ public class InportExcelIntoDB {
 
 				returnArray[i] = (String[]) result.get(i);
 			}
-			Set<SensorDataBean> set = new HashSet<SensorDataBean>();
-			int rowLength = returnArray.length;
-			int k = 0;
-			int rowIndex = 0;
-			for (int i = 0; i < rowLength; i++) {  //row
-				for (int j = 0; j < returnArray[i].length; j++) { //column
-					if(StringUtils.isEmpty(returnArray[i][j])){
-						continue;
-					}
-					SensorDataBean sensorBean = new SensorDataBean();
-					String sensorIndex = "";
-					sensorIndex = (i+1)%5+","+j+","+k;  //(i,j,k)
-					sensorBean.setSensorIndex(sensorIndex);
-					sensorBean.setOrderIndex(rowIndex++);
-					sensorBean.setTemperature(Double.parseDouble(returnArray[i][j]));
-					sensorBean.setAoJianDataId(bean.getId());
-					set.add(sensorBean);
-				}
-				if((i+1)%5==0){
-					k = k+1;
-				}
-				System.out.println();
-			}
-			//bean.setSensors(set);
-			ServiceManager.getAoJianBlockService().save(bean);
+//			Set<SensorDataBean> set = new HashSet<SensorDataBean>();
+//			int rowLength = returnArray.length;
+//			int k = 0;
+//			int rowIndex = 0;
+//			for (int i = 0; i < rowLength; i++) {  //row
+//				for (int j = 0; j < returnArray[i].length; j++) { //column
+//					if(StringUtils.isEmpty(returnArray[i][j])){
+//						continue;
+//					}
+//					SensorDataBean sensorBean = new SensorDataBean();
+//					String sensorIndex = "";
+//					sensorIndex = (i+1)%5+","+j+","+k;  //(i,j,k)
+//					sensorBean.setSensorIndex(sensorIndex);
+//					sensorBean.setOrderIndex(rowIndex++);
+//					sensorBean.setTemperature(Double.parseDouble(returnArray[i][j]));
+//					sensorBean.setAoJianDataId(bean.getId());
+//					set.add(sensorBean);
+//				}
+//				if((i+1)%5==0){
+//					k = k+1;
+//				}
+//				System.out.println();
+//			}
+//			//bean.setSensors(set);
+//			ServiceManager.getAoJianBlockService().save(bean);
 		}
 
 		in.close();

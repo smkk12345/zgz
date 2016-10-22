@@ -7,14 +7,12 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.common.dataSource.ExFileOperater;
 import com.common.utils.CalendarUtil;
-import com.common.utils.FileUtils;
+import com.common.utils.OverTimeXmlUtils;
 import com.common.utils.StringUtils;
 
 @Controller
@@ -44,14 +42,6 @@ public class CommonController {
 				cacheTime = "0.1";
 			}
 			String recentTimeStr = "";
-			if(!ExFileOperater.isWrite){
-				URL path = Thread.currentThread().getContextClassLoader().getResource("");
-				String pathStr = path.getPath();
-				String[] pathStrArr = pathStr.split("WEB-INF");
-				
-				String timeWriteInPath =  pathStrArr[0]+ "data/sys/"  + "RecentNewDataTime.txt";
-				recentTimeStr = new FileUtils().read(timeWriteInPath);
-			}
 			
 			if(StringUtils.isEmpty(recentTimeStr)){
 				Date curDate = new Date();

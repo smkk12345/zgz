@@ -30,6 +30,8 @@
             	<comment>备注</comment>
             </column>
         </property>
+        <property name="section" type="java.lang.String">
+        </property>
         <property name="builtInRole" type="java.lang.String"></property>
         <property name="createTime" type="java.util.Date"></property>
     </class>

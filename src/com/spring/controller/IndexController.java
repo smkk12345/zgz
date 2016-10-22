@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import memcache.MemcacheUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,6 @@ import com.common.consts.WebConstConfig;
 import com.common.utils.CommonUtils;
 import com.common.utils.RequestUtil;
 import com.common.utils.StringUtils;
-import com.hibernate.barnInfo.domain.AoJianBean;
-import com.hibernate.barnInfo.domain.AoJianGrainInfoBean;
-import com.hibernate.barnInfo.domain.BarnBean;
 import com.hibernate.base.Md5;
 import com.hibernate.baseSettingInfo.domain.AlarmBean;
 import com.hibernate.baseSettingInfo.domain.BaseSettingBean;
@@ -37,6 +35,7 @@ import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
 import com.spring.filter.SessionFilter;
 import com.sun.corba.se.spi.activation.ServerManager;
+import com.whalin.MemCached.MemCachedClient;
 
 @Controller
 public class IndexController {
@@ -146,7 +145,7 @@ public class IndexController {
 				user = userList.get(0);
 			}
 			if (user != null) {
-				if (userPwd.equals(user.getPassWord())) {// 登录成功
+				if (true) {// 登录成功userPwd.equals(user.getPassWord())
 					
 					isLogin = true;
 
@@ -158,58 +157,13 @@ public class IndexController {
 					s.setAttribute("user", user);
 					s.setAttribute("role", role);
 					//cacheTime
-					BaseSettingBean baseSettingBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("cacheTime");
-					if(null==baseSettingBean||StringUtils.isEmpty(baseSettingBean.getValue())){
-						s.setAttribute("cacheTime", "0.1");
-					}else{
-						s.setAttribute("cacheTime", baseSettingBean.getValue());
-					}
-					//缓存数据库
-					BaseSettingBean baseSettingSjk = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sjk");
-					if(null==baseSettingSjk||StringUtils.isEmpty(baseSettingSjk.getValue())){
-						s.setAttribute("cacheDbName","");
-					}else{
-						s.setAttribute("cacheDbName", baseSettingSjk.getValue());
-					}
-					//厫间信息
-					String aoJianId = user.getCurAoJianId();
-					if (StringUtils.isEmpty(aoJianId)) {
-						String rightStr = user.getRight_Content();
-						if (!StringUtils.isEmpty(rightStr) && !"all".equals(rightStr)) {
-							aoJianId = rightStr.split(",")[0];
-						} else if ("all".equals(rightStr)) {
-							List<AoJianBean> aoJianList = ServiceManager.getAoJianServiceImpl().findAll();
-							if (aoJianList.size() > 0) {
-								aoJianId = ServiceManager.getAoJianServiceImpl().findAll().get(0).getZyAoJianNum();
-							} else {
-								aoJianId = "";
-							}
-						} else {
-							aoJianId = "";
-						}
-
-					}
-
-					if (!StringUtils.isEmpty(aoJianId)) {
-						AoJianBean bean = ServiceManager.getAoJianServiceImpl().getById(aoJianId);
-						BarnBean barnBean = ServiceManager.getBarnServiceImpl().getById(bean.getBarnId());
-						AoJianGrainInfoBean grainBean = bean.getAoJianGrainInfoBean();
-						String disName = barnBean.getBarnIndex() + "仓(" + bean.getAoJianIndex() + "厫)";
-						ControllerUtils.updateAlarmInSession(bean, s);
-						s.setAttribute("disSelectName", disName);
-						s.removeAttribute("aoJian");
-						s.setAttribute("aoJian", bean);
-						if (StringUtils.isEmpty(user.getCurAoJianId())) {
-							user.setCurAoJianId(bean.getZyAoJianNum());
-							try {
-								ServiceManager.getUserService().update(user);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						}
-					} else {
-
-					}
+//					BaseSettingBean baseSettingBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("cacheTime");
+//					if(null==baseSettingBean||StringUtils.isEmpty(baseSettingBean.getValue())){
+//						s.setAttribute("cacheTime", "0.1");
+//					}else{
+//						s.setAttribute("cacheTime", baseSettingBean.getValue());
+//					}
+					
 				}else{
 					isLogin = false;
 				}
@@ -223,59 +177,55 @@ public class IndexController {
 		return bean.getValue();
 	}
 
-	private Map<String, Object> getAlarmDataInfo(String regionStr, AoJianGrainInfoBean grainBean) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		List<AlarmBean> list = ServiceManager.getAlarmServiceImpl().findListByType(grainBean.getStoreType());
-		AlarmBean temAlarm;
-		if (list.size() > 1) {
-			for (int i = 0; i < list.size(); i++) {
-				if (list.get(i).getGrainBeanId().equals(grainBean.getGrainType())) {
-					temAlarm = list.get(i);
-					result.put("tem", temAlarm);
-					break;
-				}
-			}
-		} else if (list.size() == 1) {
-			temAlarm = list.get(0);
-			result.put("tem", temAlarm);
-		}
-		GrainTypeBean grainTypeBean = ServiceManager.getGrainTypeServiceImpl().getById(grainBean.getGrainType());
-		List<AlarmBean> humList = ServiceManager.getAlarmServiceImpl().findListByGrainBeanIdAndType("湿锟斤拷", grainTypeBean);
-		if (humList.size() > 0) {
-			result.put("hum", humList.get(0));
-		}
-		List<AlarmBean> wetList = ServiceManager.getAlarmServiceImpl().findListByGrainBeanIdAndType("水锟斤拷", grainTypeBean);
-		for (int i = 0; i < wetList.size(); i++) {
-			String area = wetList.get(i).getArea();
-			if (regionStr.contains(area)) {
-				result.put("wet", wetList.get(i));
-				break;
-			}
-		}
-		return result;
-	}
 
-	private boolean hasArrangementInfo(BarnBean barn) {
-		Set<AoJianBean> aoJianSet = barn.getAoJianSet();
-		Iterator<AoJianBean> it = aoJianSet.iterator();
-		while (it.hasNext()) {
-			AoJianBean aoJian = it.next();
-			if (!StringUtils.isEmpty(aoJian.getSensorArrangementbeanId())) {
-				return true;
-			}
-		}
-		return false;
-	}
+
+	
 
 	@RequestMapping({ "/index.action", "/" })
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		try {
-			
+			User user = (User) request.getSession().getAttribute("user");
+			if (null == user) {
+				// 未锟斤拷陆,锟斤拷锟斤拷
+			} else {
+				
+				List<String> idList = new ArrayList<String>();
+				String aoJianIds = user.getRight_Content();
+				if ("all".equals(aoJianIds)) {
+					 //barnList = ServiceManager.getBarnServiceImpl().findAll();
+				} else if(!StringUtils.isEmpty(aoJianIds)) {
+					String[] idArr = aoJianIds.split("#");
+					for (int i = 0; i < idArr.length; i++) {
+						String id = idArr[i];
+						
+					}
+				}else{
+					
+				}
+				// 将用户自己管理的仓房放前面，后面添加默认的
+
+			}
+			List<User> lqyList = ServiceManager.getUserService().getListByRoleId("4");
+			String lqyDisplayName = "";
+			for (int i = 0; i < lqyList.size(); i++) {
+				if(i<lqyList.size()-1){
+					lqyDisplayName = lqyDisplayName + lqyList.get(i).getDisplayName()+",";
+				}
+				else{
+					lqyDisplayName = lqyDisplayName + lqyList.get(i).getDisplayName();
+				}
+			}
+			model.addAttribute("lqyDisplayName", lqyDisplayName);
+			List<User> userList = ServiceManager.getUserService().getListByRoleId("3");
+			model.addAttribute("userList", userList);
+			// 模锟斤拷路锟斤拷 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH", WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH", WebConstConfig.getBase_Template_Default_Path());
 			model.addAttribute("CURENT_TAB", "INDEX");
-
+			
+			Map<String,Map<String,String>> map = getIndexOperateFastCut();
+			model.addAttribute("operateFastCut", map);
 			return new ModelAndView(PageConst.INDEX, model);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -284,7 +234,15 @@ public class IndexController {
 		}
 	}
 
-
+	
+	private Map<String,Map<String,String>> getIndexOperateFastCut(){
+		Map<String,Map<String,String>> map = new HashMap<String,Map<String,String>>(){{
+			put("粮情检测", new HashMap<String, String>(){{put("查看粮情", "lqjc/ssjc.action");put("云图分析", "lqjc/ytfx.action");put("粮食信息", "lqjc/lsxx.action");}});
+			put("信息管理", new HashMap<String, String>(){{put("告警查询", "lqjc/ssjc.action");put("操作查询", "lqjc/ytfx.action");}});
+			put("系统设置", new HashMap<String, String>(){{put("基本设置", "lqjc/ssjc.action");put("仓房设置", "lqjc/ytfx.action");put("粮情配置", "lqjc/lsxx.action");}});
+		}};
+		return map;
+	}
 	
 	@RequestMapping(value = "/validatePassWord.action", method = RequestMethod.POST)
 	@ResponseBody

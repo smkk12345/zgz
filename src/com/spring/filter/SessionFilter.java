@@ -14,11 +14,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.common.consts.WebConstConfig;
 import com.common.utils.RequestUtil;
 import com.common.utils.StringUtils;
-import com.hibernate.barnInfo.domain.AoJianBean;
-import com.hibernate.barnInfo.domain.BarnBean;
-import com.hibernate.sernsorInfo.domain.AoJianDataBean;
-import com.hibernate.sernsorInfo.domain.OperateRecordBean;
-import com.hibernate.sernsorInfo.domain.SensorBean;
+
 import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
 import com.spring.controller.IndexController;
@@ -170,26 +166,26 @@ public class SessionFilter extends OncePerRequestFilter {
 	 */
 	public void syncOperateInfo(User user,String url,HttpServletRequest request){
 		
-		Iterator<String> it = operateMap.keySet().iterator();
-		Date curDate = new Date();
-		OperateRecordBean bean = new OperateRecordBean();
-		bean.setOperateTime(curDate);
-		bean.setOperateUserId(user.getId());
-		while (it.hasNext()) {
-			String key = (String) it.next();
-			if(url.contains(key)){
-				String valueStr = operateMap.get(key);
-				String[] valueArr = valueStr.split(",");
-				bean.setOperateType(valueArr[0]);
-				bean.setOperateInfo(valueArr[1]+fillOperateInfo(url,user,request));
-				try {
-					ServiceManager.getOperateRecordServiceImpl().save(bean);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				break;
-			}
-		}
+//		Iterator<String> it = operateMap.keySet().iterator();
+//		Date curDate = new Date();
+//		OperateRecordBean bean = new OperateRecordBean();
+//		bean.setOperateTime(curDate);
+//		bean.setOperateUserId(user.getId());
+//		while (it.hasNext()) {
+//			String key = (String) it.next();
+//			if(url.contains(key)){
+//				String valueStr = operateMap.get(key);
+//				String[] valueArr = valueStr.split(",");
+//				bean.setOperateType(valueArr[0]);
+//				bean.setOperateInfo(valueArr[1]+fillOperateInfo(url,user,request));
+//				try {
+//					ServiceManager.getOperateRecordServiceImpl().save(bean);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//				break;
+//			}
+//		}
 	}
 	
 	/**
@@ -198,57 +194,57 @@ public class SessionFilter extends OncePerRequestFilter {
 	 */
 	private String fillOperateInfo(String url,User user,HttpServletRequest request){
 		String operateStr = "";
-		if(url.contains("/xtsz/saveBarnInfo.action")){
-			String barnIndex = RequestUtil.getRequestParameter(request, "barnIndex");
-			operateStr = "("+barnIndex+"仓)";
-			return operateStr;
-		}else if(url.contains("xtsz/delBarnList.action")){
-		 	String barnId = RequestUtil.getRequestParameter(request, "beanId");
-	 		BarnBean barn = ServiceManager.getBarnServiceImpl().getById(barnId);
-	 		operateStr = operateStr + barn.getBarnIndex()+"仓";
-		 	operateStr = "("+operateStr+")";
-		 	return operateStr;
-		}
-		else if(url.contains("xtsz/saveSensorInfo.action")){
-			String sensorName = RequestUtil.getRequestParameter(request, "name");
-			operateStr = "("+sensorName+")";
-			return operateStr;
-		}else if(url.contains("xtsz/sensorDel.action")){
-			String sensorId = RequestUtil.getRequestParameter(request, "curDataId");
-			SensorBean bean = ServiceManager.getSensorServiceImpl().getById(sensorId);
-			operateStr = "("+bean.getSensorName()+")";
-			return operateStr;
-		}else if(url.contains("/user/saveUserInfo.action")){
-			String name = RequestUtil.getRequestParameter(request, "displayName");
-			operateStr = "("+name+")";
-			return operateStr;
-		}else if(url.contains("/user/userDel.action")){
-			String userId = RequestUtil.getRequestParameter(request, "curDataId");
-			User u = ServiceManager.getUserService().getById(userId);
-			operateStr = "("+u.getDisplayName()+")";
-			return operateStr;
-		}else if(url.contains("/user/saveRoleInfo.action")){
-			String name = RequestUtil.getRequestParameter(request, "roleName");
-			operateStr = "("+name+")";
-			return operateStr;
-		}else if(url.contains("/lqjc/updateAoJianData.action")){
-			String aoJianDataId = RequestUtil.getRequestParameter(request, "aoJianDataId");
-			AoJianDataBean aojiandatabean =ServiceManager.getAoJianBlockService().getById(aoJianDataId);
-			AoJianBean aoJian = (AoJianBean) request.getSession(false).getAttribute("aoJian");
-			operateStr = "("+ServiceManager.getBarnServiceImpl().getById(aoJian.getBarnId()).getBarnIndex()+"/"+aoJian.getAoJianIndex()+"仓,"+(aojiandatabean.getStartDate()).toString().substring(0,19)+")";
-			return operateStr;
-		}else if(url.contains("/lqjc/deleteAoJianDataById.action")){
-			String dataId = RequestUtil.getRequestParameter(request, "dataId");
-			AoJianDataBean aojiandatabean =ServiceManager.getAoJianBlockService().getById(dataId);
-			AoJianBean aoJian = (AoJianBean) request.getSession(false).getAttribute("aoJian");
-			operateStr = "("+ServiceManager.getBarnServiceImpl().getById(aoJian.getBarnId()).getBarnIndex()+"/"+aoJian.getAoJianIndex()+"仓,"+(aojiandatabean.getStartDate()).toString().substring(0,19)+")";
-			return operateStr;
-		}else if(url.contains("/xtsz/exportGrainInfo.action")){
-			String aoJianId = RequestUtil.getRequestParameter(request, "aoJianId");
-			AoJianBean aoJian=ServiceManager.getAoJianServiceImpl().getById(aoJianId);
-			operateStr = "("+ServiceManager.getBarnServiceImpl().getById(aoJian.getBarnId()).getBarnIndex()+"/"+aoJian.getAoJianIndex()+"仓)";
-			return operateStr;
-		}
+//		if(url.contains("/xtsz/saveBarnInfo.action")){
+//			String barnIndex = RequestUtil.getRequestParameter(request, "barnIndex");
+//			operateStr = "("+barnIndex+"仓)";
+//			return operateStr;
+//		}else if(url.contains("xtsz/delBarnList.action")){
+//		 	String barnId = RequestUtil.getRequestParameter(request, "beanId");
+//	 		BarnBean barn = ServiceManager.getBarnServiceImpl().getById(barnId);
+//	 		operateStr = operateStr + barn.getBarnIndex()+"仓";
+//		 	operateStr = "("+operateStr+")";
+//		 	return operateStr;
+//		}
+//		else if(url.contains("xtsz/saveSensorInfo.action")){
+//			String sensorName = RequestUtil.getRequestParameter(request, "name");
+//			operateStr = "("+sensorName+")";
+//			return operateStr;
+//		}else if(url.contains("xtsz/sensorDel.action")){
+//			String sensorId = RequestUtil.getRequestParameter(request, "curDataId");
+//			SensorBean bean = ServiceManager.getSensorServiceImpl().getById(sensorId);
+//			operateStr = "("+bean.getSensorName()+")";
+//			return operateStr;
+//		}else if(url.contains("/user/saveUserInfo.action")){
+//			String name = RequestUtil.getRequestParameter(request, "displayName");
+//			operateStr = "("+name+")";
+//			return operateStr;
+//		}else if(url.contains("/user/userDel.action")){
+//			String userId = RequestUtil.getRequestParameter(request, "curDataId");
+//			User u = ServiceManager.getUserService().getById(userId);
+//			operateStr = "("+u.getDisplayName()+")";
+//			return operateStr;
+//		}else if(url.contains("/user/saveRoleInfo.action")){
+//			String name = RequestUtil.getRequestParameter(request, "roleName");
+//			operateStr = "("+name+")";
+//			return operateStr;
+//		}else if(url.contains("/lqjc/updateAoJianData.action")){
+//			String aoJianDataId = RequestUtil.getRequestParameter(request, "aoJianDataId");
+//			AoJianDataBean aojiandatabean =ServiceManager.getAoJianBlockService().getById(aoJianDataId);
+//			AoJianBean aoJian = (AoJianBean) request.getSession(false).getAttribute("aoJian");
+//			operateStr = "("+ServiceManager.getBarnServiceImpl().getById(aoJian.getBarnId()).getBarnIndex()+"/"+aoJian.getAoJianIndex()+"仓,"+(aojiandatabean.getStartDate()).toString().substring(0,19)+")";
+//			return operateStr;
+//		}else if(url.contains("/lqjc/deleteAoJianDataById.action")){
+//			String dataId = RequestUtil.getRequestParameter(request, "dataId");
+//			AoJianDataBean aojiandatabean =ServiceManager.getAoJianBlockService().getById(dataId);
+//			AoJianBean aoJian = (AoJianBean) request.getSession(false).getAttribute("aoJian");
+//			operateStr = "("+ServiceManager.getBarnServiceImpl().getById(aoJian.getBarnId()).getBarnIndex()+"/"+aoJian.getAoJianIndex()+"仓,"+(aojiandatabean.getStartDate()).toString().substring(0,19)+")";
+//			return operateStr;
+//		}else if(url.contains("/xtsz/exportGrainInfo.action")){
+//			String aoJianId = RequestUtil.getRequestParameter(request, "aoJianId");
+//			AoJianBean aoJian=ServiceManager.getAoJianServiceImpl().getById(aoJianId);
+//			operateStr = "("+ServiceManager.getBarnServiceImpl().getById(aoJian.getBarnId()).getBarnIndex()+"/"+aoJian.getAoJianIndex()+"仓)";
+//			return operateStr;
+//		}
 
 		return operateStr;
 	}

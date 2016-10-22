@@ -16,6 +16,17 @@ public class RoleBean extends BaseBean implements java.io.Serializable {
 	private String defaultRole;//默认 1  0
 	
 	private String builtInRole;//内置的超级管理员
+	
+	private String section;//标段信息  标段从1 到 5 暂时
+	
+	public String getSection() {
+		return section;
+	}
+
+	public void setSection(String section) {
+		this.section = section;
+	}
+
 	public String getBuiltInRole() {
 		return builtInRole;
 	}

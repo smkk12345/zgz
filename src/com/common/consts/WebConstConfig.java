@@ -1,6 +1,5 @@
 package com.common.consts;
 
-import com.hibernate.barnInfo.domain.AoJianBean;
 
 public class WebConstConfig {
 	
@@ -14,8 +13,6 @@ public class WebConstConfig {
 		return BASE_PATH+"template/default/";
 	}
 	
-	//当前选择的廒间对象 
-	public static AoJianBean curSelsectAoJianBean;
 	
 	public static double errorData = 10000;
 	

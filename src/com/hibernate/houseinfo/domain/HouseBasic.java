@@ -2,6 +2,8 @@ package com.hibernate.houseinfo.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.hibernate.base.BaseBean;
 
@@ -67,8 +69,6 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private BigDecimal basement;
 	//------------------------备注------------------------------------
 	private String remark;
-	
-	private String housebasicid;
 	//经营用房面积
 	private BigDecimal operatearea;
 	//工商备案面积
@@ -91,4 +91,261 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String license;
 	//l类型  个体工商   1  个人独资
 	private String operatetype;
+	
+	//腾云人列表
+	List<VacatePeople> vacatelist = new ArrayList<VacatePeople>();
+	
+	//非在册人员列表
+	List<VacatePeople> list = new ArrayList<VacatePeople>();
+	//大病
+	List<OtherInfo> illList = new ArrayList<OtherInfo>();
+	//低保
+	List<OtherInfo> basicLivingList = new ArrayList<OtherInfo>();
+	//残疾
+	List<OtherInfo> deformityList = new ArrayList<OtherInfo>();
+	
+	public List<VacatePeople> getVacatelist() {
+		return vacatelist;
+	}
+	public void setVacatelist(List<VacatePeople> vacatelist) {
+		this.vacatelist = vacatelist;
+	}
+	public List<VacatePeople> getList() {
+		return list;
+	}
+	public void setList(List<VacatePeople> list) {
+		this.list = list;
+	}
+	public List<OtherInfo> getIllList() {
+		return illList;
+	}
+	public void setIllList(List<OtherInfo> illList) {
+		this.illList = illList;
+	}
+	public List<OtherInfo> getBasicLivingList() {
+		return basicLivingList;
+	}
+	public void setBasicLivingList(List<OtherInfo> basicLivingList) {
+		this.basicLivingList = basicLivingList;
+	}
+	public List<OtherInfo> getDeformityList() {
+		return deformityList;
+	}
+	public void setDeformityList(List<OtherInfo> deformityList) {
+		this.deformityList = deformityList;
+	}
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getNames() {
+		return names;
+	}
+	public void setNames(String names) {
+		this.names = names;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	public String getRemobile() {
+		return remobile;
+	}
+	public void setRemobile(String remobile) {
+		this.remobile = remobile;
+	}
+	public String getOwnership() {
+		return ownership;
+	}
+	public void setOwnership(String ownership) {
+		this.ownership = ownership;
+	}
+	public String getIdcard() {
+		return idcard;
+	}
+	public void setIdcard(String idcard) {
+		this.idcard = idcard;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getOwnershipprove() {
+		return ownershipprove;
+	}
+	public void setOwnershipprove(String ownershipprove) {
+		this.ownershipprove = ownershipprove;
+	}
+	public Integer getLocalbook() {
+		return localbook;
+	}
+	public void setLocalbook(Integer localbook) {
+		this.localbook = localbook;
+	}
+	public Integer getLocalpeoplecount() {
+		return localpeoplecount;
+	}
+	public void setLocalpeoplecount(Integer localpeoplecount) {
+		this.localpeoplecount = localpeoplecount;
+	}
+	public Integer getNotlocalbook() {
+		return notlocalbook;
+	}
+	public void setNotlocalbook(Integer notlocalbook) {
+		this.notlocalbook = notlocalbook;
+	}
+	public Integer getNotlocalpeoplecount() {
+		return notlocalpeoplecount;
+	}
+	public void setNotlocalpeoplecount(Integer notlocalpeoplecount) {
+		this.notlocalpeoplecount = notlocalpeoplecount;
+	}
+	public Integer getPeople() {
+		return people;
+	}
+	public void setPeople(Integer people) {
+		this.people = people;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	
+	public String getOperatecontent() {
+		return operatecontent;
+	}
+	public void setOperatecontent(String operatecontent) {
+		this.operatecontent = operatecontent;
+	}
+	public String getLicensename() {
+		return licensename;
+	}
+	public void setLicensename(String licensename) {
+		this.licensename = licensename;
+	}
+	public String getRelate() {
+		return relate;
+	}
+	public void setRelate(String relate) {
+		this.relate = relate;
+	}
+	public String getLicenselocation() {
+		return licenselocation;
+	}
+	public void setLicenselocation(String licenselocation) {
+		this.licenselocation = licenselocation;
+	}
+	public String getTaxlicense() {
+		return taxlicense;
+	}
+	public void setTaxlicense(String taxlicense) {
+		this.taxlicense = taxlicense;
+	}
+	public String getLeaselicense() {
+		return leaselicense;
+	}
+	public void setLeaselicense(String leaselicense) {
+		this.leaselicense = leaselicense;
+	}
+	public String getTaxprove() {
+		return taxprove;
+	}
+	public void setTaxprove(String taxprove) {
+		this.taxprove = taxprove;
+	}
+	public String getLicense() {
+		return license;
+	}
+	public void setLicense(String license) {
+		this.license = license;
+	}
+	public String getOperatetype() {
+		return operatetype;
+	}
+	public void setOperatetype(String operatetype) {
+		this.operatetype = operatetype;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public BigDecimal getHousecount() {
+		return housecount;
+	}
+	public void setHousecount(BigDecimal housecount) {
+		this.housecount = housecount;
+	}
+	public BigDecimal getZjdarea() {
+		return zjdarea;
+	}
+	public void setZjdarea(BigDecimal zjdarea) {
+		this.zjdarea = zjdarea;
+	}
+	public BigDecimal getFwarea() {
+		return fwarea;
+	}
+	public void setFwarea(BigDecimal fwarea) {
+		this.fwarea = fwarea;
+	}
+	public BigDecimal getFirstfloorarea() {
+		return firstfloorarea;
+	}
+	public void setFirstfloorarea(BigDecimal firstfloorarea) {
+		this.firstfloorarea = firstfloorarea;
+	}
+	public BigDecimal getAbovetwoarea() {
+		return abovetwoarea;
+	}
+	public void setAbovetwoarea(BigDecimal abovetwoarea) {
+		this.abovetwoarea = abovetwoarea;
+	}
+	public BigDecimal getBasement() {
+		return basement;
+	}
+	public void setBasement(BigDecimal basement) {
+		this.basement = basement;
+	}
+	public BigDecimal getOperatearea() {
+		return operatearea;
+	}
+	public void setOperatearea(BigDecimal operatearea) {
+		this.operatearea = operatearea;
+	}
+	public BigDecimal getBusinessarea() {
+		return businessarea;
+	}
+	public void setBusinessarea(BigDecimal businessarea) {
+		this.businessarea = businessarea;
+	}
 }

@@ -32,4 +32,77 @@ public class VacatePeople extends BaseBean {
 	//人口类别    0 婚姻衍生人员 1 配偶 2 新生婴儿 3 现役军人  4院校在校生 5 服役人员 6 其他
 	private String peopletype;
 	
+	public String getHousebasicid() {
+		return housebasicid;
+	}
+	public void setHousebasicid(String housebasicid) {
+		this.housebasicid = housebasicid;
+	}
+	public String getVtype() {
+		return vtype;
+	}
+	public void setVtype(String vtype) {
+		this.vtype = vtype;
+	}
+	public String getHouseholder() {
+		return householder;
+	}
+	public void setHouseholder(String householder) {
+		this.householder = householder;
+	}
+	public String getHouseholdtype() {
+		return householdtype;
+	}
+	public void setHouseholdtype(String householdtype) {
+		this.householdtype = householdtype;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getIdcard() {
+		return idcard;
+	}
+	public void setIdcard(String idcard) {
+		this.idcard = idcard;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getRegisteredrelate() {
+		return registeredrelate;
+	}
+	public void setRegisteredrelate(String registeredrelate) {
+		this.registeredrelate = registeredrelate;
+	}
+	public String getChangrelate() {
+		return changrelate;
+	}
+	public void setChangrelate(String changrelate) {
+		this.changrelate = changrelate;
+	}
+	public String getHasmarry() {
+		return hasmarry;
+	}
+	public void setHasmarry(String hasmarry) {
+		this.hasmarry = hasmarry;
+	}
+	public String getUnit() {
+		return unit;
+	}
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+	public String getPeopletype() {
+		return peopletype;
+	}
+	public void setPeopletype(String peopletype) {
+		this.peopletype = peopletype;
+	}
+	
 }

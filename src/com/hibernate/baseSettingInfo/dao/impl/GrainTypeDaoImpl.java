@@ -11,7 +11,6 @@ import org.hibernate.criterion.Restrictions;
 import com.hibernate.base.BaseDaoImpl;
 import com.hibernate.baseSettingInfo.dao.IGrainTypeDao;
 import com.hibernate.baseSettingInfo.domain.GrainTypeBean;
-import com.hibernate.cloudInfo.domain.CloudPicBean;
 
 public class GrainTypeDaoImpl extends BaseDaoImpl<GrainTypeBean> implements IGrainTypeDao {
 

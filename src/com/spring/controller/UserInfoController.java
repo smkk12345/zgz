@@ -19,7 +19,6 @@ import com.common.consts.WebConstConfig;
 import com.common.utils.RequestUtil;
 import com.common.utils.StringUtils;
 import com.ftlTemplates.FreeMarkerUtil;
-import com.hibernate.barnInfo.domain.BarnBean;
 import com.hibernate.base.Md5;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
@@ -381,8 +380,6 @@ public class UserInfoController {
 				}
 			}
 			model.addAttribute("ids", ids);
-			List<BarnBean> barnList = ServiceManager.getBarnServiceImpl().findAll();
-			model.addAttribute("barnList", barnList);
 			
 			model.addAttribute("bean", bean);
 			model.addAttribute("type","userPage");

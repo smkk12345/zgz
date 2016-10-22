@@ -104,28 +104,6 @@ public class CloudTimerTask extends TimerTask {
 	 * @param map
 	 */
 	private boolean isStartByCalendar(TimerTaskBean task, long now){
-		Date startDate = task.getStartTime();
-		Date sysDate = new Date();
-		//		Calendar
-		String startDateStr = DateUtil.getStringDateByType("yyyy-MM-dd hh:mm:ss",task.getStartTime());
-		String sysDateStr = DateUtil.getStringDateByType("yyyy-MM-dd hh:mm:ss");
-		if(task.getUnits().equals("月")){
-			int month = task.getStartTime().getMonth();
-			month = sysDate.getMonth() - month;
-			if((task.getPeriod()>0&&month%task.getPeriod()==0)){
-
-				startDateStr = startDateStr.substring(8);
-				sysDateStr = sysDateStr.substring(8);
-				if(startDateStr.equals(sysDateStr)){
-					return true;
-				}
-			}
-		}
-		else if(task.getUnits().equals("年")){
-			if(startDateStr.equals(sysDateStr)){
-				return true;
-			}
-		}
 		return false;
 	}
 

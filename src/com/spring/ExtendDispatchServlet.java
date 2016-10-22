@@ -13,7 +13,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hibernate.sernsorInfo.domain.OperateRecordBean;
 import com.hibernate.userInfo.damain.User;
 
 public class ExtendDispatchServlet extends DispatcherServlet {

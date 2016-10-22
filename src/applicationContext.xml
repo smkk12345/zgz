@@ -51,5 +51,4 @@
 	</aop:config>
 	 -->	
 	<import resource="com/Bean.xml" />
-	<import resource="com/VentilateBean.xml" />
 </beans>
