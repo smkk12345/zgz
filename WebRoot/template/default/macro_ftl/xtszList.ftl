@@ -310,6 +310,8 @@
 <#list items as ROW>
 <tr class="table_ModalDbClick active" id="${ROW.id}"  data-url="${BASE_PATH}user/roleModal.action?roleId=${ROW.id}">
     <td>${ROW.roleName?default("")}</td>
+    <td>${ROW.section?default("")}
+    </td>
     <td>${ROW.remarks?default("")}</td>
     <td style="text-align: left">
         <#if role.roleAuthority[12]=="2">

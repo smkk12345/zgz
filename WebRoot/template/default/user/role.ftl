@@ -14,6 +14,7 @@
 <table class="table table-hover table-condensed  mt10 text-center" id="userTable" contenteditable="true">
     <tr class="info">
         <th style="width:200px;text-align: center">用户组名称</th>
+        <th style="width:230px;text-align: center">标段信息</th>
         <th style="width:auto;text-align: center">备注</th>
         <th style="width:230px;text-align: center">操作</th>
     </tr>

@@ -21,6 +21,53 @@
       		</div>
         </div>
         <div class="autoGroup fl"> 
+      		<label class="control-label" for="remarks">标段信息:</label>
+  			<label class="checkbox-inline">
+       			<input type="checkbox" id="inlineCheckbox1"  
+       				<#if bean.section?index_of('1')!=-1>
+       				checked="checked"
+       				</#if>
+       			 name="section1" value="1"> 第一标段
+   			</label>
+  	   		<label class="checkbox-inline">
+      			<input type="checkbox" 
+      			    <#if bean.section?index_of('2')!=-1>
+       				checked="checked"
+       				</#if>
+      			name="section2" value="2"> 第二标段
+       		</label>
+      		<label class="checkbox-inline">
+      			<input type="checkbox" 
+      			    <#if bean.section?index_of('3')!=-1>
+       				checked="checked"
+       				</#if>
+ 				name="section3" value="3"> 第三标段
+      		</label>
+      		<label class="checkbox-inline">
+       			<input type="checkbox" 
+       			 <#if bean.section?index_of('4')!=-1>
+       				checked="checked"
+       				</#if>
+       			 name="section4" value="4"> 第四标段
+   			</label>
+  	   		<label class="checkbox-inline">
+      			<input type="checkbox"
+      			    <#if bean.section?index_of('5')!=-1>
+       				checked="checked"
+       				</#if> name="section5" value="5"> 第五标段
+       		</label>
+      		<label class="checkbox-inline">
+      			<input type="checkbox" 
+      			    <#if bean.section?index_of('6')!=-1>
+       				checked="checked"
+       				</#if> name="section6" value="6"> 第六标段
+      		</label>
+       </div>
+       
+
+       
+       
+        <div class="autoGroup fl"> 
       		<label class="control-label" for="remarks">备注</label>
       		<div class="width-170px fl">
 	      		<input type="text" class=" form-control width-160px" name="remarks" id="remarks" value="${bean.remarks?default("")}"   placeholder="备注"/>

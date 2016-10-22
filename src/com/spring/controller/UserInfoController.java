@@ -1,6 +1,7 @@
 package com.spring.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -495,6 +496,19 @@ public class UserInfoController {
 			String roleName = RequestUtil.getRequestParameter(request, "roleName");
 			String remarks = RequestUtil.getRequestParameter(request, "remarks");
 			String roleAuthority = RequestUtil.getRequestParameter(request, "roleAuthority");
+			List<String> sList = new ArrayList<String>();
+			for (int i = 1; i < 7; i++) {
+				String field = "section"+i;
+				String sectionValue = RequestUtil.getRequestParameter(request, field);
+				if(!StringUtils.isEmpty(sectionValue)){
+					sList.add(sectionValue);
+				}			
+			}
+			if(sList.size()>0){
+				Object[] idsStr = sList.toArray();
+				String section = org.apache.commons.lang.StringUtils.join(idsStr,",");
+				bean.setSection(section);
+			}
 			
 			if(!StringUtils.isEmpty(roleName)){
 				bean.setRoleName(roleName);
