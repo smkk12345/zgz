@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="userServiceImpl" class="com.hibernate.userInfo.service.impl.UserInfoServiceImpl">
+		<property name="dao" ref="userDao"></property>
+	</bean>
+	<bean id="userDao" class="com.hibernate.userInfo.dao.impl.UserInfoDaoImpl"></bean>
+
+	<bean id="roleServiceImpl" class="com.hibernate.userInfo.service.impl.RoleServiceImpl">
+		<property name="dao" ref="roleDao"></property>
+	</bean>
+	<bean id="roleDao" class="com.hibernate.userInfo.dao.impl.RoleDaoImpl"></bean>
+	
+	<!-- 仓房布置 廒间开始 -->
+	<bean id="barnServiceImpl" class="com.hibernate.barnInfo.service.impl.BarnServiceImpl">
+		<property name="barnDao" ref="barnDao"></property>
+		<property name="aoJianDao" ref="aoJianDao"></property>
+	</bean>
+
+	<bean id="aoJianServiceImpl" class="com.hibernate.barnInfo.service.impl.AoJianServiceImpl">
+		<property name="dao" ref="aoJianDao"></property>
+	</bean>
+
+	<bean id="barnDao" class="com.hibernate.barnInfo.dao.impl.BarnDaoImpl"></bean>
+	<bean id="aoJianDao" class="com.hibernate.barnInfo.dao.impl.AoJianDaoImpl"></bean>
+
+	<bean id="aoJianGrainInfoServiceImpl"
+		class="com.hibernate.barnInfo.service.impl.AoJianGrainInfoServiceImpl">
+		<property name="dao" ref="aoJIanGrainInfoDao"></property>
+	</bean>
+	<bean id="aoJIanGrainInfoDao" class="com.hibernate.barnInfo.dao.impl.AoJianGrainInfoDaoImpl"></bean>
+	<!-- 仓房布置 廒间结束 -->
+
+	<!-- 传感器布置开始 -->
+	<bean id="sensorServiceImpl"
+		class="com.hibernate.sernsorInfo.service.impl.SensorServiceImpl">
+		<property name="dao" ref="sensorDao"></property>
+	</bean>
+	<bean id="sensorDao" class="com.hibernate.sernsorInfo.dao.impl.SensorDaoImpl"></bean>
+
+	<bean id="sensorArrangementServiceImpl"
+		class="com.hibernate.sernsorInfo.service.impl.SensorArrangementServiceImpl">
+		<property name="dao" ref="sensorArrangementDao"></property>
+		<property name="arrangementDao" ref="arrangementDataDao"></property>
+	</bean>
+	<bean id="sensorArrangementDao"
+		class="com.hibernate.sernsorInfo.dao.impl.SensorArrangementDaoImpl"></bean>
+
+	<bean id="extensionServiceImpl"
+		class="com.hibernate.sernsorInfo.service.impl.ExtensionServiceImpl">
+		<property name="dao" ref="extensionDao"></property>
+	</bean>
+	<bean id="extensionDao" class="com.hibernate.sernsorInfo.dao.impl.ExtensionDaoImpl"></bean>
+
+	<bean id="arrangementDataServiceImpl"
+		class="com.hibernate.sernsorInfo.service.impl.ArrangementDataService">
+		<property name="dao" ref="arrangementDataDao"></property>
+		<property name="sensorArrangementdao" ref="sensorArrangementDao"></property>
+	</bean>
+	<bean id="arrangementDataDao"
+		class="com.hibernate.sernsorInfo.dao.impl.ArrangementDataDaoImpl"></bean>
+	<!-- 传感器布置结束 -->
+
+	<!-- 传感器数据 开始 -->
+	<bean id="aoJianBlockServiceImpl"
+		class="com.hibernate.sernsorInfo.service.impl.AoJianBlockServiceImpl">
+		<property name="aoJianDataDao" ref="aoJianDataDao"></property>
+		<property name="sensorDataDao" ref="sensorDataDao"></property>
+	</bean>
+	<bean id="aoJianDataDao" class="com.hibernate.sernsorInfo.dao.impl.AoJianDataDaoImpl"></bean>
+	<bean id="sensorDataDao" class="com.hibernate.sernsorInfo.dao.impl.SensorDataDaoImpl"></bean>
+
+	<!-- 传感器数据 结束 -->
+
+	<!-- 定时器模块start -->
+	<bean id="timerServiceImpl" class="com.hibernate.timers.service.impl.TimerTaskServiceImpl">
+		<property name="dao" ref="timerDao"></property>
+	</bean>
+	<bean id="timerDao" class="com.hibernate.timers.dao.impl.TimerDaoImpl"></bean>
+	<!-- 定时器模块end -->
+
+	<!-- 基本设置start -->
+	<bean id="alarmServiceImpl"
+		class="com.hibernate.baseSettingInfo.service.impl.AlarmServiceImpl">
+		<property name="dao" ref="alarmDao"></property>
+	</bean>
+	<bean id="alarmDao" class="com.hibernate.baseSettingInfo.dao.impl.AlarmDaoImpl"></bean>
+
+	<bean id="baseSettingServiceImpl"
+		class="com.hibernate.baseSettingInfo.service.impl.BaseSettingServiceImpl">
+		<property name="dao" ref="baseSettingDao"></property>
+	</bean>
+	<bean id="baseSettingDao"
+		class="com.hibernate.baseSettingInfo.dao.impl.BaseSettingDaoImpl"></bean>
+		
+	<bean id="grainTypeServiceImpl"
+		class="com.hibernate.baseSettingInfo.service.impl.GrainTypeServiceImpl">
+		<property name="dao" ref="grainTypeDao"></property>
+	</bean>
+	<bean id="grainTypeDao" class="com.hibernate.baseSettingInfo.dao.impl.GrainTypeDaoImpl"></bean>
+	<!-- 基本设置end -->
+
+	<!-- 云图start -->
+	<bean id="cloudPicServiceImpl"
+		class="com.hibernate.cloudInfo.service.impl.CloudPicServiceImpl">
+		<property name="cloudPicDao" ref="cloudPicDao"></property>
+	</bean>
+	<bean id="cloudPicDao" class="com.hibernate.cloudInfo.dao.impl.CloudPicDaoImpl"></bean>
+	
+	<bean id="cloudAojianDateServiceImpl"
+		class="com.hibernate.cloudInfo.service.impl.CloudAojianDateServiceImpl">
+		<property name="cloudAojianDateDao" ref="cloudAojianDateDao"></property>
+	</bean>
+	<bean id="cloudAojianDateDao" class="com.hibernate.cloudInfo.dao.impl.CloudAojianDateDaoImpl"></bean>
+	<!-- 云图end -->
+	<!-- 信息管理start -->
+	<bean id="alarmDataInfoServiceImpl" class="com.hibernate.sernsorInfo.service.impl.AlarmDataInfoServiceImpl">
+		<property name="dao" ref="alarmDataInfoDao"></property>
+	</bean>
+	<bean id="alarmDataInfoDao" class="com.hibernate.sernsorInfo.dao.impl.AlarmDataInfoDaoImpl"></bean>
+	
+	<bean id="operateRecordServiceImpl" class="com.hibernate.sernsorInfo.service.impl.OperateRecordServiceImpl">
+		<property name="dao" ref="operateRecordDao"></property>
+	</bean>
+	<bean id="operateRecordDao" class="com.hibernate.sernsorInfo.dao.impl.OperateRecordDaoImpl">
+	</bean>
+	<!-- 信息管理end -->
+	
+
+</beans>

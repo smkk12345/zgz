@@ -1,0 +1,106 @@
+﻿package com.common.consts;
+
+public class PageConst {
+
+    public final static String LOGIN = "/default/user/login.ftl"; // 登陆
+
+    public final static String INDEX = "/default/index/index.ftl"; // 首页
+    public final static String fastCut = "/default/index/fastCut.ftl"; 
+    
+    public final static String ZY_IE = "/default/index/ie.ftl"; //IE
+    
+
+    // 棚改前期start
+    public final static String PGQQ_rhjc= "/default/pgqq/rhjc.ftl";
+    public final static String PGQQ_fhfa= "/default/pgqq/fhfa.ftl";
+    public final static String PGQQ_rhjc_add_Modal = "/default/pgqq/rhjc_add_Modal.ftl";
+    
+    // 粮情分析start
+    public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
+    public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析
+
+ // 粮情检测start
+    public final static String LQJC_SSJC = "/default/lqjc/ssjc.ftl";
+    public final static String LQJC_SSJC_1 = "/default/lqjc/ssjc_1.ftl";
+    public final static String LQJC_SSJC_2 = "/default/lqjc/ssjc_2.ftl";
+    public final static String LQJC_SSJC_3 = "/default/lqjc/ssjc_3.ftl";
+    public final static String LQJC_SSJC_4 = "/default/lqjc/ssjc_4.ftl";
+    public final static String LQJC_YTFX = "/default/lqjc/ytfx.ftl";
+    public final static String LQJC_ytfxModal = "/default/lqjc/ytfxModal.ftl";
+    public final static String LQJC_YTFX_1 = "/default/lqjc/ytfx_1.ftl";
+    public final static String LQJC_YTFX_1_1 = "/default/lqjc/ytfx_1_1.ftl";
+    public final static String LQJC_searchLq = "/default/lqjc/searchLq.ftl";
+    public final static String LQJC_eidtLq = "/default/lqjc/editLq.ftl";
+    public final static String LQJC_adjustLq = "/default/lqjc/adjustLq.ftl";
+    
+    public final static String LQJC_LSCX = "/default/lqjc/lscx.ftl";
+    public final static String LQJC_LQYC = "/default/lqjc/lqyc.ftl";
+    public final static String LQJC_LSXX = "/default/lqjc/lsxx.ftl";
+    public final static String LQJC_aojianModal = "/default/lqjc/aojianModal.ftl";
+    public final static String LQJC_lqjcModal = "/default/lqjc/ssjcModal.ftl";
+    public final static String LQJC_lqjcModal_lq = "/default/lqjc/ssjcModal_lq.ftl";
+    
+    public final static String LQJC_fdDataDisplayModel = "/default/lqjc/fdDataDisplayModal.ftl";
+    // 智能通风start                                                     
+    public final static String ZNTF_TFMS = "/default/zntf/tfms.ftl";
+    public final static String ZNTF_ZNTF = "/default/zntf/zntf.ftl";
+    public final static String ZNTF_TFJCBGSJ = "/default/zntf/tfjc_bgsj.ftl";
+    public final static String ZNTF_TFJCYTZS = "/default/zntf/tfjc_ytzs.ftl";
+    public final static String ZNTF_SDKZ = "/default/zntf/sdkz.ftl";
+    // 系统设置start
+    public final static String XTSZ_JBSZ = "/default/xtsz/jbsz.ftl"; // 基本设置
+    public final static String XTSZ_CFSZ = "/default/xtsz/cfsz.ftl"; // 仓房布置
+    public final static String XTSZ_jbszModalCgq = "/default/xtsz/jbszModalCgq.ftl";
+
+    public final static String XTSZ_YHGL = "/default/user/yhgl.ftl";
+    public final static String XTSZ_ROLE = "/default/user/role.ftl";
+    public final static String XTSZ_CSSZ = "/default/xtsz/cssz.ftl";
+    public final static String XTSZ_csszModalGjfz = "/default/xtsz/csszModalGjfz.ftl";
+
+    public final static String XTSZ_yhglModal = "/default/user/yhglModal.ftl";
+    public final static String XTSZ_roleAuthorityModal = "/default/user/roleAuthorityModal.ftl";
+    public final static String XTSZ_roleModal = "/default/user/roleModal.ftl";
+    public final static String XTSZ_barnModal = "/default/xtsz/barnModal.ftl";
+    public final static String XTSZ_aoJianSelectedModal = "/default/user/aoJianSelectedModal.ftl";
+    public final static String XTSZ_aoJianSelectedModal1 = "/default/xtsz/aoJianSelectedModal.ftl";
+    public final static String XTSZ_sensorArrangementModal = "/default/xtsz/sensorArrangementModal.ftl";
+    public final static String XTSZ_jcsbbzModal0 = "/default/xtsz/jcsbbzModal0.ftl";
+    public final static String XTSZ_jcsbbzModal1 = "/default/xtsz/jcsbbzModal1.ftl";
+    public final static String XTSZ_jcsbbzModal2 = "/default/xtsz/jcsbbzModal2.ftl";
+    public final static String XTSZ_jcsbbz = "/default/xtsz/jcsbbz.ftl";
+    
+    
+    public final static String XTSZ_jcsblb = "/default/xtsz/sensor.ftl";
+    
+    public final static String XTSZ_personDetail = "/default/user/personalDetail.ftl";
+    // 告警信息start
+    public final static String GJXX_LQGJ = "/default/gjxx/lqgj.ftl"; 
+    public final static String GJXX_LQGJ1 = "/default/gjxx/lqgj1.ftl"; 
+    public final static String GJXX_LQGJ2 = "/default/gjxx/lqgj2.ftl"; 
+    public final static String GJXX_LQGJ3 = "/default/gjxx/lqgj3.ftl"; 
+    
+    public final static String GJXX_CZCX = "/default/gjxx/czcx.ftl"; 
+    
+    public final static String XTSZ_grainTypeModal="/default/xtsz/grainTypeModal.ftl";
+    
+    public final static String XTSZ_dspszModal="/default/xtsz/dsqszModal.ftl"; 
+    public final static String XTSZ_dspsz="/default/xtsz/dsqsz.ftl";
+    
+    public final static String XTSZ_tfsb = "/default/xtsz/tfsb.ftl";
+    public final static String XTSZ_tfsbModal="/default/xtsz/tfsbModal.ftl"; 
+    
+    public final static String XTSZ_tfkModal="/default/xtsz/tfsbModal/tfkModal.ftl"; 
+    public final static String XTSZ_fjModal="/default/xtsz/tfsbModal/fjModal.ftl"; 
+    public final static String XTSZ_chModal="/default/xtsz/tfsbModal/chModal.ftl"; 
+    public final static String XTSZ_fljcModal="/default/xtsz/tfsbModal/fljcModal.ftl"; 
+    
+    public final static String XTSZ_tfModel="/default/xtsz/tfMode.ftl";   
+    public final static String XTSZ_editAoJianModal = "/default/xtsz/editAoJianModal.ftl";
+    public final static String XTSZ_editSingleAoJianModal = "/default/xtsz/editSingleAoJianModal.ftl";
+    public final static String XTSZ_exportSelectDate = "/default/xtsz/exportSelectDate.ftl";
+    public final static String confirmDeleteModel = "/default/public/ConfirmDeleteModal.ftl";
+    public final static String confirmOperateModel = "/default/public/ConfirmOperateModal.ftl";
+    
+    public final static String XTSZ_perAoJianTfsb="/default/xtsz/perAoJianTfsb.ftl";
+    
+}

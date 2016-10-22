@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<!-- 设备  start -->
+	<bean id="fanDeviceServiceImpl" class="com.hibernate.ventilate.service.impl.FanDeviceServiceImpl">
+		<property name="dao" ref="fanDeviceDao"></property>
+	</bean>
+	<bean id="fanDeviceDao" class="com.hibernate.ventilate.dao.impl.FanDeviceDaoImpl"></bean>
+	
+	<bean id="ventDeviceServiceImpl" class="com.hibernate.ventilate.service.impl.VentDeviceServiceImpl">
+		<property name="dao" ref="ventDeviceDao"></property>
+	</bean>
+	<bean id="ventDeviceDao" class="com.hibernate.ventilate.dao.impl.VentDeviceDaoImpl"></bean>
+	
+	<bean id="windDetectionDeviceServiceImpl" class="com.hibernate.ventilate.service.impl.WindDetectionDeviceServiceImpl">
+		<property name="dao" ref="windDetectionDeviceDao"></property>
+	</bean>
+	<bean id="windDetectionDeviceDao" class="com.hibernate.ventilate.dao.impl.WindDetectionDeviceDaoImpl"></bean>
+	
+	<bean id="windowDeviceServiceImpl" class="com.hibernate.ventilate.service.impl.WindowDeviceServiceImpl">
+		<property name="dao" ref="windowDeviceDao"></property>
+	</bean>
+	<bean id="windowDeviceDao" class="com.hibernate.ventilate.dao.impl.WindowDeviceDaoImpl"></bean>
+	<!-- 设备  end -->
+	
+	<bean id="ventModeServiceImpl" class="com.hibernate.ventilate.service.impl.VentModeServiceImpl"> 
+		<property name="dao" ref="ventModeDao"></property>
+	</bean>
+	<bean id="ventModeDao" class="com.hibernate.ventilate.dao.impl.VentModeDaoImpl"></bean>
+	
+	<bean id="ventModeInstanceServiceImpl" class="com.hibernate.ventilate.service.impl.VentModeInstanceServiceImpl"> 
+		<property name="dao" ref="ventModeInstanceDao"></property>
+	</bean>
+	<bean id="ventModeInstanceDao" class="com.hibernate.ventilate.dao.impl.VentModeInstanceDaoImpl"></bean>
+	
+</beans>

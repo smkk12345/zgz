@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+/*金属主题Shin2015729*/
+/*注册登录*/
+.login { background:url(../img/loginsteel.jpg) no-repeat center center fixed;}
+.login .container-full .login-box{top:150px}
+.login .container-full .login-box .login-box-bg .bananer{background-color:black}
+.login .container-full .login-box .login-box-bg { background:rgba(0, 0, 0, 0.3);border-radius: 0px;}/*-webkit-filter:blur(npx)*/
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .btn {color: #fff;background-color:  red;border-color:  red;}
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .stat a {color:white;text-shadow: black 1px 1px 1px;}
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .copy a {color: rgb(255, 255, 255);text-shadow: black 1px 1px 1px;}
+
+/*Top styles*/
+.top .navbar .navbar-inner .container .logo { background: url(..) center no-repeat;}
+.top .navbar .navbar-inner .container { padding-right: 15px;padding-left: 8px;}
+/*@media  适配预留*/
+.top .navbar .navbar-inner {background:url(../img/toplogo3.png)no-repeat 70% center, url(../img/topbg3.png)}
+.top .navbar .navbar-inner {border-bottom: 0px solid #054C99;}   /*主菜单底部阴影，扁平化风格无*/
+
+/*Main styles*/
+.main .left  {background:url(../img/leftsteel.png) no-repeat;overflow:hidden; border-right: #ddd 0px solid;}
+.main .left ul.menu-group li.active {background-color: white;}  
+.main .left ul.menu-group li.active a {background-color: white; border-left: gray 1px solid;border-top: #ddd 0px solid;border-bottom: gray 2px solid;border-right: white 0px solid; }
+.main .left ul.menu-group li a:hover {background-color: white;border-right: white 1px solid;border-bottom: gray 2px solid;s}
+.main .left ul.menu-group li:hover {background-color:transparent; border-right: white 1px solid;border-left: gray 1px solid}
+.main .left ul.menu-group li {padding:0}
+button.btn.btn-toolbar.width-100-.bold.yl-ModalClick {background-color:transparent;color: #595b5f;border-top:#595b5f  1px solid;border-left: #595b5f 1px solid;border-right:#595b5f  2px solid;border-bottom: #595b5f 2px solid;text-shadow: 0px 1px 2px gray}	/*粮情页面左侧选择仓房按钮*/
+button.btn.btn-toolbar.width-100-.bold.YL-ModalClick {background-color:transparent;color: #595b5f;border-top:#595b5f  1px solid;border-left: #595b5f 1px solid;border-right:#595b5f  2px solid;border-bottom: #595b5f 2px solid;text-shadow: 0px 1px 2px gray}   /*粮情页面左侧选择仓房按钮*/
+.main .right {background-color: white;}
+
+/*foot styles*/
+.foot {background-color: black; border-top: gray 1px solid;}
+
+/*fonts*//*雅黑的调用{font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu} */
+.top .navbar .navbar-inner .container .nav li a {color:white; text-shadow: 0px 1px 2px gray;}
+.top .navbar .navbar-inner .container .nav li a.active {color:#595b5f;text-shadow: 0px 1px 2px white;border-right:black 1px solid;border-bottom:black 1px solid; background:url(../img/btn-bg.png);}
+.top .navbar .navbar-inner .container .nav li a:hover {color:#595b5f; border-right:black 1px solid;border-bottom:black 1px solid; background:url(../img/btn-bg.png);}
+.main .left ul.menu-group li.active a {color:#595b5f;text-shadow: 0px 1px 2px white;}
+.main .left ul.menu-group li a {color:gray;text-shadow: 0px 2px 2px white;}
+.main .left ul.menu-group li a:hover {color:#595b5f;text-shadow: 0px 1px 2px white;}
+.foot .fl {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)}
+.foot .fr {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)}
+.nav-pills>li>a{color:black}
+.nav>li>a:focus, .nav>li>a:hover{color:white;background-color:black}
+
+/*button*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{background-color:black}
+.btn-primary{background-color:black;border-color:black}
+.btn-primary:hover{background-color:gray;border-color:gray}
+.blue {color:gray}
+.btn-info{background-color:gray;border-color:gray}
+.btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open>.dropdown-toggle.btn-info{color:white;background-color: black;border-color:black}
+
+/*details*/
+.panel-default>.panel-heading{color:#595b5f;text-shadow:0px 1px 2px white;background:url(../img/panelbg.png);overflow:hidden;border-color:gray}
+.panel-default{border-color:gray}
+.form-control{border:1px solid gray}
+.btn-default{border-color:#gray}
+#statusNet {color:white !important}

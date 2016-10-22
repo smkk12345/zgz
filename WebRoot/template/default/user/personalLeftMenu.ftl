@@ -1,0 +1,3 @@
+<li <#if CURENT_TAB_3 =='GRSZ'>class="active"</#if> role="presentation" ><a href="${BASE_PATH}user/personDetail.action?oType=detail">个人信息</a></li>
+<li <#if CURENT_TAB_3 =='MMXG'>class="active"</#if> role="presentation"><a href="${BASE_PATH}user/personDetail.action?oType=password">修改密码</a></li>
+<li <#if CURENT_TAB_3 =='KJDL'>class="active"</#if> role="presentation"><a href="${BASE_PATH}user/personDetail.action?oType=kjdl">快捷登陆</a></li>

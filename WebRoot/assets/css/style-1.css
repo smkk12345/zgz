@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+/*科技主题Shin2015722*/
+/*注册登录*/
+.login { background:url(../img/login-bg1.jpg) no-repeat center center fixed;}
+.login .container-full .login-box .login-box-bg { background: rgba(34, 158, 245, 0.15);border-radius: 0px;}
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .btn {color: #fff;background-color: rgb(245,162,0);border-color: rgb(245,162,0);}
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .stat a {color:#ef5285}
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .copy a {color: rgb(255, 255, 255);text-shadow: black 1px 1px 1px;}
+
+/*Top styles*/
+.top .navbar .navbar-inner .container .logo { background: url(../img/logoWH.png) center no-repeat;}
+.top .navbar .navbar-inner .container { padding-right: 15px;padding-left: 8px;}
+/*@media  适配预留*/
+.top .navbar .navbar-inner {background:url(..)no-repeat 70% center;background-color: rgb(0, 93, 172);}
+.top .navbar .navbar-inner {border-bottom: 0px solid #054C99;}   /*主菜单底部阴影，扁平化风格无*/
+
+/*Main styles*/
+.main .left  {background-color: rgb(94, 144, 204); border-right: #ddd 0px solid;}
+.main .left ul.menu-group li.active {background-color: white;-moz-border-radius: 17px 0 0 17px; -webkit-border-radius: 17px 0 0 17px; border-radius: 17px 0 0 17px;}  
+.main .left ul.menu-group li.active a {background-color: white; border-left: #ddd 0px solid;border-top: #ddd 0px solid;border-bottom: #ddd 0px solid;border-right: white 0px solid; -moz-border-radius: 17px 0 0 17px; -webkit-border-radius: 17px 0 0 17px; border-radius: 17px 0 0 17px;}
+.main .left ul.menu-group li a:hover {background-color: white; -moz-border-radius: 17px 0 0 17px; -webkit-border-radius: 17px 0 0 17px; border-radius: 17px 0 0 17px;border-right: white 1px solid;}
+.main .left ul.menu-group li:hover {background-color:rgb(94, 144, 204); border-right: white 1px solid;}
+.main .left ul.menu-group li {padding:0}
+button.btn.btn-toolbar.width-100-.bold.yl-ModalClick {background-color: rgb(245,162,0);color: wheat;}	/*粮情页面左侧选择仓房按钮*/
+button.btn.btn-toolbar.width-100-.bold.YL-ModalClick {background-color: rgb(245,162,0);color: wheat;}   /*粮情页面左侧选择仓房按钮*/
+.main .right {background-color: white;}
+
+/*foot styles*/
+.foot {background-color:#7fc7ef; border-top: #7fc7ef 1px solid;}
+
+/*fonts*//*雅黑的调用{font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu} */
+.top .navbar .navbar-inner .container .nav li a {color:white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+.top .navbar .navbar-inner .container .nav li a.active {color:rgb(0, 93, 172);}
+.top .navbar .navbar-inner .container .nav li a:hover {color:rgb(0, 93, 172); border: slategrey 1px solid;  background-color:white;}
+.main .left ul.menu-group li.active a {color:#ef5285;text-shadow: 0px 1px 2px white;}
+.main .left ul.menu-group li a {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+.main .left ul.menu-group li a:hover {color:#ef5285;text-shadow: 0px 1px 2px white;}
+.foot .fl {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)}
+.foot .fr {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)}
+
+/*details*/
+.panel-default{border-color:#75AEDB}
+.panel-default>.panel-heading{background-color:#C3DEFF}
+.form-control{border:1px solid #78A7E2}
+.btn-default{border-color:#75AED8}
+#statusNet {color:white !important}
