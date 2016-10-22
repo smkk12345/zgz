@@ -16,7 +16,6 @@
             <th style="width:100px;text-align: center">用户名</th>
             <th style="width:100px;text-align: center">真实姓名</th>
             <th style="width:90px;text-align: center">用户组</th>
-            <th style="width:auto;text-align: center">管理范围</th>
             <th style="width:150px;text-align: center">邮箱</th>
             <th style="width:100px;text-align: center">电话</th>
             <th style="width:auto;text-align: center">备注</th>
