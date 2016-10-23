@@ -28,7 +28,7 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>性别:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='sex' >  
-                    	<option   value="-1">请选择</option>  
+                        <option   value="-1">请选择</option>  
                         <option   value="0">男</option>  
                         <option   value="1">女</option> 
                     </select>  
@@ -45,7 +45,7 @@
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>权属取得方式:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='ownership' >  
-                    	<option   value="-1">请选择</option>  
+                        <option   value="-1">请选择</option>  
                         <option value="0">自有</option>  
                         <option value="1">老宅</option> 
                         <option value="2">买卖</option>  
@@ -81,9 +81,8 @@
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
                 <table id="table1" class="table">
-                    <thead>
                         <tr>
-                            <td colspan="12" style="text-align: center">本址在册户籍家庭人口情况</td>
+                            <td colspan="12" style="text-align: center;font-weight: bold">本址在册户籍家庭人口情况</td>
                         </tr>
                         <tr>
                             <th></th>
@@ -100,50 +99,48 @@
                             <th class="center">人口类别</th>
                             <th class="center"></th>
                         </tr>
-                    </thead>
-                    <tbody id="two-list">
                         <tr class="add-list-1">
                             <td><input type="hidden" class='form-control input-sm ' name='vtype' value="0" style="width: 0px;"/>        </td>
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
-                                	<option   value="-1">请选择</option>  
-			                        <option value="0">居</option>  
-			                        <option value="1">农</option> 
-                    			</select>
+                                    <option   value="-1">请选择</option>  
+                                    <option value="0">居</option>  
+                                    <option value="1">农</option> 
+                                </select>
                             </td>
                             <td><input type='text' class='form-control input-sm ' name='householdtype'/>        </td>
                             <td><input type='text' class='form-control input-sm  ' name='name' />        </td>
                             <td><input type='text' class='form-control input-sm  ' name='vidcard'/>        </td>
-                            
+
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='vsex' >  
-                                	<option   value="-1">请选择</option>  
-			                        <option value="0">男</option>  
-			                        <option value="1">女</option> 
-                    			</select>
+                                    <option   value="-1">请选择</option>  
+                                    <option value="0">男</option>  
+                                    <option value="1">女</option> 
+                                </select>
                             </td>
                             <td><input type='text' class='form-control input-sm  ' name='registeredrelate' />        </td>
                             <td><input type='text' class='form-control input-sm  ' name='changrelate' />        </td>
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
-                                	<option   value="-1">请选择</option>  
-			                        <option value="0">已婚</option>  
-			                        <option value="1">未婚</option> 
-                    			</select>
+                                    <option   value="-1">请选择</option>  
+                                    <option value="0">已婚</option>  
+                                    <option value="1">未婚</option> 
+                                </select>
                             </td>
                             <td><input type='text' class='form-control input-sm  ' name='vtype' />        </td>
                             <td><input type='text' class='form-control input-sm  ' name='vunit'/>        </td>
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
-                                	<option   value="-1">请选择</option>    
-			                        <option value="0">婚姻衍生人员</option>  
-			                        <option value="1">配偶</option> 
-			                        <option value="1">新生婴儿</option> 
-			                        <option value="1">现役军人</option> 
-			                        <option value="1">院校在校生</option> 
-			                        <option value="1">服役人员</option> 
-			                        <option value="1">其他</option>
-                    			</select>
+                                    <option   value="-1">请选择</option>    
+                                    <option value="0">婚姻衍生人员</option>  
+                                    <option value="1">配偶</option> 
+                                    <option value="1">新生婴儿</option> 
+                                    <option value="1">现役军人</option> 
+                                    <option value="1">院校在校生</option> 
+                                    <option value="1">服役人员</option> 
+                                    <option value="1">其他</option>
+                                </select>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-1');">删除</button>
@@ -155,49 +152,64 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="12" style="text-align: center">非本址户籍家庭人口情况</td>
+                            <td colspan="12" style="text-align: center;font-weight: bold">非本址户籍家庭人口情况</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th class="center">户主</th>
+                            <th class="center">户籍性质</th>
+                            <th class="center">姓名</th>
+                            <th class="center">身份证号</th>
+                            <th class="center">性别</th>
+                            <th class="center">户关</th>
+                            <th class="center">产关</th>
+                            <th class="center">婚否</th>
+                            <th class="center">类型</th>
+                            <th class="center">工作单位</th>
+                            <th class="center">人口类别</th>
+                            <th class="center"></th>
                         </tr>
                         <tr class="add-list-2">
                             <td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' > 
-                                	<option   value="-1">请选择</option>   
-			                        <option value="0">居</option>  
-			                        <option value="1">农</option> 
-                    			</select>
+                                    <option   value="-1">请选择</option>   
+                                    <option value="0">居</option>  
+                                    <option value="1">农</option> 
+                                </select>
                             </td>
                             <td><input type='text' class='form-control input-sm ' name='householdtype'/>        </td>
                             <td><input type='text' class='form-control input-sm  ' name='name' />        </td>
                             <td><input type='text' class='form-control input-sm  ' name='vidcard'/>        </td>
-                            
+
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='vsex' >  
-                                	<option   value="-1">请选择</option>  
-			                        <option value="0">男</option>  
-			                        <option value="1">女</option> 
-                    			</select>
+                                    <option   value="-1">请选择</option>  
+                                    <option value="0">男</option>  
+                                    <option value="1">女</option> 
+                                </select>
                             </td>
                             <td><input type='text' class='form-control input-sm  ' name='registeredrelate' />        </td>
                             <td><input type='text' class='form-control input-sm  ' name='changrelate' />        </td>
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >
-                                	<option   value="-1">请选择</option>    
-			                        <option value="0">已婚</option>  
-			                        <option value="1">未婚</option> 
-                    			</select>
+                                    <option   value="-1">请选择</option>    
+                                    <option value="0">已婚</option>  
+                                    <option value="1">未婚</option> 
+                                </select>
                             </td>                         <td><input type='text' class='form-control input-sm  ' name='vtype' />        </td>
                             <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
                             <td>
                                 <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' > 
-                                	<option   value="-1">请选择</option>   
-			                        <option value="0">婚姻衍生人员</option>  
-			                        <option value="1">配偶</option> 
-			                        <option value="1">新生婴儿</option> 
-			                        <option value="1">现役军人</option> 
-			                        <option value="1">院校在校生</option> 
-			                        <option value="1">服役人员</option> 
-			                        <option value="1">其他</option>
-                    			</select>
+                                    <option   value="-1">请选择</option>   
+                                    <option value="0">婚姻衍生人员</option>  
+                                    <option value="1">配偶</option> 
+                                    <option value="1">新生婴儿</option> 
+                                    <option value="1">现役军人</option> 
+                                    <option value="1">院校在校生</option> 
+                                    <option value="1">服役人员</option> 
+                                    <option value="1">其他</option>
+                                </select>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
@@ -255,7 +267,7 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>与被腾退人关系:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='relate' >  
-                    	<option   value="-1">请选择</option>  
+                        <option   value="-1">请选择</option>  
                         <option value="0">本人</option>  
                         <option value="1">本家庭成员</option> 
                         <option value="2">租赁</option>  
@@ -269,7 +281,7 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>税务登记证:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxlicense' >  
-                    	<option   value="-1">请选择</option>  
+                        <option   value="-1">请选择</option>  
                         <option value="0">有</option>  
                         <option value="1">无</option> 
                     </select>       
@@ -277,7 +289,7 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>租赁协议:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='leaselicense' > 
-                    	<option   value="-1">请选择</option>   
+                        <option   value="-1">请选择</option>   
                         <option value="0">有</option>  
                         <option value="1">无</option> 
                     </select>       
@@ -285,7 +297,7 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>完税证明:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxprove' >
-                    	<option   value="-1">请选择</option>    
+                        <option   value="-1">请选择</option>    
                         <option value="0">有</option>  
                         <option value="1">无</option> 
                     </select>       
@@ -383,7 +395,7 @@
         var num = $(f).parent().parent().parent().children('.' + c).length;
         if (num > 1) {
             $(f).parent().parent().remove();
-        }else{
+        } else {
             alert("至少保留一行！");
         }
 
