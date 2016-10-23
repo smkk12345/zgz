@@ -41,7 +41,7 @@
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=10 recordCount=recordCount toURL="/gjxx/lqgj.action" OtherParameter=""/>
+            <@p.pager pageNo=pageNo pageSize=10 recordCount=recordCount toURL="/pgqq/rhjc.action" OtherParameter=""/>
             </#if>
         </div>
     </ul>
