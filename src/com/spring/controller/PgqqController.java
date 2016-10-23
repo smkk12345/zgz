@@ -97,6 +97,31 @@ public class PgqqController {
 
 		}
 	}
+	
+	
+	@RequestMapping({ "/edithousebasic.action" })
+	public ModelAndView edithousebasic(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String housebasicid  = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("bean", houseBasic);
+			// 模板路径 basePath
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGQQ_rhjc_add_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+
+		}
+	}
+	
 
 	@RequestMapping({ "/pgqq/fhfa.action" })
 	public ModelAndView fhfaPage(HttpServletRequest request,
@@ -218,7 +243,7 @@ public class PgqqController {
 			String[] name = request.getParameterValues("oname");
 			String[] otype = request.getParameterValues("otype");
 			String[] peopleid = request.getParameterValues("peopleid");
-			String[] certificatenum = request.getParameterValues("certificatenum");
+			String[] otypenum = request.getParameterValues("otypenum");
 			String[] validatedate = request.getParameterValues("validatedate");
 			String[] illnessname = request.getParameterValues("illnessname");
 			String[] illnessprove = request.getParameterValues("illnessprove");
@@ -236,6 +261,16 @@ public class PgqqController {
 			for (int i = 0; i < name.length; i++) {
 				OtherInfo otherInfo = new OtherInfo();
 				
+				String name1 = name[i];
+				if(StringUtils.isEmpty(name1)){
+					
+					if(null != oid &&!StringUtils.isEmpty(oid[i])){
+						//删除
+						ServiceManager.getHouseBasicServce().delOther(oid[i]);
+					}
+					continue;
+				}
+				
 				if(oid!=null&&oid.length>0){
 					if(!StringUtils.isEmpty(oid[i])){
 						otherInfo.setId(oid[i]);
@@ -244,9 +279,8 @@ public class PgqqController {
 				otherInfo.setName(name[i]);
 				otherInfo.setOtype(otype[i]);
 				otherInfo.setPeopleid(peopleid[i]);
-				otherInfo.setCertificatenum(certificatenum[i]);
+				otherInfo.setOtypenum(otypenum[i]);
 				otherInfo.setValidatedate(validatedate[i]);
-				otherInfo.setIllnessname(illnessname[i]);
 				otherInfo.setIllnessprove(illnessprove[i]);
 				
 				if(otherInfo.getOtype().equals("0")){

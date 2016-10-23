@@ -21,17 +21,17 @@
 		<property name="peopleid" type="java.lang.String">
 			<column name="peopleid" length="45" />
 		</property>
-		<property name="certificatenum" type="java.lang.String">
-			<column name="certificatenum" length="45" />
+		<property name="otypenum" type="java.lang.String">
+			<column name="otypenum" length="200" />
 		</property>
 		<property name="validatedate" type="java.lang.String">
 			<column name="validatedate" length="45" />
 		</property>
-		<property name="illnessname" type="java.lang.String">
-			<column name="illnessname" length="45" />
-		</property>
 		<property name="illnessprove" type="java.lang.String">
 			<column name="illnessprove" length="45" />
+		</property>
+		<property name="illnessname" type="java.lang.String">
+			<column name="illnessname" length="200" />
 		</property>
 		<property name="createTime" type="java.util.Date"></property>
 		<property name="updateTime" type="java.util.Date"></property>

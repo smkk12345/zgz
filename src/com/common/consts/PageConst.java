@@ -15,6 +15,11 @@ public class PageConst {
     public final static String PGQQ_fhfa= "/default/pgqq/fhfa.ftl";
     public final static String PGQQ_rhjc_add_Modal = "/default/pgqq/rhjc_add_Modal.ftl";
     
+    // 棚改中期start
+    public final static String PGQQ_fgxy= "/default/pgzq/fgxy.ftl";
+    public final static String PGQQ_bcxy= "/default/pgzq/bcxy.ftl";
+    public final static String PGQQ_fgxy_add_Modal = "/default/pgzq/fgxy_add_Modal.ftl";
+    public final static String PGQQ_bcxy_add_Modal = "/default/pgzq/bcxy_add_Modal.ftl";  
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
     public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析

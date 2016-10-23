@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.Entity;
+import org.hibernate.envers.Audited;
+
 import com.hibernate.base.BaseBean;
 
 /**
@@ -12,6 +15,8 @@ import com.hibernate.base.BaseBean;
  * @author yulei
  *
  */
+@Audited
+@Entity
 public class HouseBasic extends BaseBean implements Serializable {
 
 	/**
@@ -28,7 +33,7 @@ public class HouseBasic extends BaseBean implements Serializable {
 	//手机
 	private	String mobile;
 	//被腾退人姓名
-	private String names;
+	private String names;//varchar  改为 nvarchar
 	//性别
 	private String sex;
 	//年龄

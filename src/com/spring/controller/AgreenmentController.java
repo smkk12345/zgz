@@ -23,7 +23,7 @@ import com.spring.ServiceManager;
 public class AgreenmentController {
 
 	
-	@RequestMapping({"/agreenment.action"})
+	@RequestMapping({"/agreenment.action","/fgxy.action"})
 	public ModelAndView agreenment(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -37,11 +37,37 @@ public class AgreenmentController {
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
 
-			model.addAttribute("CURENT_TAB", "PGQQ");
-			model.addAttribute("CURENT_TAB_2", "rhjc");
-			model.addAttribute("CURENT_TAB_3", "rhjc");
+			model.addAttribute("CURENT_TAB", "AGREENMENT");
+			model.addAttribute("CURENT_TAB_2", "fgxy");
+			model.addAttribute("CURENT_TAB_3", "fgxy");
 
-			return new ModelAndView(PageConst.PGQQ_rhjc, model);
+			return new ModelAndView(PageConst.PGQQ_fgxy, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+
+	@RequestMapping({"/bcxy.action"})
+	public ModelAndView bcxy(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "AGREENMENT");
+			model.addAttribute("CURENT_TAB_2", "bcxy");
+			model.addAttribute("CURENT_TAB_3", "bcxy");
+
+			return new ModelAndView(PageConst.PGQQ_bcxy, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -49,7 +75,7 @@ public class AgreenmentController {
 		}
 	}
 	
-	@RequestMapping({ "/agreenment/agreenment_add_Modal.action" })
+	@RequestMapping({ "/bcxy_add_Modal.action" })
 	public ModelAndView lqModal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -60,7 +86,7 @@ public class AgreenmentController {
 					WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
-			return new ModelAndView(PageConst.PGQQ_rhjc_add_Modal, model);
+			return new ModelAndView(PageConst.PGQQ_bcxy_add_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -70,7 +96,7 @@ public class AgreenmentController {
 	}
 	
 	
-	@RequestMapping({ "/agreenment/saveAgreenment.action" })
+	@RequestMapping({ "/saveAgreenment.action" })
 	public ModelAndView savehousebasic(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,Agreement agreenment,String housebasicid) {
 		try {

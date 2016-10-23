@@ -37,12 +37,16 @@ public class HouseBasicService {
 		//残疾
 //		List<OtherInfo> deformityList = new ArrayList<OtherInfo>();
 	public boolean save(HouseBasic houseBasic){
+		
 		HouseBasic t = houseBasic;
 		if(StringUtils.isBlank(t.getId())){
 			t = houseBasicDao.save(houseBasic);
 		}else{
 			houseBasicDao.update(houseBasic);
+			otherInfoDao.delByHouseBasicId(houseBasic.getId());
+			vacatePeopleDao.delByHouseBasicId(houseBasic.getId());
 		}
+		
 		try {
 			boolean result2 = otherInfoDao.batchSave(houseBasic.getIllList(),houseBasic.getId());
 			boolean result3 = otherInfoDao.batchSave(houseBasic.getBasicLivingList(),houseBasic.getId());
@@ -85,6 +89,10 @@ public class HouseBasicService {
 		return true;
 	}
 	
+	public boolean delOther(String id){
+		otherInfoDao.delete(id);
+		return true;
+	}
 	public boolean delHouseBasicById(String id){
 		//删除基本信息
 		houseBasicDao.delete(id);

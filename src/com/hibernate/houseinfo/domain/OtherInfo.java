@@ -16,7 +16,7 @@ public class OtherInfo extends BaseBean {
 	//户籍序号
 	private String peopleid;
 	//证书号  是低保  就是低保证号  残疾就是残疾证号
-	private String certificatenum;
+	private String otypenum;
 	//残疾证 审核有效期
 	private String validatedate;
 	//25种大病
@@ -48,12 +48,7 @@ public class OtherInfo extends BaseBean {
 	public void setPeopleid(String peopleid) {
 		this.peopleid = peopleid;
 	}
-	public String getCertificatenum() {
-		return certificatenum;
-	}
-	public void setCertificatenum(String certificatenum) {
-		this.certificatenum = certificatenum;
-	}
+
 	public String getValidatedate() {
 		return validatedate;
 	}
@@ -71,6 +66,12 @@ public class OtherInfo extends BaseBean {
 	}
 	public void setIllnessprove(String illnessprove) {
 		this.illnessprove = illnessprove;
+	}
+	public String getOtypenum() {
+		return otypenum;
+	}
+	public void setOtypenum(String otypenum) {
+		this.otypenum = otypenum;
 	}
 	
 }

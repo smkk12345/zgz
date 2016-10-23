@@ -8,7 +8,8 @@
                     </li>-->
                     <li><a <#if CURENT_TAB == 'PGQQ'>class="active"</#if> href="${BASE_PATH}pgqq.action">棚改前期管理</a>
                     </li>
-                    <li><a <#if CURENT_TAB == 'ZNTF'>class="active"</#if> href="${BASE_PATH}zntf/tfjcbgsj.action">协议签订管理</a></li>                  
+                    <li><a <#if CURENT_TAB == 'AGREENMENT'>class="active"</#if> href="${BASE_PATH}agreenment.action">协议签订管理</a></li>  
+                                    
                     <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统设置</a>
                     </li>
 	               <!--  <li><a <#if CURENT_TAB == 'GJXX'>class="active"</#if> href="${BASE_PATH}gjxx.action">信息管理</a>
