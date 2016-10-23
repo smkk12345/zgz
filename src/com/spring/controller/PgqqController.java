@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+import org.apache.xalan.lib.Redirect;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -141,12 +143,14 @@ public class PgqqController {
 			String[] vtype = request.getParameterValues("vtype");
 			String[] vid =  request.getParameterValues("vid");
 			
+			
 			List<VacatePeople> vList = new ArrayList<VacatePeople>();
 			List<VacatePeople> nList = new ArrayList<VacatePeople>();
 			for (int i = 0; i < names.length; i++) {
 				String name = names[i];
 				if(StringUtils.isEmpty(name)){
-					if(!StringUtils.isEmpty(vid[i])){
+					
+					if(null != vid &&!StringUtils.isEmpty(vid[i])){
 						//删除
 						ServiceManager.getHouseBasicServce().delVacatePeopleById(vid[i]);
 					}
@@ -178,6 +182,8 @@ public class PgqqController {
 			
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -185,10 +191,10 @@ public class PgqqController {
 					WebConstConfig.getBase_Template_Default_Path());
 
 			model.addAttribute("CURENT_TAB", "PGQQ");
-			model.addAttribute("CURENT_TAB_2", "fhfa");
-			model.addAttribute("CURENT_TAB_3", "fhfa");
+			model.addAttribute("CURENT_TAB_2", "rhjc");
+			model.addAttribute("CURENT_TAB_3", "rhjc");
 
-			return new ModelAndView(PageConst.PGQQ_fhfa, model);
+			return new ModelAndView(PageConst.PGQQ_rhjc, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
