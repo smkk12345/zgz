@@ -180,7 +180,7 @@ public class PgqqController {
 			HouseBasic housebasic) {
 		String[] householders = request.getParameterValues("householder");
 		String[] householdtype = request.getParameterValues("householdtype");
-		String[] names = request.getParameterValues("name");
+		String[] names = request.getParameterValues("vname");
 		String[] idcards = request.getParameterValues("vidcard");
 		String[] sexs = request.getParameterValues("vsex");
 		String[] registeredrelates = request.getParameterValues("registeredrelate");

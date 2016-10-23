@@ -112,7 +112,7 @@
 		                                </select>
 		                            </td>
 		                            <td><input type='text' class='form-control input-sm ' name='householdtype' value="${vacate.householdtype?default("")}"/>        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='name' value="${vacate.name?default("")}"/>        </td>
+		                            <td><input type='text' class='form-control input-sm  ' name='vname' value="${vacate.name?default("")}"/>        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${vacate.vidcard?default("")}"/>        </td>
 		
 		                            <td>
@@ -161,7 +161,7 @@
 		                                </select>
 		                            </td>
 		                            <td><input type='text' class='form-control input-sm ' name='householdtype' />        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='name' />        </td>
+		                            <td><input type='text' class='form-control input-sm  ' name='vname' />        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' />        </td>
 		
 		                            <td>
@@ -234,7 +234,7 @@
 		                                </select>
 		                            </td>
 		                            <td><input type='text' class='form-control input-sm ' name='householdtype' value="${cate.householdtype?default("")}"/>        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='name' value="${cate.name?default("")}"/>        </td>
+		                            <td><input type='text' class='form-control input-sm  ' name='vname' value="${cate.name?default("")}"/>        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${cate.vidcard?default("")}"/>        </td>
 		
 		                            <td>
@@ -283,7 +283,7 @@
 		                                </select>
 		                            </td>
 		                            <td><input type='text' class='form-control input-sm ' name='householdtype' />        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='name' />        </td>
+		                            <td><input type='text' class='form-control input-sm  ' name='vname' />        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' />        </td>
 		
 		                            <td>
@@ -440,7 +440,7 @@
 		                                    <option <#if (other.otype?default("-1"))=='2'>selected='selected'</#if> value="2">大病</option>
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm ' name='name'  value="${other.name?default("")}"/>        </td>
+		                            <td><input type='text' class='form-control input-sm ' name='oname'  value="${other.name?default("")}"/>        </td>
 		                            <td><input type='text' class='form-control input-sm ' name='peopleid'  value="${other.peopleid?default("")}"/>        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='otypenum'  value="${other.otypenum?default("")}"/>  </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='illnessname' value="${other.illnessname?default("")}"/>        </td>
@@ -461,7 +461,7 @@
 	                                    <option  value="2">大病</option>
 	                                </select>
 	                            </td>
-	                            <td><input type='text' class='form-control input-sm ' name='name'  />        </td>
+	                            <td><input type='text' class='form-control input-sm ' name='oname'  />        </td>
 	                            <td><input type='text' class='form-control input-sm ' name='peopleid'  />        </td>
 	                            <td><input type='text' class='form-control input-sm  ' name='otypenum'  />  </td>
 	                            <td><input type='text' class='form-control input-sm  ' name='illnessname' />        </td>
