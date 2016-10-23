@@ -110,7 +110,7 @@
                         </tr>
                         <tr id="two-list-end">
                             <td colspan="11" style="text-align: center">
-                                <button id="addLoalbtn" type="button" class="btn btn-info btn-sm" onclick="addlist('#two-list-1')" >添加新行</button>
+                                <button id="addLoalbtn" type="button" class="btn btn-info btn-sm" onclick="addlist('#two-list-end')" >添加新行</button>
                             </td>
                         </tr>
                     </tbody>
@@ -230,8 +230,8 @@
     }
 
 function addlist(a){
-    var h=$(a+"").html();
-    $(a+"").after("<tr>"+h+"</tr>"+"");
-    
+    var b=$(a+"").prev();
+    var h=b.html();
+    b.after("<tr>"+h+"</tr>"+"");
 }
 </script>
