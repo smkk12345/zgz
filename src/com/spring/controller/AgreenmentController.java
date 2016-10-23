@@ -79,7 +79,11 @@ public class AgreenmentController {
 	public ModelAndView lqModal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
-
+			
+			String housebasicid = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("housebasic", housebasic);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",

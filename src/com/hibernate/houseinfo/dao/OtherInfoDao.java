@@ -63,7 +63,7 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 		Session s = null;
 		try{
 			s = getSession();
-			String sql = "DELETE FROM Otherinfo WHERE housebasicid = '"+id+"'";
+			String sql = "DELETE FROM OtherInfo WHERE housebasicid = '"+id+"'";
 			s.createQuery(sql).executeUpdate(); 
 		}catch(Exception e){
 			e.printStackTrace();

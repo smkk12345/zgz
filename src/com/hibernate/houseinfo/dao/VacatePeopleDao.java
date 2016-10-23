@@ -62,7 +62,7 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 		Session s = null;
 		try{
 			s = getSession();
-			String sql = "DELETE FROM Vacatepeople WHERE housebasicid = '"+housebasicid+"'";
+			String sql = "DELETE FROM VacatePeople WHERE housebasicid = '"+housebasicid+"'";
 			s.createQuery(sql).executeUpdate(); 
 		}catch(Exception e){
 			e.printStackTrace();

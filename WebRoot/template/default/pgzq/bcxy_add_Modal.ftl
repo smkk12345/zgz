@@ -10,20 +10,20 @@
             <div class='container-fluid con-bg mb10'>
             	<div class=' aoJianGroup fl'>
                     <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text' class='form-control input-sm  ' name='location'/>    
+                    <input type='text' class='form-control input-sm  ' name='location' value="${housebasic.location?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>联系固话:</label>
 
-                    <input type='text' class='form-control input-sm  ' name='telephone' />       
+                    <input type='text' class='form-control input-sm  ' name='telephone' value="${housebasic.telephone?default("")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control input-sm fl dmDate' name='mobile'/>        
+                    <input type='text' class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>        
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' class='form-control input-sm  ' name='names' />    
+                    <input type='text' class='form-control input-sm  ' name='names' value="${housebasic.names?default("")}"/>    
                 </div>
             
                 <div class=' aoJianGroup fl'>

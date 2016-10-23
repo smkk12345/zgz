@@ -307,9 +307,9 @@ public class PgqqController {
 		String id = request.getParameter("housebasicid");
 		
 		ServiceManager.getHouseBasicServce().delHouseBasicById(id);
-		RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-		List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
-		model.addAttribute("list", list);
+//		RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+//		List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+//		model.addAttribute("list", list);
 		model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 		model.addAttribute("BASE_ASSETS_PATH",
 				WebConstConfig.getBase_Assets_Path());
