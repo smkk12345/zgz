@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import com.hibernate.baseSettingInfo.service.impl.AlarmServiceImpl;
 import com.hibernate.baseSettingInfo.service.impl.BaseSettingServiceImpl;
 import com.hibernate.baseSettingInfo.service.impl.GrainTypeServiceImpl;
+import com.hibernate.houseinfo.service.AgreenmentService;
 import com.hibernate.houseinfo.service.HouseBasicService;
 import com.hibernate.houseinfo.service.IndexNumService;
 import com.hibernate.timers.service.impl.TimerTaskServiceImpl;
@@ -32,6 +33,8 @@ public class ServiceManager {
     private static IndexNumService indexNumService;
     
     private static HouseBasicService houseBasicService;
+    
+    private static AgreenmentService agreenmentService;
     
     public static Object getServiceBean(String beanName) {
 
@@ -137,7 +140,7 @@ public class ServiceManager {
     }
 
     /**
-     * 粮食类别信息设置Service 
+     * 粮食类别信息设置Service   
      * @return
      */
     public static GrainTypeServiceImpl getGrainTypeServiceImpl(){
@@ -149,6 +152,19 @@ public class ServiceManager {
             return grainTypeServiceImpl;
         }
     }
-
+    
+    /**
+     * 粮食类别信息设置Service   
+     * @return
+     */
+    public static AgreenmentService getAgreenmentService(){
+        if(agreenmentService == null){
+        	agreenmentService = (AgreenmentService)ServiceManager.getServiceBean("agreenmentService");
+            return agreenmentService;
+        }
+        else{
+            return agreenmentService;
+        }
+    }
 
 }
