@@ -15,6 +15,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	/**
 	 * 通过id和标段获取数据
 	 * @param id
+	 * 
 	 * @param section
 	 * @return
 	 */

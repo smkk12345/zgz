@@ -5,8 +5,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.annotations.Entity;
-import org.hibernate.envers.Audited;
 
 import com.hibernate.base.BaseBean;
 
@@ -15,8 +13,6 @@ import com.hibernate.base.BaseBean;
  * @author yulei
  *
  */
-@Audited
-@Entity
 public class HouseBasic extends BaseBean implements Serializable {
 
 	/**
