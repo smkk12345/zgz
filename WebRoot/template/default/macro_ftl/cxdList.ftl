@@ -1,22 +1,24 @@
 
 <!--基础数据-->
-<#macro HousebasicList items>
+<#macro HousebasicList items  pageNo pageSize>
 <#if items?size gt 0>
 <#list items as ROW>
-<tr class="table_ModalDbClick active" id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
-    <td  >${ROW.names?default("")}<br></td>
-    <td  >${role.section?default("")}</td>
-    <td  >${ROW.telephone?default("")}</td>
-    <td  >${ROW.idcard?default("")}</td>
-    <td  >${ROW.location?default("")}</td>
-    <#if role.roleAuthority[12]=="2">
-    <td style="text-align: left">    
-        <button type="button" class="btn btn-primary btn-xs ml10 YL-ModalClick"  data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}">编辑</button>
-        <#if ROW.id!="1" && ROW.id!=user.id>
-        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}">删除</button>
-        </#if>
+<tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
+    <td >${ROW_index+1+pageNo*pageSize}</td>
+    <td >${role.section?default("")}</td>
+    <td >${ROW.names?default("")}</td>
+    <td >${ROW.idcard?default("")}</td>
+    <td >${ROW.location?default("")}</td>
+    <td >${ROW.housecount?default("")}</td>
+    <td >${ROW.people?default("")}</td>
+    <td >${ROW.zjdarea?default("")}</td>
+    <td >${ROW.fwarea?default("")}</td>
+    <td >${ROW.mobile?default("")}</td>
+    <td>    
+         <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"  data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"  data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
+        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"  onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
     </td>
-    </#if>
 </tr>
 </#list>
 </#if>
