@@ -31,7 +31,7 @@ public class HouseBasic extends BaseBean implements Serializable {
 	//被腾退人姓名
 	private String names;//varchar  改为 nvarchar
 	//性别
-	private String sex;
+	private String sex; 
 	//年龄
 	private String age;
 	//备用联系电话
