@@ -62,6 +62,7 @@ public class HouseBasicService {
 	
 	public HouseBasic getHouseBasicById(String id,String section){
 		HouseBasic houseBasic = houseBasicDao.findById(id, section);
+		
 		//腾云人列表
 		List<VacatePeople> vacatelist = vacatePeopleDao.findList(id,"0");
 		//非在册人员列表
@@ -72,11 +73,24 @@ public class HouseBasicService {
 		List<OtherInfo> basicLivingList = otherInfoDao.findList(id,"0");
 		//残疾
 		List<OtherInfo> deformityList = otherInfoDao.findList(id,"1");
-		houseBasic.setIllList(illList);
-		houseBasic.setVacatelist(vacatelist);
-		houseBasic.setList(list);
-		houseBasic.setBasicLivingList(basicLivingList);
-		houseBasic.setDeformityList(deformityList);
+		
+		List<OtherInfo> otherList = otherInfoDao.findList(id, "0,1,2");
+		
+		if(null != illList){
+			houseBasic.setIllList(illList);
+		}
+		if(null != list){
+			houseBasic.setList(list);
+		}
+		if(null != vacatelist){
+			houseBasic.setVacatelist(vacatelist);
+		}
+		if(null !=basicLivingList){
+			houseBasic.setBasicLivingList(basicLivingList);
+		}
+		if(null != deformityList){
+			houseBasic.setDeformityList(deformityList);
+		}
 		return houseBasic;
 	}
 	

@@ -22,7 +22,7 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 			s = getSession();
 			Criteria c = s.createCriteria(OtherInfo.class);
 			list = c.add(Restrictions.eq("housebasicid", housebasicid))
-					.add(Restrictions.eq("otype", type))
+					.add(Restrictions.in("otype", type.split(",")))
 					.addOrder(Order.asc("createTime"))
 					.list();
 		}catch(Exception e){
