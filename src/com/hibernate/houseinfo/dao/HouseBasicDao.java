@@ -3,6 +3,7 @@ package com.hibernate.houseinfo.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -64,6 +65,22 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			int pagecount) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Integer getCount(String section) {
+		Session s = null;
+		try{
+			s = getSession();
+			String hql = "select count(id) as count from HouseBasic hb where section in ("+section+")";
+			Query query = s.createQuery(hql);
+			int count = ((Number) query.iterate().next()).intValue();
+			return count;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return 0;
 	}
 	
 	

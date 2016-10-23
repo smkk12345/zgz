@@ -57,15 +57,30 @@ public class PgqqController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
+			String pageSize = request.getParameter("pageSize");
+			if(StringUtils.isEmpty(pageSize)){
+				pageSize = "10";
+			}
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			int intSize = Integer.parseInt(pageSize);
+			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),(intPageNum-1)*intSize,intSize);
+			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			
+			model.addAttribute("pageSize", pageSize);
+			model.addAttribute("pageNo", pageNo);
+			model.addAttribute("recordCount", count+"");
+			
 			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
-
 			model.addAttribute("CURENT_TAB", "PGQQ");
 			model.addAttribute("CURENT_TAB_2", "rhjc");
 			model.addAttribute("CURENT_TAB_3", "rhjc");

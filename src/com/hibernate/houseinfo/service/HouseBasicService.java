@@ -116,5 +116,9 @@ public class HouseBasicService {
 		otherInfoDao.delByHouseBasicId(id);
 		return true;
 	}
+	public Integer getCount(String section) {
+		// TODO Auto-generated method stub
+		return houseBasicDao.getCount(section);;
+	}
 
 }
