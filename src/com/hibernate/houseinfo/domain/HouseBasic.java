@@ -104,7 +104,15 @@ public class HouseBasic extends BaseBean implements Serializable {
 	List<OtherInfo> basicLivingList = new ArrayList<OtherInfo>();
 	//残疾
 	List<OtherInfo> deformityList = new ArrayList<OtherInfo>();
+	//otherList
+	List<OtherInfo> otherList = new ArrayList<OtherInfo>();
 	
+	public List<OtherInfo> getOtherList() {
+		return otherList;
+	}
+	public void setOtherList(List<OtherInfo> otherList) {
+		this.otherList = otherList;
+	}
 	public List<VacatePeople> getVacatelist() {
 		return vacatelist;
 	}

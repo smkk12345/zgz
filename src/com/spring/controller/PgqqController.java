@@ -89,6 +89,7 @@ public class PgqqController {
 					WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
+			model.addAttribute("bean", new HouseBasic());
 			return new ModelAndView(PageConst.PGQQ_rhjc_add_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -179,7 +180,7 @@ public class PgqqController {
 			HouseBasic housebasic) {
 		String[] householders = request.getParameterValues("householder");
 		String[] householdtype = request.getParameterValues("householdtype");
-		String[] names = request.getParameterValues("name");
+		String[] names = request.getParameterValues("vname");
 		String[] idcards = request.getParameterValues("vidcard");
 		String[] sexs = request.getParameterValues("vsex");
 		String[] registeredrelates = request.getParameterValues("registeredrelate");
