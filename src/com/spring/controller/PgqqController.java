@@ -49,7 +49,7 @@ public class PgqqController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping({ "/pgqq/rhjc.action", "/pgqq.action" })
+	@RequestMapping({ "/pgqq/rhjc.action", "/pgqq.action","/index.action"})
 	public ModelAndView indexPage(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
