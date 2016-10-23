@@ -181,7 +181,7 @@ public class IndexController {
 
 	
 
-	@RequestMapping({ "/index.action", "/" })
+	@RequestMapping({ "/index1.action" })
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		try {
 			User user = (User) request.getSession().getAttribute("user");

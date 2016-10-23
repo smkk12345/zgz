@@ -4,8 +4,8 @@
             <div class="container">
                 <a <#if CURENT_TAB == 'INDEX'>class="active"</#if>  href="/index.action"><div class="logo"></div></a>
                 <ul class="nav nav1">	
-                    <li><a <#if CURENT_TAB == 'INDEX'>class="active"</#if> href="${BASE_PATH}index.action">首页</a>
-                    </li>
+<!--                    <li><a <#if CURENT_TAB == 'INDEX'>class="active"</#if> href="${BASE_PATH}index.action">首页</a>
+                    </li>-->
                     <li><a <#if CURENT_TAB == 'PGQQ'>class="active"</#if> href="${BASE_PATH}pgqq.action">棚改前期管理</a>
                     </li>
                     <li><a <#if CURENT_TAB == 'ZNTF'>class="active"</#if> href="${BASE_PATH}zntf/tfjcbgsj.action">协议签订管理</a></li>                  
