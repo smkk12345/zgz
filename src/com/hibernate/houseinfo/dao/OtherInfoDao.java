@@ -51,4 +51,17 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 		}
 		return true;
 	}
+
+	public void delByHouseBasicId(String id) {
+		Session s = null;
+		try{
+			s = getSession();
+			String sql = "DELETE FROM Otherinfo WHERE housebasicid = '"+id+"'";
+			s.createQuery(sql).executeUpdate(); 
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+	}
 }

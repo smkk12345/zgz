@@ -148,6 +148,7 @@ public class PgqqController {
 				if(StringUtils.isEmpty(name)){
 					if(!StringUtils.isEmpty(vid[i])){
 						//删除
+						ServiceManager.getHouseBasicServce().delVacatePeopleById(vid[i]);
 					}
 					continue;
 				}
@@ -194,4 +195,31 @@ public class PgqqController {
 			return null;
 		}
 	}
+	
+	@RequestMapping({ "/pgqq/del.action" })
+	public ModelAndView deletehousebasic(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		
+		String id = request.getParameter("housebasicid");
+		
+		ServiceManager.getHouseBasicServce().delHouseBasicById(id);
+		RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+		List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+		model.addAttribute("list", list);
+		model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+		model.addAttribute("BASE_ASSETS_PATH",
+				WebConstConfig.getBase_Assets_Path());
+		model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+				WebConstConfig.getBase_Template_Default_Path());
+
+		model.addAttribute("CURENT_TAB", "PGQQ");
+		model.addAttribute("CURENT_TAB_2", "rhjc");
+		model.addAttribute("CURENT_TAB_3", "rhjc");
+
+
+		return new ModelAndView(PageConst.PGQQ_rhjc, model);
+	}
+	
+	
+	
 }

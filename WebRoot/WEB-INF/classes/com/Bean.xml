@@ -20,6 +20,11 @@
 	
 	<bean id="houseBasicService" class="com.hibernate.houseinfo.service.HouseBasicService">
 		<property name="houseBasicDao" ref="houseBasicDao"></property>
+		<property name="otherInfoDao" ref="otherInfoDao"></property>
+		<property name="vacatePeopleDao" ref="vacatePeopleDao"></property>
+		
 	</bean>
 	<bean id = "houseBasicDao" class="com.hibernate.houseinfo.dao.HouseBasicDao"></bean>
+	<bean id = "otherInfoDao" class="com.hibernate.houseinfo.dao.OtherInfoDao"></bean>
+	<bean id = "vacatePeopleDao" class="com.hibernate.houseinfo.dao.VacatePeopleDao"></bean>
 </beans>
