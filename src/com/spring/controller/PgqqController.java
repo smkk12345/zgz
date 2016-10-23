@@ -138,11 +138,17 @@ public class PgqqController {
 			String[] hasmarry = request.getParameterValues("hasmarry");
 			String[] vunit = request.getParameterValues("vunit");
 			String[] peopletype = request.getParameterValues("peopletype");
+			String[] vtype = request.getParameterValues("vtype");
+			String[] vid =  request.getParameterValues("vid");
 			
 			List<VacatePeople> vList = new ArrayList<VacatePeople>();
+			List<VacatePeople> nList = new ArrayList<VacatePeople>();
 			for (int i = 0; i < names.length; i++) {
 				String name = names[i];
 				if(StringUtils.isEmpty(name)){
+					if(!StringUtils.isEmpty(vid[i])){
+						//删除
+					}
 					continue;
 				}
 				VacatePeople v = new VacatePeople();
@@ -157,8 +163,17 @@ public class PgqqController {
 				v.setHasmarry(hasmarry[i]);
 				v.setUnit(vunit[i]);
 				v.setPeopletype(peopletype[i]);
-				vList.add(v);
+				String vtypee = vtype[i];
+				v.setVtype(vtypee);
+				if(vtypee.equals("0")){
+					vList.add(v);
+				}else{
+					nList.add(v);
+				}
 			}
+			
+			housebasic.setVacatelist(vList);
+			housebasic.setList(nList);
 			
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			

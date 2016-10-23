@@ -31,12 +31,13 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 		return list;
 	}
 	
-	public boolean batchSave(List<VacatePeople> list){
+	public boolean batchSave(List<VacatePeople> list,String id){
 		try {
 //			Session session =  getSession();
 //			Transaction tx = session.beginTransaction();
 			for(int i=0;i<list.size();i++){
 				VacatePeople vacatePeople = list.get(i);
+				vacatePeople.setHousebasicid(id);
 			    save(vacatePeople);
 //			    if(i%25==0){//以每25个数据作为一个处理单元
 //			        session.flush();

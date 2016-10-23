@@ -40,8 +40,8 @@ public class HouseBasicService {
 			boolean result2 = otherInfoDao.batchSave(houseBasic.getIllList());
 			boolean result3 = otherInfoDao.batchSave(houseBasic.getBasicLivingList());
 			boolean result4 = otherInfoDao.batchSave(houseBasic.getDeformityList());
-			boolean result5 = vacatePeopleDao.batchSave(houseBasic.getList());
-			boolean result6 = vacatePeopleDao.batchSave(houseBasic.getVacatelist());
+			boolean result5 = vacatePeopleDao.batchSave(houseBasic.getList(),houseBasic.getId());
+			boolean result6 = vacatePeopleDao.batchSave(houseBasic.getVacatelist(),houseBasic.getId());
 			return t!= null &&result2&&result3&&result4&&result5&&result6;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,6 +72,10 @@ public class HouseBasicService {
 	public List<HouseBasic> getListBySection(String section,int currentpage,int pagecount){
 		return houseBasicDao.findList(section,currentpage,pagecount);
 	}
+	
+//	public boolean delVacatePeopleById(String id){
+//		
+//	}
 	
 
 }
