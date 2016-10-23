@@ -1,51 +1,49 @@
 
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">基本情况调查表</h4>
+    <h4 class="modal-title pull-left m0">基本情况调查表(共5项)</h4>
 </div>
-<div class="modal-body p5 rhjc-add-con">
+<div class="modal-body rhjc-add-con">
     <form id='rhjcAddForm' modelAttribute = "HouseBasic" action="${BASE_PATH}/pgqq/savehousebasic.action"
           accept-charset="UTF-8" method="post">
-        <div class='ml20' style='margin-left: 30px;'  id='aoJianiIndex+'>
-            <div class='container-fluid mb10'>
+        <div class='ml15' id='aoJianiIndex+'>
+            <h4><span class="label label-default">1.基本数据录入：</span></h4>
+            <div class='container-fluid con-bg mb10'>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text' class='form-control  ' name='location'   placeholder='房屋坐落'/>    
+                    <input type='text' class='form-control input-sm  ' name='location'   placeholder='房屋坐落'/>    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>联系固话:</label>
 
-                    <input type='text' class='form-control  ' name='telephone'   placeholder='联系固话'/>       
+                    <input type='text' class='form-control input-sm  ' name='telephone'   placeholder='联系固话'/>       
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control fl dmDate' name='mobile'  placeholder='手机'/>        
+                    <input type='text' class='form-control input-sm fl dmDate' name='mobile'  placeholder='手机'/>        
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' class='form-control  ' name='names'   placeholder='被腾退人姓名'/>    
+                    <input type='text' class='form-control input-sm  ' name='names'   placeholder='被腾退人姓名'/>    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>性别:</label>
-                    <select id='sexsel' class='form-control fl' style='width:120px;' name='sex' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='sex' >  
                         <option   value="0">男</option>  
                         <option   value="1">女</option> 
                     </select>  
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>年龄:</label>
-                    <input type='text' class='form-control fl ' name='age'   placeholder='年龄'/>        
+                    <input type='text' class='form-control input-sm fl ' name='age'   placeholder='年龄'/>        
                 </div>
-            </div>
-
-            <div class='container-fluid mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>备用联系电话:</label>
-                    <input type='text' class='form-control  ' name='remobile'   placeholder='备用联系电话'/>        
+                    <input type='text' class='form-control input-sm  ' name='remobile'   placeholder='备用联系电话'/>        
                 </div>
 
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>权属取得方式:</label>
-                    <select id='sexsel' class='form-control fl' style='width:120px;' name='ownership' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='ownership' >  
                         <option value="0">自有</option>  
                         <option value="1">老宅</option> 
                         <option value="2">买卖</option>  
@@ -55,37 +53,32 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>房屋间数:</label>
-                    <input type='text' class='form-control  ' name='housecount'   placeholder='房屋间数'/>        
+                    <input type='text' class='form-control input-sm  ' name='housecount'   placeholder='房屋间数'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>本址在册户口簿数量:</label>
-                    <input type='text' class='form-control  ' name='localbook'   placeholder='本址在册户口簿数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='localbook'   placeholder='本址在册户口簿数量'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>本址在册户籍数量:</label>
-                    <input type='text' class='form-control  ' name='localpeoplecount'  placeholder='本址在册户籍数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='localpeoplecount'  placeholder='本址在册户籍数量'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>非本址在册户口簿数量:</label>
-                    <input type='text' class='form-control  ' name='notlocalbook'   placeholder='本址在册户口簿数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='notlocalbook'   placeholder='本址在册户口簿数量'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>非本址在册户籍数量:</label>
-                    <input type='text' class='form-control  ' name='notlocalpeoplecount'   placeholder='非本址在册户籍数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount'   placeholder='非本址在册户籍数量'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>拟被安置人口:</label>
-                    <input type='text' class='form-control  ' name='people'   placeholder='拟被安置人口'/>        
+                    <input type='text' class='form-control input-sm  ' name='people'   placeholder='拟被安置人口'/>        
                 </div>
             </div>
-            <hr size='0.5' width='100%'  align='center' color='#999999;'>
-            <div class='container-fluid mb10' >
-                被腾退房屋本址在册户籍家庭人口情况:
-
-            </div>
-
-            <div class='container-fluid mb10'>	
-                <table id="table1" class="table table-striped table-bordered table-condensed ">
+            <h4><span class="label label-default">2.被腾退房屋本址在册户籍家庭人口情况：</span></h4>
+            <div class='container-fluid con-bg mb10'>	
+                <table id="table1" class="table table-striped ">
                     <thead>
                         <tr>
                             <th>户主</th>
@@ -101,68 +94,72 @@
                             <th>人口类别</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type='text' class='form-control  ' name='householder'   placeholder='户主'/>        </td>
-                            <td><input type='text' class='form-control  ' name='householdtype'   placeholder='户籍性质'/>        </td>
-                            <td><input type='text' class='form-control  ' name='name'   placeholder='姓名'/>        </td>
-                            <td><input type='text' class='form-control  ' name='vidcard'   placeholder='身份证号'/>        </td>
-                            <td><input type='text' class='form-control  ' name='vsex'   placeholder='性别'/>        </td>
-                            <td><input type='text' class='form-control  ' name='registeredrelate'   placeholder='户关'/>        </td>
-                            <td><input type='text' class='form-control  ' name='changrelate'   placeholder='产关'/>        </td>
-                            <td><input type='text' class='form-control  ' name='hasmarry'   placeholder='婚否'/>        </td>
-                            <td><input type='text' class='form-control  ' name='vtype'   placeholder='类型'/>        </td>
-                            <td><input type='text' class='form-control  ' name='vunit'   placeholder='工作单位'/>        </td>
-                            <td><input type='text' class='form-control  ' name='peopletype'   placeholder='人口类别'/>        </td>
+                    <tbody id="two-list">
+                        <tr id="two-list-1">
+                            <td><input type='text' class='form-control input-sm ' name='householder'   placeholder='户主'/>        </td>
+                            <td><input type='text' class='form-control input-sm ' name='householdtype'   placeholder='户籍性质'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='name'   placeholder='姓名'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vidcard'   placeholder='身份证号'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vsex'   placeholder='性别'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='registeredrelate'   placeholder='户关'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='changrelate'   placeholder='产关'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='hasmarry'   placeholder='婚否'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vtype'   placeholder='类型'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vunit'   placeholder='工作单位'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='peopletype'   placeholder='人口类别'/>        </td>
+                        </tr>
+                        <tr id="two-list-end">
+                            <td colspan="11" style="text-align: center">
+                                <button id="addLoalbtn" type="button" class="btn btn-info btn-sm" onclick="addlist('#two-list-1')" >添加新行</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <button id="addLoalbtn" type="button" class="btn btn-default" onclick="addLocal(this)" >添加</button>
             </div>
-            //面积相关
-            <div class='container-fluid mb10'>	
+            <h4><span class="label label-default">3.面积相关：</span></h4>
+            <div class='container-fluid con-bg mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>宅基地测绘面积:</label>
-                    <input type='text' class='form-control  ' name='zjdarea'   placeholder='宅基地测绘面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='zjdarea'   placeholder='宅基地测绘面积'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>房屋测绘面积:</label>
-                    <input type='text' class='form-control  ' name='fwarea'   placeholder='房屋测绘面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='fwarea'   placeholder='房屋测绘面积'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>首层测绘面积:</label>
-                    <input type='text' class='form-control  ' name='firstfloorarea'   placeholder='首层测绘面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='firstfloorarea'   placeholder='首层测绘面积'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二层以上面积:</label>
-                    <input type='text' class='form-control  ' name='abovetwoarea'   placeholder='二层以上面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='abovetwoarea'   placeholder='二层以上面积'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>地下室面积:</label>
-                    <input type='text' class='form-control  ' name='basement'   placeholder='地下室面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='basement'   placeholder='地下室面积'/>        
                 </div>
             </div>
-            //经营状况
-            <div class='container-fluid mb10'>	
+            <h4><span class="label label-default">4.经营状况：</span></h4>
+            <div class='container-fluid con-bg mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用房面积:</label>
-                    <input type='text' class='form-control  ' name='operatearea'   placeholder='经营用房面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='operatearea'   placeholder='经营用房面积'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>工商备案面积:</label>
-                    <input type='text' class='form-control  ' name='businessarea'   placeholder='工商备案面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='businessarea'   placeholder='工商备案面积'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用途:</label>
-                    <input type='text' class='form-control  ' name='operatecontent'   placeholder='经营用途'/>        
+                    <input type='text' class='form-control input-sm  ' name='operatecontent'   placeholder='经营用途'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>执照字号:</label>
-                    <input type='text' class='form-control  ' name='licensename'   placeholder='执照字号'/>        
+                    <input type='text' class='form-control input-sm  ' name='licensename'   placeholder='执照字号'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>与被腾退人关系:</label>
-                    <select id='sexsel' class='form-control fl' style='width:120px;' name='relate' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='relate' >  
                         <option value="0">本人</option>  
                         <option value="1">本家庭成员</option> 
                         <option value="2">租赁</option>  
@@ -171,36 +168,36 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>执照标明经营场所:</label>
-                    <input type='text' class='form-control  ' name='licenselocation'   placeholder='执照标明经营场所'/>        
+                    <input type='text' class='form-control input-sm  ' name='licenselocation'   placeholder='执照标明经营场所'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>税务登记证:</label>
-                    <select id='sexsel' class='form-control fl' style='width:120px;' name='taxlicense' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxlicense' >  
                         <option value="0">有</option>  
                         <option value="1">无</option> 
                     </select>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>租赁协议:</label>
-                    <select id='sexsel' class='form-control fl' style='width:120px;' name='leaselicense' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='leaselicense' >  
                         <option value="0">有</option>  
                         <option value="1">无</option> 
                     </select>       
                 </div>    
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>完税证明:</label>
-                    <select id='sexsel' class='form-control fl' style='width:120px;' name='taxprove' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxprove' >  
                         <option value="0">有</option>  
                         <option value="1">无</option> 
                     </select>       
                 </div> 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>执照编号:</label>
-                    <input type='text' class='form-control  ' name='license'   placeholder='执照编号'/>        
+                    <input type='text' class='form-control input-sm  ' name='license'   placeholder='执照编号'/>        
                 </div>
             </div>
-            //其他，残疾，大病，低保等
-
+            <h4><span class="label label-default">4.其他，残疾，大病，低保等：</span></h4>
+            
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="submit" class="btn btn-primary btn-save"   >保存</button>
@@ -232,4 +229,9 @@
         })
     }
 
+function addlist(a){
+    var h=$(a+"").html();
+    $(a+"").after("<tr>"+h+"</tr>"+"");
+    
+}
 </script>
