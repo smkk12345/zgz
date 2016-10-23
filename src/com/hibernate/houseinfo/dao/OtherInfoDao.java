@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.OtherInfo;
@@ -32,13 +33,19 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 		return list;
 	}
 	
-	public boolean batchSave(List<OtherInfo> list){
+	public boolean batchSave(List<OtherInfo> list,String
+			houseBasicId){
 		try {
 //			Session session =  getSession();
 //			Transaction tx = session.beginTransaction();
 			for(int i=0;i<list.size();i++){
 				OtherInfo otherInfoser = list.get(i);
-			    save(otherInfoser);
+				otherInfoser.setHousebasicid(houseBasicId);
+				if(StringUtils.isEmpty(otherInfoser.getId())){
+					save(otherInfoser);
+				}else{
+					update(otherInfoser);
+				}
 //			    if(i%25==0){//以每25个数据作为一个处理单元
 //			        session.flush();
 //			        session.clear();

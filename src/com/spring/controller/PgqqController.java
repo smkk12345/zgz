@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+import org.apache.xalan.lib.Redirect;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +38,7 @@ import com.hibernate.baseSettingInfo.domain.AlarmBean;
 import com.hibernate.baseSettingInfo.domain.BaseSettingBean;
 import com.hibernate.baseSettingInfo.domain.GrainTypeBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
@@ -128,56 +131,14 @@ public class PgqqController {
 			housebasic.setCreateTime(new Date());
 			housebasic.setUpdateTime(new Date());
 			
-			String[] householders = request.getParameterValues("householder");
-			String[] householdtype = request.getParameterValues("householdtype");
-			String[] names = request.getParameterValues("name");
-			String[] idcards = request.getParameterValues("vidcard");
-			String[] sexs = request.getParameterValues("vsex");
-			String[] registeredrelates = request.getParameterValues("registeredrelate");
-			String[] changrelate = request.getParameterValues("changrelate");
-			String[] hasmarry = request.getParameterValues("hasmarry");
-			String[] vunit = request.getParameterValues("vunit");
-			String[] peopletype = request.getParameterValues("peopletype");
-			String[] vtype = request.getParameterValues("vtype");
-			String[] vid =  request.getParameterValues("vid");
+			initVacatePeople(request, housebasic);
 			
-			List<VacatePeople> vList = new ArrayList<VacatePeople>();
-			List<VacatePeople> nList = new ArrayList<VacatePeople>();
-			for (int i = 0; i < names.length; i++) {
-				String name = names[i];
-				if(StringUtils.isEmpty(name)){
-					if(!StringUtils.isEmpty(vid[i])){
-						//删除
-						ServiceManager.getHouseBasicServce().delVacatePeopleById(vid[i]);
-					}
-					continue;
-				}
-				VacatePeople v = new VacatePeople();
-				v.setName(names[i]);
-				v.setHousebasicid("");
-				v.setChangrelate(changrelate[i]);
-				v.setHouseholder(householders[i]);
-				v.setHouseholdtype(householdtype[i]);
-				v.setIdcard(idcards[i]);
-				v.setSex(sexs[i]);
-				v.setRegisteredrelate(registeredrelates[i]);
-				v.setHasmarry(hasmarry[i]);
-				v.setUnit(vunit[i]);
-				v.setPeopletype(peopletype[i]);
-				String vtypee = vtype[i];
-				v.setVtype(vtypee);
-				if(vtypee.equals("0")){
-					vList.add(v);
-				}else{
-					nList.add(v);
-				}
-			}
-			
-			housebasic.setVacatelist(vList);
-			housebasic.setList(nList);
+			initOtherInfoList(housebasic,request);
 			
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -185,15 +146,124 @@ public class PgqqController {
 					WebConstConfig.getBase_Template_Default_Path());
 
 			model.addAttribute("CURENT_TAB", "PGQQ");
-			model.addAttribute("CURENT_TAB_2", "fhfa");
-			model.addAttribute("CURENT_TAB_3", "fhfa");
+			model.addAttribute("CURENT_TAB_2", "rhjc");
+			model.addAttribute("CURENT_TAB_3", "rhjc");
 
-			return new ModelAndView(PageConst.PGQQ_fhfa, model);
+			return new ModelAndView(PageConst.PGQQ_rhjc, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
 			return null;
 		}
+	}
+	//被腾退人信息
+	private void initVacatePeople(HttpServletRequest request,
+			HouseBasic housebasic) {
+		String[] householders = request.getParameterValues("householder");
+		String[] householdtype = request.getParameterValues("householdtype");
+		String[] names = request.getParameterValues("name");
+		String[] idcards = request.getParameterValues("vidcard");
+		String[] sexs = request.getParameterValues("vsex");
+		String[] registeredrelates = request.getParameterValues("registeredrelate");
+		String[] changrelate = request.getParameterValues("changrelate");
+		String[] hasmarry = request.getParameterValues("hasmarry");
+		String[] vunit = request.getParameterValues("vunit");
+		String[] peopletype = request.getParameterValues("peopletype");
+		String[] vtype = request.getParameterValues("vtype");
+		String[] vid =  request.getParameterValues("vid");
+		
+		List<VacatePeople> vList = new ArrayList<VacatePeople>();
+		List<VacatePeople> nList = new ArrayList<VacatePeople>();
+		for (int i = 0; i < names.length; i++) {
+			String name = names[i];
+			if(StringUtils.isEmpty(name)){
+				
+				if(null != vid &&!StringUtils.isEmpty(vid[i])){
+					//删除
+					ServiceManager.getHouseBasicServce().delVacatePeopleById(vid[i]);
+				}
+				continue;
+			}
+			VacatePeople v = new VacatePeople();
+			if(vid!=null&&vid.length>0){
+				if(!StringUtils.isEmpty(vid[i])){
+					v.setId(vid[i]);
+				}
+			}
+			v.setName(names[i]);
+			v.setHousebasicid("");
+			v.setChangrelate(changrelate[i]);
+			v.setHouseholder(householders[i]);
+			v.setHouseholdtype(householdtype[i]);
+			v.setIdcard(idcards[i]);
+			v.setSex(sexs[i]);
+			v.setRegisteredrelate(registeredrelates[i]);
+			v.setHasmarry(hasmarry[i]);
+			v.setUnit(vunit[i]);
+			v.setPeopletype(peopletype[i]);
+			String vtypee = vtype[i];
+			v.setVtype(vtypee);
+			if(vtypee.equals("0")){
+				vList.add(v);
+			}else{
+				nList.add(v);
+			}
+		}
+		housebasic.setVacatelist(vList);
+		housebasic.setList(nList);
+	}
+	//其他信息   如低保 残疾 大病等
+	private boolean initOtherInfoList(HouseBasic houseBasic,HttpServletRequest request){
+		try {
+			String[] name = request.getParameterValues("oname");
+			String[] otype = request.getParameterValues("otype");
+			String[] peopleid = request.getParameterValues("peopleid");
+			String[] certificatenum = request.getParameterValues("certificatenum");
+			String[] validatedate = request.getParameterValues("validatedate");
+			String[] illnessname = request.getParameterValues("illnessname");
+			String[] illnessprove = request.getParameterValues("illnessprove");
+			String[] oid = request.getParameterValues("oid");
+			if(null == name || name.length==0){
+				return true;
+			}
+			//大病
+			List<OtherInfo> illList = new ArrayList<OtherInfo>();
+			//低保
+			List<OtherInfo> basicLivingList = new ArrayList<OtherInfo>();
+			//残疾
+			List<OtherInfo> deformityList = new ArrayList<OtherInfo>();
+			//0 低保  1 残疾  2 大兵
+			for (int i = 0; i < name.length; i++) {
+				OtherInfo otherInfo = new OtherInfo();
+				
+				if(oid!=null&&oid.length>0){
+					if(!StringUtils.isEmpty(oid[i])){
+						otherInfo.setId(oid[i]);
+					}
+				}
+				otherInfo.setName(name[i]);
+				otherInfo.setOtype(otype[i]);
+				otherInfo.setPeopleid(peopleid[i]);
+				otherInfo.setCertificatenum(certificatenum[i]);
+				otherInfo.setValidatedate(validatedate[i]);
+				otherInfo.setIllnessname(illnessname[i]);
+				otherInfo.setIllnessprove(illnessprove[i]);
+				
+				if(otherInfo.getOtype().equals("0")){
+					basicLivingList.add(otherInfo);
+				}else if(otherInfo.getOtype().equals("1")){
+					deformityList.add(otherInfo);
+				}else{
+					illList.add(otherInfo);
+				}
+			}
+			houseBasic.setIllList(illList);
+			houseBasic.setBasicLivingList(basicLivingList);
+			houseBasic.setDeformityList(deformityList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 	
 	@RequestMapping({ "/pgqq/del.action" })

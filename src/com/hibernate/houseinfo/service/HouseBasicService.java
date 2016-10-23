@@ -3,6 +3,8 @@ package com.hibernate.houseinfo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.hibernate.houseinfo.dao.HouseBasicDao;
 import com.hibernate.houseinfo.dao.OtherInfoDao;
 import com.hibernate.houseinfo.dao.VacatePeopleDao;
@@ -35,11 +37,16 @@ public class HouseBasicService {
 		//残疾
 //		List<OtherInfo> deformityList = new ArrayList<OtherInfo>();
 	public boolean save(HouseBasic houseBasic){
-		HouseBasic t = houseBasicDao.save(houseBasic);
+		HouseBasic t = houseBasic;
+		if(StringUtils.isBlank(t.getId())){
+			t = houseBasicDao.save(houseBasic);
+		}else{
+			houseBasicDao.update(houseBasic);
+		}
 		try {
-			boolean result2 = otherInfoDao.batchSave(houseBasic.getIllList());
-			boolean result3 = otherInfoDao.batchSave(houseBasic.getBasicLivingList());
-			boolean result4 = otherInfoDao.batchSave(houseBasic.getDeformityList());
+			boolean result2 = otherInfoDao.batchSave(houseBasic.getIllList(),houseBasic.getId());
+			boolean result3 = otherInfoDao.batchSave(houseBasic.getBasicLivingList(),houseBasic.getId());
+			boolean result4 = otherInfoDao.batchSave(houseBasic.getDeformityList(),houseBasic.getId());
 			boolean result5 = vacatePeopleDao.batchSave(houseBasic.getList(),houseBasic.getId());
 			boolean result6 = vacatePeopleDao.batchSave(houseBasic.getVacatelist(),houseBasic.getId());
 			return t!= null &&result2&&result3&&result4&&result5&&result6;

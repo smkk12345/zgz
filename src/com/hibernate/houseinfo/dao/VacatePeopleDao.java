@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
 import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
@@ -38,7 +39,11 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 			for(int i=0;i<list.size();i++){
 				VacatePeople vacatePeople = list.get(i);
 				vacatePeople.setHousebasicid(id);
-			    save(vacatePeople);
+				if(StringUtils.isEmpty(vacatePeople.getId())){
+					save(vacatePeople);
+				}else{
+					update(vacatePeople);
+				}
 //			    if(i%25==0){//以每25个数据作为一个处理单元
 //			        session.flush();
 //			        session.clear();
