@@ -8,6 +8,24 @@
         <div class='ml15' id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据：</span></h4>
             <div class='container-fluid con-bg mb10'>
+            	<div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>房屋坐落:</label>
+                    <input type='text' class='form-control input-sm  ' name='location'/>    
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>联系固话:</label>
+
+                    <input type='text' class='form-control input-sm  ' name='telephone' />       
+                </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>手机:</label>
+                    <input type='text' class='form-control input-sm fl dmDate' name='mobile'/>        
+                </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>被腾退人姓名:</label>
+                    <input type='text' class='form-control input-sm  ' name='names' />    
+                </div>
+            
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>协议编号:</label>
                     <input type='text' class='form-control input-sm  ' name='agreementnum'   />    
