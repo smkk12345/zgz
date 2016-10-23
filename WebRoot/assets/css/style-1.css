@@ -4,7 +4,7 @@
 .login { background:url(../img/login-bg1.jpg) no-repeat center center fixed;}
 .login .container-full .login-box .login-box-bg { background: rgba(34, 158, 245, 0.15);border-radius: 0px;}
 .login .container-full .login-box .login-box-bg .login-box-con .login-box-form .btn {color: #fff;background-color: rgb(245,162,0);border-color: rgb(245,162,0);}
-.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .stat a {color:#ef5285}
+.login .container-full .login-box .login-box-bg .login-box-con .login-box-form .stat a {color: #054C99}
 .login .container-full .login-box .login-box-bg .login-box-con .login-box-form .copy a {color: rgb(255, 255, 255);text-shadow: black 1px 1px 1px;}
 
 /*Top styles*/
@@ -32,9 +32,9 @@ button.btn.btn-toolbar.width-100-.bold.YL-ModalClick {background-color: rgb(245,
 .top .navbar .navbar-inner .container .nav li a {color:white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
 .top .navbar .navbar-inner .container .nav li a.active {color:rgb(0, 93, 172);}
 .top .navbar .navbar-inner .container .nav li a:hover {color:rgb(0, 93, 172); border: slategrey 1px solid;  background-color:white;}
-.main .left ul.menu-group li.active a {color:#ef5285;text-shadow: 0px 1px 2px white;}
+.main .left ul.menu-group li.active a {color:#054C99;text-shadow: 0px 1px 2px white;}
 .main .left ul.menu-group li a {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
-.main .left ul.menu-group li a:hover {color:#ef5285;text-shadow: 0px 1px 2px white;}
+.main .left ul.menu-group li a:hover {color:#054C99;text-shadow: 0px 1px 2px white;}
 .foot .fl {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)}
 .foot .fr {color:white;text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5)}
 
