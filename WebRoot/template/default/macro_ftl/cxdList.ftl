@@ -13,7 +13,7 @@
     <td style="text-align: left">    
         <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">编辑</button>
         <#if ROW.id!="1" && ROW.id!=user.id>
-        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/userDel.action" pname="${ROW.id}">删除</button>
+        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}">删除</button>
         </#if>
     </td>
     </#if>

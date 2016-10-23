@@ -88,7 +88,6 @@
                 <table id="table1" class="table table-striped table-bordered table-condensed ">
                     <thead>
                         <tr>
-                            <th>序号</th>
                             <th>户主</th>
                             <th>户籍性质</th>
                             <th>姓名</th>
@@ -104,18 +103,17 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='序号'/></td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='户主'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='户籍性质'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='姓名'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='身份证号'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='性别'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='户关'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='产关'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='婚否'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='婚否'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='工作单位'/>        </td>
-                            <td><input type='text' class='form-control  ' name='people'   placeholder='人口类别'/>        </td>
+                            <td><input type='text' class='form-control  ' name='householder'   placeholder='户主'/>        </td>
+                            <td><input type='text' class='form-control  ' name='householdtype'   placeholder='户籍性质'/>        </td>
+                            <td><input type='text' class='form-control  ' name='name'   placeholder='姓名'/>        </td>
+                            <td><input type='text' class='form-control  ' name='vidcard'   placeholder='身份证号'/>        </td>
+                            <td><input type='text' class='form-control  ' name='vsex'   placeholder='性别'/>        </td>
+                            <td><input type='text' class='form-control  ' name='registeredrelate'   placeholder='户关'/>        </td>
+                            <td><input type='text' class='form-control  ' name='changrelate'   placeholder='产关'/>        </td>
+                            <td><input type='text' class='form-control  ' name='hasmarry'   placeholder='婚否'/>        </td>
+                            <td><input type='text' class='form-control  ' name='vtype'   placeholder='类型'/>        </td>
+                            <td><input type='text' class='form-control  ' name='vunit'   placeholder='工作单位'/>        </td>
+                            <td><input type='text' class='form-control  ' name='peopletype'   placeholder='人口类别'/>        </td>
                         </tr>
                     </tbody>
                 </table>

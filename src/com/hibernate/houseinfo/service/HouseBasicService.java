@@ -73,9 +73,19 @@ public class HouseBasicService {
 		return houseBasicDao.findList(section,currentpage,pagecount);
 	}
 	
-//	public boolean delVacatePeopleById(String id){
-//		
-//	}
+	public boolean delVacatePeopleById(String id){
+		vacatePeopleDao.delete(id);
+		return true;
+	}
 	
+	public boolean delHouseBasicById(String id){
+		//删除基本信息
+		houseBasicDao.delete(id);
+		//删除被腾退人信息
+		vacatePeopleDao.delByHouseBasicId(id);
+		//删除其他信息  如低保，残疾人，登封
+		otherInfoDao.delByHouseBasicId(id);
+		return true;
+	}
 
 }

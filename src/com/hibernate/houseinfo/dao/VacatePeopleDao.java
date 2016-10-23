@@ -51,4 +51,19 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 		}
 		return true;
 	}
+	
+	
+	public boolean delByHouseBasicId(String housebasicid){
+		Session s = null;
+		try{
+			s = getSession();
+			String sql = "DELETE FROM Vacatepeople WHERE housebasicid = '"+housebasicid+"'";
+			s.createQuery(sql).executeUpdate(); 
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return false;
+	}
 }

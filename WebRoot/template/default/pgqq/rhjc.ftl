@@ -11,7 +11,7 @@
         <thead>
             <tr>
                 <th fontsize="26" colspan="6" class="danger textalign-vc" style="line-height: 29px">
-                    <i class="bold">入户基础信息管理列表22</i> 
+                    <i class="bold">入户基础信息管理列表11231</i> 
                     <button type="button" class="btn btn-sm btn-default pull-right bold" onclick='yu_print()'>打 印</button>
                     <button type="button" class="btn btn-sm btn-default pull-right bold" onclick='yu_print1()'>导Excel</button>
                 </th> 
@@ -81,4 +81,34 @@
     	alert(1231);
         toExcel("yu-print-show", null);
     }
+    
+    function delBtnClick(btn){
+	    if (yu_confirm("确认删除该用户组？")) {
+		    var curDataId = $(btn).attr("pname");
+		    var p = $(btn).attr("data-url");
+		    var par = $(btn).parent().parent();
+		    //var par = $("#"+pname);
+		    $.ajax({                         
+			    cache:true,
+			    type : "POST",
+			    url : p,
+			    dataType : "json",
+			    data : {housebasicid:curDataId},
+			    error: function (XMLHttpRequest, textStatus, errorThrown) {
+			    	alert("出错");
+			    },
+			    success : function(response) {
+				    if(response.success==true){
+					    par.remove();
+					    alert("删除数据成功");
+			    	}
+				    else{
+				    	alert("删除数据出错");
+				    }
+			    }
+		    })
+	    }
+    }
+    
+    
 </script>
