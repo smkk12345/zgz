@@ -21,5 +21,19 @@ public class AgreenmentService {
 		return agreenmentDao.save(agreenment);
 	}
 	
+	/**
+	 * 编辑  
+	 */
+	public void update(Agreement agreenment){
+		agreenmentDao.update(agreenment);
+	}
+	
+	/**
+	 * 删除
+	 */
+	public boolean delete(String id){
+		agreenmentDao.delete(id);
+		return true;
+	}
 	
 }
