@@ -11,7 +11,7 @@
         <thead>
             <tr>
                 <th fontsize="26" colspan="6" class="danger textalign-vc" style="line-height: 29px">
-                    <i class="bold">入户基础信息管理列表</i> 
+                    <i class="bold">入户基础信息管理列表1</i> 
                     <button type="button" class="btn btn-sm btn-default pull-right bold" onclick='yu_print()'>打 印</button>
                     <button type="button" class="btn btn-sm btn-default pull-right bold" onclick='yu_print1()'>导Excel</button>
                 </th> 
