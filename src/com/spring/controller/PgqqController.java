@@ -146,7 +146,7 @@ public class PgqqController {
 	}
 	
 	@RequestMapping({ "/pgqq/savehousebasic.action" })
-	public ModelAndView savehousebasic(HttpServletRequest request,
+	public void savehousebasic(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,HouseBasic housebasic) {
 		try {
 			HttpSession s = request.getSession();
@@ -162,23 +162,16 @@ public class PgqqController {
 			
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
-			model.addAttribute("list", list);
-			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
-			model.addAttribute("BASE_ASSETS_PATH",
-					WebConstConfig.getBase_Assets_Path());
-			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
-					WebConstConfig.getBase_Template_Default_Path());
+			try {
+				response.sendRedirect(WebConstConfig.BASE_PATH+"/index.action");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-			model.addAttribute("CURENT_TAB", "PGQQ");
-			model.addAttribute("CURENT_TAB_2", "rhjc");
-			model.addAttribute("CURENT_TAB_3", "rhjc");
-
-			return new ModelAndView(PageConst.PGQQ_rhjc, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
-			return null;
+			return ;
 		}
 	}
 	//被腾退人信息
@@ -301,7 +294,7 @@ public class PgqqController {
 	}
 	
 	@RequestMapping({ "/pgqq/del.action" })
-	public ModelAndView deletehousebasic(HttpServletRequest request,
+	public ModelMap deletehousebasic(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		
 		String id = request.getParameter("housebasicid");
@@ -319,9 +312,9 @@ public class PgqqController {
 		model.addAttribute("CURENT_TAB", "PGQQ");
 		model.addAttribute("CURENT_TAB_2", "rhjc");
 		model.addAttribute("CURENT_TAB_3", "rhjc");
+		model.addAttribute("success", true);
 
-
-		return new ModelAndView(PageConst.PGQQ_rhjc, model);
+		return model;
 	}
 	
 	

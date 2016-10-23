@@ -80,7 +80,7 @@
     }
     
     function delBtnClick(btn){
-	    if (yu_confirm("确认删除该用户组？")) {
+	    if (yu_confirm("确认删除该数据？")) {
 		    var curDataId = $(btn).attr("pname");
 		    var p = $(btn).attr("data-url");
 		    var par = $(btn).parent().parent();
@@ -92,16 +92,10 @@
 			    dataType : "json",
 			    data : {housebasicid:curDataId},
 			    error: function (XMLHttpRequest, textStatus, errorThrown) {
-			    	alert("出错");
+			    	location.href="${BASE_PATH}"+"/index.action";
 			    },
 			    success : function(response) {
-				    if(response.success==true){
-					    par.remove();
-					    alert("删除数据成功");
-			    	}
-				    else{
-				    	alert("删除数据出错");
-				    }
+				  	location.href="${BASE_PATH}"+"/index.action";
 			    }
 		    })
 	    }
