@@ -36,6 +36,7 @@ import com.hibernate.baseSettingInfo.domain.AlarmBean;
 import com.hibernate.baseSettingInfo.domain.BaseSettingBean;
 import com.hibernate.baseSettingInfo.domain.GrainTypeBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.houseinfo.domain.VacatePeople;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
@@ -126,6 +127,38 @@ public class PgqqController {
 			//获取标段信息
 			housebasic.setCreateTime(new Date());
 			housebasic.setUpdateTime(new Date());
+			
+			String[] householders = request.getParameterValues("householder");
+			String[] householdtype = request.getParameterValues("householdtype");
+			String[] names = request.getParameterValues("name");
+			String[] idcards = request.getParameterValues("vidcard");
+			String[] sexs = request.getParameterValues("vsex");
+			String[] registeredrelates = request.getParameterValues("registeredrelate");
+			String[] changrelate = request.getParameterValues("changrelate");
+			String[] hasmarry = request.getParameterValues("hasmarry");
+			String[] vunit = request.getParameterValues("vunit");
+			String[] peopletype = request.getParameterValues("peopletype");
+			
+			List<VacatePeople> vList = new ArrayList<VacatePeople>();
+			for (int i = 0; i < names.length; i++) {
+				String name = names[i];
+				if(StringUtils.isEmpty(name)){
+					continue;
+				}
+				VacatePeople v = new VacatePeople();
+				v.setName(names[i]);
+				v.setHousebasicid("");
+				v.setChangrelate(changrelate[i]);
+				v.setHouseholder(householders[i]);
+				v.setHouseholdtype(householdtype[i]);
+				v.setIdcard(idcards[i]);
+				v.setSex(sexs[i]);
+				v.setRegisteredrelate(registeredrelates[i]);
+				v.setHasmarry(hasmarry[i]);
+				v.setUnit(vunit[i]);
+				v.setPeopletype(peopletype[i]);
+				vList.add(v);
+			}
 			
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			
