@@ -7,6 +7,7 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
             <#assign recordCount=55>
             <#assign pageNo=2>
+            <#assign pageSize=10>
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
@@ -36,12 +37,12 @@
                 <th>手机</th>
                 <th>操作</th>
             </tr>
-            <@HousebasicList list pageNo 10/>
+            <@HousebasicList list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=10 recordCount=recordCount toURL="/pgqq/rhjc.action" OtherParameter=""/>
+            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgqq/rhjc.action" OtherParameter=""/>
             </#if>
         </div>
     </ul>
