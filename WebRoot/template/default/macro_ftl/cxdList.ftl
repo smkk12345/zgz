@@ -15,9 +15,9 @@
     <td >${ROW.fwarea?default("")}</td>
     <td >${ROW.mobile?default("")}</td>
     <td>    
-         <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"  data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"  data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
-        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"  onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
+         <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
+        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle" title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
     </td>
 </tr>
 </#list>
