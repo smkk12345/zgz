@@ -48,10 +48,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		try{
 			s = getSession();
 			Criteria c = s.createCriteria(HouseBasic.class);
-			if(pageSize>0){
-				c.setFirstResult((pageSize)*(currentPage-1));
-				c.setMaxResults(pageSize);
-			}
+			c.setFirstResult(pageSize);
+			c.setMaxResults(currentPage);
 			list = c.add(Restrictions.in("section", section.split(","))).list();
 		}catch(Exception e){
 			e.printStackTrace();

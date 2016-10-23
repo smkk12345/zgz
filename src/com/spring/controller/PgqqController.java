@@ -56,24 +56,20 @@ public class PgqqController {
 	public ModelAndView indexPage(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
+			int intPageSize = 2;
 			
-			String pageSize = request.getParameter("pageSize");
-			if(StringUtils.isEmpty(pageSize)){
-				pageSize = "10";
-			}
 			String pageNo = request.getParameter("pageNo");
 			if(StringUtils.isEmpty(pageNo)){
 				pageNo = "1";
 			}
-			int intSize = Integer.parseInt(pageSize);
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),(intPageNum-1)*intSize,intSize);
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
 			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
 			
-			model.addAttribute("pageSize", pageSize);
-			model.addAttribute("pageNo", pageNo);
-			model.addAttribute("recordCount", count+"");
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
 			
 			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);

@@ -4,7 +4,7 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
-    <td >${ROW_index+1+pageNo*pageSize}</td>
+    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
     <td >${role.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>

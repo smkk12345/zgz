@@ -5,9 +5,9 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-            <#assign recordCount=55>
-            <#assign pageNo=2>
-            <#assign pageSize=10>
+            <#assign recordCount1=55>
+            <#assign pageNo1=2>
+            <#assign pageSize1=10>
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">

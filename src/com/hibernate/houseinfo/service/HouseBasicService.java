@@ -118,7 +118,7 @@ public class HouseBasicService {
 	}
 	public Integer getCount(String section) {
 		// TODO Auto-generated method stub
-		return houseBasicDao.getCount(section);;
+		return houseBasicDao.getCount(section);
 	}
 
 }
