@@ -10,8 +10,8 @@
         <table id='yu-print-show' class="table table-condensed table-bordered mt10">
         <thead>
             <tr>
-                <th fontsize="26" colspan="6" class="danger textalign-vc" style="line-height: 29px">
-                    <i class="bold">入户基础信息管理列表11231</i> 
+                <th fontsize="26" colspan="6" class="primary textalign-vc" style="line-height: 29px">
+                    <i class="bold">入户基础信息管理列表</i> 
                 </th> 
             </tr>
             <tr>

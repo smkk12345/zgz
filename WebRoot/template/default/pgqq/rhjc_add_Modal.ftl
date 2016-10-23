@@ -5,25 +5,25 @@
 <div class="modal-body rhjc-add-con">
     <form id='rhjcAddForm' modelAttribute = "HouseBasic" action="${BASE_PATH}/pgqq/savehousebasic.action"
           accept-charset="UTF-8" method="post">
-        <div class='ml15' id='aoJianiIndex+'>
+        <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text' class='form-control input-sm  ' name='location'   placeholder='房屋坐落'/>    
+                    <input type='text' class='form-control input-sm  ' name='location'/>    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>联系固话:</label>
 
-                    <input type='text' class='form-control input-sm  ' name='telephone'   placeholder='联系固话'/>       
+                    <input type='text' class='form-control input-sm  ' name='telephone' />       
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control input-sm fl dmDate' name='mobile'  placeholder='手机'/>        
+                    <input type='text' class='form-control input-sm fl dmDate' name='mobile'/>        
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' class='form-control input-sm  ' name='names'   placeholder='被腾退人姓名'/>    
+                    <input type='text' class='form-control input-sm  ' name='names' />    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>性别:</label>
@@ -34,11 +34,11 @@
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>年龄:</label>
-                    <input type='text' class='form-control input-sm fl ' name='age'   placeholder='年龄'/>        
+                    <input type='text' class='form-control input-sm fl ' name='age' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>备用联系电话:</label>
-                    <input type='text' class='form-control input-sm  ' name='remobile'   placeholder='备用联系电话'/>        
+                    <input type='text' class='form-control input-sm  ' name='remobile' />        
                 </div>
 
                 <div class=' aoJianGroup fl'>
@@ -53,64 +53,98 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>房屋间数:</label>
-                    <input type='text' class='form-control input-sm  ' name='housecount'   placeholder='房屋间数'/>        
+                    <input type='text' class='form-control input-sm  ' name='housecount' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>本址在册户口簿数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='localbook'   placeholder='本址在册户口簿数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='localbook'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='localpeoplecount'  placeholder='本址在册户籍数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='localpeoplecount'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>非本址在册户口簿数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='notlocalbook'   placeholder='本址在册户口簿数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='notlocalbook'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>非本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount'   placeholder='非本址在册户籍数量'/>        
+                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>拟被安置人口:</label>
-                    <input type='text' class='form-control input-sm  ' name='people'   placeholder='拟被安置人口'/>        
+                    <input type='text' class='form-control input-sm  ' name='people' />        
                 </div>
             </div>
-            <h4><span class="label label-default">2.被腾退房屋本址在册户籍家庭人口情况：</span></h4>
+            <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
-                <table id="table1" class="table table-striped ">
+                <table id="table1" class="table">
                     <thead>
                         <tr>
-                            <th>户主</th>
-                            <th>户籍性质</th>
-                            <th>姓名</th>
-                            <th>身份证号</th>
-                            <th>性别</th>
-                            <th>户关</th>
-                            <th>产关</th>
-                            <th>婚否</th>
-                            <th>类型</th>
-                            <th>工作单位</th>
-                            <th>人口类别</th>
+                            <th></th>
+                            <th class="center">户主</th>
+                            <th class="center">户籍性质</th>
+                            <th class="center">姓名</th>
+                            <th class="center">身份证号</th>
+                            <th class="center">性别</th>
+                            <th class="center">户关</th>
+                            <th class="center">产关</th>
+                            <th class="center">婚否</th>
+                            <th class="center">类型</th>
+                            <th class="center">工作单位</th>
+                            <th class="center">人口类别</th>
+                            <th class="center"></th>
                         </tr>
                     </thead>
                     <tbody id="two-list">
-                        <tr id="two-list-1">
-                            <td><input type='text' class='form-control input-sm ' name='householder'   placeholder='户主'/>        </td>
-                            <td><input type='text' class='form-control input-sm ' name='householdtype'   placeholder='户籍性质'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='name'   placeholder='姓名'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='vidcard'   placeholder='身份证号'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='vsex'   placeholder='性别'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='registeredrelate'   placeholder='户关'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='changrelate'   placeholder='产关'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='hasmarry'   placeholder='婚否'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='vtype'   placeholder='类型'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='vunit'   placeholder='工作单位'/>        </td>
-                            <td><input type='text' class='form-control input-sm  ' name='peopletype'   placeholder='人口类别'/>        </td>
+                        <tr>
+                            <td colspan="12" style="text-align: center">本址在册户籍家庭人口情况</td>
                         </tr>
-                        <tr id="two-list-end">
-                            <td colspan="11" style="text-align: center">
-                                <button id="addLoalbtn" type="button" class="btn btn-info btn-sm" onclick="addlist('#two-list-1')" >添加新行</button>
+                        <tr class="add-list-1">
+                            <td><input type="hidden" class='form-control input-sm ' name='vtype' value="0" style="width: 0px;"/>        </td>
+                            <td><input type='text' class='form-control input-sm ' name='householder'/>        </td>
+                            <td><input type='text' class='form-control input-sm ' name='householdtype'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='name' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vidcard'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vsex'  />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='registeredrelate' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='changrelate' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='hasmarry'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vtype' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vunit'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='peopletype' />        </td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-1');">删除</button>
+                            </td>
+                        </tr>
+                        <tr id="two-list-1-end">
+                            <td colspan="12" style="text-align: center">
+                                <button  type="button" class="btn btn-info btn-sm" onclick="addlist('#two-list-1-end', 'add-list-1')" >添加新行</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="12" style="text-align: center">非本址户籍家庭人口情况</td>
+                        </tr>
+                        <tr class="add-list-2">
+                            <td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
+                            <td><input type='text' class='form-control input-sm ' name='householder'/>        </td>
+                            <td><input type='text' class='form-control input-sm ' name='householdtype' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='name' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vidcard'  />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vsex'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='registeredrelate'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='changrelate'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='hasmarry'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vtype' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='peopletype'/>        </td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
+                            </td>
+                        </tr>
+                        <tr id="two-list-2-end">
+                            <td colspan="12" style="text-align: center">
+                                <button  type="button" class="btn btn-info btn-sm" onclick="addlist('#two-list-2-end', 'add-list-2')" >添加新行</button>
                             </td>
                         </tr>
                     </tbody>
@@ -120,42 +154,42 @@
             <div class='container-fluid con-bg mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>宅基地测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='zjdarea'   placeholder='宅基地测绘面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='zjdarea'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>房屋测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='fwarea'   placeholder='房屋测绘面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='fwarea' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>首层测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='firstfloorarea'   placeholder='首层测绘面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='firstfloorarea'/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二层以上面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='abovetwoarea'   placeholder='二层以上面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>地下室面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='basement'   placeholder='地下室面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='basement' />        
                 </div>
             </div>
             <h4><span class="label label-default">4.经营状况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用房面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='operatearea'   placeholder='经营用房面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='operatearea' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>工商备案面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='businessarea'   placeholder='工商备案面积'/>        
+                    <input type='text' class='form-control input-sm  ' name='businessarea' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用途:</label>
-                    <input type='text' class='form-control input-sm  ' name='operatecontent'   placeholder='经营用途'/>        
+                    <input type='text' class='form-control input-sm  ' name='operatecontent' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>执照字号:</label>
-                    <input type='text' class='form-control input-sm  ' name='licensename'   placeholder='执照字号'/>        
+                    <input type='text' class='form-control input-sm  ' name='licensename'  />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>与被腾退人关系:</label>
@@ -168,7 +202,7 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>执照标明经营场所:</label>
-                    <input type='text' class='form-control input-sm  ' name='licenselocation'   placeholder='执照标明经营场所'/>        
+                    <input type='text' class='form-control input-sm  ' name='licenselocation' />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>税务登记证:</label>
@@ -197,7 +231,52 @@
                 </div>
             </div>
             <h4><span class="label label-default">4.其他，残疾，大病，低保等：</span></h4>
-            
+            <div class='container-fluid con-bg mb10'>	
+                <table id="table1" class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">类型</th>
+                            <th class="center">姓名</th>
+                            <th class="center">户籍序号</th>
+                            <th class="center">低保/残疾证号</th>
+                            <th class="center">大病名称</th>
+                            <th class="center">低保有效期</th>
+                            <th class="center">大病证明材料</th>
+                            <th class="center"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="four-list">
+                        <tr class="add-list-3">
+                            <td>
+                                <select name='otype' class="form-control input-sm" >
+                                    <option value="">选择类型</option>
+                                    <option value="0">低保</option>
+                                    <option value="1">残疾</option>
+                                    <option value="2">大病</option>
+                                </select>
+                            </td>
+                            <td><input type='text' class='form-control input-sm ' name='name'  />        </td>
+                            <td><input type='text' class='form-control input-sm ' name='peopleid'  />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='otypenum' />  </td>
+                            <td><input type='text' class='form-control input-sm  ' name='illnessname' />        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='validatedate'/>        </td>
+                            <td><input type='text' class='form-control input-sm  ' name='illnessprove'/>        </td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-3');">删除</button>
+                            </td>
+                        </tr>
+                        <tr id="four-list-end">
+                            <td colspan="7" style="text-align: center">
+                                <button  type="button" class="btn btn-info btn-sm" onclick="addlist('#four-list-end', 'add-list-3')" >添加新行</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4><span class="label label-default">5.备注：</span></h4>
+            <div class='container-fluid con-bg mb10'>
+                <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)"></textarea>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="submit" class="btn btn-primary btn-save"   >保存</button>
@@ -229,9 +308,20 @@
         })
     }
 
-function addlist(a){
-    var h=$(a+"").html();
-    $(a+"").after("<tr>"+h+"</tr>"+"");
-    
-}
+    function addlist(a, c) {
+        var b = $(a + "").prev();
+        var h = b.html();
+        b.after("<tr class=" + c + "" + ">" + h + "</tr>" + "");
+    }
+
+    function delthis(f, c) {
+        var num = $(f).parent().parent().parent().children('.' + c).length;
+        if (num > 1) {
+            $(f).parent().parent().remove();
+        }else{
+            alert("至少保留一行！");
+        }
+
+
+    }
 </script>
