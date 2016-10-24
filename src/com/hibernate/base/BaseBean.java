@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class BaseBean implements Serializable {
-
+	
+	public BaseBean(){
+		this.createTime = new Date();
+	}
 	//
 	private static final long serialVersionUID = 1442709734390999469L;
 	

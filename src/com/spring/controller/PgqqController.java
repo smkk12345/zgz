@@ -56,7 +56,7 @@ public class PgqqController {
 	public ModelAndView indexPage(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
-			int intPageSize = 2;
+			int intPageSize = 15;
 			
 			String pageNo = request.getParameter("pageNo");
 			if(StringUtils.isEmpty(pageNo)){
@@ -164,6 +164,9 @@ public class PgqqController {
 			HttpSession s = request.getSession();
 			RoleBean role = (RoleBean)s.getAttribute("role");
 			housebasic.setSection(role.getSection());
+			if(StringUtils.isEmpty(housebasic.getId())){
+				housebasic.setId(null);
+			}
 			//获取标段信息
 			housebasic.setCreateTime(new Date());
 			housebasic.setUpdateTime(new Date());

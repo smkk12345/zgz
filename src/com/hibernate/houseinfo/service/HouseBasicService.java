@@ -1,6 +1,7 @@
 package com.hibernate.houseinfo.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -39,7 +40,9 @@ public class HouseBasicService {
 	public boolean save(HouseBasic houseBasic){
 		
 		HouseBasic t = houseBasic;
+		houseBasic.setUpdateTime(new Date());
 		if(StringUtils.isBlank(t.getId())){
+			houseBasic.setCreateTime(new Date());
 			t = houseBasicDao.save(houseBasic);
 		}else{
 			houseBasicDao.update(houseBasic);
@@ -76,6 +79,9 @@ public class HouseBasicService {
 		
 		List<OtherInfo> otherList = otherInfoDao.findList(id, "0,1,2");
 		
+		if(null != otherList){
+			houseBasic.setOtherList(otherList);
+		}
 		if(null != illList){
 			houseBasic.setIllList(illList);
 		}
