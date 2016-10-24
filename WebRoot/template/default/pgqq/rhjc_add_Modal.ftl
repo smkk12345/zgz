@@ -268,7 +268,7 @@
 		                                </select>
 		                            </td>
 		                            <td>
-		                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-1');">删除</button>
+		                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
 		                            </td>
 		                        </tr>
                         		</#list>
@@ -317,7 +317,7 @@
 		                                </select>
 		                            </td>
 		                            <td>
-		                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-1');">删除</button>
+		                                <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
 		                            </td>
 		                       </tr>                        	
                         	</#if>
