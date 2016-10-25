@@ -2,12 +2,17 @@ package com.hibernate.houseinfo.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.ui.ModelMap;
 
+import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.userInfo.damain.User;
@@ -43,14 +48,36 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	/**
 	 * 获取列表信息  带分页 带排序字段 
 	 */
-	public List<HouseBasic> findList(String section,int pageSize,int currentPage){
+	public List<HouseBasic> findList(HttpServletRequest request,ModelMap model,String section,int pageSize,int currentPage){
 		List<HouseBasic> list = null;
+			// TODO Auto-generated method stub
 		Session s = null;
 		try{
 			s = getSession();
 			Criteria c = s.createCriteria(HouseBasic.class);
 			c.setFirstResult(pageSize);
 			c.setMaxResults(currentPage);
+			String location = request.getParameter("location");
+			String names = request.getParameter("names");
+			String  mobile = request.getParameter("mobile");
+			String idcard = request.getParameter("idcard");
+			StringBuffer sb = new StringBuffer();
+			if(!StringUtils.isBlank(location)){
+				c.add(Restrictions.like("location", location,MatchMode.ANYWHERE));
+				model.addAttribute("location", location);
+			}
+			if(!StringUtils.isBlank(names)){
+				c.add(Restrictions.like("names", names,MatchMode.ANYWHERE));
+				model.addAttribute("names", names);
+			}
+			if(!StringUtils.isBlank(mobile)){
+				c.add(Restrictions.eq("mobile", mobile));
+				model.addAttribute("mobile", mobile);
+			}
+			if(!StringUtils.isBlank(idcard)){
+				c.add(Restrictions.eq("idcard", idcard));
+				model.addAttribute("idcard", idcard);
+			}
 			list = c.add(Restrictions.in("section", section.split(","))).addOrder(Order.asc("createTime")).list();
 		}catch(Exception e){
 			e.printStackTrace();

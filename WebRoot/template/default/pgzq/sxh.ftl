@@ -17,7 +17,25 @@
                 <button class="btn btn-primary btn-sm glyphicon glyphicon-export">导出</button>
             </div>
             <div class="fr">
-                <button class="btn btn-primary btn-sm glyphicon glyphicon-search">查询</button>
+             <form  action="${BASE_PATH}/sxh.action" accept-charset="UTF-8" method="post" >
+	            	<div class=' autoWidthGroup fl '>
+	                    <label class='fl control-label'>房屋坐落:</label>
+	                    <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
+	                </div>
+	            	<div class=' autoWidthGroup fl '>
+	                    <label class='fl control-label'>被腾退人姓名:</label>
+	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
+	                </div>
+	            	<div class='autoWidthGroup fl '>
+	                    <label class='fl control-label'>手机:</label>
+	                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+	                </div>
+	            	<div class='autoWidthGroup fl '>
+	                    <label class='fl control-label'>身份证号:</label>
+	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
+	                </div>  
+	                <button type="submit" class="btn btn-primary btn-sm glyphicon glyphicon-search ">查询</button>
+	            </form>
             </div>
         </div>
 

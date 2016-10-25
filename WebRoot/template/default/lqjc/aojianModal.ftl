@@ -10,20 +10,19 @@
                 <#list vo.aoJianSet as voo>
 
                 <#if voo.aoJianIndex??&&voo.sensorArrangementbeanId??>
-                <button type="button" class="btn selBtn 
+	                <button type="button" class="btn selBtn 
                         <#if aoJian.zyAoJianNum==voo.zyAoJianNum>
                         btn-success
                         <#else>
                         btn-default
                         </#if>"  
                         dataId=${voo.zyAoJianNum} barnIndex=${vo.barnIndex} aria-label="${voo.aoJianIndex?default("")}">
-                    ${voo.aoJianIndex?default("")}#厫间
-                </button>
+	                    ${voo.aoJianIndex?default("")}#厫间
+	                </button>
                 <#else>
-                <button type="button" class="btn  barnIndex=${vo.barnIndex}">
-                    未设置
-                </button>
-                
+	                <button type="button" class="btn  barnIndex=${vo.barnIndex}">
+						未设置
+	                </button>               
                 </#if>
 
                 </#list>

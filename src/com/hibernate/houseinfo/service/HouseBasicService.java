@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang.StringUtils;
+import org.springframework.ui.ModelMap;
 
 import com.hibernate.houseinfo.dao.AgreenmentDao;
 import com.hibernate.houseinfo.dao.HouseBasicDao;
@@ -114,8 +117,11 @@ public class HouseBasicService {
 		return houseBasic;
 	}
 	
-	public List<HouseBasic> getListBySection(String section,int currentpage,int pagecount){
-		List<HouseBasic> list = houseBasicDao.findList(section,currentpage,pagecount);
+	public List<HouseBasic> getListBySection(HttpServletRequest request,ModelMap model,String section,int currentpage,int pagecount){
+		List<HouseBasic> list = houseBasicDao.findList(request,model,section,currentpage,pagecount);
+		if(null == list){
+			return null;
+		}
 		for (int i = 0; i < list.size(); i++) {
 			HouseBasic houseBasic = list.get(i);
 			houseBasic.setAgreenment(agreenmentDao.getByHouseBasicId(houseBasic.getId()));

@@ -63,10 +63,10 @@ public class PgqqController {
 			if(StringUtils.isEmpty(pageNo)){
 				pageNo = "1";
 			}
-			
+
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
 			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
 			
 			model.addAttribute("pageSize", intPageSize);
@@ -90,6 +90,8 @@ public class PgqqController {
 			return null;
 		}
 	}
+
+
 
 	@RequestMapping({ "/pgqq/rhjc_add_Modal.action" })
 	public ModelAndView lqModal(HttpServletRequest request,
