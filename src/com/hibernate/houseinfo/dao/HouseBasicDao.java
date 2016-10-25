@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import com.hibernate.base.BaseDaoImpl;
@@ -50,7 +51,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			Criteria c = s.createCriteria(HouseBasic.class);
 			c.setFirstResult(pageSize);
 			c.setMaxResults(currentPage);
-			list = c.add(Restrictions.in("section", section.split(","))).list();
+			list = c.add(Restrictions.in("section", section.split(","))).addOrder(Order.asc("createTime")).list();
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{

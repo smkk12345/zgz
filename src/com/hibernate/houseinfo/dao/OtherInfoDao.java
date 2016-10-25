@@ -1,5 +1,6 @@
 package com.hibernate.houseinfo.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -23,7 +24,7 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 			Criteria c = s.createCriteria(OtherInfo.class);
 			list = c.add(Restrictions.eq("housebasicid", housebasicid))
 					.add(Restrictions.in("otype", type.split(",")))
-					.addOrder(Order.asc("createTime"))
+					.addOrder(Order.asc("updateTime"))
 					.list();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -32,7 +33,6 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 		}
 		return list;
 	}
-	
 	public boolean batchSave(List<OtherInfo> list,String
 			houseBasicId){
 		try {
@@ -41,7 +41,9 @@ public class OtherInfoDao extends BaseDaoImpl<OtherInfo> {
 			for(int i=0;i<list.size();i++){
 				OtherInfo otherInfoser = list.get(i);
 				otherInfoser.setHousebasicid(houseBasicId);
+				otherInfoser.setUpdateTime(new Date());
 				if(StringUtils.isEmpty(otherInfoser.getId())){
+					otherInfoser.setCreateTime(new Date());
 					save(otherInfoser);
 				}else{
 					update(otherInfoser);

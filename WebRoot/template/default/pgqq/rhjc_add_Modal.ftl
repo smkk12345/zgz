@@ -5,6 +5,7 @@
 <div class="modal-body rhjc-add-con">
     <form id='rhjcAddForm' modelAttribute = "HouseBasic" action="${BASE_PATH}/pgqq/savehousebasic.action"
           accept-charset="UTF-8" method="post">
+          <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
@@ -94,7 +95,6 @@
                             <th class="center">户关</th>
                             <th class="center">产关</th>
                             <th class="center">婚否</th>
-                            <th class="center">类型</th>
                             <th class="center">工作单位</th>
                             <th class="center">人口类别</th>
                             <th class="center"></th>
@@ -107,19 +107,25 @@
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
 		                                    <option <#if (vacate.householder?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-		                                    <option <#if (vacate.householder?default("-1"))=='0'>selected='selected'</#if> value="0">居</option>  
-		                                    <option <#if (vacate.householder?default("-1"))=='1'>selected='selected'</#if> value="1">农</option> 
+		                                    <option <#if (vacate.householder?default("-1"))=='0'>selected='selected'</#if> value="0">户主</option>  
+		                                    <option <#if (vacate.householder?default("-1"))=='1'>selected='selected'</#if> value="1">非户主</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm ' name='householdtype' value="${vacate.householdtype?default("")}"/>        </td>
+		                            <td>
+			                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
+			                            	<option <#if (vacate.householdtype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+			                                <option <#if (vacate.householdtype?default("-1"))=='0'>selected='selected'</#if> value="0">居</option>  
+			                                <option <#if (vacate.householdtype?default("-1"))=='1'>selected='selected'</#if> value="1">农</option> 
+			                             </select>
+		                            </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vname' value="${vacate.name?default("")}"/>        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${vacate.vidcard?default("")}"/>        </td>
+		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${vacate.idcard?default("")}"/>        </td>
 		
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='vsex' >  
-		                                    <option <#if (vacate.vsex?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
-		                                    <option <#if (vacate.vsex?default("-1"))=='0'>selected='selected'</#if> value="0">男</option>  
-		                                    <option <#if (vacate.vsex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
+		                                    <option <#if (vacate.sex?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
+		                                    <option <#if (vacate.sex?default("-1"))=='0'>selected='selected'</#if> value="0">男</option>  
+		                                    <option <#if (vacate.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
 		                                </select>
 		                            </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='registeredrelate' value="${vacate.registeredrelate?default("")}"/>        </td>
@@ -131,8 +137,8 @@
 		                                    <option <#if (vacate.hasmarry?default("-1"))=='1'>selected='selected'</#if> value="1">未婚</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vtype' value="${vacate.vtype?default("")}" />        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vunit' value="${vacate.vunit?default("")}"/>        </td>
+		                                
+		                            <td><input type='text' class='form-control input-sm  ' name='vunit' value="${vacate.unit?default("")}"/>        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
 		                                    <option <#if (vacate.peopletype?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>    
@@ -156,11 +162,17 @@
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
 		                                    <option  value="-1">请选择</option>  
+		                                    <option  value="0">户主</option>  
+		                                    <option  value="1">非户主</option> 
+		                                </select>
+		                            </td>
+		                            <td>
+		                            	<select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
+		                                    <option  value="-1">请选择</option>  
 		                                    <option  value="0">居</option>  
 		                                    <option  value="1">农</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm ' name='householdtype' />        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vname' />        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' />        </td>
 		
@@ -180,7 +192,7 @@
 		                                    <option  value="1">未婚</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vtype'  />        </td>
+		                            
 		                            <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
@@ -217,31 +229,37 @@
                             <th class="center">户关</th>
                             <th class="center">产关</th>
                             <th class="center">婚否</th>
-                            <th class="center">类型</th>
+                            
                             <th class="center">工作单位</th>
                             <th class="center">人口类别</th>
                             <th class="center"></th>
                         </tr>
-                            <#if bean.vacatelist?size gt 0>
+                            <#if bean.list?size gt 0>
                         		<#list bean.list as cate>
                         		 <tr class="add-list-2">
                         		 <td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
-		                            <td>
+		 		                     <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
 		                                    <option <#if (cate.householder?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-		                                    <option <#if (cate.householder?default("-1"))=='0'>selected='selected'</#if> value="0">居</option>  
-		                                    <option <#if (cate.householder?default("-1"))=='1'>selected='selected'</#if> value="1">农</option> 
+		                                    <option <#if (cate.householder?default("-1"))=='0'>selected='selected'</#if> value="0">户主</option>  
+		                                    <option <#if (cate.householder?default("-1"))=='1'>selected='selected'</#if> value="1">非户主</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm ' name='householdtype' value="${cate.householdtype?default("")}"/>        </td>
+		                            <td>
+			                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
+			                            	<option <#if (cate.householdtype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+			                                <option <#if (cate.householdtype?default("-1"))=='0'>selected='selected'</#if> value="0">居</option>  
+			                                <option <#if (cate.householdtype?default("-1"))=='1'>selected='selected'</#if> value="1">农</option> 
+			                             </select>
+		                            </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vname' value="${cate.name?default("")}"/>        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${cate.vidcard?default("")}"/>        </td>
+		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${cate.idcard?default("")}"/>        </td>
 		
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='vsex' >  
-		                                    <option <#if (cate.vsex?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
-		                                    <option <#if (cate.vsex?default("-1"))=='0'>selected='selected'</#if> value="0">男</option>  
-		                                    <option <#if (cate.vsex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
+		                                    <option <#if (cate.sex?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
+		                                    <option <#if (cate.sex?default("-1"))=='0'>selected='selected'</#if> value="0">男</option>  
+		                                    <option <#if (cate.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
 		                                </select>
 		                            </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='registeredrelate' value="${cate.registeredrelate?default("")}"/>        </td>
@@ -253,8 +271,8 @@
 		                                    <option <#if (cate.hasmarry?default("-1"))=='1'>selected='selected'</#if> value="1">未婚</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vtype' value="${cate.vtype?default("")}" />        </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vunit' value="${cate.vunit?default("")}"/>        </td>
+		                            
+		                            <td><input type='text' class='form-control input-sm  ' name='vunit' value="${cate.unit?default("")}"/>        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
 		                                    <option <#if (cate.peopletype?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>    
@@ -274,15 +292,21 @@
                         		</#list>
                         	<#else>
                         	<tr class="add-list-2">
-                     		 	<td><input type="hidden" class='form-control input-sm ' name='vtype' value="0" style="width: 0px;"/>        </td>
+                     		 	<td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
+		                                    <option  value="-1">请选择</option>  
+		                                    <option  value="0">户主</option>  
+		                                    <option  value="1">非户主</option> 
+		                                </select>
+		                            </td>
+		                            <td>
+		                            	<select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
 		                                    <option  value="-1">请选择</option>  
 		                                    <option  value="0">居</option>  
 		                                    <option  value="1">农</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm ' name='householdtype' />        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vname' />        </td>
 		                            <td><input type='text' class='form-control input-sm  ' name='vidcard' />        </td>
 		
@@ -302,13 +326,13 @@
 		                                    <option  value="1">未婚</option> 
 		                                </select>
 		                            </td>
-		                            <td><input type='text' class='form-control input-sm  ' name='vtype'  />        </td>
+		                     
 		                            <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
 		                                    <option   value="-1">请选择</option>    
 		                                    <option  value="0">婚姻衍生人员</option>  
-		                                    <option > value="1">配偶</option> 
+		                                    <option  value="1">配偶</option> 
 		                                    <option  value="2">新生婴儿</option> 
 		                                    <option  value="3">现役军人</option> 
 		                                    <option value="4">院校在校生</option> 

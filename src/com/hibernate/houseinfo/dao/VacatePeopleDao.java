@@ -1,5 +1,6 @@
 package com.hibernate.houseinfo.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -22,7 +23,7 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 			Criteria c = s.createCriteria(VacatePeople.class);
 			list = c.add(Restrictions.eq("housebasicid", housebasicid))
 					.add(Restrictions.eq("vtype", vtype))
-					.addOrder(Order.asc("createTime"))
+					.addOrder(Order.asc("updateTime"))
 					.list();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -39,10 +40,13 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 			for(int i=0;i<list.size();i++){
 				VacatePeople vacatePeople = list.get(i);
 				vacatePeople.setHousebasicid(id);
+				vacatePeople.setUpdateTime(new Date());
 				if(StringUtils.isEmpty(vacatePeople.getId())){
+					vacatePeople.setCreateTime(new Date());
 					save(vacatePeople);
 				}else{
 					update(vacatePeople);
+					
 				}
 //			    if(i%25==0){//以每25个数据作为一个处理单元
 //			        session.flush();

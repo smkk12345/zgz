@@ -166,6 +166,9 @@ public class PgqqController {
 			HttpSession s = request.getSession();
 			RoleBean role = (RoleBean)s.getAttribute("role");
 			housebasic.setSection(role.getSection());
+			if(StringUtils.isEmpty(housebasic.getId())){
+				housebasic.setId(null);
+			}
 			//获取标段信息
 			housebasic.setCreateTime(new Date());
 			housebasic.setUpdateTime(new Date());
