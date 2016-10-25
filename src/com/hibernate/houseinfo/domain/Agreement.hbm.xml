@@ -5,11 +5,11 @@
 
 <hibernate-mapping>
 	<class name="com.hibernate.houseinfo.domain.Agreement" table="agreement" >
-		<id name="id" type="java.lang.Long">
+		<id name="id" type="java.lang.String">
 			<column name="id" length="200" />
-			<generator class="increment" />
+			<generator class="uuid.hex" />
 		</id>
-	
+		<property name="housebasicid"></property>
 		<property name="agreementnum" type="java.lang.String">
 			<column name="agreementnum" length="200" />
 		</property>

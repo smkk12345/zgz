@@ -1,6 +1,6 @@
 package com.common.utils;
 
-public class StringUtils {
+public class StringUtils extends org.apache.commons.lang.StringUtils{
 	public static String trim(String target) {
 		return target == null ? target : target.trim();
 	}

@@ -93,6 +93,10 @@ public class HouseBasic extends BaseBean implements Serializable {
 	//l类型  个体工商   1  个人独资
 	private String operatetype;
 	
+	//协议
+	private Agreement agreenment = new Agreement();
+	//顺序号
+	private IndexNum indexNum = new IndexNum();
 	//腾云人列表
 	List<VacatePeople> vacatelist = new ArrayList<VacatePeople>();
 	
@@ -356,5 +360,17 @@ public class HouseBasic extends BaseBean implements Serializable {
 	}
 	public void setBusinessarea(BigDecimal businessarea) {
 		this.businessarea = businessarea;
+	}
+	public Agreement getAgreenment() {
+		return agreenment;
+	}
+	public void setAgreenment(Agreement agreenment) {
+		this.agreenment = agreenment;
+	}
+	public IndexNum getIndexNum() {
+		return indexNum;
+	}
+	public void setIndexNum(IndexNum indexNum) {
+		this.indexNum = indexNum;
 	}
 }

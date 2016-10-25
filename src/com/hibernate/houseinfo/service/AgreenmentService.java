@@ -35,5 +35,11 @@ public class AgreenmentService {
 		agreenmentDao.delete(id);
 		return true;
 	}
+	/**
+	 * 通过id获取
+	 */
+	public Agreement getById(String id){
+		return agreenmentDao.getById(id);
+	}
 	
 }

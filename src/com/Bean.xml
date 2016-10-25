@@ -22,6 +22,8 @@
 		<property name="houseBasicDao" ref="houseBasicDao"></property>
 		<property name="otherInfoDao" ref="otherInfoDao"></property>
 		<property name="vacatePeopleDao" ref="vacatePeopleDao"></property>
+		<property name="agreenmentDao" ref="agreenmentDao"></property>
+		<property name="indexNumDao" ref="indexNumDao"></property>
 	</bean>
 	
 	<bean id = "houseBasicDao" class="com.hibernate.houseinfo.dao.HouseBasicDao"></bean>

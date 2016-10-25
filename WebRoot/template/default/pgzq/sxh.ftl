@@ -9,11 +9,11 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4>入户基础信息管理列表</h4>
+            <h4>顺序号获取</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-                <button class="btn btn-primary btn-sm glyphicon glyphicon-export pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}/pgqq/rhjc_add_Modal.action' title="点击登记信息">登记</button>
+                <button class="btn btn-primary btn-sm glyphicon glyphicon-export pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}xy_add_Modal.action' title="点击补全协议">登记</button>
                 <button class="btn btn-primary btn-sm glyphicon glyphicon-export">导出</button>
             </div>
             <div class="fr">
@@ -33,14 +33,16 @@
                 <th>宅基地测绘</th>
                 <th>建筑测绘</th>
                 <th>手机</th>
+                <th>顺序号</th>
+                <th>领取时间</th>
                 <th>操作</th>
             </tr>
-            <@HousebasicList list pageNo pageSize/>
+            <@SxhList list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgqq/rhjc.action" OtherParameter=""/>
+            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="xy.action" OtherParameter=""/>
             </#if>
         </div>
     </ul>

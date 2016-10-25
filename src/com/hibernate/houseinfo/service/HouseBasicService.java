@@ -6,9 +6,12 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.hibernate.houseinfo.dao.AgreenmentDao;
 import com.hibernate.houseinfo.dao.HouseBasicDao;
+import com.hibernate.houseinfo.dao.IndexNumDao;
 import com.hibernate.houseinfo.dao.OtherInfoDao;
 import com.hibernate.houseinfo.dao.VacatePeopleDao;
+import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
@@ -18,7 +21,15 @@ public class HouseBasicService {
 	private HouseBasicDao houseBasicDao;
 	private OtherInfoDao otherInfoDao;
 	private VacatePeopleDao vacatePeopleDao;
+	private AgreenmentDao agreenmentDao;
+	private IndexNumDao indexNumDao;
 	
+	public void setIndexNumDao(IndexNumDao indexNumDao) {
+		this.indexNumDao = indexNumDao;
+	}
+	public void setAgreenmentDao(AgreenmentDao agreenmentDao) {
+		this.agreenmentDao = agreenmentDao;
+	}
 	public void setHouseBasicDao(HouseBasicDao houseBasicDao) {
 		this.houseBasicDao = houseBasicDao;
 	}
@@ -78,7 +89,10 @@ public class HouseBasicService {
 		List<OtherInfo> deformityList = otherInfoDao.findList(id,"1");
 		
 		List<OtherInfo> otherList = otherInfoDao.findList(id, "0,1,2");
-		
+		Agreement agreement = agreenmentDao.getByHouseBasicId(id);
+		if(null != agreement){
+			houseBasic.setAgreenment(agreement);
+		}
 		if(null != otherList){
 			houseBasic.setOtherList(otherList);
 		}
@@ -101,7 +115,13 @@ public class HouseBasicService {
 	}
 	
 	public List<HouseBasic> getListBySection(String section,int currentpage,int pagecount){
-		return houseBasicDao.findList(section,currentpage,pagecount);
+		List<HouseBasic> list = houseBasicDao.findList(section,currentpage,pagecount);
+		for (int i = 0; i < list.size(); i++) {
+			HouseBasic houseBasic = list.get(i);
+			houseBasic.setAgreenment(agreenmentDao.getByHouseBasicId(houseBasic.getId()));
+			houseBasic.setIndexNum(indexNumDao.getByBasicId(houseBasic.getId()));
+		}
+		return list;
 	}
 	
 	public boolean delVacatePeopleById(String id){

@@ -12,8 +12,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.common.consts.Contanst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
+import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.userInfo.damain.RoleBean;
@@ -23,13 +25,26 @@ import com.spring.ServiceManager;
 public class AgreenmentController {
 
 	
-	@RequestMapping({"/agreenment.action","/fgxy.action"})
+	@RequestMapping({"/agreenment.action","/xy.action"})
 	public ModelAndView agreenment(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
+			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
 			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -41,7 +56,7 @@ public class AgreenmentController {
 			model.addAttribute("CURENT_TAB_2", "fgxy");
 			model.addAttribute("CURENT_TAB_3", "fgxy");
 
-			return new ModelAndView(PageConst.PGQQ_fgxy, model);
+			return new ModelAndView(PageConst.PGQQ_xy, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -49,48 +64,28 @@ public class AgreenmentController {
 		}
 	}
 
-	@RequestMapping({"/bcxy.action"})
-	public ModelAndView bcxy(HttpServletRequest request,
-			HttpServletResponse response, ModelMap model) {
-		try {
-			
-			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),0,10);
-			model.addAttribute("list", list);
-			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
-			model.addAttribute("BASE_ASSETS_PATH",
-					WebConstConfig.getBase_Assets_Path());
-			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
-					WebConstConfig.getBase_Template_Default_Path());
-
-			model.addAttribute("CURENT_TAB", "AGREENMENT");
-			model.addAttribute("CURENT_TAB_2", "bcxy");
-			model.addAttribute("CURENT_TAB_3", "bcxy");
-
-			return new ModelAndView(PageConst.PGQQ_bcxy, model);
-		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("error", e.getMessage());
-			return null;
-		}
-	}
 	
-	@RequestMapping({ "/bcxy_add_Modal.action" })
-	public ModelAndView lqModal(HttpServletRequest request,
+	@RequestMapping({ "/xy_add_Modal.action" })
+	public ModelAndView xy_add_Modal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
-			
+			String agreenmentid = request.getParameter("agreenmentid");
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
 			model.addAttribute("housebasic", housebasic);
+			Agreement agreenment = new Agreement();
+			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
+				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			}
+			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
-			return new ModelAndView(PageConst.PGQQ_bcxy_add_Modal, model);
+			return new ModelAndView(PageConst.PGQQ_xy_add_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -101,22 +96,33 @@ public class AgreenmentController {
 	
 	
 	@RequestMapping({ "/saveAgreenment.action" })
-	public ModelAndView savehousebasic(HttpServletRequest request,
+	public void savehousebasic(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,Agreement agreenment,String housebasicid) {
 		try {
+			
+			String aid = request.getParameter("aid");
+			if(!StringUtils.isBlank(aid)){
+				agreenment.setId(aid);
+			}
 			HttpSession s = request.getSession();
 			RoleBean role = (RoleBean)s.getAttribute("role");
 			//获取标段信息
 			agreenment.setCreateTime(new Date());
 			agreenment.setUpdateTime(new Date());
-			
+//			if(StringUtils.isEmpty(agreenment.getId())){
+//				agreenment.setId(null);
+//			}
 			ServiceManager.getAgreenmentService().save(agreenment);
 			
-			return new ModelAndView(PageConst.PGQQ_rhjc, model);
+			try {
+				response.sendRedirect(WebConstConfig.BASE_PATH+"/xy.action");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
-			return null;
+			return ;
 		}
 	}
 	

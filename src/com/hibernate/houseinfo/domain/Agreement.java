@@ -9,6 +9,7 @@ public class Agreement extends BaseBean {
 	/**
 	 * 协议实体类
 	 */
+	private String housebasicid;
 	//协议编号
 	private String agreementnum;
 	//协议类型 0 退钱  1 分房退钱
@@ -254,6 +255,12 @@ public class Agreement extends BaseBean {
 	}
 	public void setSum(BigDecimal sum) {
 		this.sum = sum;
+	}
+	public String getHousebasicid() {
+		return housebasicid;
+	}
+	public void setHousebasicid(String housebasicid) {
+		this.housebasicid = housebasicid;
 	}
 	
 }
