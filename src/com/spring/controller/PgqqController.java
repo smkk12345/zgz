@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,6 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.common.consts.Contanst;
 import com.common.consts.ErrorCodeConst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
@@ -56,12 +57,13 @@ public class PgqqController {
 	public ModelAndView indexPage(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
-			int intPageSize = 2;
 			
+			int intPageSize = Contanst.PAGE_SIZE;
 			String pageNo = request.getParameter("pageNo");
 			if(StringUtils.isEmpty(pageNo)){
 				pageNo = "1";
 			}
+			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(role.getSection(),(intPageNum-1)*intPageSize,intPageSize);

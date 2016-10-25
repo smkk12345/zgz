@@ -4,7 +4,6 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.jsp.tagext.TryCatchFinally;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
