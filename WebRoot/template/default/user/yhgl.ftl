@@ -19,7 +19,7 @@
             <th style="width:150px;text-align: center">邮箱</th>
             <th style="width:100px;text-align: center">电话</th>
             <th style="width:auto;text-align: center">备注</th>
-            <#if role.roleAuthority[12]=="2">
+            <#if role.roleAuthority[8]=="2">
             	<th style="width:230px;text-align:center">操作</th>
             </#if>
         </tr>

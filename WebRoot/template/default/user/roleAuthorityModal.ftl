@@ -44,7 +44,7 @@
     <div class="container-fluid">
          <div class="checkbox fl">
             <label>
-                <input type="checkbox" dataIndex=3 name="chkItem" class="item_levelOne_1" <#if bean.roleAuthority[3]]=="2">checked </#if>> 协议签订管理
+                <input type="checkbox" dataIndex=3 name="chkItem" class="item_levelOne_1" <#if bean.roleAuthority[3]=="2">checked </#if>> 协议签订管理
             </label>
         </div> 
     </div>

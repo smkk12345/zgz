@@ -138,10 +138,6 @@ public class UserInfoController {
 		try {
 			
 			RoleBean role = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role)){
-				noAuthority(request,response);
-				return null;
-			}
 			User bean;
 			String userId = RequestUtil.getRequestParameter(request, "userId");
 			if(StringUtils.isEmpty(userId)){
@@ -180,10 +176,6 @@ public class UserInfoController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		try {
 			RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-				noAuthority(request,response);
-				return ;
-			}
 			String userId = RequestUtil.getRequestParameter(request, "userId");
 			User bean;
 			if(StringUtils.isEmpty(userId)){
@@ -284,10 +276,6 @@ public class UserInfoController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		try {
 			RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-				noAuthority(request,response);
-				return ;
-			}
 			String userId = RequestUtil.getRequestParameter(request, "userId");
 			User bean = ServiceManager.getUserService().getById(userId);
 			String aoJianIds = RequestUtil.getRequestParameter(request, "ids");
@@ -336,10 +324,6 @@ public class UserInfoController {
 			HttpServletRequest request, HttpServletResponse response,ModelMap model) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-		if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-			noAuthority(request,response);
-			return null;
-		}
 		String userId = RequestUtil.getRequestParameter(request, "curDataId");
 		try {
 			ServiceManager.getUserService().delete(userId);
@@ -364,10 +348,6 @@ public class UserInfoController {
 			ModelMap model) {
 		try {
 			RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-				noAuthority(request,response);
-				return null;
-			}
 			User bean;
 			String userId = RequestUtil.getRequestParameter(request, "userId");
 			bean = ServiceManager.getUserService().getById(userId);
@@ -438,10 +418,6 @@ public class UserInfoController {
 			ModelMap model) {
 		try {
 			RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-				noAuthority(request,response);
-				return null;
-			}
 			RoleBean bean;
 			String roleId = RequestUtil.getRequestParameter(request, "roleId");
 			if(StringUtils.isEmpty(roleId)){
@@ -480,10 +456,6 @@ public class UserInfoController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		try {
 			RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-				noAuthority(request,response);
-				return null;
-			}
 			String roleId = RequestUtil.getRequestParameter(request, "roleId");
 			RoleBean bean;
 			if(StringUtils.isEmpty(roleId)){
@@ -558,10 +530,6 @@ public class UserInfoController {
 			HttpServletRequest request, HttpServletResponse response,ModelMap model) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-		if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-			noAuthority(request,response);
-			return null;
-		}
 		String userId = RequestUtil.getRequestParameter(request, "curDataId");
 		try {
 			ServiceManager.getRoleServiceImpl().delete(userId);
@@ -585,10 +553,6 @@ public class UserInfoController {
 			ModelMap model) {
 		try {
 			RoleBean role1 = (RoleBean)request.getSession(false).getAttribute("role");
-			if(!RoleAuthorityUtil.hasYHGLAuthority(role1)){
-				noAuthority(request,response);
-				return null;
-			}
 			String roleId = RequestUtil.getRequestParameter(request, "roleId");
 			RoleBean bean = ServiceManager.getRoleServiceImpl().getById(roleId);
 			model.addAttribute("bean",bean);

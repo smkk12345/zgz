@@ -79,13 +79,11 @@
     <td>${ROW.email?default("")}</td>
     <td>${ROW.tel?default("")}</td>
     <td>${ROW.memo?default("")}</td>
-    <#if role.roleAuthority[12]=="2">
-    <td style="text-align: left">
-         <#if role.roleAuthority[8]=="2">
+     <#if role.roleAuthority[8]=="2">
+		<td style="text-align: left">
 	        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">编辑</button>
 	        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/userDel.action" pname="${ROW.id}">删除</button>
-        </#if>
-    </td>
+		</td>
     </#if>
 </tr>
 </#list>
