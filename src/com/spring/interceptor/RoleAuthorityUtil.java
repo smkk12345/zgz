@@ -4,24 +4,22 @@ import com.hibernate.userInfo.damain.RoleBean;
 
 public class RoleAuthorityUtil {
 
-//	LQJC("粮情检测",0),
-//	LQJC_ZXLQ("最新粮情",1),
+//	LQJC("棚改前期管理",0),
+//	LQJC_ZXLQ("入户基础信息管理",1),
 //	LQJC_LWYC("粮温预测",2),
-//	LQJC_LSCX("历史查询",3),
-//	LQJC_LSXX("粮食信息",4),
+
 //	//系统设置
-//	XTSZ("系统设置",5),
-//	XTSZ_JBXX("基本信息配置",6),
-//	XTSZ_CFBZ("仓房布置",7),
-//	XTSZ_CSSZ("参数设置",8),
-//	XTSZ_CWSBBZ("测温设备布置",9),
-//	XTSZ_DSJC("定时检测",10),
-//	XTSZ_ZTST("主题色调",11),
+//	XTSZ("签订协议管理",3),
+//	XTSZ_JBXX("顺序号获取",4),
+
 //	//用户管理
 //	YHGL("用户管理",12),
 //	YHGL_TJYH("添加用户",13),
 //	YHGL_FPCF("分配仓房",14),
 //	YHGL_BJ("编辑删除用户",15);
+	
+	
+	//  222  222  2222  
 	
 	public static Boolean hasLQJCAuthority(RoleBean role){
 		boolean hasAuthority = false;

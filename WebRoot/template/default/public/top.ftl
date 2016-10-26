@@ -6,10 +6,26 @@
                 <ul class="nav nav1">	
 <!--                    <li><a <#if CURENT_TAB == 'INDEX'>class="active"</#if> href="${BASE_PATH}index.action">首页</a>
                     </li>-->
-                    <li><a <#if CURENT_TAB == 'PGQQ'>class="active"</#if> href="${BASE_PATH}pgqq.action">棚改前期管理</a>
-                    </li>
-                    <li><a <#if CURENT_TAB == 'AGREENMENT'>class="active"</#if> href="${BASE_PATH}agreenment.action">协议签订管理</a></li>  
-                                    
+                     <#if role.roleAuthority[0]=="2">
+                    	<li><a <#if CURENT_TAB == 'PGQQ'>class="active"</#if> 
+                    	<#if role.roleAuthority[1]=="2">
+                    		href="${BASE_PATH}pgqq.action"
+                    	<#else>
+                    		href="${BASE_PATH}pgqq/fhfa.action"
+                    	</#if>
+                    	>棚改前期管理</a>
+                    	</li>
+                    </#if>
+                    <#if role.roleAuthority[3]=="2">
+                    	<li><a <#if CURENT_TAB == 'AGREENMENT'>class="active"</#if> 
+                    	<#if role.roleAuthority[3]=="2">
+                    		href="${BASE_PATH}agreenment.action"
+                    	<#else>
+                    		href="${BASE_PATH}sxh.action"
+                    	</#if>
+                    	>协议签订管理</a></li>  
+                    </#if> 
+                                   
                     <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统设置</a>
                     </li>
 	               <!--  <li><a <#if CURENT_TAB == 'GJXX'>class="active"</#if> href="${BASE_PATH}gjxx.action">信息管理</a>

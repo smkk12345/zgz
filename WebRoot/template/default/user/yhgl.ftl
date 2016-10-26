@@ -6,8 +6,8 @@
         <li role="presentation" class="active"><a href="${BASE_PATH}user/yhgl.action">用户信息</a></li>
         <li role="presentation" ><a href="${BASE_PATH}user/role.action">用户组</a></li>
         <li role="presentation" class="pull-right">
-            <#if role.roleAuthority[12]=="2">
-            <a class="fr YL-ModalClick btn btn-default" href="#" data-url="${BASE_PATH}user/yhglModal.action?userId=" title="点击添加"><span class="glyphicon glyphicon-plus blue"></span> 新 增</a>
+            <#if role.roleAuthority[7]=="2">
+            	<a class="fr YL-ModalClick btn btn-default" href="#" data-url="${BASE_PATH}user/yhglModal.action?userId=" title="点击添加"><span class="glyphicon glyphicon-plus blue"></span> 新 增</a>
             </#if>
         </li>
     </ul>

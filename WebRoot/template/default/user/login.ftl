@@ -78,15 +78,16 @@
             
             },
             success: function (response) {
+            	var url = response.replace("true","");
                 if (response === "validateError") {
                     isLogin = false;
                     alert("验证码错误");
-                } else if (response === "true") {
-                    isLogin = true;
-                    window.location.href = '${BASE_PATH}' + "index.action";
                 } else if (response === "false") {
                     alert("密码错误");
                     isLogin = false;
+                }else{
+                	isLogin = true;
+                    window.location.href = url;
                 }
             }
         });

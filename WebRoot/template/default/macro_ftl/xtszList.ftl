@@ -81,10 +81,9 @@
     <td>${ROW.memo?default("")}</td>
     <#if role.roleAuthority[12]=="2">
     <td style="text-align: left">
-        
-        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">编辑</button>
-        <#if ROW.id!="1" && ROW.id!=user.id>
-        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/userDel.action" pname="${ROW.id}">删除</button>
+         <#if role.roleAuthority[8]=="2">
+	        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">编辑</button>
+	        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/userDel.action" pname="${ROW.id}">删除</button>
         </#if>
     </td>
     </#if>
@@ -298,10 +297,10 @@
     </td>
     <td>${ROW.remarks?default("")}</td>
     <td style="text-align: left">
-        <#if role.roleAuthority[12]=="2">
+        <#if role.roleAuthority[10]=="2">
 	        <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/roleAuthorityModal.action?roleId=${ROW.id}">权限配置</button>
-	       	    <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/roleModal.action?roleId=${ROW.id}">编辑</button>
-	        	<button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/roleDel.action" pname="${ROW.id}">删除</button>
+       	    <button type="button" class="btn btn-primary btn-xs ml10"  onClick="editBtnClick(this)" data-url="${BASE_PATH}user/roleModal.action?roleId=${ROW.id}">编辑</button>
+        	<button type="button" class="btn btn-primary btn-xs ml10"  onClick="delBtnClick(this)" data-url="${BASE_PATH}user/roleDel.action" pname="${ROW.id}">删除</button>
         </#if>
     </td>
 </tr>
