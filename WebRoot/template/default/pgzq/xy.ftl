@@ -13,7 +13,6 @@
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-                <button class="btn btn-primary btn-sm glyphicon glyphicon-export pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}xy_add_Modal.action' title="点击补全协议">登记</button>
                 <button class="btn btn-primary btn-sm glyphicon glyphicon-export">导出</button>
             </div>
             <div class="fr">

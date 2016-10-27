@@ -126,4 +126,31 @@ public class AgreenmentController {
 		}
 	}
 	
+	
+	
+	@RequestMapping({ "/agreenmentPrint.action" })
+	public ModelAndView agreenmentPrint(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model,String housebasicid) {
+		try {
+			
+			HttpSession s = request.getSession();
+			RoleBean role = (RoleBean)s.getAttribute("role");
+			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("houseBasic", houseBasic);
+			
+			Agreement agreenment = houseBasic.getAgreenment();
+			if(agreenment.getAtype().equals("0")){  //款补
+				return new ModelAndView(PageConst.PGQQ_kbxy_print, model);
+			}else{  //房补
+				return new ModelAndView(PageConst.PGQQ_fbxy_print, model);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
+	
+	
 }

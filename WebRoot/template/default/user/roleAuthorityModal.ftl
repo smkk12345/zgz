@@ -33,6 +33,22 @@
           <div class="form-group fl  ml10">
                <div class="checkbox fl">
                   <label>
+                      <input type="checkbox" dataIndex=11 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[11]=="2">checked </#if>
+                      > 基础信息登记
+                  </label>
+              </div>  
+          </div>
+          <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=12 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[12]=="2">checked </#if>
+                      > 基础信息编辑
+                  </label>
+              </div>  
+          </div>
+          <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
                       <input type="checkbox" dataIndex=2 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[2]=="2">checked </#if>
                       > 分户方案数据管理
                   </label>
@@ -99,7 +115,7 @@
  		  <div class="form-group fl ml10">
                <div class="checkbox fl ">
                   <label>
-                      <input type="checkbox" dataIndex=19 name="chkItem" class="subItem_levelOne_2" <#if bean.roleAuthority[10]=="2">checked </#if>> 权限分配
+                      <input type="checkbox" dataIndex=10 name="chkItem" class="subItem_levelOne_2" <#if bean.roleAuthority[10]=="2">checked </#if>> 权限分配
                   </label>
               </div>  
           </div>

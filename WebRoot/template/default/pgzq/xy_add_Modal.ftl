@@ -1,6 +1,6 @@
 
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">协议补录(共4项)</h4>
+    <h4 class="modal-title pull-left m0">协议补录(共3项)</h4>
 </div>
 <div class="modal-body rhjc-add-con">
     <form id='rhjcAddForm' modelAttribute = "Agreement" action="${BASE_PATH}/saveAgreenment.action"
@@ -66,8 +66,20 @@
                     <input type='text' class='form-control input-sm  ' name='pgjg'  value="${bean.pgjg?default("")}" />        
                 </div>
             </div>
-		    <h4><span class="label label-default">1.腾退各项补助费：</span></h4>
+		    <h4><span class="label label-default">2.腾退各项补助费：</span></h4>
            	<div class='container-fluid con-bg mb10'>
+           	    <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>一居室:</label>
+                     <input type='text' class='form-control input-sm  ' name='wfhbz'  value="${bean.wfhbz?default("")}" />   
+                </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>二居室:</label>
+                     <input type='text' class='form-control input-sm  ' name='wfhbz'  value="${bean.wfhbz?default("")}" />   
+                </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>三居室:</label>
+                     <input type='text' class='form-control input-sm  ' name='wfhbz'  value="${bean.wfhbz?default("")}" />   
+                </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地未分户补助:</label>
                      <input type='text' class='form-control input-sm  ' name='wfhbz'  value="${bean.wfhbz?default("")}" />   

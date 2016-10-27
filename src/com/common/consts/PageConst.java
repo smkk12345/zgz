@@ -19,6 +19,8 @@ public class PageConst {
     public final static String PGQQ_xy= "/default/pgzq/xy.ftl";
     public final static String PGQQ_sxh= "/default/pgzq/sxh.ftl";
     public final static String PGQQ_xy_add_Modal = "/default/pgzq/xy_add_Modal.ftl";  
+    public final static String PGQQ_kbxy_print = "/default/pgzq/kbxyprint";
+    public final static String PGQQ_fbxy_print = "/default/pgzq/fbxyprint";
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
     public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析

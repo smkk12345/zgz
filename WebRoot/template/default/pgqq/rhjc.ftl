@@ -13,7 +13,9 @@
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-                <button class="btn btn-primary btn-sm glyphicon glyphicon-export pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}/pgqq/rhjc_add_Modal.action' title="点击登记信息">登记</button>
+            	<#if role.roleAuthority[11]=="2">
+                	<button class="btn btn-primary btn-sm glyphicon glyphicon-export pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}/pgqq/rhjc_add_Modal.action' title="点击登记信息">登记</button>
+               	</#if>
                 <button class="btn btn-primary btn-sm glyphicon glyphicon-export">导出</button>
             </div>
          
