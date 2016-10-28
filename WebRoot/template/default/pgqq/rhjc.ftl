@@ -5,7 +5,7 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-            
+
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
@@ -13,32 +13,32 @@
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-            	<#if role.roleAuthority[11]=="2">
-                	<button class="btn btn-primary btn-sm glyphicon glyphicon-export pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}/pgqq/rhjc_add_Modal.action' title="点击登记信息">登记</button>
+                <#if role.roleAuthority[11]=="2">
+                <button class="btn btn-primary btn-xs glyphicon glyphicon-plus pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}/pgqq/rhjc_add_Modal.action' title="点击登记信息">登记</button>
                	</#if>
-                <button class="btn btn-primary btn-sm glyphicon glyphicon-export">导出</button>
+                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>
             </div>
-         
+
             <div class="fr">
-	            <form  action="${BASE_PATH}/index.action" accept-charset="UTF-8" method="post" >
-	            	<div class=' autoWidthGroup fl '>
-	                    <label class='fl control-label'>房屋坐落:</label>
-	                    <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
-	                </div>
-	            	<div class=' autoWidthGroup fl '>
-	                    <label class='fl control-label'>被腾退人姓名:</label>
-	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
-	                </div>
-	            	<div class='autoWidthGroup fl '>
-	                    <label class='fl control-label'>手机:</label>
-	                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
-	                </div>
-	            	<div class='autoWidthGroup fl '>
-	                    <label class='fl control-label'>身份证号:</label>
-	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
-	                </div>  
-	                <button type="submit" class="btn btn-primary btn-sm glyphicon glyphicon-search ">查询</button>
-	            </form>
+                <form  action="${BASE_PATH}/index.action" accept-charset="UTF-8" method="post" >
+                    <div class=' autoWidthGroup-2 fl'>
+                        <label class='fl control-label'>房屋坐落:</label>
+                        <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
+                    </div>
+                    <div class=' autoWidthGroup-2 fl '>
+                        <label class='fl control-label'>被腾退人姓名:</label>
+                        <input type='text' class='form-control input-sm ' name='names' value="${names?default("")}"/>   
+                    </div>
+                    <div class='autoWidthGroup-2 fl '>
+                        <label class='fl control-label'>手机:</label>
+                        <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+                    </div>
+                    <div class='autoWidthGroup-2 fl'>
+                        <label class='fl control-label'>身份证号:</label>
+                        <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
+                    </div>  
+                    <div class='autoWidthGroup-2 fl'><button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>                   
+                </form>
             </div>
         </div>
 
@@ -117,10 +117,10 @@
                 dataType: "json",
                 data: {housebasicid: curDataId},
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                   location.href="${BASE_PATH}"+"/index.action";
+                    location.href = "${BASE_PATH}" + "/index.action";
                 },
                 success: function (response) {
-                   location.href="${BASE_PATH}"+"/index.action";
+                    location.href = "${BASE_PATH}" + "/index.action";
                 }
             })
         }

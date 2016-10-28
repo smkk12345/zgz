@@ -16,11 +16,14 @@ public class PageConst {
     public final static String PGQQ_rhjc_add_Modal = "/default/pgqq/rhjc_add_Modal.ftl";
     
     // 棚改中期start
-    public final static String PGQQ_xy= "/default/pgzq/xy.ftl";
-    public final static String PGQQ_sxh= "/default/pgzq/sxh.ftl";
-    public final static String PGQQ_xy_add_Modal = "/default/pgzq/xy_add_Modal.ftl";  
-    public final static String PGQQ_kbxy_print = "/default/pgzq/kbxyprint";
-    public final static String PGQQ_fbxy_print = "/default/pgzq/fbxyprint";
+    public final static String PGZQ_xy= "/default/pgzq/xy.ftl";
+    public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
+    public final static String PGZQ_xy_add_Modal = "/default/pgzq/xy_add_Modal.ftl";  
+    public final static String PGZQ_kbxy_print = "/default/pgzq/kbxyprint";
+    public final static String PGZQ_fbxy_print = "/default/pgzq/fbxyprint";
+    public final static String PGZQ_xy_print_Modal = "/default/pgzq/xy_print_Modal.ftl";  
+    
+    
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
     public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析

@@ -19,7 +19,7 @@
                     <#if role.roleAuthority[3]=="2">
                     	<li><a <#if CURENT_TAB == 'AGREENMENT'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}agreenment.action"
+                    		href="${BASE_PATH}pgzq/agreenment.action"
                     	<#else>
                     		href="${BASE_PATH}sxh.action"
                     	</#if>

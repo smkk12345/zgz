@@ -25,7 +25,7 @@ import com.spring.ServiceManager;
 public class AgreenmentController {
 
 	
-	@RequestMapping({"/agreenment.action","/xy.action"})
+	@RequestMapping({"/pgzq/agreenment.action","/pgzq/xy.action"})
 	public ModelAndView agreenment(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -56,7 +56,7 @@ public class AgreenmentController {
 			model.addAttribute("CURENT_TAB_2", "fgxy");
 			model.addAttribute("CURENT_TAB_3", "fgxy");
 
-			return new ModelAndView(PageConst.PGQQ_xy, model);
+			return new ModelAndView(PageConst.PGZQ_xy, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -65,7 +65,7 @@ public class AgreenmentController {
 	}
 
 	
-	@RequestMapping({ "/xy_add_Modal.action" })
+	@RequestMapping({ "/pgzq/xy_add_Modal.action" })
 	public ModelAndView xy_add_Modal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -85,7 +85,36 @@ public class AgreenmentController {
 					WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
-			return new ModelAndView(PageConst.PGQQ_xy_add_Modal, model);
+			return new ModelAndView(PageConst.PGZQ_xy_add_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+
+		}
+	}
+	
+	@RequestMapping({ "/pgzq/xy_print_Modal.action" })
+	public ModelAndView xy_print_Modal(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String agreenmentid = request.getParameter("agreenmentid");
+			String housebasicid = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("housebasic", housebasic);
+			Agreement agreenment = new Agreement();
+			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
+				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			}
+			model.addAttribute("bean", agreenment);
+			// 模板路径 basePath
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGZQ_xy_print_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -95,7 +124,7 @@ public class AgreenmentController {
 	}
 	
 	
-	@RequestMapping({ "/saveAgreenment.action" })
+	@RequestMapping({ "/pgzq/saveAgreenment.action" })
 	public void savehousebasic(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,Agreement agreenment,String housebasicid) {
 		try {
@@ -115,7 +144,7 @@ public class AgreenmentController {
 			ServiceManager.getAgreenmentService().save(agreenment);
 			
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"/xy.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/xy.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -128,7 +157,7 @@ public class AgreenmentController {
 	
 	
 	
-	@RequestMapping({ "/agreenmentPrint.action" })
+	@RequestMapping({ "/pgzq/agreenmentPrint.action" })
 	public ModelAndView agreenmentPrint(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,String housebasicid) {
 		try {
@@ -140,9 +169,9 @@ public class AgreenmentController {
 			
 			Agreement agreenment = houseBasic.getAgreenment();
 			if(agreenment.getAtype().equals("0")){  //款补
-				return new ModelAndView(PageConst.PGQQ_kbxy_print, model);
+				return new ModelAndView(PageConst.PGZQ_kbxy_print, model);
 			}else{  //房补
-				return new ModelAndView(PageConst.PGQQ_fbxy_print, model);
+				return new ModelAndView(PageConst.PGZQ_fbxy_print, model);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -62,7 +62,7 @@ public class IndexNumController {
 		}
 	}
 
-	@RequestMapping({ "/sxh.action" })
+	@RequestMapping({ "/pgzq/sxh.action" })
 	public ModelAndView sxh(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		int intPageSize = Contanst.PAGE_SIZE;
 		String pageNo = request.getParameter("pageNo");
@@ -89,7 +89,7 @@ public class IndexNumController {
 		model.addAttribute("CURENT_TAB_2", "sxh");
 		model.addAttribute("CURENT_TAB_3", "sxh");
 
-		return new ModelAndView(PageConst.PGQQ_sxh, model);
+		return new ModelAndView(PageConst.PGZQ_sxh, model);
 	}
 	
 }

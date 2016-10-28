@@ -171,7 +171,7 @@
             </div>            
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="submit" class="btn btn-primary btn-save"   >保存并打印</button>
+                <button type="submit" class="btn btn-primary btn-save"   >保存</button>
             </div>
         </div>
     </form>

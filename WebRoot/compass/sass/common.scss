@@ -265,22 +265,7 @@ a:focus {
     button{height: 33px;}
 }
 
-.autoGroup{
-    margin:0 auto;margin-top:7px;}
-.autoGroup label{
-    width:140px;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left;
-}
-.autoGroup input{
-    width:auto; margin-right: 0px; float:left;
-}
-.aoJianGroup{
-    margin:5px auto !important}
-.aoJianGroup label{
-    width:150px;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left; font-weight: normal;
-}
-.aoJianGroup input{
-    width:120px; margin-right: 0px; float:left;
-}
+
 .sensor_left {
     width: 50px;
     float: left;
@@ -288,18 +273,47 @@ a:focus {
 }
 .sensor_right { 
     margin-left: 60px;
+    input { width: 100%;}
 }
-.sensor_right input {
-    width: 100%;
+
+.autoGroup{
+    margin:0 auto;margin-top:7px;
+    label{
+        width:140px;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left;
+    }
+    input{
+        width:auto; margin-right: 0px; float:left;
+    }
+}
+
+.aoJianGroup{
+    margin:2px auto !important;
+    label{
+        width:150px;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left; font-weight: normal;
+    }
+    input{
+        width:120px;height: 27px; margin-right: 0px; float:left;
+    }
 }
 
 .autoWidthGroup{
-    margin:0 auto !important}
-.autoWidthGroup label{
-    width:100px;margin-right: 5px;margin-left: 5px;line-height: 25px; text-align: right; float: left;
+    margin:0 auto !important;
+    label{
+        width:100px;margin-right: 5px;margin-left: 5px;line-height: 25px; text-align: right; float: left;
+    }
+    input{
+        width:150px;height: 27px;  margin-right: 0px; float:left;
+    }
 }
-.autoWidthGroup input{
-    width:150px; margin-right: 0px; float:left;
+
+.autoWidthGroup-2{
+    margin:0 auto !important; padding-right: 10px;
+    label{
+        width:auto;margin-right: 5px;margin-left: 5px;line-height: 25px; text-align: right; float: left;
+    }
+    input{
+        width:130px; height: 27px; margin-right: 0px; float:left;
+    }
 }
 .datepicker{
     table{font-size:14px !important;}
