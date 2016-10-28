@@ -182,7 +182,7 @@ public class PgqqController {
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"/index.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"index.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -277,7 +277,7 @@
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
 		                                    <option <#if (cate.peopletype?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>    
 		                                    <option <#if (cate.peopletype?default("-1"))=='0'>selected='selected'</#if> value="0">婚姻衍生人员</option>  
-		                                    <option <#if (cate.peopletype?default("-1"))=='1'>selected='selected'</#if> value="1">配偶</option> 
+		                                    <option <#if (cate.peopletype?default("-1"))=='1'>selected='selected'</#if>  value="1">配偶</option> 
 		                                    <option <#if (cate.peopletype?default("-1"))=='2'>selected='selected'</#if> value="2">新生婴儿</option> 
 		                                    <option <#if (cate.peopletype?default("-1"))=='3'>selected='selected'</#if> value="3">现役军人</option> 
 		                                    <option <#if (cate.peopletype?default("-1"))=='4'>selected='selected'</#if> value="4">院校在校生</option> 
