@@ -16,6 +16,7 @@ import com.hibernate.houseinfo.dao.OtherInfoDao;
 import com.hibernate.houseinfo.dao.VacatePeopleDao;
 import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
 
@@ -153,4 +154,17 @@ public class HouseBasicService {
 		return houseBasicDao.getCount(section);
 	}
 
+	/**
+	 * 统计的代码全部在这里面
+	 * 
+	 * 这个是大屏幕获取顺序号的方法
+	 * @param section
+	 * @param currentpage
+	 * @param pagecount
+	 * @return
+	 */
+	public List<IndexNum> getIndexNumList(String section, int currentpage,int pagecount){
+		return houseBasicDao.getIndexNumList(section, currentpage, pagecount); 
+	}
+	
 }

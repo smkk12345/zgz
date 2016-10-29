@@ -17,6 +17,7 @@ import org.springframework.ui.ModelMap;
 import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.userInfo.damain.User;
 
 public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
@@ -130,5 +131,39 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}
 		return 0;
 	}
+	
+	
+	/**
+	 * 所有的统计查询都需要连表查询，怎么简单怎么来了
+	 */
+	public List<IndexNum> getIndexNumList(String section, int currentpage,int pagecount){
+			
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select a.*,b.section,b.names from indexnum a left join housebasic b on a.housebasicid = a.id where 1=1 ");
+			if(!StringUtils.isBlank(section)){
+				sb.append(" and b.section =  '").append(section).append("'");
+			}
+			sb.append(" order by a.id asc ");
+			sb.append(" LIMIT ").append(currentpage*pagecount).append(",").append(pagecount);
+			List<IndexNum> list = s.createSQLQuery(sb.toString()).addEntity(IndexNum.class).list();
+			return list;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -20,6 +20,9 @@ public class IndexNum extends BaseBean {
 	private String operatedate;
 	private String serviceip;
 	private String displaydate;
+	//以下数据不入库 只用作展示
+	private String names;
+	private String section;
 	
 	public String getDisplaydate() {
 		return displaydate;
@@ -63,5 +66,17 @@ public class IndexNum extends BaseBean {
 	}
 	public void setServiceip(String serviceip) {
 		this.serviceip = serviceip;
+	}
+	public String getNames() {
+		return names;
+	}
+	public void setNames(String names) {
+		this.names = names;
+	}
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
 	}
 }
