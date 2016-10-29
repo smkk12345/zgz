@@ -187,7 +187,7 @@
 		                            <td><input type='text' class='form-control input-sm  ' name='changrelate' />        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
-		                                    <option   value="-1">请选择</option>  
+		                                    <option  value="-1">请选择</option>  
 		                                    <option  value="0">已婚</option>  
 		                                    <option  value="1">未婚</option> 
 		                                </select>
@@ -196,12 +196,12 @@
 		                            <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
 		                            <td>
 		                                <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
-		                                    <option   value="-1">请选择</option>    
+		                                    <option  value="-1">请选择</option>    
 		                                    <option  value="0">婚姻衍生人员</option>  
-		                                    <option > value="1">配偶</option> 
+		                                    <option  value="1">配偶</option> 
 		                                    <option  value="2">新生婴儿</option> 
 		                                    <option  value="3">现役军人</option> 
-		                                    <option value="4">院校在校生</option> 
+		                                    <option  value="4">院校在校生</option> 
 		                                    <option  value="5">服役人员</option> 
 		                                    <option  value="6">其他</option>
 		                                </select>

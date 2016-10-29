@@ -16,6 +16,7 @@ import com.common.consts.Contanst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.StringUtils;
+import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.userInfo.damain.RoleBean;
@@ -27,13 +28,14 @@ public class IndexNumController {
 	/**
 	 * @param request
 	 * @param response
-	 * @param model
+	 * @param model   
 	 * @return
 	 */
 	@RequestMapping({ "/indexnum/get.action" })
 	public void indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		try {
 			String housebsicid = request.getParameter("housebasicid");
+			String agreenmentid = request.getParameter("agreenmentid");
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH", WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH", WebConstConfig.getBase_Template_Default_Path());
@@ -46,6 +48,14 @@ public class IndexNumController {
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
 			if (null == indexNum) {
 				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user.getId(), housebsicid);
+				//更新协议的
+				Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+				if(agreenment.getAtype().equals("0")){
+					agreenment.setProtocolnumber("AZ-"+indexNum.getIndexnum());
+				}else{
+					agreenment.setProtocolnumber("BC-"+indexNum.getIndexnum());
+				}
+				ServiceManager.getAgreenmentService().update(agreenment);
 			}
 			System.out.println(JSONObject.fromObject(indexNum).toString());
 			model.addAttribute("indexNum", indexNum);

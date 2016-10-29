@@ -9,6 +9,11 @@ import com.hibernate.base.BaseBean;
 
 public class Agreement extends BaseBean {
 
+	
+	//协议号
+	private String protocolnumber;
+
+
 	/**
 	 * 协议实体类
 	 */
@@ -513,6 +518,14 @@ public class Agreement extends BaseBean {
 		this.ttrq = ttrq;
 	}
 
+	public String getProtocolnumber() {
+		return protocolnumber;
+	}
+
+
+	public void setProtocolnumber(String protocolnumber) {
+		this.protocolnumber = protocolnumber;
+	}
 
 	public static void main(String[] args) {
 		PropertyDescriptor[] props = null;
@@ -537,4 +550,5 @@ public class Agreement extends BaseBean {
 		}
 		System.out.println(sb.toString());
 	}
+
 }

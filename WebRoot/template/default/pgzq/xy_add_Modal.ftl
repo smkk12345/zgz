@@ -46,10 +46,10 @@
                 </div> 
 		      <div class="container-fluid fl">
 	                 <label class="checkbox-inline">
-					    <input type="radio" name="atype" id="optionsRadios3" value="0" checked>房屋安置
+					    <input type="radio" name="atype" id="optionsRadios3" value="0" <#if (bean.atype?default("0"))=='0'>checked</#if>>房屋安置
 					 </label>
 					 <label class="checkbox-inline">
-					    <input type="radio" name="atype" id="optionsRadios4" value="1">货币补偿
+					    <input type="radio" name="atype" id="optionsRadios4" value="1" <#if (bean.atype?default("0"))=='1'>checked</#if>>货币补偿
 					 </label>
 		      </div>
     	  </div>                	
@@ -285,9 +285,27 @@
         })
     }
 
-function addlist(a){
-    var h=$(a+"").html();
-    $(a+"").after("<tr>"+h+"</tr>"+"");
-    
-}
+	function addlist(a){
+	    var h=$(a+"").html();
+	    $(a+"").after("<tr>"+h+"</tr>"+"");
+	}
+
+	$(document).ready(function(){ 
+		var b = '${bean.atype!''}';
+		if(b.length == 0){
+			
+		}else{
+			if (b == '1') {
+				$(".azxy").hide();
+				$(".div_seven").html("六.其他：");
+				$(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
+			}
+			else {
+				$(".azxy").show();
+				$(".div_seven").html("七.其他：");
+				$(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
+			}
+		}
+	}); 
+
 </script>

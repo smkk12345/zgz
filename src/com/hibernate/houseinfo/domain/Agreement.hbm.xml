@@ -52,5 +52,6 @@
 		<property name="yjs" ></property>
 		<property name="zjdttbck" ></property>
 		<property name="zjdttzj" ></property>
+		<property name="protocolnumber"></property>
 	</class>
 </hibernate-mapping>
