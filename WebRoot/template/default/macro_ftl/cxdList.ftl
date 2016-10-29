@@ -43,8 +43,8 @@
     <td >${ROW.mobile?default("")}</td>
     <td>    
         <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}"> </button>
-        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick glyphicon glyphicon-print" title='打印' data-url="${BASE_PATH}pgzq/xy_print_Modal.action?housebasicid=${ROW.id}"> </button>
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
+        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick glyphicon glyphicon-print" title='打印' data-url="${BASE_PATH}pgzq/xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
     </td>
 </tr>
 </#list>

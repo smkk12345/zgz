@@ -138,6 +138,7 @@ public class AgreenmentController {
 			//获取标段信息
 			agreenment.setCreateTime(new Date());
 			agreenment.setUpdateTime(new Date());
+			agreenment.setHousebasicid(housebasicid);
 //			if(StringUtils.isEmpty(agreenment.getId())){
 //				agreenment.setId(null);
 //			}

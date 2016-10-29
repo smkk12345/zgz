@@ -12,7 +12,8 @@ public class PageConst {
 
     // 棚改前期start
     public final static String PGQQ_rhjc= "/default/pgqq/rhjc.ftl";
-    public final static String PGQQ_fhfa= "/default/pgqq/fhfa.ftl";
+    public final static String PGQQ_rhjc_c= "/default/pgqq/rhjc_c.ftl";
+    public final static String PGQQ_rhjc_s= "/default/pgqq/rhjc_s.ftl";
     public final static String PGQQ_rhjc_add_Modal = "/default/pgqq/rhjc_add_Modal.ftl";
     
     // 棚改中期start
@@ -22,8 +23,9 @@ public class PageConst {
     public final static String PGZQ_kbxy_print = "/default/pgzq/kbxyprint";
     public final static String PGZQ_fbxy_print = "/default/pgzq/fbxyprint";
     public final static String PGZQ_xy_print_Modal = "/default/pgzq/xy_print_Modal.ftl";  
-    
-    
+     //
+    public final static String JFDJ_DJ = "/default/jfdj/jfdj.ftl";  
+    public final static String SJTJ = "/default/sjtj/sjtj.ftl";  
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
     public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析

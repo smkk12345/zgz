@@ -9,46 +9,48 @@
 			<column name="id" length="200" />
 			<generator class="uuid.hex" />
 		</id>
-		<property name="housebasicid"></property>
-		<property name="agreementnum" type="java.lang.String">
-			<column name="agreementnum" length="200" />
-		</property>
-		<property name="atype" type="java.lang.String">
-			<column name="atype" length="200" />
-		</property>
-		<property name="vacatepeople" >
-			<column name="vacatepeople" length="200" />
-		</property>
-		<property name="homesteadyear" >
-			<column name="homesteadyear" length="200" />
-		</property>
-		<property name="conhomestarea" ></property>
-		<property name="overhomesteadarea" ></property>
-		<property name="shed" ></property>
-		<property name="pgjg" ></property>
-		<property name="scgj" ></property>
-		<property name="wfhbz" ></property>
-		<property name="tctdbz" ></property>
-		<property name="bgbz" ></property>
-		<property name="qfbz" ></property>
-		<property name="dpbz" ></property>
+		<property name="agreementnum" ></property>
+		<property name="atype" ></property>
+		<property name="azfgfk" ></property>
+		<property name="bjbz" ></property>
+		<property name="bttfwczcxj" ></property>
+		<property name="bzfhj" ></property>
 		<property name="cjbz" ></property>
+		<property name="ckzjdqwbcj" ></property>
+		<property name="conhomestarea" ></property>
+		<property name="createTime" ></property>
 		<property name="dbbz" ></property>
+		<property name="dbhbz" ></property>
 		<property name="dsznbz" ></property>
-		<property name="dsznz" ></property>
-		<property name="vacatesum" ></property>
-		<property name="yjs" ></property>
-		<property name="ljs" ></property>
-		<property name="sjs" ></property>
-		<property name="wjjlf" ></property>
-		<property name="wwzjlf" ></property>
-		<property name="tqbjjlf" ></property>
-		<property name="gcphjlf" ></property>
-		<property name="qyjlf" ></property>
-		<property name="other" ></property>
+		<property name="fwbcmj" ></property>
+		<property name="fyxx" ></property>
+		<property name="gcphjl" ></property>
+		<property name="homesteadyear" ></property>
+		<property name="housebasicid" ></property>
+		<property name="jlbzhj" ></property>
 		<property name="jlfsum" ></property>
-		<property name="sum" ></property>
-		<property name="createTime" type="java.util.Date"></property>
-		<property name="updateTime" type="java.util.Date"></property>
+		<property name="kzzjdqwbcj" ></property>
+		<property name="ljs" ></property>
+		<property name="otherbz" ></property>
+		<property name="overhomesteadarea" ></property>
+		<property name="pgjg" ></property>
+		<property name="qfbz" ></property>
+		<property name="rdbazrk" ></property>
+		<property name="rdbazrkxx" ></property>
+		<property name="scydmj" ></property>
+		<property name="shed" ></property>
+		<property name="sjs" ></property>
+		<property name="sjxfmj" ></property>
+		<property name="tctdbz" ></property>
+		<property name="tqbjl" ></property>
+		<property name="ttcjjl" ></property>
+		<property name="ttrq" ></property>
+		<property name="updateTime" ></property>
+		<property name="vacatepeople" ></property>
+		<property name="wjecjj" ></property>
+		<property name="wwzjl" ></property>
+		<property name="yjs" ></property>
+		<property name="zjdttbck" ></property>
+		<property name="zjdttzj" ></property>
 	</class>
 </hibernate-mapping>
