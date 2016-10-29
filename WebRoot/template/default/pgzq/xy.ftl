@@ -44,13 +44,11 @@
                 <th>序号</th>
                 <th>标段</th>
                 <th>被腾退人</th>
-                <th>身份证</th>
-                <th>房屋坐落</th>
-                <th>房屋间数</th>
-                <th>拟被安置人口</th>
-                <th>宅基地测绘</th>
-                <th>建筑测绘</th>
-                <th>手机</th>
+                <th>安置方式</th>
+                <th>认定面积</th>
+                <th>认定人口</th>
+                <th>选房购房款</th>
+                <th>奖励费补助费合计</th>
                 <th>操作</th>
             </tr>
             <@XyList list pageNo pageSize/>

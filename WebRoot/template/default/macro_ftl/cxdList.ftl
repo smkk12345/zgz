@@ -34,13 +34,17 @@
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
     <td >${role.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
-    <td >${ROW.idcard?default("")}</td>
-    <td >${ROW.location?default("")}</td>
-    <td >${ROW.housecount?default("")}</td>
-    <td >${ROW.people?default("")}</td>
-    <td >${ROW.zjdarea?default("")}</td>
-    <td >${ROW.fwarea?default("")}</td>
-    <td >${ROW.mobile?default("")}</td>
+    <td > 
+    	<#if ROW.agreenment.atype?default("0")=="0">
+    	房屋安置
+    	<#else>
+    	货币补偿
+    	</#if>
+   	</td>
+    <td >${ROW.agreenment.fwbcmj?default("")}</td>
+    <td >${ROW.agreenment.rdbazrk?default("")}</td>
+     <td >${ROW.agreenment.azfgfk?default("")}</td>
+    <td >${ROW.agreenment.jlfsum?default("")}</td>
     <td>    
         <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
@@ -59,14 +63,17 @@
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
     <td >${role.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
-    <td >${ROW.idcard?default("")}</td>
-    <td >${ROW.location?default("")}</td>
-    <td >${ROW.housecount?default("")}</td>
-    <td >${ROW.people?default("")}</td>
-    <td >${ROW.zjdarea?default("")}</td>
-    <td >${ROW.fwarea?default("")}</td>
-    
-    <td >${ROW.mobile?default("")}</td>
+    <td > 
+    	<#if ROW.agreenment.atype?default("0")=="0">
+    	房屋安置
+    	<#else>
+    	货币补偿
+    	</#if>
+   	</td>
+    <td >${ROW.agreenment.fwbcmj?default("")}</td>
+    <td >${ROW.agreenment.rdbazrk?default("")}</td>
+    <td >${ROW.agreenment.azfgfk?default("")}</td>
+    <td >${ROW.agreenment.jlfsum?default("")}</td>
     <#if (ROW.indexNum)??>
 	    <td >${ROW.indexNum.indexnum?default("")}</td>
 	    <td >${ROW.indexNum.displaydate?default("")}</td>

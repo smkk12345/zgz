@@ -51,7 +51,7 @@ public class IndexNumController {
 			model.addAttribute("indexNum", indexNum);
 			
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"/sxh.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/sxh.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

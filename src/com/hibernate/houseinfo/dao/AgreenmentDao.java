@@ -19,6 +19,7 @@ public class AgreenmentDao extends BaseDaoImpl<Agreement> {
 		Session s = null;
 		try{
 			s = getSession();
+			
 			Criteria c = s.createCriteria(Agreement.class);
 			list = c.add(Restrictions.eq("housebasicid", id))
 					.addOrder(Order.asc("updateTime"))

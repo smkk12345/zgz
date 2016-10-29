@@ -100,6 +100,8 @@ public class Agreement extends BaseBean {
 	
 	//腾退截至日期
 	private String ttrq;
+	//是否打印
+	
 	
 	
 	public String getHousebasicid() {

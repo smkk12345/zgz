@@ -6,10 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.impl.SQLQueryImpl;
 import org.springframework.ui.ModelMap;
 
 import com.common.utils.StringUtils;
@@ -89,7 +91,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 
 	public List<HouseBasic> getListBySection(String section, int currentpage,
 			int pagecount) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub  s.createSQLQuery()
 		return null;
 	}
 
@@ -109,5 +111,24 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		return 0;
 	}
 	
+	/**
+	 * 例子 处理直接查库联查  后续统计问题
+	 * @param section
+	 * @return
+	 */
+	public Integer getCount1(String section) {
+		// TODO Auto-generated method stub  s.createSQLQuery()
+		Session s = null;
+		try{
+			s = getSession();
+			List<Object> list = s.createSQLQuery("select a.*,b.* from housebasic a left join agreement b on a.id = b.housebasicid ").list();
+			System.out.println(list);
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return 0;
+	}
 	
 }
