@@ -55,5 +55,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/c3p0-0.9.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/Memcached-Java-Client-3.0.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
