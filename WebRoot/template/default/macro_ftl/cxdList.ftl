@@ -26,7 +26,7 @@
 </#if>
 </#macro>
 
-<!--协议基础数据列表-->
+<!--分户方案数据列表-->
 <#macro XyList items  pageNo pageSize>
 <#if items?size gt 0>
 <#list items as ROW>
@@ -50,9 +50,8 @@
     <td >${(ROW.agreenment.azfgfk)!""}</td>
     <td >${(ROW.agreenment.jlfsum)!""}</td>
     <td>    
-        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
-        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick glyphicon glyphicon-print" title='打印' data-url="${BASE_PATH}pgzq/xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
+        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>    
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>     
     </td>
 </tr>
 </#list>
@@ -82,10 +81,9 @@
     <td >${(ROW.agreenment.rdbazrk)!""}</td>
     <td >${(ROW.agreenment.azfgfk)!""}</td>
     <td >${(ROW.agreenment.jlfsum)!""}</td>
-    <td>    
-        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button> 
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑' data-url="${BASE_PATH}pgzq/xy_add_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>  
-        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick glyphicon glyphicon-print" title='打印' data-url="${BASE_PATH}pgzq/xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>
+    <td>   
+        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表' data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"><span class="glyphicon glyphicon-print">金额审查</span></button>
+        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"><span class="glyphicon glyphicon-print">协议</span></button>
     </td>
     <td>  
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick bold" title='签约状态' data-url="${BASE_PATH}pgzq/xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}">确认签约</button>

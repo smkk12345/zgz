@@ -21,7 +21,7 @@
                                     if ($("#main_left").is(":visible")) {
                                         $("#main_right").width(
                                                 $(window).width()
-                                                - $("#main_left").width() - 30);
+                                                - $("#main_left").width() - 35);
                                     } else {
                                         $("#main_right").width(
                                                 $(window).width());
@@ -33,18 +33,18 @@
             });
     //yulei-js-02
     var setInterval_1 = setInterval(function () {
-    
+
         var url = '${BASE_PATH}testConnection.action';
- 		$.ajax({
-                type: "POST",
-                url: url,
-                dataType: "json",
-                success: function (response) {
-                if (response.hasNewData==="true") {
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "json",
+            success: function (response) {
+                if (response.hasNewData === "true") {
                     $("#sensorNet").html("");
                 } else {
                     $("#sensorNet").html(
-                            "<a class='bold red' onClick=javascript:alert('网线接触不良或没有网络')>网络连接异常(" +response.hasNewDataTime+ ")</a>"
+                            "<a class='bold red' onClick=javascript:alert('网线接触不良或没有网络')>网络连接异常(" + response.hasNewDataTime + ")</a>"
                             );
                 }
                 $("#statusNet").html("");
