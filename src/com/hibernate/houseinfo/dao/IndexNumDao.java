@@ -1,6 +1,7 @@
 package com.hibernate.houseinfo.dao;
 
 import java.sql.Statement;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,6 +11,8 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import com.hibernate.base.BaseDaoImpl;
+import com.hibernate.houseinfo.domain.AzNumBean;
+import com.hibernate.houseinfo.domain.HbNumBean;
 import com.hibernate.houseinfo.domain.IndexNum;
 
 public class IndexNumDao extends BaseDaoImpl<IndexNum> {
@@ -69,6 +72,44 @@ public class IndexNumDao extends BaseDaoImpl<IndexNum> {
 			s.close();
 		}
 		return list;
+	}
+	
+	public HbNumBean saveHb(){
+		HbNumBean h = new HbNumBean();
+		h.setCreateTime(new Date());
+		h.setUpdateTime(new Date());
+		Session s = null;
+		Transaction tx = null;
+		try{
+			s = getSession();
+			tx = s.beginTransaction();
+			s.save(h);
+			tx.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return h;
+	}
+	
+	public AzNumBean saveAz(){
+		AzNumBean h = new AzNumBean();
+		h.setCreateTime(new Date());
+		h.setUpdateTime(new Date());
+		Session s = null;
+		Transaction tx = null;
+		try{
+			s = getSession();
+			tx = s.beginTransaction();
+			s.save(h);
+			tx.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return h;
 	}
 	
 }

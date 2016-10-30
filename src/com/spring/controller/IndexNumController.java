@@ -47,9 +47,9 @@ public class IndexNumController {
 			User user = (User)request.getSession().getAttribute("user");
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
 			if (null == indexNum) {
-				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user.getId(), housebsicid);
-				//更新协议的
 				Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user.getId(), housebsicid,agreenment.getAtype());
+				//更新协议的
 				if(agreenment.getAtype().equals("0")){
 					agreenment.setProtocolnumber("AZ-"+indexNum.getIndexnum());
 				}else{

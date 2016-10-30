@@ -20,7 +20,7 @@ public class IndexNumService {
 		this.indexNumDao = indexNumDao;
 	}
 	
-	public IndexNum getIndexNum(String ip,String userid,String housebasicid){
+	public IndexNum getIndexNum(String ip,String userid,String housebasicid,String atype){
 		IndexNum indexNum = new IndexNum();
 		indexNum.setServiceip(ip);
 		indexNum.setOperatedate(DateUtil.DateToString(new Date(),
@@ -30,6 +30,11 @@ public class IndexNumService {
 		indexNum.setUpdateTime(new Date());
 		indexNum.setTime(new Date().getTime());
 		indexNum.setUserid(userid);
+		if(atype.equals("0")){
+			indexNum.setIndexnum(indexNumDao.saveAz().getIndexnum());
+		}else{
+			indexNum.setIndexnum(indexNumDao.saveHb().getIndexnum());
+		}
 		indexNum = indexNumDao.save(indexNum);
 		return indexNum;
 	}

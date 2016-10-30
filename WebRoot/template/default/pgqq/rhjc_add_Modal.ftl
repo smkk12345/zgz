@@ -13,18 +13,18 @@
                     <label class='fl control-label'>房屋坐落:</label>
                     <input type='text' class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
                 </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>联系固话:</label>
-
-                    <input type='text' class='form-control input-sm  ' name='telephone' value="${bean.telephone?default("")}"/>       
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>被腾退人姓名:</label>
+                    <input type='text' class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
                     <input type='text' class='form-control input-sm fl dmDate' name='mobile' value="${bean.mobile?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>联系固话:</label>
+
+                    <input type='text' class='form-control input-sm  ' name='telephone' value="${bean.telephone?default("")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>性别:</label>
