@@ -9,14 +9,10 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4>入户基础信息查看列表</h4>
+            <h4 class="bold">入户基础信息查看</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>
-            </div>
-
-            <div class="fr">
                 <form  action="${BASE_PATH}/index.action" accept-charset="UTF-8" method="post" >
                     <div class=' autoWidthGroup-2 fl'>
                         <label class='fl control-label'>房屋坐落:</label>

@@ -5,29 +5,33 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-
+            
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4 class="bold">签约排号管理</h4>
+            <h4 class="bold">分户方案管理</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-                <form  action="${BASE_PATH}/sxh.action" accept-charset="UTF-8" method="post" >
-                    <div class=' autoWidthGroup-2 fl '>
-                        <label class='fl control-label'>被腾退人:</label>
-                        <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
-                    </div>
-                    <div class='autoWidthGroup-2 fl '>
-                        <label class='fl control-label'>手机:</label>
-                        <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
-                    </div>
-                    <div class='autoWidthGroup-2 fl '>
-                        <label class='fl control-label'>身份证号:</label>
-                        <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
-                    </div>  
-                    <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
-                </form>
+<!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
+            </div>
+            <div class="fl">
+              <form  action="${BASE_PATH}/xy.action" accept-charset="UTF-8" method="post" >
+	            	<div class=' autoWidthGroup-2 fl '>
+	                    <label class='fl control-label'>被腾退人:</label>
+	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
+	                </div>
+	            	<div class='autoWidthGroup-2 fl '>
+	                    <label class='fl control-label'>手机:</label>
+	                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+	                </div>
+	            	<div class='autoWidthGroup-2 fl '>
+	                    <label class='fl control-label'>身份证号:</label>
+	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
+	                </div>  
+                  <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
+	               
+	            </form>
             </div>
         </div>
 
@@ -36,13 +40,14 @@
                 <th>序号</th>
                 <th>标段</th>
                 <th>被腾退人</th>
-                <th>身份证号</th>
-                <th>协议编号</th>
-                <th>选房顺序号</th>
-                <th>获取时间</th>
-                <th>打印告知单</th>
+                <th>安置方式</th>
+                <th>认定面积</th>
+                <th>认定人口</th>
+                <th>选房购房款</th>
+                <th>奖励费补助费合计</th>
+                <th>操作</th>
             </tr>
-            <@SxhList list pageNo pageSize/>
+            <@XyList list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
@@ -103,10 +108,10 @@
                 dataType: "json",
                 data: {housebasicid: curDataId},
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "/index.action";
+                   location.href="${BASE_PATH}"+"/index.action";
                 },
                 success: function (response) {
-                    location.href = "${BASE_PATH}" + "/index.action";
+                   location.href="${BASE_PATH}"+"/index.action";
                 }
             })
         }

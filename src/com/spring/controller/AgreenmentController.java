@@ -25,7 +25,7 @@ import com.spring.ServiceManager;
 public class AgreenmentController {
 
 	
-	@RequestMapping({"/pgzq/agreenment.action","/pgzq/xy.action"})
+	@RequestMapping({"/pgzq/agreenment.action","/pgzq/fhfa.action"})
 	public ModelAndView agreenment(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -53,10 +53,10 @@ public class AgreenmentController {
 					WebConstConfig.getBase_Template_Default_Path());
 
 			model.addAttribute("CURENT_TAB", "AGREENMENT");
-			model.addAttribute("CURENT_TAB_2", "fgxy");
-			model.addAttribute("CURENT_TAB_3", "fgxy");
+			model.addAttribute("CURENT_TAB_2", "fhfa");
+			model.addAttribute("CURENT_TAB_3", "fhfa");
 
-			return new ModelAndView(PageConst.PGZQ_xy, model);
+			return new ModelAndView(PageConst.PGZQ_fhfa, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -64,6 +64,45 @@ public class AgreenmentController {
 		}
 	}
 
+	
+	@RequestMapping({"/pgzq/fhxy.action"})
+	public ModelAndView fhxy(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
+			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "AGREENMENT");
+			model.addAttribute("CURENT_TAB_2", "fhxy");
+			model.addAttribute("CURENT_TAB_3", "fhxy");
+
+			return new ModelAndView(PageConst.PGZQ_fhxy, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
 	
 	@RequestMapping({ "/pgzq/xy_add_Modal.action" })
 	public ModelAndView xy_add_Modal(HttpServletRequest request,
