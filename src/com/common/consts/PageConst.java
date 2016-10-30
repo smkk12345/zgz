@@ -17,7 +17,8 @@ public class PageConst {
     public final static String PGQQ_rhjc_add_Modal = "/default/pgqq/rhjc_add_Modal.ftl";
     
     // 棚改中期start
-    public final static String PGZQ_xy= "/default/pgzq/xy.ftl";
+    public final static String PGZQ_fhfa= "/default/pgzq/fhfa.ftl";
+    public final static String PGZQ_fhxy= "/default/pgzq/fhxy.ftl";
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
     public final static String PGZQ_xy_add_Modal = "/default/pgzq/xy_add_Modal.ftl";  
     public final static String PGZQ_kbxy_print = "/default/pgzq/kbxyprint";

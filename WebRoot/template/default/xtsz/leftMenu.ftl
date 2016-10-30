@@ -1,9 +1,8 @@
 <@override name="main_left">
 <ul class="menu-group">
-
-    <li <#if CURENT_TAB_2 =='JBSZ'>class="active"</#if>>
+<!--    <li <#if CURENT_TAB_2 =='JBSZ'>class="active"</#if>>
         <a href="${BASE_PATH}xtsz/jbsz.action"><#if CURENT_TAB_2 =='JBSZ'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>基本设置</a>
-    </li>
+    </li>-->
     
     <#if role.roleAuthority[6]=="2">
 	    <li <#if CURENT_TAB_2 =='YHGL'>class="active"</#if>>

@@ -9,20 +9,13 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4>协议签订管理</h4>
+            <h4 class="bold">协议签订管理</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-<!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
-            </div>
-            <div class="fl">
               <form  action="${BASE_PATH}/xy.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>房屋坐落:</label>
-	                    <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
-	                </div>
-	            	<div class=' autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>被腾退人姓名:</label>
+	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
 	                </div>
 	            	<div class='autoWidthGroup-2 fl '>
@@ -50,8 +43,10 @@
                 <th>选房购房款</th>
                 <th>奖励费补助费合计</th>
                 <th>操作</th>
+                <th>确认签约</th>
+                <th>协议编号</th>
             </tr>
-            <@XyList list pageNo pageSize/>
+            <@FhxyList list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>

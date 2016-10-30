@@ -47,7 +47,7 @@ public class XtszController {
      * @param model
      * @return
      */
-    @RequestMapping({ "/xtsz/jbsz.action", "/xtsz.action" })
+    @RequestMapping({ "/xtsz/jbsz.action"})
     public ModelAndView barnSetting(HttpServletRequest request,
             HttpServletResponse response, ModelMap model) {
         try {

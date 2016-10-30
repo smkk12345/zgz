@@ -53,7 +53,7 @@ public class UserInfoController {
 	}  
 
 	
-	@RequestMapping({"/user/yhgl.action"})
+	@RequestMapping({"/user/yhgl.action","/xtsz.action" })
 	public ModelAndView userManager(
 			HttpServletRequest request, HttpServletResponse response,
 			ModelMap model) {
