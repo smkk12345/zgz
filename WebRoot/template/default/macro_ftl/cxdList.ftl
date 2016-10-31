@@ -86,7 +86,11 @@
         <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"><span class="glyphicon glyphicon-print">协议</span></button>
     </td>
     <td>  
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick bold" title='签约状态' data-url="${BASE_PATH}pgzq/xy_print_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}">确认签约</button>
+    	<#if (ROW.agreenment.protocolnumber)??>
+    		${ROW.indexNum.displaydate}
+    	<#else>
+       		<button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}">确认签约</button>
+    	</#if>
     </td>
     <td title="请点击左侧确认签约，获取协议编号">${(ROW.agreenment.protocolnumber)!""}</td>
 </tr>

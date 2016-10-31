@@ -12,7 +12,7 @@ import com.hibernate.timers.utils.DateUtil;
  *
  */
 public class IndexNum extends BaseBean {
-
+	
 	private String housebasicid;
 	private Long indexnum;
 	private Long time;
@@ -47,7 +47,7 @@ public class IndexNum extends BaseBean {
 	}
 	public void setTime(Long time) {
 		this.time = time;
-		displaydate = DateUtil.DateToString(new Date(time), DateStyle.YYYY_MM_DD_HH_M_SS_SSS);
+		displaydate = DateUtil.DateToString(new Date(time), DateStyle.YYYY_MM_DD_HH_MM_SS_CN);
 	}
 	public String getUserid() {
 		return userid;

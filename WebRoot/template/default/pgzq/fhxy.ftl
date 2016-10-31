@@ -115,6 +115,26 @@
             })
         }
     }
-
+    
+	 function confirmSign(btn) {
+	        if (yu_confirm("确定签约？")) {
+	            var url = $(btn).attr("data-url");
+	            //var par = $("#"+pname);
+	            $.ajax({
+	                cache: true,
+	                type: "POST",
+	                url: url,
+	                dataType: "json",
+	                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                   		location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+                	},
+	                success: function (response) {
+	                	var protocolumnber = response.protocolumnber;
+	                	var displaydate = response.displaydate;
+	                	location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+	                }
+	            })
+	        }
+	    }
 
 </script>

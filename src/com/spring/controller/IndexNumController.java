@@ -1,6 +1,8 @@
 package com.spring.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +12,7 @@ import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.common.consts.Contanst;
@@ -29,10 +32,12 @@ public class IndexNumController {
 	 * @param request
 	 * @param response
 	 * @param model   
-	 * @return
+	 * @return 
 	 */
 	@RequestMapping({ "/indexnum/get.action" })
-	public void indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+	@ResponseBody
+	public Map<String,String> indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+		Map<String,String> map = new HashMap<String, String>();
 		try {
 			String housebsicid = request.getParameter("housebasicid");
 			String agreenmentid = request.getParameter("agreenmentid");
@@ -46,8 +51,8 @@ public class IndexNumController {
 			String ip = request.getServerName();
 			User user = (User)request.getSession().getAttribute("user");
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
+			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			if (null == indexNum) {
-				Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user.getId(), housebsicid,agreenment.getAtype());
 				//更新协议的
 				if(agreenment.getAtype().equals("0")){
@@ -56,20 +61,25 @@ public class IndexNumController {
 					agreenment.setProtocolnumber("BC-"+indexNum.getIndexnum());
 				}
 				ServiceManager.getAgreenmentService().update(agreenment);
+				map.put("protocolumnber", agreenment.getProtocolnumber());
+				map.put("displaydate", indexNum.getDisplaydate());
+			}else{
+				map.put("protocolumnber", agreenment.getProtocolnumber());
+				map.put("displaydate", indexNum.getDisplaydate());
 			}
 			System.out.println(JSONObject.fromObject(indexNum).toString());
 			model.addAttribute("indexNum", indexNum);
-			
-			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/sxh.action");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+//			try {
+//				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/fhxy.action");
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
-			return ;
+			return null;
 		}
+		return map;
 	}
 
 	@RequestMapping({ "/pgzq/sxh.action" })

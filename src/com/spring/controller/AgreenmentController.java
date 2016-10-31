@@ -252,7 +252,7 @@ public class AgreenmentController {
 	}
 	
 	@RequestMapping({ "/pgzq/saveAgreenment.action" })
-	public void savehousebasic(HttpServletRequest request,
+	public void saveAgreenment(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,Agreement agreenment,String housebasicid) {
 		try {
 			
@@ -272,7 +272,7 @@ public class AgreenmentController {
 			ServiceManager.getAgreenmentService().save(agreenment);
 			
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/xy.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/fhxy.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

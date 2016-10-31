@@ -25,7 +25,7 @@ public enum DateStyle {
 	MM_DD_HH_MM_CN("MM月dd日 HH:mm"),
 	MM_DD_HH_MM_SS_CN("MM月dd日 HH:mm:ss"),
 	YYYY_MM_DD_HH_MM_CN("yyyy年MM月dd日 HH:mm"),
-	YYYY_MM_DD_HH_MM_SS_CN("yyyy年MM月dd日 HH:mm:ss"),
+	YYYY_MM_DD_HH_MM_SS_CN("yyyy年MM月dd日 HH时mm分ss秒SSS毫秒"),
 	
 	HH_MM("HH:mm"),
 	HH_MM_SS("HH:mm:ss");
