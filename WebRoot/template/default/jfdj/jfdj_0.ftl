@@ -7,18 +7,19 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
             
 <div class="container-fluid rhjc">
+    <ul class="nav nav-pills menu">
+        <li role="presentation" ><a href="${BASE_PATH}jfdj_1.action">已交房</a></li>
+        <li role="presentation" class="active"><a href="${BASE_PATH}jfdj_0.action">未交房</a></li>
+    </ul>
     <ul class="nav nav-pills menu mb5 clearfix">
-        <div class="page-title">
-            <h4 class="bold">分户方案管理</h4>
-        </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
             <div class="fl">
-              <form  action="${BASE_PATH}/xy.action" accept-charset="UTF-8" method="post" >
+              <form  action="${BASE_PATH}/jfdj_0.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>被腾退人:</label>
+	                    <label class='fl control-label'>被腾退人姓名:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
 	                </div>
 	            	<div class='autoWidthGroup-2 fl '>
@@ -28,14 +29,6 @@
 	            	<div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>身份证号:</label>
 	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
-	                </div>  
-	                <div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>安置方式:</label>
-	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
-	                        <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-	                        <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
-	                        <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
-                    	</select>
 	                </div>  
                   <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
 	               
@@ -48,14 +41,15 @@
                 <th>序号</th>
                 <th>标段</th>
                 <th>被腾退人</th>
+                <th>手机</th>
+                <th>身份证</th>
                 <th>安置方式</th>
-                <th>认定面积</th>
-                <th>认定人口</th>
-                <th>选房购房款</th>
-                <th>奖励费补助费合计</th>
+                <th>房屋坐落</th>
+                <th>房屋间数</th>
+                
                 <th>操作</th>
             </tr>
-            <@XyList list pageNo pageSize/>
+            <@JfdjList list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
@@ -124,6 +118,25 @@
             })
         }
     }
+    
+     function confirmOthers(btn) {
+	        if (yu_confirm("您确认已经交房？")) {
+	            var url = $(btn).attr("data-url");
+	            //var par = $("#"+pname);
+	            $.ajax({
+	                cache: true,
+	                type: "POST",
+	                url: url,
+	                dataType: "json",
+	                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                   		location.href="${BASE_PATH}"+"jfdj.action";
+                	},
+	                success: function (response) {
+	                	location.href="${BASE_PATH}"+"jfdj.action";
+	                }
+	            })
+	        }
+	    }
 
 
 </script>

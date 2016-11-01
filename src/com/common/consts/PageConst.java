@@ -32,7 +32,8 @@ public class PageConst {
     public final static String PGZQ_fbxy_print = "/default/pgzq/fbxyprint";
     public final static String PGZQ_xy_print_Modal = "/default/pgzq/xy_print_Modal.ftl";  
      //
-    public final static String JFDJ_DJ = "/default/jfdj/jfdj.ftl";  
+    public final static String JFDJ_DJ_0 = "/default/jfdj/jfdj_0.ftl";  
+    public final static String JFDJ_DJ_1 = "/default/jfdj/jfdj_1.ftl"; 
     public final static String SJTJ = "/default/sjtj/sjtj.ftl";  
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析

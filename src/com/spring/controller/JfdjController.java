@@ -28,8 +28,15 @@ import com.spring.ServiceManager;
 @Controller
 public class JfdjController {
 
-	@RequestMapping({"/jfdj.action"})
-	public ModelAndView jfdj(HttpServletRequest request,
+	/**
+	 * 未交房
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping({"/jfdj_0.action"})
+	public ModelAndView jfdj_0(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
@@ -41,7 +48,7 @@ public class JfdjController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getJfdjSql(role.getSection(),request);
+			String sql = getJfdjSql(role.getSection(),request,"'0' or hasothers is null ",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
 			
@@ -60,9 +67,9 @@ public class JfdjController {
 
 			model.addAttribute("CURENT_TAB", "JFDJ");
 			model.addAttribute("CURENT_TAB_2", "jfdj");
-			model.addAttribute("CURENT_TAB_3", "jfdj");
+			model.addAttribute("CURENT_TAB_3", "jfdj_0");
 
-			return new ModelAndView(PageConst.JFDJ_DJ, model);
+			return new ModelAndView(PageConst.JFDJ_DJ_0, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
@@ -70,11 +77,76 @@ public class JfdjController {
 		}
 	}
 
-	private String getJfdjSql(String section,HttpServletRequest request) {
+	/**
+	 * 已交房
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping({"/jfdj_1.action"})
+	public ModelAndView jfdj_1(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			String sql = getJfdjSql(role.getSection(),request,"1",model);
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "JFDJ");
+			model.addAttribute("CURENT_TAB_2", "jfdj");
+			model.addAttribute("CURENT_TAB_3", "jfdj_1");
+
+			return new ModelAndView(PageConst.JFDJ_DJ_1, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
+	private String getJfdjSql(String section,HttpServletRequest request,String type,ModelMap model) {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  c.id is not null ");
-		sb.append(" and a.section = '"+section+"'");
+		sb.append(" and a.section in ("+section+")");
+		sb.append(" and (a.hasothers = ").append(type).append(")");
+		String names = request.getParameter("names");
+		String mobile = request.getParameter("mobile");
+		String idcard = request.getParameter("idcard");
+		if(!StringUtils.isBlank(names)){
+			sb.append(" and a.names like '%").append(names).append("%'");
+			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(mobile)){
+			sb.append(" and a.mobile ='").append(mobile).append("'");
+			model.addAttribute("mobile", mobile);
+		}
+		if(!StringUtils.isBlank(idcard)){
+			sb.append(" and a.idcard ='").append(idcard).append("'");
+			model.addAttribute("idcard", idcard);
+		}
 		return sb.toString();
 	}
 

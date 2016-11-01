@@ -67,6 +67,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			String names = request.getParameter("names");
 			String  mobile = request.getParameter("mobile");
 			String idcard = request.getParameter("idcard");
+			String atype = request.getParameter("atype");
 			StringBuffer sb = new StringBuffer();
 			if(!StringUtils.isBlank(location)){
 				c.add(Restrictions.like("location", location,MatchMode.ANYWHERE));
@@ -84,6 +85,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				c.add(Restrictions.eq("idcard", idcard));
 				model.addAttribute("idcard", idcard);
 			}
+			
 			list = c.add(Restrictions.in("section", section.split(","))).addOrder(Order.asc("createTime")).list();
 		}catch(Exception e){
 			e.printStackTrace();
