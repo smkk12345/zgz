@@ -93,7 +93,7 @@ public class IndexNumController {
 		
 		int intPageNum = Integer.parseInt(pageNo);
 		RoleBean role = (RoleBean) request.getSession().getAttribute("role");
-		String sql = getSxhSql(role.getSection());
+		String sql = getSxhSql(role.getSection(), request, model);
 		List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 				.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
 		
@@ -115,12 +115,32 @@ public class IndexNumController {
 		return new ModelAndView(PageConst.PGZQ_sxh, model);
 	}
 
-	private String getSxhSql(String section) {
+	private String getSxhSql(String section,HttpServletRequest request, ModelMap model) {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  c.id is not null ");
 		sb.append(" and a.section in ("+section+")");
-		sb.append(" and b.atype = '0' ");
+		
+		String names = request.getParameter("names");
+		String  mobile = request.getParameter("mobile");
+		String idcard = request.getParameter("idcard");
+		String indexnum = request.getParameter("indexnum");
+		if(!StringUtils.isBlank(names)){
+			sb.append(" and a.names like '%").append(names).append("%'");
+			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(mobile)){
+			sb.append(" and a.mobile ='").append(mobile).append("'");
+			model.addAttribute("mobile", mobile);
+		}
+		if(!StringUtils.isBlank(idcard)){
+			sb.append(" and a.idcard ='").append(idcard).append("'");
+			model.addAttribute("idcard", idcard);
+		}
+		if(!StringUtils.isBlank(indexnum)){
+			sb.append(" and c.indexnum =").append(indexnum);
+			model.addAttribute("indexnum", indexnum);
+		}
 		return sb.toString();
 	}
 	

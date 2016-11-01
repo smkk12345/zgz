@@ -13,7 +13,7 @@
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-                <form  action="${BASE_PATH}/sxh.action" accept-charset="UTF-8" method="post" >
+                <form  action="${BASE_PATH}pgzq/sxh.action" accept-charset="UTF-8" method="post" >
                     <div class=' autoWidthGroup-2 fl '>
                         <label class='fl control-label'>被腾退人:</label>
                         <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -26,6 +26,10 @@
                         <label class='fl control-label'>身份证号:</label>
                         <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
                     </div>  
+                    <div class='autoWidthGroup-2 fl '>
+                        <label class='fl control-label'>顺序号:</label>
+                        <input type='text' class='form-control input-sm  ' name='indexnum' value="${indexnum?default("")}" />
+                    </div> 
                     <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
                 </form>
             </div>
