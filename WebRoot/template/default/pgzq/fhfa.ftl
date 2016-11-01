@@ -29,6 +29,14 @@
 	                    <label class='fl control-label'>身份证号:</label>
 	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
 	                </div>  
+	                <div class='autoWidthGroup-2 fl '>
+	                    <label class='fl control-label'>安置方式:</label>
+	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
+	                        <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+	                        <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
+	                        <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
+                    	</select>
+	                </div>  
                   <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
 	               
 	            </form>

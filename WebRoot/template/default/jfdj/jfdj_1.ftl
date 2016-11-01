@@ -7,20 +7,17 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
             
 <div class="container-fluid rhjc">
+    <ul class="nav nav-pills menu">
+        <li role="presentation" class="active"><a href="${BASE_PATH}jfdj_1.action">已交房</a></li>
+        <li role="presentation" ><a href="${BASE_PATH}jfdj_0.action">未交房</a></li>
+    </ul>
     <ul class="nav nav-pills menu mb5 clearfix">
-        <div class="page-title">
-            <h4 class="bold">交房信息登记</h4>
-        </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
             <div class="fl">
-              <form  action="${BASE_PATH}/xy.action" accept-charset="UTF-8" method="post" >
-	            	<div class=' autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>房屋坐落:</label>
-	                    <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
-	                </div>
+              <form  action="${BASE_PATH}/jfdj_1.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人姓名:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
