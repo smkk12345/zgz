@@ -37,10 +37,7 @@ $(document).ready(function () {
 function yu_confirm(infor) {
     return confirm(infor);
 }
-//打印函数
-function yu_print() {
-    $("#yu-print-show").jqprint();
-}
+
 /*Auth:yulei,2015.11.28
  * 浏览器判断并处理
  */
