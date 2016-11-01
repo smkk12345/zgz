@@ -52,7 +52,13 @@ public class Agreement extends BaseBean {
 	//一居室几套
 	private Integer yjs;
 	//两居室
-	private Integer ljs;
+	private Integer ljs70;
+	//两居室
+	private Integer ljs75;
+	//两居室
+	private Integer ljs80;
+	//两居室
+	private Integer ljs85;
 	//三居室
 	private Integer sjs;
 	//安置房购房款
@@ -256,16 +262,6 @@ public class Agreement extends BaseBean {
 
 	public void setYjs(Integer yjs) {
 		this.yjs = yjs;
-	}
-
-
-	public Integer getLjs() {
-		return ljs;
-	}
-
-
-	public void setLjs(Integer ljs) {
-		this.ljs = ljs;
 	}
 
 
@@ -531,7 +527,7 @@ public class Agreement extends BaseBean {
 		PropertyDescriptor[] props = null;
 		StringBuffer sb = new StringBuffer();
 		try {
-			props = Introspector.getBeanInfo(new Agreement().getClass(),
+			props = Introspector.getBeanInfo(new DisplayBean().getClass(),
 					Object.class).getPropertyDescriptors();
 		} catch (IntrospectionException e) {
 		}
@@ -549,6 +545,46 @@ public class Agreement extends BaseBean {
 			}
 		}
 		System.out.println(sb.toString());
+	}
+
+
+	public Integer getLjs70() {
+		return ljs70;
+	}
+
+
+	public void setLjs70(Integer ljs70) {
+		this.ljs70 = ljs70;
+	}
+
+
+	public Integer getLjs75() {
+		return ljs75;
+	}
+
+
+	public void setLjs75(Integer ljs75) {
+		this.ljs75 = ljs75;
+	}
+
+
+	public Integer getLjs80() {
+		return ljs80;
+	}
+
+
+	public void setLjs80(Integer ljs80) {
+		this.ljs80 = ljs80;
+	}
+
+
+	public Integer getLjs85() {
+		return ljs85;
+	}
+
+
+	public void setLjs85(Integer ljs85) {
+		this.ljs85 = ljs85;
 	}
 
 }
