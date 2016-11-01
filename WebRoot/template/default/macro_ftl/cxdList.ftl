@@ -86,7 +86,7 @@
         <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"><span class="glyphicon glyphicon-print">协议</span></button>
     </td>
     <td>  
-    	<#if (ROW.protocolnumber)??>
+    	<#if (ROW.protocolnumber?length>0)>
     		${ROW.displaydate}
     	<#else>
        		<button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">确认签约</button>

@@ -8,7 +8,7 @@
 
         <input type="hidden" class='form-control input-sm ' name='aid' value="${bean.id?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='housebasicid' value="${housebasic.id?default("")}" style="width: 0px;"/>
-
+ 		<input type="hidden" class='form-control input-sm ' name='protocolnumber' value="${bean.protocolnumber?default("")}" style="width: 0px;"/>
         <div class='ml15' >
             <h4><span class="label label-default">一.基本情况：</span></h4>
             <div class='container-fluid con-bg mb10'>
