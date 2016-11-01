@@ -92,7 +92,8 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String license;
 	//l类型  个体工商   1  个人独资
 	private String operatetype;
-	
+	//是否已经交房
+	private String hasothers;// 0 未交房   1 已经交房
 	//协议
 	private Agreement agreenment = new Agreement();
 	//顺序号
@@ -374,5 +375,11 @@ public class HouseBasic extends BaseBean implements Serializable {
 	}
 	public void setIndexNum(IndexNum indexNum) {
 		this.indexNum = indexNum;
+	}
+	public String getHasothers() {
+		return hasothers;
+	}
+	public void setHasothers(String hasothers) {
+		this.hasothers = hasothers;
 	}
 }

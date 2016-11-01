@@ -104,6 +104,8 @@ public class DisplayBean extends BaseBean {
 		//otherList
 		List<OtherInfo> otherList = new ArrayList<OtherInfo>();
 		
+		private String hasothers;// 0 未交房   1 已经交房
+		
 		private String agreenmentid;
 		
 		//协议号
@@ -793,6 +795,12 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setIndexid(String indexid) {
 			this.indexid = indexid;
+		}
+		public String getHasothers() {
+			return hasothers;
+		}
+		public void setHasothers(String hasothers) {
+			this.hasothers = hasothers;
 		}
 		
 		

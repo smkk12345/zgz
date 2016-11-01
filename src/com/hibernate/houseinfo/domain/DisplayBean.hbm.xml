@@ -97,7 +97,7 @@
 <property name="zjdarea" ></property>
 <property name="zjdttbck" ></property>
 <property name="zjdttzj" ></property>
-
+<property name="hasothers"></property>
 		
 		
 	</class>

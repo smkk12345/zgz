@@ -114,6 +114,6 @@
 		<property name="license" type="java.lang.String">
 			<column name="license" />
 		</property>	
-
+		<property name="hasothers"></property>
 	</class>
 </hibernate-mapping>

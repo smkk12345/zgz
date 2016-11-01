@@ -117,6 +117,7 @@ public class AgreenmentController {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  b.id IS NOT NULL and a.section in (").append(section).append(")");
+		
 		return sb.toString();
 	}
 

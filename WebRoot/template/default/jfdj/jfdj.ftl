@@ -44,16 +44,15 @@
                 <th>序号</th>
                 <th>标段</th>
                 <th>被腾退人</th>
+                <th>手机</th>
                 <th>身份证</th>
+                <th>安置方式</th>
                 <th>房屋坐落</th>
                 <th>房屋间数</th>
-                <th>拟被安置人口</th>
-                <th>宅基地测绘</th>
-                <th>建筑测绘</th>
-                <th>手机</th>
+                
                 <th>操作</th>
             </tr>
-            <@XyList list pageNo pageSize/>
+            <@JfdjList list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
@@ -122,6 +121,25 @@
             })
         }
     }
+    
+     function confirmOthers(btn) {
+	        if (yu_confirm("您确认已经交房？")) {
+	            var url = $(btn).attr("data-url");
+	            //var par = $("#"+pname);
+	            $.ajax({
+	                cache: true,
+	                type: "POST",
+	                url: url,
+	                dataType: "json",
+	                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                   		location.href="${BASE_PATH}"+"jfdj.action";
+                	},
+	                success: function (response) {
+	                	location.href="${BASE_PATH}"+"jfdj.action";
+	                }
+	            })
+	        }
+	    }
 
 
 </script>

@@ -119,7 +119,8 @@ public class IndexNumController {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  c.id is not null ");
-		sb.append(" and a.section = '"+section+"'");
+		sb.append(" and a.section in ("+section+")");
+		sb.append(" and b.atype = '0' ");
 		return sb.toString();
 	}
 	

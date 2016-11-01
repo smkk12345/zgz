@@ -121,3 +121,43 @@
 </#list>
 </#if>
 </#macro>
+
+
+<!--交房等级-->
+<#macro JfdjList items  pageNo pageSize>
+<#if items?size gt 0>
+<#list items as ROW>
+<tr id="${ROW.id}">
+    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${role.section?default("")}</td>
+    <td >${ROW.names?default("")}</td>
+    <td >${ROW.mobile?default("")}</td>
+    <td >${ROW.idcard?default("")}</td> 
+    <td > 
+        <#if (ROW.atype)??>
+        <#if ROW.atype?default("0")=="0">
+        安置补偿
+        <#else>
+        货币补偿
+        </#if>
+        <#else>
+        未录入
+        </#if>
+    </td>
+    <td >${(ROW.location)!""}</td>
+    <td >${(ROW.housecount)!""}</td>
+    <td>  
+    	<#if (ROW.hasothers)??>
+    		<#if ROW.hasothers?default("0")=="1">
+    		已经交房
+    		<#else>
+    		<button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房' onclick="confirmOthers(this)" data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房</button>   	
+    		</#if>
+    	<#else>
+    		<button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房' onclick="confirmOthers(this)" data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房</button>   	
+    	</#if>
+    </td>
+</tr>
+</#list>
+</#if>
+</#macro>

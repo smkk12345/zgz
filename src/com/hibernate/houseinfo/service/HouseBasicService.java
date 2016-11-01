@@ -176,5 +176,11 @@ public class HouseBasicService {
 		// TODO Auto-generated method stub
 		return houseBasicDao.getDisPlayCount(sql);
 	}
+	public void confirmOthers(String housebasicid) {
+		// TODO Auto-generated method stub
+		HouseBasic houseBasic = houseBasicDao.getById(housebasicid);
+		houseBasic.setHasothers("1");
+		houseBasicDao.update(houseBasic);
+	}
 	
 }

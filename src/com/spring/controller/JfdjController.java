@@ -1,6 +1,8 @@
 package com.spring.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +16,7 @@ import com.common.consts.Contanst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.StringUtils;
+import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
@@ -38,8 +41,11 @@ public class JfdjController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			String sql = getJfdjSql(role.getSection(),request);
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
 			model.addAttribute("pageSize", intPageSize);
 			model.addAttribute("pageNo", intPageNum);
@@ -64,6 +70,29 @@ public class JfdjController {
 		}
 	}
 
-	
+	private String getJfdjSql(String section,HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		StringBuffer sb = new StringBuffer();
+		sb.append(" and  c.id is not null ");
+		sb.append(" and a.section = '"+section+"'");
+		return sb.toString();
+	}
+
+	@RequestMapping({"/confirmOthers.action"})
+	public Map<String,String> confirmOthers(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		Map<String,String> map = new HashMap<String, String>();
+		try {
+			String housebasicid = request.getParameter("housebasicid");
+			ServiceManager.getHouseBasicServce().confirmOthers(housebasicid);
+			map.put("success", "true");
+			return map;
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			map.put("success", "false");
+			return map;
+		}
+	}
 	
 }
