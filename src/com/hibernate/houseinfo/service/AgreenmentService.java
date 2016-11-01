@@ -1,5 +1,6 @@
 package com.hibernate.houseinfo.service;
 
+import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.dao.AgreenmentDao;
 import com.hibernate.houseinfo.domain.Agreement;
 
@@ -18,7 +19,13 @@ public class AgreenmentService {
 	 * @return
 	 */
 	public Agreement save(Agreement agreenment){
-		return agreenmentDao.save(agreenment);
+		if(StringUtils.isBlank(agreenment.getId())){
+			return agreenmentDao.save(agreenment);
+		}
+		else{
+			agreenmentDao.update(agreenment);
+			return agreenment;
+		}
 	}
 	
 	/**

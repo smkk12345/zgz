@@ -125,7 +125,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		Session s = null;
 		try{
 			s = getSession();
-			List<Object> list = s.createSQLQuery("select a.*,b.* from housebasic a left join agreement b on a.id = b.housebasicid ").list();
+			List<Object> list = s.createSQLQuery("select a.*,b.* from housebasic a left join agreenment b on a.id = b.housebasicid ").list();
 			System.out.println(list);
 		}catch(Exception e){
 			e.printStackTrace();

@@ -210,7 +210,13 @@ public class AgreenmentController {
 		}
 	}
 	
-	
+	/**
+	 * 完全货币补偿方式
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({ "/pgzq/fhxy_hb_je_print_Modal.action" })
 	public ModelAndView fhxy_az_hb_print_Modal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
@@ -290,7 +296,7 @@ public class AgreenmentController {
 			ServiceManager.getAgreenmentService().save(agreenment);
 			
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/fhxy.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/fhfa.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
