@@ -14,89 +14,89 @@
                 </tr>
                 <tr>
                     <td class="td_content_1">被腾退人</td>
-                    <td class="td_content_1">zhagsa </td>
+                    <td class="td_content_1">${housebasic.names?default("")} </td>
                     <td class="td_content_1">坐落</td>
-                    <td class="td_content_1"colspan="4">111</td>
+                    <td class="td_content_1"colspan="4">${housebasic.location?default("")}</td>
                     <td class="td_content_1">签约时间</td>
-                    <td class="td_content_1"colspan="2">2</td>
+                    <td class="td_content_1"colspan="2">/</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">宅基地实测</td>
-                    <td class="td_content_1">111</td>
+                    <td class="td_content_1">${bean.scydmj?default("")}</td>
  					<td class="td_content_1">身份证</td>
- 					<td class="td_content_1" colspan=3>5</td>
+ 					<td class="td_content_1" colspan=3>${housebasic.idcard?default("")}</td>
                     <td class="td_content_1">认定年限</td>
-                    <td class="td_content_1">133</td>
+                    <td class="td_content_1">${bean.homesteadyear?default("")}</td>
                     <td class="td_content_1">签约顺序号</td>
-                    <td class="td_content_1">121</td>
+                    <td class="td_content_1">/</td>
                 </tr>
 
                 <tr>
                     <td class="td_content_1">实建面</td>
-                    <td class="td_content_1">22</td>
+                    <td class="td_content_1">${housebasic.firstfloorarea?default(0)}+${housebasic.abovetwoarea?default(0)}+${housebasic.basement?default(0)}+${bean.shed?default(0)}</td>
  					<td class="td_content_1">首层</td>
- 					<td class="td_content_1" >22</td>
+ 					<td class="td_content_1" >${housebasic.firstfloorarea?default(0)}</td>
                     <td class="td_content_1">二层及以上</td>
-                    <td class="td_content_1">222</td>
+                    <td class="td_content_1">${housebasic.abovetwoarea?default(0)}</td>
                     <td class="td_content_1">地下室</td>
-                    <td class="td_content_1">22</td>
+                    <td class="td_content_1">${housebasic.basement?default(0)}</td>
                     <td class="td_content_1">棚</td>
-                    <td class="td_content_1">22</td>
+                    <td class="td_content_1">${bean.shed?default(0)}</td>
                 </tr>
                 
                 <tr>
                     <td class="td_content_1">认定宅基地面积</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">${bean.homesteadyear?default(0)}+${bean.overhomesteadarea?default(0)}</td>
  					<td class="td_content_1">控制面积</td>
- 					<td class="td_content_1" >3</td>
+ 					<td class="td_content_1" >${bean.homesteadyear?default(0)}</td>
                     <td class="td_content_1">区位单价</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">${bean.kzzjdqwbcj?default(0)}</td>
                     <td class="td_content_1">超控面积</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">${bean.overhomesteadarea?default(0)}</td>
                     <td class="td_content_1">区位单价</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">${bean.ckzjdqwbcj?default(0)}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">认定房屋补偿面积</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">${bean.fwbcmj?default(0)}</td>
  					<td class="td_content_1">经营面积</td>
- 					<td class="td_content_1" >3</td>
+ 					<td class="td_content_1" >${housebasic.operatearea?default(0)}</td>
                     <td class="td_content_1">本址在册户籍人数</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">0</td>
                     <td class="td_content_1">非本址在册户籍人数</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">0</td>
                     <td class="td_content_1">认定人数总和</td>
-                    <td class="td_content_1">3</td>
+                    <td class="td_content_1">0</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">被认定全体人员姓名（注明代际关系）</td>
-                    <td class="td_content_1" colspan=9>5</td>
+                    <td class="td_content_1" colspan=9>${bean.rdbazrkxx?default("")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1" colspan=3>宅基地腾退补偿总价</td>
-                    <td class="td_content_1" colspan=7>4</td>
+                    <td class="td_content_1" colspan=7>${bean.zjdttzj?default("")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1" colspan=3>一，宅基地补偿款合计</td>
-                    <td class="td_content_1" colspan=2>4</td>
+                    <td class="td_content_1" colspan=2>${bean.zjdttbck?default("")}</td>
                     <td class="td_content_1" colspan=5>结算及领款内容</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">1</td>
                     <td class="td_content_1">控制区位补偿价</td>
                     <td class="td_content_1" colspan=3>4</td>
-                    <td class="td_content_1" colspan=5 rowspan=4>5</td>
+                    <td class="td_content_1" colspan=5 rowspan=4>${bean.kzzjdqwbcj?default("")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">2</td>
                     <td class="td_content_1">超控制区位补偿价</td>
-                    <td class="td_content_1" colspan=3>4</td>
+                    <td class="td_content_1" colspan=3>${bean.ckzjdqwbcj?default("")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">3</td>
                     <td class="td_content_1">房屋价款</td>
-                    <td class="td_content_1" colspan=2>4</td>
-                    <td class="td_content_1" rowspan=2>4</td>
+                    <td class="td_content_1" colspan=2>${bean.bttfwczcxj?default("")}</td>
+                    <td class="td_content_1" rowspan=2></td>
                 </tr>
                 <tr>
                     <td class="td_content_1">4</td>
@@ -106,7 +106,7 @@
                 </tr>
                 <tr>
                     <td class="td_content_1" colspan=3>二、各项奖励、补助、周转合计</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.jlfsum?default("/")}</td>
                     <td class="td_content_1" colspan=5 rowspan=4>腾退服务公司经手人签字</td>
                 </tr>
                 
@@ -114,87 +114,87 @@
                     <td class="td_content_1">1</td>
                     <td class="td_content_1">提前搬家奖</td>
                     <td class="td_content_1">（5000元/院）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.tqbjl?default("/")}</td>
                 </tr>
 				<tr>
                     <td class="td_content_1">2</td>
                     <td class="td_content_1">工程配合奖</td>
                     <td class="td_content_1">（100000元/院）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.gcphjl?default("")}</td>
                 </tr>
 				<tr>
                     <td class="td_content_1">3</td>
                     <td class="td_content_1">腾退促进奖</td>
                     <td class="td_content_1">（50000元/院）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.ttcjjl?default("/")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">4</td>
                     <td class="td_content_1">无违章奖励</td>
                     <td class="td_content_1">（500元㎡）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.wwzjl?default("/")}</td>
                     <td class="td_content_1" colspan=5 rowspan=5>实施主体内审经手人签字</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">5</td>
                     <td class="td_content_1">未建二层奖</td>
                     <td class="td_content_1">（500元㎡）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.wjecjj?default("/")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">6</td>
                     <td class="td_content_1">已建二层补助</td>
                     <td class="td_content_1">（500元㎡）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>/</td>
                 </tr> 
                  <tr>
                     <td class="td_content_1">7</td>
                     <td class="td_content_1">家电迁移补助</td>
                     <td class="td_content_1">（12000元/院）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.bjbz?default("/")}</td>
                 </tr> 
                  <tr>
                     <td class="td_content_1">8</td>
                     <td class="td_content_1">大病补助</td>
                     <td class="td_content_1">（50000元/人）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.dbbz?default("/")}</td>
                 </tr> 
                  <tr>
                     <td class="td_content_1">9</td>
                     <td class="td_content_1">残疾补助</td>
                     <td class="td_content_1">（30000元/人）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.cjbz?default("/")}</td>
                     <td class="td_content_1" colspan=5 rowspan=6>备注：</td>
                 </tr> 
                  <tr>
                     <td class="td_content_1">10</td>
                     <td class="td_content_1">低保补助</td>
                     <td class="td_content_1">（30000元/人）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.dbhbz?default("/")}</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">11</td>
                     <td class="td_content_1">独生子女</td>
                     <td class="td_content_1">（30000元/人）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.dsznbz?default("/")}</td>
                 </tr>  
                 <tr>
                     <td class="td_content_1">12</td>
                     <td class="td_content_1">停产停业补助</td>
                     <td class="td_content_1">（800元㎡）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.tctdbz?default("/")}</td>
                 </tr>  
                 <tr>
                     <td class="td_content_1">13</td>
                     <td class="td_content_1">周转补助费</td>
                     <td class="td_content_1">（1200元/人/月）</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.jlfsum?default("/")}</td>
                 </tr> 
                 <tr>
                     <td class="td_content_1">14</td>
                     <td class="td_content_1">其他补助</td>
                     <td class="td_content_1">－－</td>
-                    <td class="td_content_1" colspan=2>5</td>
+                    <td class="td_content_1" colspan=2>${bean.otherbz?default("/")}</td>
                 </tr>                   
             </table>
         </div>
