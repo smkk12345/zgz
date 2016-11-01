@@ -97,7 +97,7 @@ public class IndexNumController {
 		List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 				.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
 		
-		Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+		Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 
 		model.addAttribute("pageSize", intPageSize);
 		model.addAttribute("pageNo", intPageNum);

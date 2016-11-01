@@ -12,6 +12,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.impl.SQLQueryImpl;
+import org.springframework.jdbc.object.SqlQuery;
 import org.springframework.ui.ModelMap;
 
 import com.common.utils.StringUtils;
@@ -188,8 +189,30 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}
 		return null;
 	}
-	
-	
+
+	public Integer getDisPlayCount(String sql) {
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select count(a.id) as count "
+					+ " from housebasic a "
+					+ "left join agreenment b on a.id = b.housebasicid "
+					+ "left join indexnum c on a.id = c.housebasicid "
+					+ " where 1=1 ");
+			if(!StringUtils.isBlank(sql)){
+				sb.append(sql);
+			}
+			SQLQuery query = s.createSQLQuery(sb.toString());
+			Object o = query.uniqueResult();
+			return ((Number)o).intValue();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return 0;
+	}
 	
 	
 	

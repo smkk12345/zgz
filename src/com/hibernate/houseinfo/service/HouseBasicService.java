@@ -172,5 +172,9 @@ public class HouseBasicService {
 			int currentpage,int pagecount){
 		return houseBasicDao.getDisplayBeanList(sql,currentpage,pagecount);
 	}
+	public Integer getDisPlayCount(String sql) {
+		// TODO Auto-generated method stub
+		return houseBasicDao.getDisPlayCount(sql);
+	}
 	
 }

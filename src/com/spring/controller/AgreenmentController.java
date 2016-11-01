@@ -17,6 +17,7 @@ import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
+import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
@@ -78,8 +79,11 @@ public class AgreenmentController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			String sql = getHfxySxhSql(role.getSection());
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
 			model.addAttribute("pageSize", intPageSize);
 			model.addAttribute("pageNo", intPageNum);
@@ -104,6 +108,19 @@ public class AgreenmentController {
 		}
 	}
 	
+	/**
+	 * 查询参数都在这里拼凑
+	 * @param section
+	 * @return
+	 */
+	private String getHfxySxhSql(String section) {
+		// TODO Auto-generated method stub
+		StringBuffer sb = new StringBuffer();
+		sb.append(" and  b.id IS NOT NULL and a.section in (").append(section).append(")");
+		return sb.toString();
+	}
+
+
 	@RequestMapping({ "/pgzq/fhfa_edit_Modal.action" })
 	public ModelAndView xy_add_Modal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {

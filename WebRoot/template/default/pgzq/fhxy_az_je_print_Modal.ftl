@@ -8,8 +8,7 @@
 <div class="modal-body xy-print-con" id="xy-print">
     <div style="margin-left: auto;margin-right: auto;">
         <div class="content" style="float:left;">
-            <p class="title" style="margin-top: 200px;">东城区望坛棚改项目</p>
-            <p class="title">房屋征收补偿协议</p>
+            <span class="title">房屋征收补偿协议</span>
           
            <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
                 <tr>

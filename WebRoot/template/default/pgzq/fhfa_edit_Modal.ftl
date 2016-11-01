@@ -205,8 +205,20 @@
                     <input type='text' class='form-control input-sm  ' name='yjs'  value="${bean.yjs?default("")}" />    
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>二居室:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs'   value="${bean.ljs?default("")}"/>       
+                    <label class='fl control-label'>二居室（70）:</label>
+                    <input type='text' class='form-control input-sm  ' name='ljs70'   value="${bean.ljs70?default("")}"/>       
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>二居室（75）:</label>
+                    <input type='text' class='form-control input-sm  ' name='ljs75'   value="${bean.ljs75?default("")}"/>       
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>二居室（80）:</label>
+                    <input type='text' class='form-control input-sm  ' name='ljs80'   value="${bean.ljs80?default("")}"/>       
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>二居室（85）:</label>
+                    <input type='text' class='form-control input-sm  ' name='ljs85'   value="${bean.ljs85?default("")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>三居室:</label>

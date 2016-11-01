@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.common.utils.StringUtils;
 import com.hibernate.base.BaseBean;
 import com.hibernate.timers.utils.DateStyle;
 import com.hibernate.timers.utils.DateUtil;
@@ -209,7 +210,7 @@ public class DisplayBean extends BaseBean {
 		
 		private String indexid;
 		private Long indexnum;
-		private Long time;
+		private String time;
 		private String userid;
 		private String operatedate;
 		private String serviceip;
@@ -748,12 +749,14 @@ public class DisplayBean extends BaseBean {
 		public void setIndexnum(Long indexnum) {
 			this.indexnum = indexnum;
 		}
-		public Long getTime() {
+		public String getTime() {
 			return time;
 		}
-		public void setTime(Long time) {
+		public void setTime(String time) {
 			this.time = time;
-			displaydate = DateUtil.DateToString(new Date(time), DateStyle.YYYY_MM_DD_HH_MM_SS_CN);
+			if(!StringUtils.isBlank(time)){
+				displaydate = DateUtil.DateToString(new Date(Long.parseLong(time)), DateStyle.YYYY_MM_DD_HH_MM_SS_CN);
+			}
 		}
 		public String getUserid() {
 			return userid;
