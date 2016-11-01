@@ -253,7 +253,7 @@
                     <td class="td_content_1">（30000元/人）</td>
                     <td class="td_content_1" colspan=2>5</td>
                     <td class="td_content_1" colspan=2 rowspan=4>备注</td>
-                    <td class="td_content_1" colspan=3 rowspan=4></td>
+                    <td class="td_content_1" colspan=3 rowspan=4>备注内容</td>
                 </tr>  
                 <tr>
                     <td class="td_content_1">13</td>

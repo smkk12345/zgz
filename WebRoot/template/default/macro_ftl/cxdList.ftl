@@ -108,11 +108,11 @@
     <td >${role.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
-    <td >${ROW.agreenment.protocolnumber?default("")}</td>
-    <td >${ROW.indexNum.indexnum?default("")}</td>
-    <td >${ROW.indexNum.displaydate?default("")}</td>
+    <td >${ROW.protocolnumber?default("")}</td>
+    <td >${ROW.indexnum?default("")}</td>
+    <td >${ROW.displaydate?default("")}</td>
     <td>    
-        <form id='rhjcAddForm' modelAttribute = "Agreement" action="${BASE_PATH}/indexnum/get.action?housebasicid=${ROW.id}"
+        <form id='rhjcAddForm' modelAttribute = "Agreement" action="${BASE_PATH}/indexnum/get.action?housebasicid=${ROW.housebasicid}"
               accept-charset="UTF-8" method="post">
             <button type="submit"    class="btn btn-info btn-xs ml10  glyphicon glyphicon-print <#if (ROW.indexNum)??>disabled='disabled'</#if>" title='打印选房顺序通知单' > </button>
         </form>

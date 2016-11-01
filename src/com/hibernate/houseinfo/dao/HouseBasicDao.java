@@ -16,6 +16,7 @@ import org.springframework.ui.ModelMap;
 
 import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
+import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.userInfo.damain.User;
@@ -142,7 +143,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		try{
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
-			sb.append(" select a.*,b.section,b.names from indexnum a left join housebasic b on a.housebasicid = a.id where 1=1 ");
+			sb.append(" select a.*,b.section,b.names from indexnum a "
+					+ "left join housebasic b on a.housebasicid = a.id where 1=1 ");
 			if(!StringUtils.isBlank(section)){
 				sb.append(" and b.section =  '").append(section).append("'");
 			}
@@ -157,7 +159,35 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}
 		return null;
 	}
-	
+
+	/**
+	 * 写一个查询搞定所有的数据算了
+	 */
+	public List<DisplayBean> getDisplayBeanList(String sql, 
+			int currentpage,int pagecount){
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select a.*,a.id as housebasicid, "
+					+ "b.*,b.id as agreenmentid,c.*,c.id as indexid from housebasic a "
+					+ "left join agreenment b on a.id = b.housebasicid "
+					+ "left join indexnum c on a.id = c.housebasicid "
+					+ " where 1=1 ");
+			if(!StringUtils.isBlank(sql)){
+				sb.append(sql);
+			}
+			sb.append(" order by c.indexnum asc ");
+			sb.append(" LIMIT ").append(currentpage*pagecount).append(",").append(pagecount);
+			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();
+			return list;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return null;
+	}
 	
 	
 	

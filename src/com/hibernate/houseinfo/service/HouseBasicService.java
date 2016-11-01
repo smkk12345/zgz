@@ -15,6 +15,7 @@ import com.hibernate.houseinfo.dao.IndexNumDao;
 import com.hibernate.houseinfo.dao.OtherInfoDao;
 import com.hibernate.houseinfo.dao.VacatePeopleDao;
 import com.hibernate.houseinfo.domain.Agreement;
+import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.houseinfo.domain.OtherInfo;
@@ -165,6 +166,11 @@ public class HouseBasicService {
 	 */
 	public List<IndexNum> getIndexNumList(String section, int currentpage,int pagecount){
 		return houseBasicDao.getIndexNumList(section, currentpage, pagecount); 
+	}
+	
+	public List<DisplayBean> getDisplayBeanList(String sql, 
+			int currentpage,int pagecount){
+		return houseBasicDao.getDisplayBeanList(sql,currentpage,pagecount);
 	}
 	
 }

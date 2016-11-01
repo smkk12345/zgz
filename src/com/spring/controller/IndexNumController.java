@@ -20,6 +20,7 @@ import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
+import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.userInfo.damain.RoleBean;
@@ -36,7 +37,7 @@ public class IndexNumController {
 	 */
 	@RequestMapping({ "/indexnum/get.action" })
 	@ResponseBody
-	public Map<String,String> indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+	public Map<String,String> get(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		Map<String,String> map = new HashMap<String, String>();
 		try {
 			String housebsicid = request.getParameter("housebasicid");
@@ -58,7 +59,7 @@ public class IndexNumController {
 				if(agreenment.getAtype().equals("0")){
 					agreenment.setProtocolnumber("AZ-"+indexNum.getIndexnum());
 				}else{
-					agreenment.setProtocolnumber("BC-"+indexNum.getIndexnum());
+					agreenment.setProtocolnumber("HB-"+indexNum.getIndexnum());
 				}
 				ServiceManager.getAgreenmentService().update(agreenment);
 				map.put("protocolumnber", agreenment.getProtocolnumber());
@@ -89,11 +90,13 @@ public class IndexNumController {
 		if (StringUtils.isEmpty(pageNo)) {
 			pageNo = "1";
 		}
-
+		
 		int intPageNum = Integer.parseInt(pageNo);
 		RoleBean role = (RoleBean) request.getSession().getAttribute("role");
-		List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),
-				(intPageNum - 1) * intPageSize, intPageSize);
+		String sql = getSxhSql(role.getSection());
+		List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+				.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+		
 		Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
 
 		model.addAttribute("pageSize", intPageSize);
@@ -110,6 +113,14 @@ public class IndexNumController {
 		model.addAttribute("CURENT_TAB_3", "sxh");
 
 		return new ModelAndView(PageConst.PGZQ_sxh, model);
+	}
+
+	private String getSxhSql(String section) {
+		// TODO Auto-generated method stub
+		StringBuffer sb = new StringBuffer();
+		sb.append(" and  c.id is not null ");
+		sb.append(" and a.section = '"+section+"'");
+		return sb.toString();
 	}
 	
 }
