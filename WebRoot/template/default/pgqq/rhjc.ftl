@@ -16,7 +16,7 @@
                 <#if role.roleAuthority[11]=="2">
                 <button class="btn btn-primary btn-xs glyphicon glyphicon-plus pull-left dropdown-toggle YL-ModalClick mr10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-url='${BASE_PATH}/pgqq/rhjc_add_Modal.action' title="点击登记信息">登记</button>
                	</#if>
-                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>
+<!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
 
             <div class="fr">
