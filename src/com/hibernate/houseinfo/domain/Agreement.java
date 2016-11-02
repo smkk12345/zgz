@@ -5,7 +5,9 @@ import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.math.BigDecimal;
 
+import com.common.utils.StringUtils;
 import com.hibernate.base.BaseBean;
+import com.hibernate.utils.MoneyUtils;
 
 public class Agreement extends BaseBean {
 
@@ -63,8 +65,10 @@ public class Agreement extends BaseBean {
 	private Integer sjs;
 	//安置房购房款
 	private BigDecimal azfgfk;
+	private String dxazfgfk;
 	//宅基地腾退总价 包括宅基地腾退补偿款，被重置房屋重置成新价，奖励费，补助费
 	private BigDecimal zjdttzj;
+	private String dxzjdttzj;
 	//评估机构
 	private String pgjg;
 	//宅基地腾退补偿款
@@ -282,6 +286,9 @@ public class Agreement extends BaseBean {
 
 	public void setAzfgfk(BigDecimal azfgfk) {
 		this.azfgfk = azfgfk;
+		if(null != azfgfk){
+			dxazfgfk = MoneyUtils.change(azfgfk.doubleValue());
+		}
 	}
 
 
@@ -292,6 +299,9 @@ public class Agreement extends BaseBean {
 
 	public void setZjdttzj(BigDecimal zjdttzj) {
 		this.zjdttzj = zjdttzj;
+		if(null != zjdttzj){
+			dxzjdttzj = MoneyUtils.change(zjdttzj.doubleValue());
+		}
 	}
 
 
@@ -585,6 +595,26 @@ public class Agreement extends BaseBean {
 
 	public void setLjs85(Integer ljs85) {
 		this.ljs85 = ljs85;
+	}
+
+
+	public String getDxzjdttzj() {
+		return dxzjdttzj;
+	}
+
+
+	public void setDxzjdttzj(String dxzjdttzj) {
+		this.dxzjdttzj = dxzjdttzj;
+	}
+
+
+	public String getDxazfgfk() {
+		return dxazfgfk;
+	}
+
+
+	public void setDxazfgfk(String dxazfgfk) {
+		this.dxazfgfk = dxazfgfk;
 	}
 
 }

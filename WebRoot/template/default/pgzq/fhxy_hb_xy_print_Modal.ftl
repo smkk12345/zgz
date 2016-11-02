@@ -1,5 +1,5 @@
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">【张三】房屋腾退补偿安置协议</h4>
+    <h4 class="modal-title pull-left m0">【${housebasic.names?default("/")}】房屋腾退补偿安置协议</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
         <button type="submit" class="btn btn-primary btn-save"   >打印</button>
