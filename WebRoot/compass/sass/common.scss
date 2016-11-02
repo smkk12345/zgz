@@ -286,6 +286,13 @@ a:focus {
     }
 }
 
+.chkstyle{
+    margin:2px auto !important;
+    label{
+        width:200px;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left; font-weight: normal;
+    }
+}
+
 .aoJianGroup{
     margin:2px auto !important;
     label{
