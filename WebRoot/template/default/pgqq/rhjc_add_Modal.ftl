@@ -7,6 +7,10 @@
           accept-charset="UTF-8" method="post">
         <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='hasothers' value="${bean.hasothers?default("0")}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkname' value="${bean.checkname?default("0")}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkremark' value="${bean.checkremark?default("0")}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkDate' value="${bean.checkDate?default("0")}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkresult' value="${bean.checkresult?default("0")}" style="width: 0px;"/>
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
