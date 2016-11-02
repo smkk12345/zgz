@@ -141,7 +141,7 @@ public class DisplayBean extends BaseBean {
 		//认定被安置人口
 		private Integer rdbazrk;
 		//认定被安置人口信息
-		private Integer rdbazrkxx;
+		private String rdbazrkxx;
 		//选房房源信息
 		private String fyxx;
 		//实际选房面积
@@ -217,6 +217,15 @@ public class DisplayBean extends BaseBean {
 		private String operatedate;
 		private String serviceip;
 		private String displaydate;
+		
+		private BigDecimal sjm;
+		public BigDecimal getSjm() {
+//			return  new BigDecimal(firstfloorarea.doubleValue()+abovetwoarea.doubleValue()+basement.doubleValue()+shed.doubleValue());
+			return new BigDecimal(firstfloorarea.doubleValue());
+		} 
+		public void setSjm(BigDecimal sjm) {
+			this.sjm = sjm;
+		}
 		public String getSection() {
 			return section;
 		}
@@ -547,10 +556,10 @@ public class DisplayBean extends BaseBean {
 		public void setRdbazrk(Integer rdbazrk) {
 			this.rdbazrk = rdbazrk;
 		}
-		public Integer getRdbazrkxx() {
+		public String getRdbazrkxx() {
 			return rdbazrkxx;
 		}
-		public void setRdbazrkxx(Integer rdbazrkxx) {
+		public void setRdbazrkxx(String rdbazrkxx) {
 			this.rdbazrkxx = rdbazrkxx;
 		}
 		public String getFyxx() {
