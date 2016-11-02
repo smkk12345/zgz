@@ -64,11 +64,15 @@
     <td >${ROW.fwarea?default("")}</td>
     <td >${ROW.mobile?default("")}</td>
     <td>    
-    <#if ROW.checkresult=="0">
-       <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
-   	<#else>
-   		 <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='返回' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 返回</button>
-    </#if>
+    <#if (ROW.checkresult)??>
+	    <#if ROW.checkresult=="0">
+	       <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+	   	<#else>
+	   		 <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='返回' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 返回</button>
+	    </#if>
+	 <#else>
+	 	<button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+	 </#if>
     </td>
 </tr>
 </#list>
