@@ -5,59 +5,60 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-            
-<div class="container-fluid rhjc">
-    <ul class="nav nav-pills menu">
-        <li role="presentation" class="active"><a href="${BASE_PATH}jfdj_1.action">已交房</a></li>
-        <li role="presentation" ><a href="${BASE_PATH}jfdj_0.action">未交房</a></li>
-    </ul>
-    <ul class="nav nav-pills menu mb5 clearfix">
-        <div class="top-ation mb10 clearfix">
-            <div class="fl">
-<!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
-            </div>
-            <div class="fl">
-              <form  action="${BASE_PATH}/jfdj_1.action" accept-charset="UTF-8" method="post" >
-	            	<div class=' autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>被腾退人姓名:</label>
-	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
-	                </div>
-	            	<div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>手机:</label>
-	                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
-	                </div>
-	            	<div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>身份证号:</label>
-	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
-	                </div>  
-                  <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
-	               
-	            </form>
-            </div>
-        </div>
 
-        <table  class="table table-bordered table-hover">
-            <tr>
-                <th>序号</th>
-                <th>标段</th>
-                <th>被腾退人</th>
-                <th>手机</th>
-                <th>身份证</th>
-                <th>安置方式</th>
-                <th>房屋坐落</th>
-                <th>房屋间数</th>
-                
-                <th>操作</th>
-            </tr>
-            <@JfdjList list pageNo pageSize/>
-        </table>
-        <div id="yu-pager" class="fl mb20">
-            <#import "../macro_ftl/pager.ftl" as p>
-            <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="xy.action" OtherParameter=""/>
-            </#if>
+<div class="container-fluid rhjc">
+    <div class="page-title">
+        <ul class="nav nav-pills menu mb10">
+            <li role="presentation" class="active"><a href="${BASE_PATH}jfdj_1.action">已交房</a></li>
+            <li role="presentation" ><a href="${BASE_PATH}jfdj_0.action">未交房</a></li>
+        </ul>
+    </div>
+    <div class="top-ation mb10 clearfix">
+        <div class="fl">
+            <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
         </div>
-    </ul>
+        <div class="fl">
+            <form  action="${BASE_PATH}/jfdj_1.action" accept-charset="UTF-8" method="post" >
+                <div class=' autoWidthGroup-2 fl '>
+                    <label class='fl control-label'>被腾退人姓名:</label>
+                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
+                </div>
+                <div class='autoWidthGroup-2 fl '>
+                    <label class='fl control-label'>手机:</label>
+                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+                </div>
+                <div class='autoWidthGroup-2 fl '>
+                    <label class='fl control-label'>身份证号:</label>
+                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
+                </div>  
+                <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
+
+            </form>
+        </div>
+    </div>
+
+    <table  class="table table-bordered table-hover">
+        <tr>
+            <th>序号</th>
+            <th>标段</th>
+            <th>被腾退人</th>
+            <th>手机</th>
+            <th>身份证</th>
+            <th>安置方式</th>
+            <th>房屋坐落</th>
+            <th>房屋间数</th>
+
+            <th>操作</th>
+        </tr>
+        <@JfdjList list pageNo pageSize/>
+    </table>
+    <div id="yu-pager" class="fl mb20">
+        <#import "../macro_ftl/pager.ftl" as p>
+        <#if recordCount??>
+        <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="xy.action" OtherParameter=""/>
+        </#if>
+    </div>
+</ul>
 </div>
 <script type="text/javascript">
 
@@ -110,33 +111,33 @@
                 dataType: "json",
                 data: {housebasicid: curDataId},
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                   location.href="${BASE_PATH}"+"/index.action";
+                    location.href = "${BASE_PATH}" + "/index.action";
                 },
                 success: function (response) {
-                   location.href="${BASE_PATH}"+"/index.action";
+                    location.href = "${BASE_PATH}" + "/index.action";
                 }
             })
         }
     }
-    
-     function confirmOthers(btn) {
-	        if (yu_confirm("您确认已经交房？")) {
-	            var url = $(btn).attr("data-url");
-	            //var par = $("#"+pname);
-	            $.ajax({
-	                cache: true,
-	                type: "POST",
-	                url: url,
-	                dataType: "json",
-	                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                   		location.href="${BASE_PATH}"+"jfdj.action";
-                	},
-	                success: function (response) {
-	                	location.href="${BASE_PATH}"+"jfdj.action";
-	                }
-	            })
-	        }
-	    }
+
+    function confirmOthers(btn) {
+        if (yu_confirm("您确认已经交房？")) {
+            var url = $(btn).attr("data-url");
+            //var par = $("#"+pname);
+            $.ajax({
+                cache: true,
+                type: "POST",
+                url: url,
+                dataType: "json",
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    location.href = "${BASE_PATH}" + "jfdj.action";
+                },
+                success: function (response) {
+                    location.href = "${BASE_PATH}" + "jfdj.action";
+                }
+            })
+        }
+    }
 
 
 </script>
