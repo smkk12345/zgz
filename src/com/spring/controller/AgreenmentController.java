@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -79,7 +81,7 @@ public class AgreenmentController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getHfxySxhSql(role.getSection());
+			String sql = getHfxySxhSql(role.getSection(),request,model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
 			
@@ -113,11 +115,47 @@ public class AgreenmentController {
 	 * @param section
 	 * @return
 	 */
-	private String getHfxySxhSql(String section) {
+	private String getHfxySxhSql(String section,HttpServletRequest request,
+			 ModelMap model) {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  b.id IS NOT NULL and a.section in (").append(section).append(")");
-		
+		String location = request.getParameter("location");
+		String names = request.getParameter("names");
+		String  mobile = request.getParameter("mobile");
+		String idcard = request.getParameter("idcard");
+		String atype = request.getParameter("atype");
+		atype = StringUtils.isBlank(atype)?"-1":atype;
+		String qianyue = request.getParameter("qianyue");
+		qianyue = StringUtils.isBlank(qianyue)?"-1":qianyue;
+		if(!StringUtils.isBlank(location)){
+			sb.append(" and a.location like '%").append(location).append("%'");
+			model.addAttribute("location", location);
+		}
+		if(!StringUtils.isBlank(names)){
+			sb.append(" and a.names like '%").append(names).append("%'");
+			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(mobile)){
+			sb.append(" AND a.mobile ='").append(mobile).append("'");
+			model.addAttribute("mobile", mobile);
+		}
+		if(!StringUtils.isBlank(idcard)){
+			sb.append("  AND a.idcard ='").append(idcard).append("'");
+			model.addAttribute("idcard", idcard);
+		}
+		if(!atype.equals("-1")){
+			sb.append(" AND b.atype ='").append(atype).append("'");
+		}
+		model.addAttribute("atype", idcard);
+		if(!qianyue.equals("-1")){
+			if(qianyue.equals("0")){   //已经签约
+				sb.append(" and b.protocolnumber<>''");
+			}else{
+				sb.append(" and b.protocolnumber=''");
+			}
+		}
+		model.addAttribute("qianyue", qianyue);
 		return sb.toString();
 	}
 
