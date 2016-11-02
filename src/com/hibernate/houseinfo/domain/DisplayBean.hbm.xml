@@ -98,7 +98,10 @@
 <property name="zjdttbck" ></property>
 <property name="zjdttzj" ></property>
 <property name="hasothers"></property>
-		
+				<property name="checkresult"></property>
+		<property name="checkname"></property>
+		<property name="checkDate"></property>
+		<property name="checkremark"></property>
 		
 	</class>
 </hibernate-mapping>

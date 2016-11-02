@@ -94,6 +94,40 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String operatetype;
 	//是否已经交房
 	private String hasothers;// 0 未交房   1 已经交房
+	
+	//复核状态
+	private String checkresult;//0未审查（退回） 1 内部审核通过
+	//复核人员
+	private String checkname;//
+	//复合日期
+	private String checkDate;
+	//复核备注
+	private String checkremark;
+	
+	public String getCheckresult() {
+		return checkresult;
+	}
+	public void setCheckresult(String checkresult) {
+		this.checkresult = checkresult;
+	}
+	public String getCheckname() {
+		return checkname;
+	}
+	public void setCheckname(String checkname) {
+		this.checkname = checkname;
+	}
+	public String getCheckDate() {
+		return checkDate;
+	}
+	public void setCheckDate(String checkDate) {
+		this.checkDate = checkDate;
+	}
+	public String getCheckremark() {
+		return checkremark;
+	}
+	public void setCheckremark(String checkremark) {
+		this.checkremark = checkremark;
+	}
 	//协议
 	private Agreement agreenment = new Agreement();
 	//顺序号

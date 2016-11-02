@@ -47,6 +47,34 @@
 </#list>
 </#if>
 </#macro>
+
+<!--基础数据审计审查-->
+<#macro HousebasicList_s items  pageNo pageSize>
+<#if items?size gt 0>
+<#list items as ROW>
+<tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
+    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${role.section?default("")}</td>
+    <td >${ROW.names?default("")}</td>
+    <td >${ROW.idcard?default("")}</td>
+    <td >${ROW.location?default("")}</td>
+    <td >${ROW.housecount?default("")}</td>
+    <td >${ROW.people?default("")}</td>
+    <td >${ROW.zjdarea?default("")}</td>
+    <td >${ROW.fwarea?default("")}</td>
+    <td >${ROW.mobile?default("")}</td>
+    <td>    
+    <#if ROW.checkresult=="0">
+       <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+   	<#else>
+   		 <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='返回' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 返回</button>
+    </#if>
+    </td>
+</tr>
+</#list>
+</#if>
+</#macro>
+
 <!--分户方案数据列表-->
 <#macro XyList items  pageNo pageSize>
 <#if items?size gt 0>
