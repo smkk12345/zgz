@@ -15,6 +15,7 @@ public class PageConst {
     public final static String PGQQ_rhjc_c= "/default/pgqq/rhjc_c.ftl";
     public final static String PGQQ_rhjc_s= "/default/pgqq/rhjc_s.ftl";
     public final static String PGQQ_rhjc_add_Modal = "/default/pgqq/rhjc_add_Modal.ftl";
+    public final static String PGQQ_rhjc_c_Modal = "/default/pgqq/rhjc_c_Modal.ftl";
     public final static String PGQQ_rhjc_check_Modal = "/default/pgqq/rhjc_check_Modal.ftl";
     
     // 棚改中期start

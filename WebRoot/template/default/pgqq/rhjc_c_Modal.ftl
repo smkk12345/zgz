@@ -1,6 +1,6 @@
 
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">编辑基本情况调查表</h4>
+    <h4 class="modal-title pull-left m0">查看基本情况调查表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
     </div>
@@ -17,41 +17,36 @@
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
-                <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text' class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
+                <div class=' chkstyle fl'>
+                    <label class='fl control-label'>房屋坐落: ${bean.location?default("")}</label>
                 </div>
-                <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
+                <div class=' chkstyle fl'>
+                    <label class='fl control-label'>被腾退人姓名: ${bean.names?default("")}</label>
                 </div>
-                <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control input-sm fl dmDate' name='mobile' value="${bean.mobile?default("")}"/>        
+                <div class=' chkstyle fl'>
+                    <label class='fl control-label'>手机: ${bean.mobile?default("")}</label>      
                 </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>联系固话:</label>
-
-                    <input type='text' class='form-control input-sm  ' name='telephone' value="${bean.telephone?default("")}"/>       
+                <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>联系固话: ${bean.telephone?default("")</label>     
                 </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>性别:</label>
+                <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>性别: <#if (bean.sex?default("-1"))=='0'>男</#if>  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='sex' >  
                         <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
                         <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">男</option>  
                         <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
                     </select>  
                 </div>
-                <div class=' aoJianGroup fl'>
+                <div class=' chkstyle fl'>
                     <label class='fl control-label'>年龄:</label>
                     <input type='text' class='form-control input-sm fl ' name='age' value="${bean.age?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>备用联系电话:</label>
                     <input type='text' class='form-control input-sm  ' name='remobile' value="${bean.remobile?default("")}"/>        
                 </div>
 
-                <div class=' aoJianGroup fl'>
+                <div class=' chkstyle fl'>
                     <label class='fl control-label'>权属取得方式:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='ownership' >  
                         <option <#if (bean.ownership?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
@@ -62,27 +57,27 @@
                         <option <#if (bean.ownership?default("-1"))=='4'>selected='selected'</#if> value="4">其他</option> 
                     </select>  
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>房屋间数:</label>
                     <input type='text' class='form-control input-sm  ' name='housecount' value="${bean.housecount?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>本址在册户口簿数量:</label>
                     <input type='text' class='form-control input-sm  ' name='localbook' value="${bean.localbook?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>本址在册户籍数量:</label>
                     <input type='text' class='form-control input-sm  ' name='localpeoplecount' value="${bean.localpeoplecount?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>非本址在册户口簿数量:</label>
                     <input type='text' class='form-control input-sm  ' name='notlocalbook' value="${bean.notlocalbook?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>非本址在册户籍数量:</label>
                     <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' value="${bean.notlocalpeoplecount?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>拟被安置人口:</label>
                     <input type='text' class='form-control input-sm  ' name='people' value="${bean.people?default("")}"/>        
                 </div>
@@ -363,46 +358,46 @@
             </div>
             <h4><span class="label label-default">3.面积相关：</span></h4>
             <div class='container-fluid con-bg mb10'>	
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>宅基地测绘面积:</label>
                     <input type='text' class='form-control input-sm  ' name='zjdarea' value="${bean.zjdarea?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>房屋测绘面积:</label>
                     <input type='text' class='form-control input-sm  ' name='fwarea' value="${bean.fwarea?default("")}" />        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>首层测绘面积:</label>
                     <input type='text' class='form-control input-sm  ' name='firstfloorarea' value="${bean.firstfloorarea?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>二层以上面积:</label>
                     <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="${bean.abovetwoarea?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>地下室面积:</label>
                     <input type='text' class='form-control input-sm  ' name='basement' value="${bean.basement?default("")}"/>        
                 </div>
             </div>
             <h4><span class="label label-default">4.经营状况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>经营用房面积:</label>
                     <input type='text' class='form-control input-sm  ' name='operatearea' value="${bean.operatearea?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>工商备案面积:</label>
                     <input type='text' class='form-control input-sm  ' name='businessarea' value="${bean.businessarea?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>经营用途:</label>
                     <input type='text' class='form-control input-sm  ' name='operatecontent' value="${bean.operatecontent?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>执照字号:</label>
                     <input type='text' class='form-control input-sm  ' name='licensename'  value="${bean.licensename?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>与被腾退人关系:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='relate' >  
                         <option <option <#if (bean.relate?default("-1"))=='-1'>selected='selected'</#if>   value="-1">请选择</option>  
@@ -412,11 +407,11 @@
                         <option <option <#if (bean.relate?default("-1"))=='3'>selected='selected'</#if>  value="3">其他</option> 
                     </select>    
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>执照标明经营场所:</label>
                     <input type='text' class='form-control input-sm  ' name='licenselocation' value="${bean.licenselocation?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>税务登记证:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxlicense' >  
                         <option <#if (bean.taxlicense?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
@@ -424,7 +419,7 @@
                         <option <#if (bean.taxlicense?default("-1"))=='2'>selected='selected'</#if> value="1">无</option> 
                     </select>       
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>租赁协议:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='leaselicense' > 
                         <option <#if (bean.leaselicense?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>   
@@ -432,7 +427,7 @@
                         <option <#if (bean.leaselicense?default("1"))=='-1'>selected='selected'</#if> value="1">无</option> 
                     </select>       
                 </div>    
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>完税证明:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxprove' >
                         <option <#if (bean.taxprove?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>    
@@ -440,7 +435,7 @@
                         <option <#if (bean.taxprove?default("-1"))=='1'>selected='selected'</#if> value="1">无</option> 
                     </select>       
                 </div> 
-                <div class=' aoJianGroup fl'>      
+                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>执照编号:</label>
                     <input type='text' class='form-control input-sm  ' name='license'   placeholder='执照编号' value="${bean.license?default("")}"/>        
                 </div>
@@ -512,13 +507,9 @@
                     </tbody>
                 </table>
             </div>
-            <h4><span class="label label-default">5.备注：</span></h4>
+            <h4><span class="label label-default mb20">5.备注：</span></h4>
             <div class='container-fluid con-bg mb10'>
                 <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)" >${bean.remark?default("")}</textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="submit" class="btn btn-primary btn-save"   >保存</button>
             </div>
         </div>
     </form>
@@ -526,43 +517,7 @@
 
 <script type = "text/javascript">
     //设置模态框高度和宽度  
+    $("#myModal .modal-dialog").width(1500);
     $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");
     $("#rhjc-add-con").css("overflow-y", "scroll");
-
-    function saveClick(btn) {
-        var dataInfo = $("#rhjcAddForm").serialize();
-        var url = $(btn - save).attr("data-url");
-        $.ajax({
-            type: "POST",
-            url: url,
-            dataType: "json",
-            data: dataInfo,
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(errorThrown);
-            },
-            success: function (response) {
-                var bean = response.bean;
-                addAoJianInfo(bean);
-                //初始化日期控件
-                initDate();
-            }
-        })
-    }
-
-    function addlist(a, c) {
-        var b = $(a + "").prev();
-        var h = b.html();
-        b.after("<tr class=" + c + "" + ">" + h + "</tr>" + "");
-    }
-
-    function delthis(f, c) {
-        var num = $(f).parent().parent().parent().children('.' + c).length;
-        if (num > 1) {
-            $(f).parent().parent().remove();
-        } else {
-            alert("至少保留一行！");
-        }
-
-
-    }
 </script>

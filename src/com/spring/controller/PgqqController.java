@@ -179,6 +179,33 @@ public class PgqqController {
 		}
 	}
 	
+	
+	@RequestMapping({ "/pgqq/rhjc_c_Modal.action" })
+	public ModelAndView rhjc_c_Modal(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String housebasicid  = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("bean", houseBasic);
+			// 模板路径 basePath
+						model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+						model.addAttribute("BASE_ASSETS_PATH",
+								WebConstConfig.getBase_Assets_Path());
+						model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+								WebConstConfig.getBase_Template_Default_Path());
+						model.addAttribute("bean", new HouseBasic());
+						return new ModelAndView(PageConst.PGQQ_rhjc_c_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+
+		}
+			
+	}
+	
+	
 	@RequestMapping({ "/pgqq/rhjc_s.action" })
 	public ModelAndView rhjc_s_Page(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
