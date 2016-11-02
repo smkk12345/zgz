@@ -43,7 +43,7 @@ public class Agreement extends BaseBean {
 	//认定被安置人口
 	private Integer rdbazrk;
 	//认定被安置人口信息
-	private Integer rdbazrkxx;
+	private String rdbazrkxx;
 	//选房房源信息
 	private String fyxx;
 	//实际选房面积
@@ -225,12 +225,12 @@ public class Agreement extends BaseBean {
 	}
 
 
-	public Integer getRdbazrkxx() {
+	public String getRdbazrkxx() {
 		return rdbazrkxx;
 	}
 
 
-	public void setRdbazrkxx(Integer rdbazrkxx) {
+	public void setRdbazrkxx(String rdbazrkxx) {
 		this.rdbazrkxx = rdbazrkxx;
 	}
 

@@ -1,4 +1,5 @@
 <#include "leftMenu.ftl"/>
+<#include "../macro_ftl/cxdList.ftl">
 <@override name="main_right">
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/three.min.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
@@ -49,7 +50,7 @@
                 <th>手机</th>
                 <th>操作</th>
             </tr>
-            <@HousebasicList list pageNo pageSize/>
+            <@HousebasicList_c list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
