@@ -35,8 +35,8 @@
     <td >${role.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td > 
-        <#if (ROW.agreenment.atype)??>
-        <#if ROW.agreenment.atype?default("0")=="0">
+        <#if (ROW.atype)??>
+        <#if ROW.atype?default("0")=="0">
         安置补偿
         <#else>
         货币补偿
@@ -45,13 +45,13 @@
         未录入
         </#if>
     </td>
-    <td >${(ROW.agreenment.fwbcmj)!""}</td>
-    <td >${(ROW.agreenment.rdbazrk)!""}</td>
-    <td >${(ROW.agreenment.azfgfk)!""}</td>
-    <td >${(ROW.agreenment.jlfsum)!""}</td>
+    <td >${(ROW.fwbcmj)!""}</td>
+    <td >${(ROW.rdbazrk)!""}</td>
+    <td >${(ROW.azfgfk)!""}</td>
+    <td >${(ROW.jlfsum)!""}</td>
     <td>    
-        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>    
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenment.id)!""}"> </button>     
+        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>    
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>     
     </td>
 </tr>
 </#list>

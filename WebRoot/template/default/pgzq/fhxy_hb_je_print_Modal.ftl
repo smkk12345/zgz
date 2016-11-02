@@ -84,8 +84,8 @@
                 <tr>
                     <td class="td_content_1">1</td>
                     <td class="td_content_1">控制区位补偿价</td>
-                    <td class="td_content_1" colspan=3>4</td>
-                    <td class="td_content_1" colspan=5 rowspan=4>${bean.kzzjdqwbcj?default("")}</td>
+                    <td class="td_content_1" colspan=3>${bean.kzzjdqwbcj?default("")}</td>
+                    <td class="td_content_1" colspan=5 rowspan=4></td>
                 </tr>
                 <tr>
                     <td class="td_content_1">2</td>

@@ -41,8 +41,13 @@ public class AgreenmentController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			String sql = getFhfaSxhSql(role.getSection(),request,model);
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
+//			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
+//			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
 			
 			model.addAttribute("pageSize", intPageSize);
 			model.addAttribute("pageNo", intPageNum);
@@ -68,6 +73,34 @@ public class AgreenmentController {
 	}
 
 	
+	private String getFhfaSxhSql(String section,HttpServletRequest request,ModelMap model) {
+		// TODO Auto-generated method stub
+		StringBuffer sb = new StringBuffer();
+		sb.append(" and a.section in (").append(section).append(")");
+		String names = request.getParameter("names");
+		String  mobile = request.getParameter("mobile");
+		String idcard = request.getParameter("idcard");
+		String indexnum = request.getParameter("indexnum");
+		if(!StringUtils.isBlank(names)){
+			sb.append(" and a.names like '%").append(names).append("%'");
+			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(mobile)){
+			sb.append(" and a.mobile ='").append(mobile).append("'");
+			model.addAttribute("mobile", mobile);
+		}
+		if(!StringUtils.isBlank(idcard)){
+			sb.append(" and a.idcard ='").append(idcard).append("'");
+			model.addAttribute("idcard", idcard);
+		}
+		if(!StringUtils.isBlank(indexnum)){
+			sb.append(" and c.indexnum =").append(indexnum);
+			model.addAttribute("indexnum", indexnum);
+		}
+		return null;
+	}
+
+
 	@RequestMapping({"/pgzq/fhxy.action"})
 	public ModelAndView fhxy(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
@@ -115,28 +148,26 @@ public class AgreenmentController {
 	 * @param section
 	 * @return
 	 */
-	private String getHfxySxhSql(String section,HttpServletRequest request,
-			 ModelMap model) {
+
+	private String getHfxySxhSql(String section,HttpServletRequest request,ModelMap model) {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  b.id IS NOT NULL and a.section in (").append(section).append(")");
-		String location = request.getParameter("location");
 		String names = request.getParameter("names");
 		String  mobile = request.getParameter("mobile");
 		String idcard = request.getParameter("idcard");
+		String indexnum = request.getParameter("indexnum");
 		String atype = request.getParameter("atype");
 		atype = StringUtils.isBlank(atype)?"-1":atype;
 		String qianyue = request.getParameter("qianyue");
 		qianyue = StringUtils.isBlank(qianyue)?"-1":qianyue;
-		if(!StringUtils.isBlank(location)){
-			sb.append(" and a.location like '%").append(location).append("%'");
-			model.addAttribute("location", location);
-		}
+		
 		if(!StringUtils.isBlank(names)){
 			sb.append(" and a.names like '%").append(names).append("%'");
 			model.addAttribute("names", names);
 		}
 		if(!StringUtils.isBlank(mobile)){
+
 			sb.append(" AND a.mobile ='").append(mobile).append("'");
 			model.addAttribute("mobile", mobile);
 		}
@@ -156,6 +187,7 @@ public class AgreenmentController {
 			}
 		}
 		model.addAttribute("qianyue", qianyue);
+		
 		return sb.toString();
 	}
 

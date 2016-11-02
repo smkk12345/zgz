@@ -244,23 +244,28 @@
     padding: 20px;
     font-size: 16px;
     text-align: center;
-
+    width:700px;
     .title {
-        text-align: center;
-        line-height: 32px;
-        height: 32px;
-        font-size: 32px;
-        font-weight: bold;
-        padding-bottom: 20px;
-        padding-top: 30px;
+        font-size:22.0pt;line-height:150%;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:black;
     }
-
+    .xy-num{ text-align: right; text-indent: 2em;margin-right:20px;font-size:12.0pt; line-height:150%;font-family:宋体;mso-ascii-font-family:"Times New Roman"; mso-hansi-font-family:"Times New Roman";color:black;}
     .title1 {
-        text-align: center;
-        line-height: 32px;
-        height: 32px;
-        font-size: 18px;
+        text-align: left; margin-left: 100px; font-size:14.0pt;mso-bidi-font-size:10.0pt;line-height:150%;color:black;
     }
+    .title2 {
+        font-size:18.0pt;line-height:150%;font-family:宋体;color:black;
+    }
+    .title3{
+        text-align: left; margin-left: 30px; font-size:14.0pt;mso-bidi-font-size:10.0pt;line-height:130%;color:black;
+    }
+    .pageBreak{}
+
+    .contex-1{text-align: left; font-size:14.0pt; mso-bidi-font-size:10.0pt;line-height:22.0pt;font-family:宋体;color:black}
+
+
+
+
+
 
     .leftTitle {
         text-align: left;

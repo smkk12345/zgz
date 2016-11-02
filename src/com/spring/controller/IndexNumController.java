@@ -120,7 +120,7 @@ public class IndexNumController {
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and  c.id is not null ");
 		sb.append(" and a.section in ("+section+")");
-		
+		sb.append(" and b.atype = '").append("0").append("'");
 		String names = request.getParameter("names");
 		String  mobile = request.getParameter("mobile");
 		String idcard = request.getParameter("idcard");
