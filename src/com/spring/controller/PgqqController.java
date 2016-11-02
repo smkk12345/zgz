@@ -183,6 +183,23 @@ public class PgqqController {
 	public ModelAndView rhjc_s_Page(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
+			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -378,5 +395,63 @@ public class PgqqController {
 	}
 	
 	
+	//两个接口   审计审核   返回
+	@RequestMapping({ "/pgqq/checkresult.action" })
+	public void checkresult(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			//复核状态
+			String checkresult=request.getParameter("checkresult");//0未审查（退回） 1 内部审核通过
+			//复核人员
+			String checkname=request.getParameter("checkname");//
+			//复合日期
+			String checkDate=request.getParameter("checkDate");
+			//复核备注
+			String checkremark=request.getParameter("checkremark");
+			//id
+			String housebasicid = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			housebasic.setCheckresult(checkresult);
+			housebasic.setCheckDate(checkDate);
+			housebasic.setCheckname(checkname);
+			housebasic.setCheckremark(checkremark);
+			ServiceManager.getHouseBasicServce().save(housebasic);
+			try {
+				response.sendRedirect(WebConstConfig.BASE_PATH+"pgqq/rhjc_s.action");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return ;
+		}
+	}
+
 	
+	
+	@RequestMapping({ "/checkhousebasic.action" })
+	public ModelAndView checkhousebasic(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String housebasicid  = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("bean", houseBasic);
+			// 模板路径 basePath
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGQQ_rhjc_check_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+
+		}
+	}
 }

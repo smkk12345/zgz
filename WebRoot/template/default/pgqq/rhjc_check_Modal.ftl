@@ -3,10 +3,44 @@
     <h4 class="modal-title pull-left m0">基本情况调查表(共5项)</h4>
 </div>
 <div class="modal-body rhjc-add-con" id="rhjc-add-con">
+
+    <form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}"
+          accept-charset="UTF-8" method="post">
+          <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
+          <h4><span class="label label-default">入户信息审核：</span></h4>
+            <div class='container-fluid con-bg mb10'>	
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>复核状态:</label>
+                </div>
+                <div class="container-fluid fl">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="checkresult" id="optionsRadios3" value="1" <#if (bean.checkresult?default("0"))=='1'>checked</#if>>内部审核通过
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="checkresult" id="optionsRadios4" value="0" <#if (bean.checkresult?default("0"))=='0'>checked</#if>>退回
+                    </label>
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>复核人员:</label>
+                    <input type='text' class='form-control input-sm  ' name='checkname' value="${bean.checkname?default("")}" />        
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>复核日期:</label>
+                    <input type='text' class='form-control input-sm  ' name='checkDate' value="${bean.checkDate?default("")}"/>        
+                </div>
+                <h4><span class="label label-default">5.备注：</span></h4>
+	            <div class='container-fluid con-bg mb10'>
+	                <textarea class="form-control" rows="5" name="checkremark" placeholder="备注(选填，限1500字)" >${bean.checkremark?default("")}</textarea>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="submit" class="btn btn-primary btn-save"   >保存</button>
+	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            	</div>
+            </div>
+    </from>
     <form id='rhjcAddForm' modelAttribute = "HouseBasic" action="${BASE_PATH}/pgqq/savehousebasic.action"
           accept-charset="UTF-8" method="post">
-        <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='hasothers' value="${bean.hasothers?default("0")}" style="width: 0px;"/>
+        
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
@@ -510,8 +544,8 @@
                 <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)" >${bean.remark?default("")}</textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="submit" class="btn btn-primary btn-save"   >保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
     </form>
