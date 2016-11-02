@@ -13,7 +13,7 @@
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-              <form  action="${BASE_PATH}/xy.action" accept-charset="UTF-8" method="post" >
+              <form  action="${BASE_PATH}pgzq/fhxy.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -26,6 +26,22 @@
 	                    <label class='fl control-label'>身份证号:</label>
 	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
 	                </div>  
+	                <div class='autoWidthGroup-2 fl '>
+	                    <label class='fl control-label'>安置方式:</label>
+	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
+	                        <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+	                        <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
+	                        <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
+                    	</select>
+	                </div>
+	                <div class='autoWidthGroup-2 fl '>
+	                    <label class='fl control-label'>签约状态:</label>
+	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='qianyue' >  
+	                        <option  <#if (qianyue?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+	                        <option  <#if (qianyue?default("-1"))=='0'>selected='selected'</#if>  value="0">已签约</option>  
+	                        <option  <#if (qianyue?default("-1"))=='1'>selected='selected'</#if> value="1">未签约</option> 
+                    	</select>
+	                </div>    
                   <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
 	               
 	            </form>
