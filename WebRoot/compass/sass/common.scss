@@ -288,9 +288,11 @@ a:focus {
 
 .chkstyle{
     margin:2px auto !important;
+    min-width:100px;
     label{
-        width:200px;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left; font-weight: normal;
+        width:auto;margin-right: 10px;margin-left: 10px;line-height: 30px; text-align: right; float: left; font-weight: bold;
     }
+    .label-r{width:auto;margin-right: 10px;line-height: 30px; text-align:left; float: left; }
 }
 
 .aoJianGroup{
