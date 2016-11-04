@@ -15,7 +15,7 @@
     <td >${ROW.fwarea?default("")}</td>
     <td >${ROW.mobile?default("")}</td>
     <td>    
-        <#if role.roleAuthority[12]=="2">
+        <#if role.roleAuthority[2]=="2">
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit" title='编辑' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
         <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle" title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
         </#if>
