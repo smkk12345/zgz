@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="modal-body rhjc-add-con" id="rhjc-add-con">
-    <form id='rhjcAddForm' modelAttribute = "HouseBasic" action="${BASE_PATH}/pgqq/savehousebasic.action"
+    <form id='rhjcAddForm' 
           accept-charset="UTF-8" method="post">
         <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("/")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='hasothers' value="${bean.hasothers?default("0")}" style="width: 0px;"/>
@@ -21,7 +21,7 @@
                     <label class='fl control-label'>房屋坐落: ${bean.location?default("/")}</label>
                 </div>
                 <div class=' chkstyle fl'>
-                    <label class='fl control-label'>被腾退人姓名: ${bean.names?default("/")}</label>
+                    <label class='fl control-label'>被腾退人姓名: ${bean.names}</label>
                 </div>
                 <div class=' chkstyle fl'>
                     <label class='fl control-label'>手机: ${bean.mobile?default("/")}</label>      
@@ -56,7 +56,7 @@
                     <label class='fl control-label'>本址在册户口簿数量:${bean.localbook?default("/")}</label>
                 </div>
                 <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>本址在册户籍数量:${bean.localpeoplecount?default("/")}"</label>
+                    <label class='fl control-label'>本址在册户籍数量:${bean.localpeoplecount?default("/")}</label>
                 </div>
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>非本址在册户口簿数量:${bean.notlocalbook?default("/")}</label>
@@ -75,7 +75,6 @@
                         <td colspan="12" style="text-align: center;font-weight: bold">本址在册户籍家庭人口情况</td>
                     </tr>
                     <tr>
-                        <th></th>
                         <th class="center">户主</th>
                         <th class="center">户籍性质</th>
                         <th class="center">姓名</th>
@@ -92,24 +91,24 @@
                     <#if bean.vacatelist?size gt 0>
                     <#list bean.vacatelist as vacate>
                     <tr class="add-list-1">
-                        <td>  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
-                        <td>
+                        <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
+                        <td class="center">
                                 <#if (vacate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
                         </td>
-                        <td>${vacate.name?default("/")}      </td>
-                        <td>${vacate.idcard?default("/")}       </td>
+                        <td class="center">${vacate.name?default("/")}      </td>
+                        <td class="center">${vacate.idcard?default("/")}       </td>
 
-                        <td>
+                        <td class="center">
                         	<#if (vacate.sex?default("-1"))=='0'>男<#else>女</#if>
                         </td>
-                        <td>${vacate.registeredrelate?default("/")}"/>        </td>
-                        <td>${vacate.changrelate?default("/")}"/>        </td>
-                        <td>
+                        <td class="center">${vacate.registeredrelate?default("/")}        </td>
+                        <td class="center">${vacate.changrelate?default("/")}      </td>
+                        <td class="center">
                         	<#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                         </td>
 
-                        <td>${vacate.unit?default("/")}     </td>
-                        <td>
+                        <td class="center">${vacate.unit?default("/")}     </td>
+                        <td class="center">
                         <#if (vacate.peopletype?default("-1"))=='0'>婚姻衍生人员
                         <#elseif (vacate.peopletype?default("-1"))=='1'>配偶
                         <#elseif (vacate.peopletype?default("-1"))=='2'>新生婴儿
@@ -122,11 +121,10 @@
                     </tr>
                     </#list>
                     </#if>
-                    <tr>
+                    <tr class="center">
                         <td colspan="12" style="text-align: center;font-weight: bold">非本址户籍家庭人口情况</td>
                     </tr>
-                    <tr>
-                        <th></th>
+                    <tr class="center">
                         <th class="center">户主</th>
                         <th class="center">户籍性质</th>
                         <th class="center">姓名</th>
@@ -143,27 +141,26 @@
                     <#if bean.list?size gt 0>
                     <#list bean.list as cate>
                     <tr class="add-list-2">
-                        <td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
-                        <td>
+                        <td class="center">
                          <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
                         </td>
-                        <td>
+                        <td class="center">
                          <#if (cate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
                         </td>
-                        <td>${cate.name?default("/")}       </td>
-                        <td>${cate.idcard?default("/")}      </td>
+                        <td class="center">${cate.name?default("/")}       </td>
+                        <td class="center">${cate.idcard?default("/")}      </td>
 
-                        <td>
+                        <td class="center">
                         <#if (cate.sex?default("-1"))=='0'>男<#else>女</#if>
                         </td>
-                        <td>${cate.registeredrelate?default("/")}      </td>
-                        <td>${cate.changrelate?default("/")}        </td>
-                        <td>
+                        <td class="center">${cate.registeredrelate?default("/")}      </td>
+                        <td class="center">${cate.changrelate?default("/")}        </td>
+                        <td class="center">
                         <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                         </td>
 
-                        <td><input type='text' class='form-control input-sm  ' name='vunit' value="${cate.unit?default("/")}"/>        </td>
-                        <td>
+                        <td class="center">${cate.unit?default("/")}       </td>
+                        <td class="center">
                         <#if (cate.peopletype?default("-1"))=='0'>婚姻衍生人员
                         <#elseif (cate.peopletype?default("-1"))=='1'>配偶
                         <#elseif (cate.peopletype?default("-1"))=='2'>新生婴儿
@@ -271,19 +268,19 @@
                         <#if bean.otherList?size gt 0>
                         <#list bean.otherList as other>
                         <tr class="add-list-3">
-                            <td>
+                            <td class="center">
 	                        <#if (other.otype?default("-1"))=='-1'>请选择
 	                    	<#elseif (other.otype?default("-1"))=='0'>低保
 	                    	<#elseif (other.otype?default("-1"))=='1'>残疾
 	                    	<#elseif (other.otype?default("-1"))=='2'>大病
 	                    	</#if>
                             </td>
-                            <td>${other.name?default("/")}    </td>
-                            <td>${other.peopleid?default("/")}      </td>
-                            <td>${other.otypenum?default("/")}  </td>
-                            <td>${other.illnessname?default("/")}      </td>
-                            <td>${other.validatedate?default("/")}      </td>
-                            <td>${other.illnessprove?default("/")}      </td>
+                            <td class="center">${other.name?default("/")}    </td>
+                            <td class="center">${other.peopleid?default("/")}      </td>
+                            <td class="center">${other.otypenum?default("/")}  </td>
+                            <td class="center">${other.illnessname?default("/")}      </td>
+                            <td class="center">${other.validatedate?default("/")}      </td>
+                            <td class="center">${other.illnessprove?default("/")}      </td>
                         </tr>
                         </#list>
                         </#if>

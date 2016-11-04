@@ -194,7 +194,6 @@ public class PgqqController {
 								WebConstConfig.getBase_Assets_Path());
 						model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 								WebConstConfig.getBase_Template_Default_Path());
-						model.addAttribute("bean", new HouseBasic());
 						return new ModelAndView(PageConst.PGQQ_rhjc_c_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
