@@ -6,7 +6,7 @@
                 <ul class="nav nav1">	
 <!--                    <li><a <#if CURENT_TAB == 'INDEX'>class="active"</#if> href="${BASE_PATH}index.action">首页</a>
                     </li>-->
-                     <#if role.roleAuthority[0]=="2">
+                    
                     	<li><a <#if CURENT_TAB == 'PGQQ'>class="active"</#if> 
                     	<#if role.roleAuthority[1]=="2">
                     		href="${BASE_PATH}pgqq.action"
@@ -15,8 +15,8 @@
                     	</#if>
                     	>前期入户管理</a>
                     	</li>
-                    </#if>
-                    <#if role.roleAuthority[3]=="2">
+                    
+                    <#if role.roleAuthority[5]=="2">
                     	<li><a <#if CURENT_TAB == 'AGREENMENT'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
                     		href="${BASE_PATH}pgzq/agreenment.action"
@@ -25,7 +25,7 @@
                     	</#if>
                     	>方案协议管理</a></li>  
                     </#if> 
-                    <#if role.roleAuthority[3]=="2">
+                    <#if role.roleAuthority[9]=="2">
                     	<li><a <#if CURENT_TAB == 'JFDJ'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
                     		href="${BASE_PATH}jfdj_1.action"
@@ -34,7 +34,7 @@
                     	</#if>
                     	>交房信息管理</a></li>  
                     </#if>
-                    <#if role.roleAuthority[3]=="2">
+                    <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
                     		href="${BASE_PATH}sjtj/chart3.action"
