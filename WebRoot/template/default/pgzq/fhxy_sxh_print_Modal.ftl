@@ -6,16 +6,19 @@
     </div>
 </div>
 <div class="modal-body center">
- 	<span class="title">选房顺序通知单</span>
     <div class="content xy-print-con"  id="xy-print">
-        <p class="xy-num" style="margin-top: 50px;">协议编号：<u>${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
-        <p class="title" style="margin-top: 250px;" >北京市宅基地房屋腾退补偿安置协议</p>
-        <p class="title1" style="margin-top: 350px;">&nbsp;腾&nbsp;退&nbsp;人：&nbsp;<u>&nbsp;北京市丰台区长辛店镇东河沿村村民委员会&nbsp;</u></p>
-        <p class="title1" style="margin-top: 35px;">被腾退人：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.names?default("/")} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
-        <p class="title1" style="margin-top: 35px;">签订时间： &nbsp;2016年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</p>
+        <span class="title">选房顺序通知单</span>
+        <p class="xy-num" style="margin-top: 50px;">立项编号：<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;档案编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
+
+        <p class="contex-1" style="margin-top:50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被拆迁人：<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>（身份证号码为：<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>） </p>
+
+        <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>签订了《集体土地房屋拆迁补偿协议》，并于<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>获取到选房顺序号，您的顺序号为<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>号，您是本村第<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u>个签约的家庭。</p>
+        <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请您于<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;</u> 到选房中心选房。携带材料如下：《选房顺序号结果单》、《交房验收单》、被拆迁人与签约人身份证件。</p>
+
+        <p class="contex-1" style="margin-top:100px; text-align: right">2016年10月28日</p>
         <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
+        <div style="clear:both; height:20px;"></div>
     </div>
-    <div style="clear:both; height:20px;"></div>
 </div>
 <script src="${BASE_ASSETS_PATH}libs/jqprint/jquery.jqprint.js" ></script>
 <script src="${BASE_ASSETS_PATH}libs/jqprint/jquery-migrate-1.1.0.js"></script>

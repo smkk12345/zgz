@@ -1,12 +1,12 @@
+<form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}" accept-charset="UTF-8" method="post">
+    <div class="modal-header clearfix">
+        <h4 class="modal-title pull-left m0">基本情况调查表(共5项)</h4>
+        <button type="submit" class="btn btn-primary btn-save fr ml15">保存</button>
+        <button type="button" class="btn btn-default fr" data-dismiss="modal">关闭</button>
+    </div>
+    <div class="modal-body rhjc-add-con rhjc-check" id="rhjc-add-con">
 
-<div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">基本情况调查表(共5项)</h4>
-    <button type="submit" class="btn btn-primary btn-save fr ml15">保存</button>
-    <button type="button" class="btn btn-default fr" data-dismiss="modal">关闭</button>
-</div>
-<div class="modal-body rhjc-add-con" id="rhjc-add-con">
 
-    <form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}" accept-charset="UTF-8" method="post">
         <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
         <div class='container-fluid con-bg mb10'>	
             <div class='checkbox-2'>      
@@ -28,7 +28,7 @@
                 <textarea class="form-control fr" rows="5" name="checkremark" placeholder="备注(选填，限1500字)" >${bean.checkremark?default("")}</textarea>
             </div>
         </div>
-        </from>
+
 
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
@@ -306,8 +306,8 @@
             <h4><span class="label label-default mb10">5.备注：</span></h4>
             <div class='container-fluid con-bg mb10'>${bean.remark?default("/")}</div>
         </div>
-</div>
-
+    </div>
+</from>
 <script type = "text/javascript">
     //设置模态框高度和宽度  
     $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");

@@ -41,7 +41,7 @@
     <td >${ROW.fwarea?default("")}</td>
     <td >${ROW.mobile?default("")}</td>
     <td>    
-       <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgqq/rhjc_c_Modal.action?housebasicid=${ROW.id}"> </button>
+        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgqq/rhjc_c_Modal.action?housebasicid=${ROW.id}"> </button>
     </td>
 </tr>
 </#list>
@@ -67,15 +67,15 @@
         <#if (ROW.checkresult?default("-1"))=='0'>未通过<#elseif (ROW.checkresult?default("-1"))=='1'>通过</#if>
     </td>
     <td>    
-    <#if (ROW.checkresult)??>
-	    <#if ROW.checkresult=="0">
-	       <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
-	   	<#else>
-	   		 <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
-	    </#if>
-	 <#else>
-	 	<button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
-	 </#if>
+        <#if (ROW.checkresult)??>
+        <#if ROW.checkresult=="0">
+        <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
+        <#else>
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
+        </#if>
+        <#else>
+        <button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+        </#if>
     </td>
 </tr>
 </#list>
@@ -105,8 +105,7 @@
     <td >${(ROW.rdbazrk)!""}</td>
     <td >${(ROW.azfgfk)!""}</td>
     <td >${(ROW.jlfsum)!""}</td>
-    <td>    
-        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='浏览' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>    
+    <td>       
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>     
     </td>
 </tr>
@@ -142,11 +141,11 @@
         <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"><span class="glyphicon glyphicon-print">协议</span></button>
     </td>
     <td>  
-    	<#if (ROW.protocolnumber?length>0)>
-    		${ROW.displaydate}
-    	<#else>
-       		<button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">确认签约</button>
-    	</#if>
+        <#if (ROW.protocolnumber?length>0)>
+        ${ROW.displaydate}
+        <#else>
+        <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">确认签约</button>
+        </#if>
     </td>
     <td title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
 </tr>
@@ -168,10 +167,7 @@
     <td >${ROW.indexnum?default("")}</td>
     <td >${ROW.displaydate?default("")}</td>
     <td>    
-        <form id='rhjcAddForm' modelAttribute = "Agreement" action="${BASE_PATH}/indexnum/get.action?housebasicid=${ROW.housebasicid}"
-              accept-charset="UTF-8" method="post">
-            <button type="submit"    class="btn btn-info btn-xs ml10  glyphicon glyphicon-print <#if (ROW.indexNum)??>disabled='disabled'</#if>" title='打印选房顺序通知单' > </button>
-        </form>
+        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold glyphicon glyphicon-print" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
     </td>
 </tr>
 </#list>
@@ -203,15 +199,15 @@
     <td >${(ROW.location)!""}</td>
     <td >${(ROW.housecount)!""}</td>
     <td>  
-    	<#if (ROW.hasothers)??>
-    		<#if ROW.hasothers?default("0")=="1">
-    		已经交房
-    		<#else>
-    		<button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房' onclick="confirmOthers(this)" data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房</button>   	
-    		</#if>
-    	<#else>
-    		<button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房' onclick="confirmOthers(this)" data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房</button>   	
-    	</#if>
+        <#if (ROW.hasothers)??>
+        <#if ROW.hasothers?default("0")=="1">
+        已经交房
+        <#else>
+        <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房' onclick="confirmOthers(this)" data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房</button>   	
+        </#if>
+        <#else>
+        <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房' onclick="confirmOthers(this)" data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房</button>   	
+        </#if>
     </td>
 </tr>
 </#list>

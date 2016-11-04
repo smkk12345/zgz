@@ -229,6 +229,7 @@
 .rhjc-add-con{
     padding:0px;
     margin:10px;
+    label{font-weight: normal}
     table{
         margin-bottom: 0px !important;
         th{font-weight: normal !important}
@@ -238,7 +239,10 @@
     input{height: 27px;}
     select{height: 27px;}
 }
-
+//rhjc-check
+.rhjc-check{
+    label{font-weight: normal}
+}
 //xy-print-con
 .xy-print-con{
     padding: 20px;

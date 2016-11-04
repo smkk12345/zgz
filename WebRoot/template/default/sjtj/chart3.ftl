@@ -10,7 +10,7 @@
  	<meta charset="UTF-8">
     <title>实时签约比例公示</title>
     <meta http-equiv="refresh" content="5">
-    
+
     <style>
         /*.chart_content .div1 {*/
         /*float: left;*/
