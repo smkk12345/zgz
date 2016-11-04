@@ -50,7 +50,7 @@ public class JfdjController {
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			String sql = getJfdjSql(role.getSection(),request,"'0' or hasothers is null ",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
 			
 			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
@@ -99,7 +99,7 @@ public class JfdjController {
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			String sql = getJfdjSql(role.getSection(),request,"1",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
 			
 			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
@@ -129,7 +129,6 @@ public class JfdjController {
 	private String getJfdjSql(String section,HttpServletRequest request,String type,ModelMap model) {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
-		sb.append(" and  c.id is not null ");
 		sb.append(" and a.section in ("+section+")");
 		sb.append(" and (a.hasothers = ").append(type).append(")");
 		String names = request.getParameter("names");

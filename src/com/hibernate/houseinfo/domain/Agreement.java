@@ -118,6 +118,16 @@ public class Agreement extends BaseBean {
 	//是否打印
 	
 	
+	//计算字段
+	//实际选房套数
+	private Integer xfts;
+	//选房面积
+	private BigDecimal xfarea;
+	//总补偿款-选房款
+	private BigDecimal jshk;
+	//实建面
+	private BigDecimal sjm;
+	
 	
 	public String getHousebasicid() {
 		return housebasicid;
@@ -615,6 +625,46 @@ public class Agreement extends BaseBean {
 
 	public void setDxazfgfk(String dxazfgfk) {
 		this.dxazfgfk = dxazfgfk;
+	}
+
+
+	public Integer getXfts() {
+		return xfts;
+	}
+
+
+	public BigDecimal getXfarea() {
+		return xfarea;
+	}
+
+
+	public BigDecimal getJshk() {
+		return jshk;
+	}
+
+
+	public BigDecimal getSjm() {
+		return new BigDecimal(13132);
+	}
+
+
+	public void setXfts(Integer xfts) {
+		this.xfts = xfts;
+	}
+
+
+	public void setXfarea(BigDecimal xfarea) {
+		this.xfarea = xfarea;
+	}
+
+
+	public void setJshk(BigDecimal jshk) {
+		this.jshk = jshk;
+	}
+
+
+	public void setSjm(BigDecimal sjm) {
+		this.sjm = sjm;
 	}
 
 }

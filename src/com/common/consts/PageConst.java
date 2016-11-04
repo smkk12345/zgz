@@ -26,7 +26,9 @@ public class PageConst {
     public final static String PGZQ_fhxy_az_je_print_Modal = "/default/pgzq/fhxy_az_je_print_Modal.ftl";  
     public final static String PGZQ_fhxy_az_xy_print_Modal = "/default/pgzq/fhxy_az_xy_print_Modal.ftl";  
     public final static String PGZQ_fhxy_hb_je_print_Modal = "/default/pgzq/fhxy_hb_je_print_Modal.ftl";  
-    public final static String PGZQ_fhxy_hb_xy_print_Modal = "/default/pgzq/fhxy_hb_xy_print_Modal.ftl";  
+    public final static String PGZQ_fhxy_hb_xy_print_Modal = "/default/pgzq/fhxy_hb_xy_print_Modal.ftl"; 
+    public final static String PGZQ_sxh_print_Modal = "/default/pgzq/fhxy_sxh_print_Modal.ftl"; 
+    
  
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
     
@@ -37,6 +39,14 @@ public class PageConst {
     public final static String JFDJ_DJ_0 = "/default/jfdj/jfdj_0.ftl";  
     public final static String JFDJ_DJ_1 = "/default/jfdj/jfdj_1.ftl"; 
     public final static String SJTJ = "/default/sjtj/sjtj.ftl";  
+    
+    public final static String SJTJ_chart1 = "/default/sjtj/chart1.ftl";  
+    public final static String SJTJ_chart2 = "/default/sjtj/chart2.ftl"; 
+    public final static String SJTJ_chart3 = "/default/sjtj/chart3.ftl"; 
+    public final static String SJTJ_chart4 = "/default/sjtj/chart4.ftl"; 
+    public final static String SJTJ_chart5 = "/default/sjtj/chart5.ftl"; 
+    public final static String SJTJ_chart6 = "/default/sjtj/chart6.ftl";     
+    
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
     public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析

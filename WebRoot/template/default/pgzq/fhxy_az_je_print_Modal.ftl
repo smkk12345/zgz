@@ -1,5 +1,5 @@
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">【张三】房屋腾退补偿安置协议</h4>
+    <h4 class="modal-title pull-left m0">【${bean.names}】安置补偿方式金额审查表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
         <button type="submit" class="btn btn-primary btn-save"   onclick="yu_print()">打印</button>
@@ -7,17 +7,17 @@
 </div>
 <div class="modal-body center">
     <div class="content xy-print-con"  id="xy-print">
-        <span class="title">房屋征收补偿协议</span>
+        <span class="title">安置补偿方式金额审查表</span>
 
         <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
             <tr>
-                <td class="td_content_1"colspan="10">（        ）村宅基地房屋“安置房补偿”方式金额审查表（   ）标段</td>
+                <td class="td_content_1"colspan="10">（   张郭庄村 ）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>
             <tr>
                 <td class="td_content_1">被腾退人</td>
-                <td class="td_content_1">${housebasic.names?default("")} </td>
+                <td class="td_content_1">${bean.names?default("")} </td>
                 <td class="td_content_1">坐落</td>
-                <td class="td_content_1"colspan="4">${housebasic.location?default("")}</td>
+                <td class="td_content_1"colspan="4">${bean.location?default("")}</td>
                 <td class="td_content_1">签约时间</td>
                 <td class="td_content_1"colspan="2">／</td>
             </tr>
@@ -25,7 +25,7 @@
                 <td class="td_content_1">宅基地实测</td>
                 <td class="td_content_1">${bean.scydmj?default("")}</td>
                 <td class="td_content_1">身份证</td>
-                <td class="td_content_1" colspan=3>${housebasic.idcard?default("")}</td>
+                <td class="td_content_1" colspan=3>${bean.idcard?default("")}</td>
                 <td class="td_content_1">认定年限</td>
                 <td class="td_content_1">${bean.homesteadyear?default("／")}</td>
                 <td class="td_content_1">签约顺序号</td>
@@ -34,20 +34,20 @@
 
             <tr>
                 <td class="td_content_1">实建面</td>
-                <td class="td_content_1">${housebasic.firstfloorarea?default(0)}+${housebasic.abovetwoarea?default(0)}+${housebasic.basement?default(0)}+${bean.shed?default(0)}</td>
+                <td class="td_content_1">${bean.sjm}</td>
                 <td class="td_content_1">首层</td>
-                <td class="td_content_1" >${housebasic.firstfloorarea?default(0)}</td>
+                <td class="td_content_1" >${bean.firstfloorarea?default(0)}</td>
                 <td class="td_content_1">二层及以上</td>
-                <td class="td_content_1">${housebasic.abovetwoarea?default(0)}</td>
+                <td class="td_content_1">${bean.abovetwoarea?default(0)}</td>
                 <td class="td_content_1">地下室</td>
-                <td class="td_content_1">${housebasic.basement?default(0)}</td>
+                <td class="td_content_1">${bean.basement?default(0)}</td>
                 <td class="td_content_1">棚</td>
                 <td class="td_content_1">${bean.shed?default(0)}</td>
             </tr>
 
             <tr>
                 <td class="td_content_1">认定宅基地面积</td>
-                <td class="td_content_1">${bean.homesteadyear?default(0)}+${bean.overhomesteadarea?default(0)}</td>
+                <td class="td_content_1">${bean.rdzjdmj?default(0)}</td>
                 <td class="td_content_1">控制面积</td>
                 <td class="td_content_1" >${bean.homesteadyear?default(0)}</td>
                 <td class="td_content_1">区位单价</td>
@@ -61,13 +61,13 @@
                 <td class="td_content_1">认定房屋补偿面积</td>
                 <td class="td_content_1">${bean.fwbcmj?default(0)}</td>
                 <td class="td_content_1">经营面积</td>
-                <td class="td_content_1" >${housebasic.operatearea?default(0)}</td>
+                <td class="td_content_1" >${bean.operatearea?default(0)}</td>
                 <td class="td_content_1">本址在册户籍人数</td>
                 <td class="td_content_1">3</td>
                 <td class="td_content_1">非本址在册户籍人数</td>
                 <td class="td_content_1">3</td>
                 <td class="td_content_1">认定人数总和</td>
-                <td class="td_content_1">3</td>
+                <td class="td_content_1">${bean.rdbazrk?default("/")}</td>
             </tr>
             <tr>
                 <td class="td_content_1">被认定全体人员姓名（注明代际关系）</td>
@@ -78,9 +78,9 @@
                 <td class="td_content_1">应选面积</td>
                 <td>／</td>
                 <td colspan=3>实际选房面积</td>
-                <td colspan＝2>／</td>
+                <td colspan=2>${bean.xfarea?default("")}</td>
                 <td >选房总套数</td>
-                <td >1</td>
+                <td >${bean.xfts?default("")}</td>
                 <td >套</td>
             </tr>
             <tr>

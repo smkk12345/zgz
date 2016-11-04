@@ -1,5 +1,5 @@
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">【张三】房屋腾退补偿安置协议</h4>
+    <h4 class="modal-title pull-left m0">【${housebasic.names}】完全货币补偿方式金额审查表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
         <button type="submit" class="btn btn-primary btn-save"   >打印</button>
@@ -7,10 +7,11 @@
 </div>
 <div class="modal-body xy-print-con" id="xy-print">
     <div style="margin-left: auto;margin-right: auto;">
+     <span class="title">完全货币补偿方式金额审查表</span>
         <div class="content" style="float:left;">
          <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
                 <tr>
-                	<td class="td_content_1"colspan="10">（        ）村宅基地房屋“完全货币”方式金额审查表（   ）标段</td>
+                	<td class="td_content_1"colspan="10">（   张郭庄村 ）村宅基地房屋“完全货币”方式金额审查表（ ${housebasic.section}）标段</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">被腾退人</td>

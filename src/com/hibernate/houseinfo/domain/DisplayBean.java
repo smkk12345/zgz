@@ -1,6 +1,7 @@
 package com.hibernate.houseinfo.domain;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -218,7 +219,20 @@ public class DisplayBean extends BaseBean {
 		private String serviceip;
 		private String displaydate;
 		
-		private BigDecimal sjm;
+		//实际建筑面积
+		private BigDecimal sjm;		
+		//计算字段
+		//实际选房套数
+		private Integer xfts;
+		//选房面积
+		private BigDecimal xfarea;
+		//总补偿款-选房款
+		private BigDecimal jshk;
+		//rdzjdmj
+		private BigDecimal rdzjdmj;
+		//协议好展示
+		private String indexNumStr;
+		
 		//复核状态
 		private String checkresult;//0未审查（退回） 1 内部审核通过
 		//复核人员
@@ -253,9 +267,20 @@ public class DisplayBean extends BaseBean {
 			this.checkremark = checkremark;
 		}
 		public BigDecimal getSjm() {
-//			return  new BigDecimal(firstfloorarea.doubleValue()+abovetwoarea.doubleValue()+basement.doubleValue()+shed.doubleValue());
-			return new BigDecimal(firstfloorarea.doubleValue());
+			BigDecimal bd = getSumValue(0.00,firstfloorarea);
+			bd = getSumValue(bd.doubleValue(),abovetwoarea);
+			bd = getSumValue(bd.doubleValue(),basement);
+			bd = getSumValue(bd.doubleValue(),shed);
+			return  bd;
 		} 
+		
+		private BigDecimal getSumValue(double sum,BigDecimal bd){
+			if(null != bd){
+				return new BigDecimal(sum+bd.doubleValue());
+			}else{
+				return new BigDecimal(sum);
+			}
+		}
 		public void setSjm(BigDecimal sjm) {
 			this.sjm = sjm;
 		}
@@ -480,6 +505,16 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setIndexNum(IndexNum indexNum) {
 			this.indexNum = indexNum;
+		}
+		private String getIndexNumStr(Long indexNum2) {
+			// TODO Auto-generated method stub
+			if(null != indexNum2){
+				DecimalFormat df=new DecimalFormat("000");
+				String str2=df.format(indexNum2);
+				return str2;
+			}else{
+				return "";
+			}
 		}
 		public List<VacatePeople> getVacatelist() {
 			return vacatelist;
@@ -792,6 +827,7 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setIndexnum(Long indexnum) {
 			this.indexnum = indexnum;
+			this.indexNumStr = getIndexNumStr(indexnum);
 		}
 		public String getTime() {
 			return time;
@@ -843,6 +879,70 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setHasothers(String hasothers) {
 			this.hasothers = hasothers;
+		}
+		public Integer getXfts() {
+			Integer sum = getSumIntValue(0,yjs);
+		    sum = getSumIntValue(sum,ljs70);
+		    sum = getSumIntValue(sum,ljs75);
+		    sum = getSumIntValue(sum,ljs80);
+		    sum = getSumIntValue(sum,ljs85);
+		    sum = getSumIntValue(sum,sjs);
+			return sum;
+		}
+		
+		private Integer getSumIntValue(Integer sum,Integer value){
+			if(null != value){
+				return sum+value;
+			}else{
+				return sum;
+			}
+		}
+		
+		public BigDecimal getXfarea() {
+			Integer sum = getSumIntValue(0,yjs,55);
+		    sum = getSumIntValue(sum,ljs70,70);
+		    sum = getSumIntValue(sum,ljs75,75);
+		    sum = getSumIntValue(sum,ljs80,80);
+		    sum = getSumIntValue(sum,ljs85,85);
+		    sum = getSumIntValue(sum,sjs,110);
+			return new BigDecimal(sum);
+		}
+		
+		private Integer getSumIntValue(int i, Integer yjs2, int j) {
+			// TODO Auto-generated method stub
+			if(null!=yjs2&& yjs2 >0){
+				return i+yjs2*j;
+			}else{
+				return i;
+			}
+		}
+		public BigDecimal getJshk() {
+			return new BigDecimal(zjdttzj.doubleValue() - azfgfk.doubleValue());
+		}
+		public void setXfts(Integer xfts) {
+			this.xfts = xfts;
+		}
+		public void setXfarea(BigDecimal xfarea) {
+			this.xfarea = xfarea;
+		}
+		public void setJshk(BigDecimal jshk) {
+			this.jshk = jshk;
+		}	
+		//over  超出宅基地
+		
+		public BigDecimal getRdzjdmj() {
+			BigDecimal bd = getSumValue(0.00,conhomestarea);
+			bd = getSumValue(bd.doubleValue(),overhomesteadarea);
+			return  bd;
+		}
+		public void setRdzjdmj(BigDecimal rdzjdmj) {
+			this.rdzjdmj = rdzjdmj;
+		}
+		public String getIndexNumStr() {
+			return indexNumStr;
+		}
+		public void setIndexNumStr(String indexNumStr) {
+			this.indexNumStr = indexNumStr;
 		}
 		
 		

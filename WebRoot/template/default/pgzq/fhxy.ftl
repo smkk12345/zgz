@@ -29,9 +29,9 @@
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>安置方式:</label>
 	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
-	                        <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-	                        <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
-	                        <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
+	                        <option  <#if (atype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+	                        <option  <#if (atype?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
+	                        <option  <#if (atype?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
                     	</select>
 	                </div>
 	                <div class='autoWidthGroup-2 fl '>

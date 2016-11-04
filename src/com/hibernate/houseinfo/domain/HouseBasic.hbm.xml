@@ -114,6 +114,7 @@
 		<property name="license" type="java.lang.String">
 			<column name="license" />
 		</property>	
+		<property name="jfDate"></property>
 		<property name="hasothers"></property>
 		<property name="checkresult"></property>
 		<property name="checkname"></property>

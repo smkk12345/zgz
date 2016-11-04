@@ -37,9 +37,9 @@
                     <#if role.roleAuthority[3]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}sjtj.action"
+                    		href="${BASE_PATH}sjtj/chart3.action"
                     	<#else>
-                    		href="${BASE_PATH}sjtj.action"
+                    		href="${BASE_PATH}sjtj/chart3.action"
                     	</#if>
                     	>数据统计</a></li>  
                     </#if>         
@@ -51,8 +51,8 @@
                     <!--   <li><a <#if CURENT_TAB == 'BZ'>class="active"</#if> href="${BASE_PATH}help.action">帮助</a>
                      </li>-->
                 </ul>
-                <ul class="pull-right mt10">
-                    <div class="btn-group">
+             <ul class="pull-right mt10">
+                     <!--  <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             快捷入口 <span class="caret"></span>
                         </button>
@@ -67,7 +67,7 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="javascript:" class="YL-ModalClick" data-url="${BASE_PATH}fastCut.action"><i class="glyphicon glyphicon-off"></i>自定义</a></li>
                         </ul>
-                    </div>
+                    </div>-->
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ${user.displayName} <span class="caret"></span>

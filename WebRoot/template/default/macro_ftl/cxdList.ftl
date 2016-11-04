@@ -5,7 +5,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
     <td >${ROW.location?default("")}</td>
@@ -31,7 +31,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
     <td >${ROW.location?default("")}</td>
@@ -54,7 +54,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
     <td >${ROW.location?default("")}</td>
@@ -85,7 +85,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td > 
         <#if (ROW.atype)??>
@@ -117,7 +117,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td > 
         <#if (ROW.atype)??>
@@ -158,7 +158,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
     <td >${ROW.protocolnumber?default("")}</td>
@@ -182,7 +182,7 @@
 <#list items as ROW>
 <tr id="${ROW.id}">
     <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
-    <td >${role.section?default("")}</td>
+    <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.mobile?default("")}</td>
     <td >${ROW.idcard?default("")}</td> 

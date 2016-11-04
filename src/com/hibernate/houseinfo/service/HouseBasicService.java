@@ -2,6 +2,7 @@ package com.hibernate.houseinfo.service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,8 @@ import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
+import com.hibernate.timers.utils.DateStyle;
+import com.hibernate.timers.utils.DateUtil;
 
 public class HouseBasicService {
 
@@ -168,9 +171,18 @@ public class HouseBasicService {
 		return houseBasicDao.getIndexNumList(section, currentpage, pagecount); 
 	}
 	
-	public List<DisplayBean> getDisplayBeanList(String sql, 
+	public List<DisplayBean> getDisplayBeanList(String sql, String orderSql,
 			int currentpage,int pagecount){
-		return houseBasicDao.getDisplayBeanList(sql,currentpage,pagecount);
+		return houseBasicDao.getDisplayBeanList(sql,orderSql,currentpage,pagecount);
+	}
+	public DisplayBean getDisplayBean(String housebasicid){
+		List<DisplayBean> list = houseBasicDao.getDisplayBeanList(" and a.id = '"+housebasicid+"' ","",0,2);
+		if(null != list && list.size()>0){
+			return list.get(0);
+		}else{
+			return null;
+		}
+		
 	}
 	public Integer getDisPlayCount(String sql) {
 		// TODO Auto-generated method stub
@@ -180,7 +192,19 @@ public class HouseBasicService {
 		// TODO Auto-generated method stub
 		HouseBasic houseBasic = houseBasicDao.getById(housebasicid);
 		houseBasic.setHasothers("1");
+		houseBasic.setJfDate(DateUtil.DateToString(new Date(),DateStyle.YYYY_MM_DD_HH_MM_SS_EN));
 		houseBasicDao.update(houseBasic);
 	}
 	
+	public List<Integer> getListGroupBySection(String type){
+		return houseBasicDao.getListGroupBySection(type);
+	}
+	
+	public Integer getSumHasOthers(String type,String dateStr){
+		return houseBasicDao.getSumHasOthers(type,dateStr);
+	}
+	
+	public List getSumHouseInfo(String type,String dateStr){
+		return houseBasicDao.getSumHouseInfo(type,dateStr);
+	}
 }

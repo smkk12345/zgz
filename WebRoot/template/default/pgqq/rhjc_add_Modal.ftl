@@ -8,12 +8,13 @@
 <div class="modal-body rhjc-add-con" id="rhjc-add-con">
     <form id='rhjcAddForm' modelAttribute = "HouseBasic" action="${BASE_PATH}/pgqq/savehousebasic.action"
           accept-charset="UTF-8" method="post">
-        <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='hasothers' value="${bean.hasothers?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkname' value="${bean.checkname?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkremark' value="${bean.checkremark?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkDate' value="${bean.checkDate?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkresult' value="${bean.checkresult?default("0")}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='hasothers' value="${bean.hasothers}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkname' value="${bean.checkname}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkremark' value="${bean.checkremark}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkDate' value="${bean.checkDate}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='checkresult' value="${bean.checkresult}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='section' value="${bean.section}" style="width: 0px;"/>
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
@@ -24,6 +25,10 @@
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
                     <input type='text' class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
+                </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>身份证:</label>
+                    <input type='text' class='form-control input-sm  ' name='idcard' value="${bean.idcard?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
@@ -420,16 +425,16 @@
                     <label class='fl control-label'>税务登记证:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='taxlicense' >  
                         <option <#if (bean.taxlicense?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
-                        <option <#if (bean.taxlicense?default("-1"))=='1'>selected='selected'</#if> value="0">有</option>  
-                        <option <#if (bean.taxlicense?default("-1"))=='2'>selected='selected'</#if> value="1">无</option> 
+                        <option <#if (bean.taxlicense?default("-1"))=='0'>selected='selected'</#if> value="0">有</option>  
+                        <option <#if (bean.taxlicense?default("-1"))=='1'>selected='selected'</#if> value="1">无</option> 
                     </select>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>租赁协议:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='leaselicense' > 
                         <option <#if (bean.leaselicense?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>   
-                        <option <#if (bean.leaselicense?default("0"))=='-1'>selected='selected'</#if> value="0">有</option>  
-                        <option <#if (bean.leaselicense?default("1"))=='-1'>selected='selected'</#if> value="1">无</option> 
+                        <option <#if (bean.leaselicense?default("0"))=='0'>selected='selected'</#if> value="0">有</option>  
+                        <option <#if (bean.leaselicense?default("1"))=='1'>selected='selected'</#if> value="1">无</option> 
                     </select>       
                 </div>    
                 <div class=' aoJianGroup fl'>      

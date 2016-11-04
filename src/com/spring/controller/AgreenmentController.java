@@ -43,7 +43,7 @@ public class AgreenmentController {
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			String sql = getFhfaSxhSql(role.getSection(),request,model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
 			
 			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 //			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
@@ -81,6 +81,8 @@ public class AgreenmentController {
 		String  mobile = request.getParameter("mobile");
 		String idcard = request.getParameter("idcard");
 		String indexnum = request.getParameter("indexnum");
+		String atype = request.getParameter("atype");
+		atype = StringUtils.isBlank(atype)?"-1":atype;
 		if(!StringUtils.isBlank(names)){
 			sb.append(" and a.names like '%").append(names).append("%'");
 			model.addAttribute("names", names);
@@ -97,7 +99,11 @@ public class AgreenmentController {
 			sb.append(" and c.indexnum =").append(indexnum);
 			model.addAttribute("indexnum", indexnum);
 		}
-		return null;
+		if(!atype.equals("-1")){
+			sb.append(" AND b.atype ='").append(atype).append("'");
+		}
+		model.addAttribute("atype", idcard);
+		return sb.toString();
 	}
 
 
@@ -116,7 +122,7 @@ public class AgreenmentController {
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			String sql = getHfxySxhSql(role.getSection(),request,model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql, (intPageNum - 1) * intPageSize, intPageSize);
+					.getDisplayBeanList(sql, "",(intPageNum - 1) * intPageSize, intPageSize);
 			
 			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
@@ -229,13 +235,14 @@ public class AgreenmentController {
 			String agreenmentid = request.getParameter("agreenmentid");
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
-			model.addAttribute("housebasic", housebasic);
-			Agreement agreenment = new Agreement();
-			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
-				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
-			}
-			model.addAttribute("bean", agreenment);
+//			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+//			model.addAttribute("housebasic", housebasic);
+//			Agreement agreenment = new Agreement();
+//			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
+//				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+//			}
+			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			model.addAttribute("bean", bean);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",

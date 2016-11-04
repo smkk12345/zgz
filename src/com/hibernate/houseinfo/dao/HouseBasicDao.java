@@ -1,6 +1,11 @@
 package com.hibernate.houseinfo.dao;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -95,6 +100,16 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			
 			
 			list = c.add(Restrictions.in("section", section.split(","))).addOrder(Order.asc("createTime")).list();
+//			list = c.list();
+//			for (int i = 0; i < list.size(); i++) {
+//				HouseBasic housebasic = list.get(i);
+//				if(i%2==0){
+//					housebasic.setSection("2");
+//				}else{
+//					housebasic.setSection("1");
+//				}
+//				update(housebasic);
+//			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -113,7 +128,12 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		Session s = null;
 		try{
 			s = getSession();
-			String hql = "select count(id) as count from HouseBasic hb where section in ("+section+")";
+			String hql="";
+			if(StringUtils.isBlank(section)){
+				hql = "select count(id) as count from HouseBasic hb ";
+			}else{
+				hql = "select count(id) as count from HouseBasic hb where section in ("+section+")";
+			}
 			Query query = s.createQuery(hql);
 			int count = ((Number) query.iterate().next()).intValue();
 			return count;
@@ -175,7 +195,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	/**
 	 * 写一个查询搞定所有的数据算了
 	 */
-	public List<DisplayBean> getDisplayBeanList(String sql, 
+	public List<DisplayBean> getDisplayBeanList(String sql, String orderSql,
 			int currentpage,int pagecount){
 		Session s = null;
 		try{
@@ -189,8 +209,14 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			if(!StringUtils.isBlank(sql)){
 				sb.append(sql);
 			}
-			sb.append(" order by c.indexnum asc ");
-			sb.append(" LIMIT ").append(currentpage*pagecount).append(",").append(pagecount);
+			if(StringUtils.isBlank(orderSql)){
+				sb.append(" order by c.indexnum asc ");
+			}else{
+				sb.append(orderSql);
+			}
+			if(pagecount > 0){
+				sb.append(" LIMIT ").append(currentpage*pagecount).append(",").append(pagecount);
+			}
 			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();
 			return list;
 		}catch(Exception e){
@@ -224,5 +250,102 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}
 		return 0;
 	}
+	
+	/**
+	 * 通过标段分组
+	 */
+	public List<Integer> getListGroupBySection(String type){
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			if(type.equals("0")){ //已签约
+				sb.append(" select count(a.id) as count,a.section from housebasic a " +
+						"left join agreenment b on a.id = b.housebasicid " +
+						" left join indexnum c on a.id = c.housebasicid "+
+						"where c.indexnum is not null " +
+						"group by a.section order by (a.section+0) ");
+			}else if(type.equals("1")){ //未签约
+				sb.append(" select count(a.id) as count ,a.section from housebasic a " +
+						"left join agreenment b on a.id = b.housebasicid " +
+						" left join indexnum c on a.id = c.housebasicid "+
+						"where c.indexnum is null " +
+						"group by a.section order by  (a.section+0) ");
+			}else{//总共
+//				sb.append(" select count(a.id) from housebasic a " +
+//						"left join agreenment b on a.id = b.housebasicid " +
+//						" left join indexnum c on a.id = c.housebasicid "+
+//						"where c.indexnum is null " +
+//						"");
+			}
+			List<Object[]> list = s.createSQLQuery(sb.toString()).list();
+			List<Integer> iList = objectListToOrganList(list);
+			return iList;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		return null;
+	}
+	
+	/**
+	 * 获取交房人数
+	 */
+	public Integer getSumHasOthers(String type,String dateStr){
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select count(id) as count from housebasic where hasothers = '").append(type).append("'");
+			if(!StringUtils.isBlank(dateStr)){
+				sb.append(" and date_format(jfDate,'yyyy-MM-dd') = '").append(dateStr).append("'");
+			}
+			List<BigInteger> list = s.createSQLQuery(sb.toString()).list();
+//			List<Integer> iList = objectListToOrganList(list);
+			BigInteger bi = list.get(0);
+			return bi.intValue();
+		}catch(Exception e){
+			e.printStackTrace();
+			return 0;
+		}finally{
+			s.close();
+		}
+	}
+	
+	public List getSumHouseInfo(String type,String dateStr){
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select sum(yjs) as yjs,sum(ljs70) as ljs70, sum(ljs75) as ljs75,sum(ljs80) as ljs80,sum(ljs85) as ljs85," +
+					" sum(sjs) as sjs from agreenment b left join housebasic a on a.id = b.housebasicid where a.id is not null ");			
+			List<Object[]> list = s.createSQLQuery(sb.toString()).list();
+//			List<Integer> iList = objectListToOrganList(list);
+			Object[] o = list.get(0);
+			List rList = Arrays.asList(o);
+			return rList;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}finally{
+			s.close();
+		}
+	}
+	
+	 private List<Integer> objectListToOrganList(List<Object[]> objectList) {
+	     List<Integer> allOrganList = new ArrayList<Integer>();
+	     for (int x = 0; x < objectList.size(); x++) {
+	    	 String sCount = objectList.get(x)[0].toString();
+	    	 if(StringUtils.isBlank(sCount)){
+	    		 allOrganList.add(0);
+	    	 }else{
+	    		 allOrganList.add(Integer.parseInt(sCount));
+	    	 }
+	     }
+	     return allOrganList;
+	 }
+	 
+	 
 	
 }

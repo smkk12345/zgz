@@ -94,7 +94,8 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String operatetype;
 	//是否已经交房
 	private String hasothers;// 0 未交房   1 已经交房
-	
+	//交房日期 
+	private String jfDate;
 	//复核状态
 	private String checkresult;//0未审查（退回） 1 内部审核通过
 	//复核人员
@@ -146,7 +147,7 @@ public class HouseBasic extends BaseBean implements Serializable {
 	//otherList
 	List<OtherInfo> otherList = new ArrayList<OtherInfo>();
 	
-	
+	//
 	
 	public List<OtherInfo> getOtherList() {
 		return otherList;
@@ -415,5 +416,11 @@ public class HouseBasic extends BaseBean implements Serializable {
 	}
 	public void setHasothers(String hasothers) {
 		this.hasothers = hasothers;
+	}
+	public String getJfDate() {
+		return jfDate;
+	}
+	public void setJfDate(String jfDate) {
+		this.jfDate = jfDate;
 	}
 }

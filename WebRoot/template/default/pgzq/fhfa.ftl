@@ -16,7 +16,7 @@
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
             <div class="fl">
-              <form  action="${BASE_PATH}/xy.action" accept-charset="UTF-8" method="post" >
+              <form  action="${BASE_PATH}pgzq/agreenment.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -32,9 +32,9 @@
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>安置方式:</label>
 	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
-	                        <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-	                        <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
-	                        <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
+	                        <option  <#if (atype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+	                        <option  <#if (atype?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
+	                        <option  <#if (atype?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
                     	</select>
 	                </div>  
                   <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
@@ -60,7 +60,7 @@
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="xy.action" OtherParameter=""/>
+            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="pgzq/agreenment.action" OtherParameter=""/>
             </#if>
         </div>
     </ul>
