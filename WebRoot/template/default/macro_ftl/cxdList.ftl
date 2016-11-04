@@ -63,15 +63,18 @@
     <td >${ROW.zjdarea?default("")}</td>
     <td >${ROW.fwarea?default("")}</td>
     <td >${ROW.mobile?default("")}</td>
+    <td >
+        <#if (ROW.checkresult?default("-1"))=='0'>未通过<#elseif (ROW.checkresult?default("-1"))=='1'>通过</#if>
+    </td>
     <td>    
     <#if (ROW.checkresult)??>
 	    <#if ROW.checkresult=="0">
-	       <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+	       <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
 	   	<#else>
-	   		 <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='返回' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 返回</button>
+	   		 <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
 	    </#if>
 	 <#else>
-	 	<button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+	 	<button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
 	 </#if>
     </td>
 </tr>

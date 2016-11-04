@@ -1,51 +1,35 @@
 
 <div class="modal-header clearfix">
     <h4 class="modal-title pull-left m0">基本情况调查表(共5项)</h4>
+    <button type="submit" class="btn btn-primary btn-save fr ml15">保存</button>
+    <button type="button" class="btn btn-default fr" data-dismiss="modal">关闭</button>
 </div>
 <div class="modal-body rhjc-add-con" id="rhjc-add-con">
 
-    <form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}"
-          accept-charset="UTF-8" method="post">
-          <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
-          <h4><span class="label label-default">入户信息审核：</span></h4>
-            <div class='container-fluid con-bg mb10'>	
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>复核状态:</label>
-                </div>
-                <div class="container-fluid fl">
-                    <label class="checkbox-inline">
-                        <input type="radio" name="checkresult" id="optionsRadios3" value="1" <#if (bean.checkresult?default("0"))=='1'>checked</#if>>内部审核通过
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="radio" name="checkresult" id="optionsRadios4" value="0" <#if (bean.checkresult?default("0"))=='0'>checked</#if>>退回
-                    </label>
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>复核人员:</label>
-                    <input type='text' class='form-control input-sm  ' name='checkname' value="${bean.checkname?default("")}" />        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>复核日期:</label>
-                    <input type='text' class='form-control input-sm  ' name='checkDate' value="${bean.checkDate?default("")}"/>        
-                </div>
-                <h4><span class="label label-default">5.备注：</span></h4>
-	            <div class='container-fluid con-bg mb10'>
-	                <textarea class="form-control" rows="5" name="checkremark" placeholder="备注(选填，限1500字)" >${bean.checkremark?default("")}</textarea>
-	            </div>
-	            <div class="modal-footer">
-	                <button type="submit" class="btn btn-primary btn-save"   >保存</button>
-	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-            	</div>
+    <form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}" accept-charset="UTF-8" method="post">
+        <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("")}" style="width: 0px;"/>
+        <div class='container-fluid con-bg mb10'>	
+            <div class='checkbox-2'>      
+                <label class='fl control-label'>复核状态: &nbsp;&nbsp;</label>
+                <input class="ml10"  type="radio" name="checkresult" id="optionsRadios3" value="1" <#if (bean.checkresult?default("0"))=='1'>checked</#if>> 通过&nbsp;&nbsp;
+                       <input class="ml10" type="radio" name="checkresult" id="optionsRadios4" value="0" <#if (bean.checkresult?default("0"))=='0'>checked</#if>> 退回   
+
             </div>
-    </from>
-        <form id='rhjcAddForm' 
-          accept-charset="UTF-8" method="post">
-        <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("/")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='hasothers' value="${bean.hasothers?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkname' value="${bean.checkname?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkremark' value="${bean.checkremark?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkDate' value="${bean.checkDate?default("0")}" style="width: 0px;"/>
-        <input type="hidden" class='form-control input-sm ' name='checkresult' value="${bean.checkresult?default("0")}" style="width: 0px;"/>
+            <div class='mt10'>      
+                <label class='fl control-label pr10'>复核人员: </label>
+                <input type='text' class='form-control input-sm  width-150px' name='checkname' value="${bean.checkname?default("")}" />  
+            </div>
+            <div class='mt10'>  
+                <label class='fl control-label pr10'>复核日期: </label>
+                <input type='text' class='form-control input-sm  width-150px' name='checkDate' value="${bean.checkDate?default("")}"/>    
+            </div>
+            <div class='mt10'>
+                <label class='fl control-label'>备注:</label>
+                <textarea class="form-control fr" rows="5" name="checkremark" placeholder="备注(选填，限1500字)" >${bean.checkremark?default("")}</textarea>
+            </div>
+        </div>
+        </from>
+
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
@@ -73,12 +57,12 @@
 
                 <div class=' chkstyle fl'>
                     <label class='fl control-label'>权属取得方式:
-                    <#if (bean.ownership?default("-1"))=='-1'>请选择
-                    <#elseif (bean.ownership?default("-1"))=='0'>自有 
-                    <#elseif (bean.ownership?default("-1"))=='1'>老宅
-                    <#elseif (bean.ownership?default("-1"))=='2'>买卖
-                    <#elseif (bean.ownership?default("-1"))=='3'>继承
-                    <#elseif (bean.ownership?default("-1"))=='4'>其他</label>
+                        <#if (bean.ownership?default("-1"))=='-1'>请选择
+                        <#elseif (bean.ownership?default("-1"))=='0'>自有 
+                        <#elseif (bean.ownership?default("-1"))=='1'>老宅
+                        <#elseif (bean.ownership?default("-1"))=='2'>买卖
+                        <#elseif (bean.ownership?default("-1"))=='3'>继承
+                        <#elseif (bean.ownership?default("-1"))=='4'>其他</label>
                     </#if>
                 </div>
                 <div class=' chkstyle fl'>      
@@ -125,30 +109,30 @@
                     <tr class="add-list-1">
                         <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
                         <td class="center">
-                                <#if (vacate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
+                            <#if (vacate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
                         </td>
                         <td class="center">${vacate.name?default("/")}      </td>
                         <td class="center">${vacate.idcard?default("/")}       </td>
 
                         <td class="center">
-                        	<#if (vacate.sex?default("-1"))=='0'>男<#else>女</#if>
+                            <#if (vacate.sex?default("-1"))=='0'>男<#else>女</#if>
                         </td>
                         <td class="center">${vacate.registeredrelate?default("/")}        </td>
                         <td class="center">${vacate.changrelate?default("/")}      </td>
                         <td class="center">
-                        	<#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
+                            <#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                         </td>
 
                         <td class="center">${vacate.unit?default("/")}     </td>
                         <td class="center">
-                        <#if (vacate.peopletype?default("-1"))=='0'>婚姻衍生人员
-                        <#elseif (vacate.peopletype?default("-1"))=='1'>配偶
-                        <#elseif (vacate.peopletype?default("-1"))=='2'>新生婴儿
-                        <#elseif (vacate.peopletype?default("-1"))=='3'>现役军人
-                        <#elseif (vacate.peopletype?default("-1"))=='4'>院校在校生
-                        <#elseif (vacate.peopletype?default("-1"))=='5'>服役人员
-                        <#elseif (vacate.peopletype?default("-1"))=='6'>其他
-                        </#if>
+                            <#if (vacate.peopletype?default("-1"))=='0'>婚姻衍生人员
+                            <#elseif (vacate.peopletype?default("-1"))=='1'>配偶
+                            <#elseif (vacate.peopletype?default("-1"))=='2'>新生婴儿
+                            <#elseif (vacate.peopletype?default("-1"))=='3'>现役军人
+                            <#elseif (vacate.peopletype?default("-1"))=='4'>院校在校生
+                            <#elseif (vacate.peopletype?default("-1"))=='5'>服役人员
+                            <#elseif (vacate.peopletype?default("-1"))=='6'>其他
+                            </#if>
                         </td>
                     </tr>
                     </#list>
@@ -174,33 +158,33 @@
                     <#list bean.list as cate>
                     <tr class="add-list-2">
                         <td class="center">
-                         <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
+                        <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
                         </td>
                         <td class="center">
-                         <#if (cate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
+                            <#if (cate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
                         </td>
                         <td class="center">${cate.name?default("/")}       </td>
                         <td class="center">${cate.idcard?default("/")}      </td>
 
                         <td class="center">
-                        <#if (cate.sex?default("-1"))=='0'>男<#else>女</#if>
+                            <#if (cate.sex?default("-1"))=='0'>男<#else>女</#if>
                         </td>
                         <td class="center">${cate.registeredrelate?default("/")}      </td>
                         <td class="center">${cate.changrelate?default("/")}        </td>
                         <td class="center">
-                        <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
+                            <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                         </td>
 
                         <td class="center">${cate.unit?default("/")}       </td>
                         <td class="center">
-                        <#if (cate.peopletype?default("-1"))=='0'>婚姻衍生人员
-                        <#elseif (cate.peopletype?default("-1"))=='1'>配偶
-                        <#elseif (cate.peopletype?default("-1"))=='2'>新生婴儿
-                        <#elseif (cate.peopletype?default("-1"))=='3'>现役军人
-                        <#elseif (cate.peopletype?default("-1"))=='4'>院校在校生
-                        <#elseif (cate.peopletype?default("-1"))=='5'>服役人员
-                        <#elseif (cate.peopletype?default("-1"))=='6'>其他
-                        </#if>
+                            <#if (cate.peopletype?default("-1"))=='0'>婚姻衍生人员
+                            <#elseif (cate.peopletype?default("-1"))=='1'>配偶
+                            <#elseif (cate.peopletype?default("-1"))=='2'>新生婴儿
+                            <#elseif (cate.peopletype?default("-1"))=='3'>现役军人
+                            <#elseif (cate.peopletype?default("-1"))=='4'>院校在校生
+                            <#elseif (cate.peopletype?default("-1"))=='5'>服役人员
+                            <#elseif (cate.peopletype?default("-1"))=='6'>其他
+                            </#if>
                         </td>
                     </tr>
                     </#list>
@@ -242,12 +226,12 @@
                 </div>
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>与被腾退人关系:
-                    	<#if (bean.relate?default("-1"))=='-1'>请选择
-                    	<#elseif (bean.relate?default("-1"))=='0'>本人
-                    	<#elseif (bean.relate?default("-1"))=='1'>本家庭成员
-                    	<#elseif (bean.relate?default("-1"))=='2'>租赁
-                    	<#elseif (bean.relate?default("-1"))=='3'>其他
-                    	</#if>
+                        <#if (bean.relate?default("-1"))=='-1'>请选择
+                        <#elseif (bean.relate?default("-1"))=='0'>本人
+                        <#elseif (bean.relate?default("-1"))=='1'>本家庭成员
+                        <#elseif (bean.relate?default("-1"))=='2'>租赁
+                        <#elseif (bean.relate?default("-1"))=='3'>其他
+                        </#if>
                     </label>
                 </div>
                 <div class=' chkstyle fl'>      
@@ -256,26 +240,26 @@
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>税务登记证:
                         <#if (bean.taxlicense?default("-1"))=='-1'>请选择
-                    	<#elseif (bean.taxlicense?default("-1"))=='1'>有
-                    	<#elseif (bean.taxlicense?default("-1"))=='2'>无
-                    	</#if>
+                        <#elseif (bean.taxlicense?default("-1"))=='1'>有
+                        <#elseif (bean.taxlicense?default("-1"))=='2'>无
+                        </#if>
                     </label>
                 </div>
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>租赁协议:
                         <#if (bean.leaselicense?default("-1"))=='-1'>请选择
-                    	<#elseif (bean.leaselicense?default("-1"))=='0'>有
-                    	<#elseif (bean.leaselicense?default("-1"))=='1'>无
-                    	</#if>
-                    	</label>
+                        <#elseif (bean.leaselicense?default("-1"))=='0'>有
+                        <#elseif (bean.leaselicense?default("-1"))=='1'>无
+                        </#if>
+                    </label>
                 </div>    
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>完税证明:
                         <#if (bean.taxprove?default("-1"))=='-1'>请选择
-                    	<#elseif (bean.taxprove?default("-1"))=='0'>有
-                    	<#elseif (bean.taxprove?default("-1"))=='1'>无
-                    	</#if>
-                    	</label>
+                        <#elseif (bean.taxprove?default("-1"))=='0'>有
+                        <#elseif (bean.taxprove?default("-1"))=='1'>无
+                        </#if>
+                    </label>
                 </div> 
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>执照编号:${bean.license?default("/")}</label>
@@ -301,11 +285,11 @@
                         <#list bean.otherList as other>
                         <tr class="add-list-3">
                             <td class="center">
-	                        <#if (other.otype?default("-1"))=='-1'>请选择
-	                    	<#elseif (other.otype?default("-1"))=='0'>低保
-	                    	<#elseif (other.otype?default("-1"))=='1'>残疾
-	                    	<#elseif (other.otype?default("-1"))=='2'>大病
-	                    	</#if>
+                                <#if (other.otype?default("-1"))=='-1'>请选择
+                                <#elseif (other.otype?default("-1"))=='0'>低保
+                                <#elseif (other.otype?default("-1"))=='1'>残疾
+                                <#elseif (other.otype?default("-1"))=='2'>大病
+                                </#if>
                             </td>
                             <td class="center">${other.name?default("/")}    </td>
                             <td class="center">${other.peopleid?default("/")}      </td>
@@ -319,7 +303,8 @@
                     </tbody>
                 </table>
             </div>
-            <h4><span class="label label-default mb20">5.备注：${bean.remark?default("/")}</span></h4>
+            <h4><span class="label label-default mb10">5.备注：</span></h4>
+            <div class='container-fluid con-bg mb10'>${bean.remark?default("/")}</div>
         </div>
 </div>
 

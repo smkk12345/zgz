@@ -56,6 +56,7 @@
                 <th>宅基地测绘</th>
                 <th>建筑测绘</th>
                 <th>手机</th>
+                <th>审核状态</th>
                 <th>操作</th>
             </tr>
             <@HousebasicList_s list pageNo pageSize/>
