@@ -8,94 +8,79 @@
 <script src="${BASE_ASSETS_PATH}libs/Highcharts/highcharts.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/Highcharts/exporting.js"></script>     
 <meta http-equiv="refresh" content="5">
-<style>
-    /*.chart_content .div1 {*/
-    /*float: left;*/
-    /*width: 65%;*/
-    /*height: 650px;*/
-    /*margin-top: 15px;*/
-    /*}*/
-
-    /*.chart_content .div2 {*/
-    /*position: absolute;*/
-    /*left: 69%;*/
-    /*top: 60px;*/
-    /*width: 30%;*/
-    /*height: 650px;*/
-    /*margin-top: 15px;*/
-    /*}*/
-
-    .chart_content .div3 {
-        position: absolute;
-        top: 660px;
-        float: left;
-        width: 100%;
-        height: 50px;
-        left: 0;
-        margin-top: 10px;
+<div class="container-fluid" style="padding: 20px;height:100%">
+    <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店张郭庄各标段签约情况</div>
+    <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
+    <div style='margin-top: 20px;color:#FF0;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;height:500px'>
+        <div style='float: left;width:auto; height: 100%' id="chart1"> </div>
+         <div style='float: left;width:270px; height: 100%' id="chart3"> </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+    var displayDay = getNowFormatDate();
+    document.getElementById("currentDate").innerHTML = "当前时间：" + displayDay;
+    });
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "年";
+        var seperator2 = "月";
+    var seperator3 = "日";
+    var seperator4 = "星期";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+    var week = date.getDay();
+    var str = "";
+    if (week == 0) {  
+            	str = "星期日";  
+    } else if (week == 1) {  
+        str = "星期一";  
+    } else if (week == 2) {  
+        str = "星期二";  
+    } else if (week == 3) {  
+        str = "星期三";  
+    } else if (week == 4) {  
+        str = "星期四";  
+    } else if (week == 5) {  
+        str = "星期五";  
+    } else if (week == 6) {  
+        str = "星期六";  
+    }  
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator2 + strDate + seperator3
+                        + " " + str;
+        return currentdate;
     }
 
-    .ul {
-        list-style: none;
-    }
 
-    .ul li {
-        float: left;
-        margin-left: 45px;
-    }
+    var now = new Date();
+    function createtime()
+    {
 
-    .ul li img {
-        width: 35px;
-        height: 35px;
-    }
-</style>
-<div style="width: 95%;" class="chart_content">
-    <div style="text-align: center;font-size: 45px;font-weight: bold;">长辛店张郭庄各标段签约情况</div>
-    <div style="font-size: 25px;font-weight: bold;text-align: center;">2016年07月23日<span class="pl10" id="time1"></span></div>
-    <script>
-        var now = new Date();
-        function createtime()
-        {
-
-        var grt = new Date("7/31/2016 20:00:00");
-        now.setTime(now.getTime() + 250);
-        days = (grt - now) / 1000 / 60 / 60 / 24;
-        dnum = Math.floor(days);
-        hours = (grt - now) / 1000 / 60 / 60 - (24 * dnum);
-        hnum = Math.floor(hours);
-        if (String(hnum).length == 1){hnum = "0" + hnum; }
-        minutes = (grt - now) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes);
-        if (String(mnum).length == 1){mnum = "0" + mnum; }
-        seconds = (grt - now) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds);
-        if (String(snum).length == 1){snum = "0" + snum; }
+    var grt = new Date("7/31/2016 20:00:00");
+    now.setTime(now.getTime() + 250);
+    days = (grt - now) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    hours = (grt - now) / 1000 / 60 / 60 - (24 * dnum);
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1){hnum = "0" + hnum; }
+    minutes = (grt - now) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1){mnum = "0" + mnum; }
+    seconds = (grt - now) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+    snum = Math.round(seconds);
+    if (String(snum).length == 1){snum = "0" + snum; }
 
 //        document.getElementById(timeDate).innerHTML = dnum;
-        document.getElementById("time1").innerHTML = hnum + "时" + mnum + "分" + snum + "秒";
-        }
-        setInterval("createtime()", 250);
-    </script>
-
-    <table style="width: 100%;">
-        <tr>
-            <td style="width: 75%;">
-                <div style=" height: 550px" id="chart1"></div>
-            </td>
-            <td style="width: 25%;">
-                <div id="chart3" style="height: 550px"></div>
-            </td>
-        </tr>
-    </table>
-    <!--<div class="div1">-->
-    <!--&lt;!&ndash;<div style="text-align: center; font-size: 25px">2016年08月01日 星期一 距离奖励期结束还有29天12小时13分钟56秒</br>总户数5560户，今日签约356户，累计签约3965户；签约比例65.89% </div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div style="text-align: center;font-size: 36px;font-weight: bold;">各分指签约情况</div>&ndash;&gt;-->
-    <!--<div style=" height: 590px" id="chart1"></div>-->
-    <!--</div>-->
-    <!--<div style="margin-right: -120px;" class="div2" id="chart2">-->
-    <!--<div class="" id="chart3" style="width: 400px;height: 590px"></div>-->
-    <!--</div>-->
-</div>
+    document.getElementById("time1").innerHTML = hnum + "时" + mnum + "分" + snum + "秒";
+    }
+    setInterval("createtime()", 250);</script>
 <script type="text/javascript">
 
     $(function () {
