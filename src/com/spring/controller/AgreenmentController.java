@@ -414,15 +414,8 @@ public class AgreenmentController {
 	public ModelAndView fhxy_sxh_print_Modal(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
-			String agreenmentid = request.getParameter("agreenmentid");
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-//			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
-//			model.addAttribute("housebasic", housebasic);
-//			Agreement agreenment = new Agreement();
-//			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
-//				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
-//			}
 			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
 			model.addAttribute("bean", bean);
 			// 模板路径 basePath
