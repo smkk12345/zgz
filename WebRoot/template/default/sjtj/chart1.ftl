@@ -7,7 +7,8 @@
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
 <div class="container-fluid" style="background-color:#000; padding: 50px 30px 30px 30px;height:100%">
     <div style='color:#FFF;font-size:36px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店张郭庄奖励期倒计时公示</div>
-    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
+<!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
+ <div style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'>截至日期：2016年12月31日 20点整</div>
     <div style='margin-top: 50px;color:#0F0;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>
         距离奖励期结束还有<span id="timeDate2" style="color: red"></span>天<span id="times2" style="color: red"></span>
     </div>
@@ -20,7 +21,7 @@
 
     $(document).ready(function () {
         var displayDay = getNowFormatDate();
-        document.getElementById("currentDate").innerHTML = "当前时间：" + displayDay;
+        //document.getElementById("currentDate").innerHTML = "当前时间：" + displayDay;
 
     });
     function getNowFormatDate() {
