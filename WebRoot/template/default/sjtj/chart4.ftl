@@ -1,79 +1,74 @@
 <#include "leftMenu.ftl"/>
 <#include "../macro_ftl/cxdList.ftl">
 <@override name="main_right">
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/three.min.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-        <script src="${BASE_ASSETS_PATH}libs/jquery/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="${BASE_ASSETS_PATH}libs/jquery/scoll/scroll.js"></script>     
-   <meta charset="UTF-8">
-        <title>Title</title>
-        <meta http-equiv="refresh" content="5">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                background-color: black;
-            }
-            .myscroll {
-                width: 1600px;
-                height:600px;
-                position: absolute;
-                left: 450px;
-                top:50px;
-                margin: 0 auto;
-                line-height: 26px;
-                font-size: 12px;
-                overflow: hidden;
-            }
-            .myscroll ul{
-                list-style: none;
-            }
-            .myscroll li {
-                height: 80px;
-                margin-left: 25px;
-                font-size: 60px;
-                color: white;
-                font-weight: bold;
-                line-height: 80px;
-            }
-            .myscroll a {
-                color: #333;
-                text-decoration: none;
-            }
-            .myscroll a:hover {
-                color: #ED5565;
-                text-decoration: underline;
-            }
-        </style>
-<body>
-        <div class="myscroll">
-            <ul>			
-                <li>截止到2016年07月07日12点15分<br>
-                	长辛店张郭庄棚户区改造项目
-                </li>
-                <li></li>
-                <li>&nbsp;&nbsp;&nbsp; 总签约户数：&nbsp;&nbsp;${zqy}户</li>
-                <li>&nbsp;&nbsp;&nbsp; 今日交房户数：${jrjf}户</li>
-                <li>&nbsp;&nbsp;&nbsp; 累计交房户数：${yjf}户</li>
-                <li>&nbsp;&nbsp;&nbsp; 剩余交房户数：${wjf}户</li>
-                <li>&nbsp;&nbsp;&nbsp; 整体交房比例：<font color="red">${jfbi}</font></li>
-                <li></li>
-            </ul>
+<meta http-equiv="refresh" content="5">
+<div class='container-fluid' style="background-color:#000; padding: 50px 30px 30px 30px;height:100%">
+    <div style='color:#FFF;font-size:36px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店张郭庄交房汇总情况</div>
+    <div style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'>
+        (截止到<span id='currentDate'></span>)
+    </div>
+    <div style=' padding-left: 100px;'>
+        <div style='margin-top: 50px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+            总签约户数：<span style="color: yellow">${zqy} </span> 户
         </div>
+        <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+            今日交房户数：<span style="color: yellow">${jrjf} </span> 户
+        </div>
+        <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+            累计交房户数：<span style="color: yellow">${yjf} </span> 户
+        </div>
+        <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+            剩余交房户数：<span style="color: yellow">${wjf} </span> 户
+        </div>
+        <div style='margin-top: 20px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+            整体交房比例：<font color="red"> ${jfbi} </font>
+        </div>
+    </div>
 
-
-    </body>
+</div>
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        var displayDay = getNowFormatDate();
+        document.getElementById("currentDate").innerHTML = "当前时间：" + displayDay;
+    });
+    function getNowFormatDate() {
+            var date = new Date();
+            var seperator1 = "年";
+            var seperator2 = "月";
+        var seperator3 = "日";
+        var seperator4 = "星期";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+        var week = date.getDay();
+        var str = "";
+        if (week == 0) {  
+                    	str = "星期日";  
+        } else if (week == 1) {  
+                str = "星期一";  
+        } else if (week == 2) {  
+                str = "星期二";  
+        } else if (week == 3) {  
+                str = "星期三";  
+        } else if (week == 4) {  
+                str = "星期四";  
+        } else if (week == 5) {  
+                str = "星期五";  
+        } else if (week == 6) {  
+                str = "星期六";  
+        }  
+            if (month >= 1 && month <= 9) {
+                    month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                    strDate = "0" + strDate;
+            }
+            var currentdate = year + seperator1 + month + seperator2 + strDate + seperator3
+                            + " " + str;
+            return currentdate;
+    }
 
-	$(document).ready(function(){ 
-	});  
-	
 </script>
 </@override>
 <@extends name = "../base/layout.ftl"/>
-<script type="text/javascript">
-   
-</script>
