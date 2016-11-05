@@ -215,7 +215,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				sb.append(orderSql);
 			}
 			if(pagecount > 0){
-				sb.append(" LIMIT ").append(currentpage*pagecount).append(",").append(pagecount);
+				sb.append(" LIMIT ").append(currentpage).append(",").append(pagecount);
 			}
 			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();
 			return list;

@@ -55,7 +55,7 @@
     <div id="yu-pager" class="fl mb20">
         <#import "../macro_ftl/pager.ftl" as p>
         <#if recordCount??>
-        <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="xy.action" OtherParameter=""/>
+        <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/jfdj_1.action" OtherParameter=""/>
         </#if>
     </div>
 </ul>
@@ -130,10 +130,10 @@
                 url: url,
                 dataType: "json",
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "jfdj.action";
+                    location.href = "${BASE_PATH}" + "jfdj_1.action";
                 },
                 success: function (response) {
-                    location.href = "${BASE_PATH}" + "jfdj.action";
+                    location.href = "${BASE_PATH}" + "jfdj_1.action";
                 }
             })
         }
