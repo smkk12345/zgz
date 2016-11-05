@@ -138,7 +138,13 @@
     <td >${(ROW.jlfsum)!""}</td>
     <td>   
         <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表' data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"><span class="glyphicon glyphicon-print">金额审查</span></button>
-        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"><span class="glyphicon glyphicon-print">协议</span></button>
+        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议' 
+    	<#if ROW.atype?default("0")=="0">
+    		data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+    	<#else>
+    		data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+    	</#if>
+        <span class="glyphicon glyphicon-print">协议</span></button>
     </td>
     <td>  
         <#if (ROW.protocolnumber?length>0)>
