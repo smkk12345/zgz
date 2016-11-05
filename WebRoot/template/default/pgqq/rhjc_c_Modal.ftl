@@ -141,7 +141,6 @@
                     <#if bean.list?size gt 0>
                     <#list bean.list as cate>
                     <tr class="add-list-2">
-                        <td class="center">
                          <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
                         </td>
                         <td class="center">
