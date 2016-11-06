@@ -18,5 +18,11 @@
     <li <#if CURENT_TAB_2 =='GRSZ'>class="active"</#if>>
         <a href="${BASE_PATH}user/personDetail.action?oType=detail"><#if CURENT_TAB_2 =='GRSZ'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>个人设置</a>
     </li>
+    
+    <#if role.roleAuthority[15]=="2">
+	    <li <#if CURENT_TAB_2 =='XTSD'>class="active"</#if>>
+	        <a href="${BASE_PATH}xtsz/xtsd.action"><#if CURENT_TAB_2 =='XTSD'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>系统锁定</a>
+	    </li>
+    </#if>
 </ul>
 </@override>

@@ -139,6 +139,13 @@
             </label>
         </div> 
     </div>
+    <div class="container-fluid " >
+         <div class="checkbox fl">
+            <label>
+                <input type="checkbox" dataIndex=15 name="chkItem" class="item_levelOne_4" <#if bean.roleAuthority[15]=="2">checked </#if>> 系统锁定
+            </label>
+        </div> 
+    </div>    
     <input  type="text" name="barnId" value="${bean.id?default("")}" class="display-none" />
    
   </form>

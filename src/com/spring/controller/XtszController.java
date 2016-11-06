@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.common.consts.Contanst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.CalendarUtil;
@@ -73,5 +74,66 @@ public class XtszController {
             return null;
         }
     }
+    
+    
+   @RequestMapping({ "/xtsz/xtsd.action"})
+   public ModelAndView xtsd(HttpServletRequest request,
+           HttpServletResponse response, ModelMap model) {
+       try {
+    	   RoleBean role = (RoleBean) request.getSession().getAttribute("role");
+           if (null == role) {
+        	   return null;
+           }
+			String authority = role.getRoleAuthority();
+//			if(authority.substring(15, 16).equals("2")){
+//				Contanst.TEM_STOP = true;
+//			}
+           // 妯℃澘璺¯寰 basePath
+           model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+           model.addAttribute("BASE_ASSETS_PATH",
+                   WebConstConfig.getBase_Assets_Path());
+           model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+                   WebConstConfig.getBase_Template_Default_Path());
+           // model.addAttribute("user",request.getSession().getAttribute("user"));
+           model.addAttribute("CURENT_TAB", "XTSZ");
+           model.addAttribute("CURENT_TAB_2", "XTSD");
+           
+           model.addAttribute("tem_stop", Contanst.TEM_STOP);
+           return new ModelAndView(PageConst.XTSZ_XTSD, model);
+       } catch (Exception e) {
+           e.printStackTrace();
+           model.addAttribute("error", e.getMessage());
+           return null;
+       }
+   }
+   
+   @RequestMapping({ "/xtsz/sdcz.action"})
+   @ResponseBody
+   public String sdcz(HttpServletRequest request,
+           HttpServletResponse response, ModelMap model) {
+       try {
+    	   String sd = request.getParameter("sd");
+    	   if(sd.equals("0")){
+    		   Contanst.TEM_STOP = false;
+    	   }else{
+    		   Contanst.TEM_STOP = true;
+    	   }
+           model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+           model.addAttribute("BASE_ASSETS_PATH",
+                   WebConstConfig.getBase_Assets_Path());
+           model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+                   WebConstConfig.getBase_Template_Default_Path());
+           // model.addAttribute("user",request.getSession().getAttribute("user"));
+           model.addAttribute("CURENT_TAB", "XTSZ");
+           model.addAttribute("CURENT_TAB_2", "XTSD");
+           
+           model.addAttribute("tem_stop", Contanst.TEM_STOP);
+           return "success";
+       } catch (Exception e) {
+           e.printStackTrace();
+           model.addAttribute("error", e.getMessage());
+           return null;
+       }
+   }
  
 }

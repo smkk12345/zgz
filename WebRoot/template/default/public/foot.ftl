@@ -32,31 +32,31 @@
                 $(window).resize();
             });
     //yulei-js-02
-    var setInterval_1 = setInterval(function () {
-
-        var url = '${BASE_PATH}testConnection.action';
-        $.ajax({
-            type: "POST",
-            url: url,
-            dataType: "json",
-            success: function (response) {
-                if (response.hasNewData === "true") {
-                    $("#sensorNet").html("");
-                } else {
-                    $("#sensorNet").html(
-                            "<a class='bold red' onClick=javascript:alert('网线接触不良或没有网络')>网络连接异常(" + response.hasNewDataTime + ")</a>"
-                            );
-                }
-                $("#statusNet").html("");
-                $("#statusNet").addClass("glyphicon glyphicon-signal");
-                $("#statusNet").fadeOut(200).fadeIn(200);
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                $("#statusNet").removeClass("glyphicon glyphicon-signal");
-                $("#statusNet").html("无");
-            }
-
-        });
-    }, 2000);
+    //	var setInterval_1 = setInterval(function () {
+//
+//        var url = '${BASE_PATH}testConnection.action';
+//        $.ajax({
+//            type: "POST",
+//            url: url,
+//            dataType: "json",
+//            success: function (response) {
+//                if (response.hasNewData === "true") {
+//                    $("#sensorNet").html("");
+//                } else {
+//                    $("#sensorNet").html(
+//                            "<a class='bold red' onClick=javascript:alert('网线接触不良或没有网络')>网络连接异常(" + response.hasNewDataTime + ")</a>"
+//                            );
+//                }
+//                $("#statusNet").html("");
+//                $("#statusNet").addClass("glyphicon glyphicon-signal");
+//                $("#statusNet").fadeOut(200).fadeIn(200);
+//            },
+//            error: function (XMLHttpRequest, textStatus, errorThrown) {
+//                $("#statusNet").removeClass("glyphicon glyphicon-signal");
+//                $("#statusNet").html("无");
+//            }
+//
+//        });
+//    }, 2000);
 </script>
 

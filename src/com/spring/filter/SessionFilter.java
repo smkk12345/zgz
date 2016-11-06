@@ -11,10 +11,13 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.common.consts.Contanst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.RequestUtil;
 import com.common.utils.StringUtils;
 
+import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
 import com.spring.controller.IndexController;
@@ -75,20 +78,35 @@ public class SessionFilter extends OncePerRequestFilter {
 			HttpServletResponse response, FilterChain arg2)
 					throws ServletException, IOException {
 		
+		
+		
 		// 不过滤的uri，首页不过滤 
 		String[] notFilter = new String[] { "login.action",
-				"testConnection.action", "validate.action",
-				"validateRandomCode.action", "/mobile/singleAoJianInfo.action",
-				"/mobile/gjxx/czcxDetail.action", "/mobile/allUser.action",
-				"/mobile/sernorsXYZWhenSelect.action",
-				"/mobile/gjxx/gjtjcx.action", "/mobile/gjxx/czcxDetail.action",
-				"/mobile/getMoreAlarmInfo.action",
-				"/mobile/gjxx/changeStatus.action", "/mobile/updatePwd.action","/mobile/isDataDisConnection.action" };
+				"testConnection.action", "validate.action","index.action"
+				 };
 		
 		request.getSession().setAttribute("hasVentilate", WebConstConfig.hasVentilate);
+		String url = request.getRequestURI();
+		RoleBean role = null;
+		try {
+			role = (RoleBean)request.getSession().getAttribute("role");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		if(Contanst.TEM_STOP){
+			if(url.contains("index.html")){
+				arg2.doFilter(request, response); 
+				return;
+			}
+			String authority = role.getRoleAuthority();
+			if(authority.substring(15, 16).equals("2")){
+				
+			}else{
+				temStop(response,request);
+			}
+		}
 		
 		// 请求的uri   
-		String url = request.getRequestURI();  
 		if(!url.contains(".action")){
 			arg2.doFilter(request, response); 
 			return;
@@ -147,6 +165,28 @@ public class SessionFilter extends OncePerRequestFilter {
 		StringBuilder builder = new StringBuilder();  
 		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
 		builder.append("alert('网页过期，请重新登录！');");  
+		builder.append("window.top.location.href='");  
+		builder.append(loginPage);  
+		builder.append("';");  
+		builder.append("</script>");  
+		try {
+			out.print(builder.toString());  
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			out.close();
+		}
+	}
+	private void temStop(HttpServletResponse response,HttpServletRequest request) throws IOException {
+		// 如果session中不存在登录者实体，则弹出框提示重新登录   
+		// 设置request和response的字符集，防止乱码   
+		response.setCharacterEncoding("utf-8");  
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();  
+		String loginPage = RequestUtil.getBasePath(request)+"index.html";  
+		StringBuilder builder = new StringBuilder();  
+		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
+		builder.append("alert('系统被锁定，请联系管理员！');");  
 		builder.append("window.top.location.href='");  
 		builder.append(loginPage);  
 		builder.append("';");  

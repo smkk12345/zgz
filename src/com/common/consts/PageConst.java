@@ -47,6 +47,8 @@ public class PageConst {
     public final static String SJTJ_chart5 = "/default/sjtj/chart5.ftl"; 
     public final static String SJTJ_chart6 = "/default/sjtj/chart6.ftl";     
     
+    public final static String XTSZ_XTSD = "/default/xtsz/xtsd.ftl";
+    
     // 粮情分析start
     public final static String LQFX_JCFX = "/default/lqfx/jcfx.ftl"; // 粮情基础分析
     public final static String LQFX_YCFX = "/default/lqfx/ycfx.ftl";// 区域异常分析
