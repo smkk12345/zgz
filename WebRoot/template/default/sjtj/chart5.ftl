@@ -14,8 +14,8 @@
     <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店张郭庄整体签约情况</div>
     <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
     <div style='margin-top: 20px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:400px'>
-        <div style='float: left;width:auto; height:auto' id="chart"> </div>
-        <div style='float: left;width:auto; height:auto' id="chart1"> </div>
+        <div style='float: left;width:50%; height:auto' id="chart"> </div>
+        <div style='float: left;width:50%; height:auto' id="chart1"> </div>
     </div>
 </div>
 
