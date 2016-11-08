@@ -7,14 +7,14 @@
 <div class="modal-body center">
     <div class="content xy-print-con"  id="xy-print">
         <span class="title">选房顺序通知单</span>
-        <p class="xy-num" style="margin-top: 50px;">立项编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;档案编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
+        <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;协议编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
 
-        <p class="contex-1" style="margin-top:50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被拆迁人：<u>&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;</u>（身份证号码为：<u>&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;</u>） </p>
+        <p class="contex-1" style="margin-top:50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;</u>（身份证号码为：<u>&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;</u>） </p>
 
-        <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与<u>&nbsp;&nbsp;/&nbsp;&nbsp;</u>签订了《集体土地房屋拆迁补偿协议》，并于<u>&nbsp;&nbsp;${bean.displaydate?default("/")}&nbsp;&nbsp;</u>获取到选房顺序号，您的顺序号为<u>&nbsp;&nbsp;${bean.indexNumStr?default("/")}&nbsp;&nbsp;</u>号，您是本村第<u>&nbsp;&nbsp;${bean.indexnum?default("/")}&nbsp;&nbsp;</u>个签约的家庭。</p>
+        <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与<u>&nbsp;&nbsp;/&nbsp;&nbsp;</u>签订了《北京市宅基地房屋腾退补偿协议》，并于<u>&nbsp;&nbsp;${bean.displaydate?default("/")}&nbsp;&nbsp;</u>获取到选房顺序号，您的顺序号为<u>&nbsp;&nbsp;${bean.indexNumStr?default("/")}&nbsp;&nbsp;</u>号，您是本村第<u>&nbsp;&nbsp;${bean.indexnum?default("/")}&nbsp;&nbsp;</u>个签约的家庭。</p>
         <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请您于<u>&nbsp;&nbsp;${bean.a?default("")}&nbsp;&nbsp;</u> 到选房中心选房。携带材料如下：《选房顺序号结果单》、《交房验收单》、被拆迁人与签约人身份证件。</p>
 
-        <p class="contex-1" style="margin-top:100px; text-align: right">2016年10月28日</p>
+        <p class="contex-1" style="margin-top:100px; text-align: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</p>
         <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
         <div style="clear:both; height:20px;"></div>
     </div>

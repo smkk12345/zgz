@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +58,7 @@ public class IndexNumController {
 				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user.getId(), housebsicid,agreenment.getAtype());
 				//更新协议的
 				if(agreenment.getAtype().equals("0")){
+					
 					agreenment.setProtocolnumber("AZ-"+indexNum.getIndexnum());
 				}else{
 					agreenment.setProtocolnumber("HB-"+indexNum.getIndexnum());
@@ -83,6 +85,17 @@ public class IndexNumController {
 		return map;
 	}
 
+	private String getIndexNumStr(Long indexNum2) {
+		// TODO Auto-generated method stub
+		if(null != indexNum2){
+			DecimalFormat df=new DecimalFormat("000");
+			String str2=df.format(indexNum2);
+			return str2;
+		}else{
+			return "";
+		}
+	}
+	
 	@RequestMapping({ "/pgzq/sxh.action" })
 	public ModelAndView sxh(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		int intPageSize = Contanst.PAGE_SIZE;
