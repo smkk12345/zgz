@@ -59,9 +59,9 @@ public class IndexNumController {
 				//更新协议的
 				if(agreenment.getAtype().equals("0")){
 					
-					agreenment.setProtocolnumber("AZ-"+indexNum.getIndexnum());
+					agreenment.setProtocolnumber("AZ-"+getIndexNumStr(indexNum.getIndexnum()));
 				}else{
-					agreenment.setProtocolnumber("HB-"+indexNum.getIndexnum());
+					agreenment.setProtocolnumber("HB-"+getIndexNumStr(indexNum.getIndexnum()));
 				}
 				ServiceManager.getAgreenmentService().update(agreenment);
 				map.put("protocolumnber", agreenment.getProtocolnumber());
