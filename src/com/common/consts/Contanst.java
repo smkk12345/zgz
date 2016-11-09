@@ -6,5 +6,6 @@ public class Contanst {
 	
 	public static boolean TEM_STOP = false;//系统暂时锁
 	
-
+	public static String AGREENMENT_TYPE_AZ = "AZ";
+	public static String AGREENMENT_TYPE_HB = "HB";
 }

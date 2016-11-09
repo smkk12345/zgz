@@ -20,6 +20,11 @@
         <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle" title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
         </#if>
     </td>
+     <td>    
+        <#if role.roleAuthority[2]=="2">
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> 分户</button>
+        </#if>
+    </td>
 </tr>
 </#list>
 </#if>
@@ -154,6 +159,12 @@
         </#if>
     </td>
     <td title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
+    <td>  
+        <#if (ROW.protocolnumber?length>0)>
+        	<button type="button" class="btn btn-success btn-xs ml10  YL-ModalClick bold" title=''  data-url="${BASE_PATH}/pgzq/fhxy_xy_sy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">打印首页</button>
+        <#else>
+        </#if>
+    </td>
 </tr>
 </#list>
 </#if>

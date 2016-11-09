@@ -60,7 +60,8 @@
                 <th>奖励费补助费合计</th>
                 <th>打 印</th>
                 <th>确认签约</th>
-                <th>协议编号</th>
+                <th>协议编号</th> 
+                <th>协议首页打印</th>
             </tr>
             <@FhxyList list pageNo pageSize/>
         </table>
