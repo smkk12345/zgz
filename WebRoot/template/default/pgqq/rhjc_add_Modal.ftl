@@ -1,6 +1,6 @@
 
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">编辑基本情况调查表</h4>
+    <h4 class="modal-title pull-left m0">基本情况调查表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
     </div>
