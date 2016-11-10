@@ -89,7 +89,7 @@
                 </div>                
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>棚面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='shed'  value="${bean.shed?default("")}" />   
+                    <input type='text' class='form-control input-sm  ' name='shed'  value="${housebasic.shed?default("")}" />   
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>认定房屋补偿面积:</label>

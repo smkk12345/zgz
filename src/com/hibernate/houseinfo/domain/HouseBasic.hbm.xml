@@ -120,6 +120,7 @@
 		<property name="checkname"></property>
 		<property name="checkDate"></property>
 		<property name="checkremark"></property>
+		<property name="shed"></property>
 		
 	</class>
 </hibernate-mapping>

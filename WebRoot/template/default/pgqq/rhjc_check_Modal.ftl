@@ -96,10 +96,7 @@
                         <th class="center">姓名</th>
                         <th class="center">身份证号</th>
                         <th class="center">性别</th>
-                        <th class="center">户关</th>
-                        <th class="center">产关</th>
                         <th class="center">婚否</th>
-                        <th class="center">工作单位</th>
                         <th class="center">人口类别</th>
                         <th class="center"></th>
                     </tr>
@@ -117,13 +114,10 @@
                         <td class="center">
                             <#if (vacate.sex?default("-1"))=='0'>男<#else>女</#if>
                         </td>
-                        <td class="center">${vacate.registeredrelate?default("/")}        </td>
-                        <td class="center">${vacate.changrelate?default("/")}      </td>
                         <td class="center">
                             <#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                         </td>
 
-                        <td class="center">${vacate.unit?default("/")}     </td>
                         <td class="center">
                             <#if (vacate.peopletype?default("-1"))=='0'>婚姻衍生人员
                             <#elseif (vacate.peopletype?default("-1"))=='1'>配偶
@@ -146,11 +140,8 @@
                         <th class="center">姓名</th>
                         <th class="center">身份证号</th>
                         <th class="center">性别</th>
-                        <th class="center">户关</th>
-                        <th class="center">产关</th>
                         <th class="center">婚否</th>
 
-                        <th class="center">工作单位</th>
                         <th class="center">人口类别</th>
                         <th class="center"></th>
                     </tr>
@@ -169,13 +160,10 @@
                         <td class="center">
                             <#if (cate.sex?default("-1"))=='0'>男<#else>女</#if>
                         </td>
-                        <td class="center">${cate.registeredrelate?default("/")}      </td>
-                        <td class="center">${cate.changrelate?default("/")}        </td>
                         <td class="center">
                             <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                         </td>
 
-                        <td class="center">${cate.unit?default("/")}       </td>
                         <td class="center">
                             <#if (cate.peopletype?default("-1"))=='0'>婚姻衍生人员
                             <#elseif (cate.peopletype?default("-1"))=='1'>配偶
@@ -208,6 +196,9 @@
                 </div>
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>地下室面积:${bean.basement?default("/")}</label>
+                </div>
+                 <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>棚面积:${bean.shed?default("/")}</label>
                 </div>
             </div>
             <h4><span class="label label-default">4.经营状况：</span></h4>

@@ -104,7 +104,16 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String checkDate;
 	//复核备注
 	private String checkremark;
+	//棚面积
+	private BigDecimal shed;
 	
+	
+	public BigDecimal getShed() {
+		return shed;
+	}
+	public void setShed(BigDecimal shed) {
+		this.shed = shed;
+	}
 	public String getCheckresult() {
 		return checkresult;
 	}

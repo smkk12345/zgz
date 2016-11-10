@@ -3,9 +3,11 @@
     <h4 class="modal-title pull-left m0">查看基本情况调查表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+     	<button type="submit" class="btn btn-primary btn-save"   onclick="yu_print()">打印</button>
     </div>
 </div>
 <div class="modal-body rhjc-add-con" id="rhjc-add-con">
+    <div class="content xy-print-con"  id="xy-print">
     <form id='rhjcAddForm' 
           accept-charset="UTF-8" method="post">
         <input type="hidden" class='form-control input-sm ' name='id' value="${bean.id?default("/")}" style="width: 0px;"/>
@@ -280,11 +282,17 @@
             <h4><span class="label label-default mb20">5.备注：${bean.remark?default("/")}</span></h4>
         </div>
     </form>
+    </div>
 </div>
 
 <script type = "text/javascript">
     //设置模态框高度和宽度  
-    $("#myModal .modal-dialog").width(1500);
-    $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");
-    $("#rhjc-add-con").css("overflow-y", "scroll");
+   //设置模态框高度和宽度  
+    $("#myModal .modal-dialog").width(750);
+    $(".modal-body").css("height", ($(window).height() - 150) + "px");
+    $(".modal-body").css("overflow-y", "scroll");
+
+    function yu_print() {
+        $("#xy-print").jqprint();
+    }
 </script>

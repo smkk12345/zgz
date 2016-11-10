@@ -105,10 +105,7 @@
                         <th class="center">姓名</th>
                         <th class="center">身份证号</th>
                         <th class="center">性别</th>
-                        <th class="center">户关</th>
-                        <th class="center">产关</th>
                         <th class="center">婚否</th>
-                        <th class="center">工作单位</th>
                         <th class="center">人口类别</th>
                         <th class="center"></th>
                     </tr>
@@ -141,8 +138,6 @@
                                 <option <#if (vacate.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='registeredrelate' value="${vacate.registeredrelate?default("")}"/>        </td>
-                        <td><input type='text' class='form-control input-sm  ' name='changrelate' value="${vacate.changrelate?default("")}"/>        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option <#if (vacate.hasmarry?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
@@ -151,7 +146,6 @@
                             </select>
                         </td>
 
-                        <td><input type='text' class='form-control input-sm  ' name='vunit' value="${vacate.unit?default("")}"/>        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
                                 <option <#if (vacate.peopletype?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>    
@@ -196,8 +190,6 @@
                                 <option  value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='registeredrelate' />        </td>
-                        <td><input type='text' class='form-control input-sm  ' name='changrelate' />        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option  value="-1">请选择</option>  
@@ -206,7 +198,6 @@
                             </select>
                         </td>
 
-                        <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
                                 <option  value="-1">请选择</option>    
@@ -239,11 +230,8 @@
                         <th class="center">姓名</th>
                         <th class="center">身份证号</th>
                         <th class="center">性别</th>
-                        <th class="center">户关</th>
-                        <th class="center">产关</th>
                         <th class="center">婚否</th>
 
-                        <th class="center">工作单位</th>
                         <th class="center">人口类别</th>
                         <th class="center"></th>
                     </tr>
@@ -275,8 +263,6 @@
                                 <option <#if (cate.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='registeredrelate' value="${cate.registeredrelate?default("")}"/>        </td>
-                        <td><input type='text' class='form-control input-sm  ' name='changrelate' value="${cate.changrelate?default("")}"/>        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option <#if (cate.hasmarry?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
@@ -285,7 +271,6 @@
                             </select>
                         </td>
 
-                        <td><input type='text' class='form-control input-sm  ' name='vunit' value="${cate.unit?default("")}"/>        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
                                 <option <#if (cate.peopletype?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>    
@@ -330,8 +315,6 @@
                                 <option  value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='registeredrelate' />        </td>
-                        <td><input type='text' class='form-control input-sm  ' name='changrelate' />        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option   value="-1">请选择</option>  
@@ -340,7 +323,6 @@
                             </select>
                         </td>
 
-                        <td><input type='text' class='form-control input-sm  ' name='vunit' />        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='peopletype' >
                                 <option   value="-1">请选择</option>    
@@ -387,6 +369,10 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>地下室面积:</label>
                     <input type='text' class='form-control input-sm  ' name='basement' value="${bean.basement?default("")}"/>        
+                </div>
+                 <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>棚面积:</label>
+                    <input type='text' class='form-control input-sm  ' name='shed' value="${bean.shed?default("")}"/>        
                 </div>
             </div>
             <h4><span class="label label-default">4.经营状况：</span></h4>
