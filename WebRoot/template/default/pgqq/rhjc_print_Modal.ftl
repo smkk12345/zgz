@@ -284,7 +284,8 @@
     </form>
     </div>
 </div>
-
+<script src="${BASE_ASSETS_PATH}libs/jqprint/jquery.jqprint.js" ></script>
+<script src="${BASE_ASSETS_PATH}libs/jqprint/jquery-migrate-1.1.0.js"></script>
 <script type = "text/javascript">
     //设置模态框高度和宽度  
    //设置模态框高度和宽度  
