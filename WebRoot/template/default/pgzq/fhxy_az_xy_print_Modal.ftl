@@ -49,7 +49,7 @@
         <p class="contex-1" >
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1、甲方应当向乙方支付宅基地腾退补偿总价人民币<u>&nbsp;&nbsp;${bean.zjdttzj?default("/")}&nbsp;&nbsp;</u>（大写人民币：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.1、宅基地腾退补偿款<br/> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?default("/")}&nbsp;&nbsp;</u>元。<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?default("/")}&nbsp;&nbsp;</u>元。<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）控制宅基地区位补偿价<u>&nbsp;&nbsp;${bean.kzzjdqwbcj?default("/")}&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）超控宅基地区位补偿价<u>&nbsp;&nbsp;${bean.ckzjdqwbcj?default("/")}&nbsp;&nbsp;</u>元；<br/> 
@@ -103,9 +103,9 @@
         <p class="leftTitle">第十三条&nbsp;&nbsp;违约责任及其它赔偿责任</p>
         <p class="contex-1" > 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.1  甲方未按本协议约定期限向乙方支付宅基地腾退补偿总价的，每延期一日，应按应付宅基地腾退补偿总价的万分之 伍 向乙方支付违约金。<br/> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.2  乙方未按本协议第七条规定的期限完成搬迁的，每延期一日，应按本协议第六条约定的宅基地腾退补偿总价的万分之 伍 向甲方支付违约金；<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.2  乙方未按本协议第七条规定的期限完成搬迁的，每延期一日，应按本协议第六条约定的宅基地腾退补偿总价的万分之 伍 向甲方支付违约金。<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.3  乙方未按本协议第八条规定的期限向定向安置房建设主体补交房款的，应按照其所签署的《北京市定向安置房购房协议》的相关约定承担违约责任；<br/> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.4  若乙方未能确保其作为被腾退人主体的合法性和唯一性，而与甲方签订本协议的，在本协议签署后宅基地上被腾退人发生变更的，乙方除退还宅基地腾退补偿总价及定向安置房外，还应向甲方赔偿宅基地腾退补偿总价的百分之一；<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.4  若乙方未能确保其作为被腾退人主体的合法性和唯一性，而与甲方签订本协议的，在本协议签署后宅基地上被腾退人发生变更的，乙方除退还宅基地腾退补偿总价及定向安置房外，还应向甲方赔偿宅基地腾退补偿总价的百分之一。<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.5  本协议下的宅基地、房屋及附属物上产生的任何纠纷，包括但不限于任何第三人主张权利或引起诉讼、仲裁、纠纷，均与甲方无关，乙方应承担全部责任，由此给甲方造成损失的（包括经济损失和名誉损失），乙方应予以全额赔偿，甲方有权直接从宅基地腾退补偿总价中扣除赔偿金额，有权拒绝交付定向安置房，直至纠纷解决或甲方得到乙方的赔偿。
         </p> 
         <p class="leftTitle">第十四条&nbsp;&nbsp;争议解决</p>

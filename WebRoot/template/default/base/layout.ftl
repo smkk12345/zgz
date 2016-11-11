@@ -3,4 +3,4 @@
 <#include "../public/main.ftl"/>
 <#include "../public/foot.ftl"/>
 </@override>
-<@extends name = "layoutBase.ftl"/>
+<@extends name = "layoutBase.ftl"/> 

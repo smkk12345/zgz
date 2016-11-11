@@ -15,7 +15,7 @@
 		<property name="password" value="cxd123456"></property>-->
 		
 		 <property name="url"  
-			value="jdbc:mysql://127.0.0.1:3306/lqt_default?useUnicode=true&amp;characterEncoding=utf-8">
+			value="jdbc:mysql://127.0.0.1:3306/cxd?useUnicode=true&amp;characterEncoding=utf-8">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>

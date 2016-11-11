@@ -1,5 +1,5 @@
 ﻿<div id="foot" class="foot">
-    <div class="fl bold">长辛店棚改征收项目签约选房管理系统</div>
+    <div class="fl bold">长辛店镇张郭庄村棚改项目签约选房管理系统</div>
     <div class="fr">
         <span class="bottomNet" id="sensorNet"></span>
         <span class="bottomNet ml10">网络：<i id="statusNet" class="glyphicon glyphicon-signal"></i></span>

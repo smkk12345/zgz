@@ -33,6 +33,7 @@ public class PageConst {
     public final static String PGZQ_fhxy_az_xy_sy_print_Modal = "/default/pgzq/fhxy_az_xy_sy_print_Modal.ftl";
  
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
+    public final static String CWJS_01= "/default/cwjs/cwjs_01_print_Modal.ftl";
     
     public final static String PGZQ_kbxy_print = "/default/pgzq/kbxyprint";
     public final static String PGZQ_fbxy_print = "/default/pgzq/fbxyprint";
@@ -47,7 +48,15 @@ public class PageConst {
     public final static String SJTJ_chart3 = "/default/sjtj/chart3.ftl"; 
     public final static String SJTJ_chart4 = "/default/sjtj/chart4.ftl"; 
     public final static String SJTJ_chart5 = "/default/sjtj/chart5.ftl"; 
-    public final static String SJTJ_chart6 = "/default/sjtj/chart6.ftl";     
+    public final static String SJTJ_chart6 = "/default/sjtj/chart6.ftl";  
+    
+    public final static String DZDT_bd1 = "/default/dzdt/bd1.ftl"; 
+    public final static String DZDT_bd2 = "/default/dzdt/bd2.ftl";  
+    public final static String DZDT_bd3 = "/default/dzdt/bd3.ftl";  
+    public final static String DZDT_bd4 = "/default/dzdt/bd4.ftl";  
+    public final static String DZDT_bd5 = "/default/dzdt/bd5.ftl";  
+    public final static String DZDT_bd6 = "/default/dzdt/bd6.ftl";  
+    
     
     public final static String XTSZ_XTSD = "/default/xtsz/xtsd.ftl";
     

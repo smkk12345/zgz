@@ -15,7 +15,7 @@
         <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
 
         <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
-        <p class="title3" style="margin-top: 35px;">腾&nbsp;&nbsp;退&nbsp;&nbsp;人：<u>&nbsp;北京市丰台区长辛店镇东河沿村村民委员会&nbsp;</u>（以下简称甲方）</p>
+        <p class="title3" style="margin-top: 35px;">腾&nbsp;&nbsp;退&nbsp;&nbsp;人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村村民委员会&nbsp;</u>（以下简称甲方）</p>
         <p class="title3" style="margin-top: 20px;">被腾退人：<u>&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.names?default("/")} &nbsp;&nbsp;&nbsp;&nbsp;</u> &nbsp;身份证号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.idcard?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>（以下简称乙方）</p>
 
         <p class="contex-1" style="margin-top: 38px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据北京市丰台区长辛店镇人民政府、北京中建方程投资管理有限公司及北京市丰台区长辛店镇东河沿村村民委员会三方签订的《长辛店镇东河沿村棚户区改造及环境整治项目委托实施腾退协议》相关内容，长辛店镇人民政府是“长辛店镇东河沿村棚户区改造和环境整治项目”（以下简称本项目）的责任主体，负责指导、协调本项目全面工作；北京中建方程投资管理有限公司是经丰台区人民政府授权，作为本项目的实施主体，负责本项目腾退补偿资金的筹措；北京市丰台区长辛店镇东河沿村村民委员会，作为本项目腾退主体即“腾退人”，负责本项目集体土地腾退范围内涉及宅基地及非住宅的腾退工作；“被腾退人” 是指本项目集体土地腾退范围内，持有宅基地批准文件，或宅基地腾退补偿安置工作组认定的宅基地使用权人及影响宅基地房屋腾退的其它构筑物的所有者，每宗宅基地为一产权院。<br/>
@@ -64,7 +64,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（10）低保户补助（30000元/证）<u>&nbsp;&nbsp;${bean.dbhbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（11）独生子女奖励费（30000元/父母光荣证）<u>&nbsp;&nbsp;${bean.dsznbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（12）一次性停产停业综合补助费（800元/平方米）<u>&nbsp;&nbsp;${bean.tctdbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）周转补助费（1200元/人/月） <u>&nbsp;&nbsp;/&nbsp;&nbsp;</u>元；<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）周转补助费（1200元/人/4个月） <u>&nbsp;&nbsp;/&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）其他补助费<u>&nbsp;&nbsp;${bean.otherbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
         </p>
         <p class="leftTitle">第六条&nbsp;&nbsp;乙方腾退期限及要求</p>

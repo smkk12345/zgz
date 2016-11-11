@@ -42,7 +42,17 @@
                     		href="${BASE_PATH}sjtj/chart3.action"
                     	</#if>
                     	>数据统计</a></li>  
-                    </#if>         
+                    </#if>
+                    <#if role.roleAuthority[14]=="2">
+                    	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
+                    		href="${BASE_PATH}dzdt/bd1.action"
+                    	>电子地图</a></li>  
+                    </#if>          
+                     <#if role.roleAuthority[14]=="2">
+                    	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
+                    		href="${BASE_PATH}cwjs.action"
+                    	>财务结算</a></li>  
+                    </#if> 
                     <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统配置</a>
                     </li>
 	               <!--  <li><a <#if CURENT_TAB == 'GJXX'>class="active"</#if> href="${BASE_PATH}gjxx.action">信息管理</a>
