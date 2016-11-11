@@ -58,17 +58,19 @@
                     <label class='fl control-label'>本址在册户口簿数量:${bean.localbook?default("/")}</label>
                 </div>
                 <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>本址在册户籍数量:${bean.localpeoplecount?default("/")}</label>
-                </div>
-                <div class=' chkstyle fl'>      
                     <label class='fl control-label'>非本址在册户口簿数量:${bean.notlocalbook?default("/")}</label>
                 </div>
+                 <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>拟被安置人口:${bean.people?default("/")}</label>
+                </div>
+                <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>本址在册户籍数量:${bean.localpeoplecount?default("/")}</label>
+                </div>
+
                 <div class=' chkstyle fl'>      
                     <label class='fl control-label'>非本址在册户籍数量:${bean.notlocalpeoplecount?default("/")}</label>
                 </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>拟被安置人口:${bean.people?default("/")}</label>
-                </div>
+
             </div>
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
@@ -241,7 +243,7 @@
                     <label class='fl control-label'>执照编号:${bean.license?default("/")}</label>
                 </div>
             </div>
-            <h4><span class="label label-default">4.其他，残疾，大病，低保等：</span></h4>
+            <h4><span class="label label-default">5.其他，残疾，大病，低保等：</span></h4>
             <div class='container-fluid con-bg mb10'>	
                 <table id="table1" class="table">
                     <thead>
@@ -279,7 +281,8 @@
                     </tbody>
                 </table>
             </div>
-            <h4><span class="label label-default mb20">5.备注：${bean.remark?default("/")}</span></h4>
+    
+            <h4><span class="label label-default mb20">6.备注：${bean.remark?default("/")}</span></h4>
         </div>
     </form>
     </div>

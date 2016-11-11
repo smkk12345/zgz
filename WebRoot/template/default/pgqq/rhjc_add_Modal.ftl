@@ -75,21 +75,21 @@
                     <label class='fl control-label'>本址在册户口簿数量:</label>
                     <input type='text' class='form-control input-sm  ' name='localbook' value="${bean.localbook?default("")}"/>        
                 </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='localpeoplecount' value="${bean.localpeoplecount?default("")}"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
+                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>非本址在册户口簿数量:</label>
                     <input type='text' class='form-control input-sm  ' name='notlocalbook' value="${bean.notlocalbook?default("")}"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>非本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' value="${bean.notlocalpeoplecount?default("")}"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>拟被安置人口:</label>
                     <input type='text' class='form-control input-sm  ' name='people' value="${bean.people?default("")}"/>        
+                </div>
+                 <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>本址在册户籍数量:</label>
+                    <input type='text' class='form-control input-sm  ' name='localpeoplecount' value="${bean.localpeoplecount?default("")}"/>        
+                </div>
+                 <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>非本址在册户籍数量:</label>
+                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' value="${bean.notlocalpeoplecount?default("")}"/>        
                 </div>
             </div>
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
