@@ -32,6 +32,24 @@ public class VacatePeople extends BaseBean {
 	//人口类别    0 婚姻衍生人员 1 配偶 2 新生婴儿 3 现役军人  4院校在校生 5 服役人员 6 其他
 	private String peopletype;
 	
+	//数据导入用到的字段
+	private String names;  //户主名称
+	//房屋坐落
+	private String location;
+	
+	
+	public String getNames() {
+		return names;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setNames(String names) {
+		this.names = names;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
 	public String getHousebasicid() {
 		return housebasicid;
 	}

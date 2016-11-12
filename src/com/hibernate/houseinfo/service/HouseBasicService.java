@@ -207,4 +207,8 @@ public class HouseBasicService {
 	public List getSumHouseInfo(String type,String dateStr){
 		return houseBasicDao.getSumHouseInfo(type,dateStr);
 	}
+	public int getCountBySectionindex(String sectionindex, String section) {
+		// TODO Auto-generated method stub
+		return houseBasicDao.getCountBySectionindex(sectionindex,section);
+	}
 }

@@ -121,6 +121,9 @@
 		<property name="checkDate"></property>
 		<property name="checkremark"></property>
 		<property name="shed"></property>
+		<property name="sectionindex"></property>
+		<property name="sortnum"></property>
+		<property name="hassplit"></property>
 		
 	</class>
 </hibernate-mapping>

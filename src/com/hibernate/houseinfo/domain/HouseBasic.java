@@ -22,6 +22,8 @@ public class HouseBasic extends BaseBean implements Serializable {
 	
 	//标段信息
 	private String section;
+	//组别编号
+	private String sectionindex;
 	//房屋坐落 
 	private String location;
 	//联系固话
@@ -68,6 +70,8 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private BigDecimal abovetwoarea;
 	//地下室面积
 	private BigDecimal basement;
+	//棚面积
+	private BigDecimal shed;
 	//------------------------备注------------------------------------
 	private String remark;
 	//经营用房面积
@@ -104,10 +108,24 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String checkDate;
 	//复核备注
 	private String checkremark;
-	//棚面积
-	private BigDecimal shed;
+	//排序字段
+	private Integer sortnum;
+	//是否二级
+	private String hassplit;//0 未分  1  分过
 	
 	
+	public String getHassplit() {
+		return hassplit;
+	}
+	public void setHassplit(String hassplit) {
+		this.hassplit = hassplit;
+	}
+	public Integer getSortnum() {
+		return sortnum;
+	}
+	public void setSortnum(Integer sortnum) {
+		this.sortnum = sortnum;
+	}
 	public BigDecimal getShed() {
 		return shed;
 	}
@@ -431,5 +449,11 @@ public class HouseBasic extends BaseBean implements Serializable {
 	}
 	public void setJfDate(String jfDate) {
 		this.jfDate = jfDate;
+	}
+	public String getSectionindex() {
+		return sectionindex;
+	}
+	public void setSectionindex(String sectionindex) {
+		this.sectionindex = sectionindex;
 	}
 }

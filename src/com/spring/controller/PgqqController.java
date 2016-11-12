@@ -43,6 +43,7 @@ import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
+import com.hibernate.utils.SortUtils;
 import com.spring.ServiceManager;
 
 @Controller
@@ -120,9 +121,12 @@ public class PgqqController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			String housebasicid  = request.getParameter("housebasicid");
+			String issplit = request.getParameter("issplit");
+			issplit = StringUtils.isBlank(issplit)?"0":"1";
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
 			model.addAttribute("bean", houseBasic);
+			model.addAttribute("issplit", issplit);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -272,6 +276,15 @@ public class PgqqController {
 			HttpServletResponse response, ModelMap model,HouseBasic housebasic) {
 		try {
 			HttpSession s = request.getSession();
+			String issplit = request.getParameter("issplit");
+			if(issplit.equals("1")){//分户操作
+				housebasic.setId(null);
+				int count = ServiceManager.getHouseBasicServce().getCountBySectionindex(housebasic.getSectionindex(),housebasic.getSection());
+				String sectionindex = SortUtils.getSubSortStr(housebasic.getSectionindex(), count);
+				housebasic.setSectionindex(sectionindex);
+				housebasic.setSortnum(SortUtils.getSortNum(sectionindex));
+				housebasic.setHassplit("1");
+			}
 			RoleBean role = (RoleBean)s.getAttribute("role");
 			if(StringUtils.isEmpty(housebasic.getId())){
 				housebasic.setSection(role.getSection());

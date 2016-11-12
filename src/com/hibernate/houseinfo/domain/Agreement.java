@@ -115,8 +115,18 @@ public class Agreement extends BaseBean {
 	
 	//腾退截至日期
 	private String ttrq;
-	//是否打印
-	
+	//装修设备附属物
+	private BigDecimal zxsbfsw;
+	//指标内面积
+	private BigDecimal zbnmj;
+	//超指标面积
+	private BigDecimal czbmj;
+	//房屋家夼
+	private BigDecimal fwjk;
+	//指标内购房款
+	private BigDecimal zbngfk;
+	//指标外购房狂
+	private BigDecimal zbwgfk;
 	
 	//计算字段
 	//实际选房套数
@@ -128,7 +138,43 @@ public class Agreement extends BaseBean {
 	//实建面
 	private BigDecimal sjm;
 	
+	//数据导入用到的字段
+	private String names;  //户主名称
+	//房屋坐落
+	private String location;
+	//组别编号
+	private String sectionindex;
 	
+	public String getSectionindex() {
+		return sectionindex;
+	}
+
+
+	public void setSectionindex(String sectionindex) {
+		this.sectionindex = sectionindex;
+	}
+
+
+	public String getNames() {
+		return names;
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setNames(String names) {
+		this.names = names;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
 	public String getHousebasicid() {
 		return housebasicid;
 	}
@@ -665,6 +711,66 @@ public class Agreement extends BaseBean {
 
 	public void setSjm(BigDecimal sjm) {
 		this.sjm = sjm;
+	}
+
+
+	public BigDecimal getZxsbfsw() {
+		return zxsbfsw;
+	}
+
+
+	public BigDecimal getZbnmj() {
+		return zbnmj;
+	}
+
+
+	public BigDecimal getCzbmj() {
+		return czbmj;
+	}
+
+
+	public void setZxsbfsw(BigDecimal zxsbfsw) {
+		this.zxsbfsw = zxsbfsw;
+	}
+
+
+	public void setZbnmj(BigDecimal zbnmj) {
+		this.zbnmj = zbnmj;
+	}
+
+
+	public void setCzbmj(BigDecimal czbmj) {
+		this.czbmj = czbmj;
+	}
+
+
+	public BigDecimal getFwjk() {
+		return fwjk;
+	}
+
+
+	public BigDecimal getZbngfk() {
+		return zbngfk;
+	}
+
+
+	public BigDecimal getZbwgfk() {
+		return zbwgfk;
+	}
+
+
+	public void setFwjk(BigDecimal fwjk) {
+		this.fwjk = fwjk;
+	}
+
+
+	public void setZbngfk(BigDecimal zbngfk) {
+		this.zbngfk = zbngfk;
+	}
+
+
+	public void setZbwgfk(BigDecimal zbwgfk) {
+		this.zbwgfk = zbwgfk;
 	}
 
 }

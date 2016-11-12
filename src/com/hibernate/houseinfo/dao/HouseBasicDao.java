@@ -27,6 +27,7 @@ import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.userInfo.damain.User;
+import com.hibernate.utils.SortUtils;
 
 public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	
@@ -99,7 +100,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			}
 			
 			
-			list = c.add(Restrictions.in("section", section.split(","))).addOrder(Order.asc("createTime")).list();
+			list = c.add(Restrictions.in("section", section.split(","))).addOrder(Order.asc("sortnum")).list();
 //			list = c.list();
 //			for (int i = 0; i < list.size(); i++) {
 //				HouseBasic housebasic = list.get(i);
@@ -110,6 +111,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 //				}
 //				update(housebasic);
 //			}
+//			updateSortNum();
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -118,6 +120,29 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		return list;
 	}
 
+	private void updateSortNum(){
+		List<HouseBasic> list = null;
+		// TODO Auto-generated method stub
+		Session s = null;
+		try{
+			s = getSession();
+			Criteria c = s.createCriteria(HouseBasic.class);
+			list = c.list();
+			for (int i = 0; i < list.size(); i++) {
+				HouseBasic  housebasic = list.get(i);
+				String sectionindex = housebasic.getSectionindex();
+				int nIndex = SortUtils.getSortNum(sectionindex);
+				housebasic.setSortnum(nIndex);
+				System.out.println(nIndex);
+				update(housebasic);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+	}
+	
 	public List<HouseBasic> getListBySection(String section, int currentpage,
 			int pagecount) {
 		// TODO Auto-generated method stub  s.createSQLQuery()
@@ -345,6 +370,24 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	     }
 	     return allOrganList;
 	 }
+
+	public int getCountBySectionindex(String sectionindex, String section) {
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select count(id) as count from housebasic where sectionindex like '%"+sectionindex+"%'");
+			List<BigInteger> list = s.createSQLQuery(sb.toString()).list();
+//			List<Integer> iList = objectListToOrganList(list);
+			BigInteger bi = list.get(0);
+			return bi.intValue();
+		}catch(Exception e){
+			e.printStackTrace();
+			return 0;
+		}finally{
+			s.close();
+		}
+	}
 	 
 	 
 	

@@ -9,17 +9,18 @@ public class SortUtils {
 	 * 通过特定规则获取排序号
 	 */
 	
-	public String getSubSortStr(String parentSortStr,int subCount){
+	public static String getSubSortStr(String parentSortStr,int subCount){
 		String resultStr =	parentSortStr;
 		if(subCount == 0){
 			resultStr = parentSortStr+"-"+1;
 		}else{
-			resultStr = parentSortStr+"-"+subCount+1;
+			subCount = subCount;
+			resultStr = parentSortStr+"-"+subCount;
 		}
 		return resultStr;
 	}
 	
-	int[] pArr = {10000,1000,10,1};
+	private static int[] pArr = {10000,1000,10,1};
 	
 	/**
 	 * 1-1
@@ -32,7 +33,7 @@ public class SortUtils {
 	 * @param sort
 	 * @return
 	 */
-	public int getSortNum(String sort){
+	public static int getSortNum(String sort){
 		int nSort = 0;
 		if(StringUtils.isBlank(sort)){
 			return 0;
@@ -41,7 +42,11 @@ public class SortUtils {
 		if(arr.length>4)return 0;
 		
 		for (int i = 0; i < arr.length; i++) {
-			nSort += Integer.parseInt(arr[i])*pArr[i];
+			String str = arr[i];
+			if(str.indexOf("~")>0){
+				str = str.split("~")[0];
+			}
+			nSort += Integer.parseInt(str)*pArr[i];
 		}
 		return nSort;
 	}

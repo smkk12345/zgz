@@ -47,5 +47,7 @@
 		</property>
 		<property name="createTime" type="java.util.Date"></property>
 		<property name="updateTime" type="java.util.Date"></property>
+		<property name="names"></property>
+		<property name="location"></property>
 	</class>
 </hibernate-mapping>

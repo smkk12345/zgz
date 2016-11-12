@@ -9,15 +9,27 @@
 			<column name="id" length="200" />
 			<generator class="uuid.hex" />
 		</id>
+		<property name="sectionindex"></property>
+		<property name="conhomestarea" ></property>
+		<property name="scydmj" ></property>
+		<property name="bttfwczcxj" ></property>
+		<property name="fwjk" ></property>
+		<property name="zxsbfsw"></property>
+		<property name="zbnmj"></property>
+		<property name="czbmj"></property>
+		<property name="azfgfk"></property>
+		<property name="zbngfk"></property>
+		<property name="zbwgfk"></property>
+		<property name="jshk"></property>
+		
 		<property name="agreementnum" ></property>
 		<property name="atype" ></property>
-		<property name="azfgfk" ></property>
 		<property name="bjbz" ></property>
-		<property name="bttfwczcxj" ></property>
+		
 		<property name="bzfhj" ></property>
 		<property name="cjbz" ></property>
 		<property name="ckzjdqwbcj" ></property>
-		<property name="conhomestarea" ></property>
+	
 		<property name="createTime" ></property>
 		<property name="dbbz" ></property>
 		<property name="dbhbz" ></property>
@@ -40,7 +52,7 @@
 		<property name="qfbz" ></property>
 		<property name="rdbazrk" ></property>
 		<property name="rdbazrkxx" ></property>
-		<property name="scydmj" ></property>
+		
 		<property name="shed" ></property>
 		<property name="sjs" ></property>
 		<property name="sjxfmj" ></property>
@@ -56,5 +68,10 @@
 		<property name="zjdttbck" ></property>
 		<property name="zjdttzj" ></property>
 		<property name="protocolnumber"></property>
+		<property name="names"></property>
+		<property name="location"></property>
+	
+
+	
 	</class>
 </hibernate-mapping>

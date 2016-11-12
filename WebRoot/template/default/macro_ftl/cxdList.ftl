@@ -4,7 +4,7 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
-    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${ROW.sectionindex}</td>
     <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
@@ -21,8 +21,8 @@
         </#if>
     </td>
      <td>    
-        <#if role.roleAuthority[2]=="2">
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> 分户</button>
+        <#if ROW.hassplit?default("0")=="0">
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}&issplit=1"> 分户</button>
         </#if>
     </td>
 </tr>
