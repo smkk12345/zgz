@@ -9,18 +9,10 @@
 			<column name="id" length="200" />
 			<generator class="uuid.hex" />
 		</id>
-
-		<property name="housebasicid" type="java.lang.String">
-			<column name="housebasicid" length="45" />
-		</property>
+		<property name="names"></property>
+		<property name="location"></property>
 		<property name="vtype" type="java.lang.String">
-		</property>
-		<property name="householder" type="java.lang.String">
-			<column name="householder" length="45" />
-		</property>
-		<property name="householdtype" type="java.lang.String">
-			<column name="householdtype" length="45" />
-		</property>
+		
 		<property name="name" type="java.lang.String">
 			<column name="name" length="45" />
 		</property>
@@ -30,24 +22,34 @@
 		<property name="sex" type="java.lang.String">
 			<column name="sex" length="45" />
 		</property>
-		<property name="registeredrelate" type="java.lang.String">
-			<column name="registeredrelate" length="45" />
-		</property>
 		<property name="changrelate" type="java.lang.String">
 			<column name="changrelate" length="45" />
 		</property>
-		<property name="hasmarry" type="java.lang.String">
-			<column name="hasmarry" length="45" />
-		</property>
 		<property name="unit" type="java.lang.String">
 			<column name="unit" length="45" />
+		</property>
+		
+		<property name="housebasicid" type="java.lang.String">
+			<column name="housebasicid" length="45" />
+		</property>
+		</property>
+		<property name="householder" type="java.lang.String">
+			<column name="householder" length="45" />
+		</property>
+		<property name="householdtype" type="java.lang.String">
+			<column name="householdtype" length="45" />
+		</property>
+		<property name="registeredrelate" type="java.lang.String">
+			<column name="registeredrelate" length="45" />
+		</property>
+		<property name="hasmarry" type="java.lang.String">
+			<column name="hasmarry" length="45" />
 		</property>
 		<property name="peopletype" type="java.lang.String">
 			<column name="peopletype" length="45" />
 		</property>
 		<property name="createTime" type="java.util.Date"></property>
 		<property name="updateTime" type="java.util.Date"></property>
-		<property name="names"></property>
-		<property name="location"></property>
+		
 	</class>
 </hibernate-mapping>
