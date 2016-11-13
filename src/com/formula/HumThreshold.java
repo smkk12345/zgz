@@ -17,7 +17,7 @@ public class HumThreshold {
 	}};
 	/**
 	 * 通过温度和粮食品种计算湿度值
-	 * @param grainTypeId
+	 * @param grainTypeId121212
 	 * @param avgTem
 	 * @return
 	 */
