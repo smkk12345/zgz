@@ -35,7 +35,8 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}"  data-url="${BASE_PATH}user/yhglModal.action?userId=${ROW.id}">
-    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <!--<td >${ROW_index+1+(pageNo-1)*pageSize}</td>-->
+    <td >${ROW.sectionindex}</td>
     <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
@@ -93,7 +94,7 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}">
-    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${ROW.sectionindex}</td>
     <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td > 
@@ -124,7 +125,7 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}">
-    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${ROW.sectionindex}</td>
     <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td > 
@@ -152,6 +153,7 @@
     	</#if>
         <span class="glyphicon glyphicon-print">协议</span></button>
     </td>
+    <#if (ROW.protocolnumber)??>
     <td>  
         <#if (ROW.protocolnumber?length>0)>
         ${ROW.displaydate}
@@ -166,6 +168,10 @@
         <#else>
         </#if>
     </td>
+    <#else>
+    <td colspan=3> 请先选择安置方式！</td>
+    </#if>
+    
 </tr>
 </#list>
 </#if>
@@ -177,7 +183,7 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}">
-    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${ROW.sectionindex}</td>
     <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
@@ -198,7 +204,7 @@
 <#if items?size gt 0>
 <#list items as ROW>
 <tr id="${ROW.id}">
-    <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${ROW.sectionindex}</td>
     <td >${ROW.section?default("")}</td>
     <td >${ROW.names?default("")}</td>
     <td >${ROW.mobile?default("")}</td>

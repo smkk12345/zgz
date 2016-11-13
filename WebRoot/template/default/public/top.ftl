@@ -28,9 +28,9 @@
                     <#if role.roleAuthority[9]=="2">
                     	<li><a <#if CURENT_TAB == 'JFDJ'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}jfdj_1.action"
+                    		href="${BASE_PATH}jfdj/jfdj_1.action"
                     	<#else>
-                    		href="${BASE_PATH}jfdj_0.action"
+                    		href="${BASE_PATH}jfdj/jfdj_0.action"
                     	</#if>
                     	>交房信息管理</a></li>  
                     </#if>

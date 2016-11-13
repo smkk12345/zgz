@@ -37,7 +37,7 @@
 
         <table  class="table table-bordered table-hover">
             <tr>
-                <th>序号</th>
+                <th>编号</th>
                 <th>标段</th>
                 <th>被腾退人</th>
                 <th>身份证号</th>

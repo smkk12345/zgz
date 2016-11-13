@@ -35,7 +35,7 @@ public class JfdjController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping({"/jfdj_0.action"})
+	@RequestMapping({"/jfdj/jfdj_0.action"})
 	public ModelAndView jfdj_0(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -84,7 +84,7 @@ public class JfdjController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping({"/jfdj_1.action"})
+	@RequestMapping({"/jfdj/jfdj_1.action"})
 	public ModelAndView jfdj_1(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
