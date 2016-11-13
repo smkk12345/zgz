@@ -235,7 +235,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				sb.append(sql);
 			}
 			if(StringUtils.isBlank(orderSql)){
-				sb.append(" order by c.indexnum asc ");
+				sb.append(" order by a.sortnum asc ");
 			}else{
 				sb.append(orderSql);
 			}
