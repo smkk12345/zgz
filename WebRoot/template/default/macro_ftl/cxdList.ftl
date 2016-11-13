@@ -110,8 +110,9 @@
     </td>
     <td >${(ROW.fwbcmj)!""}</td>
     <td >${(ROW.rdbazrk)!""}</td>
+    <td >${(ROW.zjdttbck)!""}</td>
     <td >${(ROW.azfgfk)!""}</td>
-    <td >${(ROW.jlfsum)!""}</td>
+    <td >${(ROW.wwzjlf)!""}</td>
     <td>       
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>     
     </td>

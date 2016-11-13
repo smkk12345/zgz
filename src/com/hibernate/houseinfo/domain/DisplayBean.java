@@ -241,7 +241,24 @@ public class DisplayBean extends BaseBean {
 		private String checkDate;
 		//复核备注
 		private String checkremark;
+		//前面的顺序好
+		private String sectionindex;
+		//排序情况
+		private Integer sortnum;
 		
+		
+		public String getSectionindex() {
+			return sectionindex;
+		}
+		public void setSectionindex(String sectionindex) {
+			this.sectionindex = sectionindex;
+		}
+		public Integer getSortnum() {
+			return sortnum;
+		}
+		public void setSortnum(Integer sortnum) {
+			this.sortnum = sortnum;
+		}
 		public String getCheckresult() {
 			return checkresult;
 		}
