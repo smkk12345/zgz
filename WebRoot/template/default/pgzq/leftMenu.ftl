@@ -19,5 +19,11 @@
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>选房排号管理</a></li>
     </#if>
+    <#if role.roleAuthority[8]=="2">
+    <li <#if CURENT_TAB_2 =='fnsjsh'>class="active"</#if>><a href="${BASE_PATH}pgzq/fnsjsh.action">
+            <#if CURENT_TAB_2 =='fnsjsh'><span class="yu-tu-fgsj-active"></span>
+            <#else><span class="yu-tu-fgsj-commen">
+            </span></#if>方案审核审计</a></li>
+    </#if>
 </ul>
 </@override>
