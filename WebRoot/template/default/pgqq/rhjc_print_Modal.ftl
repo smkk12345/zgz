@@ -8,8 +8,8 @@
 </div>
 <div class="modal-body ">
     <div class="container-fluid rhjc-print-con"  id="xy-print">
-        <div class="title" style="margin-top: 7px;" >张郭庄村宅基地腾退拟定基本信息一览表</div>
-        <div class="leftTitle"  style="margin-top: 7px;">1.基本数据录入：&nbsp;</div>
+        <div class="title" style="margin-top: 5px;" >张郭庄村宅基地腾退拟定基本信息一览表</div>
+        <div class="leftTitle"  style="margin-top: 5px;">1.基本数据录入：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>
                 <label class='fl control-label'>房屋坐落: ${bean.location?default("/")}</label>
@@ -281,13 +281,20 @@
         </div>
         <div class="leftTitle2"  style="margin-top: 10px;">[认定结果]：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
-            1. 宅基地认定年限：
+            1. 认定依据：
+            <label class="title1"><input type="checkbox"> 宅基地原始批单 </label>
+            <label class="title1"><input type="checkbox"> 翻建表 </label>
+            <label class="title1"><input type="checkbox"> 认定小组认定 </label>
+            <label class="title1"><input type="checkbox"> 其它 </label>
+        </div>
+        <div class="contex-1 container-fluid" style="margin-top: 0px;">
+            2. 宅基地认定年限：
             <label class="title1"><input type="checkbox"> 82年前 </label>
             <label class="title1"><input type="checkbox"> 82年后 </label>
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class="fl" style="width: 137px">
-                2. 认定人口数量：
+                3. 认定人口数量：
             </div>
             <div class="fl" style="width: 480px">
                 <label class="title1"><input type="checkbox">1 &nbsp;&nbsp;</label>
@@ -313,13 +320,13 @@
             </div>
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
-            3. 认定宅基地补偿面积：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米
+            4. 认定宅基地补偿面积：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 5px;">
-            4. 认定房屋补偿面积：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米
+            5. 认定房屋补偿面积：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 5px;">
-            5. 房屋重置成新价：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>元
+            6. 房屋重置成新价：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>元
         </div>
         <div class="pageBreak"></div>
     </div>
