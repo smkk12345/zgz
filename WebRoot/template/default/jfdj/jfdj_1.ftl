@@ -9,8 +9,8 @@
 <div class="container-fluid rhjc">
     <div class="page-title">
         <ul class="nav nav-pills menu mb10">
-            <li role="presentation" class="active"><a href="${BASE_PATH}jfdj_1.action">已交房</a></li>
-            <li role="presentation" ><a href="${BASE_PATH}jfdj_0.action">未交房</a></li>
+            <li role="presentation" class="active"><a href="${BASE_PATH}jfdj/jfdj_1.action">已交房</a></li>
+            <li role="presentation" ><a href="${BASE_PATH}jfdj/jfdj_0.action">未交房</a></li>
         </ul>
     </div>
     <div class="top-ation mb10 clearfix">
@@ -39,7 +39,7 @@
 
     <table  class="table table-bordered table-hover">
         <tr>
-            <th>序号</th>
+            <th>编号</th>
             <th>标段</th>
             <th>被腾退人</th>
             <th>手机</th>
