@@ -284,7 +284,7 @@
 
 <script type = "text/javascript">
     //设置模态框高度和宽度  
-    $("#myModal .modal-dialog").width(1500);
+    $("#myModal .modal-dialog").width($(window).width() - 30);
     $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");
     $("#rhjc-add-con").css("overflow-y", "scroll");
 </script>
