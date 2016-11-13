@@ -348,14 +348,14 @@ public class PgqqController {
 			}
 			v.setName(names[i]);
 			v.setHousebasicid("");
-			v.setChangrelate(changrelate[i]);
+//			v.setChangrelate(changrelate[i]);
 			v.setHouseholder(householders[i]);
 			v.setHouseholdtype(householdtype[i]);
 			v.setIdcard(idcards[i]);
 			v.setSex(sexs[i]);
-			v.setRegisteredrelate(registeredrelates[i]);
+//			v.setRegisteredrelate(registeredrelates[i]);
 			v.setHasmarry(hasmarry[i]);
-			v.setUnit(vunit[i]);
+//			v.setUnit(vunit[i]);
 			v.setPeopletype(peopletype[i]);
 			String vtypee = vtype[i];
 			v.setVtype(vtypee);

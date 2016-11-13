@@ -12,7 +12,7 @@
 		<property name="names"></property>
 		<property name="location"></property>
 		<property name="vtype" type="java.lang.String">
-		
+		</property>
 		<property name="name" type="java.lang.String">
 			<column name="name" length="45" />
 		</property>
@@ -32,7 +32,7 @@
 		<property name="housebasicid" type="java.lang.String">
 			<column name="housebasicid" length="45" />
 		</property>
-		</property>
+		
 		<property name="householder" type="java.lang.String">
 			<column name="householder" length="45" />
 		</property>

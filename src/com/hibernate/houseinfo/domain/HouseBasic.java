@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.common.utils.StringUtils;
 import com.hibernate.base.BaseBean;
 
 /**
@@ -115,6 +116,9 @@ public class HouseBasic extends BaseBean implements Serializable {
 	
 	
 	public String getHassplit() {
+		if(StringUtils.isBlank(hassplit)){
+			return null;
+		}
 		return hassplit;
 	}
 	public void setHassplit(String hassplit) {
