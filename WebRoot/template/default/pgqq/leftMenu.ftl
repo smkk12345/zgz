@@ -7,8 +7,8 @@
       <#if role.roleAuthority[3]=="2">
     	<li <#if CURENT_TAB_2 =='rhjc_c'>class="active"</#if>><a href="${BASE_PATH}pgqq/rhjc_c.action"><#if CURENT_TAB_2 =='rhjc_c'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>入户信息查看</a></li>
  	  </#if>
- 	  <#if role.roleAuthority[4]=="2">
+ 	  <!--<#if role.roleAuthority[4]=="2">
     	<li <#if CURENT_TAB_2 =='rhjc_s'>class="active"</#if>><a href="${BASE_PATH}pgqq/rhjc_s.action"><#if CURENT_TAB_2 =='rhjc_s'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>入户信息审计审核</a></li>
- 	  </#if>
+ 	  </#if>-->
 </ul>
 </@override>

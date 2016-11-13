@@ -12,8 +12,8 @@
     <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店张郭庄安置及房源使用情况</div>
     <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
     <div style='margin-top: 50px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:450px'>
-        <div style='float: left;width:50%; height:auto' id="chart1"> </div>
-        <div style='float: left;width:50%; height:auto' id="chart2"> </div>
+        <div style='float: left;width:auto; height:auto' id="chart1"> </div>
+        <div style='float: left;width:auto; height:auto' id="chart2"> </div>
     </div>
 </div>
 
