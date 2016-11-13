@@ -52,7 +52,8 @@
                 <th>认定面积</th>
                 <th>认定人口</th>
                 <th>选房购房款</th>
-                <th>奖励费补助费合计</th>
+                <th>腾退补偿款总和</th>
+                <th>结算后款</th>
                 <th>操作</th>
             </tr>
             <@XyList list pageNo pageSize/>
