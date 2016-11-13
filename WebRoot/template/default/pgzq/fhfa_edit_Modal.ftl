@@ -9,6 +9,12 @@
         <input type="hidden" class='form-control input-sm ' name='aid' value="${bean.id?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='housebasicid' value="${housebasic.id?default("")}" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='protocolnumber' value="${bean.protocolnumber?default("")}" style="width: 0px;"/>
+ 		<input type="hidden" class='form-control input-sm ' name='zbnmj' value="${bean.zbnmj?default("")}" style="width: 0px;"/>
+ 		<input type="hidden" class='form-control input-sm ' name='zxsbfsw' value="${bean.zxsbfsw?default("")}" style="width: 0px;"/>
+ 		<input type="hidden" class='form-control input-sm ' name='czbmj' value="${bean.czbmj?default("")}" style="width: 0px;"/>
+ 		<input type="hidden" class='form-control input-sm ' name='fwjk' value="${bean.fwjk?default("")}" style="width: 0px;"/>
+ 		<input type="hidden" class='form-control input-sm ' name='zbngfk' value="${bean.zbngfk?default("")}" style="width: 0px;"/>
+ 		<input type="hidden" class='form-control input-sm ' name='zbwgfk' value="${bean.zbwgfk?default("")}" style="width: 0px;"/>
         <div class='ml15' >
             <h4><span class="label label-default">一.基本情况：</span></h4>
             <div class='container-fluid con-bg mb10'>
