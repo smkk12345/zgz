@@ -87,7 +87,7 @@
                 <#if bean.vacatelist?size gt 0>
                 <#list bean.vacatelist as vacate>
                 <tr class="add-list-1">
-                    <th class="center">${vacate_index+1}</th>
+                    <td class="center">${vacate_index+1}</td>
                     <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
                     <td class="center">
                         <#if (vacate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
@@ -135,7 +135,7 @@
                 <#if bean.list?size gt 0>
                 <#list bean.list as cate>
                 <tr class="add-list-2">
-                    <th class="center">${cate_index+1}</th>
+                    <td class="center">${cate_index+1}</td>
                     <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if> 
                     </td>
                     <td class="center">
@@ -249,39 +249,34 @@
         <div class="leftTitle"  style="margin-top: 10px;">5.其他，残疾，大病，低保等：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <table id="table1" class="table">
-                <thead>
-                    <tr>
-                        <th class="center">类型</th>
-                        <th class="center">姓名</th>
-                        <th class="center">户籍序号</th>
-                        <th class="center">低保/残疾证号</th>
-                        <th class="center">大病名称</th>
-                        <th class="center">低保有效期</th>
-                        <th class="center">大病证明材料</th>
-                        <th class="center"></th>
-                    </tr>
-                </thead>
-                <tbody id="four-list">
-                    <#if bean.otherList?size gt 0>
-                    <#list bean.otherList as other>
-                    <tr class="add-list-3">
-                        <td class="center">
-                            <#if (other.otype?default("-1"))=='-1'>请选择
-                            <#elseif (other.otype?default("-1"))=='0'>低保
-                            <#elseif (other.otype?default("-1"))=='1'>残疾
-                            <#elseif (other.otype?default("-1"))=='2'>大病
-                            </#if>
-                        </td>
-                        <td class="center">${other.name?default("/")}    </td>
-                        <td class="center">${other.peopleid?default("/")}      </td>
-                        <td class="center">${other.otypenum?default("/")}  </td>
-                        <td class="center">${other.illnessname?default("/")}      </td>
-                        <td class="center">${other.validatedate?default("/")}      </td>
-                        <td class="center">${other.illnessprove?default("/")}      </td>
-                    </tr>
-                    </#list>
-                    </#if>
-                </tbody>
+                <tr>
+                    <th class="center">类型</th>
+                    <th class="center">姓名</th>
+                    <th class="center">户籍序号</th>
+                    <th class="center">低保/残疾证号</th>
+                    <th class="center">大病名称</th>
+                    <th class="center">低保有效期</th>
+                    <th class="center">大病证明材料</th>
+                </tr>
+                <#if bean.otherList?size gt 0>
+                <#list bean.otherList as other>
+                <tr class="add-list-3">
+                    <td class="center">
+                        <#if (other.otype?default("-1"))=='-1'>请选择
+                        <#elseif (other.otype?default("-1"))=='0'>低保
+                        <#elseif (other.otype?default("-1"))=='1'>残疾
+                        <#elseif (other.otype?default("-1"))=='2'>大病
+                        </#if>
+                    </td>
+                    <td class="center">${other.name?default("/")}    </td>
+                    <td class="center">${other.peopleid?default("/")}      </td>
+                    <td class="center">${other.otypenum?default("/")}  </td>
+                    <td class="center">${other.illnessname?default("/")}      </td>
+                    <td class="center">${other.validatedate?default("/")}      </td>
+                    <td class="center">${other.illnessprove?default("/")}      </td>
+                </tr>
+                </#list>
+                </#if>
             </table>
         </div>
         <div class="leftTitle2"  style="margin-top: 10px;">[认定结果]：&nbsp;</div>
