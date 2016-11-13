@@ -8,8 +8,8 @@
 </div>
 <div class="modal-body ">
     <div class="container-fluid rhjc-print-con"  id="xy-print">
-        <div class="title" style="margin-top: 20px;" >张郭庄村宅基地腾退拟定基本信息一览表</div>
-        <div class="leftTitle"  style="margin-top: 10px;">1.基本数据录入：&nbsp;</div>
+        <div class="title" style="margin-top: 7px;" >张郭庄村宅基地腾退拟定基本信息一览表</div>
+        <div class="leftTitle"  style="margin-top: 7px;">1.基本数据录入：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>
                 <label class='fl control-label'>房屋坐落: ${bean.location?default("/")}</label>
@@ -17,6 +17,8 @@
             <div class=' rhjc-print-group fl'>
                 <label class='fl control-label'>被腾退人姓名: ${bean.names}</label>
             </div>
+        </div>
+        <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>
                 <label class='fl control-label'>手机: ${bean.mobile?default("/")}</label>      
             </div>
@@ -52,9 +54,9 @@
             <div class=' rhjc-print-group fl'>      
                 <label class='fl control-label'>非本址在册户口簿数量:${bean.notlocalbook?default("/")}</label>
             </div>
-            <div class=' rhjc-print-group fl'>      
-                <label class='fl control-label'>拟被安置人口:${bean.people?default("/")}</label>
-            </div>
+            <!--            <div class=' rhjc-print-group fl'>      
+                            <label class='fl control-label' style="font-weight: bold">拟被安置人口:${bean.people?default("/")}</label>
+                        </div>-->
             <div class=' rhjc-print-group fl'>      
                 <label class='fl control-label'>本址在册户籍数量:${bean.localpeoplecount?default("/")}</label>
             </div>
@@ -68,23 +70,25 @@
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <table id="table1" class="table">
                 <tr>
-                    <td colspan="12" style="text-align: center;font-weight: bold">本址在册户籍家庭人口情况</td>
+                    <td colspan="12" style="text-align: center;">本址在册户籍家庭人口情况</td>
                 </tr>
                 <tr>
+                    <th class="center">序号</th>
                     <th class="center">户主</th>
                     <th class="center">户籍性质</th>
                     <th class="center">姓名</th>
                     <th class="center">身份证号</th>
                     <th class="center">性别</th>
                     <th class="center">婚否</th>
-                    <th class="center">人口类别</th>
-                    <th class="center"></th>
+                    <!--                    <th class="center">人口类别</th>-->
+                    <th class="center">超生</th>
                 </tr>
 
                 <#if bean.vacatelist?size gt 0>
                 <#list bean.vacatelist as vacate>
                 <tr class="add-list-1">
-                    <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
+                    <th class="center">${vacate_index+1}</th>
+                    <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
                     <td class="center">
                         <#if (vacate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
                     </td>
@@ -98,37 +102,41 @@
                         <#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                     </td>
 
+                    <!--            <td class="center">
+                                            <#if (vacate.peopletype?default("-1"))=='0'>婚姻衍生人员
+                                            <#elseif (vacate.peopletype?default("-1"))=='1'>配偶
+                                            <#elseif (vacate.peopletype?default("-1"))=='2'>新生婴儿
+                                            <#elseif (vacate.peopletype?default("-1"))=='3'>现役军人
+                                            <#elseif (vacate.peopletype?default("-1"))=='4'>院校在校生
+                                            <#elseif (vacate.peopletype?default("-1"))=='5'>服役人员
+                                            <#elseif (vacate.peopletype?default("-1"))=='6'>其他
+                                            </#if>
+                                        </td>-->
                     <td class="center">
-                        <#if (vacate.peopletype?default("-1"))=='0'>婚姻衍生人员
-                        <#elseif (vacate.peopletype?default("-1"))=='1'>配偶
-                        <#elseif (vacate.peopletype?default("-1"))=='2'>新生婴儿
-                        <#elseif (vacate.peopletype?default("-1"))=='3'>现役军人
-                        <#elseif (vacate.peopletype?default("-1"))=='4'>院校在校生
-                        <#elseif (vacate.peopletype?default("-1"))=='5'>服役人员
-                        <#elseif (vacate.peopletype?default("-1"))=='6'>其他
-                        </#if>
+                        <label class="title1"><input type="checkbox"></label>
                     </td>
                 </tr>
                 </#list>
                 </#if>
                 <tr class="center">
-                    <td colspan="12" style="text-align: center;font-weight: bold">非本址户籍家庭人口情况</td>
+                    <td colspan="12" style="text-align: center;">非本址户籍家庭人口情况</td>
                 </tr>
                 <tr class="center">
+                    <th class="center">序号</th>
                     <th class="center">户主</th>
                     <th class="center">户籍性质</th>
                     <th class="center">姓名</th>
                     <th class="center">身份证号</th>
                     <th class="center">性别</th>
                     <th class="center">婚否</th>
-
-                    <th class="center">人口类别</th>
-                    <th class="center"></th>
+                    <!--                    <th class="center">人口类别</th>-->
+                    <th class="center">超生</th>
                 </tr>
                 <#if bean.list?size gt 0>
                 <#list bean.list as cate>
                 <tr class="add-list-2">
-                    <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>  </th>  
+                    <th class="center">${cate_index+1}</th>
+                    <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if> 
                     </td>
                     <td class="center">
                         <#if (cate.householdtype?default("-1"))=='0'>居<#else>农</#if> 
@@ -143,15 +151,18 @@
                         <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if> 
                     </td>
 
+                    <!--                    <td class="center">
+                                            <#if (cate.peopletype?default("-1"))=='0'>婚姻衍生人员
+                                            <#elseif (cate.peopletype?default("-1"))=='1'>配偶
+                                            <#elseif (cate.peopletype?default("-1"))=='2'>新生婴儿
+                                            <#elseif (cate.peopletype?default("-1"))=='3'>现役军人
+                                            <#elseif (cate.peopletype?default("-1"))=='4'>院校在校生
+                                            <#elseif (cate.peopletype?default("-1"))=='5'>服役人员
+                                            <#elseif (cate.peopletype?default("-1"))=='6'>其他
+                                            </#if>
+                                        </td>-->
                     <td class="center">
-                        <#if (cate.peopletype?default("-1"))=='0'>婚姻衍生人员
-                        <#elseif (cate.peopletype?default("-1"))=='1'>配偶
-                        <#elseif (cate.peopletype?default("-1"))=='2'>新生婴儿
-                        <#elseif (cate.peopletype?default("-1"))=='3'>现役军人
-                        <#elseif (cate.peopletype?default("-1"))=='4'>院校在校生
-                        <#elseif (cate.peopletype?default("-1"))=='5'>服役人员
-                        <#elseif (cate.peopletype?default("-1"))=='6'>其他
-                        </#if>
+                        <label class="title1"><input type="checkbox"></label>
                     </td>
                 </tr>
                 </#list>
@@ -162,10 +173,10 @@
         <div class="leftTitle"  style="margin-top: 10px;">3.面积相关：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>      
-                <label class='fl control-label'>宅基地测绘面积:${bean.zjdarea?default("/")}</label>
+                <label class='fl control-label' style="font-weight: bold">宅基地测绘面积:${bean.zjdarea?default("/")}</label>
             </div>
             <div class=' rhjc-print-group fl'>      
-                <label class='fl control-label'>房屋测绘面积:${bean.fwarea?default("/")}</label>
+                <label class='fl control-label' style="font-weight: bold">房屋测绘面积:${bean.fwarea?default("/")}</label>
             </div>
             <div class=' rhjc-print-group fl'>      
                 <label class='fl control-label'>首层测绘面积:${bean.firstfloorarea?default("/")}</label>
@@ -273,17 +284,17 @@
                 </tbody>
             </table>
         </div>
-        <div class="leftTitle"  style="margin-top: 10px;">认定结果：&nbsp;</div>
+        <div class="leftTitle2"  style="margin-top: 10px;">[认定结果]：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             1. 宅基地认定年限：
             <label class="title1"><input type="checkbox"> 82年前 </label>
             <label class="title1"><input type="checkbox"> 82年后 </label>
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
-            <div class="fl" style="width: 147px">
+            <div class="fl" style="width: 137px">
                 2. 认定人口数量：
             </div>
-            <div class="fl" style="width: 470px">
+            <div class="fl" style="width: 480px">
                 <label class="title1"><input type="checkbox">1 &nbsp;&nbsp;</label>
                 <label class="title1"><input type="checkbox">2 &nbsp;&nbsp;</label>
                 <label class="title1"><input type="checkbox">3 &nbsp;&nbsp;</label>
@@ -304,8 +315,6 @@
                 <label class="title1"><input type="checkbox">18 &nbsp;&nbsp;</label>
                 <label class="title1"><input type="checkbox">19 &nbsp;&nbsp;</label>
                 <label class="title1"><input type="checkbox">20 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">非超生 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">超生 &nbsp;&nbsp;</label>
             </div>
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">

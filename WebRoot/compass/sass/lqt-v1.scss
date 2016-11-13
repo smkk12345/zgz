@@ -280,36 +280,34 @@
 //rhjc-print-con
 .rhjc-print-con{
     padding: 0px;
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
     width:700px;
     .title {
-        font-size:17.0pt;line-height:150%;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:black;
+        font-size:14.0pt;line-height:110%;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:black;font-weight: bold;
     }
     .leftTitle {
-        font-size:13.0pt;
+        font-size:12.0pt;
         text-align: left;
-        line-height: 30px;
+        line-height: 15px;
         padding-bottom: 5px;
     }
-    .contex-1{text-align: left; font-size:12.0pt; mso-bidi-font-size:10.0pt;line-height:17.0pt;font-family:宋体;color:black}
-   
+    .contex-1{text-align: left; font-size:11.0pt; mso-bidi-font-size:10.0pt;line-height:14.0pt;font-family:宋体;color:black}
+   .leftTitle2 {
+        font-size:14.0pt;
+        text-align: left;
+        line-height: 16px;
+        padding-bottom: 5px;
+    }
     .title1 {
-        text-align: left; margin-left: 0px; font-size:13.0pt;mso-bidi-font-size:10.0pt;line-height:150%; font-weight: normal;
+        text-align: left; margin-left: 0px; font-size:11.0pt;mso-bidi-font-size:10.0pt;line-height:120%; font-weight: normal;
+    }
+    .table{
+        td{padding: 2px;font-weight: normal;font-size:11.0pt;mso-bidi-font-size:10.0pt;border: solid 1px;}
+        th{padding: 2px;font-weight: normal;font-size:11.0pt;mso-bidi-font-size:10.0pt;}
     }
     
-    .title2 {
-        font-size:18.0pt;line-height:150%;font-family:宋体;color:black;
-    }
-    .title3{
-        text-align: left; margin-left: 30px; font-size:14.0pt;mso-bidi-font-size:10.0pt;line-height:130%;color:black;
-    }
-    .pageBreak{margin-bottom: 30px}
-
-    
-
-
-
+    .pageBreak{margin-bottom:10px}
 }
 
 #picture-container{

@@ -34,29 +34,11 @@ import com.spring.ServiceManager;
 
 @Controller
 public class SjtjController {
-
-	
-	@RequestMapping({"/sjtj.action"})
-	public ModelAndView sjtj(HttpServletRequest request,
+	@RequestMapping({"/sjtj/index.action"})
+	public ModelAndView sjtj_index(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
-			
-			int intPageNum = Integer.parseInt(pageNo);
-			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
-			
-			model.addAttribute("pageSize", intPageSize);
-			model.addAttribute("pageNo", intPageNum);
-			model.addAttribute("recordCount", count);
-			
-			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -64,8 +46,8 @@ public class SjtjController {
 					WebConstConfig.getBase_Template_Default_Path());
 
 			model.addAttribute("CURENT_TAB", "SJTJ");
-			model.addAttribute("CURENT_TAB_2", "sjtj");
-			model.addAttribute("CURENT_TAB_3", "sjtj");
+			model.addAttribute("CURENT_TAB_2", "index");
+			model.addAttribute("CURENT_TAB_3", "index");
 
 			return new ModelAndView(PageConst.SJTJ, model);
 		} catch (Exception e) {

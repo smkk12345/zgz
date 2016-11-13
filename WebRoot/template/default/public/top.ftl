@@ -37,17 +37,26 @@
                     <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}sjtj/chart3.action"
+                    		href="${BASE_PATH}sjtj/index.action"
                     	<#else>
-                    		href="${BASE_PATH}sjtj/chart3.action"
+                    		href="${BASE_PATH}sjtj/index.action"
                     	</#if>
-                    	>数据统计</a></li>  
+                    	>实时数据</a></li>  
                     </#if>
                     <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
                     		href="${BASE_PATH}dzdt/bd1.action"
                     	>电子地图</a></li>  
-                    </#if>          
+                    </#if> 
+                     <#if role.roleAuthority[14]=="2">
+                    	<li><a <#if CURENT_TAB == 'SJTJ2'>class="active"</#if> 
+                    	<#if role.roleAuthority[3]=="2">
+                    		href="${BASE_PATH}sjtj2/chart3.action"
+                    	<#else>
+                    		href="${BASE_PATH}sjtj2/chart3.action"
+                    	</#if>
+                    	>数据统计</a></li>  
+                    </#if>         
                      <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
                     		href="${BASE_PATH}cwjs.action"
