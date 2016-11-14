@@ -26,6 +26,7 @@ import com.hibernate.base.BaseDaoImpl;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
+import com.hibernate.houseinfo.domain.VacatePeople;
 import com.hibernate.userInfo.damain.User;
 import com.hibernate.utils.SortUtils;
 
@@ -112,13 +113,14 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 //				update(housebasic);
 //			}
 //			updateSortNum();
-		}catch(Exception e){
+					}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			s.close();
 		}
 		return list;
 	}
+
 
 	private void updateSortNum(){
 		List<HouseBasic> list = null;

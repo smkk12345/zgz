@@ -8,6 +8,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
+import org.hibernate.Session;
 import org.springframework.ui.ModelMap;
 
 import com.hibernate.houseinfo.dao.AgreenmentDao;
@@ -121,9 +122,20 @@ public class HouseBasicService {
 		}
 		return houseBasic;
 	}
-	
+	private void updateAge() {
+		// TODO Auto-generated method stub
+		Session s = vacatePeopleDao.getSession();
+		List<VacatePeople> list = vacatePeopleDao.findAll();
+		for (int i = 0; i < list.size(); i++) {
+			VacatePeople v = list.get(i);
+//			v.set
+//			s.update(v);
+		}
+	}
+
 	public List<HouseBasic> getListBySection(HttpServletRequest request,ModelMap model,String section,int currentpage,int pagecount){
 		List<HouseBasic> list = houseBasicDao.findList(request,model,section,currentpage,pagecount);
+		
 		if(null == list){
 			return null;
 		}
