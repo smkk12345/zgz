@@ -56,7 +56,7 @@ public class PageConst {
     public final static String DZDT_bd4 = "/default/dzdt/bd4.ftl";  
     public final static String DZDT_bd5 = "/default/dzdt/bd5.ftl";  
     public final static String DZDT_bd6 = "/default/dzdt/bd6.ftl";  
-    
+    public final static String DZDT_bd7 = "/default/dzdt/bd7.ftl"; 
     
     public final static String XTSZ_XTSD = "/default/xtsz/xtsd.ftl";
     

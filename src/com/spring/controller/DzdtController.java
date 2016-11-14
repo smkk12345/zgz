@@ -206,4 +206,33 @@ public class DzdtController {
 			return null;
 		}
 	}
+	@RequestMapping({"/dzdt/bd7.action"})
+	public ModelAndView bd7(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "DZDT");
+			model.addAttribute("CURENT_TAB_2", "bd7");
+			model.addAttribute("CURENT_TAB_3", "bd7");
+
+			return new ModelAndView(PageConst.DZDT_bd7, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
 }
