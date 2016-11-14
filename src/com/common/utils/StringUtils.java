@@ -20,7 +20,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils{
 		return org.apache.commons.lang.StringUtils.rightPad(string, size, padString);
 	}
 	
-	public static int IdNOToAge(String IdNO) {
+	public static int getAgeFromIdCard(String IdNO) {
 		int leh = IdNO.length();
 		String dates = "";
 		if (leh == 18) {

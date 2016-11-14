@@ -128,14 +128,19 @@ public class HouseBasicService {
 		List<VacatePeople> list = vacatePeopleDao.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			VacatePeople v = list.get(i);
-//			v.set
-//			s.update(v);
+			int age = 1000;
+			try {
+				age = com.common.utils.StringUtils.getAgeFromIdCard(v.getIdcard());
+			} catch (Exception e) {
+			}
+			System.out.println(age);
+			s.update(v);
 		}
 	}
 
 	public List<HouseBasic> getListBySection(HttpServletRequest request,ModelMap model,String section,int currentpage,int pagecount){
 		List<HouseBasic> list = houseBasicDao.findList(request,model,section,currentpage,pagecount);
-		
+		updateAge();
 		if(null == list){
 			return null;
 		}
