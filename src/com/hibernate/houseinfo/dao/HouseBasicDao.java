@@ -388,6 +388,25 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			s.close();
 		}
 	}
+
+	public HouseBasic getByIdCard(String idcard) {
+		Session s = null;
+		List<HouseBasic> list = null;
+		try{
+			s = getSession();
+			list = s.createCriteria(HouseBasic.class).add(
+					Restrictions.eq("idcard", idcard))
+					.list();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		if(null != list && list.size()>0){
+			return list.get(0);
+		}
+		return null;
+	}
 	 
 	 
 	

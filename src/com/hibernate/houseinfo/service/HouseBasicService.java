@@ -135,6 +135,17 @@ public class HouseBasicService {
 		return list;
 	}
 	
+	public void initVacatePeople(){
+		List<VacatePeople> list = new ArrayList<VacatePeople>();
+		list = vacatePeopleDao.findAll();
+		for (int i = 0; i < list.size(); i++) {
+			VacatePeople v = list.get(i);
+			HouseBasic h = houseBasicDao.getByIdCard(v.getIdcard());
+			v.setHousebasicid(h.getId());
+			vacatePeopleDao.update(v);
+		}
+	}
+	
 	public boolean delVacatePeopleById(String id){
 		vacatePeopleDao.delete(id);
 		return true;
