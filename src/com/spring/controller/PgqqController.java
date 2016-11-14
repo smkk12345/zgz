@@ -293,6 +293,8 @@ public class PgqqController {
 			//获取标段信息
 			housebasic.setCreateTime(new Date());
 			housebasic.setUpdateTime(new Date());
+			String sectionindex=housebasic.getSectionindex();
+			housebasic.setSectionindex(sectionindex.replaceAll(",", ""));
 			
 			initVacatePeople(request, housebasic);
 			

@@ -95,6 +95,10 @@
                     <label class='fl control-label'>非本址在册户籍数量:</label>
                     <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' value="${bean.notlocalpeoplecount?default("")}"/>        
                 </div>
+                  <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>编号:</label>
+                    <input type='text' class='form-control input-sm  ' name='sectionindex' value="${bean.sectionindex?default("")}"/>        
+                </div>
             </div>
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
