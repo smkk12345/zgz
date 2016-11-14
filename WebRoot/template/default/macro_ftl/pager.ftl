@@ -5,7 +5,8 @@ Auth: yulei, 2015.9.23
    pageSize    每页要显示的记录数(int类型)
    toURL       点击分页标签时要跳转到的目标URL(string类型)
    recordCount 总记录数(int类型)
- -->
+   OtherParameter  OtherParameter="name='zhangsan',paswor='123456'"
+   -->
 <#macro pager pageNo pageSize recordCount toURL OtherParameter>  
   <#-- 定义局部变量pageCount保存总页数 -->
   <#assign pageCount=((recordCount + pageSize - 1) / pageSize)?int>  
