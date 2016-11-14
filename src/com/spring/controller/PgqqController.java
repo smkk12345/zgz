@@ -67,8 +67,9 @@ public class PgqqController {
 
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			String sql = getRhjcSql(role.getSection(),request,model);
 			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			Integer count = ServiceManager.getHouseBasicServce().getCount(request,role.getSection());
 			
 			model.addAttribute("pageSize", intPageSize);
 			model.addAttribute("pageNo", intPageNum);
@@ -90,6 +91,41 @@ public class PgqqController {
 			model.addAttribute("error", e.getMessage());
 			return null;
 		}
+	}
+
+
+
+	private String getRhjcSql(String section, HttpServletRequest request,
+			ModelMap model) {
+		StringBuffer sb = new StringBuffer();
+		sb.append(" and a.section in (").append(section).append(")");
+		String names = request.getParameter("names");
+		String  mobile = request.getParameter("mobile");
+		String idcard = request.getParameter("idcard");
+		String indexnum = request.getParameter("indexnum");
+		String atype = request.getParameter("atype");
+		atype = StringUtils.isBlank(atype)?"-1":atype;
+		if(!StringUtils.isBlank(names)){
+			sb.append(" and a.names like '%").append(names).append("%'");
+			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(mobile)){
+			sb.append(" and a.mobile ='").append(mobile).append("'");
+			model.addAttribute("mobile", mobile);
+		}
+		if(!StringUtils.isBlank(idcard)){
+			sb.append(" and a.idcard ='").append(idcard).append("'");
+			model.addAttribute("idcard", idcard);
+		}
+		if(!StringUtils.isBlank(indexnum)){
+			sb.append(" and c.indexnum =").append(indexnum);
+			model.addAttribute("indexnum", indexnum);
+		}
+		if(!atype.equals("-1")){
+			sb.append(" AND b.atype ='").append(atype).append("'");
+		}
+		model.addAttribute("atype", idcard);
+		return sb.toString();
 	}
 
 
@@ -157,7 +193,7 @@ public class PgqqController {
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			Integer count = ServiceManager.getHouseBasicServce().getCount(request,role.getSection());
 			
 			model.addAttribute("pageSize", intPageSize);
 			model.addAttribute("pageNo", intPageNum);
@@ -245,7 +281,7 @@ public class PgqqController {
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
-			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			Integer count = ServiceManager.getHouseBasicServce().getCount(request,role.getSection());
 			
 			model.addAttribute("pageSize", intPageSize);
 			model.addAttribute("pageNo", intPageNum);
@@ -293,6 +329,8 @@ public class PgqqController {
 			//获取标段信息
 			housebasic.setCreateTime(new Date());
 			housebasic.setUpdateTime(new Date());
+			String sectionindex=housebasic.getSectionindex();
+			housebasic.setSectionindex(sectionindex.replaceAll(",", ""));
 			
 			initVacatePeople(request, housebasic);
 			
