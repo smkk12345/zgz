@@ -88,7 +88,7 @@
                     <tr class="add-list-1">
                         <td class="center">${vacate_index+1}</td>
                         <td class="center">
-                            <label class="title1"><input type="checkbox"></label>
+                            <label class="title1"><input class="check-box" type="checkbox"></label>
                         </td>
                         <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
                         <td class="center">
@@ -109,7 +109,7 @@
                             <#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if>
                         </td>
                         <td class="center">
-                            <label class="title1"><input type="checkbox"></label>
+                            <label class="title1"><input class="check-box" type="checkbox"></label>
                         </td>
                         <td class="center"></td>
                     </tr>
@@ -156,7 +156,7 @@
                     <tr class="add-list-2">
                         <td class="center">${cate_index+1}</td>
                         <td class="center">
-                            <label class="title1"><input type="checkbox"></label>
+                            <label class="title1"><input class="check-box" type="checkbox"></label>
                         </td>
                         <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
                         </td>
@@ -179,7 +179,7 @@
                             <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if>
                         </td>
                         <td class="center">
-                            <label class="title1"><input type="checkbox"></label>
+                            <label class="title1"><input class="check-box"type="checkbox"></label>
                         </td>
                         <td class="center">
                         </td>
@@ -320,41 +320,41 @@
         <div class="leftTitle2" >[认定结果]：&nbsp;</div>
         <div class="mt5 contex-1 container-fluid title1" >
             1. 认定依据：
-            <label class=""><input type="checkbox"> 宅基地原始批单 </label>
-            <label class=""><input type="checkbox"> 翻建表 </label>
-            <label class=""><input type="checkbox"> 认定小组认定 </label>
-            <label class=""><input type="checkbox"> 其它 </label>
+            <label class=""><input class="check-box" type="checkbox"> 宅基地原始批单 </label>
+            <label class=""><input class="check-box" type="checkbox"> 翻建表 </label>
+            <label class=""><input class="check-box" type="checkbox"> 认定小组认定 </label>
+            <label class=""><input class="check-box" type="checkbox"> 其它 </label>
         </div>
         <div class="mt5 contex-1 container-fluid title1" >
             2. 宅基地认定年限：
-            <label class=""><input type="checkbox"> 82年前 </label>
-            <label class=""><input type="checkbox"> 82年后 </label>
+            <label class=""><input class="check-box" type="checkbox"> 82年前 </label>
+            <label class=""><input class="check-box" type="checkbox"> 82年后 </label>
         </div>
         <div class="mt5 contex-1 container-fluid" >
             <div class="fl title1" style="width: 145px">
                 3. 认定人口数量：
             </div>
             <div class="fl" style="width: 480px">
-                <label class="title1"><input type="checkbox">1 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">2 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">3 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">4 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">5 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">6 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">7 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">8 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">9 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">10 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">11 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">12 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">13 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">14 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">15 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">16 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">17 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">18 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">19 &nbsp;&nbsp;</label>
-                <label class="title1"><input type="checkbox">20 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">1 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">2 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">3 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">4 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">5 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">6 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">7 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">8 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">9 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">10 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">11 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">12 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">13 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">14 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">15 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">16 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">17 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">18 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">19 &nbsp;&nbsp;</label>
+                <label class="title1"><input class="check-box" type="checkbox">20 &nbsp;&nbsp;</label>
             </div>
         </div>
         <div class="mt10 contex-1 container-fluid title1">

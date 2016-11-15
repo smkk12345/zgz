@@ -57,8 +57,8 @@
                 <th>操作</th>
                 <th>分户</th>
             </tr>
+            <@HousebasicList list pageNo pageSize/>
         </table>
-        <@HousebasicList list pageNo pageSize/>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
