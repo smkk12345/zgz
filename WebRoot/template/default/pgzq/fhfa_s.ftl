@@ -9,7 +9,7 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4 class="bold">分户方案管理</h4>
+            <h4 class="bold">分户方案审核审计</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
@@ -56,7 +56,7 @@
                 <th>结算后款</th>
                 <th>操作</th>
             </tr>
-            <@XyList list pageNo pageSize/>
+            <@fhfa_s list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
