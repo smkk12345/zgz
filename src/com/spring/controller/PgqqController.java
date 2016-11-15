@@ -364,6 +364,7 @@ public class PgqqController {
 		String[] vunit = request.getParameterValues("vunit");
 		String[] peopletype = request.getParameterValues("peopletype");
 		String[] vtype = request.getParameterValues("vtype");
+		String[] vage = request.getParameterValues("vage");
 		String[] vid =  request.getParameterValues("vid");
 		
 		List<VacatePeople> vList = new ArrayList<VacatePeople>();
@@ -386,15 +387,19 @@ public class PgqqController {
 			}
 			v.setName(names[i]);
 			v.setHousebasicid("");
-//			v.setChangrelate(changrelate[i]);
+			v.setChangrelate(changrelate[i]);
 			v.setHouseholder(householders[i]);
 			v.setHouseholdtype(householdtype[i]);
 			v.setIdcard(idcards[i]);
 			v.setSex(sexs[i]);
 //			v.setRegisteredrelate(registeredrelates[i]);
 			v.setHasmarry(hasmarry[i]);
+			if(StringUtils.isBlank(vage[i])){
+			}else{
+				v.setAge(Integer.parseInt(vage[i]));
+			}
 //			v.setUnit(vunit[i]);
-			v.setPeopletype(peopletype[i]);
+//			v.setPeopletype(peopletype[i]);
 			String vtypee = vtype[i];
 			v.setVtype(vtypee);
 			if(vtypee.equals("0")){
@@ -450,6 +455,7 @@ public class PgqqController {
 				otherInfo.setPeopleid(peopleid[i]);
 				otherInfo.setOtypenum(otypenum[i]);
 				otherInfo.setValidatedate(validatedate[i]);
+				otherInfo.setIllnessname(illnessname[i]);
 				otherInfo.setIllnessprove(illnessprove[i]);
 				
 				if(otherInfo.getOtype().equals("0")){

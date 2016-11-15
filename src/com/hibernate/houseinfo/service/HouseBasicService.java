@@ -122,9 +122,8 @@ public class HouseBasicService {
 		}
 		return houseBasic;
 	}
-	private void updateAge() {
+	public void updateAge() {
 		// TODO Auto-generated method stub
-		Session s = vacatePeopleDao.getSession();
 		List<VacatePeople> list = vacatePeopleDao.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			VacatePeople v = list.get(i);
@@ -134,7 +133,7 @@ public class HouseBasicService {
 			} catch (Exception e) {
 			}
 			System.out.println(age);
-			s.update(v);
+			vacatePeopleDao.update(v);
 		}
 	}
 
