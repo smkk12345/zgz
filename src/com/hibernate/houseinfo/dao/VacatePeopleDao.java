@@ -10,6 +10,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
+import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
 
@@ -74,5 +75,46 @@ public class VacatePeopleDao extends BaseDaoImpl<VacatePeople> {
 			s.close();
 		}
 		return false;
+	}
+
+	public VacatePeople getByParam(VacatePeople v) {
+		List<VacatePeople> list = null;
+		Session s = null;
+		try{
+			s = getSession();
+			Criteria c = s.createCriteria(VacatePeople.class);
+			list = c.add(Restrictions.eq("name", v.getNames()))
+					.add(Restrictions.eq("location", v.getLocation()))
+					.list();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		if(null != list && list.size()>0){
+			return list.get(0);
+		}
+		return null;
+	}
+
+	public VacatePeople getByParam1(HouseBasic h) {
+		List<VacatePeople> list = null;
+		Session s = null;
+		try{
+			s = getSession();
+			Criteria c = s.createCriteria(VacatePeople.class);
+			list = c.add(Restrictions.eq("name", h.getNames()))
+					.add(Restrictions.eq("idcard", h.getIdcard()))
+					.add(Restrictions.eq("housebasicid", h.getId()))
+					.list();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		if(null != list && list.size()>0){
+			return list.get(0);
+		}
+		return null;
 	}
 }

@@ -140,6 +140,7 @@ public class HouseBasicService {
 	public List<HouseBasic> getListBySection(HttpServletRequest request,ModelMap model,String section,int currentpage,int pagecount){
 		List<HouseBasic> list = houseBasicDao.findList(request,model,section,currentpage,pagecount);
 //		initVacatePeople();
+//		initHouseBasicInfo();
 		if(null == list){
 			return null;
 		}
@@ -151,13 +152,34 @@ public class HouseBasicService {
 		return list;
 	}
 	
-	public void initVacatePeople(){
+	private void initHouseBasicInfo(){
+		List<HouseBasic> list = houseBasicDao.findAll();
+		for (int i = 0; i < list.size(); i++) {
+			HouseBasic h = list.get(i);
+			VacatePeople baseV = vacatePeopleDao.getByParam1(h);
+			if(baseV == null){
+				System.err.println(i);
+				continue;
+			}
+			h.setSex(baseV.getSex());
+			h.setAge(baseV.getAge());
+			houseBasicDao.update(h);
+		}
+	}
+	
+	private void initVacatePeople(){
 		List<VacatePeople> list = new ArrayList<VacatePeople>();
 		list = vacatePeopleDao.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			try {
 				VacatePeople v = list.get(i);
-				HouseBasic h = houseBasicDao.getByIdCard(v.getIdcard());
+				
+				VacatePeople baseV = vacatePeopleDao.getByParam(v);
+				if(baseV == null){
+					System.err.println(i);
+					continue;
+				}
+				HouseBasic h = houseBasicDao.getByIdCard(baseV.getIdcard());
 				v.setHousebasicid(h.getId());
 				vacatePeopleDao.update(v);
 			} catch (Exception e) {

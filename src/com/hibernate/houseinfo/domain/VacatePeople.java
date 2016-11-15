@@ -22,7 +22,7 @@ public class VacatePeople extends BaseBean {
 	//性别
 	private String sex;
 	//年龄
-	private Integer age;
+	private String age;
 	//户关  与户主关系
 	private String registeredrelate;
 	//外籍地址
@@ -126,10 +126,10 @@ public class VacatePeople extends BaseBean {
 	public void setPeopletype(String peopletype) {
 		this.peopletype = peopletype;
 	}
-	public Integer getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(Integer age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public void setAddress(String address) {

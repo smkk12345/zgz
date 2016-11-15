@@ -126,23 +126,30 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		List<HouseBasic> list = null;
 		// TODO Auto-generated method stub
 		Session s = null;
-		try{
+		try {
+			
+		
 			s = getSession();
 			Criteria c = s.createCriteria(HouseBasic.class);
 			list = c.list();
 			for (int i = 0; i < list.size(); i++) {
 				HouseBasic  housebasic = list.get(i);
 				String sectionindex = housebasic.getSectionindex();
+				try{
 				int nIndex = SortUtils.getSortNum(sectionindex);
 				housebasic.setSortnum(nIndex);
 				System.out.println(nIndex);
 				update(housebasic);
+				}catch(Exception e){
+					System.out.println(sectionindex);
+				}
 			}
-		}catch(Exception e){
-			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO: handle exception
 		}finally{
 			s.close();
 		}
+		
 	}
 	
 	public List<HouseBasic> getListBySection(String section, int currentpage,

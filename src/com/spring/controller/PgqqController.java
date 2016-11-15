@@ -396,7 +396,7 @@ public class PgqqController {
 			v.setHasmarry(hasmarry[i]);
 			if(StringUtils.isBlank(vage[i])){
 			}else{
-				v.setAge(Integer.parseInt(vage[i]));
+				v.setAge(vage[i]);
 			}
 //			v.setUnit(vunit[i]);
 //			v.setPeopletype(peopletype[i]);
