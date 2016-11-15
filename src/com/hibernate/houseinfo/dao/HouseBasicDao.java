@@ -151,17 +151,40 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		return null;
 	}
 
-	public Integer getCount(String section) {
+	public Integer getCount(HttpServletRequest request,String section) {
 		Session s = null;
 		try{
 			s = getSession();
 			String hql="";
 			if(StringUtils.isBlank(section)){
-				hql = "select count(id) as count from HouseBasic hb ";
+				hql = "select count(id) as count from HouseBasic hb where 1=1 ";
 			}else{
 				hql = "select count(id) as count from HouseBasic hb where section in ("+section+")";
 			}
-			Query query = s.createQuery(hql);
+			String location = request.getParameter("location");
+			String names = request.getParameter("names");
+			String  mobile = request.getParameter("mobile");
+			String idcard = request.getParameter("idcard");
+			String atype = request.getParameter("atype");
+			String checkresult = request.getParameter("checkresult");
+			
+			StringBuffer sb = new StringBuffer();
+			if(!StringUtils.isBlank(checkresult)){
+				sb.append(" and checkresult = '").append(checkresult).append("'");
+			}
+			if(!StringUtils.isBlank(location)){
+				sb.append(" and location like '%").append(location).append("%'");
+			}
+			if(!StringUtils.isBlank(names)){
+				sb.append(" and names like '%").append(names).append("%'");
+			}
+			if(!StringUtils.isBlank(mobile)){
+				sb.append(" and mobile = '").append(mobile).append("'");
+			}
+			if(!StringUtils.isBlank(idcard)){
+				sb.append(" and idcard = '").append(idcard).append("'");
+			}
+			Query query = s.createQuery(hql+sb.toString());
 			int count = ((Number) query.iterate().next()).intValue();
 			return count;
 		}catch(Exception e){
@@ -389,6 +412,25 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}finally{
 			s.close();
 		}
+	}
+
+	public HouseBasic getByIdCard(String idcard) {
+		Session s = null;
+		List<HouseBasic> list = null;
+		try{
+			s = getSession();
+			list = s.createCriteria(HouseBasic.class).add(
+					Restrictions.eq("idcard", idcard))
+					.list();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			s.close();
+		}
+		if(null != list && list.size()>0){
+			return list.get(0);
+		}
+		return null;
 	}
 	 
 	 

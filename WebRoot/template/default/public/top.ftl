@@ -44,16 +44,16 @@
                     	>实时数据</a></li>  
                     </#if>
                     <#if role.roleAuthority[14]=="2">
-                    	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
+                    	<li><a <#if CURENT_TAB == 'DZDT'>class="active"</#if> 
                     		href="${BASE_PATH}dzdt/bd1.action"
                     	>电子地图</a></li>  
                     </#if> 
                      <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ2'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}sjtj2/chart3.action"
+                    		href="${BASE_PATH}sjtj2/.action"
                     	<#else>
-                    		href="${BASE_PATH}sjtj2/chart3.action"
+                    		href="${BASE_PATH}sjtj2/.action"
                     	</#if>
                     	>数据统计</a></li>  
                     </#if>         

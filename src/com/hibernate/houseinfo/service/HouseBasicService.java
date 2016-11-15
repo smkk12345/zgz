@@ -139,7 +139,7 @@ public class HouseBasicService {
 
 	public List<HouseBasic> getListBySection(HttpServletRequest request,ModelMap model,String section,int currentpage,int pagecount){
 		List<HouseBasic> list = houseBasicDao.findList(request,model,section,currentpage,pagecount);
-		updateAge();
+//		initVacatePeople();
 		if(null == list){
 			return null;
 		}
@@ -149,6 +149,22 @@ public class HouseBasicService {
 			houseBasic.setIndexNum(indexNumDao.getByBasicId(houseBasic.getId()));
 		}
 		return list;
+	}
+	
+	public void initVacatePeople(){
+		List<VacatePeople> list = new ArrayList<VacatePeople>();
+		list = vacatePeopleDao.findAll();
+		for (int i = 0; i < list.size(); i++) {
+			try {
+				VacatePeople v = list.get(i);
+				HouseBasic h = houseBasicDao.getByIdCard(v.getIdcard());
+				v.setHousebasicid(h.getId());
+				vacatePeopleDao.update(v);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		
+		}
 	}
 	
 	public boolean delVacatePeopleById(String id){
@@ -169,9 +185,9 @@ public class HouseBasicService {
 		otherInfoDao.delByHouseBasicId(id);
 		return true;
 	}
-	public Integer getCount(String section) {
+	public Integer getCount(HttpServletRequest request,String section) {
 		// TODO Auto-generated method stub
-		return houseBasicDao.getCount(section);
+		return houseBasicDao.getCount(request,section);
 	}
 
 	/**
