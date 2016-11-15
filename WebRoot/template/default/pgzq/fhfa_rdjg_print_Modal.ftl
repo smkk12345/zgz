@@ -14,6 +14,7 @@
                     <div class="title-x">
                         征收编号： &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  打印日期：2016-11-15
                     </div>
+                    
                 </td>
             </tr>
             <tr>
