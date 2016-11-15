@@ -1,7 +1,7 @@
 <form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}" accept-charset="UTF-8" method="post">
     <div class="modal-header clearfix">
         <h4 class="modal-title pull-left m0">用户方案审核审计(共5项)</h4>
-        <button type="submit" class="btn btn-primary btn-save fr ml15">保存</button>
+        <button type="submit" class="btn btn-primary btn-save fr ml15">确定</button>
         <button type="button" class="btn btn-default fr" data-dismiss="modal">关闭</button>
     </div>
     <div class="modal-body rhjc-add-con rhjc-check" id="rhjc-add-con">
@@ -49,7 +49,15 @@
                     <label class='fl control-label'>被腾退人身份证号:${bean.idcard?default("/")}</label>
                 </div>
                 <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>安置意向:<#if  (bean.atype?default("-1"))=='1'>货币补偿<#else>安置补偿</#if></label>
+                    <label class='fl control-label'>安置意向:
+                    	<#if  (bean.atype?default("-1"))=='1'>
+                    		货币补偿
+                    	<#elseif (bean.atype?default("-1"))=='0'>
+                    		安置补偿
+                    	<#else>
+                    		未选择补偿方式
+                    	</#if>
+                    </label>
                 </div>
 
             </div>
@@ -193,47 +201,46 @@
                 </div>
                 
             </div>
-            <h4><span class="label label-default">七.其他：</span></h4>
+            <h4><span class="label label-default div_seven">七.其他：</span></h4>
             <div class='container-fluid con-bg mb10'>	
                 <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>腾退时间:${bean.fyxx?default("/")}</label>
+                    <label class='fl control-label'>腾退时间:${bean.ttrq?default("/")}</label>
                 </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>一居室:${bean.yjs?default("/")}</label>
-                </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>二居室（70）:${bean.ljs70?default("/")}</label>
-                </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>二居室（75）:${bean.ljs75?default("/")}</label>
-                </div>
-                
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>二居室（80）:${bean.ljs80?default("/")}</label>
-                </div>
-                
-                 <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>二居室（85）:${bean.ljs85?default("/")}</label>
-                </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>三居室:${bean.sjs?default("/")}</label>
-                </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>实际选房面积:${bean.sjxfmj?default("/")}</label>
-                </div>
-                <div class=' chkstyle fl'>      
-                    <label class='fl control-label'>购房款:${bean.azfgfk?default("/")}</label>
-                </div>
-                
             </div>
-            <h4><span class="label label-default mb10">5.备注：</span></h4>
-            <div class='container-fluid con-bg mb10'>${bean.remark?default("/")}</div>
+          	<h4><span class="label label-default div_eight">八.评估款，补偿补助及奖励费合计：</span></h4>
+            <div class='container-fluid con-bg mb10'>
+                <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>总补偿款:${bean.zjdttzj?default("/")}</label>
+                </div>
+                <div class=' chkstyle fl'>      
+                    <label class='fl control-label'>结算后款:${bean.wwzjlf?default("/")}</label>
+                </div>
+            </div>  
         </div>
     </div>
 </from>
 <script type = "text/javascript">
+
+	$(document).ready(function () {
+        var b = '${bean.atype!''}';
+        if (b.length == 0) {
+
+        } else {
+            if (b == '1') {
+                $(".azxy").hide();
+                $(".div_seven").html("六.其他：");
+                $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
+            }
+            else {
+                $(".azxy").show();
+                $(".div_seven").html("七.其他：");
+                $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
+            }
+        }
+    });
+    
     //设置模态框高度和宽度  
-    $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");
+    $("#rhjc-add-con").css("height", ($(window).height() - 250) + "px");
     $("#rhjc-add-con").css("overflow-y", "scroll");
 
     function saveClick(btn) {

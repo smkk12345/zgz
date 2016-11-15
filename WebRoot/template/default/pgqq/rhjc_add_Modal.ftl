@@ -147,7 +147,7 @@
                                 <option <#if (vacate.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='age' value="${vacate.age?default("")}"/></td>
+                        <td><input type='text' class='form-control input-sm  ' name='vage' value="${vacate.age?default("")}"/></td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option <#if (vacate.hasmarry?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
@@ -188,7 +188,8 @@
                                 <option  value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='age' /></td>
+                        <td><input type='text' class='form-control input-sm  ' name='vage' /></td>
+                        
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option  value="-1">请选择</option>  
@@ -250,7 +251,7 @@
                                 <option <#if (cate.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='age' value="${cate.age?default("")}"/></td>
+                        <td><input type='text' class='form-control input-sm  ' name='vage' value="${cate.age?default("")}"/></td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option <#if (cate.hasmarry?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
@@ -290,7 +291,7 @@
                                 <option  value="1">女</option> 
                             </select>
                         </td>
-                        <td><input type='text' class='form-control input-sm  ' name='age' />        </td>
+                        <td><input type='text' class='form-control input-sm  ' name='vage' />        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
                                 <option   value="-1">请选择</option>  
@@ -471,8 +472,8 @@
                 <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)" >${bean.remark?default("")}</textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="submit" class="btn btn-primary btn-save"   >保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
     </form>

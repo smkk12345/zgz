@@ -35,8 +35,6 @@ public class PageConst {
     public final static String PGZQ_fhxy_az_xy_sy_print_Modal = "/default/pgzq/fhxy_az_xy_sy_print_Modal.ftl";
     
     
-    public final static String PGZQ_fhfa_s= "/default/pgzq/fhfa_s.ftl";
-    
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
     public final static String CWJS_01= "/default/cwjs/cwjs_01_print_Modal.ftl";
     

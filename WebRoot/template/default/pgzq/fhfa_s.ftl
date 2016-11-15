@@ -16,7 +16,7 @@
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
             <div class="fl">
-              <form  action="${BASE_PATH}pgzq/agreenment.action" accept-charset="UTF-8" method="post" >
+              <form  action="${BASE_PATH}pgzq/fhfa_s.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -61,7 +61,8 @@
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/fhfa.action" OtherParameter=""/>
+            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/fhfa_s.action" 
+            OtherParameter="location=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')}"/>
             </#if>
         </div>
     </ul>

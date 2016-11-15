@@ -16,14 +16,31 @@
     <td >${ROW.mobile?default("")}</td>
     <td>    
         <#if role.roleAuthority[2]=="2">
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit" title='编辑' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
-        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle" title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
+        <#if (ROW.checkresult)??>
+	        <#if ROW.checkresult=="1">
+	        已锁定
+	        <#else>
+		        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit" title='编辑' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
+		        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle" title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
+	        </#if>
+        <#else>
+	        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit" title='编辑' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"> </button>
+	        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle" title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action" pname="${ROW.id}"> </button>
+        </#if>
         </#if>
     </td>
      <td>    
         <#if ROW.hassplit?default("0")=="0">
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}&issplit=1"> 分户</button>
+         <#if (ROW.checkresult)??>
+	        <#if ROW.checkresult=="1">
+	        已锁定
+	        <#else>
+		        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}&issplit=1"> 分户</button>
         </#if>
+        <#else>
+	        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}&issplit=1"> 分户</button>
+        </#if>
+      </#if> 
     </td>
 </tr>
 </#list>
@@ -145,8 +162,18 @@
     <td >${(ROW.zjdttbck)!""}</td>
     <td >${(ROW.azfgfk)!""}</td>
     <td >${(ROW.wwzjlf)!""}</td>
-    <td>       
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审核审查</button>     
+    <td>    
+        <#if (ROW.checkresult)??>
+        <#if ROW.checkresult=="0">
+        <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 重新审查</button>
+        <#elseif ROW.checkresult=="1">
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 重新审查</button>
+        <#else>
+        <button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审查</button>
+        </#if>
+        <#else>
+        <button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审查</button>
+        </#if>
     </td>
 </tr>
 </#list>
