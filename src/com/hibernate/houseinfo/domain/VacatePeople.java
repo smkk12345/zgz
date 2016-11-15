@@ -21,8 +21,12 @@ public class VacatePeople extends BaseBean {
 	private String idcard;
 	//性别
 	private String sex;
+	//年龄
+	private Integer age;
 	//户关  与户主关系
 	private String registeredrelate;
+	//外籍地址
+	private String address;
 	//产关  与产权人的关系
 	private String changrelate;
 	//婚否  0 未婚  1 已婚
@@ -121,6 +125,18 @@ public class VacatePeople extends BaseBean {
 	}
 	public void setPeopletype(String peopletype) {
 		this.peopletype = peopletype;
+	}
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getAddress() {
+		return address;
 	}
 	
 }

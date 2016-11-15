@@ -6,6 +6,7 @@
 	<li <#if CURENT_TAB_2 =='bd4'>class="active"</#if>><a href="${BASE_PATH}dzdt/bd4.action"><#if CURENT_TAB_2 =='bd4'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>第四标段</a></li>
 	<li <#if CURENT_TAB_2 =='bd5'>class="active"</#if>><a href="${BASE_PATH}dzdt/bd5.action"><#if CURENT_TAB_2 =='bd5'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>第五标段</a></li>
 	<li <#if CURENT_TAB_2 =='bd6'>class="active"</#if>><a href="${BASE_PATH}dzdt/bd6.action"><#if CURENT_TAB_2 =='bd6'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>第六标段</a></li>
+        <li <#if CURENT_TAB_2 =='bd7'>class="active"</#if>><a href="${BASE_PATH}dzdt/bd7.action"><#if CURENT_TAB_2 =='bd7'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>第七标段</a></li>
 	
 </ul>
 </@override>

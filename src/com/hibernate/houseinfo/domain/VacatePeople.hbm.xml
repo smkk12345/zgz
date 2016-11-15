@@ -22,6 +22,9 @@
 		<property name="sex" type="java.lang.String">
 			<column name="sex" length="45" />
 		</property>
+		<property name="age" >
+		</property>
+		<property name = "address"/>
 		<property name="changrelate" type="java.lang.String">
 			<column name="changrelate" length="45" />
 		</property>
