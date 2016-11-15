@@ -130,10 +130,10 @@
                 url: url,
                 dataType: "json",
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "jfdj_1.action";
+                    location.href = "${BASE_PATH}" + "/jfdj_1.action";
                 },
                 success: function (response) {
-                    location.href = "${BASE_PATH}" + "jfdj_1.action";
+                    location.href = "${BASE_PATH}" + "/jfdj_1.action";
                 }
             })
         }

@@ -294,9 +294,9 @@ public class PgqqController {
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
 
-			model.addAttribute("CURENT_TAB", "AGREENMENT");
-			model.addAttribute("CURENT_TAB_2", "fnsjsh");
-			model.addAttribute("CURENT_TAB_3", "fnsjsh");
+			model.addAttribute("CURENT_TAB", "PGQQ");
+			model.addAttribute("CURENT_TAB_2", "rhjc_s");
+			model.addAttribute("CURENT_TAB_3", "rhjc_s");
 
 			return new ModelAndView(PageConst.PGQQ_rhjc_s, model);
 			
@@ -514,7 +514,7 @@ public class PgqqController {
 			//复核备注
 			String checkremark=request.getParameter("checkremark");
 			//id
-			String housebasicid = request.getParameter("id");
+			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
 			housebasic.setCheckresult(checkresult);
