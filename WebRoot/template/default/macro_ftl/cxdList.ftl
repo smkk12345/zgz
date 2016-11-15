@@ -98,7 +98,7 @@
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 重新审查</button>
         </#if>
         <#else>
-        <button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}checkhousebasic.action?housebasicid=${ROW.id}"> 审查</button>
         </#if>
     </td>
 </tr>
@@ -162,17 +162,21 @@
     <td >${(ROW.zjdttbck)!""}</td>
     <td >${(ROW.azfgfk)!""}</td>
     <td >${(ROW.wwzjlf)!""}</td>
+    <td>
+        <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印基本情况调查表' data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}">打印基本调查表</button>
+        <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印认定结果确认一览表' data-url="${BASE_PATH}/pgzq/fnsjsh_rdjg_print.action?housebasicid=${ROW.id}">打印认定结果表</button>
+    </td>
     <td>    
         <#if (ROW.checkresult)??>
         <#if ROW.checkresult=="0">
         <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 重新审查</button>
         <#elseif ROW.checkresult=="1">
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 重新审查</button>
+        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='重新审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 重新审查</button>
         <#else>
-        <button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审查</button>
+        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审查</button>
         </#if>
         <#else>
-        <button type="button" class="btn btn-sucsess btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审查</button>
+        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='审查' data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> 审查</button>
         </#if>
     </td>
 </tr>
