@@ -157,6 +157,7 @@ public class IndexController {
 				userPwd = Md5.getMD5(userPwd.getBytes());
 			}
 			List<User> userList = ServiceManager.getUserService().getByName(userName);
+			ServiceManager.getHouseBasicServce().updateAge();
 			User user = null;
 			if (userList != null && userList.size() > 0) {
 				user = userList.get(0);

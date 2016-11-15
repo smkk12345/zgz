@@ -22,9 +22,7 @@
 		<property name="sex" type="java.lang.String">
 			<column name="sex" length="45" />
 		</property>
-		<property name="age" >
-		</property>
-		<property name = "address"/>
+		
 		<property name="changrelate" type="java.lang.String">
 			<column name="changrelate" length="45" />
 		</property>
@@ -54,5 +52,7 @@
 		<property name="createTime" type="java.util.Date"></property>
 		<property name="updateTime" type="java.util.Date"></property>
 		
+		<property name="age" type="java.lang.Integer"></property>
+		<property name="address" type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>
