@@ -17,7 +17,7 @@
         <input type="hidden" class='form-control input-sm ' name='section' value="${bean.section?default("")}" style="width: 0px;"/>
          <input type="hidden" class='form-control input-sm ' name='hassplit' value="${bean.hassplit?default("")}" style="width: 0px;"/>
           <input type="hidden" class='form-control input-sm ' name='sortnum' value="${bean.sortnum?c}" style="width: 0px;"/>
-           <input type="hidden" class='form-control input-sm ' name='sectionindex' value="${bean.sectionindex?default("")}" style="width: 0px;"/>
+
            <input type="hidden" class='form-control input-sm ' name='issplit' value="${issplit}" style="width: 0px;"/>
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
