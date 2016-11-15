@@ -609,4 +609,27 @@ public class AgreenmentController {
 		}
 	}
 	
+	@RequestMapping({ "/pgzq/fnsjsh_rdjg_print.action" })
+	public ModelAndView rhjc_print(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String housebasicid  = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("bean", houseBasic);
+			// 模板路径 basePath
+						model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+						model.addAttribute("BASE_ASSETS_PATH",
+								WebConstConfig.getBase_Assets_Path());
+						model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+								WebConstConfig.getBase_Template_Default_Path());
+						return new ModelAndView(PageConst.PGZQ_rdjg_print_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+
+		}
+	}
+	
 }
