@@ -497,4 +497,47 @@ public class AgreenmentController {
 		}
 	}
 	
+	
+	@RequestMapping({"/pgzq/fnsjsh.action"})
+	public ModelAndView fnsjsh(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			String sql = getHfxySxhSql(role.getSection(),request,model);
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql, "",(intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "AGREENMENT");
+			model.addAttribute("CURENT_TAB_2", "fnsjsh");
+			model.addAttribute("CURENT_TAB_3", "fnsjsh");
+
+			return new ModelAndView(PageConst.PGZQ_fhfa_s, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
 }

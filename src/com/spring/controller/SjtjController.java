@@ -69,7 +69,7 @@ public class SjtjController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			Integer count = ServiceManager.getHouseBasicServce().getCount("");
+			Integer count = ServiceManager.getHouseBasicServce().getCount(request,"");
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ","", 0, 0);
 			double result =0.00;
 			if(count>0&&null != list && list.size()>0){
@@ -265,7 +265,7 @@ public class SjtjController {
 			if(StringUtils.isBlank(pageSize)){
 				pageSize = "10";
 			}
-			Integer count = ServiceManager.getHouseBasicServce().getCount("");
+			Integer count = ServiceManager.getHouseBasicServce().getCount(request,"");
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ","", 0, 0);
 			double result =0.00;
 			if(count>0&&null != list && list.size()>0){
