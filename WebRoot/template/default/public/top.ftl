@@ -49,11 +49,11 @@
                     	>电子地图</a></li>  
                     </#if> 
                      <#if role.roleAuthority[14]=="2">
-                    	<li><a <#if CURENT_TAB == 'SJTJ2'>class="active"</#if> 
+                    	<li><a <#if CURENT_TAB == 'SJFX'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}sjtj2/.action"
+                    		href="${BASE_PATH}sjfx/gbdqytj.action"
                     	<#else>
-                    		href="${BASE_PATH}sjtj2/.action"
+                    		href="${BASE_PATH}sjfx/gbdqytj.action"
                     	</#if>
                     	>数据统计</a></li>  
                     </#if>         

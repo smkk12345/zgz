@@ -17,6 +17,7 @@ public class IndexNum extends BaseBean {
 	private Long indexnum;
 	private Long time;
 	private String userid;
+	private String operatename;
 	private String operatedate;
 	private String serviceip;
 	private String displaydate;
@@ -78,5 +79,12 @@ public class IndexNum extends BaseBean {
 	}
 	public void setSection(String section) {
 		this.section = section;
+	}
+
+	public String getOperatename() {
+		return operatename;
+	}
+	public void setOperatename(String operatename) {
+		this.operatename = operatename;
 	}
 }

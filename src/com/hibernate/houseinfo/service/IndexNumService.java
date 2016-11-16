@@ -7,6 +7,7 @@ import com.hibernate.houseinfo.dao.IndexNumDao;
 import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.timers.utils.DateStyle;
 import com.hibernate.timers.utils.DateUtil;
+import com.hibernate.userInfo.damain.User;
 
 public class IndexNumService {
 	
@@ -20,7 +21,7 @@ public class IndexNumService {
 		this.indexNumDao = indexNumDao;
 	}
 	
-	public IndexNum getIndexNum(String ip,String userid,String housebasicid,String atype){
+	public IndexNum getIndexNum(String ip,User user,String housebasicid,String atype){
 		IndexNum indexNum = new IndexNum();
 		indexNum.setServiceip(ip);
 		indexNum.setOperatedate(DateUtil.DateToString(new Date(),
@@ -29,7 +30,8 @@ public class IndexNumService {
 		indexNum.setHousebasicid(housebasicid);
 		indexNum.setUpdateTime(new Date());
 		indexNum.setTime(new Date().getTime());
-		indexNum.setUserid(userid);
+		indexNum.setUserid(user.getId());
+		indexNum.setOperatename(user.getUserName());
 		if(atype.equals("0")){
 			indexNum.setIndexnum(indexNumDao.saveAz().getIndexnum());
 		}else{
