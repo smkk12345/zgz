@@ -14,7 +14,7 @@
                 <label class='fl control-label'>房屋坐落: ${bean.location?default("/")}</label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>被腾退人姓名: ${bean.names}</label>
+                <label class='fl control-label'>被腾退人姓名: ${bean.names?default("/")}</label>
             </div>
         </div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">

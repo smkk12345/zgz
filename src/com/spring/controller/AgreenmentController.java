@@ -614,10 +614,10 @@ public class AgreenmentController {
 			model.addAttribute("error", e.getMessage());
 			return null;
 		}
-	}
+	}	
 	
 	@RequestMapping({ "/pgzq/fnsjsh_rdjg_print.action" })
-	public ModelAndView rhjc_print(HttpServletRequest request,
+	public ModelAndView fnsjsh_rdjg_print(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 			String housebasicid  = request.getParameter("housebasicid");
