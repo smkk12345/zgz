@@ -469,7 +469,7 @@ public class UserInfoController {
 			String remarks = RequestUtil.getRequestParameter(request, "remarks");
 			String roleAuthority = RequestUtil.getRequestParameter(request, "roleAuthority");
 			List<String> sList = new ArrayList<String>();
-			for (int i = 1; i < 7; i++) {
+			for (int i = 1; i < 8; i++) {
 				String field = "section"+i;
 				String sectionValue = RequestUtil.getRequestParameter(request, field);
 				if(!StringUtils.isEmpty(sectionValue)){

@@ -250,12 +250,12 @@
             <h4><span class="label label-default div_eight">八.评估款，补偿补助及奖励费合计：</span></h4>
             <div class='container-fluid con-bg mb10'>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>总补偿款:</label>
+                    <label class='fl control-label'>腾退补偿款总和:</label>
                     <input type='text' class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else></#if>" />    
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>结算后款:</label>
-                    <input type='text' class='form-control input-sm  ' name='wwzjlf'   value="<#if bean.wwzjlf??>${bean.wwzjlf?c}<#else></#if>"/>       
+                    <input type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else></#if>"/>       
                 </div>
             </div>              
             <div class="modal-footer">

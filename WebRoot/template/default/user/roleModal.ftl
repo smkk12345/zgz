@@ -62,6 +62,12 @@
        				checked="checked"
        				</#if> name="section6" value="6"> 第六标段
       		</label>
+      		<label class="checkbox-inline">
+      			<input type="checkbox" 
+      			    <#if bean.section?index_of('7')!=-1>
+       				checked="checked"
+       				</#if> name="section7" value="7"> 第七标段
+      		</label>
        </div>
        
 

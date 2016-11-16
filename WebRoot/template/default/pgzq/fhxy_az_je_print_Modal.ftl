@@ -33,7 +33,7 @@
             </tr>
 
             <tr>
-                <td class="td_content_1">实建面</td>
+                <td class="td_content_1">实建面积</td>
                 <td class="td_content_1">${bean.sjm}</td>
                 <td class="td_content_1">首层</td>
                 <td class="td_content_1" >${bean.firstfloorarea?default(0)}</td>

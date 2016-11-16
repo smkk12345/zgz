@@ -86,7 +86,14 @@
                       <input type="checkbox" dataIndex=8 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[8]=="2">checked </#if>> 选房排号管理
                   </label>
               </div>  
-          </div>          
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=16 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[16]=="2">checked </#if>> 审计审核
+                  </label>
+              </div>  
+          </div>             
       </div>
     </div>  
     <div class="container-fluid">
