@@ -934,7 +934,21 @@ public class DisplayBean extends BaseBean {
 			}
 		}
 		public BigDecimal getJshk() {
-			return new BigDecimal(zjdttzj.doubleValue() - azfgfk.doubleValue());
+			try {
+				BigDecimal bigzjd = new BigDecimal(0);
+				BigDecimal bigazfgfk = new BigDecimal(0);
+				if(null != zjdttzj){
+					bigzjd = new BigDecimal(zjdttzj.doubleValue());
+				}
+				if(null != azfgfk){
+					bigazfgfk = new BigDecimal(azfgfk.doubleValue());
+				}
+				BigDecimal b = new BigDecimal(bigzjd.doubleValue() - bigazfgfk.doubleValue());
+				return b;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return new BigDecimal(0);
 		}
 		public void setXfts(Integer xfts) {
 			this.xfts = xfts;

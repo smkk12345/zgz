@@ -29,6 +29,7 @@
         </#if>
     </td>
      <td>    
+      <#if role.roleAuthority[2]=="2">
         <#if ROW.hassplit?default("0")=="0">
          <#if (ROW.checkresult)??>
 	        <#if ROW.checkresult=="1">
@@ -40,6 +41,7 @@
 	        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick  " title='分户' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}&issplit=1"> 分户</button>
         </#if>
       </#if> 
+       </#if>
     </td>
 </tr>
 </#list>
@@ -124,11 +126,11 @@
         未录入
         </#if>
     </td>
-    <td >${(ROW.fwbcmj)!""}</td>
-    <td >${(ROW.rdbazrk)!""}</td>
-    <td >${(ROW.zjdttzj)!""}</td>
-    <td >${(ROW.azfgfk)!""}</td>
-    <td >${(ROW.jshk)!""}</td>
+    <td >${ROW.fwbcmj?default("")}</td>
+    <td >${ROW.rdbazrk?default("")}</td>
+    <td >${ROW.zjdttzj?default("")}</td>
+    <td >${ROW.azfgfk?default("")}</td>
+    <td >${ROW.jshk?default("")}</td>
     <td>       
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>     
     </td>
