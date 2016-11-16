@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -432,6 +433,10 @@ public class AgreenmentController {
 			}
 			HttpSession s = request.getSession();
 			RoleBean role = (RoleBean)s.getAttribute("role");
+			//设置计算后款=总补偿款-购房款
+			BigDecimal zjdttzj=agreenment.getZjdttzj();
+			BigDecimal azfgfk=agreenment.getAzfgfk();
+			agreenment.setJshk(zjdttzj.subtract(azfgfk));
 			//获取标段信息
 			agreenment.setCreateTime(new Date());
 			agreenment.setUpdateTime(new Date());

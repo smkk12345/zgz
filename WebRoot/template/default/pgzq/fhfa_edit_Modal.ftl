@@ -255,7 +255,7 @@
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>结算后款:</label>
-                    <input type='text' class='form-control input-sm  ' name='wwzjlf'   value="<#if bean.wwzjlf??>${bean.wwzjlf?c}<#else></#if>"/>       
+                    <input type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else></#if>"/>       
                 </div>
             </div>              
             <div class="modal-footer">
