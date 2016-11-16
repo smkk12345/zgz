@@ -9,7 +9,6 @@
     <td >${ROW.names?default("")}</td>
     <td >${ROW.idcard?default("")}</td>
     <td >${ROW.location?default("")}</td>
-    <td >${ROW.housecount?default("")}</td>
     <td >${ROW.people?default("")}</td>
     <td >${ROW.zjdarea?default("")}</td>
     <td >${ROW.fwarea?default("")}</td>
@@ -117,7 +116,7 @@
     <td > 
         <#if (ROW.atype)??>
         <#if ROW.atype?default("0")=="0">
-        安置补偿
+        房屋安置
         <#else>
         货币补偿
         </#if>
@@ -127,9 +126,9 @@
     </td>
     <td >${(ROW.fwbcmj)!""}</td>
     <td >${(ROW.rdbazrk)!""}</td>
-    <td >${(ROW.zjdttbck)!""}</td>
+    <td >${(ROW.zjdttzj)!""}</td>
     <td >${(ROW.azfgfk)!""}</td>
-    <td >${(ROW.wwzjlf)!""}</td>
+    <td >${(ROW.jshk)!""}</td>
     <td>       
         <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>     
     </td>
@@ -149,7 +148,7 @@
     <td > 
         <#if (ROW.atype)??>
         <#if ROW.atype?default("0")=="0">
-        安置补偿
+        房屋安置
         <#else>
         货币补偿
         </#if>
@@ -195,7 +194,7 @@
     <td > 
         <#if (ROW.atype)??>
         <#if ROW.atype?default("0")=="0">
-        安置补偿
+        房屋安置
         <#else>
         货币补偿
         </#if>
@@ -276,7 +275,7 @@
     <td > 
         <#if (ROW.atype)??>
         <#if ROW.atype?default("0")=="0">
-        安置补偿
+        房屋安置
         <#else>
         货币补偿
         </#if>

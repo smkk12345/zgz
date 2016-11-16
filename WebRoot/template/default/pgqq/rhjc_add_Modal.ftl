@@ -506,7 +506,7 @@
 
     function addlist(a, c) {
         var b = $(a + "").prev();
-        var h = b.html();
+        var h =b.val("").html();
         b.after("<tr class=" + c + "" + ">" + h + "</tr>" + "");
     }
 
