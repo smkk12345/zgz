@@ -493,12 +493,11 @@ public class HouseBasic extends BaseBean implements Serializable {
 		sb.append(typeStr);
 		for (int i = 0; i < list.size(); i++) {
 			VacatePeople v = list.get(i);
-			sb.append("<br><>");
-			sb.append("姓名 &nbsp;&nbsp;");
+			sb.append("<br><u>");
+			sb.append("姓名 :&nbsp;&nbsp;");
 			sb.append(v.getName());
-			sb.append("&nbsp;&nbsp;身份证&nbsp;&nbsp;");
-			sb.append(v.getIdcard());
-			sb.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+			sb.append("&nbsp;&nbsp;&nbsp;&nbsp;身份证:&nbsp;&nbsp;"+v.getIdcard());
+			sb.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 		}
 		return sb.toString();
 	}
