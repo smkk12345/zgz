@@ -302,3 +302,23 @@
 </#list>
 </#if>
 </#macro>
+
+
+
+<!--签约排号管理-->
+<#macro QysxhtzList items  pageNo pageSize>
+<#if items?size gt 0>
+<#list items as ROW>
+	<tr >
+	 <td >${ROW_index+1+(pageNo-1)*pageSize}</td>
+    <td >${ROW.section?default("")}</td>
+    <td >${ROW.protocolnumber?default("")}</td>
+    <td >${ROW.names?default("")}</td>
+    <td >${ROW.indexnum?default("")}</td>
+    <td >${ROW.displaydate?default("")}</td>
+    <td >${ROW.operatename?default("")}</td>
+    <td >${ROW.serviceip?default("")}</td>
+	</tr>
+</#list>
+</#if>
+</#macro>

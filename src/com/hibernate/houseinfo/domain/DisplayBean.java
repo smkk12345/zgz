@@ -86,6 +86,7 @@ public class DisplayBean extends BaseBean {
 		private String license;
 		//l类型  个体工商   1  个人独资
 		private String operatetype;
+		private String operatename;
 		
 		//协议
 		private Agreement agreenment = new Agreement();
@@ -974,6 +975,12 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setIndexNumStr(String indexNumStr) {
 			this.indexNumStr = indexNumStr;
+		}
+		public String getOperatename() {
+			return operatename;
+		}
+		public void setOperatename(String operatename) {
+			this.operatename = operatename;
 		}
 		
 		

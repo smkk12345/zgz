@@ -55,7 +55,7 @@ public class IndexNumController {
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
 			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			if (null == indexNum) {
-				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user.getId(), housebsicid,agreenment.getAtype());
+				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user, housebsicid,agreenment.getAtype());
 				//更新协议的
 				if(agreenment.getAtype().equals("0")){
 					

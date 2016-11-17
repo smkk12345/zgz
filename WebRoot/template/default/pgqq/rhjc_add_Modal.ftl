@@ -316,38 +316,38 @@
             <div class='container-fluid con-bg mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>宅基地测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='zjdarea' value="${bean.zjdarea?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='zjdarea' value="<#if bean.zjdarea??>${bean.zjdarea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>房屋测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='fwarea' value="${bean.fwarea?default("")}" />        
+                    <input type='text' class='form-control input-sm  ' name='fwarea' value="<#if bean.fwarea??>${bean.fwarea?c}<#else></#if>" />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>首层测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='firstfloorarea' value="${bean.firstfloorarea?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='firstfloorarea' value="<#if bean.firstfloorarea??>${bean.firstfloorarea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二层以上面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="${bean.abovetwoarea?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="<#if bean.firstfloorarea??>${bean.abovetwoarea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>地下室面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='basement' value="${bean.basement?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='basement' value="<#if bean.basement??>${bean.basement?c}<#else></#if>"/>        
                 </div>
                  <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>棚面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='shed' value="${bean.shed?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='shed' value="<#if bean.shed??>${bean.shed?c}<#else></#if>"/>        
                 </div>
             </div>
             <h4><span class="label label-default">4.经营状况：</span></h4>
             <div class='container-fluid con-bg mb10'>	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用房面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='operatearea' value="${bean.operatearea?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='operatearea' value="<#if bean.operatearea??>${bean.operatearea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>工商备案面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='businessarea' value="${bean.businessarea?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='businessarea' value="<#if bean.businessarea??>${bean.businessarea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用途:</label>

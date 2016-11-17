@@ -19,6 +19,7 @@
 		<property name="userid" type="java.lang.String">
 			<column name="userid" length="200" />
 		</property>
+		<property name="operatename"></property>
 		<property name="operatedate" type="java.lang.String">
 			<column name="operatedate" length="200" />
 		</property>

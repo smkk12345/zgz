@@ -36,6 +36,13 @@ public class PageConst {
     
     public final static String PGZQ_rdjg_print_Modal = "/default/pgzq/fhfa_rdjg_print_Modal.ftl";
     
+    public final static String SJFX_gbdqytj = "/default/sjfx/gbdqytj.ftl";
+    public final static String SJFX_gbdjftj = "/default/sjfx/gbdjftj.ftl";
+    public final static String SJFX_bcxytz = "/default/sjfx/bcxytz.ftl";
+    public final static String SJFX_qysxhtz = "/default/sjfx/qysxhtz.ftl";
+    
+    
+    
     
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
     public final static String CWJS_01= "/default/cwjs/cwjs_01_print_Modal.ftl";
