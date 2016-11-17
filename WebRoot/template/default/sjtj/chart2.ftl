@@ -53,6 +53,8 @@
                             第五标段
                             <#elseif ROW.section == "6">
                             第六标段
+                            <#elseif ROW.section == "7">
+                            第七标段
                             </#if>
                         </td>
                         <td style="color:#FF0;"><#if (ROW.atype?default("0"))=='0'>房屋安置<#else>货币安置</#if></td>

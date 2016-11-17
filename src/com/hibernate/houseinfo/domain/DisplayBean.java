@@ -92,7 +92,7 @@ public class DisplayBean extends BaseBean {
 		private Agreement agreenment = new Agreement();
 		//顺序号
 		private IndexNum indexNum = new IndexNum();
-		//腾云人列表
+		//zaice人列表
 		List<VacatePeople> vacatelist = new ArrayList<VacatePeople>();
 		
 		//非在册人员列表
