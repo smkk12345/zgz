@@ -603,12 +603,14 @@
 //fhfa
 .fhfa-rdjg-print-con{
   table{
-    td{height:22px;padding: 3px;text-align: center}
+    td{height:12px !important;padding:4px !important;text-align: center;font-size: 11px;vertical-align:middle !important;}
+    label{margin:0;padding: 0}
+    check-box{margin: 0;padding: 0;font-size: 11px;font-weight: normal !important}
   }
   .check-box{font-weight: normal !important}
-  .title{font-size:20px}
-  .title-x{font-size:13px;margin-top: 10px;} 
-  .title2{font-size: 15px;text-align: left; font-weight: bold;}
+  .title{font-size:14px;font-weight: bold}
+  .title-x{font-size:10px;margin-top: 10px;} 
+  .title2{font-size: 11px;text-align: left;}
 }
 //xy-print-con
 .xy-print-con {

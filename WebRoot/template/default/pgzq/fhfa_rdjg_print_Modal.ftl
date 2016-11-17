@@ -2,10 +2,10 @@
     <h4 class="modal-title pull-left m0">查看认定结果确认一览表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="supmit" class="btn btn-primary btn-save" onclick="yu_print()">打印</button>
+        <button type="button" class="btn btn-primary btn-save" onclick="yu_print()">打印</button>
     </div>
 </div>
-<div class="modal-body ">
+<div class="modal-body">
     <div class="container-fluid fhfa-rdjg-print-con" id="xy-print">
         <table class="table table-bordered">
             <tr>
@@ -14,21 +14,21 @@
                 </td>
             </tr>
             <tr>
-                <td rowspan="4"></td>
+                <td rowspan="4">基本数据</td>
                 <td colspan="2">被腾退人姓名</td>
-				<td>${bean.names?default("/")}</td>
+                <td>${bean.names?default("/")}</td>
                 <td>被腾宅基地坐落</td>
-				<td colspan="3">${bean.location?default("/")}</td>
+                <td colspan="3">${bean.location?default("/")}</td>
                 <td>认定日期</td>
-                <td>2016年<u>&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;</u>日</td>
+                <td>2016年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
             </tr>
             <tr>
                 <td colspan="2">身份证号</td>
                 <td>${bean.idcard?default("/")}</td>
                 <td>被腾退家庭购房标准</td>
-                <td>
-                    <label class="title1"><input class="check-box" type="checkbox">50m<sup>2</sup>（）人 &nbsp;&nbsp;</label><br>
-                    <label class="title1"><input class="check-box" type="checkbox">45m<sup>2</sup>（部分人员）&nbsp;&nbsp;</label>
+                <td style="text-align: left">
+                    <label ><input class="check-box" type="checkbox">50m<sup>2</sup>（ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;）人 &nbsp;&nbsp;</label>
+                    <label><input class="check-box" type="checkbox">45m<sup>2</sup>（部分人员）&nbsp;&nbsp;</label>
                 </td>
                 <td colspan="2">父母及超生子女姓名</td>
                 <td colspan="2"></td>
@@ -39,21 +39,21 @@
                 <td>实测房屋建筑面积</td>
                 <td class="textalign-r">m<sup>2</sup></td>
                 <td colspan="2">认定住房困难</td>
-                <td colspan="2">
-                    <label class="title1"><input class="check-box" type="checkbox">是 &nbsp;&nbsp;</label>
-                    <label class="title1"><input class="check-box" type="checkbox">否 &nbsp;&nbsp;</label>
+                <td colspan="2" style="text-align: left">
+                    <label ><input class="check-box" type="checkbox">是 &nbsp;&nbsp;</label>
+                    <label><input class="check-box" type="checkbox">否 &nbsp;&nbsp;</label>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">被腾退人拟选择补偿方式</td>
-                <td>
-                    <label class="title1"><input class="check-box" type="checkbox">房屋&nbsp;&nbsp;</label><br>
-                    <label class="title1"><input class="check-box" type="checkbox">货币&nbsp;&nbsp;</label>
+                <td colspan="2" >被腾退人拟选择补偿方式</td>
+                <td style="text-align: left">
+                    <label ><input class="check-box" type="checkbox">房屋&nbsp;&nbsp;</label>
+                    <label ><input class="check-box" type="checkbox">货币&nbsp;&nbsp;</label>
                 </td>
                 <td>宅基地认定年限</td>
-                <td>
-                    <label class="title1"><input class="check-box" type="checkbox">82年前&nbsp;&nbsp;</label>
-                    <label class="title1"><input class="check-box" type="checkbox">82年后&nbsp;&nbsp;</label>
+                <td style="text-align: left">
+                    <label ><input class="check-box" type="checkbox">82年前&nbsp;&nbsp;</label>
+                    <label ><input class="check-box" type="checkbox">82年后&nbsp;&nbsp;</label>
                 </td>
                 <td colspan="2">认定安置人数</td>
                 <td colspan="2" class="textalign-r"> 人</td>
@@ -194,7 +194,7 @@
                 <td colspan="3">非本址⑤</td>
                 <td></td>
                 <td colspan="2"></td>
-                <td colspan="4">签字日期：2016年    月     日</td>
+                <td colspan="4">签字日期：2016年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</td>
             </tr>
         </table>
     </div>
@@ -202,13 +202,13 @@
 <script src="${BASE_ASSETS_PATH}libs/jqprint/jquery.jqprint.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/jqprint/jquery-migrate-1.1.0.js"></script>
 <script type="text/javascript">
-    //设置模态框高度和宽度
-    //设置模态框高度和宽度
-    $("#myModal .modal-dialog").width(750);
-    $(".modal-body").css("height", ($(window).height() - 150) + "px");
-    $(".modal-body").css("overflow-y", "scroll");
+            //设置模态框高度和宽度
+            //设置模态框高度和宽度
+            $("#myModal .modal-dialog").width(750);
+            $(".modal-body").css("height", ($(window).height() - 150) + "px");
+            $(".modal-body").css("overflow-y", "scroll");
 
-    function yu_print() {
-        $("#xy-print").jqprint();
-    }
+            function yu_print() {
+                $("#xy-print").jqprint();
+            }
 </script>
