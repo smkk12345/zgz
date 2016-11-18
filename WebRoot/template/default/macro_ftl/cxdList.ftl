@@ -166,7 +166,7 @@
    
     <td>
         <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印基本情况调查表' data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}">打印基本调查表</button>
-        <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印认定结果确认一览表' data-url="${BASE_PATH}/pgzq/fnsjsh_rdjg_print.action?housebasicid=${ROW.id}">打印认定结果表</button>
+        <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印认定结果确认一览表' data-url="${BASE_PATH}/pgzq/fnsjsh_rdjg_print.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenmentid)!""}">打印认定结果表</button>
     </td>
      <td >
 	   <#if (ROW.checkresult)??>

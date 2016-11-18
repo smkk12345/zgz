@@ -145,6 +145,44 @@ public class Agreement extends BaseBean {
 	//组别编号
 	private String sectionindex;
 	
+	//数据补录
+	
+	//父母以及超生子女姓名
+	private String parentnames;
+	//认定住房空难
+	private String hardhouse;
+	//被腾退家庭购房标准
+    private String gfbz;
+	
+	public String getGfbz() {
+		return gfbz;
+	}
+
+
+	public void setGfbz(String gfbz) {
+		this.gfbz = gfbz;
+	}
+
+
+	public String getParentnames() {
+		return parentnames;
+	}
+
+
+	public String getHardhouse() {
+		return hardhouse;
+	}
+
+
+	public void setParentnames(String parentnames) {
+		this.parentnames = parentnames;
+	}
+
+
+	public void setHardhouse(String hardhouse) {
+		this.hardhouse = hardhouse;
+	}
+	
 	public String getSectionindex() {
 		return sectionindex;
 	}
