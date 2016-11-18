@@ -146,6 +146,7 @@
                 <td colspan="2">与被腾退人关系</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>
             </tr>
+            <#if false>
             <#if bean.vacatelist??>
 	            <#list bean.vacatelist as vacate>
 	            	<#if vacate_index == 0>
@@ -179,7 +180,8 @@
 		                <td colspan="2">${vacate.changrelate?default("/")}</td>           	
 	            	</#if>
 	            </#list>
-            </#if>            
+            </#if>   
+            </#if>         
             <tr>
                 <td colspan="3">本址①</td>
                 <td></td>
