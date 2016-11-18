@@ -28,7 +28,7 @@
         <script src="${BASE_ASSETS_PATH}libs/Highcharts/highcharts.js"></script>
 
         <div class="container-fluid" style="padding: 20px;height:100%">
-            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店张郭庄安置及房源使用情况</div>
+            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇张郭庄村棚改项目安置及房源使用情况</div>
             <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
             <div style='margin-top: 50px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:450px'>
                 <div style='float: left;width:auto; height:auto' id="chart1"> </div>

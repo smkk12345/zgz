@@ -255,6 +255,12 @@
     <#else>
     <td colspan=3> 请先选择安置方式！</td>
     </#if>
+    <td>
+    ${ROW.indexNumStr?default("")}
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold glyphicon glyphicon-print" title='打印协议' data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+    </td>
     
 </tr>
 </#list>

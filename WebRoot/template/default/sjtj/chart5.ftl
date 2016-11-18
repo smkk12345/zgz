@@ -29,7 +29,7 @@
         <script src="${BASE_ASSETS_PATH}libs/Highcharts/exporting.js"></script>
 
         <div class="container-fluid" style="padding: 20px;height:100%">
-            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店张郭庄签约方案比例情况</div>
+            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇张郭庄村棚改项目签约方案比例情况</div>
             <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
             <div style='margin-top: 20px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:400px'>
                 <div style='float: left;width:50%; height:auto' id="chart"> </div>
