@@ -24,6 +24,8 @@ public class PageConst {
     public final static String PGZQ_fhfa_s= "/default/pgzq/fhfa_s.ftl";
     public final static String PGZQ_fhfa_edit_Modal = "/default/pgzq/fhfa_edit_Modal.ftl";  
     public final static String PGZQ_fhfa_check_Modal = "/default/pgzq/fhfa_check_Modal.ftl";
+    public final static String PGZQ_fhfa_c_Modal = "/default/pgzq/fhfa_c_Modal.ftl";
+    
     
     public final static String PGZQ_fhxy= "/default/pgzq/fhxy.ftl";
     public final static String PGZQ_fhxy_az_je_print_Modal = "/default/pgzq/fhxy_az_je_print_Modal.ftl";  
