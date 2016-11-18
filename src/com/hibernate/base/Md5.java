@@ -18,6 +18,12 @@ public class Md5 {
 		return new BigInteger(1,md.digest()).toString(16);
 	}
 	
+	public static void main(String[] arge){
+		String password = "123456";
+		String p = getMD5(password.getBytes());
+		System.out.println(p);
+	}
+	
 	public static String getMD5(byte[] source) {
 	    String s = null;
 		char hexDigits[] = { // 用来将字节转换成 16 进制表示的字符

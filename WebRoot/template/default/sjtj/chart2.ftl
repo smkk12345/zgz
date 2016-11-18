@@ -32,7 +32,7 @@
                     <tr>
                         <td>签约顺序号</td>
                         <td>所属标段</td>
-                        <td>安置类别</td>
+                        <td>安置方式</td>
                         <td>被腾退人</td>
                         <td>签约时间</td>
                     </tr>
@@ -53,6 +53,8 @@
                             第五标段
                             <#elseif ROW.section == "6">
                             第六标段
+                            <#elseif ROW.section == "7">
+                            第七标段
                             </#if>
                         </td>
                         <td style="color:#FF0;"><#if (ROW.atype?default("0"))=='0'>房屋安置<#else>货币安置</#if></td>
