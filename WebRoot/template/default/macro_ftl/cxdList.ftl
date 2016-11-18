@@ -132,7 +132,10 @@
     <td >${ROW.azfgfk?default("")}</td>
     <td >${ROW.jshk?default("")}</td>
     <td>       
-        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>     
+       <#if role.roleAuthority[6]=="2">
+        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil" title='编辑修改' data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button> 
+       </#if>
+       	<button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in" title='数据查看' data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"> </button>         
     </td>
 </tr>
 </#list>
