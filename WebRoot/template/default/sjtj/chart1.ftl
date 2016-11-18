@@ -25,12 +25,12 @@
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-        <div class="container-fluid" style="background-color:#000; padding: 50px 30px 30px 30px;height:100%">
-            <div style='color:#FFF;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚户区改造宅基地腾退奖励期启动</div>
+        <div class="container-fluid" style="background-color:#000; padding: 120px 30px 30px 30px;height:100%;">
+            <div style='color:#FFF;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚户区改造宅基地腾退奖励期启动</div>
             <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
-            <div style='margin-top: 20px;color:red;font-size:40px; font-family:"宋体";font-weight:bold;text-align: center;'>截至日期：2016年11月25日 0点整</div>
-            <div style='margin-top: 50px;color:#0F0;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>
-                倒计时<span id="timeDate2" style="color: red"></span>天<span id="times2" style="color: red"></span>
+            <div style='margin-top: 50px;color:red;font-size:40px; font-family:"宋体";font-weight:bold;text-align: center;'>截至日期：2016年11月25日 0点整</div>
+            <div style='margin-top: 60px;color:#0F0;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
+                倒计时<span id="timeDate2" style="color: red"></span>天<span id="times2" style="color: red; width:230px !important;"></span>
             </div>
             <div style='margin-top: 50px;color:#FF0;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>
                 整体签约比例：<span style="color: red">${qybl?default(0)}</span>
