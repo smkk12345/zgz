@@ -162,7 +162,7 @@ public class IndexController {
 				user = userList.get(0);
 			}
 			if (user != null) {
-				if (true) {// 登录成功userPwd.equals(user.getPassWord())
+				if (user.getPassWord().equals(userPwd)) {// 登录成功userPwd.equals(user.getPassWord())
 					
 					isLogin = true;
 

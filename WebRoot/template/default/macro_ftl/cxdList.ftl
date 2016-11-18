@@ -163,10 +163,22 @@
     <td >${(ROW.zjdttbck)!""}</td>
     <td >${(ROW.azfgfk)!""}</td>
     <td >${(ROW.wwzjlf)!""}</td>
+   
     <td>
         <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印基本情况调查表' data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}">打印基本调查表</button>
         <button type="button" style="color: #006600" class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"  title='打印认定结果确认一览表' data-url="${BASE_PATH}/pgzq/fnsjsh_rdjg_print.action?housebasicid=${ROW.id}">打印认定结果表</button>
     </td>
+     <td >
+	   <#if (ROW.checkresult)??>
+           <#if ROW.checkresult=="1">
+                       通过
+            <#else>
+                       未通过
+            </#if>
+        <#else>
+                     未审核
+        </#if>
+	</td>
     <td>    
         <#if (ROW.checkresult)??>
         <#if ROW.checkresult=="0">
@@ -218,20 +230,27 @@
     	</#if>
         <span class="glyphicon glyphicon-print">协议</span></button>
     </td>
-    <#if (ROW.protocolnumber)??>
-    <td>  
-        <#if (ROW.protocolnumber?length>0)>
-        ${ROW.displaydate}
-        <#else>
-        <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">确认签约</button>
-        </#if>
+    <#if (ROW.atype)??>
+    <td> 
+    	<#if (ROW.protocolnumber)??>
+	        <#if (ROW.protocolnumber?length>0)>
+	        ${ROW.displaydate}
+	        <#else>
+	        <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">确认签约</button>
+	        </#if>
+	     <#else>
+	     	<button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' onclick="confirmSign(this)" data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">确认签约</button>
+	     </#if>
     </td>
     <td title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
     <td>  
-        <#if (ROW.protocolnumber?length>0)>
-        	<button type="button" class="btn btn-success btn-xs ml10  YL-ModalClick bold" title=''  data-url="${BASE_PATH}/pgzq/fhxy_xy_sy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">打印首页</button>
-        <#else>
-        </#if>
+        <#if (ROW.protocolnumber)??>
+	        <#if (ROW.protocolnumber?length>0)>
+	        <button type="button" class="btn btn-success btn-xs ml10  YL-ModalClick bold" title=''  data-url="${BASE_PATH}/pgzq/fhxy_xy_sy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">打印首页</button>
+	        <#else>
+	        </#if>
+	     <#else>
+	     </#if>
     </td>
     <#else>
     <td colspan=3> 请先选择安置方式！</td>

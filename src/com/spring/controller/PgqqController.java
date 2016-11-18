@@ -523,7 +523,7 @@ public class PgqqController {
 			housebasic.setCheckremark(checkremark);
 			ServiceManager.getHouseBasicServce().save(housebasic);
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"pgqq/rhjc_s.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"pgzq/fhfa_s.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

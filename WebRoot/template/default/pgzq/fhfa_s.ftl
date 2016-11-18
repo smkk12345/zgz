@@ -55,6 +55,7 @@
                 <th>腾退补偿款总和</th>
                 <th>结算后款</th>
                 <th>打印</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             <@fhfa_s list pageNo pageSize/>

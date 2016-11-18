@@ -14,7 +14,7 @@
                 </td>
             </tr>
             <tr>
-                <td rowspan="4"></td>
+                <td rowspan="4" style="">基本信息</td>
                 <td colspan="2">被腾退人姓名</td>
 				<td>${bean.names?default("/")}</td>
                 <td>被腾宅基地坐落</td>
