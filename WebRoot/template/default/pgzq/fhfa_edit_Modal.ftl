@@ -96,7 +96,11 @@
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地认定年限:</label>
-                    <input type='text' class='form-control input-sm  ' name='homesteadyear'  value="${bean.homesteadyear?default("")}" />   
+                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='homesteadyear' >  
+                        <option  <#if (bean.homesteadyear?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+                        <option  <#if (bean.homesteadyear?default("-1"))=='0'>selected='selected'</#if>  value="0">82年前</option>  
+                        <option  <#if (bean.homesteadyear?default("-1"))=='1'>selected='selected'</#if> value="1">82年后</option> 
+                    </select>  
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>认定房屋补偿面积:</label>
@@ -114,6 +118,28 @@
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>认定人口信息:</label>
                     <input type='text' class='form-control input-sm  fl' name='rdbazrkxx'   value="${bean.rdbazrkxx?default("")}"/>       
+                </div>
+                
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>父母及超生子女姓名:</label>
+                    <input type='text' class='form-control input-sm  fl' name='parentnames'   value="${bean.parentnames?default("")}"/>       
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>认定住房困难:</label>
+                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hardhouse' >  
+                        <option  <#if (bean.hardhouse?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+                        <option  <#if (bean.hardhouse?default("-1"))=='0'>selected='selected'</#if>  value="0">是</option>  
+                        <option  <#if (bean.hardhouse?default("-1"))=='1'>selected='selected'</#if> value="1">否</option> 
+                    </select>        
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>被腾退家庭购房标准:</label>
+                    <input type='text' class='form-control input-sm  fl' name='gfbz'   value="${bean.gfbz?default("")}"/>  
+                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='gfbz' >  
+                        <option  <#if (bean.gfbz?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
+                        <option  <#if (bean.gfbz?default("-1"))=='0'>selected='selected'</#if>  value="0">50m<sup>2</sup></option>  
+                        <option  <#if (bean.gfbz?default("-1"))=='1'>selected='selected'</#if> value="1">45m<sup>2</sup></option> 
+                    </select>        
                 </div>
             </div>    
 

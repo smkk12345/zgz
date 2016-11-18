@@ -13,25 +13,35 @@
                     <div class="title">张郭庄村棚户区改造项目宅基地权属、安置人口认定结果一览表</div>
                 </td>
             </tr>
-            <tr>
+            <tr>			
                 <td rowspan="4">基本数据</td>
                 <td colspan="2">被腾退人姓名</td>
                 <td>${bean.names?default("/")}</td>
                 <td>被腾宅基地坐落</td>
                 <td colspan="3">${bean.location?default("/")}</td>
                 <td>认定日期</td>
-                <td>2016年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+                <td>${year}年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>${month}月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>${day}日</td>
             </tr>
             <tr>
                 <td colspan="2">身份证号</td>
                 <td>${bean.idcard?default("/")}</td>
                 <td>被腾退家庭购房标准</td>
                 <td style="text-align: left">
-                    <label ><input class="check-box" type="checkbox">50m<sup>2</sup>（ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;）人 &nbsp;&nbsp;</label>
-                    <label><input class="check-box" type="checkbox">45m<sup>2</sup>（部分人员）&nbsp;&nbsp;</label>
+                	<#if bean.gfbz??>
+                    	<#if  bean.gfbz?default("-1") == '-1'>
+                    		数据未录入
+                    	<#elseif bean.gfbz?default("-1") == '0'>
+                    	50m<sup>2</sup>(    人)
+                    	<#elseif bean.gfbz?default("-1") == '1'>
+                    	45m<sup>2</sup>（部分人员）
+                    	</#if>
+                    <#else>
+                    	数据未录入
+                    </#if>
+                    
                 </td>
                 <td colspan="2">父母及超生子女姓名</td>
-                <td colspan="2"></td>
+                <td colspan="2">${agreenment.parentnames?default("/")}</td>
             </tr>
             <tr>
                 <td colspan="2">实测现状宅基地面积</td>
@@ -40,32 +50,53 @@
                 <td class="textalign-r">m<sup>2</sup></td>
                 <td colspan="2">认定住房困难</td>
                 <td colspan="2" style="text-align: left">
-                    <label ><input class="check-box" type="checkbox">是 &nbsp;&nbsp;</label>
-                    <label><input class="check-box" type="checkbox">否 &nbsp;&nbsp;</label>
+                    <#if bean.hardhouse??>
+                    	<#if  bean.hardhouse?default("-1") == '-1'>
+                    		数据未录入
+                    	<#elseif bean.hardhouse?default("-1") == '0'>
+                    	是
+                    	<#elseif bean.hardhouse?default("-1") == '1'>
+                    	否
+                    	</#if>
+                    <#else>
+                    	数据未录入
+                    </#if>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" >被腾退人拟选择补偿方式</td>
                 <td style="text-align: left">
-                    <label ><input class="check-box" type="checkbox">房屋&nbsp;&nbsp;</label>
-                    <label ><input class="check-box" type="checkbox">货币&nbsp;&nbsp;</label>
+                	<#if agreenment.atype=='0'>
+	                    &nbsp;&nbsp;房屋&nbsp;&nbsp;
+                    <#else>
+	                    &nbsp;&nbsp;货币&nbsp;&nbsp;
+                	</#if>
                 </td>
                 <td>宅基地认定年限</td>
                 <td style="text-align: left">
-                    <label ><input class="check-box" type="checkbox">82年前&nbsp;&nbsp;</label>
-                    <label ><input class="check-box" type="checkbox">82年后&nbsp;&nbsp;</label>
+                 <#if bean.homesteadyear??>
+                     <#if  bean.homesteadyear?default("-1") == '-1'>
+                    		数据未录入
+                    	<#elseif bean.homesteadyear?default("-1") == '0'>
+                    	82年前
+                    	<#elseif bean.homesteadyear?default("-1") == '1'>
+                    	82年后
+                    	</#if>
+                <#else>
+               		 数据未录入
+                </#if>
                 </td>
                 <td colspan="2">认定安置人数</td>
-                <td colspan="2" class="textalign-r"> 人</td>
+                <td colspan="2" class="textalign-r"> ${bean.peoplecount}人</td>
             </tr>
             <tr>
                 <td colspan="10">认定宅基地及房屋面积相关 </td>
             </tr>
             <tr>
                 <td colspan="4">认定宅基地总补偿面积</td>
-                <td colspan="2" class="textalign-r">m<sup>2</sup></td>
+                <td colspan="2" class="textalign-r">${baen.zjdarea?default("")}m<sup>2</sup></td>
                 <td colspan="2">认定房屋补偿建面</td>
-                <td colspan="2" class="textalign-r">m<sup>2</sup></td>
+                <td colspan="2" class="textalign-r">${agreenment.fwbcmj?default("")}m<sup>2</sup></td>
             </tr>
             <tr>
                 <td rowspan="5" style="text-align: justify">其中</td>
@@ -115,6 +146,40 @@
                 <td colspan="2">与被腾退人关系</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>
             </tr>
+            <#if bean.vacatelist??>
+	            <#list bean.vacatelist as vacate>
+	            	<#if vacate_index == 0>
+	            		 <tr>
+			                <td colspan="3">本址${vacate_index+1}</td>
+			                <td>${vacate.name?default("/")}</td>
+			                <td colspan="2">${vacate.changrelate?default("/")}</td>
+			                <td rowspan="9">认定工作小组成员签字</td>
+			                <td colspan="3" rowspan="9"></td>
+			            </tr>
+	            	<#else>
+		                <td colspan="3">本址${vacate_index+1}</td>
+		                <td>${vacate.name?default("/")}</td>
+		                <td colspan="2">${vacate.changrelate?default("/")}</td>           	
+	            	</#if>
+	            </#list>
+            </#if>
+            <#if bean.list??>
+	            <#list bean.list as vacate>
+	            	<#if vacate_index == 0>
+	            		 <tr>
+			                <td colspan="3">本址${vacate_index+1}</td>
+			                <td>${vacate.name?default("/")}</td>
+			                <td colspan="2">${vacate.changrelate?default("/")}</td>
+			                <td rowspan="9">认定工作小组成员签字</td>
+			                <td colspan="3" rowspan="9"></td>
+			            </tr>
+	            	<#else>
+		                <td colspan="3">本址${vacate_index+1}</td>
+		                <td>${vacate.name?default("/")}</td>
+		                <td colspan="2">${vacate.changrelate?default("/")}</td>           	
+	            	</#if>
+	            </#list>
+            </#if>            
             <tr>
                 <td colspan="3">本址①</td>
                 <td></td>

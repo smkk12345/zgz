@@ -22,6 +22,8 @@ import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.timers.utils.DateStyle;
+import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
 
@@ -621,16 +623,25 @@ public class AgreenmentController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			String housebasicid  = request.getParameter("housebasicid");
+			String agreenmentid = request.getParameter("agreenmentid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
 			model.addAttribute("bean", houseBasic);
+			
+			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			model.addAttribute("agreenment", agreenment);
+			String year = DateUtil.DateToString(new Date(), DateStyle.YYYY_MM_DD);
+			String[] arr = year.split("-");
+			model.addAttribute("year", arr[0]);
+			model.addAttribute("month", arr[1]);
+			model.addAttribute("day", arr[2]);
 			// 模板路径 basePath
-						model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
-						model.addAttribute("BASE_ASSETS_PATH",
-								WebConstConfig.getBase_Assets_Path());
-						model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
-								WebConstConfig.getBase_Template_Default_Path());
-						return new ModelAndView(PageConst.PGZQ_rdjg_print_Modal, model);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGZQ_rdjg_print_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
