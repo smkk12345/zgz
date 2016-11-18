@@ -328,7 +328,7 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二层以上面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="<#if bean.firstfloorarea??>${bean.abovetwoarea?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="<#if bean.abovetwoarea??>${bean.abovetwoarea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>地下室面积:</label>
