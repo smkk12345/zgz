@@ -32,7 +32,25 @@
         <p class="pageBreak" style="margin-top: 20px;">&nbsp;</p>
         <p class="leftTitle">第四条&nbsp;&nbsp;被安置人口认定</p>
         <p class="contex-1" >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经张郭庄村宅基地面积和人口认定工作组认定，认定被安置人口共<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>人，分别是：${housebasic.peopleinfo?default("")}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经张郭庄村宅基地面积和人口认定工作组认定，认定被安置人口共<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>人，分别是：
+    <#if housebasic.vacatelist??>
+        <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
+        <#list housebasic.vacatelist as vacate>
+            <p class="contex-1">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;&nbsp;&nbsp;${vacate.name}&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;&nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;&nbsp;&nbsp;${vacate.idcard}&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+        </#list>
+    </#if>
+    <#if housebasic.list??>
+        <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非在册人员：</p>
+        <#list housebasic.list as cate>
+            <p class="contex-1">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;&nbsp;&nbsp;${cate.name}&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;&nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;&nbsp;&nbsp;${cate.idcard}&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+        </#list>
+    </#if>
         </p>
 
         <p class="leftTitle">第五条&nbsp;&nbsp;宅基地腾退补偿总价</p>
