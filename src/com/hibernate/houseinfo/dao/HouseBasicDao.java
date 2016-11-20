@@ -311,7 +311,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	/**
 	 * 通过标段分组
 	 */
-	public List<Integer> getListGroupBySection(String type){
+	public List<Integer> getListGroupBySection(String type,String dateStr){
 		Session s = null;
 		try{
 			s = getSession();
@@ -320,14 +320,22 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				sb.append(" select count(a.id) as count,a.section from housebasic a " +
 						"left join agreenment b on a.id = b.housebasicid " +
 						" left join indexnum c on a.id = c.housebasicid "+
-						"where c.indexnum is not null " +
-						"group by a.section order by (a.section+0) ");
+						"where c.indexnum is not null ");
+				if(!StringUtils.isBlank(dateStr)){
+					sb.append(dateStr);
+				}
+				sb.append("group by a.section order by (a.section+0) ");
 			}else if(type.equals("1")){ //未签约
 				sb.append(" select count(a.id) as count ,a.section from housebasic a " +
 						"left join agreenment b on a.id = b.housebasicid " +
 						" left join indexnum c on a.id = c.housebasicid "+
-						"where c.indexnum is null " +
-						"group by a.section order by  (a.section+0) ");
+						"where c.indexnum is null ");
+				
+				if(!StringUtils.isBlank(dateStr)){
+					sb.append(dateStr);
+				}
+				
+				sb.append("group by a.section order by  (a.section+0) ");
 			}else{//总共
 //				sb.append(" select count(a.id) from housebasic a " +
 //						"left join agreenment b on a.id = b.housebasicid " +
@@ -441,5 +449,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	}
 	 
 	 
+	
+	
 	
 }

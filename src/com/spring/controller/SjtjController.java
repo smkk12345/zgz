@@ -112,7 +112,7 @@ public class SjtjController {
 			if(StringUtils.isBlank(pageSize)){
 				pageSize = "10";
 			}
-			List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0");//已经签约
+			List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0","");//已经签约
 			Integer result = 0;
 			for (int i = 0; i < list0.size(); i++) {
 				result = result + list0.get(i);
@@ -207,8 +207,8 @@ public class SjtjController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0");//已经签约
-			List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1");//未签约
+			List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0","");//已经签约
+			List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1","");//未签约
 			StringBuffer sb = new StringBuffer();
 			sb.append("[{\"name\":\"" + "已签约" + "\",\"data\":");
 			sb.append(list0.toString());

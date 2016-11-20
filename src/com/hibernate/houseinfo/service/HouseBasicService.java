@@ -250,8 +250,8 @@ public class HouseBasicService {
 		houseBasicDao.update(houseBasic);
 	}
 	
-	public List<Integer> getListGroupBySection(String type){
-		return houseBasicDao.getListGroupBySection(type);
+	public List<Integer> getListGroupBySection(String type,String dateStr){
+		return houseBasicDao.getListGroupBySection(type,dateStr);
 	}
 	
 	public Integer getSumHasOthers(String type,String dateStr){

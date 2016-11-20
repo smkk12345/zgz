@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,7 @@ import com.common.consts.WebConstConfig;
 import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
 
@@ -29,36 +31,20 @@ import com.spring.ServiceManager;
 public class SjfxController {
 
 	/**
-	 * 未交房
+	 * 各标段签约情况
 	 * @param request
 	 * @param response
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping({"/sjfx/gbdqytj.action"})
-	public ModelAndView jfdj_0(HttpServletRequest request,
+	public ModelAndView gbdqytj(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
-			
-			int intPageNum = Integer.parseInt(pageNo);
-			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getJfdjSql(role.getSection(),request,"'0' or hasothers is null ",model);
-			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
-			
-			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
-			
-			model.addAttribute("pageSize", intPageSize);
-			model.addAttribute("pageNo", intPageNum);
-			model.addAttribute("recordCount", count);
-			
-			model.addAttribute("list", list);
+
+			model.addAttribute("list", null);
+			model.addAttribute("sectionMap", Contanst.sectionMap);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -257,6 +243,7 @@ public class SjfxController {
 			sb.append(" and a.mobile ='").append(mobile).append("'");
 			model.addAttribute("mobile", mobile);
 		}
+		sb.append(" and c.id is not null ");
 		return sb.toString();
 	}
 	
