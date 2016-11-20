@@ -15,10 +15,10 @@
         </div>
 
         <div style="position: absolute;right:10px;top: 50px;">
-            <button class="btn moveCls" style="position: absolute;top:10px;left:40px;float: left;" title="上移" id="up"><i class="fa-big  fa-arrow-up"></i></button>
-            <button class="btn moveCls" style="position: absolute;top:70px;left:40px;" title="下移" id="down"><i class="fa-big  fa-arrow-down"></i></button>
-            <button class="btn moveCls" style="position: absolute;top:40px;left:0px;" title="左移" id="left"><i class="fa-big  fa-arrow-left"></i></button>
-            <button class="btn moveCls" style="position: absolute;top:40px;left:80px;" title="右移" id="right"><i class="fa-big  fa-arrow-right"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:10px;left:40px;float: left;" title="上移" id="down"><i class="fa-big  fa-arrow-up"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:70px;left:40px;" title="下移" id="up"><i class="fa-big  fa-arrow-down"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:40px;left:0px;" title="左移" id="right"><i class="fa-big  fa-arrow-left"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:40px;left:80px;" title="left" id="left"><i class="fa-big  fa-arrow-right"></i></button>
 
             <button class="btn" style="position: absolute;top:120px;left:40px;" title="放大" onclick="zoom('zoomIn');"><i class="fa-big  fa-plus"></i></button>
             <button class="btn" style="position: absolute;top:160px;left:40px;" title="缩小" onclick="zoom('zoomOut');"><i class="fa-big  fa-minus"></i></button>
@@ -31,7 +31,8 @@
             </div>
         </div>
         <!--        <svg version="1.1" id="svgElement" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
-        <svg viewBox="0 0 600 400" id="svgElement" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" viewbox="50 200 500 300" style="left: -212.79px; top: 90.4px; position: relative; touch-action: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="" id="svgElement" style="left: -319.22px; top: 20.48px; position: relative; touch-action: none;" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" viewBox="-50 140 720 432" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
         <g stroke-width="0.1" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,0)" />
         <g stroke-width="0.3" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,0)" >
         <polyline points="205.124,315.594 251.953,254.885 " />
