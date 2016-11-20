@@ -46,6 +46,9 @@ public class DzdtController {
 				pageNo = "1";
 			}
 			
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '1' ", "", 0, 0);
+			
+			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -69,12 +72,9 @@ public class DzdtController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '2' ", "", 0, 0);
 			
+			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -98,11 +98,9 @@ public class DzdtController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '3' ", "", 0, 0);
+			
+			model.addAttribute("list", list);
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -127,11 +125,9 @@ public class DzdtController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '4' ", "", 0, 0);
+			
+			model.addAttribute("list", list);
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -155,11 +151,9 @@ public class DzdtController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '5' ", "", 0, 0);
+			
+			model.addAttribute("list", list);
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -183,11 +177,9 @@ public class DzdtController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '6' ", "", 0, 0);
+			
+			model.addAttribute("list", list);
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -211,11 +203,9 @@ public class DzdtController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '7' ", "", 0, 0);
+			
+			model.addAttribute("list", list);
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
