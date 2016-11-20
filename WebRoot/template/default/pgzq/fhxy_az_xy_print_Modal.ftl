@@ -62,7 +62,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（11）低保户补助（30000元/证）<u>&nbsp;&nbsp;${bean.dbhbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（12）独生子女奖励费（30000元/父母光荣证）<u>&nbsp;&nbsp;${bean.dsznbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）一次性停产停业综合补助费（800元/平方米）<u>&nbsp;&nbsp;${bean.tctdbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）周转补助费（1200元/人/月） <u>&nbsp;&nbsp;/&nbsp;&nbsp;</u>元；<br/> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）周转补助费（1200元/人/40月） <u>&nbsp;&nbsp;/&nbsp;&nbsp;</u>元；<br/> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${bean.otherbz?default("/")}&nbsp;&nbsp;</u>元；<br/> 
         </p>
         <p class="leftTitle">第七条&nbsp;&nbsp;乙方腾退期限及要求</p>

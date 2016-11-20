@@ -1,6 +1,7 @@
 <#include "leftMenu.ftl"/>
 <#include "../macro_ftl/cxdList.ftl">
 <@override name="main_right">
+<#setting number_format="0.##">
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/three.min.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
@@ -27,7 +28,7 @@
 						<td>${ROW.hj}</td>
 						<td>${ROW.jrjf}</td>
 						<td>${ROW.ljjf}</td>
-						<td>1</td>
+						<td>${100*ROW.ljjf?number/ROW.hj?number}%</td>
 					</tr>
 				</#list>
 			</#if>

@@ -500,8 +500,9 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		List<AgreenmentSectionBean> list = new ArrayList<AgreenmentSectionBean>();
 		Session s = null;
 		try {
+			s = getSession();
 			StringBuffer sb = new StringBuffer();
-			sb.append(" select count(id) as qycount, section from housebasic ");
+			sb.append(" select count(id) as qycount, section from housebasic where 1=1 ");
 			if(!StringUtils.isBlank(sql)){
 				sb.append(sql);
 			}
