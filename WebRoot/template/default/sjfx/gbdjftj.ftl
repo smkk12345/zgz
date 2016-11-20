@@ -27,7 +27,7 @@
 						<td>${ROW.hj}</td>
 						<td>${ROW.jrjf}</td>
 						<td>${ROW.ljjf}</td>
-						<td>${ROW.ljjf?number/ROW.hj?number}</td>
+						<td>1</td>
 					</tr>
 				</#list>
 			</#if>
