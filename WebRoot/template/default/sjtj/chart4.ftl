@@ -21,25 +21,25 @@
         <script src="${BASE_ASSETS_PATH}libs/bootstrap-progressbar/js/bootstrap-progressbar.min.js"></script>
     </head>
     <body oncontextmenu="return false">
-        <div class='container-fluid' style="background-color:#000; padding: 50px 30px 30px 30px;height:100%">
+        <div class='container-fluid' style="background-color:#000; padding: 50px 30px 30px 0px;height:100%">
             <div style='color:#FFF;font-size:36px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚改项目交房汇总情况</div>
             <div style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'>
                 (截止到<span id='currentDate'></span>)
             </div>
-            <div style=' padding-left: 100px;'>
-                <div style='margin-top: 50px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+            <div style='width: container-fluid;text-align: center'>
+                <div style='margin-top: 100px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:center;'>
                     总签约户数：<span style="color: yellow">${zqy} </span> 户
                 </div>
-                <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+                <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:text-align:center;'>
                     今日交房户数：<span style="color: yellow">${jrjf} </span> 户
                 </div>
-                <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+                <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:text-align:center;'>
                     累计交房户数：<span style="color: yellow">${yjf} </span> 户
                 </div>
-                <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+                <div style='margin-top: 10px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:text-align:center;'>
                     剩余交房户数：<span style="color: yellow">${wjf} </span> 户
                 </div>
-                <div style='margin-top: 20px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:left;'>
+                <div style='margin-top: 20px; padding-left: 70px;  color:#0F0;font-size:36px; font-family:"宋体";font-weight:bold;text-align:text-align:center;'>
                     整体交房比例：<font color="red"> ${jfbi} </font>
                 </div>
             </div>

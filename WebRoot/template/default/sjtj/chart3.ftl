@@ -31,8 +31,8 @@
             <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇张郭庄村棚改项目各标段签约情况</div>
             <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
             <div style='margin-top: 20px;color:#FF0;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;height:500px'>
-                <div style='float: left;width:auto; height: 100%' id="chart1"> </div>
-                <div style='float: left;width:auto; height: 100%' id="chart3"> </div>
+                <div style='float: left;width:50%; height:600px' id="chart1"> </div>
+                <div style='float: left;width:50%; height:600px' id="chart3"> </div>
             </div>
         </div>
         <script>
