@@ -178,24 +178,27 @@ public class SjfxController {
 			List<AgreenmentSectionBean> list2 = ServiceManager.getHouseBasicServce().getHasOthersBeanList(" and hasothers = '1' and  date_format(jfDate,'%Y-%m-%d') = '"+dateStr+"' ");
 			
 			List<Map<String,String>> list = initHasOthersList();
-			
+			Map<String,String> map8  = list.get(list.size()-1);
 			for (int i = 0; i < list0.size(); i++) {
 				AgreenmentSectionBean ag = list0.get(i);
 				int n = Integer.parseInt(ag.getSection());
 				Map<String,String> map  = list.get(n-1 );
 				map.put("hj", ag.getQycount()+"");
+				map8.put("hj", (Integer.parseInt(map8.get("hj"))+ag.getQycount())+"");
 			}
 			for (int i = 0; i < list1.size(); i++) {
 				AgreenmentSectionBean ag = list1.get(i);
 				int n = Integer.parseInt(ag.getSection());
 				Map<String,String> map  = list.get(n-1 );
 				map.put("ljjf", ag.getQycount()+"");
+				map8.put("ljjf", (Integer.parseInt(map8.get("ljjf"))+ag.getQycount())+"");
 			}
 			for (int i = 0; i < list1.size(); i++) {
 				AgreenmentSectionBean ag = list1.get(i);
 				int n = Integer.parseInt(ag.getSection());
 				Map<String,String> map  = list.get(n-1 );
 				map.put("jrjf", ag.getQycount()+"");
+				map8.put("jrjf", (Integer.parseInt(map8.get("jrjf"))+ag.getQycount())+"");
 			}
 			
 			model.addAttribute("list", list);
