@@ -8,17 +8,17 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property>
-		<property name="url"  
+		<!-- <property name="url"  
 			value="jdbc:mysql://115.28.163.53:3306/cxd_1113?useUnicode=true&amp;characterEncoding=utf-8">
 		</property>
 		<property name="username" value="cxdtest"></property>
-		<property name="password" value="cxdtest"></property>
+		<property name="password" value="cxdtest"></property>-->
 		
-		<!-- <property name="url"  
+		<property name="url"  
 			value="jdbc:mysql://127.0.0.1:3306/cxd_1115?useUnicode=true&amp;characterEncoding=utf-8">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>-->
+		<property name="password" value="root"></property>
 	</bean>
 	
 	<bean id="sessionFactory"
