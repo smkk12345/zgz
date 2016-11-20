@@ -159,7 +159,7 @@ public class SjfxController {
 	
 	
 	/**
-	 * 已交房
+	 * 已交房台账
 	 * @param request
 	 * @param response
 	 * @param model
@@ -169,24 +169,34 @@ public class SjfxController {
 	public ModelAndView jfdj_1(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
+			//总数
+			List<AgreenmentSectionBean> list0 = ServiceManager.getHouseBasicServce().getHasOthersBeanList("");
+			//已经交房
+			List<AgreenmentSectionBean> list1 = ServiceManager.getHouseBasicServce().getHasOthersBeanList(" and hasothers = '1' ");
+			//今日交房
+			String dateStr = DateUtil.getDate(new Date());
+			List<AgreenmentSectionBean> list2 = ServiceManager.getHouseBasicServce().getHasOthersBeanList(" and hasothers = '1' and  date_format(jfDate,'%Y-%m-%d') = '"+dateStr+"' ");
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
+			List<Map<String,String>> list = initHasOthersList();
+			
+			for (int i = 0; i < list0.size(); i++) {
+				AgreenmentSectionBean ag = list0.get(i);
+				int n = Integer.parseInt(ag.getSection());
+				Map<String,String> map  = list.get(n-1 );
+				map.put("hj", ag.getQycount()+"");
 			}
-			
-			int intPageNum = Integer.parseInt(pageNo);
-			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getJfdjSql(role.getSection(),request,"1",model);
-			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
-			
-			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
-			
-			model.addAttribute("pageSize", intPageSize);
-			model.addAttribute("pageNo", intPageNum);
-			model.addAttribute("recordCount", count);
+			for (int i = 0; i < list1.size(); i++) {
+				AgreenmentSectionBean ag = list1.get(i);
+				int n = Integer.parseInt(ag.getSection());
+				Map<String,String> map  = list.get(n-1 );
+				map.put("ljjf", ag.getQycount()+"");
+			}
+			for (int i = 0; i < list1.size(); i++) {
+				AgreenmentSectionBean ag = list1.get(i);
+				int n = Integer.parseInt(ag.getSection());
+				Map<String,String> map  = list.get(n-1 );
+				map.put("jrjf", ag.getQycount()+"");
+			}
 			
 			model.addAttribute("list", list);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -206,6 +216,32 @@ public class SjfxController {
 			return null;
 		}
 	}
+	
+	
+	private List<Map<String,String>> initHasOthersList(){
+		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
+		for (int i = 1; i < 8; i++) {
+			Map<String,String> map = new HashMap<String, String>();
+			map.put("section", i+"");
+			map.put("displaysection", Contanst.sectionMap.get(i+""));
+			map.put("hj", "0");
+			map.put("jrjf", "0");
+			map.put("ljjf", "0");
+			map.put("jfbl", "0");
+			list.add(map);
+		}
+		
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("section", "8");
+		map.put("displaysection", "合计");
+		map.put("hj", "0");
+		map.put("jrjf", "0");
+		map.put("ljjf", "0");
+		map.put("jfbl", "0");
+		list.add(map);
+		return list ;
+	}
+	
 	
 	private String getJfdjSql(String section,HttpServletRequest request,String type,ModelMap model) {
 		// TODO Auto-generated method stub

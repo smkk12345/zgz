@@ -4,12 +4,14 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
@@ -23,6 +25,7 @@ import org.springframework.ui.ModelMap;
 
 import com.common.utils.StringUtils;
 import com.hibernate.base.BaseDaoImpl;
+import com.hibernate.houseinfo.domain.AgreenmentSectionBean;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
@@ -447,8 +450,83 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}
 		return null;
 	}
+	 //-------------------------------数据统计部分代码----------------------------//
 	 
-	 
+	
+	
+	public List<AgreenmentSectionBean> getAgSessionBeanList(String sql) {
+		List<AgreenmentSectionBean> list = new ArrayList<AgreenmentSectionBean>();
+		Session s = null;
+		try{
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select count(a.id) as qycount,a.section,b.atype as qytype, 1 as qystatus from housebasic a "+
+			" left join agreenment b on a.id = b.housebasicid "+
+			" left join indexnum c on a.id = c.housebasicid  "+
+			"  where 1=1  " );
+			if(!StringUtils.isBlank(sql)){
+				sb.append(sql);
+			}
+			sb.append(" group by a.section, b.atype order by  (a.section+0) ");
+			
+			
+			List list0 = s.createSQLQuery(sb.toString()).
+					addScalar("qycount",Hibernate.INTEGER).
+					addScalar("section", Hibernate.STRING).
+					addScalar("qytype",Hibernate.STRING).
+					addScalar("qystatus",Hibernate.STRING).
+					list();
+			for (Iterator iterator = list0.iterator(); iterator.hasNext();) {
+				// 每个集合元素都是一个数组，数组元素师person_id,person_name,person_age三列值
+				Object[] objects = (Object[]) iterator.next();
+				
+				AgreenmentSectionBean bean = new AgreenmentSectionBean();
+				bean.setQycount(Integer.parseInt(objects[0]+""));
+				bean.setSection((String)objects[1]);
+				bean.setQytype((String)objects[2]);
+				bean.setQystatus((String)objects[3]);
+				list.add(bean);
+			}
+			return list;
+		}catch(Exception e){
+			e.printStackTrace();
+			return list;
+		}finally{
+			s.close();
+		}
+	}
+
+	public List<AgreenmentSectionBean> getHasOthersBeanList(String sql) {
+		List<AgreenmentSectionBean> list = new ArrayList<AgreenmentSectionBean>();
+		Session s = null;
+		try {
+			StringBuffer sb = new StringBuffer();
+			sb.append(" select count(id) as qycount, section from housebasic ");
+			if(!StringUtils.isBlank(sql)){
+				sb.append(sql);
+			}
+			sb.append(" group by section order by (section+0)");
+			List list0 = s.createSQLQuery(sb.toString()).
+					addScalar("qycount",Hibernate.INTEGER).
+					addScalar("section", Hibernate.STRING).
+					list();
+			for (Iterator iterator = list0.iterator(); iterator.hasNext();) {
+				// 每个集合元素都是一个数组，数组元素师person_id,person_name,person_age三列值
+				Object[] objects = (Object[]) iterator.next();
+				
+				AgreenmentSectionBean bean = new AgreenmentSectionBean();
+				bean.setQycount(Integer.parseInt(objects[0]+""));
+				bean.setSection((String)objects[1]);
+				list.add(bean);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return list;
+		}
+		return list;
+	}
 	
 	
 	

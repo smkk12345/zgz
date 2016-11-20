@@ -272,4 +272,8 @@ public class HouseBasicService {
 		return houseBasicDao.getAgSessionBeanList(sql);
 	}
 	
+	public List<AgreenmentSectionBean> getHasOthersBeanList(String sql) {
+		return houseBasicDao.getHasOthersBeanList(sql);
+	}
+	
 }
