@@ -20,35 +20,27 @@
             <div class='container-fluid con-bg mb10'>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='names' value="${housebasic.names?default("")}"/>    
+                    <input type='text'  class='form-control input-sm  ' name='names' value="${housebasic.names?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='location' value="${housebasic.location?default("")}"/>    
+                    <input type='text'  class='form-control input-sm  ' name='location' value="${housebasic.location?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>联系固话:</label>
 
-                    <input type='text' readonly class='form-control input-sm  ' name='telephone' value="${housebasic.telephone?default("")}"/>       
+                    <input type='text'  class='form-control input-sm  ' name='telephone' value="${housebasic.telephone?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
-                    <input type='text' readonly class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>        
+                    <input type='text'  class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人身份证号:</label>
-                    <input type='text' readonly class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>        
+                    <input type='text'  class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>
                 </div>               
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>安置意向:</label>
-                    <!--<label class="radio">
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                     房屋安置
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      货币补偿
-                    </label>-->
                 </div> 
                 <div class="container-fluid fl">
                     <label class="checkbox-inline">
@@ -59,41 +51,44 @@
                     </label>
                 </div>
             </div>                	
-            <h4><span class="label label-default">二.宅基地，房屋信息：</span></h4>
+            <h4><span class="label label-default">二.认定面积信息：</span></h4>
             <div class='container-fluid con-bg mb10'>
-                <div class=' aoJianGroup fl'>
+               <#-- <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地实测用地面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='scydmj'  value="<#if bean.scydmj??>${bean.scydmj?c}<#else></#if>" />   
-                </div>
-
+                    <input type='text'  class='form-control input-sm  ' name='scydmj'  value="<#if bean.scydmj??>${bean.scydmj?c}<#else></#if>" />
+                </div>-->
+                   <div class=' aoJianGroup fl'>
+                       <label class='fl control-label'>认定宅基地总补偿面积:</label>
+                       <input type='text'  class='form-control input-sm  ' name='rdzjdallarea'  value="${bean.rdzjdallarea?default("")}" />
+                   </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地控制面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='conhomestarea'  value="<#if bean.conhomestarea??>${bean.conhomestarea?c}<#else></#if>" />   
+                    <input type='text'  class='form-control input-sm  ' name='conhomestarea'  value="<#if bean.conhomestarea??>${bean.conhomestarea?c}<#else></#if>" />
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>超出宅基地控制面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='overhomesteadarea'  value="<#if bean.overhomesteadarea??>${bean.overhomesteadarea?c}<#else></#if>" />   
+                    <input type='text'  class='form-control input-sm  ' name='overhomesteadarea'  value="<#if bean.overhomesteadarea??>${bean.overhomesteadarea?c}<#else></#if>" />
                 </div>
-                <div class=' aoJianGroup fl'>
+              <#--  <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>现状实测房屋建筑面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='wfhbz'  value="${bean.wfhbz?default("")}" />   
-                </div>
-                <div class=' aoJianGroup fl'>
+                    <input type='text'  class='form-control input-sm  ' name='wfhbz'  value="${bean.wfhbz?default("")}" />
+                </div>-->
+               <#-- <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>首层建筑面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='firstfloorarea'  value="${housebasic.firstfloorarea?default("")}" />   
+                    <input type='text'  class='form-control input-sm  ' name='firstfloorarea'  value="${housebasic.firstfloorarea?default("")}" />
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>二层及以上建筑面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='abovetwoarea'  value="${housebasic.abovetwoarea?default("")}" />   
+                    <input type='text'  class='form-control input-sm  ' name='abovetwoarea'  value="${bean.abovetwoarea?default("")}" />
                 </div>    
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>地下室建筑面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='basement'  value="${housebasic.basement?default("")}" />   
+                    <input type='text'  class='form-control input-sm  ' name='basement'  value="${housebasic.basement?default("")}" />
                 </div>                
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>棚面积:</label>
-                    <input type='text' readonly class='form-control input-sm  ' name='shed'  value="${housebasic.shed?default("")}" />   
-                </div>
+                    <input type='text'  class='form-control input-sm  ' name='shed'  value="${housebasic.shed?default("")}" />
+                </div>-->
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地认定年限:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='homesteadyear' >  
@@ -106,6 +101,10 @@
                     <label class='fl control-label'>认定房屋补偿面积:</label>
                     <input type='text' class='form-control input-sm  ' name='fwbcmj'  value="${bean.fwbcmj?default("")}" />   
                 </div>
+                   <div class=' aoJianGroup fl'>
+                       <label class='fl control-label'>住房困难户补偿方案:</label>
+                       <input type='text' class='form-control input-sm  ' name='zfknhbcfa'  value="${bean.zfknhbcfa?default("")}" />m<sup>2</sup>
+                   </div>
             </div>
 
 
@@ -132,7 +131,7 @@
                         <option  <#if (bean.hardhouse?default("-1"))=='1'>selected='selected'</#if> value="1">否</option> 
                     </select>        
                 </div>
-                <div class=' aoJianGroup fl'>      
+                <#--<div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退家庭购房标准:</label>
                     <input type='text' class='form-control input-sm  fl' name='gfbz'   value="${bean.gfbz?default("")}"/>  
                      <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='gfbz' >  
@@ -140,6 +139,14 @@
                         <option  <#if (bean.gfbz?default("-1"))=='0'>selected='selected'</#if>  value="0">50m<sup>2</sup></option>  
                         <option  <#if (bean.gfbz?default("-1"))=='1'>selected='selected'</#if> value="1">45m<sup>2</sup></option> 
                     </select>        
+                </div>-->
+            <div class=' aoJianGroup fl'>
+                <label class='fl control-label'>购房标准(50m<sup>2</sup>):</label>
+                <input type='text' class='form-control input-sm  fl' name='gfbz50'   value="${bean.gfbz50?default("")}"/>人
+            </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>购房标准(45m<sup>2</sup>):</label>
+                    <input type='text' class='form-control input-sm  fl' name='gfbz45'   value="${bean.gfbz45?default("")}"/>人
                 </div>
             </div>    
 

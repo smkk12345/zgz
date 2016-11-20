@@ -70,9 +70,15 @@
 		<property name="protocolnumber"></property>
 		<property name="names"></property>
 		<property name="location"></property>
-				<property name="parentnames"></property>
-						<property name="hardhouse"></property>
-								<property name="gfbz"></property>
+		<property name="parentnames"></property>
+		<property name="hardhouse"></property>
+		<property name="gfbz50"></property>
+		<property name="gfbz45"></property>
+		<property name="rdzjdallarea"></property>
+		<property name="zfknhbcfa"></property>
+		
+		
+		
 	
 	</class>
 </hibernate-mapping>
