@@ -2,3 +2,5 @@
 .settings/
 WebRoot/assets/libs/font-awesome/fonts/.svn/prop-base/fontawesome-webfont.svg.svn-base
 WebRoot/WEB-INF/poi/servlet-api.jar
+.idea/
+WebRoot/compass/.sass-cache/
