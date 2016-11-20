@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.criterion.MatchMode;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -85,10 +83,15 @@ public class AgreenmentController {
 		String idcard = request.getParameter("idcard");
 		String indexnum = request.getParameter("indexnum");
 		String atype = request.getParameter("atype");
+		String location = request.getParameter("location");
 		atype = StringUtils.isBlank(atype)?"-1":atype;
 		if(!StringUtils.isBlank(names)){
 			sb.append(" and a.names like '%").append(names).append("%'");
 			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(location)){
+			sb.append(" and a.location like '%").append(location).append("%'");
+			model.addAttribute("location", location);
 		}
 		if(!StringUtils.isBlank(mobile)){
 			sb.append(" and a.mobile ='").append(mobile).append("'");
@@ -105,7 +108,7 @@ public class AgreenmentController {
 		if(!atype.equals("-1")){
 			sb.append(" AND b.atype ='").append(atype).append("'");
 		}
-		model.addAttribute("atype", idcard);
+		model.addAttribute("atype", atype);
 		return sb.toString();
 	}
 
@@ -208,6 +211,7 @@ public class AgreenmentController {
 		String idcard = request.getParameter("idcard");
 		String indexnum = request.getParameter("indexnum");
 		String atype = request.getParameter("atype");
+		String location = request.getParameter("location");
 		atype = StringUtils.isBlank(atype)?"-1":atype;
 		String qianyue = request.getParameter("qianyue");
 		qianyue = StringUtils.isBlank(qianyue)?"-1":qianyue;
@@ -215,6 +219,10 @@ public class AgreenmentController {
 		if(!StringUtils.isBlank(names)){
 			sb.append(" and a.names like '%").append(names).append("%'");
 			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(location)){
+			sb.append(" and a.location like '%").append(location).append("%'");
+			model.addAttribute("location", names);
 		}
 		if(!StringUtils.isBlank(mobile)){
 
@@ -228,7 +236,7 @@ public class AgreenmentController {
 		if(!atype.equals("-1")){
 			sb.append(" AND b.atype ='").append(atype).append("'");
 		}
-		model.addAttribute("atype", idcard);
+		model.addAttribute("atype", atype);
 		if(!qianyue.equals("-1")){
 			if(qianyue.equals("0")){   //已经签约
 				sb.append(" and b.protocolnumber<>''");

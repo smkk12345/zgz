@@ -28,7 +28,7 @@
         <div class="container-fluid" style="background-color:#000; padding: 120px 30px 30px 30px;height:100%;">
             <div style='color:#FFF;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚户区改造宅基地腾退奖励期启动</div>
             <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
-            <div style='margin-top: 50px;color:red;font-size:40px; font-family:"宋体";font-weight:bold;text-align: center;'>截至日期：2016年11月25日 0点整</div>
+            <div style='margin-top: 50px;color:red;font-size:40px; font-family:"宋体";font-weight:bold;text-align: center;'>截至日期：2016年11月25日 20:00:00点整</div>
             <div style='margin-top: 60px;color:#0F0;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
                 倒计时<span id="timeDate2" style="color: red"></span>天<span id="times2" style="color: red; width:230px !important;"></span>
             </div>
@@ -86,7 +86,7 @@
             function createtime(timeDate, times)
             {
 
-                var grt = new Date("11/25/2016 00:00:00");
+                var grt = new Date("11/25/2016 20:00:00");
 
                 now.setTime(now.getTime() + 250);
                 days = (grt - now) / 1000 / 60 / 60 / 24;

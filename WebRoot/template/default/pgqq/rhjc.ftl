@@ -29,14 +29,14 @@
                         <label class='fl control-label'>被腾退人姓名:</label>
                         <input type='text' class='form-control input-sm ' name='names' value="${names?default("")}"/>   
                     </div>
-                    <div class='autoWidthGroup-2 fl '>
-                        <label class='fl control-label'>手机:</label>
-                        <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
-                    </div>
                     <div class='autoWidthGroup-2 fl'>
                         <label class='fl control-label'>身份证号:</label>
                         <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
                     </div>  
+                    <div class='autoWidthGroup-2 fl '>
+                        <label class='fl control-label'>手机:</label>
+                        <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+                    </div>
                     <div class='autoWidthGroup-2 fl'><button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>                   
                 </form>
             </div>
