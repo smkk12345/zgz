@@ -246,6 +246,10 @@ public class DisplayBean extends BaseBean {
 		private String sectionindex;
 		//排序情况
 		private Integer sortnum;
+		//人数
+		private Integer peoplecount;
+		//人员信息
+		private String peopleinfo;
 		
 		
 		public String getSectionindex() {
@@ -982,6 +986,47 @@ public class DisplayBean extends BaseBean {
 		public void setOperatename(String operatename) {
 			this.operatename = operatename;
 		}
+		
+		public Integer getPeoplecount() {
+			int result = 0;
+			if(null != vacatelist){
+				result = result +vacatelist.size();
+			}
+			if(null!=list){
+				result=result+list.size();
+			}
+			return result;
+		}
+		public void setPeoplecount(Integer peoplecount) {
+			this.peoplecount = peoplecount;
+		}
+		public String getPeopleinfo() {
+			StringBuffer sb=new StringBuffer();
+			sb.append(getDisplayPeopleInfo("在册 :",vacatelist));
+			sb.append(getDisplayPeopleInfo("非在册:     ",list));
+			return sb.toString();
+		}
+		
+		private String getDisplayPeopleInfo(String typeStr,List<VacatePeople> list){
+			StringBuffer sb=new StringBuffer();
+			if(null == list||list.size()==0){
+				return "";
+			}
+			sb.append(typeStr);
+			for (int i = 0; i < list.size(); i++) {
+				VacatePeople v = list.get(i);
+//				sb.append("姓名 :&nbsp;&nbsp;");
+				sb.append(v.getName());
+				sb.append("&nbsp;&nbsp;身份证:&nbsp;&nbsp;"+v.getIdcard());
+				sb.append("&nbsp;&nbsp;");
+			}
+			return sb.toString();
+		}
+		
+		public void setPeopleinfo(String peopleinfo) {
+			this.peopleinfo = peopleinfo;
+		}
+		
 		
 		
 }

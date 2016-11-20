@@ -111,9 +111,11 @@ public class HouseBasicService {
 		}
 		if(null != list){
 			houseBasic.setList(list);
+			houseBasic.setNotlocalpeoplecount(list.size());
 		}
 		if(null != vacatelist){
 			houseBasic.setVacatelist(vacatelist);
+			houseBasic.setLocalpeoplecount(vacatelist.size());
 		}
 		if(null !=basicLivingList){
 			houseBasic.setBasicLivingList(basicLivingList);
@@ -231,9 +233,43 @@ public class HouseBasicService {
 		return houseBasicDao.getDisplayBeanList(sql,orderSql,currentpage,pagecount);
 	}
 	public DisplayBean getDisplayBean(String housebasicid){
+		DisplayBean display = null;
 		List<DisplayBean> list = houseBasicDao.getDisplayBeanList(" and a.id = '"+housebasicid+"' ","",0,2);
 		if(null != list && list.size()>0){
-			return list.get(0);
+			display = list.get(0);
+			//腾云人列表
+			List<VacatePeople> vacatelist = vacatePeopleDao.findList(housebasicid,"0");
+			//非在册人员列表
+			List<VacatePeople> list0 = vacatePeopleDao.findList(housebasicid,"1");
+			//大病
+			List<OtherInfo> illList = otherInfoDao.findList(housebasicid,"2");
+			//低保
+			List<OtherInfo> basicLivingList = otherInfoDao.findList(housebasicid,"0");
+			//残疾
+			List<OtherInfo> deformityList = otherInfoDao.findList(housebasicid,"1");
+			
+			List<OtherInfo> otherList = otherInfoDao.findList(housebasicid, "0,1,2");
+			if(null != otherList){
+				display.setOtherList(otherList);
+			}
+			if(null != illList){
+				display.setIllList(illList);
+			}
+			if(null != list0){
+				display.setList(list0);
+				display.setNotlocalpeoplecount(list0.size());
+			}
+			if(null != vacatelist){
+				display.setVacatelist(vacatelist);
+				display.setLocalpeoplecount(vacatelist.size());
+			}
+			if(null !=basicLivingList){
+				display.setBasicLivingList(basicLivingList);
+			}
+			if(null != deformityList){
+				display.setDeformityList(deformityList);
+			}
+			return display;
 		}else{
 			return null;
 		}

@@ -1652,6 +1652,9 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
+         
+
+	
     $(".modal-dialog").attr("style", "width:95%;");
     function toExcel(inTblId, inWindow) {
         var fileName = '${CommenData.time_jc}' + ".xls";
@@ -1683,28 +1686,8 @@
         alert(1231);
         toExcel("yu-print-show", null);
     }
-
-    function delBtnClick(btn) {
-        if (yu_confirm("确认删除该数据？")) {
-            var curDataId = $(btn).attr("pname");
-            var p = $(btn).attr("data-url");
-            var par = $(btn).parent().parent();
-            //var par = $("#"+pname);
-            $.ajax({
-                cache: true,
-                type: "POST",
-                url: p,
-                dataType: "json",
-                data: {housebasicid: curDataId},
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "/index.action";
-                },
-                success: function (response) {
-                    location.href = "${BASE_PATH}" + "/index.action";
-                }
-            })
-        }
-    }
+    
+	
 
 
 </script>
