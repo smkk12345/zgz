@@ -17,8 +17,8 @@ public class Agreement extends BaseBean {
 
 
 	/**
-	 * 协议实体类
-	 */
+	 * 协议实体类sad a
+	 */    
 	private String housebasicid;
 	//协议编号
 	private String agreementnum;
