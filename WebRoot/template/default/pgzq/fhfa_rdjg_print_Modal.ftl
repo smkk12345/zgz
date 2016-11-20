@@ -174,7 +174,7 @@
 			                <td rowspan="9">认定工作小组成员签字</td>
 			                <td colspan="3" rowspan="9"></td>
 			            </tr>
-	            	<#else>
+	            	<#else> 
 		                <td colspan="3">本址${vacate_index+1}</td>
 		                <td>${vacate.name?default("/")}</td>
 		                <td colspan="2">${vacate.changrelate?default("/")}</td>           	

@@ -15,10 +15,10 @@
         </div>
 
         <div style="position: absolute;right:10px;top: 50px;">
-            <button class="btn moveCls" style="position: absolute;top:10px;left:40px;float: left;" title="上移" id="up"><i class="fa-big  fa-arrow-up"></i></button>
-            <button class="btn moveCls" style="position: absolute;top:70px;left:40px;" title="下移" id="down"><i class="fa-big  fa-arrow-down"></i></button>
-            <button class="btn moveCls" style="position: absolute;top:40px;left:0px;" title="左移" id="left"><i class="fa-big  fa-arrow-left"></i></button>
-            <button class="btn moveCls" style="position: absolute;top:40px;left:80px;" title="右移" id="right"><i class="fa-big  fa-arrow-right"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:10px;left:40px;float: left;" title="上移" id="down"><i class="fa-big  fa-arrow-up"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:70px;left:40px;" title="下移" id="up"><i class="fa-big  fa-arrow-down"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:40px;left:0px;" title="左移" id="right"><i class="fa-big  fa-arrow-left"></i></button>
+            <button class="btn moveCls" style="position: absolute;top:40px;left:80px;" title="left" id="left"><i class="fa-big  fa-arrow-right"></i></button>
 
             <button class="btn" style="position: absolute;top:120px;left:40px;" title="放大" onclick="zoom('zoomIn');"><i class="fa-big  fa-plus"></i></button>
             <button class="btn" style="position: absolute;top:160px;left:40px;" title="缩小" onclick="zoom('zoomOut');"><i class="fa-big  fa-minus"></i></button>
