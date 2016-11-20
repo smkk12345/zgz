@@ -472,7 +472,7 @@
                 <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)" >${bean.remark?default("")}</textarea>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-save"   >保存</button>
+                <button type="submit" class="btn btn-primary btn-save">保存</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
@@ -484,6 +484,9 @@
     $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");
     $("#rhjc-add-con").css("overflow-y", "scroll");
 
+    $('#rhjcAddForm').submit(function(){
+        $(".btn-save").attr('disabled', 'disabled');
+    });
     function saveClick(btn) {
         var dataInfo = $("#rhjcAddForm").serialize();
         var url = $(btn - save).attr("data-url");
