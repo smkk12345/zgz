@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,7 @@ import com.common.consts.Contanst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
 import com.common.utils.StringUtils;
+import com.hibernate.houseinfo.domain.AgreenmentSectionBean;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.timers.utils.DateUtil;
@@ -41,9 +43,63 @@ public class SjfxController {
 	public ModelAndView gbdqytj(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
+			//签约情况
+			List<AgreenmentSectionBean> list0 = ServiceManager.getHouseBasicServce().getAgSessionBeanList(" and c.id is not null ");
+			StringBuffer sb = new StringBuffer();
+			sb.append(" and c.id is not null and date_format(c.operatedate,'%Y-%m-%d') = '");
+			String dateStr = DateUtil.getDate(new Date());
+			sb.append(dateStr).append("'");
+			//当天签约情况
+			List<AgreenmentSectionBean> list1 = ServiceManager.getHouseBasicServce().getAgSessionBeanList(sb.toString());
 			
-
-			model.addAttribute("list", null);
+			//合计
+			List<AgreenmentSectionBean> list2 = ServiceManager.getHouseBasicServce().getAgSessionBeanList(" and b.id is not null ");
+			
+			List<Map<String,String>> list = initAgReturnList();
+			
+			Map<String,String> map8  = list.get(list.size()-1);
+			for (int i = 0; i < list0.size(); i++) {
+				AgreenmentSectionBean ag = list0.get(i);
+				int n = Integer.parseInt(ag.getSection());
+				Map<String,String> map  = list.get(n-1 );
+				if(ag.getQytype().equals("0")){
+					map.put("ljaz", ag.getQycount()+"");
+					
+					map8.put("ljaz", (Integer.parseInt(map8.get("ljaz"))+ag.getQycount())+"");
+				}else{
+					map.put("ljhb", ag.getQycount()+"");
+					map8.put("ljhb", (Integer.parseInt(map8.get("ljhb"))+ag.getQycount())+"");
+				}
+			}
+			
+			for (int i = 0; i < list1.size(); i++) {
+				AgreenmentSectionBean ag = list1.get(i);
+				int n = Integer.parseInt(ag.getSection());
+				Map<String,String> map  = list.get(n-1 );
+				if(ag.getQytype().equals("0")){
+					map.put("dtaz", ag.getQycount()+"");
+					map8.put("dtaz", (Integer.parseInt(map8.get("dtaz"))+ag.getQycount())+"");
+				}else{
+					map.put("dthb", ag.getQycount()+"");
+					map8.put("dthb", (Integer.parseInt(map8.get("dthb"))+ag.getQycount())+"");
+				}
+			}
+			for (int i = 0; i < list2.size(); i++) {
+				AgreenmentSectionBean ag = list2.get(i);
+				int n = Integer.parseInt(ag.getSection());
+				Map<String,String> map  = list.get(n-1 );
+				if(ag.getQytype().equals("0")){
+					map.put("hjaz", ag.getQycount()+"");
+					map8.put("hjaz", (Integer.parseInt(map8.get("hjaz"))+ag.getQycount())+"");
+				}else{
+					map.put("hjhb", ag.getQycount()+"");
+					map8.put("hjhb", (Integer.parseInt(map8.get("hjhb"))+ag.getQycount())+"");
+				}
+			}
+			//插入空数据
+			//数组组装
+			
+			model.addAttribute("list", list);
 			model.addAttribute("sectionMap", Contanst.sectionMap);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -62,7 +118,46 @@ public class SjfxController {
 			return null;
 		}
 	}
-
+	
+	private List<Map<String,String>> initAgReturnList(){
+		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
+		for (int i = 1; i < 8; i++) {
+			Map<String,String> map = new HashMap<String, String>();
+			map.put("section", i+"");
+			map.put("displaysection", Contanst.sectionMap.get(i+""));
+			map.put("hj", "0");
+			map.put("hjhb", "0");
+			map.put("hjaz", "0");
+			
+			map.put("hjdt", "0");
+			map.put("dthb", "0");
+			map.put("dtaz", "0");
+			
+			map.put("hjlj", "0");
+			map.put("ljhb", "0");
+			map.put("ljaz", "0");
+			list.add(map);
+		}
+		
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("section", "8");
+		map.put("displaysection", "合计");
+		map.put("hj", "0");
+		map.put("hjhb", "0");
+		map.put("hjaz", "0");
+		
+		map.put("hjdt", "0");
+		map.put("dthb", "0");
+		map.put("dtaz", "0");
+		
+		map.put("hjlj", "0");
+		map.put("ljhb", "0");
+		map.put("ljaz", "0");
+		list.add(map);
+		return list ;
+	}
+	
+	
 	/**
 	 * 已交房
 	 * @param request

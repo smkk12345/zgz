@@ -19,9 +19,9 @@
         <table  class="table table-bordered table-hover">
             <tr>
                 <th rowspan=2>编号</th>
-                <th colspan=3>全部</th>
+                <th colspan=3>全部(户)</th>
                 <th colspan=3>当日签约(户)</th>
-                <th colspan=3>当日签约(户)</th>
+                <th colspan=3>累计签约(户)</th>
             </tr>
             <tr>
                 <th >合计</th>
@@ -37,18 +37,18 @@
             <#if list?size gt 0>
 				<#list list as ROW >
 					<tr>
-						<td>${sectionMap['ROW_index+1']}</td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>${ROW.displaysection}</td>
+						<td>${ROW.hjaz?number + ROW.hjhb?number}</td>
+						<td>${ROW.hjaz}</td>
+						<td>${ROW.hjhb}</td>
 						
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>${ROW.dtaz?number + ROW.dthb?number}</td>
+						<td>${ROW.dtaz}</td>
+						<td>${ROW.dthb}</td>
 						
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>${ROW.ljaz?number + ROW.ljhb?number}</td>
+						<td>${ROW.ljaz}</td>
+						<td>${ROW.ljhb}</td>
 					</tr>
 				</#list>
 			</#if>

@@ -17,6 +17,7 @@ import com.hibernate.houseinfo.dao.IndexNumDao;
 import com.hibernate.houseinfo.dao.OtherInfoDao;
 import com.hibernate.houseinfo.dao.VacatePeopleDao;
 import com.hibernate.houseinfo.domain.Agreement;
+import com.hibernate.houseinfo.domain.AgreenmentSectionBean;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
@@ -265,4 +266,10 @@ public class HouseBasicService {
 		// TODO Auto-generated method stub
 		return houseBasicDao.getCountBySectionindex(sectionindex,section);
 	}
+	
+	
+	public List<AgreenmentSectionBean> getAgSessionBeanList(String sql) {
+		return houseBasicDao.getAgSessionBeanList(sql);
+	}
+	
 }
