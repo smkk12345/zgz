@@ -253,7 +253,7 @@
                 <td colspan="2">
                 <#if bean.list?size gt 4> ${bean.list[4].changrelate?default("")}</#if>
                 </td>
-                <td colspan="4">签字日期：2016年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</td>
+                <td colspan="4">签字日期：2016年&nbsp;&nbsp;&nbsp;&nbsp;${month}&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;${day}&nbsp;&nbsp;&nbsp;日</td>
             </tr>
         </table>
     </div>

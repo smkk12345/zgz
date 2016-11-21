@@ -31,9 +31,9 @@
         <div class="container-fluid" style="padding: 20px;height:100%">
             <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇张郭庄村棚改项目签约方案比例情况</div>
             <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
-            <div style='margin-top: 20px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:400px'>
-                <div style='float: left;width:50%; height:auto' id="chart"> </div>
-                <div style='float: left;width:50%; height:auto' id="chart1"> </div>
+            <div style='margin-top: 50px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;'>
+                <div style='float: left;width:50%; height:570px' id="chart"> </div>
+                <div style='float: left;width:50%; height:570px' id="chart1"> </div>
             </div>
         </div>
         <script>
@@ -51,7 +51,7 @@
                                     y: 20,
                                     style: {
                                     color: "#000",
-                                            fontSize: 30,
+                                            fontSize: '30px',
                                             fontWeight: "bold",
                                     }
                             },
@@ -76,8 +76,8 @@
                                             color: '#000',
                                             distance: - 50, //通过设置这个属性，将每个小饼图的显示名称和每个饼图重叠
                                             style: {
-                                            fontSize: '18px',
-                                                    lineHeight: '10px'
+                                            fontSize: '20px',
+                                                    lineHeight: '20px'
                                             },
                                             formatter: function () {
                                             //'{point.name}: {point.percentage:.1f} %'
@@ -111,12 +111,11 @@
                                     y: 20,
                                     style: {
                                     color: "#000",
-                                            fontSize: 30,
+                                            fontSize: '30px',
                                             fontWeight: "bold",
                                     }
                             },
-                            colors: ['#84C1FF', '#00E3E3', '#ff4330'
-                            ],
+                                colors: ['#84C1FF', '#ff4330'],
                             credits: {//去掉右下角标识
                             text: ''
                             }
@@ -153,10 +152,10 @@
                                     style
                                     :
                             {
-                            fontSize: '18px',
+                            fontSize: '20px',
                                     lineHeight
                                     :
-                                    '10px'
+                                    '20px'
                             }
                             ,
                                     formatter: function () {
@@ -166,7 +165,7 @@
                                     }
                             }
                             ,
-                                    padding: 20
+                                    padding: '20px'
                             }
                             }
                     ,
