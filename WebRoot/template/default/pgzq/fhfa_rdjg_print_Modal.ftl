@@ -163,7 +163,7 @@
                 <td colspan="2">与被腾退人关系</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>
             </tr>
-        <#if bean.vacatelist?size gt 0>
+        <#if bean.vacatelist?size lt 11>
             <#if bean.vacatelist??>
                 <#list bean.vacatelist as vacate>
                     <#if vacate_index == 0>
@@ -171,8 +171,7 @@
                             <td colspan="3">本址${vacate_index+1}</td>
                             <td>${vacate.name?default("/")}</td>
                             <td colspan="2">${vacate.changrelate?default("/")}</td>
-                            <td rowspan="${bean.vacatelist?size}">认定工作小组成员签字</td>
-                            <td colspan="3" rowspan="${bean.vacatelist?size}"></td>
+                            <td colspan="4" rowspan="10"></td>
                         </tr>
                     <#else>
                         <tr>
@@ -182,28 +181,59 @@
                         </tr>
                     </#if>
                 </#list>
-            </#if>
-        </#if>
-
-        <#--<#if bean.list?size gt 5>
-            <#if bean.list??>
-                <#list bean.list as vacate>
-                    <#if vacate_index == 0>
+                <#list 1..(10-bean.vacatelist?size) as t>
+                    <#if bean.vacatelist?size== 0>
                         <tr>
-                            <td colspan="3">本址${vacate_index+1}</td>
-                            <td>${vacate.name?default("/")}</td>
-                            <td colspan="2">${vacate.changrelate?default("/")}</td>
-                            <td rowspan="9">认定工作小组成员签字</td>
-                            <td colspan="3" rowspan="9"></td>
+                            <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
+                            <td></td>
+                            <td colspan="2"></td>
+                            <td colspan="4" rowspan="10"></td>
                         </tr>
                     <#else>
+                        <tr>
+                            <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
+                            <td></td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </#if>
+                </#list>
+            <#else>
+                <#list 1..10 as t>
+                    <#if t_index == 0>
+                        <tr>
+                            <td colspan="3">本址${t_index+1}</td>
+                            <td></td>
+                            <td colspan="2"></td>
+                            <td colspan="4" rowspan="10"></td>
+                        </tr>
+                    <#else>
+                        <tr>
+                            <td colspan="3">本址${t_index+1}</td>
+                            <td>${vacate.name?default("/")}</td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </#if>
+                </#list>
+            </#if>
+        <#else>
+            <#list bean.vacatelist as vacate>
+                <#if vacate_index == 0>
+                    <tr>
                         <td colspan="3">本址${vacate_index+1}</td>
                         <td>${vacate.name?default("/")}</td>
                         <td colspan="2">${vacate.changrelate?default("/")}</td>
-                    </#if>
-                </#list>
-            </#if>
-        </#if>-->
+                        <td colspan="4" rowspan="${bean.vacatelist?size}"></td>
+                    </tr>
+                <#else>
+                    <tr>
+                        <td colspan="3">本址${vacate_index+1}</td>
+                        <td>${vacate.name?default("/")}</td>
+                        <td colspan="2">${vacate.changrelate?default("/")}</td>
+                    </tr>
+                </#if>
+            </#list>
+        </#if>
+
             <tr>
                 <td colspan="3">非本址1</td>
                 <td>
