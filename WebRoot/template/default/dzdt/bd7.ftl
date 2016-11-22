@@ -1529,11 +1529,10 @@
 		var value = $(text).html();
 		var nIndex = jsonObj[value];
 		if(nIndex == '0'){
-			$(text).parent().css("fill",'red');
 		}else if(nIndex == '1'){
-			$(text).parent().css("fill",'blue');
+			$(text).parent().css("fill",'#449d44');
 		}else if(nIndex == '2'){
-			$(text).parent().css("fill",'0xff22aa');
+			$(text).parent().css("fill",'#c9302c');
 		}
 	});
 
