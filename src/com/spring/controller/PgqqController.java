@@ -321,6 +321,13 @@ public class PgqqController {
 				housebasic.setSortnum(SortUtils.getSortNum(sectionindex));
 				housebasic.setHassplit("1");
 			}
+			Long time = new Date().getTime();
+			housebasic.setSortnum(time.intValue());
+			if(StringUtils.isBlank(housebasic.getSectionindex())){
+				if(housebasic.getSectionindex().equals("-1000")){
+					housebasic.setSectionindex("");
+				}
+			}
 			RoleBean role = (RoleBean)s.getAttribute("role");
 			if(StringUtils.isEmpty(housebasic.getId())){
 				housebasic.setSection(role.getSection());
