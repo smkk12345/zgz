@@ -1530,13 +1530,13 @@
             var pointsId;
             $(function (e) {
                 $("polyline").dblclick(function (e) {
-                    $("polyline").attr("stroke-width", "0.1242");
+                    $("polyline").attr("stroke-width", "0.3242");
                     var fyId = $(this).attr("fyId");
                     pointsId = $(this).attr("id");
-                    if (fyId == "") {
-                    } else {
+                    //if (fyId == "") {
+                   // } else {
                         viewPoints();
-                    }
+                    //}
                 });
             });
             function viewPoints() {
@@ -1652,13 +1652,18 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
-         
+    //0 未签约   1签协议的    2交房的  3 已拆除     
 	var map = '${map}';
-	alert(map);
+	var jsonObj = JSON.parse(map);
+	//for( var key in jsonObj) {
+	//	var title = jsonObj[key];
+	//}	
+	
 	$('g').each(function (index,domEle){
 		var text = $(domEle).find("text").first();
 		var value = $(text).html();
-		var nIndex = map[value];
+		var nIndex = jsonObj[value];
+		alert(nIndex);
 		if(nIndex == '0'){
 			$(text).parent().css("fill",'red');
 		}else if(nIndex == '1'){
@@ -1667,6 +1672,7 @@
 			$(text).parent().css("fill",'0xff22aa');
 		}
 	});
+	
 	
     $(".modal-dialog").attr("style", "width:95%;");
     function toExcel(inTblId, inWindow) {
