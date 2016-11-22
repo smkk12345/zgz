@@ -94,15 +94,18 @@ public class SessionFilter extends OncePerRequestFilter {
 			// TODO: handle exception
 		}
 		if(Contanst.TEM_STOP){
-			if(url.contains("index.html")){
+			if(url.contains("index.action")||url.contains("quit.action")){
 				arg2.doFilter(request, response); 
 				return;
 			}
-			String authority = role.getRoleAuthority();
-			if(authority.substring(15, 16).equals("2")){
-				
-			}else{
-				temStop(response,request);
+			if(null != role){
+				String authority = role.getRoleAuthority();
+				if(authority.substring(38, 39).equals("2")){
+//					arg2.doFilter(request, response); 
+				}else{
+					temStop(response,request);
+					return ;
+				}
 			}
 		}
 		
@@ -183,7 +186,7 @@ public class SessionFilter extends OncePerRequestFilter {
 		response.setCharacterEncoding("utf-8");  
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();  
-		String loginPage = RequestUtil.getBasePath(request)+"index.html";  
+		String loginPage = RequestUtil.getBasePath(request)+"index.action";  
 		StringBuilder builder = new StringBuilder();  
 		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
 		builder.append("alert('系统被锁定，请联系管理员！');");  
@@ -198,6 +201,7 @@ public class SessionFilter extends OncePerRequestFilter {
 		}finally{
 			out.close();
 		}
+		
 	}
 	/**
 	 * 记录用户的操作信息
