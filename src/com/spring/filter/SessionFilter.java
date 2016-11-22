@@ -82,7 +82,7 @@ public class SessionFilter extends OncePerRequestFilter {
 		
 		// 不过滤的uri，首页不过滤 
 		String[] notFilter = new String[] { "login.action",
-				"testConnection.action", "validate.action","index.action"
+				"testConnection.action", "validate.action","index.action","chart"
 				 };
 		
 		request.getSession().setAttribute("hasVentilate", WebConstConfig.hasVentilate);
@@ -185,7 +185,6 @@ public class SessionFilter extends OncePerRequestFilter {
 		String loginPage = RequestUtil.getBasePath(request)+"index.action";  
 		StringBuilder builder = new StringBuilder();  
 		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
-		builder.append("alert('系统被锁定，请联系管理员！');");  
 		builder.append("window.top.location.href='");  
 		builder.append(loginPage);  
 		builder.append("';");  
