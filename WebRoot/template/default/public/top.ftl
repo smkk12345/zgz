@@ -47,7 +47,11 @@
                     	>财务结算</a></li>  
                     </#if> 
                     <#if role.roleAuthority[34]=="2">
-                    <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统配置</a>
+                        <#if role.roleAuthority[34]=="2">
+                         <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统配置</a>
+                        <#else>
+
+                        </#if>
                     </#if>
                     </li>
 	               <!--  <li><a <#if CURENT_TAB == 'GJXX'>class="active"</#if> href="${BASE_PATH}gjxx.action">信息管理</a>
