@@ -89,6 +89,8 @@ public class XtszController {
 //				Contanst.TEM_STOP = true;
 //			}
            // 妯℃澘璺¯寰 basePath
+			
+		   model.addAttribute("sd", Contanst.TEM_STOP);
            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
            model.addAttribute("BASE_ASSETS_PATH",
                    WebConstConfig.getBase_Assets_Path());

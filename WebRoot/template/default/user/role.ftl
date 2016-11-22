@@ -98,7 +98,7 @@
     dataType : "json",
     data : {"roleAuthority":authorityStr},
     error: function (XMLHttpRequest, textStatus, errorThrown) {
-    alert("出错");
+    $('#myModal').modal('hide');
     },				
     success : function(response) {
     $('#myModal').modal('hide');

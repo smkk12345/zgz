@@ -50,21 +50,6 @@ public class DzdtController {
 					continue;
 				}
 				
-//				var map = '${map}';
-//				alert(map);
-//				$('g').each(function (index,domEle){
-//					var text = $(domEle).find("text").first();
-//					var value = $(text).html();
-//					var nIndex = map[value];
-//					if(nIndex == '0'){
-//						$(text).parent().css("fill",'red');
-//					}else if(nIndex == '1'){
-//						$(text).parent().css("fill",'blue');
-//					}else if(nIndex == '2'){
-//						$(text).parent().css("fill",'0xff22aa');
-//					}
-//				});
-				
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){

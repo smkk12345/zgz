@@ -173,7 +173,7 @@
     <div class="container-fluid">
          <div class="checkbox fl">
             <label>
-                <input type="checkbox" dataIndex=20 name="chkItem" class="item_levelOne_3" <#if bean.roleAuthority[20]]=="2">checked </#if>> 电子地图
+                <input type="checkbox" dataIndex=20 name="chkItem" class="item_levelOne_3" <#if bean.roleAuthority[20]=="2">checked </#if>> 电子地图
             </label>
         </div> 
     </div>
@@ -189,7 +189,7 @@
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=22 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[22]]=="2">checked </#if>> 第二标段
+                      <input type="checkbox" dataIndex=22 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[22]=="2">checked </#if>> 第二标段
                   </label>
               </div>  
           </div>
@@ -203,28 +203,28 @@
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=24 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[24]]=="2">checked </#if>> 第四标段
+                      <input type="checkbox" dataIndex=24 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[24]=="2">checked </#if>> 第四标段
                   </label>
               </div>  
           </div>
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=25 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[25]]=="2">checked </#if>> 第五标段
+                      <input type="checkbox" dataIndex=25 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[25]=="2">checked </#if>> 第五标段
                   </label>
               </div>  
           </div>
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=26 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[26]]=="2">checked </#if>> 第六标段
+                      <input type="checkbox" dataIndex=26 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[26]=="2">checked </#if>> 第六标段
                   </label>
               </div>  
           </div>
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=27 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[27]]=="2">checked </#if>> 第七标段
+                      <input type="checkbox" dataIndex=27 name="chkItem" class="subItem_levelOne_3" <#if bean.roleAuthority[27]=="2">checked </#if>> 第七标段
                   </label>
               </div>  
           </div>
@@ -233,7 +233,7 @@
     <div class="container-fluid">
          <div class="checkbox fl">
             <label>
-                <input type="checkbox" dataIndex=28 name="chkItem" class="item_levelOne_4" <#if bean.roleAuthority[28]]=="2">checked </#if>> 数据统计
+                <input type="checkbox" dataIndex=28 name="chkItem" class="item_levelOne_4" <#if bean.roleAuthority[28]=="2">checked </#if>> 数据统计
             </label>
         </div> 
     </div>
@@ -242,14 +242,14 @@
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=29 name="chkItem" class="subItem_levelOne_4" <#if bean.roleAuthority[29]]=="2">checked </#if>> 各标段签约情况统计
+                      <input type="checkbox" dataIndex=29 name="chkItem" class="subItem_levelOne_4" <#if bean.roleAuthority[29]=="2">checked </#if>> 各标段签约情况统计
                   </label>
               </div>  
           </div>
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=30 name="chkItem" class="subItem_levelOne_4" <#if bean.roleAuthority[30]]=="2">checked </#if>> 各标段交房情况统计
+                      <input type="checkbox" dataIndex=30 name="chkItem" class="subItem_levelOne_4" <#if bean.roleAuthority[30]=="2">checked </#if>> 各标段交房情况统计
                   </label>
               </div>  
           </div>
@@ -265,7 +265,7 @@
     <div class="container-fluid">
          <div class="checkbox fl">
             <label>
-                <input type="checkbox" dataIndex=32 name="chkItem" class="item_levelOne_5" <#if bean.roleAuthority[32]]=="2">checked </#if>> 交房信息管理
+                <input type="checkbox" dataIndex=32 name="chkItem" class="item_levelOne_5" <#if bean.roleAuthority[32]=="2">checked </#if>> 交房信息管理
             </label>
         </div> 
     </div>
@@ -274,7 +274,7 @@
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=33 name="chkItem" class="subItem_levelOne_5" <#if bean.roleAuthority[33]]=="2">checked </#if>> 交房登记
+                      <input type="checkbox" dataIndex=33 name="chkItem" class="subItem_levelOne_5" <#if bean.roleAuthority[33]=="2">checked </#if>> 交房登记
                   </label>
               </div>  
           </div>
@@ -292,28 +292,28 @@
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=35 name="chkItem"  class="subItem_levelOne_6" <#if bean.roleAuthority[35]]=="2">checked </#if>> 用户信息
+                      <input type="checkbox" dataIndex=35 name="chkItem"  class="subItem_levelOne_6" <#if bean.roleAuthority[35]=="2">checked </#if>> 用户信息
                   </label>
               </div>  
           </div>
           <div class="form-group  fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=36 name="chkItem" class="subItem_levelOne_6" <#if bean.roleAuthority[36]]=="2">checked </#if>> 用户组
+                      <input type="checkbox" dataIndex=36 name="chkItem" class="subItem_levelOne_6" <#if bean.roleAuthority[36]=="2">checked </#if>> 用户组
                   </label>
               </div>  
           </div>
 		    <div class="form-group  fl ml10">
 		         <div class="checkbox fl">
 		            <label>
-		                <input type="checkbox" dataIndex=37 name="chkItem" class="subItem_levelOne_6" <#if bean.roleAuthority[37]]=="2">checked </#if>> 个人设置
+		                <input type="checkbox" dataIndex=37 name="chkItem" class="subItem_levelOne_6" <#if bean.roleAuthority[37]=="2">checked </#if>> 个人设置
 		            </label>
 		        </div> 
 		    </div>
 		   <div class="form-group  fl ml10">
 		         <div class="checkbox fl">
 		            <label>
-		                <input type="checkbox" dataIndex=38 name="chkItem" class="subItem_levelOne_6" <#if bean.roleAuthority[38]]=="2">checked </#if>> 系统锁定
+		                <input type="checkbox" dataIndex=38 name="chkItem" class="subItem_levelOne_6" <#if bean.roleAuthority[38]=="2">checked </#if>> 系统锁定
 		            </label>
 		        </div> 
 		    </div>    
