@@ -1027,7 +1027,6 @@
 		var text = $(domEle).find("text").first();
 		var value = $(text).html();
 		var nIndex = jsonObj[value];
-		alert(nIndex);
 		if(nIndex == '0'){
 			$(text).parent().css("fill",'red');
 		}else if(nIndex == '1'){
