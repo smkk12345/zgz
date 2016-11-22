@@ -198,7 +198,7 @@ public class IndexController {
 
 	
 
-	@RequestMapping({ "/index.action" })
+	@RequestMapping({ "/lockService.action" })
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		try {
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);

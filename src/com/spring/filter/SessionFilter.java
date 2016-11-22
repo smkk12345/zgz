@@ -17,6 +17,7 @@ import com.common.consts.WebConstConfig;
 import com.common.utils.RequestUtil;
 import com.common.utils.StringUtils;
 
+import com.hibernate.baseSettingInfo.domain.BaseSettingBean;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
@@ -82,10 +83,9 @@ public class SessionFilter extends OncePerRequestFilter {
 		
 		// 不过滤的uri，首页不过滤 
 		String[] notFilter = new String[] { "login.action",
-				"testConnection.action", "validate.action","index.action","chart"
+				"testConnection.action", "validate.action","lockService.action","chart"
 				 };
 		
-		request.getSession().setAttribute("hasVentilate", WebConstConfig.hasVentilate);
 		String url = request.getRequestURI();
 		
 		// 请求的uri   
@@ -107,20 +107,32 @@ public class SessionFilter extends OncePerRequestFilter {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
+		BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
+		   if(null == baseBean){
+			   baseBean = new BaseSettingBean();
+			   baseBean.setKey("sd");
+			   baseBean.setKeyName("系统锁定");
+			   baseBean.setValue("0");
+//			   ServiceManager.getBaseSettingServiceImpl().delete();
+			   ServiceManager.getBaseSettingServiceImpl().save(baseBean);
+		   }
+		 Contanst.TEM_STOP = baseBean.getValue().equals("1");
+		
 		if(Contanst.TEM_STOP){
 			if(null != role){
 				String authority = role.getRoleAuthority();
 				if(authority.substring(38, 39).equals("2")){
 //						arg2.doFilter(request, response); 
 				}else{
-					temStop(response,request);
-					return ;
+					if(!url.contains("lockService.action")){
+						temStop(response,request);
+					}
 				}
 			}
 		}else{
-			if(url.contains("index.action")){
+			if(url.contains("lockService.action")){
 				webExpireInfor(response, request);
-				return;
 			}
 		}
 		if (doFilter) { 
@@ -187,7 +199,12 @@ public class SessionFilter extends OncePerRequestFilter {
 		response.setCharacterEncoding("utf-8");  
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();  
-		String loginPage = RequestUtil.getBasePath(request)+"index.action";  
+		try {
+			request.getSession().invalidate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		String loginPage = RequestUtil.getBasePath(request)+"lockService.action";  
 		StringBuilder builder = new StringBuilder();  
 		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
 		builder.append("window.top.location.href='");  
