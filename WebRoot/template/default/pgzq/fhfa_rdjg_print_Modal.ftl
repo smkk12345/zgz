@@ -140,7 +140,7 @@
                 </#if>
                     m<sup>2</sup></td>
                 <td>比例</td>
-                <td>50%</td>
+                <td>30%</td>
                 <td colspan="2">折合区位补偿价1800元/m<sup>2</sup></td>
             </tr>
             <tr>

@@ -13,7 +13,7 @@
             <td>${ROW.fwarea?default("")}</td>
             <td>${ROW.mobile?default("")}</td>
             <td>
-                <#if role.roleAuthority[2]=="2">
+                <#if role.roleAuthority[3]=="2">
                     <#if (ROW.checkresult)??>
                         <#if ROW.checkresult=="1">
                             已锁定
@@ -36,7 +36,7 @@
                 </#if>
             </td>
             <td>
-                <#if role.roleAuthority[2]=="2">
+                <#if role.roleAuthority[3]=="2">
                     <#if ROW.hassplit?default("0")=="0">
                         <#if (ROW.checkresult)??>
                             <#if ROW.checkresult=="1">
@@ -152,14 +152,16 @@
             <td>${ROW.azfgfk?default("")}</td>
             <td>${ROW.jshk?default("")}</td>
             <td>
-                <#if role.roleAuthority[6]=="2">
+                <#if role.roleAuthority[7]=="2">
                     <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
                             title='编辑修改'
                             data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
                 </#if>
-                <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
-                        title='数据查看'
-                        data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+                <#if role.roleAuthority[8]=="2">
+                    <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
+                            title='数据查看'
+                            data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+                </#if>
             </td>
         </tr>
         </#list>
@@ -192,15 +194,21 @@
             <td>${(ROW.wwzjlf)!""}</td>
 
             <td>
-                <button type="button" style="color: #006600"
-                        class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print" title='打印基本情况调查表'
-                        data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}">打印基本调查表
-                </button>
-                <button type="button" style="color: #006600"
-                        class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print" title='打印认定结果确认一览表'
-                        data-url="${BASE_PATH}/pgzq/fnsjsh_rdjg_print.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenmentid)!""}">
-                    打印认定结果表
-                </button>
+                <#if role.roleAuthority[15]=="2">
+                    <button type="button" style="color: #006600"
+                            class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
+                            title='打印基本情况调查表' data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}">
+                        打印基本调查表
+                    </button>
+                </#if>
+                <#if role.roleAuthority[16]=="2">
+                    <button type="button" style="color: #006600"
+                            class="btn btn-default btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
+                            title='打印认定结果确认一览表'
+                            data-url="${BASE_PATH}/pgzq/fnsjsh_rdjg_print.action?housebasicid=${ROW.id}&agreenmentid=${(ROW.agreenmentid)!""}">
+                        打印认定结果表
+                    </button>
+                </#if>
             </td>
             <td>
                 <#if (ROW.checkresult)??>
@@ -214,28 +222,30 @@
                 </#if>
             </td>
             <td>
-                <#if (ROW.checkresult)??>
-                    <#if ROW.checkresult=="0">
-                        <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查'
-                                data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                            重新审查
-                        </button>
-                    <#elseif ROW.checkresult=="1">
-                        <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='重新审查'
-                                data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                            重新审查
-                        </button>
+                <#if role.roleAuthority[17]=="2">
+                    <#if (ROW.checkresult)??>
+                        <#if ROW.checkresult=="0">
+                            <button type="button" class="btn btn-warning btn-xs ml10 YL-ModalClick " title='重新审查'
+                                    data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                                重新审查
+                            </button>
+                        <#elseif ROW.checkresult=="1">
+                            <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='重新审查'
+                                    data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                                重新审查
+                            </button>
+                        <#else>
+                            <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='审查'
+                                    data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                                审查
+                            </button>
+                        </#if>
                     <#else>
                         <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='审查'
                                 data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
                             审查
                         </button>
                     </#if>
-                <#else>
-                    <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick" title='审查'
-                            data-url="${BASE_PATH}pgzq/fhfa_check_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                        审查
-                    </button>
                 </#if>
             </td>
         </tr>
@@ -267,23 +277,36 @@
             <td>${(ROW.azfgfk)!""}</td>
             <td>${(ROW.jlfsum)!""}</td>
             <td>
-                <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'
-                        data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                    <span class="glyphicon glyphicon-print">金额审查</span></button>
-                <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'
-                    <#if ROW.atype?default("0")=="0">
-                        data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                    <#else>
-                        data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}
-                        &agreenmentid=${(ROW.agreenmentid)!""}">
-                    </#if>
-                    <span class="glyphicon glyphicon-print">协议</span></button>
+                <#if role.roleAuthority[9]=="2">
+                    <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'
+                            data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                        <span class="glyphicon glyphicon-print">金额审查</span></button>
+                </#if>
+                <#if role.roleAuthority[10]=="2">
+                    <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'
+
+                        <#if ROW.atype?default("0")=="0">
+                            data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                        <#else>
+                            data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}
+                            &agreenmentid=${(ROW.agreenmentid)!""}">
+                        </#if>
+                        <span class="glyphicon glyphicon-print">协议</span></button>
+                </#if>
             </td>
             <#if (ROW.atype)??>
                 <td>
-                    <#if (ROW.protocolnumber)??>
-                        <#if (ROW.protocolnumber?length>0)>
-                        ${ROW.displaydate}
+                    <#if role.roleAuthority[11]=="2">
+                        <#if (ROW.protocolnumber)??>
+                            <#if (ROW.protocolnumber?length>0)>
+                            ${ROW.displaydate}
+                            <#else>
+                                <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态'
+                                        onclick="confirmSign(this)"
+                                        data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                                    确认签约
+                                </button>
+                            </#if>
                         <#else>
                             <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态'
                                     onclick="confirmSign(this)"
@@ -291,25 +314,21 @@
                                 确认签约
                             </button>
                         </#if>
-                    <#else>
-                        <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态'
-                                onclick="confirmSign(this)"
-                                data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                            确认签约
-                        </button>
                     </#if>
                 </td>
                 <td title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
                 <td>
-                    <#if (ROW.protocolnumber)??>
-                        <#if (ROW.protocolnumber?length>0)>
-                            <button type="button" class="btn btn-success btn-xs ml10  YL-ModalClick bold" title=''
-                                    data-url="${BASE_PATH}/pgzq/fhxy_xy_sy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
-                                打印首页
-                            </button>
+                    <#if role.roleAuthority[12]=="2">
+                        <#if (ROW.protocolnumber)??>
+                            <#if (ROW.protocolnumber?length>0)>
+                                <button type="button" class="btn btn-success btn-xs ml10  YL-ModalClick bold" title=''
+                                        data-url="${BASE_PATH}/pgzq/fhxy_xy_sy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                                    打印首页
+                                </button>
+                            <#else>
+                            </#if>
                         <#else>
                         </#if>
-                    <#else>
                     </#if>
                 </td>
             <#else>
@@ -319,17 +338,17 @@
             ${ROW.indexNumStr?default("")}
             </td>
             <td>
-                <#if (ROW.protocolnumber)??>
-                    <#if (ROW.protocolnumber?length>0)>
+                <#if role.roleAuthority[13]=="2">
+                    <#if (ROW.protocolnumber)??>
+                        <#if (ROW.protocolnumber?length>0)>
                         <button type="button"
                                 class="btn btn-danger btn-xs ml10 YL-ModalClick bold glyphicon glyphicon-print"
-                                title='打印协议'
+                                title='打印告知单'
                                 data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
-                    <#else>
+                        </#if>
                     </#if>
-                <#else>
                 </#if>
-            </td>
+                </td>
 
         </tr>
         </#list>
@@ -388,16 +407,20 @@
                     <#if ROW.hasothers?default("0")=="1">
                         已经交房
                     <#else>
+                        <#if role.roleAuthority[33]=="2">
+                            <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房'
+                                    onclick="confirmOthers(this)"
+                                    data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房
+                            </button>
+                        </#if>
+                    </#if>
+                <#else>
+                    <#if role.roleAuthority[33]=="2">
                         <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房'
                                 onclick="confirmOthers(this)"
                                 data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房
                         </button>
                     </#if>
-                <#else>
-                    <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认交房'
-                            onclick="confirmOthers(this)"
-                            data-url="${BASE_PATH}confirmOthers.action?housebasicid=${ROW.housebasicid}">确认交房
-                    </button>
                 </#if>
             </td>
         </tr>

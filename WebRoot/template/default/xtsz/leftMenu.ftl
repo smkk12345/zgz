@@ -4,7 +4,7 @@
         <a href="${BASE_PATH}xtsz/jbsz.action"><#if CURENT_TAB_2 =='JBSZ'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>基本设置</a>
     </li>-->
     
-    <#if role.roleAuthority[6]=="2">
+    <#if role.roleAuthority[36]=="2" ||  role.roleAuthority[35]=="2">
 	    <li <#if CURENT_TAB_2 =='YHGL'>class="active"</#if>>
 	        <a href="${BASE_PATH}user/yhgl.action">
 	        <#if CURENT_TAB_2 =='YHGL'>
@@ -14,12 +14,12 @@
 	        </#if>用户管理</a>
 	    </li>
 	</#if>
-	
+	 <#if role.roleAuthority[37]=="2">
     <li <#if CURENT_TAB_2 =='GRSZ'>class="active"</#if>>
         <a href="${BASE_PATH}user/personDetail.action?oType=detail"><#if CURENT_TAB_2 =='GRSZ'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>个人设置</a>
     </li>
-    
-    <#if role.roleAuthority[15]=="2">
+    </#if>
+    <#if role.roleAuthority[38]=="2">
 	    <li <#if CURENT_TAB_2 =='XTSD'>class="active"</#if>>
 	        <a href="${BASE_PATH}xtsz/xtsd.action"><#if CURENT_TAB_2 =='XTSD'><span class="yu-tu-fgsj-active"></span><#else><span class="yu-tu-fgsj-commen"></span></#if>系统锁定</a>
 	    </li>
