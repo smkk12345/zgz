@@ -31,8 +31,8 @@
             <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇张郭庄村棚改项目安置及房源使用情况</div>
             <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
             <div style='margin-top: 50px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:450px'>
-                <div style='float: left;width:auto; height:auto' id="chart1"> </div>
-                <div style='float: left;width:auto; height:auto' id="chart2"> </div>
+                <div style='font-size:30px;float: left;width:50%; height:570px' id="chart1"> </div>
+                <div style='font-size:30px;float: left;width:50%; height:570px' id="chart2"> </div>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                                     y: 10,
                                     style: {
                                     color: "#000",
-                                            fontSize: 20,
+                                            fontSize: '20px',
                                             fontWeight: "bold",
                                     }
                             },
@@ -64,14 +64,19 @@
                             },
                             plotOptions: {
                             pie: {
-                            size:'80%',
+                            size:'90%',
                                     allowPointSelect: true,
                                     cursor: 'pointer',
                                     dataLabels: {
                                     enabled: true,
                                             color: '#000000',
                                             connectorColor: '#000000',
-                                            distance:'1',
+
+                                        distance: - 50, //通过设置这个属性，将每个小饼图的显示名称和每个饼图重叠
+                                        style: {
+                                            fontSize: '20px',
+                                            lineHeight: '20px'
+                                        },
                                             formatter: function () {
                                             //'{point.name}: {point.percentage:.1f} %'
 
@@ -160,21 +165,21 @@
                                 var strDate = date.getDate();
                             var week = date.getDay();
                             var str = "";
-                            if (week == 0) {  
-                            	str = "星期日";  
-                    } else if (week == 1) {  
-                        str = "星期一";  
-                    } else if (week == 2) {  
-                        str = "星期二";  
-                    } else if (week == 3) {  
-                        str = "星期三";  
-                    } else if (week == 4) {  
-                        str = "星期四";  
-                    } else if (week == 5) {  
-                        str = "星期五";  
-                    } else if (week == 6) {  
-                        str = "星期六";  
-                    }  
+                            if (week == 0) { 
+                            	str = "星期日"; 
+                    } else if (week == 1) { 
+                        str = "星期一"; 
+                    } else if (week == 2) { 
+                        str = "星期二"; 
+                    } else if (week == 3) { 
+                        str = "星期三"; 
+                    } else if (week == 4) { 
+                        str = "星期四"; 
+                    } else if (week == 5) { 
+                        str = "星期五"; 
+                    } else if (week == 6) { 
+                        str = "星期六"; 
+                    } 
                         if (month >= 1 && month <= 9) {
                             month = "0" + month;
                         }

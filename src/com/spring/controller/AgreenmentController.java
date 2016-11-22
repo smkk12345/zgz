@@ -459,12 +459,13 @@ public class AgreenmentController {
 	
 	@RequestMapping({ "/pgzq/saveAgreenment.action" })
 	public void saveAgreenment(HttpServletRequest request,
-			HttpServletResponse response, ModelMap model,Agreement agreenment,String housebasicid) {
+			HttpServletResponse response, ModelMap model,Agreement agreenment,HouseBasic housebasic,String housebasicid) {
 		try {
 			
 			String aid = request.getParameter("aid");
 			if(!StringUtils.isBlank(aid)){
 				agreenment.setId(aid);
+				housebasic.setId(aid);
 			}
 			HttpSession s = request.getSession();
 			RoleBean role = (RoleBean)s.getAttribute("role");

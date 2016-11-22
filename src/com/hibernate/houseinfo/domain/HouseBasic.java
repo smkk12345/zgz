@@ -59,6 +59,9 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private Integer notlocalpeoplecount;
 	//安置人口数量
 	private Integer people;
+	//父母及超生子女姓名
+	private String fmjcsznxm;
+	
 	
 	//-------------------------面积相关----------------------------
 	//宅基地测绘面积   ?保留几位小数
@@ -504,5 +507,11 @@ public class HouseBasic extends BaseBean implements Serializable {
 	
 	public void setPeopleinfo(String peopleinfo) {
 		this.peopleinfo = peopleinfo;
+	}
+	public String getFmjcsznxm() {
+		return fmjcsznxm;
+	}
+	public void setFmjcsznxm(String fmjcsznxm) {
+		this.fmjcsznxm = fmjcsznxm;
 	}
 }

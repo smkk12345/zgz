@@ -152,17 +152,18 @@ public class Agreement extends BaseBean {
 	//认定住房空难
 	private String hardhouse;
 	//被腾退家庭购房标准
-    private String gfbz;
+    private String gfbz50;
+    private String gfbz45;
+    
+    //认定宅基地总补偿面积
+    private String rdzjdallarea;
+    
+  //住房困难户补偿方案
+    private String zfknhbcfa;
+
+
+	private String rdzfkn;
 	
-	public String getGfbz() {
-		return gfbz;
-	}
-
-
-	public void setGfbz(String gfbz) {
-		this.gfbz = gfbz;
-	}
-
 
 	public String getParentnames() {
 		return parentnames;
@@ -809,6 +810,56 @@ public class Agreement extends BaseBean {
 
 	public void setZbwgfk(BigDecimal zbwgfk) {
 		this.zbwgfk = zbwgfk;
+	}
+
+
+	public String getGfbz50() {
+		return gfbz50;
+	}
+
+
+	public void setGfbz50(String gfbz50) {
+		this.gfbz50 = gfbz50;
+	}
+
+
+	public String getGfbz45() {
+		return gfbz45;
+	}
+
+
+	public void setGfbz45(String gfbz45) {
+		this.gfbz45 = gfbz45;
+	}
+
+
+	public String getRdzjdallarea() {
+		return rdzjdallarea;
+	}
+
+
+	public void setRdzjdallarea(String rdzjdallarea) {
+		this.rdzjdallarea = rdzjdallarea;
+	}
+
+
+	public String getZfknhbcfa() {
+		return zfknhbcfa;
+	}
+
+
+	public void setZfknhbcfa(String zfknhbcfa) {
+		this.zfknhbcfa = zfknhbcfa;
+	}
+
+
+	public String getRdzfkn() {
+		return rdzfkn;
+	}
+
+
+	public void setRdzfkn(String rdzfkn) {
+		this.rdzfkn = rdzfkn;
 	}
 
 }
