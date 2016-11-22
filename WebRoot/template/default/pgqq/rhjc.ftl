@@ -18,7 +18,7 @@
                	</#if>
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
-
+			 <#if role.roleAuthority[2]=="2">
             <div class="fr">
                 <form  action="${BASE_PATH}/index.action" accept-charset="UTF-8" method="post" >
                     <div class=' autoWidthGroup-2 fl'>
@@ -40,6 +40,7 @@
                     <div class='autoWidthGroup-2 fl'><button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>                   
                 </form>
             </div>
+            </#if>
         </div>
 
         <table  class="table table-bordered table-hover">

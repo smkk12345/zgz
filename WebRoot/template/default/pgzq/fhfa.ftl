@@ -15,6 +15,7 @@
             <div class="fl">
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
+            <#if role.roleAuthority[6]=="2">
             <div class="fl">
               <form  action="${BASE_PATH}pgzq/agreenment.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
@@ -45,6 +46,7 @@
 	               
 	            </form>
             </div>
+            </#if>
         </div>
 
         <table  class="table table-bordered table-hover">
