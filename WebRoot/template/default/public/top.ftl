@@ -28,7 +28,7 @@
                     </#if>
                     <#if role.roleAuthority[18]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ'>class="active"</#if> 
-                    		href="${BASE_PATH}sjtj/index.action"
+                    		href="${BASE_PATH}sjtj/lists.action"
                     	>实时数据</a></li>  
                     </#if>
                     <#if role.roleAuthority[20]=="2">
