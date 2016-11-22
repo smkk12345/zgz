@@ -196,14 +196,14 @@ public class SessionFilter extends OncePerRequestFilter {
 	private void temStop(HttpServletResponse response,HttpServletRequest request) throws IOException {
 		// 如果session中不存在登录者实体，则弹出框提示重新登录   
 		// 设置request和response的字符集，防止乱码   
+		response.setCharacterEncoding("utf-8");  
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();  
 		try {
 			request.getSession().invalidate();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		response.setCharacterEncoding("utf-8");  
-		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();  
 		String loginPage = RequestUtil.getBasePath(request)+"lockService.action";  
 		StringBuilder builder = new StringBuilder();  
 		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
