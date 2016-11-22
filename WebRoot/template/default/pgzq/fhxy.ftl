@@ -141,7 +141,7 @@
     }
     
 	 function confirmSign(btn) {
-	        if (yu_confirm("确定签约？")) {
+	        if (yu_confirm("您确定签约吗？确定签约后，将不能更改！！！")) {
 	            var url = $(btn).attr("data-url");
 	            //var par = $("#"+pname);
 	            $.ajax({
