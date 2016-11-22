@@ -1,11 +1,4 @@
-<#include "leftMenu.ftl"/>
-<#include "../macro_ftl/cxdList.ftl">
-<@override name="main_right">
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/three.min.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-            
+
 <div class="modal-header clearfix">
     <h4 class="modal-title pull-left m0">【${bean.names}】安置补偿方式金额审查表</h4>
     <div class="fr">
@@ -14,7 +7,7 @@
     </div>
 </div>
 <div class="modal-body center">
-    <div class="content xy-print-con"  id="xy-print">
+    <div class="content fhfa-rdjg-print-con"  id="xy-print">
         <span class="title">安置补偿方式金额审查表</span>
 
         <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
@@ -283,65 +276,17 @@
         <div style="clear:both; height:20px;"></div>
     </div>
 </div>
+<script src="${BASE_ASSETS_PATH}libs/jqprint/jquery.jqprint.js"></script>
+<script src="${BASE_ASSETS_PATH}libs/jqprint/jquery-migrate-1.1.0.js"></script>
 <script type="text/javascript">
+       //设置模态框高度和宽度
+    //设置模态框高度和宽度
+    $("#myModal .modal-dialog").width(750);
+    $(".modal-body").css("height", ($(window).height() - 150) + "px");
+    $(".modal-body").css("overflow-y", "scroll");
 
-</script>
-</@override>
-<@extends name = "../base/layout.ftl"/>
-<script type="text/javascript">
-    $(".modal-dialog").attr("style", "width:95%;");
-    function toExcel(inTblId, inWindow) {
-        var fileName = '${CommenData.time_jc}' + ".xls";
-        name.split(" ").join("");
-        fileName = fileName.replace(" ", "-");
-        fileName = fileName.split(":").join("-");
-        fileName = fileName.split("-").join("");
-        $("#yu-print-show").tableExport({type: 'excel', separator: ';', escape: 'false'}, fileName);
-        e.preventDefault();
+    function yu_print() {
+        $("#xy-print").jqprint();
     }
-
-    function doFileExport(inName, inStr) {
-        var xlsWin = null;
-        if (!!document.all("glbHideFrm")) {
-            xlsWin = glbHideFrm;
-        } else {
-            var width = 1;
-            var height = 1;
-            var openPara = "left=" + (window.screen.width / 2 + width / 2) + ",top=" + (window.screen.height + height / 2) + ",scrollbars=no,width=" + width + ",height=" + height;
-            xlsWin = window.open("", "_blank", openPara);
-        }
-        xlsWin.document.write(inStr);
-        xlsWin.document.close();
-        xlsWin.document.execCommand('Saveas', true, inName);
-        xlsWin.close();
-    }
-
-    function yu_print1() {
-        alert(1231);
-        toExcel("yu-print-show", null);
-    }
-
-    function delBtnClick(btn) {
-        if (yu_confirm("确认删除该数据？")) {
-            var curDataId = $(btn).attr("pname");
-            var p = $(btn).attr("data-url");
-            var par = $(btn).parent().parent();
-            //var par = $("#"+pname);
-            $.ajax({
-                cache: true,
-                type: "POST",
-                url: p,
-                dataType: "json",
-                data: {housebasicid: curDataId},
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                   location.href="${BASE_PATH}"+"/index.action";
-                },
-                success: function (response) {
-                   location.href="${BASE_PATH}"+"/index.action";
-                }
-            })
-        }
-    }
-
 
 </script>

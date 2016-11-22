@@ -196,7 +196,7 @@
             <td>
                 <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
                         title='财务结算表格打印'
-                        data-url="${BASE_PATH}cwjs_01_print_model.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+                        data-url="${BASE_PATH}cwjs/cwjs_01_print_model.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
             </td>
         </tr>
         </#list>

@@ -61,7 +61,7 @@
                 <th>结算后款</th>
                 <th>操作</th>
             </tr>
-            <@XyList list pageNo pageSize/>
+            <@cwjs_01 list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
@@ -78,7 +78,7 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
-    $(".modal-dialog").attr("style", "width:95%;");
+    $(".modal-dialog").attr("style", "width:750px;");
     function toExcel(inTblId, inWindow) {
         var fileName = '${CommenData.time_jc}' + ".xls";
         name.split(" ").join("");
