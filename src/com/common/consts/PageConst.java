@@ -44,10 +44,9 @@ public class PageConst {
     public final static String SJFX_qysxhtz = "/default/sjfx/qysxhtz.ftl";
     
     
-    
-    
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
-    public final static String CWJS_01= "/default/cwjs/cwjs_01_print_Modal.ftl";
+    public final static String CWJS_01_PRINT_MODEL= "/default/cwjs/cwjs_01_print_Modal.ftl";
+    public final static String CWJS_01= "/default/cwjs/cwjs.ftl";
     
     public final static String PGZQ_kbxy_print = "/default/pgzq/kbxyprint";
     public final static String PGZQ_fbxy_print = "/default/pgzq/fbxyprint";
