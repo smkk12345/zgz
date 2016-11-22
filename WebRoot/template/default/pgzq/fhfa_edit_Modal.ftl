@@ -37,7 +37,7 @@
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人身份证号:</label>
-                    <input type='text'  class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>
+                    <input type='text'  class='form-control input-sm fl dmDate' name='idcard' value="${housebasic.idcard?default("")}"/>
                 </div>               
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>安置意向:</label>

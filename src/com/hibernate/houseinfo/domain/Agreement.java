@@ -160,6 +160,9 @@ public class Agreement extends BaseBean {
     
   //住房困难户补偿方案
     private String zfknhbcfa;
+
+
+	private String rdzfkn;
 	
 
 	public String getParentnames() {
