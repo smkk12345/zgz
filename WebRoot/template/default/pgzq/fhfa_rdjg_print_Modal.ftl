@@ -16,29 +16,29 @@
             <tr>
                 <td rowspan="4">基本数据</td>
                 <td colspan="2">被腾退人姓名</td>
-                <td>${bean.names?default("/")}</td>
+                <td>${bean.names?default("")}</td>
                 <td>被腾宅基地坐落</td>
-                <td colspan="3">${bean.location?default("/")}</td>
+                <td colspan="3">${bean.location?default("")}</td>
                 <td>认定日期</td>
                 <td>${year}年<u>&nbsp;&nbsp;&nbsp;&nbsp;${month}&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${day}&nbsp;&nbsp;&nbsp;</u>日
                 </td>
             </tr>
             <tr>
                 <td colspan="2">身份证号</td>
-                <td>${bean.idcard?default("/")}</td>
+                <td>${bean.idcard?default("")}</td>
                 <td>被腾退家庭购房标准</td>
                 <td style="text-align: left">
                     50m<sup>2</sup>( ${agreenment.gfbz50?default("")})人<br>
                     45m<sup>2</sup>( ${agreenment.gfbz45?default("")})人
                 </td>
                 <td colspan="2">父母及超生子女姓名</td>
-                <td colspan="2">${bean.fmjcsznxm?default("/")}</td>
+                <td colspan="2">${bean.fmjcsznxm?default("")}</td>
             </tr>
             <tr>
                 <td colspan="2">实测现状宅基地面积</td>
-                <td class="">${bean.zjdarea}m<sup>2</sup></td>
+                <td class="">${bean.zjdarea?default("")}m<sup>2</sup></td>
                 <td>实测房屋建筑面积</td>
-                <td class="textalign-r">${bean.fwarea}m<sup>2</sup></td>
+                <td class="textalign-r">${bean.fwarea?default("")}m<sup>2</sup></td>
                 <td colspan="2">认定住房困难</td>
                 <td colspan="2" style="">
                 <#if agreenment.hardhouse??>
@@ -97,7 +97,7 @@
                 <#if agreenment.homesteadyear?default("-1") == '0'>
                 ${agreenment.conhomestarea?default("")}
                 <#else>
-                    /
+
                 </#if>
                     m<sup>2</sup></td>
                 <td>比例</td>
@@ -110,7 +110,7 @@
                 <#if agreenment.homesteadyear?default("-1") == '0'>
                 ${agreenment.overhomesteadarea?default("")}
                 <#else>
-                    /
+
                 </#if>
                     m<sup>2</sup></td>
                 <td>比例</td>
@@ -124,7 +124,7 @@
                 <#if agreenment.homesteadyear?default("-1") == '1'>
                 ${agreenment.conhomestarea?default("")}
                 <#else>
-                    /
+
                 </#if>
                     m<sup>2</sup></td>
                 <td>比例</td>
@@ -137,11 +137,10 @@
                 <#if agreenment.homesteadyear?default("-1") == '1'>
                 ${agreenment.overhomesteadarea?default("")}
                 <#else>
-                    /
                 </#if>
                     m<sup>2</sup></td>
                 <td>比例</td>
-                <td>50%</td>
+                <td>30%</td>
                 <td colspan="2">折合区位补偿价1800元/m<sup>2</sup></td>
             </tr>
             <tr>
@@ -163,77 +162,79 @@
                 <td colspan="2">与被腾退人关系</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>
             </tr>
+     <#if bean.vacatelist??>
         <#if bean.vacatelist?size lt 16>
-            <#if bean.vacatelist??>
+            <#if bean.vacatelist?size lt 1>
+                    <tr>
+                        <td colspan="3">本址1</td>
+                        <td></td>
+                        <td colspan="2"></td>
+                        <td colspan="4" rowspan="15"></td>
+                    </tr>
+
+            <#else>
                 <#list bean.vacatelist as vacate>
                     <#if vacate_index == 0>
                         <tr>
                             <td colspan="3">本址${vacate_index+1}</td>
-                            <td>${vacate.name?default("/")}</td>
-                            <td colspan="2">${vacate.changrelate?default("/")}</td>
+                            <td>${vacate.name?default("")}</td>
+                            <td colspan="2">${vacate.changrelate?default("")}</td>
                             <td colspan="4" rowspan="15"></td>
                         </tr>
                     <#else>
                         <tr>
                             <td colspan="3">本址${vacate_index+1}</td>
-                            <td>${vacate.name?default("/")}</td>
-                            <td colspan="2">${vacate.changrelate?default("/")}</td>
-                        </tr>
-                    </#if>
-                </#list>
-                <#list 1..(15-bean.vacatelist?size) as t>
-                    <#if bean.vacatelist?size== 0>
-                        <tr>
-                            <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
-                            <td></td>
-                            <td colspan="2"></td>
-                            <td colspan="4" rowspan="15"></td>
-                        </tr>
-                    <#else>
-                        <tr>
-                            <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
-                            <td></td>
-                            <td colspan="2"></td>
-                        </tr>
-                    </#if>
-                </#list>
-            <#else>
-                <#list 1..15 as t>
-                    <#if t_index == 0>
-                        <tr>
-                            <td colspan="3">本址${t_index+1}</td>
-                            <td></td>
-                            <td colspan="2"></td>
-                            <td colspan="4" rowspan="15"></td>
-                        </tr>
-                    <#else>
-                        <tr>
-                            <td colspan="3">本址${t_index+1}</td>
-                            <td>${vacate.name?default("/")}</td>
-                            <td colspan="2"></td>
+                            <td>${vacate.name?default("")}</td>
+                            <td colspan="2">${vacate.changrelate?default("")}</td>
                         </tr>
                     </#if>
                 </#list>
             </#if>
+            <#list 1..(15-bean.vacatelist?size) as t>
+                <tr>
+                    <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
+                    <td></td>
+                    <td colspan="2"></td>
+                </tr>
+            </#list>
         <#else>
             <#list bean.vacatelist as vacate>
                 <#if vacate_index == 0>
                     <tr>
                         <td colspan="3">本址${vacate_index+1}</td>
-                        <td>${vacate.name?default("/")}</td>
-                        <td colspan="2">${vacate.changrelate?default("/")}</td>
+                        <td>${vacate.name?default("")}</td>
+                        <td colspan="2">${vacate.changrelate?default("")}</td>
                         <td colspan="4" rowspan="${bean.vacatelist?size}"></td>
                     </tr>
                 <#else>
                     <tr>
                         <td colspan="3">本址${vacate_index+1}</td>
-                        <td>${vacate.name?default("/")}</td>
-                        <td colspan="2">${vacate.changrelate?default("/")}</td>
+                        <td>${vacate.name?default("")}</td>
+                        <td colspan="2">${vacate.changrelate?default("")}</td>
                     </tr>
                 </#if>
             </#list>
         </#if>
 
+
+     <#else>
+         <#list 1..15 as t>
+             <#if t_index == 1>
+                 <tr>
+                     <td colspan="3">本址${t_index+1}</td>
+                     <td></td>
+                     <td colspan="2"></td>
+                     <td colspan="4" rowspan="15"></td>
+                 </tr>
+             <#else>
+                 <tr>
+                     <td colspan="3">本址${t_index+1}</td>
+                     <td>${vacate.name?default("")}</td>
+                     <td colspan="2"></td>
+                 </tr>
+             </#if>
+         </#list>
+     </#if>
             <tr>
                 <td colspan="3">非本址1</td>
                 <td>
