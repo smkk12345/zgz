@@ -70,5 +70,22 @@ public class BaseSettingDaoImpl extends BaseDaoImpl<BaseSettingBean> implements 
 		return bs;
 	}
 
+
+	public Object delete() {
+//		Session s = null;
+//		BaseSettingBean bs = null;
+//		try {
+//			s = getSession();
+//			s.beginTransaction();
+//			String hql = " delete from basesetting where 1=1 ";
+//			s.qu
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			s.close();
+//		}
+		return null;
+	}
+
 	
 }

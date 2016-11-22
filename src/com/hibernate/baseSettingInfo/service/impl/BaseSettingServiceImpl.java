@@ -83,4 +83,9 @@ public class BaseSettingServiceImpl implements IBaseSettingService {
 		return dao.getBaseSettingBeanByKey(key);
 	}
 
+	public void delete() {
+		// TODO Auto-generated method stub
+//		return dao.delete();
+	}
+
 }

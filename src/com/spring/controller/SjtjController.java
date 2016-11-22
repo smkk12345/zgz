@@ -34,7 +34,7 @@ import com.spring.ServiceManager;
 
 @Controller
 public class SjtjController {
-	@RequestMapping({"/sjtj/index.action"})
+	@RequestMapping({"/sjtj/list.action"})
 	public ModelAndView sjtj_index(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
