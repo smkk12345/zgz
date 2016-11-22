@@ -168,6 +168,42 @@
     </#if>
 </#macro>
 
+<!--财务结算——01-->
+<#macro cwjs_01 items  pageNo pageSize>
+    <#if items?size gt 0>
+        <#list items as ROW>
+        <tr id="${ROW.id}">
+            <td>${ROW.sectionindex}</td>
+            <td>${ROW.section?default("")}</td>
+            <td>${ROW.names?default("")}</td>
+            <td>${ROW.location?default("")}</td>
+            <td>
+                <#if (ROW.atype)??>
+                    <#if ROW.atype?default("0")=="0">
+                        房屋安置
+                    <#else>
+                        货币补偿
+                    </#if>
+                <#else>
+                    未录入
+                </#if>
+            </td>
+            <td>${ROW.fwbcmj?default("")}</td>
+            <td>${ROW.rdbazrk?default("")}</td>
+            <td>${ROW.zjdttzj?default("")}</td>
+            <td>${ROW.azfgfk?default("")}</td>
+            <td>${ROW.jshk?default("")}</td>
+            <td>
+                <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
+                        title='财务结算表格打印'
+                        data-url="${BASE_PATH}cwjs/cwjs_01_print_model.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+            </td>
+        </tr>
+        </#list>
+    </#if>
+</#macro>
+
+
 <!--方案审核审查-->
 <#macro fhfa_s items  pageNo pageSize>
     <#if items?size gt 0>

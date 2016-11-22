@@ -43,7 +43,7 @@
                     </#if>         
                      <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
-                    		href="${BASE_PATH}cwjs.action"
+                    		href="${BASE_PATH}cwjs/cwjs.action"
                     	>财务结算</a></li>  
                     </#if> 
                     <#if role.roleAuthority[34]=="2">
