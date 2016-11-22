@@ -87,27 +87,6 @@ public class SessionFilter extends OncePerRequestFilter {
 		
 		request.getSession().setAttribute("hasVentilate", WebConstConfig.hasVentilate);
 		String url = request.getRequestURI();
-		RoleBean role = null;
-		try {
-			role = (RoleBean)request.getSession().getAttribute("role");
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		if(Contanst.TEM_STOP){
-			if(url.contains("index.action")||url.contains("quit.action")){
-				arg2.doFilter(request, response); 
-				return;
-			}
-			if(null != role){
-				String authority = role.getRoleAuthority();
-				if(authority.substring(38, 39).equals("2")){
-//					arg2.doFilter(request, response); 
-				}else{
-					temStop(response,request);
-					return ;
-				}
-			}
-		}
 		
 		// 请求的uri   
 		if(!url.contains(".action")){
@@ -122,7 +101,24 @@ public class SessionFilter extends OncePerRequestFilter {
 				break;  
 			}  
 		}  
-		if (doFilter) {  
+		if (doFilter) { 
+			RoleBean role = null;
+			try {
+				role = (RoleBean)request.getSession().getAttribute("role");
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			if(Contanst.TEM_STOP){
+				if(null != role){
+					String authority = role.getRoleAuthority();
+					if(authority.substring(38, 39).equals("2")){
+//						arg2.doFilter(request, response); 
+					}else{
+						temStop(response,request);
+						return ;
+					}
+				}
+			}
 			// 执行过滤   
 			// 从session中获取登录者实体   
 			User obj = (User)request.getSession().getAttribute("user");  
