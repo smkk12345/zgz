@@ -461,11 +461,10 @@ public class AgreenmentController {
 	public void saveAgreenment(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model,Agreement agreenment,HouseBasic housebasic,String housebasicid) {
 		try {
-			
+			housebasic.setId(housebasicid);
 			String aid = request.getParameter("aid");
 			if(!StringUtils.isBlank(aid)){
 				agreenment.setId(aid);
-				housebasic.setId(aid);
 			}
 			HttpSession s = request.getSession();
 			RoleBean role = (RoleBean)s.getAttribute("role");
@@ -479,9 +478,10 @@ public class AgreenmentController {
 			agreenment.setCreateTime(new Date());
 			agreenment.setUpdateTime(new Date());
 			agreenment.setHousebasicid(housebasicid);
-//			if(StringUtils.isEmpty(agreenment.getId())){
-//				agreenment.setId(null);
-//			}
+			if(StringUtils.isEmpty(agreenment.getId())){
+				agreenment.setId(null);
+			}
+			ServiceManager.getHouseBasicServce().updateBaseInfo(housebasic);
 			ServiceManager.getAgreenmentService().save(agreenment);
 			
 			try {
