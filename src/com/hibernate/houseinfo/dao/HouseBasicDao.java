@@ -365,7 +365,14 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		try{
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
-			sb.append(" select count(id) as count from housebasic where hasothers = '").append(type).append("'");
+			if(!StringUtils.isBlank(type)){
+				if(type.equals("0")){
+					sb.append(" select count(id) as count from housebasic where hasothers = '").append(type).append("'");
+					sb.append(" or hasothers is null ");
+				}else{
+					sb.append(" select count(id) as count from housebasic where hasothers = '").append(type).append("'");
+				}
+			}
 			if(!StringUtils.isBlank(dateStr)){
 				sb.append(" and date_format(jfDate,'yyyy-MM-dd') = '").append(dateStr).append("'");
 			}
