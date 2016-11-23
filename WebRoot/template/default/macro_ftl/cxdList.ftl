@@ -324,8 +324,7 @@
                         <#if ROW.atype?default("0")=="0">
                             data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
                         <#else>
-                            data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}
-                            &agreenmentid=${(ROW.agreenmentid)!""}">
+                            data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
                         </#if>
                         <span class="glyphicon glyphicon-print">协议</span></button>
                 </#if>

@@ -63,6 +63,7 @@ public class Agreement extends BaseBean {
 	private Integer ljs85;
 	//三居室
 	private Integer sjs;
+
 	//安置房购房款
 	private BigDecimal azfgfk;
 	private String dxazfgfk;
@@ -718,15 +719,6 @@ public class Agreement extends BaseBean {
 	}
 
 
-	public Integer getXfts() {
-		return xfts;
-	}
-
-
-	public BigDecimal getXfarea() {
-		return xfarea;
-	}
-
 
 	public BigDecimal getJshk() {
 		return jshk;
@@ -899,6 +891,16 @@ public class Agreement extends BaseBean {
 
 	public void setDxjshk(String dxjshk) {
 		this.dxjshk = dxjshk;
+	}
+
+
+	public Integer getXfts() {
+		return xfts;
+	}
+
+
+	public BigDecimal getXfarea() {
+		return xfarea;
 	}
 
 }

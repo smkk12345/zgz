@@ -902,42 +902,7 @@ public class DisplayBean extends BaseBean {
 		public void setHasothers(String hasothers) {
 			this.hasothers = hasothers;
 		}
-		public Integer getXfts() {
-			Integer sum = getSumIntValue(0,yjs);
-		    sum = getSumIntValue(sum,ljs70);
-		    sum = getSumIntValue(sum,ljs75);
-		    sum = getSumIntValue(sum,ljs80);
-		    sum = getSumIntValue(sum,ljs85);
-		    sum = getSumIntValue(sum,sjs);
-			return sum;
-		}
-		
-		private Integer getSumIntValue(Integer sum,Integer value){
-			if(null != value){
-				return sum+value;
-			}else{
-				return sum;
-			}
-		}
-		
-		public BigDecimal getXfarea() {
-			Integer sum = getSumIntValue(0,yjs,55);
-		    sum = getSumIntValue(sum,ljs70,70);
-		    sum = getSumIntValue(sum,ljs75,75);
-		    sum = getSumIntValue(sum,ljs80,80);
-		    sum = getSumIntValue(sum,ljs85,85);
-		    sum = getSumIntValue(sum,sjs,110);
-			return new BigDecimal(sum);
-		}
-		
-		private Integer getSumIntValue(int i, Integer yjs2, int j) {
-			// TODO Auto-generated method stub
-			if(null!=yjs2&& yjs2 >0){
-				return i+yjs2*j;
-			}else{
-				return i;
-			}
-		}
+
 		public BigDecimal getJshk() {
 			try {
 				BigDecimal bigzjd = new BigDecimal(0);
@@ -1025,6 +990,12 @@ public class DisplayBean extends BaseBean {
 		
 		public void setPeopleinfo(String peopleinfo) {
 			this.peopleinfo = peopleinfo;
+		}
+		public Integer getXfts() {
+			return xfts;
+		}
+		public BigDecimal getXfarea() {
+			return xfarea;
 		}
 		
 		

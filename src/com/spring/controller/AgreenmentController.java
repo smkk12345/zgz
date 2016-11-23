@@ -559,6 +559,11 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
+			String year = DateUtil.DateToString(new Date(), DateStyle.YYYY_MM_DD);
+			String[] arr = year.split("-");
+			model.addAttribute("year", arr[0]);
+			model.addAttribute("month", arr[1]);
+			model.addAttribute("day", arr[2]);
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -589,6 +594,11 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
+			String year = DateUtil.DateToString(new Date(), DateStyle.YYYY_MM_DD);
+			String[] arr = year.split("-");
+			model.addAttribute("year", arr[0]);
+			model.addAttribute("month", arr[1]);
+			model.addAttribute("day", arr[2]);
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);

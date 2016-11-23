@@ -105,5 +105,8 @@
 		<property name="sectionindex"></property>
 		<property name="sortnum"></property>
 		<property name="operatename"></property>
+		
+		<property name="xfts"></property>
+		<property name="xfarea"></property>
 	</class>
 </hibernate-mapping>
