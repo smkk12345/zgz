@@ -41,17 +41,19 @@
                     		href="${BASE_PATH}sjfx/gbdqytj.action"
                     	>数据统计</a></li>  
                     </#if>         
-                     <#if role.roleAuthority[14]=="2">
+                    <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
                     		href="${BASE_PATH}cwjs/cwjs.action"
                     	>财务结算</a></li>  
                     </#if> 
                     <#if role.roleAuthority[34]=="2">
-                        <#if role.roleAuthority[34]=="2">
-                         <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统配置</a>
-                        <#else>
-
-                        </#if>
+                        	<li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="
+                        		<#if role.roleAuthority[36]=="2" ||  role.roleAuthority[35]=="2">
+                        			${BASE_PATH}xtsz.action"
+                        		<#else>
+                        			${BASE_PATH}user/personDetail.action?oType=detail"
+                        		</#if>
+                        	>系统配置</a>
                     </#if>
                     </li>
 	               <!--  <li><a <#if CURENT_TAB == 'GJXX'>class="active"</#if> href="${BASE_PATH}gjxx.action">信息管理</a>

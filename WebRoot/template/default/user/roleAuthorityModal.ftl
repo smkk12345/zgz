@@ -54,6 +54,39 @@
                   </label>
               </div>  
           </div>
+          
+          <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=39 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[39]=="2">checked </#if>
+                      > 被腾退房屋户籍登记情况
+                  </label>
+              </div>  
+          </div>
+          <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=40 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[40]=="2">checked </#if>
+                      > 面积相关
+                  </label>
+              </div>  
+          </div>
+          <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=41 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[41]=="2">checked </#if>
+                      > 经营状况
+                  </label>
+              </div>  
+          </div>
+          <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=42 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[42]=="2">checked </#if>
+                      > 其他、残疾、大病、低保等
+                  </label>
+              </div>  
+          </div>
       </div>
     </div>
 
@@ -149,7 +182,64 @@
                       <input type="checkbox" dataIndex=17 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[17]=="2">checked </#if>> 审核审查
                   </label>
               </div>  
-          </div>        
+          </div>   
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=43 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[43]=="2">checked </#if>> 基本情况
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=44 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[44]=="2">checked </#if>> 认定面积信息
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=45 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[45]=="2">checked </#if>> 认定人口信息
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=46 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[46]=="2">checked </#if>> 宅基地腾退补偿款
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=47 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[47]=="2">checked </#if>> 奖励费 补助费
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=48 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[48]=="2">checked </#if>> 安置选房信息
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=49 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[49]=="2">checked </#if>> 其他
+                  </label>
+              </div>  
+          </div> 
+          <div class="form-group fl ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=50 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[50]=="2">checked </#if>> 评估款 补偿补助及奖励费合计
+                  </label>
+              </div>  
+          </div> 
+                                                                                                        
       </div>
     </div>  
      <div class="container-fluid">

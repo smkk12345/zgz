@@ -119,10 +119,10 @@
                 dataType: "json",
                 data: {housebasicid: curDataId},
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "/index.action";
+                    location.href = "${BASE_PATH}" + "/pgqq.action";
                 },
                 success: function (response) {
-                    location.href = "${BASE_PATH}" + "/index.action";
+                    location.href = "${BASE_PATH}" + "/pgqq.action";
                 }
             })
         }
