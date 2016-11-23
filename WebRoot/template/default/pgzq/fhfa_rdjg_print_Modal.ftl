@@ -163,7 +163,7 @@
                 <td colspan="2">与被腾退人关系</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>
             </tr>
-        <#if bean.vacatelist?size lt 11>
+        <#if bean.vacatelist?size lt 16>
             <#if bean.vacatelist??>
                 <#list bean.vacatelist as vacate>
                     <#if vacate_index == 0>
@@ -181,7 +181,7 @@
                         </tr>
                     </#if>
                 </#list>
-                <#list 1..(10-bean.vacatelist?size) as t>
+                <#list 1..(15-bean.vacatelist?size) as t>
                     <#if bean.vacatelist?size== 0>
                         <tr>
                             <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
@@ -198,7 +198,7 @@
                     </#if>
                 </#list>
             <#else>
-                <#list 1..10 as t>
+                <#list 1..15as t>
                     <#if t_index == 0>
                         <tr>
                             <td colspan="3">本址${t_index+1}</td>
