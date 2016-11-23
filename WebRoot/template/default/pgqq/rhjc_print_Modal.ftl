@@ -66,19 +66,19 @@
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <table id="table1" class="table">
                 <tr>
-                    <td colspan="12" style="text-align: center;">本址在册户籍家庭人口情况</td>
+                    <td colspan="9" style="text-align: center;">本址在册户籍家庭人口情况</td>
                 </tr>
                 <tr>
                     <th class="center">序号</th>
                     <th class="center">认定结果</th>
-                    <th class="center">户主</th>
-                    <th class="center">户籍性质</th>
+                    <#--<th class="center">户主</th>
+                    <th class="center">户籍性质</th>-->
                     <th class="center">姓名</th>
                     <th class="center">身份证号</th>
                     <th class="center">产关</th>
                     <th class="center">性别</th>
                     <th class="center">年龄</th>
-                    <th class="center">婚否</th>
+                    <#--<th class="center">婚否</th>-->
                     <th class="center">超生</th>
                     <th class="center">备注</th>
                 </tr>
@@ -90,10 +90,10 @@
                         <td class="center">
                             <label class="title1"><input class="check-box" type="checkbox"></label>
                         </td>
-                        <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
+                       <#-- <td class="center">  <#if (vacate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
                         <td class="center">
                             <#if (vacate.householdtype?default("-1"))=='0'>居<#else>农</#if>
-                        </td>
+                        </td>-->
                         <td class="center">${vacate.name?default("/")}</td>
                         <td class="center">${vacate.idcard?default("/")}</td>
                         <td class="center">
@@ -105,9 +105,9 @@
                         <td class="center">
                         ${vacate.age?default("/")}
                         </td>
-                        <td class="center">
+                       <#-- <td class="center">
                             <#if (vacate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if>
-                        </td>
+                        </td>-->
                         <td class="center">
                             <label class="title1"><input class="check-box" type="checkbox"></label>
                         </td>
@@ -118,7 +118,7 @@
                     <#list 1..(10-bean.vacatelist?size) as t>
                         <tr>
                             <td class="center">${t_index+1+bean.vacatelist?size}</td>
-                            <#list 1..11 as t>
+                            <#list 1..8 as t>
                                 <td class="center"></td>
                             </#list>
                         </tr>
@@ -128,26 +128,26 @@
                 <#list 1..10 as t>
                     <tr>
                         <td class="center">${t_index+1}</td>
-                        <#list 1..11 as t>
+                        <#list 1..8 as t>
                             <td class="center"></td>
                         </#list>
                     </tr>
                 </#list>
             </#if>
                 <tr class="center">
-                    <td colspan="12" style="text-align: center;">非本址户籍家庭人口情况</td>
+                    <td colspan="9" style="text-align: center;">非本址户籍家庭人口情况</td>
                 </tr>
                 <tr class="center">
                     <th class="center">序号</th>
                     <th class="center">认定结果</th>
-                    <th class="center">户主</th>
-                    <th class="center">户籍性质</th>
+                   <#-- <th class="center">户主</th>
+                    <th class="center">户籍性质</th>-->
                     <th class="center">姓名</th>
                     <th class="center">身份证号</th>
                     <th class="center">产关</th>
                     <th class="center">性别</th>
                     <th class="center">年龄</th>
-                    <th class="center">婚否</th>
+                    <#--<th class="center">婚否</th>-->
                     <th class="center">超生</th>
                     <th class="center">备注</th>
                 </tr>
@@ -158,11 +158,11 @@
                         <td class="center">
                             <label class="title1"><input class="check-box" type="checkbox"></label>
                         </td>
-                        <td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
-                        </td>
-                        <td class="center">
+                        <#--<td>  <#if (cate.householder?default("-1"))=='0'>户主 <#else>非户主</#if>
+                        </td>-->
+                       <#-- <td class="center">
                             <#if (cate.householdtype?default("-1"))=='0'>居<#else>农</#if>
-                        </td>
+                        </td>-->
                         <td class="center">${cate.name?default("/")}</td>
                         <td class="center">${cate.idcard?default("/")}</td>
                         <td class="center">
@@ -175,9 +175,9 @@
                         <td class="center">
                         ${cate.age?default("/")}
                         </td>
-                        <td class="center">
+                       <#-- <td class="center">
                             <#if (cate.hasmarry?default("-1"))=='0'>已婚<#else>未婚</#if>
-                        </td>
+                        </td>-->
                         <td class="center">
                             <label class="title1"><input class="check-box"type="checkbox"></label>
                         </td>
@@ -189,7 +189,7 @@
                     <#list 1..(4-bean.list?size) as t>
                         <tr>
                             <td class="center">${t_index+1+bean.list?size}</td>
-                            <#list 1..11 as t>
+                            <#list 1..8 as t>
                                 <td class="center"></td>
                             </#list>
                         </tr>
@@ -199,7 +199,7 @@
                 <#list 1..4 as t>
                     <tr>
                         <td class="center">${t_index+1}</td>
-                        <#list 1..11 as t>
+                        <#list 1..8 as t>
                             <td class="center"></td>
                         </#list>
                     </tr>
