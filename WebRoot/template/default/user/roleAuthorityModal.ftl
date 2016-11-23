@@ -54,7 +54,14 @@
                   </label>
               </div>  
           </div>
-          
+ 		 <div class="form-group fl  ml10">
+               <div class="checkbox fl">
+                  <label>
+                      <input type="checkbox" dataIndex=51 name="chkItem" class="subItem_levelOne_0" <#if bean.roleAuthority[51]=="2">checked </#if>
+                      > 基本信息录入
+                  </label>
+              </div>  
+          </div>          
           <div class="form-group fl  ml10">
                <div class="checkbox fl">
                   <label>

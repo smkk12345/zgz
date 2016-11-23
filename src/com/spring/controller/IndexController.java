@@ -115,21 +115,22 @@ public class IndexController {
 				ServiceManager.getUserService().update(user);
 				RoleBean role = (RoleBean) request.getSession(false).getAttribute("role");
 				String r = role.getRoleAuthority();
-				if((r.charAt(0)+"").equals("2")){
-					if((r.charAt(1)+"").equals("2")){
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"/pgqq.action");
-					}else{
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"pgqq/fhfa.action");
-					}
-				}else if((r.charAt(3)+"").equals("2")){
-					if((r.charAt(4)+"").equals("2")){
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xy.action");
-					}else{
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"sxh.action");
-					}
-				}else{
-					response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xtsz/jbsz.action");
-				}
+				response.getWriter().write("true"+WebConstConfig.BASE_PATH+"/pgqq.action");
+//				if((r.charAt(0)+"").equals("2")){
+//					if((r.charAt(1)+"").equals("2")){
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"/pgqq.action");
+//					}else{
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"pgqq/fhfa.action");
+//					}
+//				}else if((r.charAt(3)+"").equals("2")){
+//					if((r.charAt(4)+"").equals("2")){
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xy.action");
+//					}else{
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"sxh.action");
+//					}
+//				}else{
+//					response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xtsz/jbsz.action");
+//				}
 //				response.getWriter().write("true");
 			} else {
 				response.getWriter().write("false");

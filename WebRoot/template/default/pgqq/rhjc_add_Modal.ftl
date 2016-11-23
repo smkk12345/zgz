@@ -15,13 +15,13 @@
         <input type="hidden" class='form-control input-sm ' name='checkDate' value="${bean.checkDate?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='checkresult' value="${bean.checkresult?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='section' value="${bean.section?default("")}" style="width: 0px;"/>
-         <input type="hidden" class='form-control input-sm ' name='hassplit' value="${bean.hassplit?default("")}" style="width: 0px;"/>
-          <input type="hidden" class='form-control input-sm ' name='sortnum' value="${bean.sortnum?c}" style="width: 0px;"/>
-
-           <input type="hidden" class='form-control input-sm ' name='issplit' value="${issplit}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='hassplit' value="${bean.hassplit?default("")}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='sortnum' value="${bean.sortnum?c}" style="width: 0px;"/>
+        <input type="hidden" class='form-control input-sm ' name='issplit' value="${issplit}" style="width: 0px;"/>
+        
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div1">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>房屋坐落:</label>
                     <input type='text' class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
@@ -105,7 +105,7 @@
                 </div>
             </div>
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
-            <div class='container-fluid con-bg mb10'>	
+            <div class='container-fluid con-bg mb10' id="div2">	
                 <table id="table1" class="table">
                     <tr>
                         <td colspan="12" style="text-align: center;font-weight: bold">本址在册户籍家庭人口情况</td>
@@ -317,7 +317,7 @@
                 </table>
             </div>
             <h4><span class="label label-default">3.面积相关：</span></h4>
-            <div class='container-fluid con-bg mb10'>	
+            <div class='container-fluid con-bg mb10' id="div3">	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>宅基地测绘面积:</label>
                     <input type='text' class='form-control input-sm  ' name='zjdarea' value="<#if bean.zjdarea??>${bean.zjdarea?c}<#else></#if>"/>        
@@ -344,7 +344,7 @@
                 </div>
             </div>
             <h4><span class="label label-default">4.经营状况：</span></h4>
-            <div class='container-fluid con-bg mb10'>	
+            <div class='container-fluid con-bg mb10' id="div4">	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用房面积:</label>
                     <input type='text' class='form-control input-sm  ' name='operatearea' value="<#if bean.operatearea??>${bean.operatearea?c}<#else></#if>"/>        
@@ -405,7 +405,7 @@
                 </div>
             </div>
             <h4><span class="label label-default">4.其他，残疾，大病，低保等：</span></h4>
-            <div class='container-fluid con-bg mb10'>	
+            <div class='container-fluid con-bg mb10' id="div5">	
                 <table id="table1" class="table">
                     <thead>
                         <tr>
@@ -484,6 +484,35 @@
 </div>
 
 <script type = "text/javascript">
+	//权限锁定部分逻辑
+	$(function(){ 
+		if('${role.roleAuthority[51]}'!='2'){
+			$("#div1 input").attr("disabled",true);
+			$("#div1 select").attr("disabled",true);
+			$("#div1 button").attr("disabled",true);
+		} 
+ 		if('${role.roleAuthority[39]}'!='2'){
+			$("#div2 input").attr("disabled",true);
+			$("#div2 select").attr("disabled",true);
+			$("#div2 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[40]}'!='2'){
+			$("#div3 input").attr("disabled",true);
+			$("#div3 select").attr("disabled",true);
+			$("#div3 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[41]}'!='2'){
+			$("#div4 input").attr("disabled",true);
+			$("#div4 select").attr("disabled",true);
+			$("#div4 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[42]}'!='2'){
+			$("#div5 input").attr("disabled",true);
+			$("#div5 select").attr("disabled",true);
+			$("#div5 button").attr("disabled",true);
+		} 		
+	})  
+
     //设置模态框高度和宽度  
     $("#rhjc-add-con").css("height", ($(window).height() - 150) + "px");
     $("#rhjc-add-con").css("overflow-y", "scroll");

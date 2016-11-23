@@ -17,7 +17,7 @@
  		<input type="hidden" class='form-control input-sm ' name='zbwgfk' value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else></#if>" style="width: 0px;"/>
         <div class='ml15' >
             <h4><span class="label label-default">一.基本情况：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div1">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
                     <input type='text'  class='form-control input-sm  ' name='names' value="${housebasic.names?default("")}"/>
@@ -52,7 +52,7 @@
                 </div>
             </div>                	
             <h4><span class="label label-default">二.认定面积信息：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div2">
                <#-- <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地实测用地面积:</label>
                     <input type='text'  class='form-control input-sm  ' name='scydmj'  value="<#if bean.scydmj??>${bean.scydmj?c}<#else></#if>" />
@@ -109,7 +109,7 @@
 
 
             <h4><span class="label label-default">三.认定人口信息：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div3">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>认定人口数量:</label>
                     <input type='text' class='form-control input-sm  ' name='rdbazrk'  value="${bean.rdbazrk?default("")}" />    
@@ -151,7 +151,7 @@
             </div>    
 
             <h4><span class="label label-default">四.宅基地腾退补偿款：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div4">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>评估方:</label>
                     <input type='text' class='form-control input-sm  ' name='pgjg'  value="${bean.pgjg?default("")}" />    
@@ -174,7 +174,7 @@
                 </div>                                              
             </div>  
             <h4><span class="label label-default">五.奖励费 补助费：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div5">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>提前搬家奖:</label>
                     <input type='text' class='form-control input-sm  ' name='tqbjl'  value="<#if bean.tqbjl??>${bean.tqbjl?c}<#else></#if>" />    
@@ -235,7 +235,7 @@
                 </div>                                                                                                                                 
             </div> 
             <h4><span class="label label-default azxy">六.安置选房信息：</span></h4>
-            <div class='container-fluid con-bg mb10 azxy'>
+            <div class='container-fluid con-bg mb10 azxy' id="div6">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>安置房源:</label>
                     <input type='text' class='form-control input-sm  ' name='fyxx'  value="${bean.fyxx?default("")}" />    
@@ -274,14 +274,14 @@
                 </div>                             
             </div>  
             <h4><span class="label label-default div_seven">七.其他：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div7">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>腾退时间:</label>
                     <input type='text' class='form-control input-sm  ' name='ttrq'  value="${bean.ttrq?default("")}" />    
                 </div>
             </div>                 
             <h4><span class="label label-default div_eight">八.评估款，补偿补助及奖励费合计：</span></h4>
-            <div class='container-fluid con-bg mb10'>
+            <div class='container-fluid con-bg mb10' id="div8">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>腾退补偿款总和:</label>
                     <input type='text' class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else></#if>" />    
@@ -300,6 +300,51 @@
 </div>
 
 <script type = "text/javascript">
+
+//权限锁定部分逻辑
+	$(function(){ 
+		if('${role.roleAuthority[43]}'!='2'){
+			$("#div1 input").attr("disabled",true);
+			$("#div1 select").attr("disabled",true);
+			$("#div1 button").attr("disabled",true);
+		} 
+ 		if('${role.roleAuthority[44]}'!='2'){
+			$("#div2 input").attr("disabled",true);
+			$("#div2 select").attr("disabled",true);
+			$("#div2 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[45]}'!='2'){
+			$("#div3 input").attr("disabled",true);
+			$("#div3 select").attr("disabled",true);
+			$("#div3 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[46]}'!='2'){
+			$("#div4 input").attr("disabled",true);
+			$("#div4 select").attr("disabled",true);
+			$("#div4 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[47]}'!='2'){
+			$("#div5 input").attr("disabled",true);
+			$("#div5 select").attr("disabled",true);
+			$("#div5 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[48]}'!='2'){
+			$("#div6 input").attr("disabled",true);
+			$("#div6 select").attr("disabled",true);
+			$("#div6 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[49]}'!='2'){
+			$("#div7 input").attr("disabled",true);
+			$("#div7 select").attr("disabled",true);
+			$("#div7 button").attr("disabled",true);
+		} 
+		if('${role.roleAuthority[50]}'!='2'){
+			$("#div8 input").attr("disabled",true);
+			$("#div8 select").attr("disabled",true);
+			$("#div8 button").attr("disabled",true);
+		} 		
+	})  
+
 //设置模态框高度和宽度  
     $("#fhfa-edit-con").css("height", ($(window).height() - 150) + "px");
     $("#fhfa-edit-con").css("overflow-y", "scroll");
