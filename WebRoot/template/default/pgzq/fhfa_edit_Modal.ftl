@@ -192,7 +192,7 @@
                     <input type='text' class='form-control input-sm  ' name='wwzjl'   value="<#if bean.wwzjl??>${bean.wwzjl?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>未建二层及地下室奖励费:</label>
+                    <label class='fl control-label'>未建二层及地下室奖励:</label>
                     <input type='text' class='form-control input-sm  ' name='wjecjj'   value="<#if bean.wjecjj??>${bean.wjecjj?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
@@ -250,31 +250,35 @@
                 </div>            
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>一居室:</label>
-                    <input type='text' class='form-control input-sm  ' name='yjs'  value="${bean.yjs?default("")}" /> （套）   
+                    <input type='text' class='form-control input-sm  calc' area=55 name='yjs'  value="${bean.yjs?default("")}" /> （套）   
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（70）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs70'   value="${bean.ljs70?default("")}"/>  （套）     
+                    <input type='text' class='form-control input-sm  calc' area=70 name='ljs70'   value="${bean.ljs70?default("")}"/>  （套）     
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（75）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs75'   value="${bean.ljs75?default("")}"/>  （套）     
+                    <input type='text' class='form-control input-sm  calc' area=75 name='ljs75'   value="${bean.ljs75?default("")}"/>  （套）     
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（80）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs80'   value="${bean.ljs80?default("")}"/> （套）      
+                    <input type='text' class='form-control input-sm  calc' area=80 name='ljs80'   value="${bean.ljs80?default("")}"/> （套）      
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（85）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs85'   value="${bean.ljs85?default("")}"/>   （套）    
+                    <input type='text' class='form-control input-sm  calc'  area=85 name='ljs85'   value="${bean.ljs85?default("")}"/>   （套）    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>三居室:</label>
-                    <input type='text' class='form-control input-sm  ' name='sjs'   value="${bean.sjs?default("")}"/>  （套）     
+                    <input type='text' class='form-control input-sm  calc' area=110 name='sjs'   value="${bean.sjs?default("")}"/>  （套）     
                 </div>
                 <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>实际选房套数:</label>
+                    <input id="xfts" type='text' class='form-control input-sm  ' name='xfts'   value="${bean.xfts?default("")}"/> （套）      
+                </div> 
+                <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>实际选房面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='sjxfmj'   value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
+                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj'   value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款:</label>
@@ -416,5 +420,24 @@
             }
         }
     });
+    
+   $(function(){
+		$(".calc").change(function(){
+			var text = $(this).val();
+			var count = 0;
+			var area = 0;
+			$('.calc').each(function (index,domEle){
+				var ecount = $(domEle).val();
+				var earea = $(domEle).attr("area");
+				if(ecount == ""){
+				}else{
+					count = count+parseInt(ecount);
+					area = area + earea*ecount;
+				}
+			});
+			$("#xfts").val(count);
+			$("#sjxfmj").val(area);
+		});
+   })
 
 </script>
