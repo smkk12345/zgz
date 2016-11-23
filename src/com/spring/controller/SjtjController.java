@@ -38,7 +38,10 @@ public class SjtjController {
     public ModelAndView sjtj_index(HttpServletRequest request,
                                    HttpServletResponse response, ModelMap model) {
         try {
-
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",
                     WebConstConfig.getBase_Assets_Path());
@@ -61,7 +64,10 @@ public class SjtjController {
     public ModelAndView sjtj_touch(HttpServletRequest request,
                                    HttpServletResponse response, ModelMap model) {
         try {
-
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",
                     WebConstConfig.getBase_Assets_Path());
@@ -92,7 +98,10 @@ public class SjtjController {
     public ModelAndView chart1(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
-
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
             List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
             double result = 0.00;
@@ -134,6 +143,10 @@ public class SjtjController {
     public ModelAndView chart4(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -188,6 +201,10 @@ public class SjtjController {
     public ModelAndView chart2(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -217,6 +234,10 @@ public class SjtjController {
     public ModelAndView chart21(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -261,6 +282,10 @@ public class SjtjController {
                                HttpServletResponse response, ModelMap model) {
         try {
 
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0", "");//已经签约
             List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1", "");//未签约
             StringBuffer sb = new StringBuffer();
@@ -297,7 +322,10 @@ public class SjtjController {
     public ModelAndView chart31(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
-
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0", "");//已经签约
             List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1", "");//未签约
             StringBuffer sb = new StringBuffer();
@@ -354,6 +382,10 @@ public class SjtjController {
     public ModelAndView chart5(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -394,6 +426,10 @@ public class SjtjController {
     public ModelAndView chart51(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -434,6 +470,10 @@ public class SjtjController {
     public ModelAndView chart6(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -485,6 +525,10 @@ public class SjtjController {
     public ModelAndView chart61(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             String pageSize = request.getParameter("pageSize");
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
@@ -536,6 +580,10 @@ public class SjtjController {
     public ModelAndView chart100(HttpServletRequest request,
                                  HttpServletResponse response, ModelMap model) {
         try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",
                     WebConstConfig.getBase_Assets_Path());
