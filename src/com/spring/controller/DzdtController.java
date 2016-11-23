@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONObject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,22 +51,6 @@ public class DzdtController {
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				
-//				var map = '${map}';
-//				alert(map);
-//				$('g').each(function (index,domEle){
-//					var text = $(domEle).find("text").first();
-//					var value = $(text).html();
-//					var nIndex = map[value];
-//					if(nIndex == '0'){
-//						$(text).parent().css("fill",'red');
-//					}else if(nIndex == '1'){
-//						$(text).parent().css("fill",'blue');
-//					}else if(nIndex == '2'){
-//						$(text).parent().css("fill",'0xff22aa');
-//					}
-//				});
-				
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -82,8 +68,7 @@ public class DzdtController {
 					}
 				}
 			}
-			
-			model.addAttribute("map", map);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -108,15 +93,13 @@ public class DzdtController {
 		try {
 			
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '2' ", "", 0, 0);
-			List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+			Map<String,String> map = new HashMap<String, String>();
 			for (int i = 0; i < list.size(); i++) {
 				
 				DisplayBean displaybean = list.get(i);
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				Map<String,String> map = new HashMap<String, String>();
-				resultList.add(map);
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -134,7 +117,7 @@ public class DzdtController {
 					}
 				}
 			}
-			model.addAttribute("list", resultList);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -159,15 +142,13 @@ public class DzdtController {
 		try {
 			
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '3' ", "", 0, 0);
-			List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+			Map<String,String> map = new HashMap<String, String>();
 			for (int i = 0; i < list.size(); i++) {
 				
 				DisplayBean displaybean = list.get(i);
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				Map<String,String> map = new HashMap<String, String>();
-				resultList.add(map);
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -185,7 +166,7 @@ public class DzdtController {
 					}
 				}
 			}
-			model.addAttribute("list", resultList);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -211,15 +192,13 @@ public class DzdtController {
 		try {
 			
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '4' ", "", 0, 0);
-			List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+			Map<String,String> map = new HashMap<String, String>();
 			for (int i = 0; i < list.size(); i++) {
 				
 				DisplayBean displaybean = list.get(i);
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				Map<String,String> map = new HashMap<String, String>();
-				resultList.add(map);
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -237,7 +216,7 @@ public class DzdtController {
 					}
 				}
 			}
-			model.addAttribute("list", resultList);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -262,16 +241,13 @@ public class DzdtController {
 		try {
 			
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '5' ", "", 0, 0);
-			
-			List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+			Map<String,String> map = new HashMap<String, String>();
 			for (int i = 0; i < list.size(); i++) {
 				
 				DisplayBean displaybean = list.get(i);
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				Map<String,String> map = new HashMap<String, String>();
-				resultList.add(map);
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -289,7 +265,7 @@ public class DzdtController {
 					}
 				}
 			}
-			model.addAttribute("list", resultList);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -314,16 +290,13 @@ public class DzdtController {
 		try {
 			
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '6' ", "", 0, 0);
-			
-			List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+			Map<String,String> map = new HashMap<String, String>();
 			for (int i = 0; i < list.size(); i++) {
 				
 				DisplayBean displaybean = list.get(i);
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				Map<String,String> map = new HashMap<String, String>();
-				resultList.add(map);
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -341,7 +314,7 @@ public class DzdtController {
 					}
 				}
 			}
-			model.addAttribute("list", resultList);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -366,16 +339,13 @@ public class DzdtController {
 		try {
 			
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and a.section = '7' ", "", 0, 0);
-			
-			List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+			Map<String,String> map = new HashMap<String, String>();
 			for (int i = 0; i < list.size(); i++) {
 				
 				DisplayBean displaybean = list.get(i);
 				if(StringUtils.isBlank(displaybean.getSectionindex())){
 					continue;
 				}
-				Map<String,String> map = new HashMap<String, String>();
-				resultList.add(map);
 				//0 未签约   1签协议的    2交房的  3 已拆除
 				if(!StringUtils.isBlank(displaybean.getHasothers())){
 					if(displaybean.getHasothers().equals("1")){
@@ -393,7 +363,7 @@ public class DzdtController {
 					}
 				}
 			}
-			model.addAttribute("list", resultList);
+			model.addAttribute("map", JSONObject.fromObject(map).toString());
 			
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",

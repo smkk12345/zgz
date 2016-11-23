@@ -10,9 +10,9 @@
         <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
         <p class="title3" style="margin-top: 35px;">腾&nbsp;&nbsp;退&nbsp;&nbsp;人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村村民委员会&nbsp;</u>（以下简称甲方）
         </p>
-        <p class="title3" style="margin-top: 20px;">被腾退人：<u>&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.names?default("/")}
-            &nbsp;&nbsp;&nbsp;&nbsp;</u> &nbsp;身份证号：<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.idcard?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>（以下简称乙方）
+        <p class="title3" style="margin-top: 20px;">被腾退人：<u>&nbsp;${housebasic.names?default("/")}
+            &nbsp;</u> &nbsp;身份证号：<u>
+            &nbsp;${housebasic.idcard?default("/")}&nbsp;</u>（以下简称乙方）
         </p>
 
         <p class="contex-1" style="margin-top: 38px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据北京市丰台区长辛店镇人民政府、北京中建方程投资管理有限公司及北京市丰台区长辛店镇张郭庄村村民委员会三方签订的《长辛店镇张郭庄村棚户区改造及环境整治项目委托实施腾退协议》相关内容，长辛店镇人民政府是“长辛店镇张郭庄村棚户区改造和环境整治项目”（以下简称本项目）的责任主体，负责指导、协调本项目全面工作；北京中建方程投资管理有限公司是经丰台区人民政府授权，作为本项目的实施主体，负责本项目腾退补偿资金的筹措；北京市丰台区长辛店镇张郭庄村村民委员会，作为本项目腾退主体即“腾退人”，负责本项目集体土地腾退范围内涉及宅基地及非住宅的腾退工作；“被腾退人”
@@ -22,18 +22,19 @@
         <p class="leftTitle">第一条&nbsp;&nbsp;腾退依据</p>
         <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》、2016年10
             月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日经北京市丰台区长辛店镇张郭庄村村民代表大会通过的《丰台区长辛店镇张郭庄村宅基地腾退补偿安置方案》及《丰台区长辛店镇张郭庄村宅基地腾退补偿实施细则》等相关文件。甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp${housebasic.location?default("/")};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。
+               &nbsp;&nbsp;&nbsp${housebasic.location?default("/")}&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。
         </p>
         <p class="pageBreak" style="margin-top: 10px;">&nbsp;</p>
         <p class="leftTitle">第二条&nbsp;&nbsp;宅基地认定</p>
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.scydmj?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.homesteadyear?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>。认定宅基地总补偿面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${housebasic.zjdarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。其中：<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;${bean.zjdarea?default("/")}&nbsp;&nbsp;</u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;<#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if>&nbsp;&nbsp;</u>。认定宅基地总补偿面积<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;${bean.rdzjdallarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。其中：<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.conhomestarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；超出宅基地控制面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.overhomesteadarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。
+            &nbsp;&nbsp;&nbsp;&nbsp;${bean.conhomestarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；超出宅基地控制面积<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;${bean.overhomesteadarea?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。
         </p>
         <p class="leftTitle">第三条&nbsp;&nbsp;房屋补偿面积</p>
         <p class="contex-1">

@@ -89,6 +89,18 @@ public class XtszController {
 //				Contanst.TEM_STOP = true;
 //			}
            // 妯℃澘璺¯寰 basePath
+		
+		   BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
+		   if(null == baseBean){
+			   baseBean = new BaseSettingBean();
+			   baseBean.setKey("sd");
+			   baseBean.setKeyName("系统锁定");
+			   baseBean.setValue("0");
+//			   ServiceManager.getBaseSettingServiceImpl().delete();
+			   ServiceManager.getBaseSettingServiceImpl().save(baseBean);
+		   }
+		   Contanst.TEM_STOP = baseBean.getValue().equals("1");
+		   model.addAttribute("sd", Contanst.TEM_STOP);
            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
            model.addAttribute("BASE_ASSETS_PATH",
                    WebConstConfig.getBase_Assets_Path());
@@ -118,6 +130,18 @@ public class XtszController {
     	   }else{
     		   Contanst.TEM_STOP = true;
     	   }
+    	   BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
+		   if(null == baseBean){
+			   baseBean = new BaseSettingBean();
+			   baseBean.setKey("sd");
+			   baseBean.setKeyName("系统锁定");
+			   baseBean.setValue(sd);
+			   ServiceManager.getBaseSettingServiceImpl().save(baseBean);
+		   }else{
+			   baseBean.setValue(sd);
+			   ServiceManager.getBaseSettingServiceImpl().update(baseBean);
+		   }
+		  
            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
            model.addAttribute("BASE_ASSETS_PATH",
                    WebConstConfig.getBase_Assets_Path());

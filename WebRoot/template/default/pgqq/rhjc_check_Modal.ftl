@@ -1,4 +1,4 @@
-<form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.id}" accept-charset="UTF-8" method="post">
+<form  action="${BASE_PATH}pgqq/checkresult.action?housebasicid=${bean.housebasicid}" accept-charset="UTF-8" method="post">
     <div class="modal-header clearfix">
         <h4 class="modal-title pull-left m0">基本情况调查表(共5项)</h4>
         <button type="submit" class="btn btn-primary btn-save fr ml15">保存</button>

@@ -9,15 +9,14 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4 class="bold">分户方案管理</h4>
+            <h4 class="bold">财务结算</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
-            <#if role.roleAuthority[6]=="2">
             <div class="fl">
-              <form  action="${BASE_PATH}pgzq/agreenment.action" accept-charset="UTF-8" method="post" >
+              <form  action="${BASE_PATH}cwjs/cwjs.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -46,7 +45,6 @@
 	               
 	            </form>
             </div>
-            </#if>
         </div>
 
         <table  class="table table-bordered table-hover">
@@ -54,6 +52,7 @@
                 <th>编号</th>
                 <th>标段</th>
                 <th>被腾退人</th>
+                <th>房屋坐落</th>
                 <th>安置方式</th>
                 <th>认定面积</th>
                 <th>认定人口</th>
@@ -62,12 +61,12 @@
                 <th>结算后款</th>
                 <th>操作</th>
             </tr>
-            <@XyList list pageNo pageSize/>
+            <@cwjs_01 list pageNo pageSize/>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/fhfa.action" 
+            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/cwjs/cwjs.action" 
             OtherParameter="atype=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')}"/>
             </#if>
         </div>
@@ -79,7 +78,7 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
-    $(".modal-dialog").attr("style", "width:95%;");
+    $(".modal-dialog").attr("style", "width:750px;");
     function toExcel(inTblId, inWindow) {
         var fileName = '${CommenData.time_jc}' + ".xls";
         name.split(" ").join("");

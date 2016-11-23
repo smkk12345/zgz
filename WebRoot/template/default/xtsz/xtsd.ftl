@@ -11,13 +11,13 @@
                 <div class="form-group fl yu-switch">
 					<div class="radio">
 					  <label class="ml30">
-					    <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" >
+					    <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" <#if sd == true>checked</#if> >
 					   	系统锁定
 					  </label>
 					</div>
 					<div class="radio">
 					  <label class="ml30">
-					    <input type="radio" name="optionsRadios" id="optionsRadios2" value="1" checked>
+					    <input type="radio" name="optionsRadios" id="optionsRadios2" value="1" <#if sd == false>checked</#if>>
 					    解除锁定
 					  </label>
 					</div>
@@ -31,17 +31,17 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
-
+$(function(){
 	    $("input[name=optionsRadios]").click(function () {
         var $selectedvalue = $("input[name='optionsRadios']:checked").val();
-        alert("1231");
         if ($selectedvalue === '1') {
 		        if (yu_confirm("确认解除系统锁定？")) {
-		            var p = ${BASE_PATH}+'/xtsz/sdcz.action?sd = 0';
+		            var p = '${BASE_PATH}'+'/xtsz/sdcz.action?sd = 0';
 		            $.ajax({
 		                cache: true,
 		                type: "POST",
 		                url: p,
+		                data: {sd: '0'},
 		                dataType: "json",
 		                error: function (XMLHttpRequest, textStatus, errorThrown) {
 		                    alert("系统锁定已经解除");
@@ -54,11 +54,12 @@
         }
         else {
 		        if (yu_confirm("确认锁定系统？")) {
-		            var p = ${BASE_PATH}+'/xtsz/sdcz.action?sd = 1';
+		            var p ='${BASE_PATH}'+'/xtsz/sdcz.action?sd = 1';
 		            $.ajax({
 		                cache: true,
 		                type: "POST",
 		                url: p,
+		                data: {sd: '1'},
 		                dataType: "json",
 		                error: function (XMLHttpRequest, textStatus, errorThrown) {
 		                    alert("系统已经锁定");
@@ -70,4 +71,5 @@
 		        }
         }
      });
+    })
 </script>

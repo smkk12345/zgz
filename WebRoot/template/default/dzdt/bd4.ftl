@@ -1014,6 +1014,28 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
+
+
+    //0 未签约   1签协议的    2交房的  3 已拆除     
+	var map = '${map}';
+	var jsonObj = JSON.parse(map);
+	//for( var key in jsonObj) {
+	//	var title = jsonObj[key];
+	//}	
+	
+	$('g').each(function (index,domEle){
+		var text = $(domEle).find("text").first();
+		var value = $(text).html();
+		var nIndex = jsonObj[value];
+		if(nIndex == '0'){
+		}else if(nIndex == '1'){
+			$(text).parent().css("fill",'#449d44');
+		}else if(nIndex == '2'){
+			$(text).parent().css("fill",'#c9302c');
+		}
+	});
+
+
     $(".modal-dialog").attr("style", "width:95%;");
     function toExcel(inTblId, inWindow) {
         var fileName = '${CommenData.time_jc}' + ".xls";

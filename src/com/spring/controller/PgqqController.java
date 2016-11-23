@@ -54,7 +54,7 @@ public class PgqqController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping({ "/pgqq/rhjc.action", "/pgqq.action","/index.action"})
+	@RequestMapping({ "/pgqq/rhjc.action", "/pgqq.action"})
 	public ModelAndView indexPage(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
@@ -321,6 +321,13 @@ public class PgqqController {
 				housebasic.setSortnum(SortUtils.getSortNum(sectionindex));
 				housebasic.setHassplit("1");
 			}
+			Long time = new Date().getTime();
+			housebasic.setSortnum(time.intValue());
+			if(StringUtils.isBlank(housebasic.getSectionindex())){
+				if(housebasic.getSectionindex().equals("-1000")){
+					housebasic.setSectionindex("");
+				}
+			}
 			RoleBean role = (RoleBean)s.getAttribute("role");
 			if(StringUtils.isEmpty(housebasic.getId())){
 				housebasic.setSection(role.getSection());
@@ -339,7 +346,7 @@ public class PgqqController {
 			boolean result = ServiceManager.getHouseBasicServce().save(housebasic);
 			
 			try {
-				response.sendRedirect(WebConstConfig.BASE_PATH+"index.action");
+				response.sendRedirect(WebConstConfig.BASE_PATH+"pgqq/rhjc.action");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

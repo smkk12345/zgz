@@ -17,6 +17,7 @@ import com.common.consts.WebConstConfig;
 import com.common.utils.RequestUtil;
 import com.common.utils.StringUtils;
 
+import com.hibernate.baseSettingInfo.domain.BaseSettingBean;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
@@ -82,29 +83,10 @@ public class SessionFilter extends OncePerRequestFilter {
 		
 		// 不过滤的uri，首页不过滤 
 		String[] notFilter = new String[] { "login.action",
-				"testConnection.action", "validate.action","index.action"
+				"testConnection.action", "validate.action","lockService.action","chart"
 				 };
 		
-		request.getSession().setAttribute("hasVentilate", WebConstConfig.hasVentilate);
 		String url = request.getRequestURI();
-		RoleBean role = null;
-		try {
-			role = (RoleBean)request.getSession().getAttribute("role");
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		if(Contanst.TEM_STOP){
-			if(url.contains("index.html")){
-				arg2.doFilter(request, response); 
-				return;
-			}
-			String authority = role.getRoleAuthority();
-			if(authority.substring(15, 16).equals("2")){
-				
-			}else{
-				temStop(response,request);
-			}
-		}
 		
 		// 请求的uri   
 		if(!url.contains(".action")){
@@ -119,7 +101,41 @@ public class SessionFilter extends OncePerRequestFilter {
 				break;  
 			}  
 		}  
-		if (doFilter) {  
+		RoleBean role = null;
+		try {
+			role = (RoleBean)request.getSession().getAttribute("role");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
+		   if(null == baseBean){
+			   baseBean = new BaseSettingBean();
+			   baseBean.setKey("sd");
+			   baseBean.setKeyName("系统锁定");
+			   baseBean.setValue("0");
+//			   ServiceManager.getBaseSettingServiceImpl().delete();
+			   ServiceManager.getBaseSettingServiceImpl().save(baseBean);
+		   }
+		 Contanst.TEM_STOP = baseBean.getValue().equals("1");
+		
+		if(Contanst.TEM_STOP){
+			if(null != role){
+				String authority = role.getRoleAuthority();
+				if(authority.substring(38, 39).equals("2")){
+//						arg2.doFilter(request, response); 
+				}else{
+					if(!url.contains("lockService.action")){
+						temStop(response,request);
+					}
+				}
+			}
+		}else{
+			if(url.contains("lockService.action")){
+				webExpireInfor(response, request);
+			}
+		}
+		if (doFilter) { 
 			// 执行过滤   
 			// 从session中获取登录者实体   
 			User obj = (User)request.getSession().getAttribute("user");  
@@ -183,10 +199,14 @@ public class SessionFilter extends OncePerRequestFilter {
 		response.setCharacterEncoding("utf-8");  
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();  
-		String loginPage = RequestUtil.getBasePath(request)+"index.html";  
+		try {
+			request.getSession().invalidate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		String loginPage = RequestUtil.getBasePath(request)+"lockService.action";  
 		StringBuilder builder = new StringBuilder();  
 		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
-		builder.append("alert('系统被锁定，请联系管理员！');");  
 		builder.append("window.top.location.href='");  
 		builder.append(loginPage);  
 		builder.append("';");  
@@ -198,6 +218,7 @@ public class SessionFilter extends OncePerRequestFilter {
 		}finally{
 			out.close();
 		}
+		
 	}
 	/**
 	 * 记录用户的操作信息

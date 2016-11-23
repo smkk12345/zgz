@@ -35,4 +35,8 @@
 	</bean>
 	<bean id="agreenmentDao" class="com.hibernate.houseinfo.dao.AgreenmentDao"></bean>
 	
+	<bean id="dao" class="com.hibernate.baseSettingInfo.dao.impl.BaseSettingDaoImpl"></bean>
+	<bean id="baseSettingServiceImpl" class="com.hibernate.baseSettingInfo.service.impl.BaseSettingServiceImpl">
+		<property name="dao" ref="dao"></property>
+	</bean>
 </beans>

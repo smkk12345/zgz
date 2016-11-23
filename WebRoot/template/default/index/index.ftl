@@ -1,7 +1,25 @@
-<@override name="main_right">
-<ul class="row groupMenue">
-    <a href="${BASE_PATH}pgqq/rhjc.action"><li class="col-sm-6 group bgG group_A">入户基础信息管理</li></a>
-    <a href="${BASE_PATH}pgqq/fhfa.action"><li class="col-sm-6 group bgG group_A">分户方案数据管理</li></a>
-</ul>
-</@override>
-<@extends name = "../base/layout.ftl"/>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+</head>
+<body style="padding: 0;margin: 0;background: black;">
+<div id="shuoping" style="width:100%;text-align: center; font-size: 27px;color: white;padding-top:230px;">
+    <span>系统已被管理员锁定，请联系管理员！</span>
+</div>
+<script src="${BASE_ASSETS_PATH}libs/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+
+    
+    function getnums() {
+        window.location.href(window.location.href);
+    }
+    $(document).ready(function(){
+        setInterval(getnums,1000);
+    });
+</script>
+</body>
+</html>
+
+
+

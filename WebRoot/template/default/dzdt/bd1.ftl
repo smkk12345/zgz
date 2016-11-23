@@ -434,13 +434,13 @@
         <text transform="matrix(0.810279 0 -0 1.01285 483.757 318.932)" font-family="Arial,'sans-serif'" font-size="1.39636" >385&#21495;</text>
         <text transform="matrix(0.810279 0 -0 1.01285 483.569 320.857)" font-family="Arial,'sans-serif'" font-size="1.39636" >&#27573;&#24800;&#29748;</text>
         </g>
-        <g stroke-width="0.3" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,0)" >
-        <polyline points="445.972,300.394 454.368,300.86 " />
+        <g stroke-width="0.3" clip-path="url(#clipId0)" fill="none" stroke="rgb(12,22,111)" >
+        <polyline  points="445.972,300.394 454.368,300.86 " />
         <polyline points="454.368,300.86 453.975,308.802 " />
         <polyline points="453.975,308.802 448.338,308.523 " />
         <polyline points="448.338,308.523 448.309,309.053 " />
         <polyline points="448.309,309.053 445.502,308.898 " />
-        <polyline points="445.502,308.898 445.974,300.394 " />
+        <polyline points="445.502,308.898 445.972,300.394 " />
         <polyline points="402.705,298.931 414.14,298.002 " />
         <polyline points="414.14,298.002 414.828,306.183 " />
         <polyline points="414.828,306.183 403.164,307.042 " />
@@ -685,7 +685,8 @@
         <text transform="matrix(0.810279 0 -0 1.01285 461.226 343.704)" font-family="Arial,'sans-serif'" font-size="1.39636" >&#24352;&#21551;&#20852;(&#24050;&#25925;)</text>
         </g>
         <g stroke-width="0.3" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,0)" >
-        <polyline points="304.033,288.05 314.429,287.005 " />
+        <polyline  fill="#00CA00" stroke-width="0.1242" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"
+              style="cursor:pointer;" points="304.033,288.05 314.429,287.005,314.429,287.005 315.653,295.787,315.653,295.787 305.147,297.216,305.147,297.216 304.033,288.05 "/>
         <polyline points="314.429,287.005 315.653,295.787 " />
         <polyline points="315.653,295.787 305.147,297.216 " />
         <polyline points="305.147,297.216 304.033,288.05 " />
@@ -1530,13 +1531,13 @@
             var pointsId;
             $(function (e) {
                 $("polyline").dblclick(function (e) {
-                    $("polyline").attr("stroke-width", "0.1242");
+                    $("polyline").attr("stroke-width", "0.3242");
                     var fyId = $(this).attr("fyId");
                     pointsId = $(this).attr("id");
-                    if (fyId == "") {
-                    } else {
+                    //if (fyId == "") {
+                   // } else {
                         viewPoints();
-                    }
+                    //}
                 });
             });
             function viewPoints() {
@@ -1652,8 +1653,25 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
-         
-
+    //0 未签约   1签协议的    2交房的  3 已拆除     
+	var map = '${map}';
+	var jsonObj = JSON.parse(map);
+	//for( var key in jsonObj) {
+	//	var title = jsonObj[key];
+	//}	
+	
+	$('g').each(function (index,domEle){
+		var text = $(domEle).find("text").first();
+		var value = $(text).html();
+		var nIndex = jsonObj[value];
+		if(nIndex == '0'){
+		}else if(nIndex == '1'){
+			$(text).parent().css("fill",'#449d44');
+		}else if(nIndex == '2'){
+			$(text).parent().css("fill",'#c9302c');
+		}
+	});
+	
 	
     $(".modal-dialog").attr("style", "width:95%;");
     function toExcel(inTblId, inWindow) {

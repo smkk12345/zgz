@@ -8,24 +8,16 @@
                     </li>-->
                     
                     	<li><a <#if CURENT_TAB == 'PGQQ'>class="active"</#if> 
-                    	<#if role.roleAuthority[1]=="2">
                     		href="${BASE_PATH}pgqq.action"
-                    	<#else>
-                    		href="${BASE_PATH}pgqq/fhfa.action"
-                    	</#if>
                     	>前期入户管理</a>
                     	</li>
                     
                     <#if role.roleAuthority[5]=="2">
                     	<li><a <#if CURENT_TAB == 'AGREENMENT'>class="active"</#if> 
-                    	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}pgzq/agreenment.action"
-                    	<#else>
-                    		href="${BASE_PATH}sxh.action"
-                    	</#if>
+                    	href="${BASE_PATH}pgzq/agreenment.action"
                     	>方案协议管理</a></li>  
                     </#if> 
-                    <#if role.roleAuthority[9]=="2">
+                    <#if role.roleAuthority[32]=="2">
                     	<li><a <#if CURENT_TAB == 'JFDJ'>class="active"</#if> 
                     	<#if role.roleAuthority[3]=="2">
                     		href="${BASE_PATH}jfdj/jfdj_1.action"
@@ -34,35 +26,35 @@
                     	</#if>
                     	>交房信息管理</a></li>  
                     </#if>
-                    <#if role.roleAuthority[14]=="2">
+                    <#if role.roleAuthority[18]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ'>class="active"</#if> 
-                    	<#if role.roleAuthority[3]=="2">
-                    		href="${BASE_PATH}sjtj/index.action"
-                    	<#else>
-                    		href="${BASE_PATH}sjtj/index.action"
-                    	</#if>
+                    		href="${BASE_PATH}sjtj/lists.action"
                     	>实时数据</a></li>  
                     </#if>
-                    <#if role.roleAuthority[14]=="2">
+                    <#if role.roleAuthority[20]=="2">
                     	<li><a <#if CURENT_TAB == 'DZDT'>class="active"</#if> 
                     		href="${BASE_PATH}dzdt/bd1.action"
                     	>电子地图</a></li>  
                     </#if> 
-                     <#if role.roleAuthority[14]=="2">
+                     <#if role.roleAuthority[28]=="2">
                     	<li><a <#if CURENT_TAB == 'SJFX'>class="active"</#if> 
-                    	<#if role.roleAuthority[3]=="2">
                     		href="${BASE_PATH}sjfx/gbdqytj.action"
-                    	<#else>
-                    		href="${BASE_PATH}sjfx/gbdqytj.action"
-                    	</#if>
                     	>数据统计</a></li>  
                     </#if>         
-                     <#if role.roleAuthority[14]=="2">
+                    <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
-                    		href="${BASE_PATH}cwjs.action"
+                    		href="${BASE_PATH}cwjs/cwjs.action"
                     	>财务结算</a></li>  
                     </#if> 
-                    <li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="${BASE_PATH}xtsz.action">系统配置</a>
+                    <#if role.roleAuthority[34]=="2">
+                        	<li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="
+                        		<#if role.roleAuthority[36]=="2" ||  role.roleAuthority[35]=="2">
+                        			${BASE_PATH}xtsz.action"
+                        		<#else>
+                        			${BASE_PATH}user/personDetail.action?oType=detail"
+                        		</#if>
+                        	>系统配置</a>
+                    </#if>
                     </li>
 	               <!--  <li><a <#if CURENT_TAB == 'GJXX'>class="active"</#if> href="${BASE_PATH}gjxx.action">信息管理</a>
                     </li>

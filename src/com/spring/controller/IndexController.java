@@ -115,21 +115,22 @@ public class IndexController {
 				ServiceManager.getUserService().update(user);
 				RoleBean role = (RoleBean) request.getSession(false).getAttribute("role");
 				String r = role.getRoleAuthority();
-				if((r.charAt(0)+"").equals("2")){
-					if((r.charAt(1)+"").equals("2")){
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"index.action");
-					}else{
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"pgqq/fhfa.action");
-					}
-				}else if((r.charAt(3)+"").equals("2")){
-					if((r.charAt(4)+"").equals("2")){
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xy.action");
-					}else{
-						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"sxh.action");
-					}
-				}else{
-					response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xtsz/jbsz.action");
-				}
+				response.getWriter().write("true"+WebConstConfig.BASE_PATH+"/pgqq.action");
+//				if((r.charAt(0)+"").equals("2")){
+//					if((r.charAt(1)+"").equals("2")){
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"/pgqq.action");
+//					}else{
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"pgqq/fhfa.action");
+//					}
+//				}else if((r.charAt(3)+"").equals("2")){
+//					if((r.charAt(4)+"").equals("2")){
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xy.action");
+//					}else{
+//						response.getWriter().write("true"+WebConstConfig.BASE_PATH+"sxh.action");
+//					}
+//				}else{
+//					response.getWriter().write("true"+WebConstConfig.BASE_PATH+"xtsz/jbsz.action");
+//				}
 //				response.getWriter().write("true");
 			} else {
 				response.getWriter().write("false");
@@ -198,51 +199,13 @@ public class IndexController {
 
 	
 
-	@RequestMapping({ "/index1.action" })
+	@RequestMapping({ "/lockService.action" })
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		try {
-			User user = (User) request.getSession().getAttribute("user");
-			if (null == user) {
-				// 未锟斤拷陆,锟斤拷锟斤拷
-			} else {
-				
-				List<String> idList = new ArrayList<String>();
-				String aoJianIds = user.getRight_Content();
-				if ("all".equals(aoJianIds)) {
-					 //barnList = ServiceManager.getBarnServiceImpl().findAll();
-				} else if(!StringUtils.isEmpty(aoJianIds)) {
-					String[] idArr = aoJianIds.split("#");
-					for (int i = 0; i < idArr.length; i++) {
-						String id = idArr[i];
-						
-					}
-				}else{
-					
-				}
-				// 将用户自己管理的仓房放前面，后面添加默认的
-
-			}
-			List<User> lqyList = ServiceManager.getUserService().getListByRoleId("4");
-			String lqyDisplayName = "";
-			for (int i = 0; i < lqyList.size(); i++) {
-				if(i<lqyList.size()-1){
-					lqyDisplayName = lqyDisplayName + lqyList.get(i).getDisplayName()+",";
-				}
-				else{
-					lqyDisplayName = lqyDisplayName + lqyList.get(i).getDisplayName();
-				}
-			}
-			model.addAttribute("lqyDisplayName", lqyDisplayName);
-			List<User> userList = ServiceManager.getUserService().getListByRoleId("3");
-			model.addAttribute("userList", userList);
-			// 模锟斤拷路锟斤拷 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH", WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH", WebConstConfig.getBase_Template_Default_Path());
 			model.addAttribute("CURENT_TAB", "INDEX");
-			
-			Map<String,Map<String,String>> map = getIndexOperateFastCut();
-			model.addAttribute("operateFastCut", map);
 			return new ModelAndView(PageConst.INDEX, model);
 		} catch (Exception e) {
 			e.printStackTrace();

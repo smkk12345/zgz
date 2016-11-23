@@ -18,9 +18,9 @@
                	</#if>
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
-
+			 <#if role.roleAuthority[2]=="2">
             <div class="fr">
-                <form  action="${BASE_PATH}/index.action" accept-charset="UTF-8" method="post" >
+                <form  action="${BASE_PATH}/pgqq/rhjc.action" accept-charset="UTF-8" method="post" >
                     <div class=' autoWidthGroup-2 fl'>
                         <label class='fl control-label'>房屋坐落:</label>
                         <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
@@ -40,6 +40,7 @@
                     <div class='autoWidthGroup-2 fl'><button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>                   
                 </form>
             </div>
+            </#if>
         </div>
 
         <table  class="table table-bordered table-hover">
@@ -118,10 +119,10 @@
                 dataType: "json",
                 data: {housebasicid: curDataId},
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "/index.action";
+                    location.href = "${BASE_PATH}" + "/pgqq.action";
                 },
                 success: function (response) {
-                    location.href = "${BASE_PATH}" + "/index.action";
+                    location.href = "${BASE_PATH}" + "/pgqq.action";
                 }
             })
         }

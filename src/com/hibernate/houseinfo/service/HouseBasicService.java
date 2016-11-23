@@ -312,4 +312,14 @@ public class HouseBasicService {
 		return houseBasicDao.getHasOthersBeanList(sql);
 	}
 	
+	public void updateBaseInfo(HouseBasic housebasic) {
+		HouseBasic h = houseBasicDao.getById(housebasic.getId());
+		h.setNames(housebasic.getNames());
+		h.setIdcard(housebasic.getIdcard());
+		h.setLocation(housebasic.getLocation());
+		h.setTelephone(housebasic.getTelephone());
+		h.setMobile(housebasic.getMobile());
+		houseBasicDao.update(h);
+	}
+	
 }
