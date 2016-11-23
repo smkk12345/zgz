@@ -164,7 +164,8 @@ public class SjtjController {
             model.addAttribute("wjf", wjf);
             model.addAttribute("jrjf", jrjf);
             if (yjf + wjf > 0) {
-                BigDecimal bd = new BigDecimal(100 * yjf / (yjf + wjf));
+            	double d = (100.00 * yjf) / (yjf + wjf);
+                BigDecimal bd = new BigDecimal(d);
                 BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
                 model.addAttribute("jfbi", f1 + "%");
             } else {

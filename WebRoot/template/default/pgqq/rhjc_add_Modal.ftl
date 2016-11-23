@@ -404,7 +404,7 @@
                     <input type='text' class='form-control input-sm  ' name='license'   placeholder='执照编号' value="${bean.license?default("")}"/>        
                 </div>
             </div>
-            <h4><span class="label label-default">4.其他，残疾，大病，低保等：</span></h4>
+            <h4><span class="label label-default">5.其他，残疾，大病，低保等：</span></h4>
             <div class='container-fluid con-bg mb10' id="div5">	
                 <table id="table1" class="table">
                     <thead>
@@ -471,7 +471,7 @@
                     </tbody>
                 </table>
             </div>
-            <h4><span class="label label-default">5.备注：</span></h4>
+            <h4><span class="label label-default">6.备注：</span></h4>
             <div class='container-fluid con-bg mb10'>
                 <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)" >${bean.remark?default("")}</textarea>
             </div>
