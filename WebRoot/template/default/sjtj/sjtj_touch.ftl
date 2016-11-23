@@ -23,23 +23,23 @@
     <div class="title">长辛店镇张郭庄村棚户区改造项目多媒体查询系统</div>
     <div class="menu-touch">
         <ul class="row groupMenue">
-            <a href="${BASE_PATH}sjtj/chart1.action" target="_blank">
+            <a href="${BASE_PATH}sjtj/chart1.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">奖励期倒计时</li>
             </a>
-            <a href="${BASE_PATH}sjtj/chart2.action" target="_blank">
+            <a href="${BASE_PATH}sjtj/chart2.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">签约排号公示</li>
             </a>
-            <a href="${BASE_PATH}sjtj/chart3.action" target="_blank">
+            <a href="${BASE_PATH}sjtj/chart3.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">各标段签约情况</li>
             </a>
-            <a href="${BASE_PATH}sjtj/chart4.action" target="_blank">
+            <a href="${BASE_PATH}sjtj/chart4.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">交房汇总情况</li>
             </a>
-            <a href="${BASE_PATH}sjtj/chart5.action" target="_blank">
+            <a href="${BASE_PATH}sjtj/chart5.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">签约方案比例</li>
             </a>
-            <a href="${BASE_PATH}sjtj/chart6.action" target="_blank">
-                <li class="col-sm-6 group bgG group_A group-blue">安置及房源使用情况</li>
+            <a href="${BASE_PATH}sjtj/chart6.action?from=touch">
+                <li class="col-sm-6 group bgG group_A group-blue">安置及房源情况</li>
             </a>
         </ul>
     </div>
