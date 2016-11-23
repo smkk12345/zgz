@@ -78,9 +78,8 @@
 		<property name="gfbz45"></property>
 		<property name="rdzjdallarea"></property>
 		<property name="zfknhbcfa"></property>
-		
-		
-		
-	
+		<property name="xfts"></property>
+		<property name="xfarea"></property>
+
 	</class>
 </hibernate-mapping>
