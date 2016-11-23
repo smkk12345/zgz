@@ -192,9 +192,13 @@
                     <input type='text' class='form-control input-sm  ' name='wwzjl'   value="<#if bean.wwzjl??>${bean.wwzjl?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>未建二层奖励费:</label>
+                    <label class='fl control-label'>未建二层及地下室奖励费:</label>
                     <input type='text' class='form-control input-sm  ' name='wjecjj'   value="<#if bean.wjecjj??>${bean.wjecjj?c}<#else></#if>"/>       
                 </div>  
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>未经批准已建二层补助:</label>
+                    <input type='text' class='form-control input-sm  ' name='wjpzyjecbz'   value="<#if bean.wjpzyjecbz??>${bean.wjpzyjecbz?c}<#else></#if>"/>       
+                </div> 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>搬家及家电迁移补助:</label>
                     <input type='text' class='form-control input-sm  ' name='bjbz'   value="<#if bean.bjbz??>${bean.bjbz?c}<#else></#if>"/>       
@@ -224,6 +228,10 @@
                     <input type='text' class='form-control input-sm  ' name='tctdbz'   value="<#if bean.tctdbz??>${bean.tctdbz?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>周转补助费:</label>
+                    <input type='text' class='form-control input-sm  ' name='zzbz'   value="<#if bean.zzbz??>${bean.zzbz?c}<#else></#if>"/>       
+                </div>  
+                <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>其他补助费:</label>
                     <input type='text' class='form-control input-sm  ' name='otherbz'   value="<#if bean.otherbz??>${bean.otherbz?c}<#else></#if>"/>       
                 </div>  
@@ -242,27 +250,27 @@
                 </div>            
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>一居室:</label>
-                    <input type='text' class='form-control input-sm  ' name='yjs'  value="${bean.yjs?default("")}" />    
+                    <input type='text' class='form-control input-sm  ' name='yjs'  value="${bean.yjs?default("")}" /> （套）   
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（70）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs70'   value="${bean.ljs70?default("")}"/>       
+                    <input type='text' class='form-control input-sm  ' name='ljs70'   value="${bean.ljs70?default("")}"/>  （套）     
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（75）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs75'   value="${bean.ljs75?default("")}"/>       
+                    <input type='text' class='form-control input-sm  ' name='ljs75'   value="${bean.ljs75?default("")}"/>  （套）     
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（80）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs80'   value="${bean.ljs80?default("")}"/>       
+                    <input type='text' class='form-control input-sm  ' name='ljs80'   value="${bean.ljs80?default("")}"/> （套）      
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>二居室（85）:</label>
-                    <input type='text' class='form-control input-sm  ' name='ljs85'   value="${bean.ljs85?default("")}"/>       
+                    <input type='text' class='form-control input-sm  ' name='ljs85'   value="${bean.ljs85?default("")}"/>   （套）    
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>三居室:</label>
-                    <input type='text' class='form-control input-sm  ' name='sjs'   value="${bean.sjs?default("")}"/>       
+                    <input type='text' class='form-control input-sm  ' name='sjs'   value="${bean.sjs?default("")}"/>  （套）     
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>实际选房面积:</label>

@@ -57,6 +57,29 @@ public class SjtjController {
         }
     }
 
+    @RequestMapping({"/sjtj/touch.action"})
+    public ModelAndView sjtj_touch(HttpServletRequest request,
+                                   HttpServletResponse response, ModelMap model) {
+        try {
+
+            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+            model.addAttribute("BASE_ASSETS_PATH",
+                    WebConstConfig.getBase_Assets_Path());
+            model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+                    WebConstConfig.getBase_Template_Default_Path());
+
+            model.addAttribute("CURENT_TAB", "SJTJ");
+            model.addAttribute("CURENT_TAB_2", "touch");
+            model.addAttribute("CURENT_TAB_3", "touch");
+
+            return new ModelAndView(PageConst.SJTJ_TOUCH, model);
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("error", e.getMessage());
+            return null;
+        }
+    }
+    
     /**
      * 签约比例
      *

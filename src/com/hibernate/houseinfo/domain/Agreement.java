@@ -91,6 +91,8 @@ public class Agreement extends BaseBean {
 	private BigDecimal wwzjl;
 	//未建二层及地下室奖励费
 	private BigDecimal wjecjj;
+	//未经批准已建二层补助
+	private BigDecimal wjpzyjecbz;
 	// 补助费合计
 	private BigDecimal bzfhj;
 	//--------------------------------补助费--------------
@@ -108,6 +110,8 @@ public class Agreement extends BaseBean {
 	private BigDecimal dsznbz;
 	//停产停业补助
 	private BigDecimal tctdbz;
+	//周转补助费
+	private BigDecimal zzbz;
 	//其他
 	private BigDecimal otherbz;
 	//奖励费合计
@@ -135,6 +139,7 @@ public class Agreement extends BaseBean {
 	private BigDecimal xfarea;
 	//总补偿款-选房款
 	private BigDecimal jshk;
+	private String dxjshk;
 	//实建面
 	private BigDecimal sjm;
 	
@@ -725,6 +730,7 @@ public class Agreement extends BaseBean {
 
 	public BigDecimal getJshk() {
 		return jshk;
+		
 	}
 
 
@@ -745,6 +751,9 @@ public class Agreement extends BaseBean {
 
 	public void setJshk(BigDecimal jshk) {
 		this.jshk = jshk;
+		if(null != jshk){
+			dxjshk = MoneyUtils.change(jshk.doubleValue());
+		}
 	}
 
 
@@ -860,6 +869,36 @@ public class Agreement extends BaseBean {
 
 	public void setRdzfkn(String rdzfkn) {
 		this.rdzfkn = rdzfkn;
+	}
+
+
+	public BigDecimal getWjpzyjecbz() {
+		return wjpzyjecbz;
+	}
+
+
+	public BigDecimal getZzbz() {
+		return zzbz;
+	}
+
+
+	public void setZzbz(BigDecimal zzbz) {
+		this.zzbz = zzbz;
+	}
+
+
+	public void setWjpzyjecbz(BigDecimal wjpzyjecbz) {
+		this.wjpzyjecbz = wjpzyjecbz;
+	}
+
+
+	public String getDxjshk() {
+		return dxjshk;
+	}
+
+
+	public void setDxjshk(String dxjshk) {
+		this.dxjshk = dxjshk;
 	}
 
 }

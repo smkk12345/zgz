@@ -54,7 +54,8 @@ public class PageConst {
      //
     public final static String JFDJ_DJ_0 = "/default/jfdj/jfdj_0.ftl";  
     public final static String JFDJ_DJ_1 = "/default/jfdj/jfdj_1.ftl"; 
-    public final static String SJTJ = "/default/sjtj/sjtj.ftl";  
+    public final static String SJTJ = "/default/sjtj/sjtj.ftl"; 
+    public final static String SJTJ_TOUCH ="/default/sjtj/sjtj_touch.ftl";
     
     public final static String SJTJ_chart1 = "/default/sjtj/chart1.ftl";  
     public final static String SJTJ_chart2 = "/default/sjtj/chart2.ftl"; 

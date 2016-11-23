@@ -8,5 +8,11 @@
             </span></#if>实时数据展示</a>
     </li>
    </#if>
+   
+    <li <#if CURENT_TAB_2 =='touch'>class="active"</#if>><a href="${BASE_PATH}sjtj/touch.action">
+            <#if CURENT_TAB_2 =='touch'><span class="yu-tu-fgsj-active"></span>
+            <#else><span class="yu-tu-fgsj-commen">
+            </span></#if>触摸屏展示</a>
+    </li>
 </ul>
 </@override>

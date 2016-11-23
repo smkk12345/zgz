@@ -52,6 +52,7 @@
 		<property name="qfbz" ></property>
 		<property name="rdbazrk" ></property>
 		<property name="rdbazrkxx" ></property>
+		<property name="zzbz"></property>
 		
 		<property name="shed" ></property>
 		<property name="sjs" ></property>
@@ -63,6 +64,7 @@
 		<property name="updateTime" ></property>
 		<property name="vacatepeople" ></property>
 		<property name="wjecjj" ></property>
+		<property name="wjpzyjecbz"></property>
 		<property name="wwzjl" ></property>
 		<property name="yjs" ></property>
 		<property name="zjdttbck" ></property>
