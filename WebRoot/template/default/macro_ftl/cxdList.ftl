@@ -35,8 +35,8 @@
                     </#if>
                 </#if>
             </td>
-            <td>
-                <#if role.roleAuthority[3]=="2">
+            
+          <!--    <td>  <#if role.roleAuthority[3]=="2">
                     <#if ROW.hassplit?default("0")=="0">
                         <#if (ROW.checkresult)??>
                             <#if ROW.checkresult=="1">
@@ -53,8 +53,9 @@
                             </button>
                         </#if>
                     </#if>
-                </#if>
-            </td>
+                </#if></td>
+                -->
+            
         </tr>
         </#list>
     </#if>
