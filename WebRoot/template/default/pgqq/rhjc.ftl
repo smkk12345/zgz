@@ -20,7 +20,7 @@
             </div>
 			 <#if role.roleAuthority[2]=="2">
             <div class="fr">
-                <form  action="${BASE_PATH}/index.action" accept-charset="UTF-8" method="post" >
+                <form  action="${BASE_PATH}/pgqq/rhjc.action" accept-charset="UTF-8" method="post" >
                     <div class=' autoWidthGroup-2 fl'>
                         <label class='fl control-label'>房屋坐落:</label>
                         <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />   
