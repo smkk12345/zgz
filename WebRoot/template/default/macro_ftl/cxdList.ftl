@@ -379,7 +379,7 @@
                         <#if (ROW.protocolnumber?length>0)>
                         <button type="button"
                                 class="btn btn-danger btn-xs ml10 YL-ModalClick bold glyphicon glyphicon-print"
-                                title='打印告知单'
+                                title='打印定向安置房认购协议'
                                 data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
                         </#if>
                     </#if>
