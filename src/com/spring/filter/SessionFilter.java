@@ -83,7 +83,7 @@ public class SessionFilter extends OncePerRequestFilter {
 		
 		// 不过滤的uri，首页不过滤 
 		String[] notFilter = new String[] { "login.action",
-				"testConnection.action", "validate.action","lockService.action","chart"
+				"testConnection.action", "validate.action","lockService.action","chart","touch"
 				 };
 		
 		String url = request.getRequestURI();

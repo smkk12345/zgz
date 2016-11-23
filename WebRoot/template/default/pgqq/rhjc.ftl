@@ -55,7 +55,7 @@
                 <th>建筑测绘</th>
                 <th>手机</th>
                 <th>操作</th>
-                <th>分户</th>
+              <!--  <th>分户</th>-->
             </tr>
             <@HousebasicList list pageNo pageSize/>
         </table>
