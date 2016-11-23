@@ -67,7 +67,7 @@
                 <th>协议编号</th> 
                 <th>协议首页打印</th>
                 <th>选房顺序号</th>
-                <th>告知单</th>
+                <th>认购协议</th>
             </tr>
             <@FhxyList list pageNo pageSize/>
         </table>

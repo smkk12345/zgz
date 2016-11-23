@@ -26,6 +26,10 @@
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
         <div class='container-fluid' style="background-color:#000; padding: 50px 30px 30px 30px;height:100%">
+        <#if from = "touch">
+            <a href="${BASE_PATH}sjtj/touch.action" class="btn btn-default glyphicon glyphicon-chevron-left"
+               style="position:absolute;left: 20px;top:20px; font-size: 20px;">返回</a>
+        </#if>
             <div style='color:#FFF;font-size:36px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚改项目签约排号情况实时公示</div>
             <div style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'>
                 <table class="table table-bordered mt10" width="100%" border="0" cellspacing="1" cellpadding="10" align="center" bgcolor="#FFFFFF">
