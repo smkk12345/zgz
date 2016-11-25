@@ -46,6 +46,13 @@
                     		href="${BASE_PATH}cwjs/cwjs.action"
                     	>财务结算</a></li>  
                     </#if> 
+                    
+                	<li>
+	                	<a <#if CURENT_TAB == 'DAGL'>class="active"</#if> 
+	                		href="${BASE_PATH}dagl/list.action"
+	                	>档案管理</a>
+                	</li>  
+                	
                     <#if role.roleAuthority[34]=="2">
                         	<li><a <#if CURENT_TAB == 'XTSZ'>class="active"</#if> href="
                         		<#if role.roleAuthority[36]=="2" ||  role.roleAuthority[35]=="2">

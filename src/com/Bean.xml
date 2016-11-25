@@ -39,4 +39,10 @@
 	<bean id="baseSettingServiceImpl" class="com.hibernate.baseSettingInfo.service.impl.BaseSettingServiceImpl">
 		<property name="dao" ref="dao"></property>
 	</bean>
+	
+	<bean id="fileManageService" class="com.hibernate.houseinfo.service.FileManageService">
+		<property name="fileManageDao" ref="fileManageDao"></property>
+	</bean>
+	
+	<bean id="fileManageDao" class="com.hibernate.houseinfo.dao.FileManageDao"></bean>
 </beans>
