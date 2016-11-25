@@ -5,6 +5,7 @@ import com.hibernate.baseSettingInfo.service.impl.AlarmServiceImpl;
 import com.hibernate.baseSettingInfo.service.impl.BaseSettingServiceImpl;
 import com.hibernate.baseSettingInfo.service.impl.GrainTypeServiceImpl;
 import com.hibernate.houseinfo.service.AgreenmentService;
+import com.hibernate.houseinfo.service.FileManageService;
 import com.hibernate.houseinfo.service.HouseBasicService;
 import com.hibernate.houseinfo.service.IndexNumService;
 import com.hibernate.timers.service.impl.TimerTaskServiceImpl;
@@ -35,6 +36,8 @@ public class ServiceManager {
     private static HouseBasicService houseBasicService;
     
     private static AgreenmentService agreenmentService;
+    
+    private static FileManageService fileManageService;
     
     public static Object getServiceBean(String beanName) {
 
@@ -167,4 +170,15 @@ public class ServiceManager {
         }
     }
 
+    
+    public static FileManageService getFileManageService(){
+        if(fileManageService == null){
+        	fileManageService = (FileManageService)ServiceManager.getServiceBean("fileManageService");
+            return fileManageService;
+        }
+        else{
+            return fileManageService;
+        }
+    }
+    
 }
