@@ -166,8 +166,37 @@ public class Agreement extends BaseBean {
     
   //住房困难户补偿方案
     private String zfknhbcfa;
+    
+    //控制面积区位补偿单价
+    private BigDecimal kzmjqwbcdj;
+    
+    //超控制面积区位补偿单价
+    private BigDecimal ckmjqwbcdj;
+    
+  //补偿宅基地面积
+    private BigDecimal bczjdmj;
+    
+  //补偿宅基地面积
+    private BigDecimal yxmj;
+    
+  //装修设备附属物价款
+    private BigDecimal zxsbfswjk;
+    
+    
+  //滴水补助费:
+    private BigDecimal dsbzf;
+    
+  //信鸽补助费
+    private BigDecimal xgbzf;
+    
+  //宅基地应批未批补助
+    private BigDecimal zjdypwpbz;
+  //优惠指标未选满补偿
+    private BigDecimal yhzbwxmbc;
 
-
+    
+    
+    
 	private String rdzfkn;
 	
 
@@ -903,4 +932,96 @@ public class Agreement extends BaseBean {
 		return xfarea;
 	}
 
+
+	public BigDecimal getKzmjqwbcdj() {
+		return kzmjqwbcdj;
+	}
+
+
+	public void setKzmjqwbcdj(BigDecimal kzmjqwbcdj) {
+		this.kzmjqwbcdj = kzmjqwbcdj;
+	}
+
+
+	public BigDecimal getCkmjqwbcdj() {
+		return ckmjqwbcdj;
+	}
+
+
+	public void setCkmjqwbcdj(BigDecimal ckmjqwbcdj) {
+		this.ckmjqwbcdj = ckmjqwbcdj;
+	}
+
+
+	public BigDecimal getBczjdmj() {
+		return bczjdmj;
+	}
+
+
+	public void setBczjdmj(BigDecimal bczjdmj) {
+		this.bczjdmj = bczjdmj;
+	}
+
+
+	public BigDecimal getYxmj() {
+		return yxmj;
+	}
+
+
+	public void setYxmj(BigDecimal yxmj) {
+		this.yxmj = yxmj;
+	}
+
+
+	public BigDecimal getZxsbfswjk() {
+		return zxsbfswjk;
+	}
+
+
+	public void setZxsbfswjk(BigDecimal zxsbfswjk) {
+		this.zxsbfswjk = zxsbfswjk;
+	}
+
+
+	public BigDecimal getDsbzf() {
+		return dsbzf;
+	}
+
+
+	public void setDsbzf(BigDecimal dsbzf) {
+		this.dsbzf = dsbzf;
+	}
+
+
+	public BigDecimal getXgbzf() {
+		return xgbzf;
+	}
+
+
+	public void setXgbzf(BigDecimal xgbzf) {
+		this.xgbzf = xgbzf;
+	}
+
+
+	public BigDecimal getZjdypwpbz() {
+		return zjdypwpbz;
+	}
+
+
+	public void setZjdypwpbz(BigDecimal zjdypwpbz) {
+		this.zjdypwpbz = zjdypwpbz;
+	}
+
+
+	public BigDecimal getYhzbwxmbc() {
+		return yhzbwxmbc;
+	}
+
+
+	public void setYhzbwxmbc(BigDecimal yhzbwxmbc) {
+		this.yhzbwxmbc = yhzbwxmbc;
+	}
+
+
+	
 }

@@ -316,17 +316,24 @@
             <td>
                 <#if role.roleAuthority[9]=="2">
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'
-                            data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                            
+                        <#if ROW.atype?default("0")=="0">
+                           data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                        <#else>
+                           data-url="${BASE_PATH}pgzq/fhxy_hb_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                        </#if>
+                        >
                         <span class="glyphicon glyphicon-print">金额审查</span></button>
                 </#if>
                 <#if role.roleAuthority[10]=="2">
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'
 
                         <#if ROW.atype?default("0")=="0">
-                            data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                            data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
                         <#else>
-                            data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
+                            data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
                         </#if>
+                        >
                         <span class="glyphicon glyphicon-print">协议</span></button>
                 </#if>
             </td>
@@ -371,10 +378,13 @@
                 <td colspan=3> 请先选择安置方式！</td>
             </#if>
             <td>
+                <#if ROW.atype?default("0")=="0">
             ${ROW.indexNumStr?default("")}
+            </#if>
             </td>
             <td>
                 <#if role.roleAuthority[13]=="2">
+                <#if ROW.atype?default("0")=="0">
                     <#if (ROW.protocolnumber)??>
                         <#if (ROW.protocolnumber?length>0)>
                         <button type="button"
@@ -383,6 +393,7 @@
                                 data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
                         </#if>
                     </#if>
+                 </#if>
                 </#if>
                 </td>
 

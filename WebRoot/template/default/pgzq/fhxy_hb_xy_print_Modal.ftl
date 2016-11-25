@@ -22,8 +22,9 @@
         <p class="contex-1" >
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.zjdarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;<#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>。认定宅基地总补偿面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.rdzjdallarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。其中：<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>。认定宅基地面积<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;${bean.rdzjdallarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米，补偿宅基地面积<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;${bean.bczjdmj?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。其中：<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.conhomestarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；超出宅基地控制面积<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.overhomesteadarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。
         </p>
         <p class="leftTitle">第三条&nbsp;&nbsp;房屋补偿面积</p>
