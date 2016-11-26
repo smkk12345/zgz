@@ -9,12 +9,8 @@
         <input type="hidden" class='form-control input-sm ' name='aid' value="${bean.id?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='housebasicid' value="${housebasic.id?default("")}" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='protocolnumber' value="${bean.protocolnumber?default("")}" style="width: 0px;"/>
- 		<input type="hidden" class='form-control input-sm ' name='zbnmj' value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='zxsbfsw' value="<#if bean.zxsbfsw??>${bean.zxsbfsw?c}<#else></#if>" style="width: 0px;"/>
- 		<input type="hidden" class='form-control input-sm ' name='czbmj' value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='fwjk' value="<#if bean.fwjk??>${bean.fwjk?c}<#else></#if>" style="width: 0px;"/>
- 		<input type="hidden" class='form-control input-sm ' name='zbngfk' value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else></#if>" style="width: 0px;"/>
- 		<input type="hidden" class='form-control input-sm ' name='zbwgfk' value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else></#if>" style="width: 0px;"/>
         <div class='ml15' >
             <h4><span class="label label-default">一.基本情况：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
@@ -316,6 +312,22 @@
                     <label class='fl control-label'>实际选房面积:</label>
                     <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj'   value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
                 </div>  
+                 <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>指标内面积:</label>
+                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>       
+                </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>超指标面积:</label>
+                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
+                </div>  
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>指标内购房款:</label>
+                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='zbngfk'   value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else></#if>"/>       
+                </div>  
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label'>指标外购房款:</label>
+                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='zbwgfk'   value="<#if bean.sjxfmj??>${bean.zbwgfk?c}<#else></#if>"/>       
+                </div>                   
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款:</label>
                     <input type='text' class='form-control input-sm  ' name='azfgfk'   value="<#if bean.azfgfk??>${bean.azfgfk?c}<#else></#if>"/>       

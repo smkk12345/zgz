@@ -529,6 +529,14 @@ public class AgreenmentController {
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			String dateStr = bean.getOperatedate();
+			model.addAttribute("year", DateUtil.getYear(dateStr));
+			model.addAttribute("month", DateUtil.getMonth(dateStr));
+			model.addAttribute("day", DateUtil.getDay(dateStr));
+			model.addAttribute("hour", DateUtil.getHour(dateStr));
+			model.addAttribute("minute", DateUtil.getMinute(dateStr));
+			model.addAttribute("second", DateUtil.getSecond(dateStr));
+			
 			model.addAttribute("bean", bean);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);

@@ -10,6 +10,7 @@ import com.common.utils.StringUtils;
 import com.hibernate.base.BaseBean;
 import com.hibernate.timers.utils.DateStyle;
 import com.hibernate.timers.utils.DateUtil;
+import com.hibernate.utils.MoneyUtils;
 
 public class DisplayBean extends BaseBean {
 
@@ -163,6 +164,28 @@ public class DisplayBean extends BaseBean {
 		private Integer sjs;
 		//安置房购房款
 		private BigDecimal azfgfk;
+		private String dxazfgfk;
+		public String getDxazfgfk() {
+			return dxazfgfk;
+		}
+		public void setDxazfgfk(String dxazfgfk) {
+			this.dxazfgfk = dxazfgfk;
+		}
+		//装修设备附属物
+		private BigDecimal zxsbfsw;
+		//指标内面积
+		private BigDecimal zbnmj;
+		//超指标面积
+		private BigDecimal czbmj;
+		//房屋家夼
+		private BigDecimal fwjk;
+		//指标内购房款
+		private BigDecimal zbngfk;
+		private String dxzbngfk;
+		//指标外购房狂
+		private BigDecimal zbwgfk;
+		private String dxzbwgfk;
+		
 		//宅基地腾退总价 包括宅基地腾退补偿款，被重置房屋重置成新价，奖励费，补助费
 		private BigDecimal zjdttzj;
 		//评估机构
@@ -705,6 +728,9 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setAzfgfk(BigDecimal azfgfk) {
 			this.azfgfk = azfgfk;
+			if(null !=azfgfk){
+				dxazfgfk=MoneyUtils.change(azfgfk.doubleValue());
+			}
 		}
 		public BigDecimal getZjdttzj() {
 			return zjdttzj;
@@ -996,6 +1022,62 @@ public class DisplayBean extends BaseBean {
 		}
 		public BigDecimal getXfarea() {
 			return xfarea;
+		}
+		public BigDecimal getZxsbfsw() {
+			return zxsbfsw;
+		}
+		public BigDecimal getZbnmj() {
+			return zbnmj;
+		}
+		public BigDecimal getCzbmj() {
+			return czbmj;
+		}
+		public BigDecimal getFwjk() {
+			return fwjk;
+		}
+		public BigDecimal getZbngfk() {
+			return zbngfk;
+		}
+		public BigDecimal getZbwgfk() {
+			return zbwgfk;
+		}
+		public void setZxsbfsw(BigDecimal zxsbfsw) {
+			this.zxsbfsw = zxsbfsw;
+		}
+		public void setZbnmj(BigDecimal zbnmj) {
+			this.zbnmj = zbnmj;
+		}
+		public void setCzbmj(BigDecimal czbmj) {
+			this.czbmj = czbmj;
+		}
+		public void setFwjk(BigDecimal fwjk) {
+			this.fwjk = fwjk;
+		}
+		public void setZbngfk(BigDecimal zbngfk) {
+			
+			this.zbngfk = zbngfk;
+		}
+		public void setZbwgfk(BigDecimal zbwgfk) {
+			this.zbwgfk = zbwgfk;
+		}
+		public String getDxzbngfk() {
+			if(null != zbngfk){
+				this.dxzbngfk = MoneyUtils.change(zbngfk.doubleValue());
+			}
+			return dxzbngfk;
+		}
+		public String getDxzbwgfk() {
+			if(null != zbwgfk){
+				this.dxzbwgfk = MoneyUtils.change(zbwgfk.doubleValue());
+			}
+			return dxzbwgfk;
+		}
+		public void setDxzbngfk(String dxzbngfk) {
+			
+			this.dxzbngfk = dxzbngfk;
+		}
+		public void setDxzbwgfk(String dxzbwgfk) {
+			this.dxzbwgfk = dxzbwgfk;
 		}
 		
 		

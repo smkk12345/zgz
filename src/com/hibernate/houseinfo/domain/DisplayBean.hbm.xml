@@ -108,5 +108,12 @@
 		
 		<property name="xfts"></property>
 		<property name="xfarea"></property>
+		<property name="zxsbfsw"></property>
+		<property name="zbnmj"></property>
+		<property name="czbmj"></property>
+		<property name="fwjk"></property>
+		<property name="zbngfk"></property>
+		<property name="zbwgfk"></property>
+
 	</class>
 </hibernate-mapping>
