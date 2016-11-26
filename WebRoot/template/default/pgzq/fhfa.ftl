@@ -68,7 +68,7 @@
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
             <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/fhfa.action" 
-            OtherParameter="atype=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')}"/>
+            OtherParameter="location=${location?default('')},atype=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')}"/>
             </#if>
         </div>
     </ul>

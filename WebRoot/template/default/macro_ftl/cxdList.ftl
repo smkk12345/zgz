@@ -314,6 +314,7 @@
             <td>${(ROW.azfgfk)!""}</td>
             <td>${(ROW.jlfsum)!""}</td>
             <td>
+             	<button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印预结单' <span class="glyphicon glyphicon-print">预结单</span></button>
                 <#if role.roleAuthority[9]=="2">
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'
                             
@@ -324,6 +325,7 @@
                         </#if>
                         >
                         <span class="glyphicon glyphicon-print">金额审查</span></button>
+                       
                 </#if>
                 <#if role.roleAuthority[10]=="2">
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'

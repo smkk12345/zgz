@@ -222,7 +222,7 @@ public class AgreenmentController {
 		}
 		if(!StringUtils.isBlank(location)){
 			sb.append(" and a.location like '%").append(location).append("%'");
-			model.addAttribute("location", names);
+			model.addAttribute("location", location);
 		}
 		if(!StringUtils.isBlank(mobile)){
 
