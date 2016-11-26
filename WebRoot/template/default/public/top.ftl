@@ -31,11 +31,11 @@
                     		href="${BASE_PATH}sjtj/lists.action"
                     	>实时数据</a></li>  
                     </#if>
-                    <#if role.roleAuthority[20]=="2">
+                    <!--<#if role.roleAuthority[20]=="2">
                     	<li><a <#if CURENT_TAB == 'DZDT'>class="active"</#if> 
                     		href="${BASE_PATH}dzdt/bd1.action"
                     	>电子地图</a></li>  
-                    </#if> 
+                    </#if> -->
                      <#if role.roleAuthority[28]=="2">
                     	<li><a <#if CURENT_TAB == 'SJFX'>class="active"</#if> 
                     		href="${BASE_PATH}sjfx/gbdqytj.action"
