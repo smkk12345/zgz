@@ -1,5 +1,6 @@
 package com.hibernate.houseinfo.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.hibernate.houseinfo.dao.FileManageDao;
@@ -23,8 +24,21 @@ public class FileManageService {
 		fileManageDao.update(filemanage);
 	}
 	
-	public void save(FileManageBean filemanage){
-		fileManageDao.save(filemanage);
+	public FileManageBean save(String filename,String filepath,String housebasicid,long size,String suffix){
+		FileManageBean fileManageBean = new FileManageBean();
+		fileManageBean.setCreateTime(new Date());
+		fileManageBean.setUpdateTime(new Date());
+		fileManageBean.setFilename(filename);
+		fileManageBean.setHousebasicid(housebasicid);
+		fileManageBean.setIsdel("0");
+		fileManageBean.setSuffix(suffix);
+		fileManageBean.setPath(filepath);
+		fileManageDao.save(fileManageBean);
+		return fileManageBean;
+	}
+	
+	public void delete(String fileid){
+		 fileManageDao.delete(fileid);
 	}
 	
 }

@@ -87,7 +87,7 @@
                 </div>-->
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>宅基地认定年限:</label>
-                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='homesteadyear' >  
+                    <select id='homesteadyear' class='form-control input-sm fl' style='width:120px;' name='homesteadyear' >  
                         <option  <#if (bean.homesteadyear?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
                         <option  <#if (bean.homesteadyear?default("-1"))=='0'>selected='selected'</#if>  value="0">82年前</option>  
                         <option  <#if (bean.homesteadyear?default("-1"))=='1'>selected='selected'</#if> value="1">82年后</option> 
@@ -158,7 +158,7 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>控制面积区位补偿单价:</label>
-                    <input type='text' class='form-control input-sm  ' name='kzmjqwbcdj'   value="<#if bean.kzmjqwbcdj??>${bean.kzmjqwbcdj?c}<#else>6000</#if>"/>       
+                    <input type='text' class='form-control input-sm  ' name='kzmjqwbcdj' disabled="disabled"  value="6000"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>控制宅基地区位补偿价:</label>
@@ -166,7 +166,8 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>超控面积区位补偿单价:</label>
-                    <input type='text' class='form-control input-sm  ' name='ckmjqwbcdj'   value="<#if bean.ckmjqwbcdj??>${bean.ckmjqwbcdj?c}<#else></#if>"/>       
+                    <input id="ckmjqwbcdj" type='text' class='form-control input-sm ' disabled="disabled"  name='ckmjqwbcdj'   
+                    value="<#if (bean.homesteadyear?default("-1"))=='0'>3000<#elseif bean.homesteadyear?default("-1")=='1'>1800<#else></#if>"/>      
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>超控宅基地区位补偿价:</label>
@@ -470,6 +471,19 @@
     });
     
    $(function(){
+   		
+		$("#homesteadyear").change(function(){
+			var p1=$(this).children('option:selected').val();
+			if(p1 == '0'){
+				$("#ckmjqwbcdj").val(3000);
+			}else if(p1 == '1'){
+				$("#ckmjqwbcdj").val(1800);
+			}else{
+				$("#ckmjqwbcdj").val("");
+			};
+   		});
+   
+   		//房屋件数和房屋面积计算代码
 		$(".calc").change(function(){
 			var text = $(this).val();
 			var count = 0;

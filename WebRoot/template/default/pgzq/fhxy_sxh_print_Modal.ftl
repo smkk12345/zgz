@@ -163,9 +163,9 @@
         在册人员
         <table class="table table-bordered contex-1">
             <tr>
-                <th>序号</th>
-                <th>姓名</th>
-                <th>身份证号码</th>
+                <th class="center">序号</th>
+                <th class="center">姓名</th>
+                <th class="center">身份证号码</th>
             </tr>
 
         <#if bean.vacatelist?size gt 0>
@@ -181,9 +181,9 @@
     	   非在册人员
     	<table class="table table-bordered contex-1">
             <tr>
-                <th>序号</th>
-                <th>姓名</th>
-                <th>身份证号码</th>
+                <th class="center">序号</th>
+                <th class="center">姓名</th>
+                <th class="center">身份证号码</th>
             </tr>
     	
         <#if bean.list?size gt 0>
