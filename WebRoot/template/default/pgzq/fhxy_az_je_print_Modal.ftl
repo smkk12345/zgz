@@ -49,9 +49,10 @@
                 <td class="td_content_1">认定宅基地面积</td>
                 <td class="td_content_1">${bean.zjdarea?default(0)}</td>
                 <td class="td_content_1">控制面积</td>
-                <td class="td_content_1" >${bean.homesteadyear?default(0)}</td>
+                <td class="td_content_1" >${bean.overhomesteadarea?default(0)}</td>
                 <td class="td_content_1">区位单价</td>
-                <td class="td_content_1">${bean.kzzjdqwbcj?default(0)}</td>
+<!--                <td class="td_content_1">${bean.kzzjdqwbcj?default(0)}</td>-->
+                <td class="td_content_1">${(bean.zjdarea-bean.overhomesteadarea)}</td>
                 <td class="td_content_1">超控面积</td>
                 <td class="td_content_1">${bean.overhomesteadarea?default(0)}</td>
                 <td class="td_content_1">区位单价</td>

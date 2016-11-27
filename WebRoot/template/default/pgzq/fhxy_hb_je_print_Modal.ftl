@@ -5,13 +5,13 @@
         <button type="submit" class="btn btn-primary btn-save"   >打印</button>
     </div>
 </div>
-<div class="modal-body xy-print-con" id="xy-print">
-    <div style="margin-left: auto;margin-right: auto;">
+<div class="modal-body center">
+    <div class="content xy-print-con"  id="xy-print" style="font-size: 13px">
      <span class="title">完全货币补偿方式金额审查表</span>
         <div class="content" style="float:left;">
          <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
                 <tr>
-                	<td class="td_content_1"colspan="10">（   张郭庄村 ）村宅基地房屋“完全货币”方式金额审查表（ ${housebasic.section}）标段</td>
+                	<td class="td_content_1"colspan="10">（   张郭庄村 ）村宅基地房屋“完全货币”方式金额审查表（ ${bean.section?default("")} ）标段</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">被腾退人</td>
@@ -49,11 +49,12 @@
                     <td class="td_content_1">认定宅基地面积</td>
                     <td class="td_content_1">${bean.zjdarea?default(0)}</td>
  					<td class="td_content_1">控制面积</td>
- 					<td class="td_content_1" >${bean.homesteadyear?default(0)}</td>
+ 					<td class="td_content_1" >${bean.overhomesteadarea?default(0)}</td>
                     <td class="td_content_1">区位单价</td>
                     <td class="td_content_1">${bean.kzzjdqwbcj?default(0)}</td>
                     <td class="td_content_1">超控面积</td>
-                    <td class="td_content_1">${bean.overhomesteadarea?default(0)}</td>
+<!--                    <td class="td_content_1">${bean.overhomesteadarea?default(0)}</td>-->
+                    <td class="td_content_1">${(bean.zjdarea-bean.overhomesteadarea)}</td>
                     <td class="td_content_1">区位单价</td>
                     <td class="td_content_1">${bean.ckzjdqwbcj?default(0)}</td>
                 </tr>
@@ -205,7 +206,7 @@
 
 <script type = "text/javascript">
     //设置模态框高度和宽度  
-    $("#myModal .modal-dialog").width(1000);
+    $("#myModal .modal-dialog").width(750);
     $("#xy-print").css("height",($(window).height()-150)+"px");
     $("#xy-print").css("overflow-y","scroll");
 
