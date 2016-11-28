@@ -442,7 +442,7 @@ public class AgreenmentController {
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
 			model.addAttribute("bean", agreenment);
-			// 模板路径 basePath
+			//模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
 					WebConstConfig.getBase_Assets_Path());
@@ -453,6 +453,66 @@ public class AgreenmentController {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
 			return null;
+
+		}
+	}
+	
+	@RequestMapping({ "/pgzq/fhxy_hb_yjd_print_Modal.action" })
+	public ModelAndView fhxy_hb_yjd_print_Modal(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String agreenmentid = request.getParameter("agreenmentid");
+			String housebasicid = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("housebasic", housebasic);
+			Agreement agreenment = new Agreement();
+			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
+				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			}
+			model.addAttribute("bean", agreenment);
+			//模板路径 basePath
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGZQ_fhxy_hb_yjd_print_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+			
+
+		}
+	}
+	
+	@RequestMapping({ "/pgzq/fhxy_az_yjd_print_Modal.action" })
+	public ModelAndView fhxy_az_yjd_print_Modal(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String agreenmentid = request.getParameter("agreenmentid");
+			String housebasicid = request.getParameter("housebasicid");
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+			model.addAttribute("housebasic", housebasic);
+			Agreement agreenment = new Agreement();
+			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
+				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			}
+			model.addAttribute("bean", agreenment);
+			//模板路径 basePath
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGZQ_fhxy_az_yjd_print_Modal, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+			
 
 		}
 	}

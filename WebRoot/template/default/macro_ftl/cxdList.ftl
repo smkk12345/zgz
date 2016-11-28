@@ -314,29 +314,25 @@
             <td>${(ROW.azfgfk)!""}</td>
             <td>${(ROW.jlfsum)!""}</td>
             <td>
-             	<button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印预结单' <span class="glyphicon glyphicon-print">预结单</span></button>
-                <#if role.roleAuthority[9]=="2">
-                    <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'
-                            
-                        <#if ROW.atype?default("0")=="0">
-                           data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                
+                 <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印预结单'
+                         <#if ROW.atype?default("0")=="0">
+                            data-url="${BASE_PATH}pgzq/fhxy_az_yjd_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
                         <#else>
-                           data-url="${BASE_PATH}pgzq/fhxy_hb_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                            data-url="${BASE_PATH}pgzq/fhxy_hb_yjd_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
                         </#if>
-                        >
-                        <span class="glyphicon glyphicon-print">金额审查</span></button>
-                       
-                </#if>
+                         
+                         >预结单</button>
+                
                 <#if role.roleAuthority[10]=="2">
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'
-
                         <#if ROW.atype?default("0")=="0">
                             data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
                         <#else>
                             data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
                         </#if>
                         >
-                        <span class="glyphicon glyphicon-print">协议</span></button>
+                        协议</button>
                 </#if>
             </td>
             <#if (ROW.atype)??>
@@ -366,7 +362,7 @@
                     <#if role.roleAuthority[12]=="2">
                         <#if (ROW.protocolnumber)??>
                             <#if (ROW.protocolnumber?length>0)>
-                                <button type="button" class="btn btn-success btn-xs ml10  YL-ModalClick bold" title=''
+                                <button type="button" class="btn btn-danger btn-xs ml10  YL-ModalClick bold" title=''
                                         data-url="${BASE_PATH}/pgzq/fhxy_xy_sy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
                                     打印首页
                                 </button>
@@ -375,6 +371,23 @@
                         <#else>
                         </#if>
                     </#if>
+                    <#if role.roleAuthority[9]=="2">
+                    <#if (ROW.protocolnumber)??>
+                            <#if (ROW.protocolnumber?length>0)>
+                    <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'        
+                        <#if ROW.atype?default("0")=="0">
+                           data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                        <#else>
+                           data-url="${BASE_PATH}pgzq/fhxy_hb_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                        </#if>
+                        >
+                        金额审查</button>
+                            <#else>
+                            </#if>
+                        <#else>
+                        </#if>
+                       
+                </#if>
                 </td>
             <#else>
                 <td colspan=3> 请先选择安置方式！</td>
@@ -390,9 +403,9 @@
                     <#if (ROW.protocolnumber)??>
                         <#if (ROW.protocolnumber?length>0)>
                         <button type="button"
-                                class="btn btn-danger btn-xs ml10 YL-ModalClick bold glyphicon glyphicon-print"
+                                class="btn btn-danger btn-xs ml10 YL-ModalClick bold"
                                 title='打印定向安置房认购协议'
-                                data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+                                data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">认购协议</button>
                         </#if>
                     </#if>
                  </#if>

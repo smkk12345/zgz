@@ -1,5 +1,5 @@
 <div class="modal-header clearfix">
-    <h4 class="modal-title pull-left m0">【${bean.names}】完全货币补偿方式金额审查表</h4>
+    <h4 class="modal-title pull-left m0">【${bean.names}】完全货币补偿方式预结单</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
         <button type="submit" class="btn btn-primary btn-save"   >打印</button>
@@ -7,7 +7,7 @@
 </div>
 <div class="modal-body center">
     <div class="content xy-print-con"  id="xy-print" style="font-size: 13px">
-     <span class="title">完全货币补偿方式金额审查表</span>
+     <span class="title">完全货币补偿方式预结单</span>
         <div class="content" style="float:left;">
          <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
                 <tr>
