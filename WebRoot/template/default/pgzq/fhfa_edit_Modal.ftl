@@ -374,44 +374,44 @@
 //权限锁定部分逻辑
 	$(function(){ 
 		if('${role.roleAuthority[43]}'!='2'){
-			$("#div1 input").attr("disabled",true);
-			$("#div1 select").attr("disabled",true);
-			$("#div1 button").attr("disabled",true);
+			$("#div1 input").attr("readonly",true);
+			$("#div1 select").attr("readonly",true);
+			$("#div1 button").attr("readonly",true);
 		} 
  		if('${role.roleAuthority[44]}'!='2'){
-			$("#div2 input").attr("disabled",true);
-			$("#div2 select").attr("disabled",true);
-			$("#div2 button").attr("disabled",true);
+			$("#div2 input").attr("readonly",true);
+			$("#div2 select").attr("readonly",true);
+			$("#div2 button").attr("readonly",true);
 		} 
 		if('${role.roleAuthority[45]}'!='2'){
-			$("#div3 input").attr("disabled",true);
-			$("#div3 select").attr("disabled",true);
-			$("#div3 button").attr("disabled",true);
+			$("#div3 input").attr("readonly",true);
+			$("#div3 select").attr("readonly",true);
+			$("#div3 button").attr("readonly",true);
 		} 
 		if('${role.roleAuthority[46]}'!='2'){
-			$("#div4 input").attr("disabled",true);
-			$("#div4 select").attr("disabled",true);
-			$("#div4 button").attr("disabled",true);
+			$("#div4 input").attr("readonly",true);
+			$("#div4 select").attr("readonly",true);
+			$("#div4 button").attr("readonly",true);
 		} 
 		if('${role.roleAuthority[47]}'!='2'){
-			$("#div5 input").attr("disabled",true);
-			$("#div5 select").attr("disabled",true);
-			$("#div5 button").attr("disabled",true);
+			$("#div5 input").attr("readonly",true);
+			$("#div5 select").attr("readonly",true);
+			$("#div5 button").attr("readonly",true);
 		} 
 		if('${role.roleAuthority[48]}'!='2'){
-			$("#div6 input").attr("disabled",true);
-			$("#div6 select").attr("disabled",true);
-			$("#div6 button").attr("disabled",true);
+			$("#div6 input").attr("readonly",true);
+			$("#div6 select").attr("readonly",true);
+			$("#div6 button").attr("readonly",true);
 		} 
 		if('${role.roleAuthority[49]}'!='2'){
-			$("#div7 input").attr("disabled",true);
-			$("#div7 select").attr("disabled",true);
-			$("#div7 button").attr("disabled",true);
+			$("#div7 input").attr("readonly",true);
+			$("#div7 select").attr("readonly",true);
+			$("#div7 button").attr("readonly",true);
 		} 
 		if('${role.roleAuthority[50]}'!='2'){
-			$("#div8 input").attr("disabled",true);
-			$("#div8 select").attr("disabled",true);
-			$("#div8 button").attr("disabled",true);
+			$("#div8 input").attr("readonly",true);
+			$("#div8 select").attr("readonly",true);
+			$("#div8 button").attr("readonly",true);
 		} 		
 	})  
 
