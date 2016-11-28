@@ -155,14 +155,14 @@
             <td>
                 <#if role.roleAuthority[7]=="2">
                     <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
-                            title='编辑修改'
+                            title='编辑查看'
                             data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
                 </#if>
-                <#if role.roleAuthority[8]=="2">
+                <!--<#if role.roleAuthority[8]=="2">
                     <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
                             title='数据查看'
                             data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
-                </#if>
+                </#if>-->
             </td>
         </tr>
         </#list>
