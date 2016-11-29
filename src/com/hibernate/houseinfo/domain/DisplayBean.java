@@ -274,7 +274,64 @@ public class DisplayBean extends BaseBean {
 		//人员信息
 		private String peopleinfo;
 		
+	    //控制面积区位补偿单价
+	    private BigDecimal kzmjqwbcdj;
+	    
+	    //超控制面积区位补偿单价
+	    private BigDecimal ckmjqwbcdj;
+	    
+	  //补偿宅基地面积
+	    private BigDecimal bczjdmj;
+	    
+	    
+	  //补偿宅基地面积
+	    private BigDecimal yxmj;
+	    
+	  //装修设备附属物价款
+	    private BigDecimal zxsbfswjk;
+		//未经批准已建二层补助
+		private BigDecimal wjpzyjecbz;
 		
+		 //滴水补助费:
+	    private BigDecimal dsbzf= new BigDecimal(0);
+	    
+	  //信鸽补助费
+	    private BigDecimal xgbzf=new BigDecimal(0);
+	    
+	  //宅基地应批未批补助
+	    private BigDecimal zjdypwpbz=new BigDecimal(0);
+	  //优惠指标未选满补偿
+	    private BigDecimal yhzbwxmbc=new BigDecimal(0);
+	    
+	    
+		
+		//是否满足不足200平米补助200平米:
+	    private String bzbzmj="1";
+	    
+		public BigDecimal getWjpzyjecbz() {
+			return wjpzyjecbz;
+		}
+		public void setWjpzyjecbz(BigDecimal wjpzyjecbz) {
+			this.wjpzyjecbz = wjpzyjecbz;
+		}
+		public BigDecimal getKzmjqwbcdj() {
+			return kzmjqwbcdj;
+		}
+		public BigDecimal getCkmjqwbcdj() {
+			return ckmjqwbcdj;
+		}
+		public BigDecimal getBczjdmj() {
+			return bczjdmj;
+		}
+		public void setKzmjqwbcdj(BigDecimal kzmjqwbcdj) {
+			this.kzmjqwbcdj = kzmjqwbcdj;
+		}
+		public void setCkmjqwbcdj(BigDecimal ckmjqwbcdj) {
+			this.ckmjqwbcdj = ckmjqwbcdj;
+		}
+		public void setBczjdmj(BigDecimal bczjdmj) {
+			this.bczjdmj = bczjdmj;
+		}
 		public String getSectionindex() {
 			return sectionindex;
 		}
@@ -1078,6 +1135,50 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setDxzbwgfk(String dxzbwgfk) {
 			this.dxzbwgfk = dxzbwgfk;
+		}
+		public BigDecimal getYxmj() {
+			return yxmj;
+		}
+		public BigDecimal getZxsbfswjk() {
+			return zxsbfswjk;
+		}
+		public void setYxmj(BigDecimal yxmj) {
+			this.yxmj = yxmj;
+		}
+		public void setZxsbfswjk(BigDecimal zxsbfswjk) {
+			this.zxsbfswjk = zxsbfswjk;
+		}
+		public BigDecimal getDsbzf() {
+			return dsbzf;
+		}
+		public BigDecimal getXgbzf() {
+			return xgbzf;
+		}
+		public BigDecimal getZjdypwpbz() {
+			return zjdypwpbz;
+		}
+		public BigDecimal getYhzbwxmbc() {
+			return yhzbwxmbc;
+		}
+
+		public String getBzbzmj() {
+			return bzbzmj;
+		}
+		public void setDsbzf(BigDecimal dsbzf) {
+			this.dsbzf = dsbzf;
+		}
+		public void setXgbzf(BigDecimal xgbzf) {
+			this.xgbzf = xgbzf;
+		}
+		public void setZjdypwpbz(BigDecimal zjdypwpbz) {
+			this.zjdypwpbz = zjdypwpbz;
+		}
+		public void setYhzbwxmbc(BigDecimal yhzbwxmbc) {
+			this.yhzbwxmbc = yhzbwxmbc;
+		}
+
+		public void setBzbzmj(String bzbzmj) {
+			this.bzbzmj = bzbzmj;
 		}
 		
 		

@@ -114,6 +114,19 @@
 		<property name="fwjk"></property>
 		<property name="zbngfk"></property>
 		<property name="zbwgfk"></property>
+		<property name="kzmjqwbcdj"></property>
+		<property name="ckmjqwbcdj"></property>
+		<property name="bczjdmj"></property>
+		<property name="yxmj"></property>
+		<property name="zxsbfswjk"></property>
+		<property name="wjpzyjecbz"></property>		
+		<property name="dsbzf"></property>		
+		<property name="xgbzf"></property>		
+		<property name="zjdypwpbz"></property>		
+		<property name="yhzbwxmbc"></property>		
+	
+		<property name="bzbzmj"></property>		
 
+	    	
 	</class>
 </hibernate-mapping>

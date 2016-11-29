@@ -371,9 +371,7 @@
                         <#else>
                         </#if>
                     </#if>
-                    <#if role.roleAuthority[9]=="2">
-                    <#if (ROW.protocolnumber)??>
-                            <#if (ROW.protocolnumber?length>0)>
+                    
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'        
                         <#if ROW.atype?default("0")=="0">
                            data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
@@ -382,12 +380,7 @@
                         </#if>
                         >
                         金额审查</button>
-                            <#else>
-                            </#if>
-                        <#else>
-                        </#if>
-                       
-                </#if>
+
                 </td>
             <#else>
                 <td colspan=3> 请先选择安置方式！</td>

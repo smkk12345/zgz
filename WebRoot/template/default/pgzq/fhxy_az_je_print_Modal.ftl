@@ -19,7 +19,7 @@
                 <td class="td_content_1">坐落</td>
                 <td class="td_content_1"colspan="4">${bean.location?default("")}</td>
                 <td class="td_content_1">签约时间</td>
-                <td class="td_content_1"colspan="2">／</td>
+                <td class="td_content_1"colspan="2">${bean.operatedate?default("")}</td>
             </tr>
             <tr>
                 <td class="td_content_1">宅基地实测</td>
@@ -27,17 +27,13 @@
                 <td class="td_content_1">身份证</td>
                 <td class="td_content_1" colspan=3>${bean.idcard?default("")}</td>
                 <td class="td_content_1">认定年限</td>
-                <td class="td_content_1">${bean.homesteadyear?default("／")}</td>
+                <td class="td_content_1"><#if (bean.homesteadyear?default("-1"))=='0'>82年前<#elseif bean.homesteadyear?default("-1")=='1'>82年后<#else>/</#if></td>
                 <td class="td_content_1">签约顺序号</td>
-                <td class="td_content_1">／</td>
+                <td class="td_content_1">${bean.protocolnumber}</td>
             </tr>
             <tr>
-                    <td class="td_content_1">协议编号</td>
-                    <td class="td_content_1" colspan="9"></td>
-                </tr>
-            <tr>
                 <td class="td_content_1">实建面积</td>
-                <td class="td_content_1">${bean.sjm}</td>
+                <td class="td_content_1">${bean.sjm?default("")}</td>
                 <td class="td_content_1">首层</td>
                 <td class="td_content_1" >${bean.firstfloorarea?default(0)}</td>
                 <td class="td_content_1">二层及以上</td>
@@ -47,19 +43,22 @@
                 <td class="td_content_1">棚</td>
                 <td class="td_content_1">${bean.shed?default(0)}</td>
             </tr>
-
+			<tr>
+			    <td class="td_content_1" colspan=2>认定宅基地面积</td>
+                <td class="td_content_1" colspan=3>${bean.zjdarea?default(0)}</td>
+                <td class="td_content_1" colspan=2>补偿宅基地面积</td>
+                <td class="td_content_1" colspan=3>${bean.bczjdmj?default(0)}</td>
+			</tr>
             <tr>
-                <td class="td_content_1">认定宅基地面积</td>
-                <td class="td_content_1">${bean.zjdarea?default(0)}</td>
-                <td class="td_content_1">控制面积</td>
-                <td class="td_content_1" >${bean.overhomesteadarea?default(0)}</td>
-                <td class="td_content_1">区位单价</td>
+                <td class="td_content_1" colspan=1>控制面积</td>
+                <td class="td_content_1" colspan=1>${bean.overhomesteadarea?default(0)}</td>
+                <td class="td_content_1" >区位单价</td>
 <!--                <td class="td_content_1">${bean.kzzjdqwbcj?default(0)}</td>-->
-                <td class="td_content_1">${(bean.zjdarea-bean.overhomesteadarea)}</td>
-                <td class="td_content_1">超控面积</td>
-                <td class="td_content_1">${bean.overhomesteadarea?default(0)}</td>
-                <td class="td_content_1">区位单价</td>
-                <td class="td_content_1">${bean.ckzjdqwbcj?default(0)}</td>
+                <td class="td_content_1" >${bean.kzmjqwbcdj?default(0)}</td>
+                <td class="td_content_1" >超控面积</td>
+                <td class="td_content_1" >${bean.overhomesteadarea?default(0)}</td>
+                <td class="td_content_1" >区位单价</td>
+                <td class="td_content_1" colspan=3>${bean.ckzjdqwbcj?default(0)}</td>
             </tr>
             <tr>
                 <td class="td_content_1">认定房屋补偿面积</td>
@@ -80,7 +79,7 @@
 
             <tr>
                 <td class="td_content_1">应选面积</td>
-                <td>／</td>
+                <td>${bean.yxmj?default("")}</td>
                 <td colspan=3>实际选房面积</td>
                 <td colspan=2>${bean.xfarea?default("")}</td>
                 <td >选房总套数</td>
@@ -103,9 +102,9 @@
                 <td class="td_content_1">三居</td>
                 <td class="td_content_1">${bean.sjs?default("")}</td>
                 <td class="td_content_1">指标内购房款（4000元㎡）</td>
-                <td class="td_content_1" colspan=2></td>
+                <td class="td_content_1" colspan=2>${bean.zbngfk?default("/")}</td>
                 <td>指标外房款（6000元/</td>
-                <td>需要计算</td>
+                <td>${bean.zbwgfk?default("/")}</td>
                 <td>总购房款</td>
                 <td colspan=2>${bean.azfgfk?default("")}</td>
             </tr>
@@ -148,7 +147,7 @@
             <tr>
                 <td class="td_content_1">4</td>
                 <td class="td_content_1">装修、设备附属物价款</td>
-                <td class="td_content_1" colspan=2></td>
+                <td class="td_content_1" colspan=2>${bean.zxsbfswjk?default("")}</td>
                 <td class="td_content_1" colspan=2>补偿总价抵扣购房款余额</td>
                 <td class="td_content_1" colspan=2>${bean.jshk?default("")}</td>
                 <td class="td_content_1" colspan=1>元</td>
@@ -209,7 +208,7 @@
                 <td class="td_content_1">6</td>
                 <td class="td_content_1">已建二层补助</td>
                 <td class="td_content_1">（500元㎡）</td>
-                <td class="td_content_1" colspan=2></td>
+                <td class="td_content_1" colspan=2>${bean.wjpzyjecbz?default("/")}</td>
             </tr> 
             <tr>
                 <td class="td_content_1">7</td>
@@ -225,8 +224,8 @@
                 <td class="td_content_1">（总购房款10%）</td>
                 <td class="td_content_1" colspan=2>${bean.qfbz?default("/")}</td>
 
-                <td class="td_content_1" colspan=2 rowspan=4>腾退服务公司经手人签字</td>
-                <td class="td_content_1" colspan=3 rowspan=2></td>
+                <td class="td_content_1" colspan=2 rowspan=4>内审组经手人签字</td>
+                <td class="td_content_1" colspan=3 rowspan=4></td>
             </tr> 
             <tr>
                 <td class="td_content_1">9</td>
@@ -272,8 +271,8 @@
             <tr>
                 <td class="td_content_1">15</td>
                 <td class="td_content_1">其他补助</td>
-                <td class="td_content_1">－－</td>
-                <td class="td_content_1" colspan=2>${bean.otherbz?default("/")}</td>
+                <td class="td_content_1">35万、信鸽补助、滴水补助</td>
+                <td class="td_content_1" colspan=2>${bean.dsbzf?number+bean.xgbzf?number+bean.zjdypwpbz?number+bean.yhzbwxmbc?number}</td>
             </tr>                   
         </table>
         <div style="clear:both; height:20px;"></div>
