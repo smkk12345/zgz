@@ -98,35 +98,34 @@
 <property name="zjdttbck" ></property>
 <property name="zjdttzj" ></property>
 <property name="hasothers"></property>
-				<property name="checkresult"></property>
-		<property name="checkname"></property>
-		<property name="checkDate"></property>
-		<property name="checkremark"></property>
-		<property name="sectionindex"></property>
-		<property name="sortnum"></property>
-		<property name="operatename"></property>
-		
-		<property name="xfts"></property>
-		<property name="xfarea"></property>
-		<property name="zxsbfsw"></property>
-		<property name="zbnmj"></property>
-		<property name="czbmj"></property>
-		<property name="fwjk"></property>
-		<property name="zbngfk"></property>
-		<property name="zbwgfk"></property>
-		<property name="kzmjqwbcdj"></property>
-		<property name="ckmjqwbcdj"></property>
-		<property name="bczjdmj"></property>
-		<property name="yxmj"></property>
-		<property name="zxsbfswjk"></property>
-		<property name="wjpzyjecbz"></property>		
-		<property name="dsbzf"></property>		
-		<property name="xgbzf"></property>		
-		<property name="zjdypwpbz"></property>		
-		<property name="yhzbwxmbc"></property>		
-	
-		<property name="bzbzmj"></property>		
+<property name="checkresult"></property>
+<property name="checkname"></property>
+<property name="checkDate"></property>
+<property name="checkremark"></property>
+<property name="sectionindex"></property>
+<property name="sortnum"></property>
+<property name="operatename"></property>
 
-	    	
+<property name="xfts"></property>
+<property name="xfarea"></property>
+<property name="zxsbfsw"></property>
+<property name="zbnmj"></property>
+<property name="czbmj"></property>
+<property name="fwjk"></property>
+<property name="zbngfk"></property>
+<property name="zbwgfk"></property>
+<property name="kzmjqwbcdj"></property>
+<property name="ckmjqwbcdj"></property>
+<property name="bczjdmj"></property>
+<property name="yxmj"></property>
+<property name="zxsbfswjk"></property>
+<property name="wjpzyjecbz"></property>		
+<property name="dsbzf"></property>		
+<property name="xgbzf"></property>		
+<property name="zjdypwpbz"></property>		
+<property name="yhzbwxmbc"></property>		
+<property name="bzbzmj"></property>		
+   <property name="zzbz"></property>
+   <property name="rdzjdallarea"></property>
 	</class>
 </hibernate-mapping>

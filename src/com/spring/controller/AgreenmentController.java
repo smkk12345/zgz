@@ -381,6 +381,8 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
+			//交房日期
+			
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -464,13 +466,8 @@ public class AgreenmentController {
 			String agreenmentid = request.getParameter("agreenmentid");
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
-			model.addAttribute("housebasic", housebasic);
-			Agreement agreenment = new Agreement();
-			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
-				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
-			}
-			model.addAttribute("bean", agreenment);
+			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			model.addAttribute("bean", bean);
 			//模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -494,13 +491,8 @@ public class AgreenmentController {
 			String agreenmentid = request.getParameter("agreenmentid");
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
-			model.addAttribute("housebasic", housebasic);
-			Agreement agreenment = new Agreement();
-			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
-				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
-			}
-			model.addAttribute("bean", agreenment);
+			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			model.addAttribute("bean", bean);
 			//模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
@@ -674,7 +666,7 @@ public class AgreenmentController {
 					WebConstConfig.getBase_Assets_Path());
 			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
 					WebConstConfig.getBase_Template_Default_Path());
-			if(agreenment.getProtocolnumber().contains(Contanst.AGREENMENT_TYPE_AZ)){
+			if(agreenment.getProtocolnumber().contains("ZZAZ")){
 				return new ModelAndView(PageConst.PGZQ_fhxy_az_xy_sy_print_Modal, model);
 			}else{
 				return new ModelAndView(PageConst.PGZQ_fhxy_hb_xy_sy_print_Modal, model);

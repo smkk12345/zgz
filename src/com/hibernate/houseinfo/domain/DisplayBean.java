@@ -282,7 +282,8 @@ public class DisplayBean extends BaseBean {
 	    
 	  //补偿宅基地面积
 	    private BigDecimal bczjdmj;
-	    
+		//周转补助费
+		private BigDecimal zzbz;
 	    
 	  //补偿宅基地面积
 	    private BigDecimal yxmj;
@@ -292,6 +293,8 @@ public class DisplayBean extends BaseBean {
 		//未经批准已建二层补助
 		private BigDecimal wjpzyjecbz;
 		
+	    //认定宅基地总补偿面积
+	    private String rdzjdallarea;
 		 //滴水补助费:
 	    private BigDecimal dsbzf= new BigDecimal(0);
 	    
@@ -1179,6 +1182,18 @@ public class DisplayBean extends BaseBean {
 
 		public void setBzbzmj(String bzbzmj) {
 			this.bzbzmj = bzbzmj;
+		}
+		public BigDecimal getZzbz() {
+			return zzbz;
+		}
+		public void setZzbz(BigDecimal zzbz) {
+			this.zzbz = zzbz;
+		}
+		public String getRdzjdallarea() {
+			return rdzjdallarea;
+		}
+		public void setRdzjdallarea(String rdzjdallarea) {
+			this.rdzjdallarea = rdzjdallarea;
 		}
 		
 		

@@ -54,7 +54,7 @@
                     <input type='text'  class='form-control input-sm  ' name='scydmj'  value="<#if bean.scydmj??>${bean.scydmj?c}<#else></#if>" />
                 </div>-->
                    <div class=' aoJianGroup fl'>
-                       <label class='fl control-label'>认定宅基地面积:</label>
+                       <label class='fl control-label'>认定宅基地面积:</label>																		
                        <input type='text' id="rdzjdallarea" onchange="caculat1()"  class='form-control input-sm' name='rdzjdallarea'  value="${bean.rdzjdallarea?default("")}" />
                    </div>
                 <div class=' aoJianGroup fl'>
@@ -103,7 +103,7 @@
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>认定房屋补偿面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='fwbcmj'  value="${bean.fwbcmj?default("")}" />   
+                    <input type='text' class='form-control input-sm  ' name='fwbcmj'  value="<#if bean.fwbcmj??>${bean.fwbcmj?c}<#else></#if>" />   
                 </div>
                    <div class=' aoJianGroup fl'>
                        <label class='fl control-label'>住房困难户补偿方案:</label>
@@ -174,11 +174,11 @@
                 </div>
                 <div class=' aoJianGroup fl'> 
                     <label class='fl control-label'>控制面积区位补偿单价:</label>
-                    <input type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' disabled="disabled"  value="6000"/>       
+                    <input type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' readonly  value="6000"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>超控面积区位补偿单价:</label>
-                    <input id="ckmjqwbcdj" type='text' class='form-control input-sm ' disabled="disabled"  name='ckmjqwbcdj'   
+                    <input id="ckmjqwbcdj" type='text' class='form-control input-sm ' readonly  name='ckmjqwbcdj'   
                     value="<#if (bean.homesteadyear?default("-1"))=='0'>3000<#elseif bean.homesteadyear?default("-1")=='1'>1800<#else></#if>"/>      
                 </div>
                 <div class=' aoJianGroup fl'>      
@@ -339,15 +339,15 @@
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内购房款:</label>
-                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='zbngfk'   value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else></#if>"/>       
+                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk'   value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标外购房款:</label>
-                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='zbwgfk'   value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else></#if>"/>       
+                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk'   value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else></#if>"/>       
                 </div>                   
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款:</label>
-                    <input type='text' class='form-control input-sm  ' name='azfgfk'   value="<#if bean.azfgfk??>${bean.azfgfk?c}<#else></#if>"/>       
+                    <input id="azfgfk" type='text' class='form-control input-sm  ' name='azfgfk' readonly  value="<#if bean.azfgfk??>${bean.azfgfk?c}<#else></#if>"/>       
                 </div>                             
             </div>  
             <h4><span class="label label-default div_seven">七.其他：</span></h4>
@@ -361,11 +361,11 @@
             <div class='container-fluid con-bg mb10' id="div8">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>腾退补偿款总价:</label>
-                    <input type='text' class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else></#if>" />    
+                    <input type='text' id="zjdttzj" class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else></#if>" />    
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>结算后款:</label>
-                    <input type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else></#if>"/>       
+                    <input id="jshk" type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else></#if>"/>       
                 </div>
             </div>              
             <div class="modal-footer">
@@ -502,10 +502,30 @@
         //宅基地腾退补偿款计算
         $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
         $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
-       		$("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
+        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
+       		$("#zjdttbck").val(subsum);
+       		var hj = $("#jlhj").val();
+       		var temp = parseFloat(subsum)+ parseFloat(hj);
+       		$("#zjdttzj").val(temp.toFixed(2));
    		});
-                
+        $("#zbngfk,#zbwgfk").change(function(){
+        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
+       		$("#azfgfk").val(temp);
+       		var temp1 = parseFloat($("#zjdttzj").val());
+       		$("#jshk").val((temp1-temp).toFixed(2));
+   		});
+   		        
+   		$("#zjdttzj").change(function(){
+        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
+       		$("#jshk").val(temp);
+   		});  
    			
+   		//zjdttbck   jlfsum  zjdttzj     jshk =  zjdttzj  - azfgfk
+   		//$("#zjdttbck,#jlfsum").change(function(){
+       	//	$("#zjdttzj").val((parseFloat($("#zjdttbck").val())+parseFloat($("#jlfsum").val())).toFixed(2));
+   		//});  
+ 
+   		
    		$(".input_jl").change(function(){
    			var sum = 0.00;
    			$('.input_jl').each(function (index,domEle){
@@ -515,6 +535,10 @@
    				}
    			});
    			$("#jlhj").val(sum.toFixed(2));
+   			var temp = (parseFloat($("#zjdttbck").val())+sum).toFixed(2);
+   			$("#zjdttzj").val(temp);
+   			var temp1 = parseFloat($("#azfgfk").val());
+   			$("#jshk").val((temp-temp1).toFixed(2));
    			
    		});
    

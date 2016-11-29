@@ -1,6 +1,7 @@
 package com.spring.controller;
 
 import java.text.DecimalFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.IndexNum;
+import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
 import com.spring.ServiceManager;
@@ -54,14 +56,19 @@ public class IndexNumController {
 			User user = (User)request.getSession().getAttribute("user");
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
 			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebsicid, "1,2,3,4,5,6,7");
 			if (null == indexNum) {
 				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user, housebsicid,agreenment.getAtype());
 				//更新协议的
+				int year = DateUtil.getYear(new Date());
 				if(agreenment.getAtype().equals("0")){
-					
-					agreenment.setProtocolnumber("AZ-"+getIndexNumStr(indexNum.getIndexnum()));
+					String indexStr = Contanst.AGREENMENT_TYPE_AZ.replace("?", housebasic.getSection().trim());
+					indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
+					agreenment.setProtocolnumber(indexStr);
 				}else{
-					agreenment.setProtocolnumber("HB-"+getIndexNumStr(indexNum.getIndexnum()));
+					String indexStr = Contanst.AGREENMENT_TYPE_HB.replace("?", housebasic.getSection().trim());
+					indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
+					agreenment.setProtocolnumber(indexStr);
 				}
 				ServiceManager.getAgreenmentService().update(agreenment);
 				map.put("protocolumnber", agreenment.getProtocolnumber());

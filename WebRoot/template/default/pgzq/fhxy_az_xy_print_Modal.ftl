@@ -8,7 +8,7 @@
 <div class="modal-body center">
     <div class="content xy-print-con" id="xy-print">
         <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
-        <p class="title3" style="margin-top: 35px;">腾&nbsp;&nbsp;退&nbsp;&nbsp;人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村村民委员会&nbsp;</u>（以下简称甲方）
+        <p class="title3" style="margin-top: 35px;">腾&nbsp;&nbsp;退&nbsp;&nbsp;人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村民委员会&nbsp;</u>（以下简称甲方）
         </p>
         <p class="title3" style="margin-top: 20px;">被腾退人：<u>&nbsp;${housebasic.names?default("/")}
             &nbsp;</u> &nbsp;身份证号：<u>
@@ -20,8 +20,8 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为加快腾退范围内宅基地、非住宅房屋腾退补偿安置工作，本项目采取村民自主腾退方式，腾退方式参照拆迁方式进行实施。经甲、乙双方协商一致，同意按照“安置房补偿的方式”对于权属于乙方的宅基地、房屋及附属物进行房屋腾退补偿安置，达成如下协议：
         </p>
         <p class="leftTitle">第一条&nbsp;&nbsp;腾退依据</p>
-        <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》、2016年10
-            月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日经北京市丰台区长辛店镇张郭庄村村民代表大会通过的《丰台区长辛店镇张郭庄村宅基地腾退补偿安置方案》及《丰台区长辛店镇张郭庄村宅基地腾退补偿实施细则》等相关文件。甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>
+        <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发[2016]27号）、经北京市丰台区长辛店镇张郭庄村民代表大会通过的《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件。
+            甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>
                &nbsp;&nbsp;&nbsp${housebasic.location?default("/")}&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。
         </p>
         <p class="pageBreak" style="margin-top: 10px;">&nbsp;</p>
@@ -75,9 +75,9 @@
         </p>
         <p class="leftTitle">第五条&nbsp;&nbsp;安置房补偿</p>
         <p class="contex-1">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1、依据《丰台区长辛店镇张郭庄村宅基地腾退补偿安置方案》及《丰台区长辛店镇张郭庄村宅基地腾退补偿实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的<u>
-            &nbsp;${bean.fyxx?default("/")}&nbsp;&nbsp;</u>定向安置房项目购买定向安置房。乙方“实际选房面积”为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米，其中一居室<u>
-            &nbsp;&nbsp;${bean.yjs?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;${bean.ljs70?default("/")}&nbsp;&nbsp;</u>套，三居室<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1、依据《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      张郭庄村棚户区改造              定向安置房项目购买定向安置房。
+                     乙方“实际选房面积”为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米，其中一居室<u>
+            &nbsp;&nbsp;${bean.yjs?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;${bean.ljs70?number+bean.ljs75?number+bean.ljs80?number+bean.ljs85?number}&nbsp;&nbsp;</u>套，三居室<u>
             &nbsp;&nbsp;${bean.sjs?default("/")}&nbsp;&nbsp;</u>套。
         </p>
 
@@ -92,6 +92,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）控制宅基地区位补偿价<u>&nbsp;&nbsp;${bean.kzzjdqwbcj?default("/")}&nbsp;&nbsp;</u>元；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）超控宅基地区位补偿价<u>&nbsp;&nbsp;${bean.ckzjdqwbcj?default("/")}&nbsp;&nbsp;</u>元；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）被腾退房屋重置成新价<u>&nbsp;&nbsp;${bean.bttfwczcxj?default("/")}&nbsp;&nbsp;</u>元。<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）装修、设备、附属物价款<u>&nbsp;&nbsp;${bean.zxsbfswjk?default("/")}&nbsp;&nbsp;</u>元。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.2、各项奖励费、补助各分项合计<u>
             &nbsp;&nbsp;${bean.jlfsum?default("/")}&nbsp;&nbsp;</u>元。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/>
@@ -112,9 +113,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（11）低保户补助（30000元/证）<u>&nbsp;&nbsp;${bean.dbhbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（12）独生子女奖励费（30000元/父母光荣证）<u>
             &nbsp;&nbsp;${bean.dsznbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）一次性停产停业综合补助费（800元/平方米）<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）一次性停产停业综合补助费（1000元/平方米）<u>
             &nbsp;&nbsp;${bean.tctdbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）周转补助费（1200元/人/4月） <u>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）周转补助费（1500元/人/月） <u>
             &nbsp;&nbsp;${bean.zzbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${bean.otherbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
         </p>
@@ -128,21 +129,23 @@
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1 甲方应当向乙方支付被腾退宅基地腾退补偿总价人民币<u>
             &nbsp;&nbsp;${bean.zjdttzj?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>
-            &nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;</u>）。根据乙方签署的《北京市定向安置房购房协议》相关约定，乙方应向定向安置房建设主体支付定向安置房购房款共计<u>
+            &nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;</u>）。根据乙方签署的《北京市定向安置房认购协议》相关约定，乙方应向定向安置房建设主体支付定向安置房购房款共计<u>
             &nbsp;&nbsp;${bean.azfgfk?default("/")}&nbsp;&nbsp;</u>元（大写人民币<u>&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;</u>）。甲方在乙方完成交房验收后到指定银行办理宅基地腾退补偿总价和定向安置房购房款差价结算，根据结算实际情况，甲乙双方同意按以下第<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>种方式进行结算：<br/>
+            &nbsp;<#if bean.jshk?default(0) gt 0>一<#else>二</#if>&nbsp;&nbsp;</u>种方式进行结算：<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.2 乙方宅基地腾退补偿总价足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
             &nbsp;</u>个工作日内向乙方开具领款凭证，一次性发放抵扣定向安置房购房款后的宅基地腾退补偿总价结算余额<u>
             &nbsp;&nbsp;&nbsp;${bean.jshk?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.dxjshk?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> ）；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.3
-            乙方宅基地腾退补偿总价不足以支付定向安置房购房款的，甲方将乙方宅基地腾退补偿总价直接支付给定向安置房建设主体，甲方不再向乙方支付宅基地腾退补偿总价。乙方应按其所签署的《北京市定向安置房购房协议》所约定的期限向定向安置房建设主体补交剩余定向安置房购房款;<br/>
+            乙方宅基地腾退补偿总价不足以支付定向安置房购房款的，甲方将乙方宅基地腾退补偿总价直接支付给定向安置房建设主体，甲方不再向乙方支付宅基地腾退补偿总价。乙方应按其所签署的《北京市定向安置房认购协议》所约定的期限向定向安置房建设主体补交剩余定向安置房购房款;<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.4
-            乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的相关单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价领取和定向安置房购房款的交付手续过程中拒绝在相关单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价的发放。
+            乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的相关单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价领取和定向安置房购房款的交付手续过程中拒绝在相关单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价的发放。<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.5
+             甲方按照乙方签订本协议之日起至定向安置房交房后  4  个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  1500元/人/月 ，甲方暂按周转期  40个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《张郭庄村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
         </p>
         <p class="leftTitle">第九条&nbsp;&nbsp;宅基地腾退补偿总价的支付主体</p>
         <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇张郭庄村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p>
         <p class="leftTitle">第十条&nbsp;&nbsp;定向安置房的建设主体</p>
-        <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇张郭庄村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p>
+        <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司是作为丰台区长辛店镇张郭庄村棚户区改造和环境整治项目定向安置房的建设主体，甲乙双方同意由北京中建方程投资管理有限公司依照上述约定的方式向乙方收缴购房款。 </p>
         <p class="leftTitle">第十一条&nbsp;&nbsp;房地权属注销登记</p>
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.1
