@@ -91,11 +91,11 @@
             &nbsp;${day}&nbsp;</u>日<u>&nbsp;${hour}&nbsp;</u>时<u>
             &nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
             &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方可根据上述时点的具体排序进行选房。<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3、甲方在选房工作开始之日的<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3、甲方在选房工作开始之日的15个工作日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
             &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）的时点排定次序，书面（或电话）通知乙方到指定地点进行选房。乙方应根据确定后的选房顺序在规定的时间及地点进行选房，非因甲方原因造成乙方未能在规定的时间内到达指定地点选房导致其选房顺序号后延的，由此引起的一切责任及后果由乙方自行承担。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4、乙方在进行选房的同时，必须在本协议附件所列认定安置人口清单范围内，选定所购定向安置房的实际产权人。实际产权人经政府主管部门和审计机构认定无误后，按照甲方书面（或电话）通知的时间、地点与甲方签订安置房买卖合同。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.5、本协议第六条第4款所述实际产权人的姓名、身份证号码和选定的具体房号，经政府主管部门和审计机构认定无误后不得更改。<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.6、本协议第六条第4款所述实际产权人在接到甲方签订安置房买卖合同通知<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日内，未与甲方签订合同的，甲方有权拒绝签订安置房买卖合同，同时本协议自行终止。乙方已付的定向安置房购房款由甲方退还乙方，购房款不计息，甲乙双方互不追究相关责任。
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.6、本协议第六条第4款所述实际产权人在接到甲方签订安置房买卖合同通知的20个工作日内，未与甲方签订合同的，甲方有权拒绝签订安置房买卖合同，同时本协议自行终止。乙方已付的定向安置房购房款由甲方退还乙方，购房款不计息，甲乙双方互不追究相关责任。
         </p>
         <p class="leftTitle">第七条&nbsp;&nbsp;房屋交付</p>
         <p class="contex-1">
@@ -149,8 +149,6 @@
             <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
             <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</u>时
             <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分
-            <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>秒
-            <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>毫秒
         </p>
 
         <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
@@ -217,7 +215,7 @@
         <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
 
         <p class="leftTitle">附件：</p>
-        <span class="title">选房顺序通知单</span>
+        <span class="title">选房顺序号结果通知单</span>
         <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;认购协议编号：<u>
             &nbsp;&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
         </p>
