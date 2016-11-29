@@ -10,7 +10,8 @@
         <table class="table table-bordered">
             <tr>
                 <td colspan="10" class="center">
-                    <div class="title">张郭庄村棚户区改造项目宅基地权属、安置人口认定结果一览表</div>
+                
+                    <div class="title">张郭庄村棚户区改造项目第${bean.section}标段宅基地权属、安置人口认定结果一览表</div>
                 </td>
             </tr>
             <tr>
@@ -20,7 +21,7 @@
                 <td>被腾宅基地坐落</td>
                 <td colspan="3">${bean.location?default("")}</td>
                 <td>认定日期</td>
-                <td>${year}年<u>&nbsp;&nbsp;&nbsp;&nbsp;${month}&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${day}&nbsp;&nbsp;&nbsp;</u>日
+                <td><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </td>
             </tr>
             <tr>
@@ -284,7 +285,7 @@
                 <td colspan="2">
                 <#if bean.list?size gt 4> ${bean.list[4].changrelate?default("")}</#if>
                 </td>
-                <td colspan="4">签字日期：2016年&nbsp;&nbsp;&nbsp;&nbsp;${month}&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;${day}&nbsp;&nbsp;&nbsp;日</td>
+                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
             </tr>
         </table>
     </div>

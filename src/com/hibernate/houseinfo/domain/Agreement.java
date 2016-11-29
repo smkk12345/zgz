@@ -193,13 +193,15 @@ public class Agreement extends BaseBean {
     private BigDecimal zjdypwpbz;
   //优惠指标未选满补偿
     private BigDecimal yhzbwxmbc;
-
-    
     
     
 	private String rdzfkn;
 	
-
+	//是否满足不足200平米补助200平米:
+    private String bzbzmj="1";
+	
+	
+	
 	public String getParentnames() {
 		return parentnames;
 	}
@@ -1020,6 +1022,16 @@ public class Agreement extends BaseBean {
 
 	public void setYhzbwxmbc(BigDecimal yhzbwxmbc) {
 		this.yhzbwxmbc = yhzbwxmbc;
+	}
+
+
+	public String getBzbzmj() {
+		return bzbzmj;
+	}
+
+
+	public void setBzbzmj(String bzbzmj) {
+		this.bzbzmj = bzbzmj;
 	}
 
 
