@@ -311,6 +311,11 @@ public class DisplayBean extends BaseBean {
 		//是否满足不足200平米补助200平米:
 	    private String bzbzmj="1";
 	    
+	    private String kzqwbcmjj;
+	    private String ckzqwbcmjj;
+	    private String fwjkmjj;
+	    private String sbzxmjj;
+	    
 		public BigDecimal getWjpzyjecbz() {
 			return wjpzyjecbz;
 		}
@@ -1194,6 +1199,54 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setRdzjdallarea(String rdzjdallarea) {
 			this.rdzjdallarea = rdzjdallarea;
+		}
+		public String getKzqwbcmjj() {
+			if(null != kzzjdqwbcj&&null != fwbcmj){
+				double d = kzzjdqwbcj.doubleValue()/fwbcmj.doubleValue();
+				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
+				kzqwbcmjj = df.format(d);
+				return kzqwbcmjj;
+			}
+			return "";
+		}
+		public String getCkzqwbcmjj() {
+			if(null != ckzjdqwbcj&&null != fwbcmj){
+				double d = ckzjdqwbcj.doubleValue()/fwbcmj.doubleValue();
+				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
+				ckzqwbcmjj = df.format(d);
+				return ckzqwbcmjj;
+			}
+			return "";
+		}
+		public String getFwjkmjj() {
+			if(null != bttfwczcxj&&null != fwbcmj){
+				double d = bttfwczcxj.doubleValue()/fwbcmj.doubleValue();
+				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
+				fwjkmjj = df.format(d);
+				return fwjkmjj;
+			}
+			return "";
+		}
+		public String getSbzxmjj() {
+			if(null != kzzjdqwbcj&&null != fwbcmj){
+				double d = kzzjdqwbcj.doubleValue()/fwbcmj.doubleValue();
+				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
+				sbzxmjj = df.format(d);
+				return sbzxmjj;
+			}
+			return "";
+		}
+		public void setKzqwbcmjj(String kzqwbcmjj) {
+			this.kzqwbcmjj = kzqwbcmjj;
+		}
+		public void setCkzqwbcmjj(String ckzqwbcmjj) {
+			this.ckzqwbcmjj = ckzqwbcmjj;
+		}
+		public void setFwjkmjj(String fwjkmjj) {
+			this.fwjkmjj = fwjkmjj;
+		}
+		public void setSbzxmjj(String sbzxmjj) {
+			this.sbzxmjj = sbzxmjj;
 		}
 		
 		

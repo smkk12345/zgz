@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="modal-body center">
-    <div class="content "  id="xy-print" style="font-size: 9px">
+    <div class="content "  id="xy-print" style="font-size: 12px">
         <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
             <tr>
                 <td class="td_content_1"colspan="10">“安置房补偿方式”第（ ${bean.section}  ）标段腾退补偿总价预结单</td>
@@ -136,25 +136,25 @@
                 <td class="td_content_1">1</td>
                 <td class="td_content_1" colspan=2>控制区位补偿价</td>
                 <td class="td_content_1" colspan=4>${bean.kzzjdqwbcj?default("")}</td>
-                <td class="td_content_1" colspan=3 ></td>
+                <td class="td_content_1" colspan=3 >${bean.kzqwbcmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="td_content_1">2</td>
                 <td class="td_content_1" colspan=2>超控制区位补偿价</td>
                 <td class="td_content_1" colspan=4>${bean.ckzjdqwbcj?default("")}</td>
-                <td class="td_content_1" colspan=3></td>
+                <td class="td_content_1" colspan=3>${bean.ckzqwbcmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="td_content_1">3</td>
                 <td class="td_content_1" colspan=2>房屋价款</td>
                 <td class="td_content_1" colspan=4>${bean.bttfwczcxj?default("")}</td>
-                <td class="td_content_1" colspan=3></td>
+                <td class="td_content_1" colspan=3>${bean.fwjkmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="td_content_1">4</td>
                 <td class="td_content_1" colspan=2>装修、设备附属物价款</td>
                 <td class="td_content_1" colspan=4>${bean.zxsbfswjk?default("")}</td>
-                <td class="td_content_1" colspan=3></td>
+                <td class="td_content_1" colspan=3>${bean.sbzxmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="td_content_1" colspan=3>二、各项奖励、补助、周转合计</td>
