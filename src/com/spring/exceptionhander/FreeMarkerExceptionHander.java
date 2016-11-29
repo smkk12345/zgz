@@ -13,7 +13,7 @@ public class FreeMarkerExceptionHander implements TemplateExceptionHandler {
 	public void handleTemplateException(TemplateException te, Environment env,
 			Writer out) throws TemplateException {
 		try {
-			out.write("-1000");
+			out.write("");
 			
 		} catch (IOException e) {
 			
