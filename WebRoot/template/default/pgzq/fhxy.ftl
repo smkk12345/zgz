@@ -13,7 +13,7 @@
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-              <form  action="${BASE_PATH}pgzq/fhxy.action" accept-charset="UTF-8" method="post" >
+              <form id="seachfrm"  action="${BASE_PATH}pgzq/fhxy.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -143,11 +143,13 @@
 	 function confirmSign(btn) {
 	        if (yu_confirm("您确定签约吗？确定签约后，将不能更改！！！")) {
 	            var url = $(btn).attr("data-url");
+	         //   var searchfrmdata = $("#seachfrm").serialize();
 	            //var par = $("#"+pname);
 	            $.ajax({
 	                cache: true,
 	                type: "POST",
 	                url: url,
+	              //  data: searchfrmdata,
 	                dataType: "json",
 	                error: function (XMLHttpRequest, textStatus, errorThrown) {
                    		location.href="${BASE_PATH}"+"pgzq/fhxy.action";
