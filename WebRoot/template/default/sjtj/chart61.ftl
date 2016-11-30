@@ -27,12 +27,12 @@
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/Highcharts/highcharts.js"></script>
 
-        <div class="container-fluid" style="padding: 20px;height:100%">
-            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇张郭庄村棚改项目安置及房源使用情况</div>
-            <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
-            <div style='margin-top: 50px;color:#FF0;font-size:30px; font-family:"宋体";font-weight:bold;text-align: center;height:450px'>
-                <div style='font-size:30px;float: left;width:50%; height:570px' id="chart1"> </div>
-                <div style='font-size:30px;float: left;width:50%; height:570px' id="chart2"> </div>
+        <div class="container-fluid" style="padding: 10px;height:100%">
+            <div style="text-align: center;font-size:17px;font-weight: bold;">长辛店镇张郭庄村棚改项目安置及房源使用情况</div>
+            <div id='currentDate' style='margin-top: 10px;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
+            <div style='margin-top: 10px;color:#FF0;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;height:450px'>
+                <div style='font-size:14px;float: left;width:50%; height:450px' id="chart1"> </div>
+                <div style='font-size:14px;float: left;width:50%; height:450px' id="chart2"> </div>
             </div>
         </div>
 
