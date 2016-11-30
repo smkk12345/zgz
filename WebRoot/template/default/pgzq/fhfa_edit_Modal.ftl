@@ -500,25 +500,25 @@
    		});
                 
         //宅基地腾退补偿款计算
-        $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
-        $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
-        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
-       		$("#zjdttbck").val(subsum);
-       		var hj = $("#jlhj").val();
-       		var temp = parseFloat(subsum)+ parseFloat(hj);
-       		$("#zjdttzj").val(temp.toFixed(2));
-   		});
-        $("#zbngfk,#zbwgfk").change(function(){
-        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
-       		$("#azfgfk").val(temp);
-       		var temp1 = parseFloat($("#zjdttzj").val());
-       		$("#jshk").val((temp1-temp).toFixed(2));
-   		});
-   		        
-   		$("#zjdttzj").change(function(){
-        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
-       		$("#jshk").val(temp);
-   		});  
+//        $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
+//        $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
+//        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
+//       		$("#zjdttbck").val(subsum);
+//       		var hj = $("#jlhj").val();
+//       		var temp = parseFloat(subsum)+ parseFloat(hj);
+//       		$("#zjdttzj").val(temp.toFixed(2));
+//   		});
+//        $("#zbngfk,#zbwgfk").change(function(){
+//        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
+//       		$("#azfgfk").val(temp);
+//       		var temp1 = parseFloat($("#zjdttzj").val());
+//       		$("#jshk").val((temp1-temp).toFixed(2));
+//   		});
+//   		        
+//   		$("#zjdttzj").change(function(){
+//        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
+//       		$("#jshk").val(temp);
+//   		});  
    			
    		//zjdttbck   jlfsum  zjdttzj     jshk =  zjdttzj  - azfgfk
    		//$("#zjdttbck,#jlfsum").change(function(){
