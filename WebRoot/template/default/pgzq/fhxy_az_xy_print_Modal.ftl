@@ -10,9 +10,7 @@
         <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
         <p class="title3" style="margin-top: 35px;">腾&nbsp;&nbsp;退&nbsp;&nbsp;人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村民委员会&nbsp;</u>（以下简称甲方）
         </p>
-        <p class="title3" style="margin-top: 20px;">被腾退人：<u>&nbsp;${housebasic.names?default("/")}
-            &nbsp;</u> &nbsp;身份证号：<u>
-            &nbsp;${housebasic.idcard?default("/")}&nbsp;</u>（以下简称乙方）
+        <p class="title3" style="margin-top: 20px;">被腾退人：<u>${housebasic.names?default("/")}</u> &nbsp;身份证号：<u> ${housebasic.idcard?default("/")}</u>（以下简称乙方）
         </p>
 
         <p class="contex-1" style="margin-top: 38px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据北京市丰台区长辛店镇人民政府、北京中建方程投资管理有限公司及北京市丰台区长辛店镇张郭庄村村民委员会三方签订的《长辛店镇张郭庄村棚户区改造及环境整治项目委托实施腾退协议》相关内容，长辛店镇人民政府是“长辛店镇张郭庄村棚户区改造和环境整治项目”（以下简称本项目）的责任主体，负责指导、协调本项目全面工作；北京中建方程投资管理有限公司是经丰台区人民政府授权，作为本项目的实施主体，负责本项目腾退补偿资金的筹措；北京市丰台区长辛店镇张郭庄村村民委员会，作为本项目腾退主体即“腾退人”，负责本项目集体土地腾退范围内涉及宅基地及非住宅的腾退工作；“被腾退人”
@@ -28,30 +26,30 @@
         <p class="leftTitle">第二条&nbsp;&nbsp;宅基地认定</p>
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${housebasic.zjdarea?default("/")}&nbsp;&nbsp;</u>平方米；<br/>
+           ${housebasic.zjdarea?default("/")}</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;<#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if>&nbsp;&nbsp;</u>。认定宅基地面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.rdzjdallarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米，补偿宅基地面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.bczjdmj?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。其中：<br/>
+            <#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积<u>
+           ${bean.rdzjdallarea?default("/")}</u>平方米，补偿宅基地面积<u>
+            ${bean.bczjdmj?default("/")}</u>平方米。其中：<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.conhomestarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；超出宅基地控制面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.overhomesteadarea?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。
+           ${bean.conhomestarea?default("/")}</u>平方米；超出宅基地控制面积<u>
+            ${bean.overhomesteadarea?default("/")}</u>平方米。
         </p>
         <p class="leftTitle">第三条&nbsp;&nbsp;房屋补偿面积</p>
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、经受托测绘公司现场实测，现状实测房屋建筑面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp; ${housebasic.fwarea?default("/")} </u>平方米。其中：首层建筑面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${housebasic.firstfloorarea?default("/")} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；二层及以上建筑面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${housebasic.abovetwoarea?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；地下室建筑面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${housebasic.basement?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；棚<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${housebasic.shed?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
+            ${housebasic.fwarea?default("/")} </u>平方米。其中：首层建筑面积<u>
+            ${housebasic.firstfloorarea?default("/")}</u>平方米；二层及以上建筑面积<u>
+            ${housebasic.abovetwoarea?default("/")}</u>平方米；地下室建筑面积<u>
+            ${housebasic.basement?default("/")}</u>平方米；棚<u>
+           	${housebasic.shed?default("/")}</u>平方米。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2、经认定工作组认定，认定房屋补偿面积<u>
-            &nbsp;&nbsp;&nbsp;&nbsp;${bean.fwbcmj?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。
+            ${bean.fwbcmj?default("/")}</u>平方米。
         </p>
         <p class="pageBreak" style="margin-top: 20px;">&nbsp;</p>
         <p class="leftTitle">第四条&nbsp;&nbsp;被安置人口认定</p>
         <p class="contex-1">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经张郭庄村宅基地面积和人口认定工作组认定，认定被安置人口共<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>人，分别是：
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经张郭庄村宅基地面积和人口认定工作组认定，认定被安置人口共<u>${housebasic.peoplecount?default("/")}</u>人，分别是：
         <#if housebasic.vacatelist??>
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
             <#list housebasic.vacatelist as vacate>
@@ -131,7 +129,7 @@
             &nbsp;&nbsp;${bean.zjdttzj?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>
             &nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;</u>）。根据乙方签署的《北京市定向安置房认购协议》相关约定，乙方应向定向安置房建设主体支付定向安置房购房款共计<u>
             &nbsp;&nbsp;${bean.azfgfk?default("/")}&nbsp;&nbsp;</u>元（大写人民币<u>&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;</u>）。甲方在乙方完成交房验收后到指定银行办理宅基地腾退补偿总价和定向安置房购房款差价结算，根据结算实际情况，甲乙双方同意按以下第<u>
-            &nbsp;<#if bean.jshk?default(0) gt 0>一<#else>二</#if>&nbsp;&nbsp;</u>种方式进行结算：<br/>
+            &nbsp;<#if bean.jshk?default(0) gt 0>8.2<#else>8.3</#if>&nbsp;&nbsp;</u>种方式进行结算：<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.2 乙方宅基地腾退补偿总价足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
             &nbsp;</u>个工作日内向乙方开具领款凭证，一次性发放抵扣定向安置房购房款后的宅基地腾退补偿总价结算余额<u>
             &nbsp;&nbsp;&nbsp;${bean.jshk?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.dxjshk?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> ）；<br/>
@@ -198,8 +196,23 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：
         </p>
         <p class="contex-1" style="margin-top: 50px;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间： 年 月 日
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
         </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <p class="contex-1" style="margin-top: 50px;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方（签字并按指纹）：
         </p>
