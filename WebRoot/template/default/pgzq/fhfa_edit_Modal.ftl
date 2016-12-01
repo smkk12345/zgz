@@ -323,7 +323,7 @@
                 </div> 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>应选面积:</label>
-                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
+                    <input  type='text' class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>实际选房面积:</label>
@@ -331,11 +331,11 @@
                 </div>  
                  <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内面积:</label>
-                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>       
+                    <input  type='text' class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>超指标面积:</label>
-                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
+                    <input  type='text' class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内购房款:</label>
@@ -500,25 +500,25 @@
    		});
                 
         //宅基地腾退补偿款计算
-        $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
-        $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
-        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
-       		$("#zjdttbck").val(subsum);
-       		var hj = $("#jlhj").val();
-       		var temp = parseFloat(subsum)+ parseFloat(hj);
-       		$("#zjdttzj").val(temp.toFixed(2));
-   		});
-        $("#zbngfk,#zbwgfk").change(function(){
-        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
-       		$("#azfgfk").val(temp);
-       		var temp1 = parseFloat($("#zjdttzj").val());
-       		$("#jshk").val((temp1-temp).toFixed(2));
-   		});
-   		        
-   		$("#zjdttzj").change(function(){
-        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
-       		$("#jshk").val(temp);
-   		});  
+//        $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
+//        $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
+//        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
+//       		$("#zjdttbck").val(subsum);
+//       		var hj = $("#jlhj").val();
+//       		var temp = parseFloat(subsum)+ parseFloat(hj);
+//       		$("#zjdttzj").val(temp.toFixed(2));
+//   		});
+//        $("#zbngfk,#zbwgfk").change(function(){
+//        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
+//       		$("#azfgfk").val(temp);
+//       		var temp1 = parseFloat($("#zjdttzj").val());
+//       		$("#jshk").val((temp1-temp).toFixed(2));
+//   		});
+//   		        
+//   		$("#zjdttzj").change(function(){
+//        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
+//       		$("#jshk").val(temp);
+//   		});  
    			
    		//zjdttbck   jlfsum  zjdttzj     jshk =  zjdttzj  - azfgfk
    		//$("#zjdttbck,#jlfsum").change(function(){

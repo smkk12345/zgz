@@ -6,13 +6,13 @@
     </div>
 </div>
 <div class="modal-body center">
-    <div  id="xy-print" style="font-size: 9px !important">
-        <table cellpadding="0" cellspacing="0" width="650px;"  border="1" style="padding: 0">
+    <div class="container-fluid fhfa-rdjg-print-con"  id="xy-print" >
+        <table class="table table-bordered" style="font-size: 8px !important">
             <tr>
                 <td class="" colspan="10">张郭庄村宅基地“安置房补偿方式”第（ ${bean.section}  ）标段腾退补偿总价预结单</td>
             </tr>
             <tr>
-                <td class="" colspan=1>被腾退人</td>
+                <td class="" colspan=1 style="width: 20px;">被腾退人</td>
                 <td class="" colspan=2>${bean.names?default("")} </td>
                 <td class="" colspan=1>坐落</td>
                 <td class=""colspan=6>${bean.location?default("")}</td>
@@ -26,39 +26,39 @@
                 <td class="" colspan=3><#if (bean.homesteadyear?default("-1"))=='0'>82年前<#elseif bean.homesteadyear?default("-1")=='1'>82年后<#else>/</#if></td>
             </tr>
             <tr>
-                <td class="">实建面积</td>
+                <td class="">实建面积(m<sup>2</sup>)</td>
                 <td class="">${bean.fwarea?default(0)}</td>
-                <td class="">首层</td>
+                <td class="">首层(m<sup>2</sup>)</td>
                 <td class="" >${bean.firstfloorarea?default(0)}</td>
-                <td class="">二层及以上</td>
+                <td class="">二层及以上(m<sup>2</sup>)</td>
                 <td class="">${bean.abovetwoarea?default(0)}</td>
-                <td class="">地下室</td>
+                <td class="">地下室(m<sup>2</sup>)</td>
                 <td class="">${bean.basement?default(0)}</td>
-                <td class="">棚</td>
+                <td class="">棚(m<sup>2</sup>)</td>
                 <td class="">${bean.shed?default(0)}</td>
             </tr>
 
            <tr>
-			    <td class="" colspan=2>认定宅基地面积</td>
+			    <td class="" colspan=2>认定宅基地面积(m<sup>2</sup>)</td>
                 <td class="" colspan=3>${bean.rdzjdallarea?default(0)}</td>
-                <td class="" colspan=2>补偿宅基地面积</td>
+                <td class="" colspan=2>补偿宅基地面积(m<sup>2</sup>)</td>
                 <td class="" colspan=3>${bean.bczjdmj?default(0)}</td>
 			</tr>
             <tr>
-                <td class="" colspan=1>控制面积</td>
+                <td class="" colspan=1>控制面积(m<sup>2</sup>)</td>
                 <td class="" colspan=1>${bean.conhomestarea?default(0)}</td>
                 <td class="" >区位单价</td>
 <!--                <td class="">${bean.kzzjdqwbcj?default(0)}</td>-->
                 <td class="" >6000</td>
-                <td class="" >超控面积</td>
+                <td class="" >超控面积(m<sup>2</sup>)</td>
                 <td class="" >${bean.overhomesteadarea?default(0)}</td>
                 <td class="" >区位单价</td>
                 <td class="" colspan=3><#if (bean.homesteadyear?default("-1"))=='0'>3000<#else>1800</#if></td>
             </tr>
              <tr>
-                <td class="">认定房屋补偿面积</td>
+                <td class="">认定房屋补偿面积(m<sup>2</sup>)</td>
                 <td class="">${bean.fwbcmj?default(0)}</td>
-                <td class="">经营面积</td>
+                <td class="">经营面积(m<sup>2</sup>)</td>
                 <td class="" >${bean.operatearea?default(0)}</td>
                 <td class="">本址在册人数</td>
                 <td class="">${bean.localpeoplecount?default(0)}</td>
@@ -90,9 +90,9 @@
             </tr>
 
             <tr>
-                <td class="">应选面积</td>
+                <td class="">应选面积(m<sup>2</sup>)</td>
                 <td>${bean.yxmj?default("")}</td>
-                <td colspan=3>实际选房面积</td>
+                <td colspan=3>实际选房面积(m<sup>2</sup>)</td>
                 <td colspan=1>${bean.sjxfmj?default("")}</td>
                 <td colspan="2">选房总套数</td>
                 <td >${bean.xfts?default("")}</td>

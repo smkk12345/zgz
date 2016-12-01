@@ -117,7 +117,7 @@
             &nbsp;&nbsp;${bean.tctdbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）周转补助费（1500元/人/月） <u>
             &nbsp;&nbsp;${bean.zzbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${bean.otherbz?default("/")}&nbsp;&nbsp;</u>元；<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${bean.dsbzf?number+bean.xgbzf?number+bean.zjdypwpbz?number+bean.yhzbwxmbc?number}&nbsp;&nbsp;</u>元；<br/>
         </p>
         <p class="leftTitle">第七条&nbsp;&nbsp;乙方腾退期限及要求</p>
         <p class="contex-1">

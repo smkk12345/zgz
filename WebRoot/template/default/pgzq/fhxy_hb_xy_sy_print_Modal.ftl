@@ -2,7 +2,7 @@
     <h4 class="modal-title pull-left m0">【${housebasic.names?default("/")}】房屋腾退货币补偿</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="submit" class="btn btn-primary btn-save"   >打印</button>
+        <button type="submit" class="btn btn-primary btn-save"   onclick="yu_print()">打印</button>
     </div>
 </div>
 <div class="modal-body center">
@@ -20,7 +20,7 @@
 <script src="${BASE_ASSETS_PATH}libs/jqprint/jquery-migrate-1.1.0.js"></script>
 <script type = "text/javascript">
             //设置模态框高度和宽度  
-            $("#myModal .modal-dialog").width(750);
+            $("#myModal .modal-dialog").width(700);
             $(".modal-body").css("height", ($(window).height() - 150) + "px");
             $(".modal-body").css("overflow-y", "scroll");
 
