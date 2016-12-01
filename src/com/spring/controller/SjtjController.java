@@ -130,7 +130,29 @@ public class SjtjController {
         }
     }
     
-    
+    @RequestMapping({"/sjtj/chart7.action"})
+    public ModelAndView chart7(HttpServletRequest request,
+                               HttpServletResponse response, ModelMap model) {
+        try {
+
+            // 模板路径 basePath
+            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+            model.addAttribute("BASE_ASSETS_PATH",
+                    WebConstConfig.getBase_Assets_Path());
+            model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+                    WebConstConfig.getBase_Template_Default_Path());
+            model.addAttribute("bean", new HouseBasic());
+            model.addAttribute("CURENT_TAB", "SJTJ");
+            model.addAttribute("CURENT_TAB_2", "chart7");
+            model.addAttribute("CURENT_TAB_3", "chart7");
+            return new ModelAndView(PageConst.SJTJ_chart7, model);
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("error", e.getMessage());
+            return null;
+
+        }
+    }
 
     /**
      * 总签约户数：  5562户

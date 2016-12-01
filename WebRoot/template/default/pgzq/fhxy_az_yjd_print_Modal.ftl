@@ -234,7 +234,7 @@
                 <td class="">11</td>
                 <td class=""  colspan=2>低保补助</td>
                 <td class=""  colspan=2>（30000元/人）</td>
-                <td class="" colspan=2>${bean.dbbz?default("/")}</td>
+                <td class="" colspan=2>${bean.dbhbz?default("/")}</td>
             </tr>
             <tr>
                 <td class="">12</td>
