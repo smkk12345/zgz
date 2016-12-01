@@ -7,7 +7,7 @@
 </div>
 <div class="modal-body center">
     <div class="container-fluid fhfa-rdjg-print-con"  id="xy-print" >
-        <table class="table table-bordered" style="font-size: 5px !important">
+        <table class="table table-bordered" style="font-size: 8px !important">
             <tr>
                 <td class=""colspan="11" class="center">（张郭庄）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>

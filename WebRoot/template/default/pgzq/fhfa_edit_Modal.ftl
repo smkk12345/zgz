@@ -1,4 +1,4 @@
-
+﻿
 <div class="modal-header clearfix">
     <h4 class="modal-title pull-left m0">房屋征收安置补偿方案信息登记单（基本情况，房屋信息，部分补助信息是从入户信息中提取，如有调整，请到入户信息管理中修改）</h4>
 </div>
@@ -323,7 +323,7 @@
                 </div> 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>应选面积:</label>
-                    <input  type='text' class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
+                    <input type='text' class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>实际选房面积:</label>
@@ -335,15 +335,15 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>超指标面积:</label>
-                    <input  type='text' class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
+                    <input type='text' class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内购房款:</label>
-                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk'   value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else></#if>"/>       
+                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk'   value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标外购房款:</label>
-                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk'   value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else></#if>"/>       
+                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk'   value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else>0</#if>"/>       
                 </div>                   
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款:</label>
@@ -361,11 +361,11 @@
             <div class='container-fluid con-bg mb10' id="div8">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>腾退补偿款总价:</label>
-                    <input type='text' id="zjdttzj" class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else></#if>" />    
+                    <input type='text' id="zjdttzj" class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else>0</#if>" />    
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>结算后款:</label>
-                    <input id="jshk" type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else></#if>"/>       
+                    <input id="jshk" type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else>0</#if>"/>       
                 </div>
             </div>              
             <div class="modal-footer">
@@ -500,25 +500,25 @@
    		});
                 
         //宅基地腾退补偿款计算
-//        $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
-//        $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
-//        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
-//       		$("#zjdttbck").val(subsum);
-//       		var hj = $("#jlhj").val();
-//       		var temp = parseFloat(subsum)+ parseFloat(hj);
-//       		$("#zjdttzj").val(temp.toFixed(2));
-//   		});
-//        $("#zbngfk,#zbwgfk").change(function(){
-//        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
-//       		$("#azfgfk").val(temp);
-//       		var temp1 = parseFloat($("#zjdttzj").val());
-//       		$("#jshk").val((temp1-temp).toFixed(2));
-//   		});
-//   		        
-//   		$("#zjdttzj").change(function(){
-//        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
-//       		$("#jshk").val(temp);
-//   		});  
+        $("#zjdttbck").val(((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2));
+        $("#kzzjdqwbcj,#ckzjdqwbcj,#bttfwczcxj,#zxsbfswjk").change(function(){
+        	var subsum = ((parseFloat($("#kzzjdqwbcj").val()))+parseFloat($("#ckzjdqwbcj").val())+parseFloat($("#bttfwczcxj").val())+parseFloat($("#zxsbfswjk").val())).toFixed(2);
+       		$("#zjdttbck").val(subsum);
+       		var hj = $("#jlhj").val();
+       		var temp = parseFloat(subsum)+ parseFloat(hj);
+       		//$("#zjdttzj").val(temp.toFixed(2));
+   		});
+        $("#zbngfk,#zbwgfk").change(function(){
+        	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
+       		$("#azfgfk").val(temp);
+       		var temp1 = parseFloat($("#zjdttzj").val());
+       		$("#jshk").val((temp1-temp).toFixed(2));
+   		});
+   		        
+   		$("#zjdttzj").change(function(){
+        	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
+       		$("#jshk").val(temp);
+   		});  
    			
    		//zjdttbck   jlfsum  zjdttzj     jshk =  zjdttzj  - azfgfk
    		//$("#zjdttbck,#jlfsum").change(function(){
@@ -536,9 +536,9 @@
    			});
    			$("#jlhj").val(sum.toFixed(2));
    			var temp = (parseFloat($("#zjdttbck").val())+sum).toFixed(2);
-   			$("#zjdttzj").val(temp);
-   			var temp1 = parseFloat($("#azfgfk").val());
-   			$("#jshk").val((temp-temp1).toFixed(2));
+   			//$("#zjdttzj").val(temp);
+   			//var temp1 = parseFloat($("#azfgfk").val());
+   			//$("#jshk").val((temp-temp1).toFixed(2));
    			
    		});
    
