@@ -9,7 +9,7 @@
     <div  id="xy-print" style="font-size: 9px !important">
         <table cellpadding="0" cellspacing="0" width="650px;"  border="1" style="padding: 0">
             <tr>
-                <td class="" colspan="10">“安置房补偿方式”第（ ${bean.section}  ）标段腾退补偿总价预结单</td>
+                <td class="" colspan="10">张郭庄村宅基地“安置房补偿方式”第（ ${bean.section}  ）标段腾退补偿总价预结单</td>
             </tr>
             <tr>
                 <td class="" colspan=1>被腾退人</td>

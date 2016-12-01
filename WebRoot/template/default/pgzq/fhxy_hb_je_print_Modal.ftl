@@ -11,7 +11,7 @@
         <div class="content" style="float:left;">
          <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
                 <tr>
-                	<td class="td_content_1"colspan="10">（   张郭庄村 ）村宅基地房屋“完全货币补偿”方式金额审查表（ ${bean.section?default("")} ）标段</td>
+                	<td class="td_content_1"colspan="10">（张郭庄）村宅基地房屋“完全货币补偿”方式金额审查表（ ${bean.section?default("")} ）标段</td>
                 </tr>
                 <tr>
                     <td class="td_content_1">被腾退人</td>
