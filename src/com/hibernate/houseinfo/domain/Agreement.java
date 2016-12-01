@@ -194,7 +194,19 @@ public class Agreement extends BaseBean {
   //优惠指标未选满补偿
     private BigDecimal yhzbwxmbc;
     
+    private String kzkxmj;
     
+    
+	public String getKzkxmj() {
+		return kzkxmj;
+	}
+
+
+	public void setKzkxmj(String kzkxmj) {
+		this.kzkxmj = kzkxmj;
+	}
+
+
 	private String rdzfkn;
 	
 	//是否满足不足200平米补助200平米:
