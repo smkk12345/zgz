@@ -36,7 +36,7 @@
 	                </div>  
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>安置方式:</label>
-	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
+	                    <select id='atypeChange' class='form-control input-sm fl' style='width:120px;' name='atype' >  
 	                        <option  <#if (atype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
 	                        <option  <#if (atype?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
 	                        <option  <#if (atype?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
@@ -58,8 +58,8 @@
                 <th>认定面积</th>
                 <th>认定人口</th>
                 <th>腾退补偿款总和</th>
-                <th>选房购房款</th>
-                <th>结算后款</th>
+                <th id="th_xf">选房购房款</th>
+                <th id="th_jsfh">结算后款</th>
                 <th>操作</th>
             </tr>
             <@XyList list pageNo pageSize/>
@@ -79,6 +79,24 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
+
+	$(function(){ 
+		$("#atypeChange").change(function(){
+			var selvalue = $(this).val();
+			if(selvalue == '1'){
+				$("#th_xf").hide();
+				$("#th_jsfh").hide();
+				$(".td_azfghk").hide();
+				$(".td_jshk").hide();
+			}else{
+				$("#th_xf").show();
+				$("#th_jsfh").show();
+				$(".td_azfghk").show();
+				$(".td_jshk").show();
+			}
+		})
+	}) 
+	
     $(".modal-dialog").attr("style", "width:95%;");
     function toExcel(inTblId, inWindow) {
         var fileName = '${CommenData.time_jc}' + ".xls";
@@ -133,5 +151,6 @@
         }
     }
 
-
+	
+	
 </script>

@@ -7,9 +7,9 @@
 </div>
 <div class="modal-body center">
     <div class="container-fluid fhfa-rdjg-print-con"  id="xy-print" >
-        <table class="table table-bordered" style="font-size: 8px !important">
+       <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <td class=""colspan="11" class="center">（张郭庄）村宅基地房屋“完全货币”方式金额审查表（ ${bean.section}  ）标段</td>
+                <td class=""colspan="11" style="font-weight:bold;" class="center">（张郭庄）村宅基地房屋“完全货币”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>
             <tr>
                 <td class="" colspan="2">被腾退人</td>
@@ -70,6 +70,8 @@
                 <td class="">认定人数总和</td>
                 <td class="">${bean.localpeoplecount?number+bean.notlocalpeoplecount?number}</td>
             </tr>
+            </table>
+            <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
                 <td class="" colspan="2">被认定全体人员姓名（注明代际关系）</td>
                 <td class="" colspan=9>
@@ -91,7 +93,8 @@
                     </#if>
                 </td>
             </tr>
-
+            </table>
+			<table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
                 <td class="" colspan=2>宅基地腾退补偿总价(元)</td>
                 <td class="" colspan=9>${bean.zjdttzj?default("")}</td>

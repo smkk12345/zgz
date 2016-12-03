@@ -435,11 +435,13 @@
         var $selectedvalue = $("input[name='atype']:checked").val();
         if ($selectedvalue === '1') {
             $(".azxy").hide();
+           	$("#azxy input[type='text']").attr("disabled","disabled");
             $(".div_seven").html("六.其他：");
             $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
         }
         else {
             $(".azxy").show();
+            $("#azxy input[type='text']").removeAttr("disabled");
             $(".div_seven").html("七.其他：");
             $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
         }
