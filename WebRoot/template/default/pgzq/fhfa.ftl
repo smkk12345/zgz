@@ -95,6 +95,20 @@
 				$(".td_jshk").show();
 			}
 		})
+		
+		var atype = '${atype}';
+		if(atype == '1'){
+				$("#th_xf").hide();
+				$("#th_jsfh").hide();
+				$(".td_azfghk").hide();
+				$(".td_jshk").hide();
+			}else{
+				$("#th_xf").show();
+				$("#th_jsfh").show();
+				$(".td_azfghk").show();
+				$(".td_jshk").show();
+			}
+		
 	}) 
 	
     $(".modal-dialog").attr("style", "width:95%;");

@@ -435,13 +435,13 @@
         var $selectedvalue = $("input[name='atype']:checked").val();
         if ($selectedvalue === '1') {
             $(".azxy").hide();
-           	$("#azxy input[type='text']").attr("disabled","disabled");
+           	$(".azxy input[type='text']").attr("disabled","disabled");
             $(".div_seven").html("六.其他：");
             $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
         }
         else {
             $(".azxy").show();
-            $("#azxy input[type='text']").removeAttr("disabled");
+            $(".azxy input[type='text']").removeAttr("disabled");
             $(".div_seven").html("七.其他：");
             $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
         }
@@ -481,11 +481,13 @@
         } else {
             if (b == '1') {
                 $(".azxy").hide();
+                $(".azxy input[type='text']").attr("disabled","disabled");
                 $(".div_seven").html("六.其他：");
                 $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
             }
             else {
                 $(".azxy").show();
+                $(".azxy input[type='text']").removeAttr("disabled");
                 $(".div_seven").html("七.其他：");
                 $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
             }
@@ -518,12 +520,12 @@
         	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
        		$("#azfgfk").val(temp);
        		var temp1 = parseFloat($("#zjdttzj").val());
-       		$("#jshk").val((temp1-temp).toFixed(2));
+       		//$("#jshk").val((temp1-temp).toFixed(2));
    		});
    		        
    		$("#zjdttzj").change(function(){
         	var temp = (parseFloat($("#zjdttzj").val())-parseFloat($("#azfgfk").val())).toFixed(2);
-       		$("#jshk").val(temp);
+       		//$("#jshk").val(temp);
    		});  
    			
    		//zjdttbck   jlfsum  zjdttzj     jshk =  zjdttzj  - azfgfk
