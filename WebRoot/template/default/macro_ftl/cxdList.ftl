@@ -80,8 +80,8 @@
             <td>
                 <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
                         title='浏览' data-url="${BASE_PATH}pgqq/rhjc_c_Modal.action?housebasicid=${ROW.id}"></button>
-                <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
-                        title='打印' data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}"></button>
+              <!--    <button type="button" class="btn btn-info btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
+                        title='打印' data-url="${BASE_PATH}pgqq/rhjc_print.action?housebasicid=${ROW.id}"></button>  -->
             </td>
         </tr>
         </#list>
@@ -150,10 +150,16 @@
             <td>${ROW.fwbcmj?default("")}</td>
             <td>${ROW.rdbazrk?default("")}</td>
             <td>${ROW.zjdttzj?default("")}</td>
-            <td>${ROW.azfgfk?default("")}</td>
-            <td>${ROW.jshk?default("")}</td>
+            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
+            <td class="td_jshk">${ROW.jshk?default("")}</td>
             <td>
-                <#if role.roleAuthority[7]=="2">
+            
+            <#if role.roleAuthority[3]=="2">
+                    <#if (ROW.checkresult)??>
+                        <#if ROW.checkresult=="1">
+                            已锁定
+                        <#else>
+                            <#if role.roleAuthority[7]=="2">
                     <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
                             title='编辑查看'
                             data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
@@ -163,6 +169,23 @@
                             title='数据查看'
                             data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
                 </#if>-->
+                        </#if>
+                    <#else>
+                       <#if role.roleAuthority[7]=="2">
+                    <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
+                            title='编辑查看'
+                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+                </#if>
+                <!--<#if role.roleAuthority[8]=="2">
+                    <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
+                            title='数据查看'
+                            data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+                </#if>-->
+                    </#if>
+                </#if>
+                
+            
+                
             </td>
         </tr>
         </#list>

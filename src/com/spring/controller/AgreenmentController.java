@@ -1,6 +1,8 @@
 package com.spring.controller;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +22,7 @@ import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.timers.utils.DateStyle;
 import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
@@ -381,7 +384,17 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
-			//交房日期
+			//交房日期  签约日期后推20天
+			//DisplayBean displayBean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+			if(null != indexNum){
+				String operatedate = indexNum.getOperatedate();
+				long time = DateUtil.StringToDate(operatedate).getTime()+Contanst.JFRQ*24*60*60*1000;
+				Date date = new Date(time);
+				model.addAttribute("year", DateUtil.getYear(date));
+				model.addAttribute("month", DateUtil.getMonth(date)+1);
+				model.addAttribute("day", DateUtil.getDay(date));
+			}
 			
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
@@ -442,6 +455,15 @@ public class AgreenmentController {
 			Agreement agreenment = new Agreement();
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			}
+			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+			if(null != indexNum){
+				String operatedate = indexNum.getOperatedate();
+				long time = DateUtil.StringToDate(operatedate).getTime()+Contanst.JFRQ*24*60*60*1000;
+				Date date = new Date(time);
+				model.addAttribute("year", DateUtil.getYear(date));
+				model.addAttribute("month", DateUtil.getMonth(date)+1);
+				model.addAttribute("day", DateUtil.getDay(date));
 			}
 			model.addAttribute("bean", agreenment);
 			//模板路径 basePath
@@ -581,6 +603,7 @@ public class AgreenmentController {
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			String xynum = bean.getProtocolnumber().replace("-ZZAZ-", "-RGAZ-");
 			String dateStr = bean.getOperatedate();
 			model.addAttribute("year", DateUtil.getYear(dateStr));
 			model.addAttribute("month", DateUtil.getMonth(dateStr));
@@ -590,6 +613,7 @@ public class AgreenmentController {
 			model.addAttribute("second", DateUtil.getSecond(dateStr));
 			
 			model.addAttribute("bean", bean);
+			model.addAttribute("xynum", xynum);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",

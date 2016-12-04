@@ -418,7 +418,10 @@ public class PgqqController {
 			}
 		}
 		housebasic.setVacatelist(vList);
+		housebasic.setLocalpeoplecount(vList.size());
 		housebasic.setList(nList);
+		housebasic.setNotlocalpeoplecount(nList.size());
+		housebasic.setPeople(housebasic.getLocalpeoplecount()+housebasic.getNotlocalpeoplecount());
 	}
 	//其他信息   如低保 残疾 大病等
 	private boolean initOtherInfoList(HouseBasic houseBasic,HttpServletRequest request){

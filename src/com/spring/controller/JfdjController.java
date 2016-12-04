@@ -48,7 +48,7 @@ public class JfdjController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getJfdjSql(role.getSection(),request,"'0' or hasothers is null ",model);
+			String sql = getJfdjSql(role.getSection(),request,"'0' or hasothers is null or hasothers = '' ",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
 			

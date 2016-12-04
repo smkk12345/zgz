@@ -36,10 +36,10 @@
         长辛店镇张郭庄村棚户区改造宅基地腾退项目
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
-    <div style='margin-top: 70px;color:red;font-size:90px; font-family:"宋体";font-weight:bold;text-align: center;'>
+    <div style='margin-top: 70px;color:#0F0;font-size:90px; font-family:"宋体";font-weight:bold;text-align: center;'>
         政策咨询期
     </div>
-    <div style='margin-top: 90px;color:#0F0;font-size:70px; font-family:"宋体";font-weight:bold;text-align: center;'>
+    <div style='margin-top: 90px;color:#FF0;font-size:115px; font-family:"宋体";font-weight:bold;text-align: center;'>
         第<span id="timeDate2" style="color: red"></span>天
     </div>
 </div>
