@@ -323,12 +323,13 @@
                 </div> 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>应选面积（㎡）:</label>
-                    <input type='text' class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
+                    <input type='text' id="input_yxmj" class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
                 </div>
                	<div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>控制可选面积（㎡）:</label>
-                    <input type='text' class='form-control input-sm  ' readonly  value="<#if bean.yxmj??>${(bean.yxmj?c)?number+30}<#else></#if>"/>       
+                    <input type='text' id="kzkxmj" class='form-control input-sm  ' readonly  value="<#if bean.yxmj??>${(bean.yxmj?c)?number+30}<#else></#if>"/>       
                 </div>
+
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>实际选房面积（㎡）:</label>
                     <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj'   value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
@@ -491,6 +492,16 @@
     });
     
    $(function(){
+       $("#input_yxmj").change(function(){
+   			var value = $("#input_yxmj").val()
+   			if(value){
+   				var n = parseFloat(value);
+   				n = n + 30;
+   				$("#kzkxmj").val(n);
+   			}
+   			
+   		});
+
    		
 		$("#homesteadyear").change(function(){
 			var p1=$(this).children('option:selected').val();
