@@ -148,7 +148,7 @@
                 </#if>
             </td>
             <td>${ROW.fwbcmj?default("")}</td>
-            <td>${ROW.rdbazrk?default("")}</td>
+            <td>${ROW.people?default("")}</td>
             <td>${ROW.zjdttzj?default("")}</td>
             <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
             <td class="td_jshk">${ROW.jshk?default("")}</td>
@@ -218,9 +218,20 @@
             <td>${ROW.azfgfk?default("")}</td>
             <td>${ROW.jshk?default("")}</td>
             <td>
-                <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-print"
-                        title='财务结算表格打印'
-                        data-url="${BASE_PATH}cwjs/cwjs_01_print_model.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+              <#if (ROW.protocolnumber)??>
+                            <#if (ROW.protocolnumber?length>0)>
+            <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印金额审查表'        
+                        <#if ROW.atype?default("0")=="0">
+                           data-url="${BASE_PATH}pgzq/fhxy_az_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                        <#else>
+                           data-url="${BASE_PATH}pgzq/fhxy_hb_je_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
+                        </#if>
+                        >
+                        金额审查</button>
+                            <#else>
+                            </#if>
+                        <#else>
+                        </#if>
             </td>
         </tr>
         </#list>
@@ -248,7 +259,7 @@
                 </#if>
             </td>
             <td>${(ROW.fwbcmj)!""}</td>
-            <td>${(ROW.rdbazrk)!""}</td>
+            <td>${(ROW.people)!""}</td>
             <td>${(ROW.zjdttbck)!""}</td>
             <td>${(ROW.azfgfk)!""}</td>
             <td>${(ROW.wwzjlf)!""}</td>
@@ -333,7 +344,7 @@
                 </#if>
             </td>
             <td>${(ROW.fwbcmj)!""}</td>
-            <td>${(ROW.rdbazrk)!""}</td>
+            <td>${(ROW.people)!""}</td>
             <td>${(ROW.azfgfk)!""}</td>
             <td>${(ROW.jlfsum)!""}</td>
             <td>
@@ -359,20 +370,20 @@
                 </#if>
             </td>
             <#if (ROW.atype)??>
-                <td>
+                <td id="td_displaydate${ROW.id}">
                     <#if role.roleAuthority[11]=="2">
                         <#if (ROW.protocolnumber)??>
                             <#if (ROW.protocolnumber?length>0)>
                             ${ROW.displaydate}
                             <#else>
-                                <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态'
+                                <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' beanid="${ROW.id}"
                                         onclick="confirmSign(this)"
                                         data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
                                     确认签约
                                 </button>
                             </#if>
                         <#else>
-                            <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态'
+                            <button type="button" class="btn btn-success btn-xs ml10  bold" title='签约状态' beanid="${ROW.id}"
                                     onclick="confirmSign(this)"
                                     data-url="${BASE_PATH}indexnum/get.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">
                                 确认签约
@@ -380,8 +391,8 @@
                         </#if>
                     </#if>
                 </td>
-                <td title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
-                <td>
+                <td id="td_protocolnumber${ROW.id}" title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
+                <td id="td_print2${ROW.id}">
                     <#if role.roleAuthority[12]=="2">
                         <#if (ROW.protocolnumber)??>
                             <#if (ROW.protocolnumber?length>0)>
@@ -414,12 +425,12 @@
             <#else>
                 <td colspan=3> 请先选择安置方式！</td>
             </#if>
-            <td>
+            <td id="td_indexnum${ROW.id}">
                 <#if ROW.atype?default("0")=="0">
             ${ROW.indexNumStr?default("")}
             </#if>
             </td>
-            <td>
+            <td id="td_print3${ROW.id}">
                 <#if role.roleAuthority[13]=="2">
                 <#if ROW.atype?default("0")=="0">
                     <#if (ROW.protocolnumber)??>

@@ -129,9 +129,9 @@
             <tr>
                 <td class="" colspan="2">三居（110m<sup>2</sup>）(套)</td>
                 <td class="">${bean.sjs?default("")}</td>
-                <td class="" colspan="2">指标内购房款（4000元/㎡）</td>
+                <td class="" colspan="2">指标内购房款（4000元/㎡）（元）</td>
                 <td class="" >${bean.zbngfk?c?default("/")}</td>
-                <td colspan=2>指标外房款（6000元/㎡)</td>
+                <td colspan=2>指标外房款（6000元/㎡)（元）</td>
                 <td>${bean.zbwgfk?c?default("/")}</td>
                 <td>总购房款(元)</td>
                 <td colspan=1>${bean.azfgfk?c?default("")}</td>
@@ -198,6 +198,7 @@
             <tr>
                 <td class="" colspan=5>二、各项奖励、补助、周转合计(元)</td>
                 <td class="" >${bean.jlfsum?c?default("/")}</td>
+				<td class="" colspan=6></td>
                 
             </tr>
 
@@ -233,17 +234,18 @@
               
             </tr>
             <tr>
-            <#assign dsbzf = bean.dsbzf?c?default(0)>
-		   <#assign xgbzf = bean.xgbzf?c?default(0)>
-		   <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
-		   <#assign yhzbwxmbc = bean.yhzbwxmbc?c?default(0)>
                 <td class="">4</td>
                 <td class="" colspan=4>无违章奖励（500元/㎡）(元)</td>
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
+             <#assign dsbzf = bean.dsbzf?c?default(0)>
+		    <#assign xgbzf = bean.xgbzf?c?default(0)>
+		    <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
+		    <#assign yhzbwxmbc = bean.yhzbwxmbc?c?default(0)>
+		    <#assign qtbzhj = dsbzf?number+xgbzf?number+zjdypwpbz?number+yhzbwxmbc?number>
 
                 <td class="">15</td>
                 <td class="" colspan=4>其他补助35万、信鸽补助、滴水补助(元)</td>
-                <td class="">${dsbzf?number+ xgbzf?number+ zjdypwpbz?number+ yhzbwxmbc?number}</td>
+                <td class="">${qtbzhj?c}</td>
                 
                 
                
@@ -252,7 +254,7 @@
                 <td class="">5</td>
                 <td class="" colspan=4>未建二层奖（500元/㎡）(元)</td>
                 <td class="" >${bean.wjecjj?c?default("/")}</td>
-                <td class="" colspan=6 rowspan="7" style="text-align: left;vertical-align:top !important">备注:</td>
+                <td class="" colspan=6 rowspan="7" style="text-align: left;vertical-align:top !important">备注:${bean.remark?default("/")}</td>
             </tr>
             <tr>
                 <td class="">6</td>

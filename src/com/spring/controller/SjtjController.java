@@ -228,9 +228,9 @@ public class SjtjController {
         	if(!StringUtils.isBlank(from)){
         		model.addAttribute("from", from);
         	}
-            String pageSize = request.getParameter("pageSize");
+            String pageSize = "7";
             if (StringUtils.isBlank(pageSize)) {
-                pageSize = "10";
+                pageSize = "7";
             }
             List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", " order by c.indexnum desc ", 0, Integer.parseInt(pageSize));
             // 模板路径 basePath

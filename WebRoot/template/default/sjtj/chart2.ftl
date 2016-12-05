@@ -30,8 +30,8 @@
             <a href="${BASE_PATH}sjtj/touch.action" class="btn btn-default glyphicon glyphicon-chevron-left"
                style="position:absolute;left: 20px;top:20px; font-size: 20px;">返回</a>
         </#if>
-            <div style='color:#FFF;font-size:36px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚改项目签约排号情况实时公示</div>
-            <div style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'>
+            <div style='color:#FFF;font-size:60px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚改项目签约排号情况实时公示</div>
+            <div style='margin-top: 50px;color:#FFF;font-size:30px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
                 <table class="table table-bordered mt10" width="100%" border="0" cellspacing="1" cellpadding="10" align="center" bgcolor="#FFFFFF">
                     <tr>
                         <td>签约顺序号</td>

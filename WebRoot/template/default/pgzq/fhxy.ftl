@@ -69,7 +69,9 @@
                 <th>选房顺序号</th>
                 <th>打印三</th>
             </tr>
+            
             <@FhxyList list pageNo pageSize/>
+            
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
@@ -143,24 +145,38 @@
 	 function confirmSign(btn) {
 	        if (yu_confirm("您确定签约吗？确定签约后，将不能更改！！！")) {
 	            var url = $(btn).attr("data-url");
+	            var beanid = $(btn).attr("beanid");
 	         //   var searchfrmdata = $("#seachfrm").serialize();
 	            //var par = $("#"+pname);
 	            $.ajax({
 	                cache: true,
 	                type: "POST",
 	                url: url,
-	              //  data: searchfrmdata,
-	                dataType: "json",
+	               // data: searchfrmdata,
+	               // dataType: "json",
 	                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                   		location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+                   	//	location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+                   	alert("123");
                 	},
 	                success: function (response) {
+	                	window.location.reload();//刷新当前页面
 	                	var protocolumnber = response.protocolumnber;
 	                	var displaydate = response.displaydate;
-	                	location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+	                	var indexnum = response.indexnum;
+	                	//alert(beanid);
+	                	//initInnerHtml(beanid,protocolumnber,displaydate,indexnum);
+	                	//location.href="${BASE_PATH}"+"pgzq/fhxy.action";
 	                }
 	            })
 	        }
 	    }
+	    
+	    function initInnerHtml(beanid,protocolumnber,displaydate,indexnum){
+	    	$("#td_displaydate"+beanid).html("123");
+	    	$("#td_protocolnumber"+beanid).innerHTML=protocolumnber;
+	    	$("#td_indexnum"+beanid).innerHTML=indexnum;
+	    	
+	    }
+	    
 
 </script>

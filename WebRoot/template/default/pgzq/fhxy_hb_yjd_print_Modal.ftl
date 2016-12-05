@@ -202,18 +202,19 @@
             </tr> 
             <tr>
             	 <td class="" colspan=1 >备注</td>
-            	 <td class="" colspan=11 ></td>
+            	 <td class="" colspan=11 >${bean.remark?default("/")}</td>
             </tr>
            
             
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <#assign dsbzf = bean.dsbzf?c?default(0)>
-				<#assign xgbzf = bean.xgbzf?c?default(0)>
-				<#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
+        <#assign dsbzf = bean.dsbzf?c?default(0)>
+		<#assign xgbzf = bean.xgbzf?c?default(0)>
+		<#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
+		<#assign qtbzhj=dsbzf?number+ xgbzf?number+ zjdypwpbz?number>
                 <td class="" colspan=5>三、其他补助合计（元）</td>
-                <td class="" colspan=1>${dsbzf?number+ xgbzf?number+ zjdypwpbz?number}</td>
+                <td class="" colspan=1>${qtbzhj?c}</td>
                 <td class="" colspan=5 rowspan=5 style="text-align: left;vertical-align:top !important">被腾退人确认无误签字（按指纹）</td>
             </tr>   
             <tr>

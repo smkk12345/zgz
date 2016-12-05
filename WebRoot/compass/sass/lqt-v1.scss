@@ -624,7 +624,8 @@
   padding: 20px;
   font-size: 16px;
   text-align: center;
-  width: 700px;
+  margin: 0 auto;
+  width: 620px;
   .title {
     font-size: 22.0pt;
     line-height: 150%;
@@ -674,7 +675,7 @@
 
   .contex-1 {
     text-align: left;
-    font-size: 14.0pt;
+    font-size: 12.0pt;
     mso-bidi-font-size: 10.0pt;
     line-height: 25.0pt;
     font-family: 宋体;
@@ -690,11 +691,12 @@
     color: black
   }
   .leftTitle {
-    font-size: 14.0pt;
+    font-size: 12.0pt;
     text-align: left;
     text-indent: 2em;
     line-height: 50px;
     font-weight: bold;
+    font-family: 宋体;
     padding-bottom: 5px;
   }
 

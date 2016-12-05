@@ -283,7 +283,7 @@
                 <div class='container-fluid con-bg mb10'>
                     <div class=' aoJianGroup '>      
                         <label class='fl control-label'>合计(元):</label>
-                        <input id="jlhj" type='text' class='form-control input-sm  ' name='jlfsum' readonly  value="<#if bean.jlfsum??>${bean.jlfsum?c}<#else></#if>"/>       
+                        <input id="jlhj" type='text' class='form-control input-sm  ' name='jlfsum' readonly  value="<#if bean.jlfsum??>${bean.jlfsum?c}<#else>0</#if>"/>       
                     </div>   
                 </div>                                                                                                                                 
             </div> 
@@ -352,7 +352,7 @@
                 </div>                   
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款(元):</label>
-                    <input id="azfgfk" type='text' class='form-control input-sm  ' name='azfgfk' readonly  value="<#if bean.azfgfk??>${bean.azfgfk?c}<#else></#if>"/>       
+                    <input id="azfgfk" type='text' class='form-control input-sm  ' name='azfgfk' readonly  value="<#if bean.azfgfk??>${bean.azfgfk?c}<#else>0</#if>"/>       
                 </div>                             
             </div>  
             <h4><span class="label label-default div_seven">七.其他：</span></h4>
@@ -525,7 +525,7 @@
        		$("#zjdttbck").val(subsum);
        		var hj = $("#jlhj").val();
        		var temp = parseFloat(subsum)+ parseFloat(hj);
-       		//$("#zjdttzj").val(temp.toFixed(2));
+       		$("#zjdttzj").val(temp.toFixed(2));
    		});
         $("#zbngfk,#zbwgfk").change(function(){
         	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
@@ -540,9 +540,9 @@
    		});  
    			
    		//zjdttbck   jlfsum  zjdttzj     jshk =  zjdttzj  - azfgfk
-   		//$("#zjdttbck,#jlfsum").change(function(){
-       	//	$("#zjdttzj").val((parseFloat($("#zjdttbck").val())+parseFloat($("#jlfsum").val())).toFixed(2));
-   		//});  
+   		$("#zjdttbck,#jlfsum").change(function(){
+       		$("#zjdttzj").val((parseFloat($("#zjdttbck").val())+parseFloat($("#jlfsum").val())).toFixed(2));
+   		});  
  
    		
    		$(".input_jl").change(function(){
@@ -555,7 +555,7 @@
    			});
    			$("#jlhj").val(sum.toFixed(2));
    			var temp = (parseFloat($("#zjdttbck").val())+sum).toFixed(2);
-   			//$("#zjdttzj").val(temp);
+   			$("#zjdttzj").val(temp);
    			//var temp1 = parseFloat($("#azfgfk").val());
    			//$("#jshk").val((temp-temp1).toFixed(2));
    			

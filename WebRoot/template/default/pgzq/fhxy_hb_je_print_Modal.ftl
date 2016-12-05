@@ -160,7 +160,7 @@
                 <td class="">4</td>
                 <td class="" colspan=5>无违章奖励（500元/㎡）(元)</td>
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
-                <td class="" colspan=4 rowspan=11 style="text-align: left;vertical-align:top !important">备注：</td>
+                <td class="" colspan=4 rowspan=11 style="text-align: left;vertical-align:top !important">备注：${bean.remark?default("/")}</td>
             </tr>
             <tr>
                 <td class="">5</td>
@@ -209,12 +209,13 @@
                 <td class="">${bean.zzbz?c?default("/")}</td>
             </tr> 
             <tr>
-	            <#assign dsbzf = bean.dsbzf?c?default(0)>
+		        <#assign dsbzf = bean.dsbzf?c?default(0)>
 				<#assign xgbzf = bean.xgbzf?c?default(0)>
 				<#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
+				<#assign qtbzhj =dsbzf?number+xgbzf?number+zjdypwpbz?number>
                 <td class="">14</td>
                 <td class="" colspan=5>其他补助35万、信鸽补助、滴水补助(元)</td>
-                <td class="">${dsbzf?number+xgbzf?number+zjdypwpbz?number}</td>
+                <td class="">${qtbzhj?c}</td>
             </tr>                   
         </table>
     </div>
