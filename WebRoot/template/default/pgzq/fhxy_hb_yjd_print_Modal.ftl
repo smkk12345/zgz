@@ -70,22 +70,33 @@
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <td class="" colspan=2>被认定全体人员（注明代际关系）</td>
-                <td class="" colspan=9>
-                    <#if bean.vacatelist??>
+                <td class="" colspan="2" style="width:10%">被认定全体人员姓名（注明代际关系）</td>
+                <td class="" colspan=9 style="text-align: left;padding: 10px;">
+                     <#if bean.vacatelist??>
                     <#if bean.vacatelist?size gt 0>
-                    在册人员：<br>
+                    <div class="center container-fluid" >在册人员：</div>
+                    <div class="container-fluid">
                     <#list bean.vacatelist as ROW>
-                    姓名：${ROW.name} 身份证号：${ROW.idcard} 产关：${ROW.changrelate}
+                     
+                     <div class=' aoJianGroup fl' style="width:280px;">
+                        ${ROW.name} ${ROW.idcard} ${ROW.changrelate}
+                    
+                    </div>
                     </#list>
+                    </div>   
                     </#if>
                     </#if>
+                    
                     <#if bean.list??>
-                    <#if bean.list?size gt 0><br>
-                    非在册人员：<br>
+                    <#if bean.list?size gt 0>
+                     <div class="center container-fluid">非在册人员：</div>
+                    <div class="container-fluid">
                     <#list bean.list as ROW>
-                    姓名：${ROW.name} 身份证号：${ROW.idcard} 产关：${ROW.changrelate}
+                    
+                   <div class=' aoJianGroup fl ' style="width:280px;">${ROW.name} ${ROW.idcard} ${ROW.changrelate}</div>
+                  
                     </#list>
+                     </div>
                     </#if>
                     </#if>
                 </td>
@@ -135,56 +146,56 @@
 
             <tr>
                 <td class="">1</td>
-                <td class="" colspan=4>提前搬家奖（5000元/院）</td>
+                <td class="" colspan=4>提前搬家奖（5000元/院）（元）</td>
                 <td class="" colspan=1>${bean.tqbjl?default("/")}</td>
 
                                 <td class="">8</td>
-                <td class=""  colspan=4>大病补助（50000元/人）</td>
+                <td class=""  colspan=4>大病补助（50000元/人）（元）</td>
                 <td class="" colspan=1>${bean.dbbz?default("/")}</td>
             </tr>
             <tr>
                 <td class="">2</td>
-                <td class=""  colspan=4>工程配合奖（100000元/院）</td>
+                <td class=""  colspan=4>工程配合奖（100000元/院）（元）</td>
                 <td class="" colspan=1>${bean.gcphjl?default("")}</td>
                                 <td class="">9</td>
-                <td class=""  colspan=4>残疾补助（30000元/人）</td>
+                <td class=""  colspan=4>残疾补助（30000元/人）（元）</td>
                 <td class="" colspan=1>${bean.cjbz?default("/")}</td>
             </tr>
             <tr>
                 <td class="">3</td>
-                <td class=""  colspan=4>腾退促进奖（50000元/院）</td>
+                <td class=""  colspan=4>腾退促进奖（50000元/院）（元）</td>
                 <td class="" colspan=1>${bean.ttcjjl?default("/")}</td>
                                 <td class="">10</td>
-                <td class=""  colspan=4>低保补助（30000元/人）</td>
+                <td class=""  colspan=4>低保补助（30000元/人）（元）</td>
                 <td class="" colspan=1>${bean.dbbz?default("/")}</td>
             </tr>
             <tr>
                 <td class="">4</td>
-                <td class=""  colspan=4>无违章奖励（500元/㎡）</td>
+                <td class=""  colspan=4>无违章奖励（500元/㎡）（元）</td>
                 <td class="" colspan=1>${bean.wwzjl?default("/")}</td>
                                 <td class="">11</td>
-                <td class=""  colspan=4>独生子女（30000元/人）</td>
+                <td class=""  colspan=4>独生子女（30000元/人）（元）</td>
                 <td class="" colspan=1>${bean.dsznbz?default("/")}</td>
             </tr>
             <tr>
                 <td class="">5</td>
-                <td class=""  colspan=4>未建二层奖（500元/㎡）</td>
+                <td class=""  colspan=4>未建二层奖（500元/㎡）（元）</td>
                 <td class="" colspan=1>${bean.wjecjj?default("/")}</td>
                                 <td class="">12</td>
-                <td class=""  colspan=4>停产停业补助（1000元/㎡）</td>
+                <td class=""  colspan=4>停产停业补助（1000元/㎡）（元）</td>
                 <td class="" colspan=1>${bean.tctdbz?default("/")}</td>
             </tr>
             <tr>
                 <td class="">6</td>
-                <td class=""  colspan=4>已建二层补助（500元/㎡）</td>
+                <td class=""  colspan=4>已建二层补助（500元/㎡）（元）</td>
                 <td class="" colspan=1>${bean.wjpzyjecbz?default("/")}</td>
                                 <td class="">13</td>
-                <td class=""  colspan=4>周转补助费（1500元/人/月）</td>
+                <td class=""  colspan=4>周转补助费（1500元/人/月）（元）</td>
                 <td class="" colspan=1>${bean.zzbz?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">7</td>
-                <td class=""  colspan=4>家电迁移补助（12000元/院）</td>
+                <td class=""  colspan=4>家电迁移补助（12000元/院）（元）</td>
                 <td class="" colspan=1>${bean.bjbz?default("/")}</td>
 				<td class=""  colspan=6></td>
             </tr> 
@@ -197,23 +208,23 @@
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <td class="" colspan=5>三、其他补助合计</td>
+                <td class="" colspan=5>三、其他补助合计（元）</td>
                 <td class="" colspan=1>${bean.dsbzf?number+bean.xgbzf?number+bean.zjdypwpbz?number+bean.yhzbwxmbc?number}</td>
                 <td class="" colspan=5 rowspan=5 style="text-align: left;vertical-align:top !important">被腾退人确认无误签字（按指纹）</td>
             </tr>   
             <tr>
                 <td class="">1</td>
-                <td class=""  colspan=4>滴水补助（90000元/产权院）</td>
+                <td class=""  colspan=4>滴水补助（90000元/产权院）（元）</td>
                 <td class="" colspan=1>${bean.dsbzf?default("/")}</td>
             </tr> 
            	<tr>
                 <td class="">2</td>
-                <td class=""  colspan=4>信鸽补助（30000元/产权院）</td>
+                <td class=""  colspan=4>信鸽补助（30000元/产权院）（元）</td>
                 <td class="" colspan=1>${bean.xgbzf?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">3</td>
-                <td class=""  colspan=4 >宅基地应批未批（350000元/产权院）</td>
+                <td class=""  colspan=4 >宅基地应批未批（350000元/产权院）（元）</td>
                 <td class="" colspan=1>${bean.zjdypwpbz?default("/")}</td>
             </tr> 
                          

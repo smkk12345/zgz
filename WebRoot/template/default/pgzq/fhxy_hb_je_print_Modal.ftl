@@ -73,22 +73,33 @@
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <td class="" colspan="2">被认定全体人员姓名（注明代际关系）</td>
-                <td class="" colspan=9>
-                    <#if bean.vacatelist??>
+                <td class="" colspan="2" style="width:10%">被认定全体人员姓名（注明代际关系）</td>
+                <td class="" colspan=9 style="text-align: left;padding: 10px;">
+                     <#if bean.vacatelist??>
                     <#if bean.vacatelist?size gt 0>
-                    在册人员：<br>
+                    <div class="center container-fluid" >在册人员：</div>
+                    <div class="container-fluid">
                     <#list bean.vacatelist as ROW>
-                    姓名：${ROW.name} 身份证号：${ROW.idcard} 产关：${ROW.changrelate}
+                     
+                     <div class=' aoJianGroup fl' style="width:280px;">
+                        ${ROW.name} ${ROW.idcard} ${ROW.changrelate}
+                    
+                    </div>
                     </#list>
+                    </div>   
                     </#if>
                     </#if>
+                    
                     <#if bean.list??>
-                    <#if bean.list?size gt 0><br>
-                    非在册人员：<br>
+                    <#if bean.list?size gt 0>
+                     <div class="center container-fluid">非在册人员：</div>
+                    <div class="container-fluid">
                     <#list bean.list as ROW>
-                    姓名：${ROW.name} 身份证号：${ROW.idcard} 产关：${ROW.changrelate}
+                    
+                   <div class=' aoJianGroup fl ' style="width:280px;">${ROW.name} ${ROW.idcard} ${ROW.changrelate}</div>
+                  
                     </#list>
+                     </div>
                     </#if>
                     </#if>
                 </td>
