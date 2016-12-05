@@ -1195,7 +1195,7 @@ public class DisplayBean extends BaseBean {
 			this.zzbz = zzbz;
 		}
 		public String getRdzjdallarea() {
-			return rdzjdallarea;
+			return rdzjdallarea.trim();
 		}
 		public void setRdzjdallarea(String rdzjdallarea) {
 			this.rdzjdallarea = rdzjdallarea;
@@ -1203,36 +1203,34 @@ public class DisplayBean extends BaseBean {
 		public String getKzqwbcmjj() {
 			if(null != kzzjdqwbcj&&null != fwbcmj){
 				double d = kzzjdqwbcj.doubleValue()/fwbcmj.doubleValue();
-				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
-				kzqwbcmjj = df.format(d);
-				return kzqwbcmjj;
+				java.text.DecimalFormat df=new java.text.DecimalFormat("#");
+//				kzqwbcmjj = df.format(d);
+				Double dv = new Double(d);
+				return dv.intValue()+"";
 			}
 			return "";
 		}
 		public String getCkzqwbcmjj() {
 			if(null != ckzjdqwbcj&&null != fwbcmj){
 				double d = ckzjdqwbcj.doubleValue()/fwbcmj.doubleValue();
-				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
-				ckzqwbcmjj = df.format(d);
-				return ckzqwbcmjj;
+				Double dv = new Double(d);
+				return dv.intValue()+"";
 			}
 			return "";
 		}
 		public String getFwjkmjj() {
 			if(null != bttfwczcxj&&null != fwbcmj){
 				double d = bttfwczcxj.doubleValue()/fwbcmj.doubleValue();
-				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
-				fwjkmjj = df.format(d);
-				return fwjkmjj;
+				Double dv = new Double(d);
+				return dv.intValue()+"";
 			}
 			return "";
 		}
 		public String getSbzxmjj() {
-			if(null != kzzjdqwbcj&&null != fwbcmj){
-				double d = kzzjdqwbcj.doubleValue()/fwbcmj.doubleValue();
-				java.text.DecimalFormat df=new java.text.DecimalFormat("#.##");
-				sbzxmjj = df.format(d);
-				return sbzxmjj;
+			if(null != zxsbfswjk&&null != fwbcmj){
+				double d = zxsbfswjk.doubleValue()/fwbcmj.doubleValue();
+				Double dv = new Double(d);
+				return dv.intValue()+"";
 			}
 			return "";
 		}

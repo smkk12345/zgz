@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td class=""colspan="2">宅基地实测(m<sup>2</sup>)</td>
-                <td class="" >${bean.zjdarea?c?default("")}</td>
+                <td class="" ><#if bean.zjdarea??>${bean.zjdarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="" >身份证</td>
                 <td class="" colspan=3>${bean.idcard?default("")}</td>
                 <td class="" >认定年限</td>
@@ -31,38 +31,38 @@
             </tr>
             <tr>
                 <td class="" colspan="2">实测建面(m<sup>2</sup>)</td>
-                <td class="">${bean.fwarea?c?default("")}</td>
+                <td class=""><#if bean.fwarea??>${bean.fwarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="">首层(m<sup>2</sup>)</td>
-                <td class="" >${bean.firstfloorarea?default(0)}</td>
+                <td class="" ><#if bean.firstfloorarea??>${bean.firstfloorarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="">二层及以上(m<sup>2</sup>)</td>
-                <td class="">${bean.abovetwoarea?default(0)}</td>
+                <td class=""><#if bean.abovetwoarea??>${bean.abovetwoarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="">地下室(m<sup>2</sup>)</td>
-                <td class="">${bean.basement?default(0)}</td>
+                <td class=""><#if bean.basement??>${bean.basement?string("0.00")}<#else>0.00</#if></td>
                 <td class="">棚(m<sup>2</sup>)</td>
-                <td class="">${bean.shed?default(0)}</td>
+                <td class=""><#if bean.shed??>${bean.shed?string("0.00")}<#else>0.00</#if></td>
             </tr>
             <tr>
                 <td class="" colspan=3>认定宅基地面积(m<sup>2</sup>)</td>
-                <td class="" colspan=3>${bean.rdzjdallarea?default(0)}</td>
+                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.##")}<#else>0.00</#if></td>
                 <td class="" colspan=3>补偿宅基地面积(m<sup>2</sup>)</td>
-                <td class="" colspan=2>${bean.bczjdmj?default(0)}</td>
+                <td class="" colspan=2><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
             </tr>
             <tr>
                 <td class="" colspan=2>控制面积(m<sup>2</sup>)</td>
-                <td class="" colspan=1>${bean.conhomestarea?default(0)}</td>
+                <td class="" colspan=1><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="" colspan="2">区位单价(元)</td>
                 <!--                <td class="">${bean.kzzjdqwbcj?default(0)}</td>-->
                 <td class="" >6000</td>
                 <td class="" colspan="2">超控面积(m<sup>2</sup>)</td>
-                <td class="" >${bean.overhomesteadarea?default(0)}</td>
+                <td class="" ><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="" >区位单价(元)</td>
                 <td class="" ><#if (bean.homesteadyear?default("-1"))=='0'>3000<#else>1800</#if></td>
             </tr>
             <tr>
                 <td class="" colspan="2">认定房屋面积(m<sup>2</sup>)</td>
-                <td class="">${bean.fwbcmj?default(0)}</td>
+                <td class=""><#if bean.fwbcmj??>${bean.fwbcmj?string("0.00")}<#else>0.00</#if></td>
                 <td class="">经营面积(m<sup>2</sup>)</td>
-                <td class="" >${bean.operatearea?default(0)}</td>
+                <td class="" ><#if bean.operatearea??>${bean.operatearea?string("0.00")}<#else>0.00</#if></td>
                 <td class="">本址在册人数</td>
                 <td class="">${bean.localpeoplecount?default(0)}</td>
                 <td class="">非本址在册人数</td>
@@ -108,9 +108,9 @@
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
                 <td class="" colspan="2">应选面积(m<sup>2</sup>)</td>
-                <td>${bean.yxmj?default("")}</td>
+                <td><#if bean.yxmj??>${bean.yxmj?string("0.00")}<#else>0.00</#if></td>
                 <td colspan=3>实际选房面积(m<sup>2</sup>)</td>
-                <td colspan=1>${bean.sjxfmj?default("")}</td>
+                <td colspan=1><#if bean.sjxfmj??>${bean.sjxfmj?string("0.00")}<#else>0.00</#if></td>
                 <td colspan=3>选房总套数（套）</td>
                 <td >${bean.xfts?default("")}</td>
             </tr>
@@ -204,20 +204,20 @@
 
             <tr>
                 <td class="">1</td>
-                <td class="" colspan=4>提前搬家奖（5000元/院）(元)</td>
+                <td class="" colspan=4>提前搬家奖（5000元/院）</td>
                 <td class="" >${bean.tqbjl?c?default("/")}</td>
                  <td class="">12</td>
-                <td class="" colspan=4>独生子女（30000元/人）(元)</td>
+                <td class="" colspan=4>独生子女（30000元/人）</td>
                 <td class="" >${bean.dsznbz?c?default("/")}</td>
 
             </tr>
             <tr>
                 <td class="">2</td>
-                <td class="" colspan=4>工程配合奖（100000元/院）(元)</td>
+                <td class="" colspan=4>工程配合奖（100000元/院）</td>
                 <td class="" >${bean.gcphjl?c?default("")}</td>
                 
                 <td class="">13</td>
-                <td class="" colspan=4>停产停业补助（1000元/㎡）(元)</td>
+                <td class="" colspan=4>停产停业补助（1000元/㎡）</td>
                 <td class="">${bean.tctdbz?c?default("/")}</td>
 
                 
@@ -225,17 +225,17 @@
             </tr>
             <tr>
                 <td class="">3</td>
-                <td class="" colspan=4>腾退促进奖（50000元/院）(元)</td>
+                <td class="" colspan=4>腾退促进奖（50000元/院）</td>
                 <td class="">${bean.ttcjjl?c?default("/")}</td>
                 <td class="">14</td>
-                <td class="" colspan=4>周转补助费（1500元/人/月）(元)</td>
+                <td class="" colspan=4>周转补助费（1500元/人/月）</td>
                 <td class="">${bean.zzbz?c?default("/")}</td>
 
               
             </tr>
             <tr>
                 <td class="">4</td>
-                <td class="" colspan=4>无违章奖励（500元/㎡）(元)</td>
+                <td class="" colspan=4>无违章奖励（500元/㎡）</td>
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
              <#assign dsbzf = bean.dsbzf?c?default(0)>
 		    <#assign xgbzf = bean.xgbzf?c?default(0)>
@@ -244,7 +244,7 @@
 		    <#assign qtbzhj = dsbzf?number+xgbzf?number+zjdypwpbz?number+yhzbwxmbc?number>
 
                 <td class="">15</td>
-                <td class="" colspan=4>其他补助35万、信鸽补助、滴水补助(元)</td>
+                <td class="" colspan=4>其他补助35万、信鸽补助、滴水补助（元）</td>
                 <td class="">${qtbzhj?c}</td>
                 
                 
@@ -252,40 +252,40 @@
             </tr>
             <tr>
                 <td class="">5</td>
-                <td class="" colspan=4>未建二层奖（500元/㎡）(元)</td>
+                <td class="" colspan=4>未建二层奖（500元/㎡）</td>
                 <td class="" >${bean.wjecjj?c?default("/")}</td>
                 <td class="" colspan=6 rowspan="7" style="text-align: left;vertical-align:top !important">备注:${bean.remark?default("/")}</td>
             </tr>
             <tr>
                 <td class="">6</td>
-                <td class="" colspan=4>已建二层补助（500元/㎡）(元)</td>
+                <td class="" colspan=4>已建二层补助（500元/㎡）</td>
                 <td class="" >${bean.wjpzyjecbz?c?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">7</td>
-                <td class="" colspan=4>家电迁移补助（12000元/院）(元)</td>
+                <td class="" colspan=4>搬家及家电迁移补助（12000元/院）</td>
                 <td class="" >${bean.bjbz?c?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">8</td>
-                <td class="" colspan=4>期房补助费（总购房款10%）(元)</td>
+                <td class="" colspan=4>期房补助费（总购房款10%）</td>
                 <td class="" >${bean.qfbz?c?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">9</td>
-                <td class="" colspan=4>大病补助（50000元/人）(元)</td>
+                <td class="" colspan=4>大病补助（50000元/人）</td>
                 <td class="">${bean.dbbz?c?default("/")}</td>
                 
             </tr> 
             <tr>
                 <td class="">10</td>
-                <td class="" colspan=4>残疾补助（30000元/人）(元)</td>
+                <td class="" colspan=4>残疾补助（30000元/人）</td>
                 <td class="">${bean.cjbz?c?default("/")}</td>
 
             </tr> 
             <tr>
                 <td class="">11</td>
-                <td class="" colspan=4>低保补助（30000元/人）(元)</td>
+                <td class="" colspan=4>低保补助（30000元/人）</td>
                 <td class="">${bean.dbhbz?c?default("/")}</td>
                 
             </tr>
