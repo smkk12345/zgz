@@ -56,7 +56,7 @@
                 <td class="" colspan="2">超控面积(m<sup>2</sup>)</td>
                 <td class="" >${bean.overhomesteadarea?default(0)}</td>
                 <td class="" >区位单价(元)</td>
-                <td class= <#if (bean.homesteadyear?default("-1"))=='0'>3000<#else>1800</#if></td>
+                <td class="" ><#if (bean.homesteadyear?default("-1"))=='0'>3000<#else>1800</#if></td>
             </tr>
             <tr>
                 <td class="" colspan="2">认定房屋面积(m<sup>2</sup>)</td>
