@@ -160,7 +160,7 @@
                 <td class="">4</td>
                 <td class="" colspan=5>无违章奖励（500元/㎡）(元)</td>
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
-                <td class="" colspan=4 rowspan=4 style="text-align: left;vertical-align:top !important">腾退服务公司经手人签字:</td>
+                <td class="" colspan=4 rowspan=11 style="text-align: left;vertical-align:top !important">备注：</td>
             </tr>
             <tr>
                 <td class="">5</td>
@@ -181,7 +181,7 @@
                 <td class="">8</td>
                 <td class="" colspan=5>大病补助（50000元/人）(元)</td>
                 <td class="">${bean.dbbz?c?default("/")}</td>
-                <td colspan="4" rowspan="2" style="text-align: left;vertical-align:top !important">实施主体意见: </td>
+
             </tr> 
             <tr>
                 <td class="">9</td>
@@ -192,7 +192,6 @@
                 <td class="">10</td>
                 <td class="" colspan=5>低保补助（30000元/人）(元)</td>
                 <td class="">${bean.dbhbz?c?default("/")}</td>
-                <td colspan="4" rowspan="3" style="text-align: left;vertical-align:top !important">内审组经手人签字:</td>
             </tr>
             <tr>
                 <td class="">11</td>
@@ -208,12 +207,14 @@
                 <td class="">13</td>
                 <td class="" colspan=5>周转补助费（1500元/人/月）(元)</td>
                 <td class="">${bean.zzbz?c?default("/")}</td>
-                <td colspan="4" rowspan="2" style="text-align: left;vertical-align:top !important">备注:</td>
             </tr> 
             <tr>
+	            <#assign dsbzf = bean.dsbzf?c?default(0)>
+				<#assign xgbzf = bean.xgbzf?c?default(0)>
+				<#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
                 <td class="">14</td>
                 <td class="" colspan=5>其他补助35万、信鸽补助、滴水补助(元)</td>
-                <td class="">${bean.dsbzf?number}</td>
+                <td class="">${dsbzf?number+xgbzf?number+zjdypwpbz?number}</td>
             </tr>                   
         </table>
     </div>

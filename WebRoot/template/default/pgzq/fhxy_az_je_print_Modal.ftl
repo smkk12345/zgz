@@ -197,46 +197,54 @@
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
                 <td class="" colspan=5>二、各项奖励、补助、周转合计(元)</td>
-                <td class="" colspan=1>${bean.jlfsum?c?default("/")}</td>
-                 <td class="">12</td>
-                <td class="" colspan=4>独生子女（30000元/人）(元)</td>
-                <td class="" >${bean.dsznbz?c?default("/")}</td>
+                <td class="" >${bean.jlfsum?c?default("/")}</td>
+                
             </tr>
 
             <tr>
                 <td class="">1</td>
                 <td class="" colspan=4>提前搬家奖（5000元/院）(元)</td>
                 <td class="" >${bean.tqbjl?c?default("/")}</td>
+                 <td class="">12</td>
+                <td class="" colspan=4>独生子女（30000元/人）(元)</td>
+                <td class="" >${bean.dsznbz?c?default("/")}</td>
 
-                <td class="">13</td>
-                <td class="" colspan=4>停产停业补助（1000元/㎡）(元)</td>
-                <td class="">${bean.tctdbz?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">2</td>
                 <td class="" colspan=4>工程配合奖（100000元/院）(元)</td>
                 <td class="" >${bean.gcphjl?c?default("")}</td>
+                
+                <td class="">13</td>
+                <td class="" colspan=4>停产停业补助（1000元/㎡）(元)</td>
+                <td class="">${bean.tctdbz?c?default("/")}</td>
 
-                <td class="">14</td>
-                <td class="" colspan=4>周转补助费（1500元/人/月）(元)</td>
-                <td class="">${bean.zzbz?c?default("/")}</td>
+                
                 
             </tr>
             <tr>
                 <td class="">3</td>
                 <td class="" colspan=4>腾退促进奖（50000元/院）(元)</td>
                 <td class="">${bean.ttcjjl?c?default("/")}</td>
+                <td class="">14</td>
+                <td class="" colspan=4>周转补助费（1500元/人/月）(元)</td>
+                <td class="">${bean.zzbz?c?default("/")}</td>
 
-                <td class="">15</td>
-                <td class="" colspan=4>其他补助35万、信鸽补助、滴水补助(元)</td>
-                <td class="">${bean.yhzbwxmbc?number}</td>
+              
             </tr>
             <tr>
+            <#assign dsbzf = bean.dsbzf?c?default(0)>
+		   <#assign xgbzf = bean.xgbzf?c?default(0)>
+		   <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
+		   <#assign yhzbwxmbc = bean.yhzbwxmbc?c?default(0)>
                 <td class="">4</td>
                 <td class="" colspan=4>无违章奖励（500元/㎡）(元)</td>
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
+
+                <td class="">15</td>
+                <td class="" colspan=4>其他补助35万、信鸽补助、滴水补助(元)</td>
+                <td class="">${dsbzf?number+ xgbzf?number+ zjdypwpbz?number+ yhzbwxmbc?number}</td>
                 
-                <td class="" colspan=6 rowspan=2 style="text-align: left;vertical-align:top !important">腾退服务公司经手人签字:</td>
                 
                
             </tr>
@@ -244,12 +252,12 @@
                 <td class="">5</td>
                 <td class="" colspan=4>未建二层奖（500元/㎡）(元)</td>
                 <td class="" >${bean.wjecjj?c?default("/")}</td>
+                <td class="" colspan=6 rowspan="7" style="text-align: left;vertical-align:top !important">备注:</td>
             </tr>
             <tr>
                 <td class="">6</td>
                 <td class="" colspan=4>已建二层补助（500元/㎡）(元)</td>
                 <td class="" >${bean.wjpzyjecbz?c?default("/")}</td>
-                <td colspan="6" rowspan="2" style="text-align: left;vertical-align:top !important">实施主体意见: </td>
             </tr> 
             <tr>
                 <td class="">7</td>
@@ -260,7 +268,6 @@
                 <td class="">8</td>
                 <td class="" colspan=4>期房补助费（总购房款10%）(元)</td>
                 <td class="" >${bean.qfbz?c?default("/")}</td>
-                <td colspan="6" rowspan="2" style="text-align: left;vertical-align:top !important">内审组经手人签字:</td>
             </tr> 
             <tr>
                 <td class="">9</td>
@@ -272,7 +279,7 @@
                 <td class="">10</td>
                 <td class="" colspan=4>残疾补助（30000元/人）(元)</td>
                 <td class="">${bean.cjbz?c?default("/")}</td>
-                <td colspan="6" rowspan="2" style="text-align: left;vertical-align:top !important">备注:</td>
+
             </tr> 
             <tr>
                 <td class="">11</td>

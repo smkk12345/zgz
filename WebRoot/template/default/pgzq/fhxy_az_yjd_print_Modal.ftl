@@ -150,25 +150,25 @@
                 <td class=""  colspan=1>1</td>
                 <td class="" colspan=4>控制区位补偿价（元）</td>
                 <td class="" colspan=1>${bean.kzzjdqwbcj?c?default("")}</td>
-                <td class="" colspan=5 >${bean.kzqwbcmjj?c?default("")}</td>
+                <td class="" colspan=5 >${bean.kzqwbcmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="">2</td>
                 <td class="" colspan=4>超控制区位补偿价（元）</td>
                 <td class="" colspan=1>${bean.ckzjdqwbcj?c?default("")}</td>
-                <td class="" colspan=5>${bean.ckzqwbcmjj?c?default("")}</td>
+                <td class="" colspan=5>${bean.ckzqwbcmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="">3</td>
                 <td class="" colspan=4>房屋价款（元）</td>
                 <td class="" colspan=1>${bean.bttfwczcxj?c?default("")}</td>
-                <td class="" colspan=5>${bean.fwjkmjj?c?default("")}</td>
+                <td class="" colspan=5>${bean.fwjkmjj?default("")}</td>
             </tr>
             <tr>
                 <td class="">4</td>
                 <td class="" colspan=4>装修、设备附属物价款（元）</td>
                 <td class="" colspan=1>${bean.zxsbfswjk?c?default("")}</td>
-                <td class="" colspan=5>${bean.sbzxmjj?c?default("")}</td>
+                <td class="" colspan=5>${bean.sbzxmjj?default("")}</td>
             </tr>
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
@@ -242,9 +242,13 @@
            	</tr>
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
-            <tr>
+            <tr>	
+	            <#assign dsbzf = bean.dsbzf?c?default(0)>
+			    <#assign xgbzf = bean.xgbzf?c?default(0)>
+			    <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
+			    <#assign yhzbwxmbc = bean.yhzbwxmbc?c?default(0)>
                 <td class="" colspan=5>三、其他补助合计（元）</td>
-                <td class="" colspan=1>${bean.dsbzf?number+bean.xgbzf?number+bean.zjdypwpbz?number+bean.yhzbwxmbc?number}</td>
+                <td class="" colspan=1>${dsbzf?number+xgbzf?number+zjdypwpbz?number+yhzbwxmbc?number}</td>
                 <td class="" colspan=5 rowspan=5 style="text-align: left;vertical-align:top !important">被腾退人确认无误签字（按指纹）</td>
             </tr>   
             <tr>
