@@ -213,7 +213,7 @@
             <tr>
                 <td class="">14</td>
                 <td class="" colspan=5>其他补助35万、信鸽补助、滴水补助(元)</td>
-                <td class="">${bean.dsbzf?number+bean.xgbzf?number+bean.zjdypwpbz?number+bean.yhzbwxmbc?number}</td>
+                <td class="">${bean.dsbzf?number}</td>
             </tr>                   
         </table>
     </div>
