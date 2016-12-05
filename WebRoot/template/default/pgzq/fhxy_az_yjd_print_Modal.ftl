@@ -128,113 +128,113 @@
 				<td class="" colspan=2>三居（110㎡）(套)</td>
                 <td class="">${bean.sjs?default("")}</td>
                 <td class=""  colspan=2>指标内购房款（4000元/㎡）</td>
-                <td class="">${bean.zbngfk?default("/")}</td>
+                <td class="">${bean.zbngfk?c?default("/")}</td>
                 <td colspan=2>指标外房款（6000元/㎡）</td>
-                <td>${bean.zbwgfk?default("/")}</td>
+                <td>${bean.zbwgfk?c?default("/")}</td>
                 <td>总购房款（元）</td>
-                <td colspan=1>${bean.azfgfk?default("")}</td>
+                <td colspan=1>${bean.azfgfk?c?default("")}</td>
             </tr>
 
             <tr>
                 <td class="" colspan=3>宅基地腾退补偿总价（元）</td>
-                <td class="" colspan=1>${bean.zjdttzj?default("")}</td>
+                <td class="" colspan=1>${bean.zjdttzj?c?default("")}</td>
                 <td class="" colspan=5>宅基地腾退补偿总价抵扣购房款余额（元）</td>
-                <td class="" colspan=2>${bean.jshk?default("")}</td>
+                <td class="" colspan=2>${bean.jshk?c?default("")}</td>
             </tr>
             <tr>	
                 <td class="" colspan=4>一，宅基地补偿款合计（元）</td>
-                <td class="" colspan=2>${bean.zjdttbck?default("")}</td>
+                <td class="" colspan=2>${bean.zjdttbck?c?default("")}</td>
                 <td class="" colspan=5>房屋重置米均价（元）</td>
             </tr>
             <tr>
                 <td class=""  colspan=1>1</td>
                 <td class="" colspan=4>控制区位补偿价（元）</td>
-                <td class="" colspan=1>${bean.kzzjdqwbcj?default("")}</td>
-                <td class="" colspan=5 >${bean.kzqwbcmjj?default("")}</td>
+                <td class="" colspan=1>${bean.kzzjdqwbcj?c?default("")}</td>
+                <td class="" colspan=5 >${bean.kzqwbcmjj?c?default("")}</td>
             </tr>
             <tr>
                 <td class="">2</td>
                 <td class="" colspan=4>超控制区位补偿价（元）</td>
-                <td class="" colspan=1>${bean.ckzjdqwbcj?default("")}</td>
-                <td class="" colspan=5>${bean.ckzqwbcmjj?default("")}</td>
+                <td class="" colspan=1>${bean.ckzjdqwbcj?c?default("")}</td>
+                <td class="" colspan=5>${bean.ckzqwbcmjj?c?default("")}</td>
             </tr>
             <tr>
                 <td class="">3</td>
                 <td class="" colspan=4>房屋价款（元）</td>
-                <td class="" colspan=1>${bean.bttfwczcxj?default("")}</td>
-                <td class="" colspan=5>${bean.fwjkmjj?default("")}</td>
+                <td class="" colspan=1>${bean.bttfwczcxj?c?default("")}</td>
+                <td class="" colspan=5>${bean.fwjkmjj?c?default("")}</td>
             </tr>
             <tr>
                 <td class="">4</td>
                 <td class="" colspan=4>装修、设备附属物价款（元）</td>
-                <td class="" colspan=1>${bean.zxsbfswjk?default("")}</td>
-                <td class="" colspan=5>${bean.sbzxmjj?default("")}</td>
+                <td class="" colspan=1>${bean.zxsbfswjk?c?default("")}</td>
+                <td class="" colspan=5>${bean.sbzxmjj?c?default("")}</td>
             </tr>
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
                 <td class="" colspan=5>二、各项奖励、补助、周转合计（元）</td>
-                <td class="" colspan=7>${bean.jlfsum?default("/")}</td>
+                <td class="" colspan=7>${bean.jlfsum?c?default("/")}</td>
                
             </tr>
 
             <tr>
                 <td class="">1</td>
                 <td class="" colspan=4>提前搬家奖（5000元/院）（元）</td>
-                <td class="" colspan=1>${bean.tqbjl?default("/")}</td>
+                <td class="" colspan=1>${bean.tqbjl?c?default("/")}</td>
 
                 <td class="">8</td>
                 <td class=""  colspan=4>期房补助费（总购房款10%）（元）</td>
-                <td class="" colspan=1>${bean.qfbz?default("/")}</td>
+                <td class="" colspan=1>${bean.qfbz?c?default("/")}</td>
                 
             </tr>
             <tr>
                 <td class="">2</td>
                 <td class=""  colspan=4>工程配合奖（100000元/院）（元）</td>
-                <td class="" colspan=1>${bean.gcphjl?default("")}</td>
+                <td class="" colspan=1>${bean.gcphjl?c?default("")}</td>
                 <td class="">9</td>
                 <td class=""  colspan=4>大病补助（50000元/人）（元）</td>
-                <td class="" colspan=1>${bean.dbbz?default("/")}</td>
+                <td class="" colspan=1>${bean.dbbz?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">3</td>
                 <td class=""  colspan=4>腾退促进奖（50000元/院）（元）</td>
-                <td class="" colspan=1>${bean.ttcjjl?default("/")}</td>
+                <td class="" colspan=1>${bean.ttcjjl?c?default("/")}</td>
                                 <td class="">10</td>
                 <td class=""  colspan=4>残疾补助（30000元/人）（元）</td>
-                <td class="" colspan=1>${bean.cjbz?default("/")}</td>
+                <td class="" colspan=1>${bean.cjbz?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">4</td>
                 <td class=""  colspan=4>无违章奖励（500元/㎡）（元）</td>
-                <td class="" colspan=1>${bean.wwzjl?default("/")}</td>
+                <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
                                 <td class="">11</td>
                 <td class=""  colspan=4>低保补助（30000元/人）（元）</td>
-                <td class="" colspan=1>${bean.dbbz?default("/")}</td>
+                <td class="" colspan=1>${bean.dbbz?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">5</td>
                 <td class=""  colspan=4>未建二层奖（500元/㎡）（元）</td>
-                <td class="" colspan=1>${bean.wjecjj?default("/")}</td>
+                <td class="" colspan=1>${bean.wjecjj?c?default("/")}</td>
                                 <td class="">12</td>
                 <td class=""  colspan=4>独生子女（30000元/人）（元）</td>
-                <td class="" colspan=1>${bean.dsznbz?default("/")}</td>
+                <td class="" colspan=1>${bean.dsznbz?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">6</td>
                 <td class=""  colspan=4>已建二层补助（500元/㎡）（元）</td>
-                <td class="" colspan=1>${bean.wjpzyjecbz?default("/")}</td>
+                <td class="" colspan=1>${bean.wjpzyjecbz?c?default("/")}</td>
                                 <td class="">13</td>
                 <td class=""  colspan=4>停产停业补助（1000元/㎡）（元）</td>
-                <td class="" colspan=1>${bean.tctdbz?default("/")}</td>
+                <td class="" colspan=1>${bean.tctdbz?c?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">7</td>
                 <td class=""  colspan=4>家电迁移补助（12000元/院）（元）</td>
-                <td class="" colspan=1>${bean.bjbz?default("/")}</td>
+                <td class="" colspan=1>${bean.bjbz?c?default("/")}</td>
                 <td class="">14</td>
                 <td class=""  colspan=4>周转补助费（1500元/人/月）（元）</td>
-                <td class="" colspan=1>${bean.zzbz?default("/")}</td>
+                <td class="" colspan=1>${bean.zzbz?c?default("/")}</td>
             </tr> 
            	<tr>
            		 <td class="">备注</td>
@@ -250,22 +250,22 @@
             <tr>
                 <td class="">1</td>
                 <td class=""  colspan=4>滴水补助（90000元/产权院）（元）</td>
-                <td class="" colspan=1>${bean.dsbzf?default("/")}</td>
+                <td class="" colspan=1>${bean.dsbzf?c?default("/")}</td>
             </tr> 
            	<tr>
                 <td class="">2</td>
                 <td class=""  colspan=4>信鸽补助（30000元/产权院）（元）</td>
-                <td class="" colspan=1>${bean.xgbzf?default("/")}</td>
+                <td class="" colspan=1>${bean.xgbzf?c?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">3</td>
                 <td class=""  colspan=4 >宅基地应批未批（350000元/产权院）（元）</td>
-                <td class="" colspan=1>${bean.zjdypwpbz?default("/")}</td>
+                <td class="" colspan=1>${bean.zjdypwpbz?c?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">4</td>
                 <td class=""  colspan=4>优惠指标未选满（6000元/㎡）（元）</td>
-                <td class="" colspan=1>${bean.yhzbwxmbc?default("/")}</td>
+                <td class="" colspan=1>${bean.yhzbwxmbc?c?default("/")}</td>
             </tr>                 
         </table>
     </div>
