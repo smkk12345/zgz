@@ -41,6 +41,8 @@ import com.hibernate.baseSettingInfo.domain.GrainTypeBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
 import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
+import com.hibernate.timers.utils.DateStyle;
+import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.hibernate.userInfo.damain.User;
 import com.hibernate.utils.SortUtils;
@@ -523,6 +525,7 @@ public class PgqqController {
 			String checkname=request.getParameter("checkname");//
 			//复合日期
 			String checkDate=request.getParameter("checkDate");
+			checkDate = DateUtil.DateToString(new Date(),DateStyle.YYYY_MM_DD_HH_MM_SS_EN);
 			//复核备注
 			String checkremark=request.getParameter("checkremark");
 			//id

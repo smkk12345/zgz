@@ -20,12 +20,21 @@
             </span></#if>补偿协议台账</a>
     </li>-->
     
-     <#if role.roleAuthority[31]=="2">  
+    <#if role.roleAuthority[31]=="2">  
     <li <#if CURENT_TAB_2 =='qysxhtz'>class="active"</#if>><a href="${BASE_PATH}sjfx/qysxhtz.action">
             <#if CURENT_TAB_2 =='qysxhtz'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>签约顺序号台账</a>
     </li>
-      </#if>
+    </#if>
+      
+          
+    <#if role.roleAuthority[31]=="2">  
+    <li <#if CURENT_TAB_2 =='shtz'>class="active"</#if>><a href="${BASE_PATH}sjfx/shtz.action">
+            <#if CURENT_TAB_2 =='shtz'><span class="yu-tu-fgsj-active"></span>
+            <#else><span class="yu-tu-fgsj-commen">
+            </span></#if>审核台账</a>
+    </li>
+    </#if>
 </ul>
 </@override>

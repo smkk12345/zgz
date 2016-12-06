@@ -381,4 +381,99 @@ public class SjfxController {
 		return sb.toString();
 	}
 	
+	
+	@RequestMapping({"/sjfx/shtz.action"})
+	public ModelAndView shtz(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+//			<td>${ROW.displaysection}</td> 
+//			<td>${ROW.hj}</td>
+//			<td>${ROW.jrshtj}</td>
+//			<td>${ROW.ljshtj}</td>
+			//sb.append(" checkresult = 1 and date_format(checkDate,'%Y-%m-%d') = '2016-12-05';");
+			//累计审核通过
+			List<Map<String,Integer>> list0 =  ServiceManager.getHouseBasicServce().getListByCheckResult(" and checkresult = '1'");
+			String dateStr = DateUtil.getDate(new Date());
+			List<Map<String,Integer>> list1 =  ServiceManager.getHouseBasicServce().getListByCheckResult(" and checkresult = '1'" +
+					" and  date_format(checkDate,'%Y-%m-%d') = '"+dateStr+"' ");
+			//合计
+			List<Map<String,Integer>> list2 =  ServiceManager.getHouseBasicServce().getListByCheckResult("");
+			
+			List<Map<String,String>> list = initCheckResultList();
+			Map<String,String> map8 = list.get(7);
+			//累计审核通过
+			for (int i = 0; i < list0.size(); i++) {
+				Map<String,Integer> ag = list0.get(i);
+				int n = ag.get("displaysection");
+				Map<String,String> map  = list.get(n-1 );
+				map.put("ljshtj", ag.get("shcount")+"");
+				map8.put("ljshtj", (Integer.parseInt(map8.get("ljshtj"))+ag.get("shcount"))+"");
+			}
+			for (int i = 0; i < list1.size(); i++) {
+				Map<String,Integer> ag = list1.get(i);
+				int n = ag.get("displaysection");
+				Map<String,String> map  = list.get(n-1 );
+				map.put("jrshtj", ag.get("shcount")+"");
+				map8.put("jrshtj", (Integer.parseInt(map8.get("jrshtj"))+ag.get("shcount"))+"");
+			}
+			for (int i = 0; i < list2.size(); i++) {
+				Map<String,Integer> ag = list2.get(i);
+				int n = ag.get("displaysection");
+				Map<String,String> map  = list.get(n-1 );
+				map.put("hj", ag.get("shcount")+"");
+				map8.put("hj", (Integer.parseInt(map8.get("hj"))+ag.get("shcount"))+"");
+			}
+//			HashMap<String,String> map = new HashMap<String, String>();
+//			map.put("displaysection", "");
+//			map.put("hj", "");
+//			map.put("jrshtj", "");
+//			map.put("ljshtj", "");   就类似于列转行
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "SJFX");
+			model.addAttribute("CURENT_TAB_2", "shtz");
+			model.addAttribute("CURENT_TAB_3", "shtz");
+
+			return new ModelAndView(PageConst.SJFX_shtz, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+
+	private List<Map<String,String>> initCheckResultList(){
+		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
+		for (int i = 1; i < 8; i++) {
+			Map<String,String> map = new HashMap<String, String>();
+			map.put("section", i+"");
+			map.put("displaysection", Contanst.sectionMap.get(i+""));
+			map.put("hj", "0");
+			map.put("jrshtj", "0");
+			map.put("ljshtj", "0");
+			list.add(map);
+		}
+		
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("section", "8");
+		map.put("displaysection", "合计");
+		map.put("hj", "0");
+		map.put("jrshtj", "0");
+		map.put("ljshtj", "0");
+		list.add(map);
+		return list ;
+	}
+	
 }

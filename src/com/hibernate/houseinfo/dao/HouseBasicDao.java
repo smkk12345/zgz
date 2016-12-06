@@ -20,6 +20,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.impl.SQLQueryImpl;
+import org.hibernate.mapping.Array;
 import org.springframework.jdbc.object.SqlQuery;
 import org.springframework.ui.ModelMap;
 
@@ -536,6 +537,34 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		return list;
 	}
 	
+	
+	public List<Map<String,Integer>> getListByCheckResult(String subSql){
+		List<Map<String,Integer>> result = new ArrayList<Map<String,Integer>>();
+		Session s = null;
+		try {
+			s = getSession();
+			StringBuffer sb = new StringBuffer();//	and id = '1'
+			sb.append("SELECT count(*) as shcount,section  as displaysection FROM housebasic  where 1=1 ");
+			if(!StringUtils.isBlank(subSql)){
+				sb.append(subSql);
+			}
+			sb.append(" group by section order by (section+0) ");//section+0 
+			List list0 = s.createSQLQuery(sb.toString())
+					.addScalar("shcount",Hibernate.STRING)
+					.addScalar("displaysection",Hibernate.STRING)
+					.list();
+			for(Iterator it = list0.iterator();it.hasNext();){
+				Object[] objects = (Object[])it.next();
+				Map<String,Integer> map = new HashMap<String, Integer>();
+				map.put("shcount", Integer.parseInt(objects[0]+""));
+				map.put("displaysection", Integer.parseInt(objects[1]+""));
+				result.add(map);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	
 }
