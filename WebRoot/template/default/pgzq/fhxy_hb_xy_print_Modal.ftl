@@ -22,22 +22,22 @@
         甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.location?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。</p>
         <p class="leftTitle">第二条&nbsp;&nbsp;宅基地认定</p>
         <p class="contex-1" >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u><#if housebasic.zjdarea??>${housebasic.zjdarea?string("#.##")}<#else>0.00</#if></u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u><#if housebasic.zjdarea??>${housebasic.zjdarea?string("0.00")}<#else>0.00</#if></u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为<u>
            <#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积<u>
-           <#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.##")}<#else>0.00</#if></u>平方米，补偿宅基地面积<u>
-           <#if bean.bczjdmj??>${bean.bczjdmj?string("#.##")}<#else>0.00</#if></u>平方米。其中：<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u><#if bean.conhomestarea??>${bean.conhomestarea?string("#.##")}<#else>0.00</#if></u>平方米；超出宅基地控制面积<u><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("#.##")}<#else>0.00</#if></u>平方米。
+           <#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积<u>
+           <#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></u>平方米；超出宅基地控制面积<u><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></u>平方米。
         </p>
         <p class="leftTitle">第三条&nbsp;&nbsp;房屋补偿面积</p>
         <p class="contex-1" >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、经受托测绘公司现场实测，现状实测房屋建筑面积    <#if housebasic.fwarea??>${housebasic.fwarea?string("#.##")}<#else>0.00</#if>  平方米。其中：首层建筑面积<u>
-           <#if housebasic.firstfloorarea??>${housebasic.firstfloorarea?string("#.##")}<#else>0.00</#if> </u>平方米；二层及以上建筑面积<u>
-           <#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?string("#.##")}<#else>0.00</#if> </u>平方米；地下室建筑面积<u>
-           <#if housebasic.basement??>${housebasic.basement?string("#.##")}<#else>0.00</#if> </u>平方米；棚<u>
-           <#if housebasic.shed??>${housebasic.shed?string("#.##")}<#else>0.00</#if> </u>平方米。<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2、经认定工作组认定，认定房屋补偿面积<u> 
-           <#if housebasic.fwbcmj??>${housebasic.fwbcmj?string("#.##")}<#else>0.00</#if> </u>平方米。
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、经受托测绘公司现场实测，现状实测房屋建筑面积    <#if housebasic.fwarea??>${housebasic.fwarea?string("0.00")}<#else>0.00</#if>  平方米。其中：首层建筑面积<u>
+           <#if housebasic.firstfloorarea??>${housebasic.firstfloorarea?string("0.00")}<#else>0.00</#if> </u>平方米；二层及以上建筑面积<u>
+           <#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?string("0.00")}<#else>0.00</#if> </u>平方米；地下室建筑面积<u>
+           <#if housebasic.basement??>${housebasic.basement?string("0.00")}<#else>0.00</#if> </u>平方米；棚<u>
+           <#if housebasic.shed??>${housebasic.shed?string("0.00")}<#else>0.00</#if> </u>平方米。<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2、经认定工作组认定，认定房屋补偿面积<u>
+           	<#if bean.fwbcmj??>${bean.fwbcmj?string("0.00")}<#else>0.00</#if></u>平方米。
         </p>
         <p class="leftTitle">第四条&nbsp;&nbsp;被安置人口认定</p>
         <p class="contex-1" >
@@ -145,6 +145,11 @@
         </p> 
         <p class="leftTitle">（以下无正文）</p>
         <p class="pageBreak" style="margin-top: 570px;">&nbsp;</p>
+		<br>
+        <br>
+        <br>
+        <br>
+        <br>
         
         <p class="leftTitle">（签字页）</p>
 

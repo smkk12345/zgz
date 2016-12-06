@@ -210,11 +210,12 @@
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
                                 <td class="">11</td>
                 <td class=""  colspan=4>低保补助（30000元/人）</td>
-                <td class="" colspan=1>${bean.dbbz?c?default("/")}</td>
+                <td class="" colspan=1>${bean.dbhbz?c?default("/")}</td>
+				
             </tr>
             <tr>
                 <td class="">5</td>
-                <td class=""  colspan=4>未建二层奖（500元/㎡）</td>
+                <td class=""  colspan=4>未建二层及地下室奖励（500元/㎡）</td>
                 <td class="" colspan=1>${bean.wjecjj?c?default("/")}</td>
                                 <td class="">12</td>
                 <td class=""  colspan=4>独生子女（30000元/人）</td>
@@ -222,10 +223,10 @@
             </tr>
             <tr>
                 <td class="">6</td>
-                <td class=""  colspan=4>已建二层补助（500元/㎡）</td>
+                <td class=""  colspan=4>未经批准已建二层补助（500元/㎡）</td>
                 <td class="" colspan=1>${bean.wjpzyjecbz?c?default("/")}</td>
                                 <td class="">13</td>
-                <td class=""  colspan=4>停产停业补助（1000元/㎡）</td>
+                <td class=""  colspan=4>一次性停产停业补助（1000元/㎡）</td>
                 <td class="" colspan=1>${bean.tctdbz?c?default("/")}</td>
             </tr> 
             <tr>

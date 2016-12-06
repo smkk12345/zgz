@@ -164,12 +164,12 @@
             </tr>
             <tr>
                 <td class="">5</td>
-                <td class="" colspan=5>未建二层奖（500元/㎡）</td>
+                <td class="" colspan=5>未建二层及地下室奖励（500元/㎡）</td>
                 <td class="" >${bean.wjecjj?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">6</td>
-                <td class="" colspan=5>已建二层补助（500元/㎡）</td>
+                <td class="" colspan=5>未经批准已建二层补助（500元/㎡）</td>
                 <td class="" >${bean.wjpzyjecbz?c?default("/")}</td>
             </tr> 
             <tr>
@@ -200,7 +200,7 @@
             </tr>  
             <tr>
                 <td class="">12</td>
-                <td class="" colspan=5>停产停业补助（1000元/㎡）</td>
+                <td class="" colspan=5>一次性停产停业补助（1000元/㎡）</td>
                 <td class="">${bean.tctdbz?c?default("/")}</td>
             </tr>  
             <tr>
