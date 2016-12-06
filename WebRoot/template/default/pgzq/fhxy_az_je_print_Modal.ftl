@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <td class="" colspan=3>认定宅基地面积(m<sup>2</sup>)</td>
-                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.##")}<#else>0.00</#if></td>
+                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></td>
                 <td class="" colspan=3>补偿宅基地面积(m<sup>2</sup>)</td>
                 <td class="" colspan=2><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
             </tr>
@@ -244,7 +244,7 @@
 		    <#assign qtbzhj = dsbzf?number+xgbzf?number+zjdypwpbz?number+yhzbwxmbc?number>
 
                 <td class="">15</td>
-                <td class="" colspan=4>其他补助35万、信鸽补助、滴水补助（元）</td>
+                <td class="" colspan=4>滴水补助、信鸽补助、其他补助35万(元)</td>
                 <td class="">${qtbzhj?c}</td>
                 
                 

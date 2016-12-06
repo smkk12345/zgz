@@ -40,7 +40,7 @@
 
            <tr>
 			    <td class="" colspan=3>认定宅基地面积(㎡)</td>
-                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.##")}<#else>0.00</#if></td>
+                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></td>
                 <td class="" colspan=3>补偿宅基地面积(㎡)</td>
                 <td class="" colspan=2><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
 			</tr>
