@@ -228,10 +228,8 @@
                 <td class="" colspan=4>腾退促进奖（50000元/院）</td>
                 <td class="">${bean.ttcjjl?c?default("/")}</td>
                 <td class="">14</td>
-                <td class="" colspan=4>周转补助费（1500元/人/月）</td>
-                <td class="">${bean.zzbz?c?default("/")}</td>
-
-              
+                <td class="" colspan=4>周转补助费（1500元/人/月）*人*4月</td>
+                <td class="">${bean.zzbz?number}</td>
             </tr>
             <tr>
                 <td class="">4</td>

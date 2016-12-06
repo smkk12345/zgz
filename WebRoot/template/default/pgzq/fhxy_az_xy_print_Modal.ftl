@@ -52,8 +52,9 @@
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
             <#list housebasic.vacatelist as vacate>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;&nbsp;&nbsp;${vacate.name}&nbsp;&nbsp;&nbsp;&nbsp;</u>
-                &nbsp;&nbsp;&nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;&nbsp;&nbsp;${vacate.idcard}&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;${vacate.name}&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;产关：<u>&nbsp;&nbsp;${vacate.changrelate}&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;${vacate.idcard}&nbsp;&nbsp;</u>
             </p>
             </#list>
         </#if>
@@ -62,8 +63,9 @@
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非在册人员：</p>
             <#list housebasic.list as cate>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;&nbsp;&nbsp;${cate.name}&nbsp;&nbsp;&nbsp;&nbsp;</u>
-                    &nbsp;&nbsp;&nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;&nbsp;&nbsp;${cate.idcard}&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;${cate.name}&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;产关：<u>&nbsp;&nbsp;${cate.changrelate}&nbsp;&nbsp;</u>
+                &nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;${cate.idcard}&nbsp;&nbsp;</u>
                 </p>
             </#list>
             </#if>
@@ -210,8 +212,6 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
         </p>
-        <br>
-        <br>
         <br>
         <br>
         <br>
