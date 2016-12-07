@@ -27,8 +27,10 @@
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/Highcharts/highcharts.js"></script>
 
-        <div class="container-fluid" style="padding: 20px;height:100%">
+        <div class="container-fluid" style="padding: 20px;height:100%">    
+                                         
         <#if from = "touch">
+        
             <a href="${BASE_PATH}sjtj/touch.action" class="btn btn-primary glyphicon glyphicon-chevron-left"
                style="position:absolute;left: 20px;top:20px; font-size: 20px;">返回</a>
         </#if>
@@ -94,8 +96,8 @@
                             type: 'pie',
                                     name: '',
                                     data: [
-                                            ['剩余', ${syzs}],
-                                            ['已签约', ${yxzs}]
+                                            ['剩余', ${syzs?c}],
+                                            ['已签约', ${yxzs?c}]
 
                                     ]
                             }]

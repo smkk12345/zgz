@@ -385,7 +385,7 @@ public class SjtjController {
     private Integer getSumList(List<Integer> list) {
         Integer result = 0;
         for (int i = 0; i < list.size(); i++) {
-            result = result + list.get(0);
+            result = result + list.get(i);
         }
         return result;
     }
