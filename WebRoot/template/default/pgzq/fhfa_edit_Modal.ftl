@@ -11,6 +11,7 @@
  		<input type="hidden" class='form-control input-sm ' name='protocolnumber' value="${bean.protocolnumber?default("")}" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='zxsbfsw' value="<#if bean.zxsbfsw??>${bean.zxsbfsw?c}<#else></#if>" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='fwjk' value="<#if bean.fwjk??>${bean.fwjk?c}<#else></#if>" style="width: 0px;"/>
+ 		<input type="hidden" id＝"input_people" class='form-control input-sm ' name='people' value="<#if housebasic.people??>${bean.people?c}<#else></#if>" style="width: 0px;"/>
         <div class='ml15' >
             <h4><span class="label label-default">一.基本情况：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
@@ -446,9 +447,9 @@
            	$(".azxy input[type='text']").attr("disabled","disabled");
             $(".div_seven").html("六.其他：");
             $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
-            var people = ${housebasic.people};
+            var people = $("#input_people").val();
             if(people){
-                var money = parseFloat(people)*1500*40;
+                var money = parseFloat(people)*1500*4;
             	$("#input_zzbz").val(money);
             }
         }
@@ -457,9 +458,9 @@
             $(".azxy input[type='text']").removeAttr("disabled");
             $(".div_seven").html("七.其他：");
             $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
-            var people = ${housebasic.people};
+            var people = $("#input_people").val();
             if(people){
-                var money = parseFloat(people)*1500*4;
+                var money = parseFloat(people)*1500*40;
             	$("#input_zzbz").val(money);
             }
         }
