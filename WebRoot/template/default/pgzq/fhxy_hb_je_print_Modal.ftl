@@ -229,6 +229,7 @@
     $(".modal-body").css("overflow-y", "scroll");
 
     function yu_print() {
+        
         $("#xy-print").jqprint();
     }
 
