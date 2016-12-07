@@ -106,7 +106,7 @@ public class SjtjController {
             List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
             double result = 0.00;
             if (count > 0 && null != list && list.size() > 0) {
-                result = 100 * list.size() / count;
+                result = 100 * list.size() / Double.parseDouble(count+"");
             }
             BigDecimal bd = new BigDecimal(result);
             BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
