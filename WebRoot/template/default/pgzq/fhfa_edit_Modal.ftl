@@ -5,13 +5,13 @@
 <div class="modal-body rhjc-add-con" id="fhfa-edit-con">
     <form id='rhjcAddForm' modelAttribute = "Agreement" action="${BASE_PATH}/pgzq/saveAgreenment.action"
           accept-charset="UTF-8" method="post">
-
+${housebasic.people}
         <input type="hidden" class='form-control input-sm ' name='aid' value="${bean.id?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='housebasicid' value="${housebasic.id?default("")}" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='protocolnumber' value="${bean.protocolnumber?default("")}" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='zxsbfsw' value="<#if bean.zxsbfsw??>${bean.zxsbfsw?c}<#else></#if>" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='fwjk' value="<#if bean.fwjk??>${bean.fwjk?c}<#else></#if>" style="width: 0px;"/>
- 		<input type="hidden" id＝"input_people" class='form-control input-sm ' name='people' value="<#if housebasic.people??>${bean.people?c}<#else></#if>" style="width: 0px;"/>
+ 		<input type="hidden" id＝"input_people" class='form-control input-sm ' name='people' value="${housebasic.people}" style="width: 0px;"/>
         <div class='ml15' >
             <h4><span class="label label-default">一.基本情况：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
@@ -259,7 +259,7 @@
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>周转补助费(元):</label>
-                    <input type='text' id＝"input_zzbz" class='form-control input-sm  input_jl input_hj' name='zzbz'   value="<#if bean.zzbz??>${bean.zzbz?c}<#else>0</#if>"/>       
+                    <input type='text' id='inputzzbz' readonly class='form-control input-sm  input_jl input_hj' name='zzbz'   value="<#if bean.zzbz??>${bean.zzbz?c}<#else>0</#if>"/>       
                 </div>  
 <!--                <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>其他补助费:</label>
@@ -352,11 +352,11 @@
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内购房款(元):</label>
-                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk'   value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       
+                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk' <#if (bean.sfcs?default("-1"))=='0'>readonly</#if>  value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标外购房款(元):</label>
-                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk'   value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else>0</#if>"/>       
+                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk' <#if (bean.sfcs?default("-1"))=='0'>readonly</#if>  value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else>0</#if>"/>       
                 </div>                   
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款(元):</label>
@@ -374,11 +374,11 @@
             <div class='container-fluid con-bg mb10' id="div8">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>腾退补偿款总价(元):</label>
-                    <input type='text' id="zjdttzj" class='form-control input-sm  ' name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else>0</#if>" />    
+                    <input type='text' id="zjdttzj" class='form-control input-sm  ' readonly name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else>0</#if>" />    
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>结算后款(元):</label>
-                    <input id="jshk" type='text' class='form-control input-sm  ' name='jshk'   value="<#if bean.jshk??>${bean.jshk?c}<#else>0</#if>"/>       
+                    <input id="jshk" type='text' class='form-control input-sm  ' name='jshk'  readonly value="<#if bean.jshk??>${bean.jshk?c}<#else>0</#if>"/>       
                 </div>
             </div>              
             <div class="modal-footer">
@@ -432,7 +432,22 @@
 			$("#div8 input").attr("readonly",true);
 			$("#div8 select").attr("readonly",true);
 			$("#div8 button").attr("readonly",true);
-		} 		
+		} 
+		var selectedvalue = '${bean.atype}';
+		if(selectedvalue==='0'){
+			var people = ${housebasic.people};
+            if(people){
+                var money = parseInt(people)*1500*40;
+            	$("#inputzzbz").val(money);
+            }
+		}else{
+		    var people = ${housebasic.people};
+            if(people){
+                var money = parseFloat(people)*1500*4;
+            	$("#inputzzbz").val(money);
+            }}
+		
+			
 	})  
 
 //设置模态框高度和宽度  
@@ -447,10 +462,11 @@
            	$(".azxy input[type='text']").attr("disabled","disabled");
             $(".div_seven").html("六.其他：");
             $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
-            var people = $("#input_people").val();
+            var people = ${housebasic.people};
             if(people){
                 var money = parseFloat(people)*1500*4;
-            	$("#input_zzbz").val(money);
+                
+            	$("#inputzzbz").val(money);
             }
         }
         else {
@@ -458,10 +474,11 @@
             $(".azxy input[type='text']").removeAttr("disabled");
             $(".div_seven").html("七.其他：");
             $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
-            var people = $("#input_people").val();
+            var people = ${housebasic.people};
             if(people){
-                var money = parseFloat(people)*1500*40;
-            	$("#input_zzbz").val(money);
+                var money = parseInt(people)*1500*40;
+              
+            	$("#inputzzbz").val(money);
             }
         }
      });
@@ -541,8 +558,15 @@
 			var p1=$(this).children('option:selected').val();
 			if(p1 == '1'){
 				//超生
+				$("#zbwgfk").val(0);
+				$("#zbngfk").val(0);
+				$("#zbngfk")
+				$("#zbngfk").attr("readonly",false);
+				$("#zbwgfk").attr("readonly",false);
 			}else if(p1 == '0'){
 				//不超生
+				$("#zbngfk").attr("readonly",true);
+				$("#zbwgfk").attr("readonly",true);
 				var zbnmj = $("#input_zbnmj").val();
 				if(zbnmj){
 					$("#zbngfk").val(parseFloat(zbnmj)*4000);
