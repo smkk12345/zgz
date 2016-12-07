@@ -446,7 +446,7 @@
            	$(".azxy input[type='text']").attr("disabled","disabled");
             $(".div_seven").html("六.其他：");
             $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
-            var people = ${bean.people};
+            var people = ${housebasic.people};
             if(people){
                 var money = parseFloat(people)*1500*40;
             	$("#input_zzbz").val(money);
@@ -457,7 +457,7 @@
             $(".azxy input[type='text']").removeAttr("disabled");
             $(".div_seven").html("七.其他：");
             $(".div_eight").html("八.评估款，补偿补助及奖励费合计：");
-            var people = ${bean.people};
+            var people = ${housebasic.people};
             if(people){
                 var money = parseFloat(people)*1500*4;
             	$("#input_zzbz").val(money);
@@ -538,9 +538,9 @@
    		
 		$("#sel_sfcs").change(function(){
 			var p1=$(this).children('option:selected').val();
-			if(p1 == '0'){
+			if(p1 == '1'){
 				//超生
-			}else if(p1 == '1'){
+			}else if(p1 == '0'){
 				//不超生
 				var zbnmj = $("#input_zbnmj").val();
 				if(zbnmj){
