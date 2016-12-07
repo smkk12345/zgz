@@ -90,8 +90,8 @@
                             type: 'pie',
                                     name: '',
                                     data: [
-                                            ['剩余', ${syzs}],
-                                            ['已选房', ${yxzs}]
+                                            ['已选用', ${syzs}],
+                                            ['剩余', ${yxzs}]
 
                                     ]
                             }]
@@ -127,7 +127,7 @@
                             formatter: function () {
                             return '<b>' + this.x + '</b><br/>' +
                                     this.series.name + ': ' + this.y + '<br/>' +
-                                    '共: ' + this.point.stackTotal + "户";
+                                    '共: ' + this.point.stackTotal + "套";
                             }
                             },
                             plotOptions: {

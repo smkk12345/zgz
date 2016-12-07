@@ -371,8 +371,8 @@ public class SjtjController {
                     WebConstConfig.getBase_Template_Default_Path());
             model.addAttribute("bean", new HouseBasic());
             model.addAttribute("CURENT_TAB", "SJTJ");
-            model.addAttribute("CURENT_TAB_2", "chart3");
-            model.addAttribute("CURENT_TAB_3", "chart3");
+            model.addAttribute("CURENT_TAB_2", "chart31");
+            model.addAttribute("CURENT_TAB_3", "chart31");
             return new ModelAndView(PageConst.SJTJ_chart31, model);
         } catch (Exception e) {
             e.printStackTrace();
@@ -478,8 +478,8 @@ public class SjtjController {
                     WebConstConfig.getBase_Template_Default_Path());
             model.addAttribute("list", list);
             model.addAttribute("CURENT_TAB", "SJTJ");
-            model.addAttribute("CURENT_TAB_2", "chart5");
-            model.addAttribute("CURENT_TAB_3", "chart5");
+            model.addAttribute("CURENT_TAB_2", "chart51");
+            model.addAttribute("CURENT_TAB_3", "chart51");
             return new ModelAndView(PageConst.SJTJ_chart51, model);
         } catch (Exception e) {
             e.printStackTrace();
@@ -558,13 +558,15 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
             }
-            int yjszs = 300;
-            int ljs70zs = 300;
-            int ljs75zs = 300;
-            int ljs80zs = 300;
-            int ljs85zs = 300;
-            int sjszs = 300;
-            int[] zsArr = {100, 100, 100, 100, 100, 100};
+
+            int yjszs = 315;
+            int ljs70zs = 315;
+            int ljs75zs = 420;
+            int ljs80zs = 315;
+            int ljs85zs = 525;
+            int sjszs = 210;
+
+            int[] zsArr = {315, 315, 420, 315, 525, 210};
 
             List<BigDecimal> list = ServiceManager.getHouseBasicServce().getSumHouseInfo("", "");
             List<Integer> syList = new ArrayList<Integer>();

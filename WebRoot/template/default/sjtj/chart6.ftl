@@ -96,8 +96,8 @@
                             type: 'pie',
                                     name: '',
                                     data: [
-                                            ['剩余', ${syzs?c}],
-                                            ['已签约', ${yxzs?c}]
+                                            ['已选用', ${yxzs?c}],
+                                            ['剩余', ${syzs?c}]
 
                                     ]
                             }]

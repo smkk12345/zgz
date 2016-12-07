@@ -235,7 +235,7 @@ ${housebasic.people}
                 </div>    
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>期房补助费(元):</label>
-                    <input type='text' id="input-qfbz" class='form-control input-sm input_hj'  name='qfbz'    value="<#if bean.qfbz??>${bean.qfbz?c}<#else>0</#if>"/>       
+                    <input type='text' id="input-qfbz"  class='form-control input-sm input_hj'  name='qfbz'    value="<#if bean.qfbz??>${bean.qfbz?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>大病补助(元):</label>
@@ -532,6 +532,8 @@ ${housebasic.people}
     });
     
    $(function(){
+             
+       
        $("#input_yxmj").change(function(){
    			var value = $("#input_yxmj").val()
    			if(value){
