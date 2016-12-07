@@ -8,12 +8,12 @@
 </div>
 <div class="modal-body center">
     <div class="content fhfa-rdjg-print-con"  id="xy-print">
-		<form name="uploadfrm" url="${BASE_PATH}dagl/save.action?housebasicid=${housebasicid}" method="post"  enctype="multipart/form-data">
+		<form id="fileform"  action="${BASE_PATH}dagl/save.action?housebasicid=${housebasicid}" method="post"  enctype="multipart/form-data">
 		    <div class=' aoJianGroup fl'>  
                 <input style="width:200px;" type="file" name="cxdfile">    
             </div>
-		 	<button style="submit"  class=" fl control-label btn btn-primary btn-save">上传</button>    
 		</form>
+		 <button   class=" fl control-label btn btn-primary btn-save" onclick="submitfile()">上传1</button>    
 		 <table id="table1" class="table">
             <tr>
                 <td colspan="12" style="text-align: center;font-weight: bold">档案列表</td>
@@ -76,21 +76,24 @@
             })
         }
     }
-
-	function subimtBtn() {  
-        var form = $("#uploadfrm");
-		var url = '${BASE_PATH}'+"dagl/save.action?housebasicid="+'${housebasicid}';
-		alert(url);
-        var options  = {    
-            url:url,    
-            type:'post', 
-			data:$("#uploadfrm").serialize(),   
-            success:function(data)    
-            {    
-				
-            }    
-        };    
-        form.ajaxSubmit(options);  
-    }  
-
+    
+    function submitfile(){
+            var form = new FormData(document.getElementById("fileform"));
+            $.ajax({
+                url:'${BASE_PATH}'+"dagl/save.action?housebasicid="+'${housebasicid}',
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    window.clearInterval(timer);
+                    console.log("over..");
+                },
+                error:function(e){
+                    alert("错误！！");
+                    window.clearInterval(timer);
+                }
+            });        
+        }
+    
 </script>

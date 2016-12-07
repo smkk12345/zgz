@@ -200,7 +200,7 @@ public class DaglController {
 
 	
 	@RequestMapping({ "/save.action" })
-	public FileManageBean save(@RequestParam("cxdfile") MultipartFile file,  HttpServletRequest request,
+	public ModelAndView save(@RequestParam("cxdfile") MultipartFile file,  HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 //			boolean isMultipart = ServletFileUpload.isMultipartContent(request);
@@ -219,7 +219,16 @@ public class DaglController {
 				bean = ServiceManager.getFileManageService().save(filename, newfilename, housebasicid, file.getSize(), suffix);
 			}
 			
-			return bean;
+			List<FileManageBean> list = ServiceManager.getFileManageService().findListByBaseId(housebasicid);
+			model.addAttribute("list", list);
+			model.addAttribute("housebasicid", housebasicid);
+			// 模板路径 basePath
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.DAGL_dagl_model, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
