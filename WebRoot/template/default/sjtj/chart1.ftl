@@ -37,7 +37,7 @@
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
     <div style='margin-top: 50px;color:red;font-size:40px; font-family:"宋体";font-weight:bold;text-align: center;'>
-        截至日期：2016年12月01日 00:00:00点整
+        截至日期：2016年12月11日 00:00:00点整
     </div>
     <div style='margin-top: 60px;color:#0F0;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
         倒计时<span id="timeDate2" style="color: red"></span>天<span id="times2"
@@ -96,7 +96,7 @@
 
     function createtime(timeDate, times) {
 
-        var grt = new Date("12/01/2016 00:00:00");
+        var grt = new Date("12/11/2016 00:00:00");
 
         now.setTime(now.getTime() + 250);
         days = (grt - now) / 1000 / 60 / 60 / 24;

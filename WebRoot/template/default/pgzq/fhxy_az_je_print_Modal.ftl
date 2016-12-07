@@ -9,7 +9,7 @@
     <div class="container-fluid fhfa-rdjg-print-con"  id="xy-print" >
         <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <td class=""colspan="11"  style="font-weight:bold;" class="center">（张郭庄）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
+                <td colspan="11"  style="font-weight:bold;" class="center" style="font-size: 17px;">（张郭庄）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>
             <tr>
                 <td class="" colspan=2>被腾退人</td>
@@ -228,8 +228,8 @@
                 <td class="" colspan=4>腾退促进奖（50000元/院）</td>
                 <td class="">${bean.ttcjjl?c?default("/")}</td>
                 <td class="">14</td>
-                <td class="" colspan=4>周转补助费（1500元/人/月）*人*4月</td>
-                <td class="">${bean.zzbz?number}</td>
+                <td class="" colspan=4>周转补助费（1500元/人/月）*人*40月</td>
+                <td class="">${bean.zzbz?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">4</td>

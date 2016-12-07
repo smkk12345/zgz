@@ -348,14 +348,15 @@ public class AgreenmentController {
 			String agreenmentid = request.getParameter("agreenmentid");
 			String housebasicid = request.getParameter("housebasicid");
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			model.addAttribute("bean", bean);
+			
 //			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
 //			model.addAttribute("housebasic", housebasic);
 //			Agreement agreenment = new Agreement();
 //			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 //				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 //			}
-			DisplayBean bean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
-			model.addAttribute("bean", bean);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH",
