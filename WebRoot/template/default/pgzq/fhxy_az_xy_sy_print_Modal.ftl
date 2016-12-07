@@ -6,13 +6,12 @@
     </div>
 </div>
 <div class="modal-body center">
-    <div class="content xy-print-con"  id="xy-print">
+    <div class="content xy-print-con"  id="xy-print" style="font-family: 宋体">
         <p class="xy-num" style="margin-top: 50px;">协议编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
-        <p class="title" style="margin-top: 250px;" >北京市宅基地房屋腾退补偿安置协议</p>
-        <p class="title1" style="margin-top: 350px;">&nbsp;腾&nbsp;退&nbsp;人：&nbsp;<u>&nbsp;北京市丰台区长辛店镇东河沿村村民委员会&nbsp;</u></p>
+        <p class="title" style="margin-top: 250px; margin-left: 50px;" >北京市宅基地房屋腾退补偿安置协议</p>
+        <p class="title1" style="margin-top: 230px;">&nbsp;腾&nbsp;退&nbsp;人：&nbsp;<u>&nbsp;北京市丰台区长辛店镇张郭庄村民委员会&nbsp;</u></p>
         <p class="title1" style="margin-top: 35px;">被腾退人：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${housebasic.names?default("/")} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
         <p class="title1" style="margin-top: 35px;">签订时间： &nbsp;&nbsp;&nbsp;&nbsp;${year}&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;${month}&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;${day}&nbsp;&nbsp;&nbsp;日</p>
-        <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
 	</div>
     <div style="clear:both; height:20px;"></div>
 </div>

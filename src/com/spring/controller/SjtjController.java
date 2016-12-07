@@ -507,7 +507,7 @@ public class SjtjController {
             int ljs80zs = 300;
             int ljs85zs = 300;
             int sjszs = 300;
-            int[] zsArr = {100, 100, 100, 100, 100, 100};
+            int[] zsArr = {315, 315, 420, 315, 525, 210};
 
             List<BigDecimal> list = ServiceManager.getHouseBasicServce().getSumHouseInfo("", "");
             List<Integer> syList = new ArrayList<Integer>();

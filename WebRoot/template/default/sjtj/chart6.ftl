@@ -131,7 +131,7 @@
                             formatter: function () {
                             return '<b>' + this.x + '</b><br/>' +
                                     this.series.name + ': ' + this.y + '<br/>' +
-                                    '共: ' + this.point.stackTotal + "户";
+                                    '共: ' + this.point.stackTotal + "套";
                             }
                             },
                             plotOptions: {
