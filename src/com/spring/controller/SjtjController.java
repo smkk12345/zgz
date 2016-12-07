@@ -501,13 +501,13 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
             }
-            int yjszs = 300;
-            int ljs70zs = 300;
-            int ljs75zs = 300;
-            int ljs80zs = 300;
-            int ljs85zs = 300;
-            int sjszs = 300;
-            int[] zsArr = {100, 100, 100, 100, 100, 100};
+            int yjszs = 315;
+            int ljs70zs = 315;
+            int ljs75zs = 420;
+            int ljs80zs = 315;
+            int ljs85zs = 525;
+            int sjszs = 210;
+            int[] zsArr = {315, 315, 420, 315, 525, 210};
 
             List<BigDecimal> list = ServiceManager.getHouseBasicServce().getSumHouseInfo("", "");
             List<Integer> syList = new ArrayList<Integer>();

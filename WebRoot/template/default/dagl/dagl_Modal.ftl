@@ -14,7 +14,7 @@
             </div>
 		</form>
 		 <button   class=" fl control-label btn btn-primary btn-save" onclick="submitfile()">上传1</button>    
-		 <table id="table1" class="table">
+		 <table id="fileTable" class="table">
             <tr>
                 <td colspan="12" style="text-align: center;font-weight: bold">档案列表</td>
             </tr>
@@ -86,14 +86,27 @@
                 processData:false,
                 contentType:false,
                 success:function(data){
-                    window.clearInterval(timer);
-                    console.log("over..");
+					$("#fileTable").append("asdasdsad");
                 },
                 error:function(e){
                     alert("错误！！");
                     window.clearInterval(timer);
                 }
             });        
+        }
+        
+        function getInnertr(){
+        	var innertr =  "<tr id='${vo.id}'>"+
+	           "	<td>${vo_index+1}</td>"+
+	           " <td><a href="${BASE_PATH}upload/${vo.path}">${vo.filename?default("")}</a></td>"+
+	           " <td>${vo.sufffix?default("")}</td>"+
+	           " <td>${vo.updateTime?default("")}</td>"+
+	           " <td><button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle""+
+                                 "   title='删除' onClick='delBtnClick(this)' data-url='${BASE_PATH}dagl/del.action'"+
+                                 "   pname='${vo.id}'></button>"+
+                 </td>
+	        </tr>
+        
         }
     
 </script>
