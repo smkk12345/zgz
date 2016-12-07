@@ -194,6 +194,8 @@ public class Agreement extends BaseBean {
   //优惠指标未选满补偿
     private BigDecimal yhzbwxmbc;
     
+    private String sfcs;//是否超生
+    
     private String kzkxmj;
     
     
@@ -1044,6 +1046,16 @@ public class Agreement extends BaseBean {
 
 	public void setBzbzmj(String bzbzmj) {
 		this.bzbzmj = bzbzmj;
+	}
+
+
+	public String getSfcs() {
+		return sfcs;
+	}
+
+
+	public void setSfcs(String sfcs) {
+		this.sfcs = sfcs;
 	}
 
 

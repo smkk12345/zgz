@@ -92,7 +92,7 @@
 		<property name="yhzbwxmbc"></property>
 		<property name="bzbzmj"></property>
 		
-		
+		<property name="sfcs"></property>
 
 	</class>
 </hibernate-mapping>
