@@ -3,14 +3,13 @@
     <h4 class="modal-title pull-left m0">档案管理</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="submit" class="btn btn-primary btn-save"   onclick="yu_print()">打印</button>
     </div>
 </div>
 <div class="modal-body center">
     <div class="content fhfa-rdjg-print-con"  id="xy-print">
 		<form id="fileform"  action="${BASE_PATH}dagl/save.action?housebasicid=${housebasicid}" method="post"  enctype="multipart/form-data">
 		    <div class=' aoJianGroup fl'>  
-                <input style="width:200px;" type="file" name="cxdfile">    
+                <input id="cxdfile" style="width:200px;" type="file" name="cxdfile">    
             </div>
 		</form>
 		 <button   class=" fl control-label btn btn-primary btn-save" onclick="submitfile()">上传1</button>    
@@ -19,7 +18,6 @@
                 <td colspan="12" style="text-align: center;font-weight: bold">档案列表</td>
             </tr>
             <tr>
-                <th class="center">序号</th>
                 <th class="center">文件名称</th>
                 <th class="center">文件后缀名</th>
                 <th class="center">上传时间</th>
@@ -27,13 +25,13 @@
             </tr>
             <#if list?size gt 0>  
 	        <#list list as vo>
+	       
 	        <tr id="${vo.id}">
-	           	<td>${vo_index+1}</td>
 	            <td><a href="${BASE_PATH}upload/${vo.path}">${vo.filename?default("")}</a></td>
 	            <td>${vo.sufffix?default("")}</td>
 	            <td>${vo.updateTime?default("")}</td>
-	            <td><button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"
-                                    title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}dagl/del.action"
+	            <td><button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle delfilebtn"
+                                    title='删除' data-url="${BASE_PATH}dagl/del.action"
                                     pname="${vo.id}"></button>
                  </td>
 	        </tr>
@@ -56,11 +54,12 @@
         $("#xy-print").jqprint();
     }
     
-    function delBtnClick(btn) {
-        if (yu_confirm("确认删除该数据？")) {
-            var curDataId = $(btn).attr("pname");
-            var p = $(btn).attr("data-url");
-            var par = $(btn).parent().parent();
+     $(".delfilebtn").live("click",function(event){
+    	event.stopPropagation(); 
+     if (yu_confirm("确认删除该数据？")) {
+            var curDataId = $(this).attr("pname");
+            var p = $(this).attr("data-url");
+            var par = $(this).parent().parent();
             $.ajax({
                 cache: true,
                 type: "POST",
@@ -75,9 +74,18 @@
                 }
             })
         }
-    }
+
+	}); 
     
     function submitfile(){
+    		var filename = $("#cxdfile").val();
+    		if(filename){
+    			if(filename==""){
+    				return ;
+    			}
+    		}else{
+    			return;
+    		}
             var form = new FormData(document.getElementById("fileform"));
             $.ajax({
                 url:'${BASE_PATH}'+"dagl/save.action?housebasicid="+'${housebasicid}',
@@ -86,7 +94,8 @@
                 processData:false,
                 contentType:false,
                 success:function(data){
-					$("#fileTable").append("asdasdsad");
+					$("#fileTable").append(data.innertr);
+					$("#cxdfile").val("");
                 },
                 error:function(e){
                     alert("错误！！");
@@ -95,18 +104,5 @@
             });        
         }
         
-        function getInnertr(){
-        	var innertr =  "<tr id='${vo.id}'>"+
-	           "	<td>${vo_index+1}</td>"+
-	           " <td><a href="${BASE_PATH}upload/${vo.path}">${vo.filename?default("")}</a></td>"+
-	           " <td>${vo.sufffix?default("")}</td>"+
-	           " <td>${vo.updateTime?default("")}</td>"+
-	           " <td><button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle""+
-                                 "   title='删除' onClick='delBtnClick(this)' data-url='${BASE_PATH}dagl/del.action'"+
-                                 "   pname='${vo.id}'></button>"+
-                 </td>
-	        </tr>
-        
-        }
     
 </script>

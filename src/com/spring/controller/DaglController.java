@@ -3,7 +3,9 @@ package com.spring.controller;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,6 +30,8 @@ import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.FileManageBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.timers.utils.DateStyle;
+import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
 
@@ -200,7 +205,8 @@ public class DaglController {
 
 	
 	@RequestMapping({ "/save.action" })
-	public ModelAndView save(@RequestParam("cxdfile") MultipartFile file,  HttpServletRequest request,
+	@ResponseBody
+	public Map<String,String> save(@RequestParam("cxdfile") MultipartFile file,  HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 		try {
 //			boolean isMultipart = ServletFileUpload.isMultipartContent(request);
@@ -219,16 +225,31 @@ public class DaglController {
 				bean = ServiceManager.getFileManageService().save(filename, newfilename, housebasicid, file.getSize(), suffix);
 			}
 			
-			List<FileManageBean> list = ServiceManager.getFileManageService().findListByBaseId(housebasicid);
-			model.addAttribute("list", list);
-			model.addAttribute("housebasicid", housebasicid);
-			// 模板路径 basePath
-			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
-			model.addAttribute("BASE_ASSETS_PATH",
-					WebConstConfig.getBase_Assets_Path());
-			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
-					WebConstConfig.getBase_Template_Default_Path());
-			return new ModelAndView(PageConst.DAGL_dagl_model, model);
+//        	var innertr =  "<tr id="+vo.id+">"+
+//     	           "	<td>5</td>"+
+//     	           " <td><a href='${BASE_PATH}'+"upload/"+vo.path+">"+vo.filename+"</a></td>"+
+//     	           " <td>"+vo.sufffix+"</td>"+
+//     	           " <td>"+vo.updateTime+"</td>"+
+//     	           " <td><button type='button' class='btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle'"+
+//                                      "   title='删除' onClick='delBtnClick(this)' data-url='${BASE_PATH}'"+"dagl/del.action"+
+//                                      "   pname="+vo.id+"></button>"+
+//                     " </td>"
+			
+			Map<String,String> map = new HashMap<String, String>();
+			String displayDateStr = DateUtil.DateToString(bean.getUpdateTime(), DateStyle.YYYY_MM_DD_HH_MM_SS);
+            StringBuffer sb = new StringBuffer();         
+            sb.append(" <tr id = "+bean.getId()+">");
+            sb.append("<td><a href="+WebConstConfig.BASE_PATH+"upload/"+bean.getPath()+">"+bean.getFilename()+"</a></td>");
+            sb.append(" <td>"+bean.getSuffix()+"</td>");
+            sb.append("<td>"+displayDateStr+"</td>");
+            sb.append(" <td><button type='button' class='btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle delfilebtn'");
+            sb.append(" title='删除' data-url='"+WebConstConfig.BASE_PATH+"dagl/del.action ' ");
+            sb.append("pname='"+bean.getId()+"'></button>");
+            sb.append("</td>");
+            sb.append("</tr>");
+            map.put("innertr", sb.toString());
+            map.put("filename", bean.getFilename());
+			return map;
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
