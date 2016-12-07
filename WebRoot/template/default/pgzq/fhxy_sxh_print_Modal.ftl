@@ -35,15 +35,15 @@
             &nbsp;&nbsp;&nbsp;&nbsp;${bean.yjs?default("")}&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;
             <#if bean.yjs?default(0) gt 0>${bean.yjs?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;70&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-            &nbsp;&nbsp;&nbsp;${bean.ljs70?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs70?default(0) gt 0>${bean.ljs70?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;${bean.ljs70?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs70?default(0) gt 0>${bean.ljs70?number*70}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-            &nbsp;&nbsp;&nbsp;${bean.ljs75?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs75?default(0) gt 0>${bean.ljs75?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;${bean.ljs75?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs75?default(0) gt 0>${bean.ljs75?number*75}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-            &nbsp;&nbsp;&nbsp;${bean.ljs80?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs80?default(0) gt 0>${bean.ljs80?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;${bean.ljs80?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs80?default(0) gt 0>${bean.ljs80?number*80}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;85&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-            &nbsp;&nbsp;&nbsp;${bean.ljs85?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs85?default(0) gt 0>${bean.ljs85?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;${bean.ljs85?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs85?default(0) gt 0>${bean.ljs85?number*85}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110&nbsp;&nbsp;&nbsp;</u>平方米三居室<u>
-            &nbsp;&nbsp;&nbsp;${bean.sjs?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.sjs?default(0) gt 0>${bean.sjs?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+            &nbsp;&nbsp;&nbsp;${bean.sjs?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.sjs?default(0) gt 0>${bean.sjs?number*110}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房建设地点位于张郭庄村棚户区改造和环境整治项目所指定的定向安置房建设区域（最终以政府相关主管部门审批文件为准）。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2、本协议下有关面积最终以政府主管部门备案的实测建筑面积为准。
         </p>
