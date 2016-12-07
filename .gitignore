@@ -4,3 +4,8 @@ WebRoot/assets/libs/font-awesome/fonts/.svn/prop-base/fontawesome-webfont.svg.sv
 WebRoot/WEB-INF/poi/servlet-api.jar
 .idea/
 WebRoot/compass/.sass-cache/
+*prefs
+.metadata/.plugins/org.eclipse.core.resources/.root/4.tree
+*.classpath
+classes/
+
