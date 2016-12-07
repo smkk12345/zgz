@@ -235,7 +235,7 @@ ${housebasic.people}
                 </div>    
                 <div class=' aoJianGroup fl azxy'>      
                     <label class='fl control-label'>期房补助费(元):</label>
-                    <input type='text' id="input-qfbz" class='form-control input-sm  input_hj' name='qfbz'   value="<#if bean.qfbz??>${bean.qfbz?c}<#else>0</#if>"/>       
+                    <input type='text' id="input-qfbz" class='form-control input-sm input_hj'  name='qfbz'    value="<#if bean.qfbz??>${bean.qfbz?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>大病补助(元):</label>
@@ -343,20 +343,20 @@ ${housebasic.people}
                     <label class='fl control-label'>超指标面积(15㎡以外)（㎡）:</label>
                     <input type='text' id="input_czbmj" class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
                 </div>  
-                <div class=' aoJianGroup fl'>      
+             <#--   <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>是否超生:</label>
                     <select id='sel_sfcs' class='form-control input-sm fl' style='width:120px;' name='sfcs' >  
                         <option  <#if (bean.sfcs?default("-1"))=='1'>selected='selected'</#if>  value="1">是</option>  
                         <option  <#if (bean.sfcs?default("-1"))=='0'>selected='selected'</#if> value="0">否</option> 
                     </select>        
-                </div>  
+                </div>  -->
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内购房款(元):</label>
-                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk' <#if (bean.sfcs?default("-1"))=='0'>readonly</#if>  value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       
+                    <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk' readonly <#if (bean.sfcs?default("-1"))=='0'></#if>  value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标外购房款(元):</label>
-                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk' <#if (bean.sfcs?default("-1"))=='0'>readonly</#if>  value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else>0</#if>"/>       
+                    <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk' readonly <#if (bean.sfcs?default("-1"))=='0'></#if>  value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else>0</#if>"/>       
                 </div>                   
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>购房款(元):</label>
@@ -554,28 +554,23 @@ ${housebasic.people}
 			};
    		});
    		
-		$("#sel_sfcs").change(function(){
-			var p1=$(this).children('option:selected').val();
-			if(p1 == '1'){
-				//超生
-				$("#zbwgfk").val(0);
-				$("#zbngfk").val(0);
-				$("#zbngfk")
-				$("#zbngfk").attr("readonly",false);
-				$("#zbwgfk").attr("readonly",false);
-			}else if(p1 == '0'){
-				//不超生
-				$("#zbngfk").attr("readonly",true);
-				$("#zbwgfk").attr("readonly",true);
-				var zbnmj = $("#input_zbnmj").val();
-				if(zbnmj){
-					$("#zbngfk").val(parseFloat(zbnmj)*4000);
-				}
-				var czbmj = $("#input_czbmj").val();
-				if(czbmj){
-					$("#zbwgfk").val(parseFloat(czbmj)*6000);
-				}
-			};
+   		//指标购房款
+   	    $("#input_zbnmj,#input_czbmj").change(function(){
+   		
+   		
+   		var zbngfk=parseFloat($("#input_zbnmj").val())*4000;
+        
+        var a=$("#input_czbmj").val();
+        $("#zbngfk").val(zbngfk);
+        if(a==""||a==undefined||a==null){
+        $("#zbwgfk").val("0");
+        }else{        
+        var zbwgfk=parseFloat($("#input_czbmj").val())*6000;
+        $("#zbwgfk").val(zbwgfk);
+        }
+        var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(0);
+       	$("#azfgfk").val(temp);
+
    		});
                 
         //宅基地腾退补偿款计算
@@ -590,6 +585,8 @@ ${housebasic.people}
         $("#zbngfk,#zbwgfk").change(function(){
         	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
        		$("#azfgfk").val(temp);
+       	<#--	var qfbz=parseFloat($("#azfgfk").val())*0.1;
+       		$("#input-qfbz").val(qfbz).toFixed(2);-->
        		var temp1 = parseFloat($("#zjdttzj").val());
        		//$("#jshk").val((temp1-temp).toFixed(2));
    		});
