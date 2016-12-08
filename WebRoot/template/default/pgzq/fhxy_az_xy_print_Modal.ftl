@@ -34,14 +34,7 @@
 	            
 	        }
 	</script>
-	
-	
-
-    </head>
-
-
-<body>
-<style>
+	<style>
 	
 	.xy-print-con {
     padding: 20px;
@@ -205,6 +198,13 @@
     margin-bottom: 10px
 }
 	</style>
+	
+
+    </head>
+
+
+<body>
+
 
 <div class="modal-header clearfix" id="print">
     <h4 class="modal-title pull-left m0">【${housebasic.names?default("/")}】房屋腾退补偿安置协议</h4>
