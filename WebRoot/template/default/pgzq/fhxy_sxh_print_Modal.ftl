@@ -65,7 +65,7 @@
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1、根据相关政策规定以及乙方签署的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方在领取腾退补偿总价款的同时，向甲方一次性支付本协议第三条第1款中暂定的购房款<u>
             &nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;&nbsp;</u>）。<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2、若乙方的腾退补偿总价款足以支付定向安置房购房款，乙方同意由甲方指定的银行从乙方腾退补偿总价款中扣除定向安置房购房款，并将该款项支付给甲方。<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2、若乙方的腾退补偿总价款足以支付定向安置房购房款，乙方同意由甲方指定的银行从乙方腾退补偿总价款中向甲方一次性付清定向安置房购房款。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3、若乙方的腾退补偿总价款不足以支付定向安置房购房款，乙方同意由甲方指定的银行将乙方的腾退补偿总价款全部支付给甲方；同时，乙方根据本协议第四条第1款的约定，将定向安置房购房款差额部分向甲方一次性付清。
         </p>
         <p class="leftTitle">第五条&nbsp;&nbsp;逾期付款责任</p>
@@ -82,14 +82,14 @@
         <p class="leftTitle">第六条&nbsp;&nbsp;选房顺序及要求</p>
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1、根据“以签订房屋腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的定向安置房选房原则，甲方依据腾退人与乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>
-            &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）时确定的顺序号，作为选房顺序的唯一依据。选房工作的具体时间安排由属地政府、腾退主体及甲方根据实际情况决定。<br/>
+            &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）时确定的顺序号(详见本协议附件2)，作为选房顺序的唯一依据。选房工作的具体时间安排由属地政府、腾退主体及甲方根据实际情况决定。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2、乙方于<u>&nbsp;${year?c}&nbsp;</u>年<u>&nbsp;${month}&nbsp;</u>月<u>
             &nbsp;${day}&nbsp;</u>日<u>&nbsp;${hour}&nbsp;</u>时<u>
             &nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
             &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方可根据上述时点的具体排序进行选房。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3、甲方在选房工作开始之日的15个工作日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
             &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）的时点排定次序，书面（或电话）通知乙方到指定地点进行选房。乙方应根据确定后的选房顺序在规定的时间及地点进行选房，非因甲方原因造成乙方未能在规定的时间内到达指定地点选房导致其选房顺序号后延的，由此引起的一切责任及后果由乙方自行承担。<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4、乙方在进行选房的同时，必须在本协议附件所列认定安置人口清单范围内，选定所购定向安置房的实际产权人。实际产权人经政府主管部门和审计机构认定无误后，按照甲方书面（或电话）通知的时间、地点与甲方签订安置房买卖合同。<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4、乙方在进行选房的同时，必须在本协议附件1所列认定安置人口清单范围内，选定所购定向安置房的实际产权人。实际产权人经政府主管部门和审计机构认定无误后，按照甲方书面（或电话）通知的时间、地点与甲方签订安置房买卖合同。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.5、本协议第六条第4款所述实际产权人的姓名、身份证号码和选定的具体房号，经政府主管部门和审计机构认定无误后不得更改。<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.6、本协议第六条第4款所述实际产权人在接到甲方签订安置房买卖合同通知的20个工作日内，未与甲方签订合同的，甲方有权拒绝签订安置房买卖合同，同时本协议自行终止。乙方已付的定向安置房购房款由甲方退还乙方，购房款不计息，甲乙双方互不追究相关责任。
         </p>
@@ -155,7 +155,7 @@
         <br>
         <br>
 
-        <p class="leftTitle">附件：认定被安置人口明细表</p>
+        <p class="leftTitle">附件1：认定被安置人口明细表</p>
         <p class="contex-1" style="margin-top: 10px;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）第二条，被腾退房屋中认定的安置人口数为<u>
             &nbsp;&nbsp;&nbsp;${bean.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;</u>人，具体情况见下表：
@@ -223,7 +223,7 @@
         <p class="pageBreak" style="margin-top: 200px;">&nbsp;</p>
         <br>
         <br>
-        <p class="leftTitle">附件：</p>
+        <p class="leftTitle">附件2：</p>
         <span class="title" style="font-size: 17.0pt">选房顺序号结果通知单</span>
         <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;认购协议编号：<u>
             &nbsp;&nbsp;&nbsp;&nbsp;${xynum?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
