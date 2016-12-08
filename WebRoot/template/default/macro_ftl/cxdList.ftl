@@ -12,7 +12,7 @@
             <td>${ROW.zjdarea?default("")}</td>
             <td>${ROW.fwarea?default("")}</td>
             <td>${ROW.mobile?default("")}</td>
-            <td>
+            <td> 
                 <#if role.roleAuthority[3]=="2">
                     <#if (ROW.checkresult)??>
                         <#if ROW.checkresult=="1">
