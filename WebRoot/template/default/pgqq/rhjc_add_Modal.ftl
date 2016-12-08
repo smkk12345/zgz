@@ -22,9 +22,9 @@
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
-                <div class=' aoJianGroup fl'>
+                <div class=' aoJianGroup fl' style="width: 240px !important;">
                     <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text' class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
+                    <input type='text'style="width: 240px !important;" class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
