@@ -359,6 +359,7 @@
                          >预结单</button>
                 
                 <#if role.roleAuthority[10]=="2">
+                	<a href="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}" target="_blank">打印</a>
                     <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'
                         <#if ROW.atype?default("0")=="0">
                             data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"

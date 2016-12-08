@@ -1,8 +1,216 @@
-<div class="modal-header clearfix">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <!--CSS文件-->
+        <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
+        <link href="${BASE_ASSETS_PATH}libs/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" >
+        <link href="${BASE_ASSETS_PATH}libs/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" >
+        <link href="${BASE_ASSETS_PATH}css/common.css" rel="stylesheet">
+        <link href="${BASE_ASSETS_PATH}css/lqt-v1.css" rel="stylesheet">
+        <link href="${BASE_ASSETS_PATH}css/style-1.css" rel="stylesheet" id="theme" >
+        <!--JS文件-->
+        <script src="${BASE_ASSETS_PATH}libs/jquery-2.1.4.min.js"></script>
+        <script src="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+        <script src="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/js/bootstrap-switch.js"></script>
+        <script src="${BASE_ASSETS_PATH}libs/bootstrap-progressbar/js/bootstrap-progressbar.min.js"></script>
+        <script src="/Lodop/LodopFuncs.js"></script>
+        
+	    <script>
+		function doPrint(){
+	           $("#print").hide();
+	           // $("#title").hide();
+	            LODOP = getLodop();
+	            LODOP.ADD_PRINT_HTM(45, 80, "90%", "92%", document.body.innerHTML);
+	            LODOP.ADD_PRINT_HTM("97%", "85%", 0, "45%", "<span tdata='pageNO'>第#页</span>&nbsp;共<span tdata='pageCount'>#</span>页");
+	            LODOP.SET_PRINT_STYLEA(0, "ItemType", 1);//循环上一命令（页码）
+	            LODOP.PRINTA();
+	            $("#print").show();
+	            //$("#title").show();
+	            
+	        }
+	</script>
+	
+	
+
+    </head>
+
+
+<body>
+<style>
+	
+	.xy-print-con {
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    width: 650px
+}
+
+.xy-print-con .title {
+    font-size: 22.0pt;
+    line-height: 150%;
+    font-family: 瀹嬩綋;
+    mso-ascii-font-family: "Times New Roman";
+    mso-hansi-font-family: "Times New Roman";
+    color: black
+}
+
+.xy-print-con .xy-num {
+    text-align: right;
+    text-indent: 2em;
+    margin-right: 20px;
+    font-size: 12.0pt;
+    line-height: 150%;
+    font-family: 瀹嬩綋;
+    mso-ascii-font-family: "Times New Roman";
+    mso-hansi-font-family: "Times New Roman";
+    color: black
+}
+
+.xy-print-con .title1 {
+    text-align: left;
+    margin-left: 100px;
+    font-size: 14.0pt;
+    mso-bidi-font-size: 10.0pt;
+    line-height: 150%;
+    color: black
+}
+
+.xy-print-con .title2 {
+    font-size: 18.0pt;
+    line-height: 150%;
+    font-family: 瀹嬩綋;
+    color: black
+}
+
+.xy-print-con .title3 {
+    text-align: left;
+    margin-left: 0px;
+    font-size: 14.0pt;
+    mso-bidi-font-size: 10.0pt;
+    line-height: 130%;
+    color: black
+}
+
+.xy-print-con table td {
+    text-align: center;
+    vertical-align: middle
+}
+
+.xy-print-con .contex-1 {
+    text-align: left;
+    font-size: 12.0pt;
+    mso-bidi-font-size: 10.0pt;
+    line-height: 25.0pt;
+    font-family: 瀹嬩綋;
+    color: #000
+}
+
+.xy-print-con .contex-2 {
+    text-align: left;
+    margin-left: 350px;
+    font-size: 14.0pt;
+    mso-bidi-font-size: 10.0pt;
+    line-height: 25.0pt;
+    font-family: 瀹嬩綋;
+    color: #000
+}
+
+.xy-print-con .leftTitle {
+    font-size: 12.0pt;
+    text-align: left;
+    text-indent: 2em;
+    line-height: 50px;
+    font-weight: bold;
+    font-family: 瀹嬩綋;
+    padding-bottom: 5px
+}
+
+.rhjc-print-con {
+    padding: 0px;
+    font-size: 11px;
+    text-align: center;
+    width: 900px
+}
+
+.rhjc-print-con .title {
+    font-size: 13.0pt;
+    line-height: 110%;
+    font-family: 瀹嬩綋;
+    mso-ascii-font-family: "Times New Roman";
+    mso-hansi-font-family: "Times New Roman";
+    color: black;
+    font-weight: bold
+}
+
+.rhjc-print-con .leftTitle {
+    font-size: 11.0pt;
+    text-align: left;
+    line-height: 13px;
+    padding-bottom: 4px
+}
+
+.rhjc-print-con .contex-1 {
+    text-align: left;
+    font-size: 11.0pt;
+    mso-bidi-font-size: 10.0pt;
+    line-height: 13.0pt;
+    font-family: 瀹嬩綋;
+    color: #000
+}
+
+.rhjc-print-con .leftTitle2 {
+    font-size: 13.0pt;
+    text-align: left;
+    line-height: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px
+}
+
+.rhjc-print-con .title1 {
+    text-align: left;
+    margin-left: 0px;
+    font-size: 13.0pt;
+    mso-bidi-font-size: 12.0pt;
+    line-height: 135%;
+    font-weight: normal
+}
+
+.rhjc-print-con .table td {
+    padding: 0px;
+    font-weight: normal;
+    font-size: 10.0pt;
+    mso-bidi-font-size: 10.0pt;
+    border: solid 0.5px #efe9e9
+}
+
+.rhjc-print-con .table th {
+    padding: 0px;
+    font-weight: normal;
+    font-size: 10.0pt;
+    mso-bidi-font-size: 10.0pt;
+    border: solid 0.5px #efe9e9
+}
+
+.rhjc-print-con .check-box {
+    font-size: 12px !important
+}
+
+.rhjc-print-con .pageBreak {
+    margin-bottom: 10px
+}
+	</style>
+
+<div class="modal-header clearfix" id="print">
     <h4 class="modal-title pull-left m0">【${housebasic.names?default("/")}】房屋腾退补偿安置协议</h4>
-    <div class="fr">
+    <div class="fr" >
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="submit" class="btn btn-primary btn-save" onclick="yu_print()">打印</button>
+        <button type="submit" class="btn btn-primary btn-save" onclick="doPrint()">打印</button>
     </div>
 </div>
 <div class="modal-body center">
@@ -51,7 +259,7 @@
         <#if housebasic.vacatelist??>
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
             <#list housebasic.vacatelist as vacate>
-            <p class="contex-1">
+            <p class="contex-1" style="line-height:26px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;${vacate.name}&nbsp;&nbsp;</u>
                 &nbsp;&nbsp;产关：<u>&nbsp;&nbsp;${vacate.changrelate}&nbsp;&nbsp;</u>
                 &nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;${vacate.idcard}&nbsp;&nbsp;</u>
@@ -62,7 +270,7 @@
         	<#if housebasic.list?size gt 0>
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非在册人员：</p>
             <#list housebasic.list as cate>
-                <p class="contex-1">
+                <p class="contex-1"  style="line-height:26px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;${cate.name}&nbsp;&nbsp;</u>
                 &nbsp;&nbsp;产关：<u>&nbsp;&nbsp;${cate.changrelate}&nbsp;&nbsp;</u>
                 &nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;${cate.idcard}&nbsp;&nbsp;</u>
@@ -197,11 +405,11 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15.3本协议一式陆份，甲乙双方各持壹份，其余肆份报政府相关部门备案。
         </p>
         <p class="leftTitle">（以下无正文）</p>
-        <p class="pageBreak" style="margin-top: 570px;">&nbsp;</p>
+        <p style="page-break-before: always">&nbsp;</p>
 		<br>
         <br>
 
-       <p class="pageBreak" style="margin-top: 170px;"></p>
+       <p class="pageBreak" style="margin-top: 20px;"></p>
         <p class="leftTitle">（签字页）</p>
 
         <p class="contex-1" style="margin-top: 20px;">
@@ -230,41 +438,5 @@
     </div>
     <div style="clear:both; height:20px;"></div>
 </div>
-<script src="${BASE_ASSETS_PATH}libs/jqprint/jquery.jqprint.js"></script>
-<script src="${BASE_ASSETS_PATH}libs/jqprint/jquery-migrate-1.1.0.js"></script>
-<script type="text/javascript">
-    //设置模态框高度和宽度
-    $("#myModal .modal-dialog").width(750);
-    $(".modal-body").css("height", ($(window).height() - 150) + "px");
-    $(".modal-body").css("overflow-y", "scroll");
-
-    function yu_print() {
-        $("#xy-print").jqprint();
-    }
-
-    function saveClick(btn) {
-        var dataInfo = $("#rhjcAddForm").serialize();
-        var url = $(btn - save).attr("data-url");
-        $.ajax({
-            type: "POST",
-            url: url,
-            dataType: "json",
-            data: dataInfo,
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(errorThrown);
-            },
-            success: function (response) {
-                var bean = response.bean;
-                addAoJianInfo(bean);
-                //初始化日期控件
-                initDate();
-            }
-        })
-    }
-
-    function addlist(a) {
-        var h = $(a + "").html();
-        $(a + "").after("<tr>" + h + "</tr>" + "");
-
-    }
-</script>
+</body>
+</html>
