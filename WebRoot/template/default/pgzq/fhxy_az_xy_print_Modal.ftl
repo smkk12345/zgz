@@ -75,7 +75,12 @@
         <p class="contex-1">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1、依据《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      张郭庄村棚户区改造              定向安置房项目购买定向安置房。
                      乙方“实际选房面积”为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<#if bean.sjxfmj??>${bean.sjxfmj?string("0.00")}<#else>0.00</#if> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米，其中一居室<u>
-            &nbsp;&nbsp;${bean.yjs?c?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;${bean.ljs70?number+bean.ljs75?number+bean.ljs80?number+bean.ljs85?number}&nbsp;&nbsp;</u>套，三居室<u>
+            &nbsp;&nbsp;${bean.yjs?c?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;
+            <#assign ljs70 = bean.ljs70?default(0)>
+            <#assign ljs75 = bean.ljs75?default(0)>
+            <#assign ljs80 = bean.ljs80?default(0)>
+            <#assign ljs85 = bean.ljs85?default(0)>
+            ${ljs70?number+ljs75?number+ljs80?number+ljs85?number}&nbsp;&nbsp;</u>套，三居室<u>
             &nbsp;&nbsp;${bean.sjs?c?default("/")}&nbsp;&nbsp;</u>套。
         </p>
 
@@ -143,7 +148,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.3
             乙方宅基地腾退补偿总价不足以支付定向安置房购房款的，甲方将乙方宅基地腾退补偿总价直接支付给定向安置房建设主体，甲方不再向乙方支付宅基地腾退补偿总价。乙方应按其所签署的《北京市定向安置房认购协议》所约定的期限向定向安置房建设主体补交剩余定向安置房购房款;<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.4
-            乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的支付凭证或单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价领取和定向安置房购房款的交付手续过程中拒绝在相关单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价的发放。<br/>
+            乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的相关单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价领取和定向安置房购房款的交付手续过程中拒绝在相关单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价的发放。<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.5
              甲方按照乙方签订本协议之日起至定向安置房交房后  4  个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  1500元/人/月 ，甲方暂按周转期  40个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《张郭庄村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
         </p>
