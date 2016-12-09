@@ -12,6 +12,7 @@ import org.springframework.core.io.ClassPathResource;
 
 public class SpringBeanFactory extends GenericApplicationContext {
 
+
     private static Log log = LogFactory.getLog(SpringBeanFactory.class);
 
     /**
