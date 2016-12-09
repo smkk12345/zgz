@@ -61,7 +61,7 @@
                             第七标段
                             </#if>
                         </td>
-                        <td style="color:#FF0;"><#if (ROW.atype?default("0"))=='0'>房屋安置<#else>货币安置</#if></td>
+                        <td style="color:#FF0;"><#if (ROW.atype?default("0"))=='0'>房屋安置<#else><span style="color: red">货币安置</span></#if></td>
                         <td style="color:#FF0;">${ROW.names?default("")}</td>
                         <td style="color:#0F0;">${ROW.displaydate?default("")}</td>
                     </tr>

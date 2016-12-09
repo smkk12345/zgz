@@ -359,15 +359,8 @@
                          >预结单</button>
                 
                 <#if role.roleAuthority[10]=="2">
-                	<a href="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}" target="_blank">打印</a>
-                    <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印协议'
-                        <#if ROW.atype?default("0")=="0">
-                            data-url="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
-                        <#else>
-                            data-url="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"
-                        </#if>
-                        >
-                        协议</button>
+                
+                <a class="btn btn-danger btn-xs ml10 bold" <#if ROW.atype?default("0")=="0"> href="${BASE_PATH}pgzq/fhxy_az_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}" <#else> href="${BASE_PATH}pgzq/fhxy_hb_xy_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}" </#if> target="_blank">协议</a>
                 </#if>
             </td>
             <#if (ROW.atype)??>
@@ -436,10 +429,10 @@
                 <#if ROW.atype?default("0")=="0">
                     <#if (ROW.protocolnumber)??>
                         <#if (ROW.protocolnumber?length>0)>
-                        <button type="button"
-                                class="btn btn-danger btn-xs ml10 YL-ModalClick bold"
+                        <a type="button"
+                                class="btn btn-danger btn-xs ml10  bold"
                                 title='打印定向安置房认购协议'
-                                data-url="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}">认购协议</button>
+                                href="${BASE_PATH}pgzq/fhxy_sxh_print_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}" target="_blank">认购协议</a>
                         </#if>
                     </#if>
                  </#if>
