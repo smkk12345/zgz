@@ -85,9 +85,7 @@
 	            <td>${ROW.azfgfk?default("")}</td>
 	            <td>${ROW.jshk?default("")}</td>
 	            <td>
-	                <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
-	                        title=''
-	                        data-url="${BASE_PATH}dagl/dagl_model.action?housebasicid=${ROW.housebasicid}"></button>
+                    <a href="${BASE_PATH}/photo/uploadType.action?agreementId=${ROW.housebasicid}" target="_blank" class="btn btn-success btn-xs ml10 glyphicon glyphicon-edit"></a>
 	            </td>
 	        </tr>
 	        </#list>

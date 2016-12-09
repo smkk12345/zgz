@@ -1,6 +1,9 @@
 package com.common.consts;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Contanst {
 
@@ -23,4 +26,16 @@ public class Contanst {
         put("7", "第七标段");
     }};
 
+    //档案照片分类
+    public static List<String[]> archivePhotoCategory = new ArrayList<String[]>(){{
+        add(new String[]{"1","入户调查档案"});
+        add(new String[]{"2","被征收人证件"});
+        add(new String[]{"3","房屋相关证件"});
+        add(new String[]{"4","评估档案资料"});
+        add(new String[]{"5","测绘档案资料"});
+        add(new String[]{"6","补偿协议档案"});
+        add(new String[]{"7","选房档案资料"});
+        add(new String[]{"8","其他档案资料"});
+    }
+    };
 }
