@@ -1,4 +1,4 @@
-﻿package com.hibernate.timers.timerTask;
+package com.hibernate.timers.timerTask;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -18,40 +18,40 @@ import com.spring.ServiceManager;
 import com.sun.corba.se.spi.activation.ServerManager;
 
 public class CloudTimerTask extends TimerTask {
-	
-	private boolean isRunning = false;
-	/**
-	 * 定时器run方法，判断定时器是否执行逻辑
-	 */
-	@Override
-	public void run() {
-		if(!isRunning){
-			isRunning = true;
-			execute();
-			isRunning = false;
-		}
-	} 
-	/**
-	 * 调用定时器
-	 */
-	private void execute(){
-		long now = System.currentTimeMillis();
-		long endTime = 0;
-		for(int i = 0;i<TimerTaskUtil.timerTasks.size();i++){
-			TimerTaskBean task = TimerTaskUtil.timerTasks.get(i);
-			if(task.getStopTime() != null){
-				endTime = task.getStopTime().getTime() - now;
-			}
-			if(endTime>=0){
+
+    private boolean isRunning = false;
+    /**
+     * 定时器run方法，判断定时器是否执行逻辑
+     */
+    @Override
+    public void run() {
+        if(!isRunning){
+            isRunning = true;
+            execute();
+            isRunning = false;
+        }
+    }
+    /**
+     * 调用定时器
+     */
+    private void execute(){
+        long now = System.currentTimeMillis();
+        long endTime = 0;
+        for(int i = 0;i<TimerTaskUtil.timerTasks.size();i++){
+            TimerTaskBean task = TimerTaskUtil.timerTasks.get(i);
+            if(task.getStopTime() != null){
+                endTime = task.getStopTime().getTime() - now;
+            }
+            if(endTime>=0){
 //				if(isStartBefore5Min(task,now)){
 //					TimerTaskUtil.callTask(task.getId(),"","before5Min",task.getAoJianIds());
 //				}
-				if(isStart(task,now)){
-					TimerTaskUtil.callTask(task.getId(),"","",task.getAoJianIds());
-				}
-			}
-		}
-	}
+                if(isStart(task,now)){
+                    TimerTaskUtil.callTask(task.getId(),"","",task.getAoJianIds());
+                }
+            }
+        }
+    }
 
 //	private boolean isRealTime() {
 //		URL path = Thread.currentThread().getContextClassLoader().getResource("");
@@ -84,75 +84,75 @@ public class CloudTimerTask extends TimerTask {
 //			return true;
 //		}
 //	}
-	
-	public static String getPriMonth(int num){
-		String str = "";   
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM");       
 
-		Calendar lastDate = Calendar.getInstance();   
-		lastDate.set(Calendar.DATE,1);//设为当前月的1号   
-		lastDate.add(Calendar.MONTH,num);//减一个月，变为下月的1号   
-		str=sdf.format(lastDate.getTime());   
-		return str;     
+    public static String getPriMonth(int num){
+        String str = "";
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM");
 
-	}
+        Calendar lastDate = Calendar.getInstance();
+        lastDate.set(Calendar.DATE,1);//设为当前月的1号
+        lastDate.add(Calendar.MONTH,num);//减一个月，变为下月的1号
+        str=sdf.format(lastDate.getTime());
+        return str;
 
-	/**
-	 * 处理定时器单位为月，年
-	 * 没做年月的周期性逻辑，后面需要自行添加
-	 * 月周期，年，  月末逻辑未添加   不确定是30号还是月末
-	 * @param map
-	 */
-	private boolean isStartByCalendar(TimerTaskBean task, long now){
-		return false;
-	}
+    }
 
-	/**
-	 * 传感器 提前5分钟f105写0操作
-	 * @return
-	 */
-	private boolean isStartBefore5Min(TimerTaskBean task,long now){
-		now = now + 5*60*1000;
-		long timedistance = (now - task.getStartTime().getTime()) / 1000;
-		if(timedistance % getCalcPeriod(task) == 0){
-			return true;
-		}
-		return false;
-	}
-	
-	/**
-	 * 是否在运行
-	 * @return
-	 */
-	private boolean isStart(TimerTaskBean task,long now){
-		long timedistance = (now - task.getStartTime().getTime()) / 1000;
-		if(timedistance % getCalcPeriod(task) == 0){
-			return true;
-		}
-		return false;
-	}
+    /**
+     * 处理定时器单位为月，年
+     * 没做年月的周期性逻辑，后面需要自行添加
+     * 月周期，年，  月末逻辑未添加   不确定是30号还是月末
+     * @param map
+     */
+    private boolean isStartByCalendar(TimerTaskBean task, long now){
+        return false;
+    }
 
-	/**
-	 * 通过周期和单位计算到秒
-	 * @param map
-	 */
-	private int getCalcPeriod(TimerTaskBean task){
-		int result = 0;
-		if(task.getUnits().equals("秒")){
-			return task.getPeriod();
-		}
-		if(task.getUnits().equals("分")){
-			return task.getPeriod() * 60;
-		}
-		if(task.getUnits().equals("时")){
-			return task.getPeriod() * 60*60;
-		}
-		if(task.getUnits().equals("日")){
-			return task.getPeriod() * 60*60*24;
-		}
-		if(task.getUnits().equals("周")){
-			return task.getPeriod() * 60*60*24*7;
-		}
-		return result;
-	}
+    /**
+     * 传感器 提前5分钟f105写0操作
+     * @return
+     */
+    private boolean isStartBefore5Min(TimerTaskBean task,long now){
+        now = now + 5*60*1000;
+        long timedistance = (now - task.getStartTime().getTime()) / 1000;
+        if(timedistance % getCalcPeriod(task) == 0){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 是否在运行
+     * @return
+     */
+    private boolean isStart(TimerTaskBean task,long now){
+        long timedistance = (now - task.getStartTime().getTime()) / 1000;
+        if(timedistance % getCalcPeriod(task) == 0){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 通过周期和单位计算到秒
+     * @param map
+     */
+    private int getCalcPeriod(TimerTaskBean task){
+        int result = 0;
+        if(task.getUnits().equals("秒")){
+            return task.getPeriod();
+        }
+        if(task.getUnits().equals("分")){
+            return task.getPeriod() * 60;
+        }
+        if(task.getUnits().equals("时")){
+            return task.getPeriod() * 60*60;
+        }
+        if(task.getUnits().equals("日")){
+            return task.getPeriod() * 60*60*24;
+        }
+        if(task.getUnits().equals("周")){
+            return task.getPeriod() * 60*60*24*7;
+        }
+        return result;
+    }
 }
