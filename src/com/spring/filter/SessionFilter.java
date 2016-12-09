@@ -1,4 +1,4 @@
-﻿package com.spring.filter;
+package com.spring.filter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -24,209 +24,209 @@ import com.spring.ServiceManager;
 import com.spring.controller.IndexController;
 
 public class SessionFilter extends OncePerRequestFilter {
-	
-	public SessionFilter(){
-		initOperateMap();
-	}
-	private  Map<String,String> operateMap = null;
 
-	public void initOperateMap(){
-		operateMap = new HashMap<String, String>(){{
-			put("validate.action", "登陆,用户登录");
-			
-			put("/xtsz/saveBaseSettingInfo.action", "系统设置,修改基本信息");
-			put("/xtsz/saveBarnInfo.action", "系统设置,添加/修改仓房信息");
-			put("/xtsz/delBarnList.action", "系统设置,删除仓房");
-			put("/xtsz/saveSensorInfo.action", "系统设置,修改传感器信息");
-			put("/xtsz/sensorDel.action", "系统设置,删除传感器信息");
-			put("/xtsz/saveAlarmInfo.action", "系统设置,修改告警阈值信息");
-			put("/xtsz/reSetAlarmInfo.action", "系统设置,重置告警阈值信息");
-			put("/xtsz/alarmDel.action", "系统设置,删除自定义告警阈值信息");
-			put("/xtsz/saveAoJianInfo.action", "系统设置,修改廒间信息");
-			put("/xtsz/exportGrainInfo.action", "系统设置,出仓操作");
-			put("/xtsz/delBarnList.action", "系统设置,删除仓房");
-			put("/xtsz/updateStoreType.action", "系统设置,修改厫间储粮模式");
-			put("/xtsz/saveArrangementInfo.action", "系统设置,修改检测设备布置信息");
-			put("/xtsz/delSensorArrangement.action", "系统设置,删除检测设备布置信息");
-			put("/xtsz/saveTheme.action", "系统设置,修改主题色调");
-			put("/xtsz/updateAoJianArrangement.action", "系统设置,修改廒间检测设备布置信息");
-			put("/xtsz/saveGrain.action", "系统设置,维护粮食类别");
-			put("/xtsz/delGrain.action", "系统设置,删除粮食类别");
-			put("/xtsz/saveSensorInfo.action", "系统设置,新增/修改检测设备传感器");
-			put("/xtsz/sensorDel.action", "系统设置,删除检测设备传感器信息");
-			put("/xtsz/updateTimerAoJianInfo.action", "系统设置,修改定时检测适用范围");
-			put("/xtsz/saveTimerTask.action", "系统设置,修改定时任务");
-			put("/xtsz/delTimerTask.action", "系统设置,删除定时任务");
-			put("/xtsz/changeStatus.action", "系统设置,修改定时器状态");
-			put("/user/saveUserInfo.action","系统设置,编辑用户信息");
-			put("/user/updateUserInfo.action","系统设置,编辑用户管辖仓房");
-			put("/user/userDel.action","系统设置,删除用户信息");
-			put("/user/saveRoleInfo.action","系统设置,编辑用户组信息");
-			put("/user/roleDel.action","系统设置,删除用户组信息");
-			put("/user/updatePersonDetail.action","系统设置,修改个人信息");
-			
-			put("/lqjc/updateAoJianData.action","粮情检测,编辑粮情");
-			put("/lqjc/deleteAoJianDataById.action","粮情检测,删除粮情");
-			put("/lqjc/ytfx_1_1.action","粮情检测,批量生成云图");
-			put("/lqjc/ytAllPro.action","粮情检测,生成云图");
-			put("/lqjc/realTimeMonitoring.action","粮情检测,实时检测");
-			
-		}};	
-	}
-	
-	@Override
-	protected void doFilterInternal(HttpServletRequest request,
-			HttpServletResponse response, FilterChain arg2)
-					throws ServletException, IOException {
-		
-		
-		
-		// 不过滤的uri，首页不过滤 
-		String[] notFilter = new String[] { "login.action",
-				"testConnection.action", "validate.action","lockService.action","chart","touch"
-				 };
-		
-		String url = request.getRequestURI();
-		
-		// 请求的uri   
-		if(!url.contains(".action")){
-			arg2.doFilter(request, response); 
-			return;
-		}
-		boolean doFilter = true;  
-		for (String s : notFilter) {  
-			if (url.indexOf(s) != -1) {  
-				// 如果uri中包含不过滤的uri，则不进行过滤   
-				doFilter = false;  
-				break;  
-			}  
-		}  
-		RoleBean role = null;
-		try {
-			role = (RoleBean)request.getSession().getAttribute("role");
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
-		   if(null == baseBean){
-			   baseBean = new BaseSettingBean();
-			   baseBean.setKey("sd");
-			   baseBean.setKeyName("系统锁定");
-			   baseBean.setValue("0");
+    public SessionFilter(){
+        initOperateMap();
+    }
+    private  Map<String,String> operateMap = null;
+
+    public void initOperateMap(){
+        operateMap = new HashMap<String, String>(){{
+            put("validate.action", "登陆,用户登录");
+
+            put("/xtsz/saveBaseSettingInfo.action", "系统设置,修改基本信息");
+            put("/xtsz/saveBarnInfo.action", "系统设置,添加/修改仓房信息");
+            put("/xtsz/delBarnList.action", "系统设置,删除仓房");
+            put("/xtsz/saveSensorInfo.action", "系统设置,修改传感器信息");
+            put("/xtsz/sensorDel.action", "系统设置,删除传感器信息");
+            put("/xtsz/saveAlarmInfo.action", "系统设置,修改告警阈值信息");
+            put("/xtsz/reSetAlarmInfo.action", "系统设置,重置告警阈值信息");
+            put("/xtsz/alarmDel.action", "系统设置,删除自定义告警阈值信息");
+            put("/xtsz/saveAoJianInfo.action", "系统设置,修改廒间信息");
+            put("/xtsz/exportGrainInfo.action", "系统设置,出仓操作");
+            put("/xtsz/delBarnList.action", "系统设置,删除仓房");
+            put("/xtsz/updateStoreType.action", "系统设置,修改厫间储粮模式");
+            put("/xtsz/saveArrangementInfo.action", "系统设置,修改检测设备布置信息");
+            put("/xtsz/delSensorArrangement.action", "系统设置,删除检测设备布置信息");
+            put("/xtsz/saveTheme.action", "系统设置,修改主题色调");
+            put("/xtsz/updateAoJianArrangement.action", "系统设置,修改廒间检测设备布置信息");
+            put("/xtsz/saveGrain.action", "系统设置,维护粮食类别");
+            put("/xtsz/delGrain.action", "系统设置,删除粮食类别");
+            put("/xtsz/saveSensorInfo.action", "系统设置,新增/修改检测设备传感器");
+            put("/xtsz/sensorDel.action", "系统设置,删除检测设备传感器信息");
+            put("/xtsz/updateTimerAoJianInfo.action", "系统设置,修改定时检测适用范围");
+            put("/xtsz/saveTimerTask.action", "系统设置,修改定时任务");
+            put("/xtsz/delTimerTask.action", "系统设置,删除定时任务");
+            put("/xtsz/changeStatus.action", "系统设置,修改定时器状态");
+            put("/user/saveUserInfo.action","系统设置,编辑用户信息");
+            put("/user/updateUserInfo.action","系统设置,编辑用户管辖仓房");
+            put("/user/userDel.action","系统设置,删除用户信息");
+            put("/user/saveRoleInfo.action","系统设置,编辑用户组信息");
+            put("/user/roleDel.action","系统设置,删除用户组信息");
+            put("/user/updatePersonDetail.action","系统设置,修改个人信息");
+
+            put("/lqjc/updateAoJianData.action","粮情检测,编辑粮情");
+            put("/lqjc/deleteAoJianDataById.action","粮情检测,删除粮情");
+            put("/lqjc/ytfx_1_1.action","粮情检测,批量生成云图");
+            put("/lqjc/ytAllPro.action","粮情检测,生成云图");
+            put("/lqjc/realTimeMonitoring.action","粮情检测,实时检测");
+
+        }};
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response, FilterChain arg2)
+            throws ServletException, IOException {
+
+
+
+        // 不过滤的uri，首页不过滤
+        String[] notFilter = new String[] { "login.action",
+                "testConnection.action", "validate.action","lockService.action","chart","touch"
+        };
+
+        String url = request.getRequestURI();
+
+        // 请求的uri
+        if(!url.contains(".action")){
+            arg2.doFilter(request, response);
+            return;
+        }
+        boolean doFilter = true;
+        for (String s : notFilter) {
+            if (url.indexOf(s) != -1) {
+                // 如果uri中包含不过滤的uri，则不进行过滤
+                doFilter = false;
+                break;
+            }
+        }
+        RoleBean role = null;
+        try {
+            role = (RoleBean)request.getSession().getAttribute("role");
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
+        if(null == baseBean){
+            baseBean = new BaseSettingBean();
+            baseBean.setKey("sd");
+            baseBean.setKeyName("系统锁定");
+            baseBean.setValue("0");
 //			   ServiceManager.getBaseSettingServiceImpl().delete();
-			   ServiceManager.getBaseSettingServiceImpl().save(baseBean);
-		   }
-		 Contanst.TEM_STOP = baseBean.getValue().equals("1");
-		
-		if(Contanst.TEM_STOP){
-			if(null != role){
-				String authority = role.getRoleAuthority();
-				if(authority.substring(38, 39).equals("2")){
-//						arg2.doFilter(request, response); 
-				}else{
-					if(!url.contains("lockService.action")){
-						temStop(response,request);
-					}
-				}
-			}
-		}else{
-			if(url.contains("lockService.action")){
-				webExpireInfor(response, request);
-			}
-		}
-		if (doFilter) { 
-			// 执行过滤   
-			// 从session中获取登录者实体   
-			User obj = (User)request.getSession().getAttribute("user");  
-			if (null == obj) {
-				Cookie userNameCookie = RequestUtil.getCookieByName(request, "userName");
-				Cookie passwordCookie = RequestUtil.getCookieByName(request, "userPwd");
-				if(null!=userNameCookie&&null!=passwordCookie&&!StringUtils.isEmpty(userNameCookie.getValue())&&!StringUtils.isEmpty(passwordCookie.getValue())){
-					if(new IndexController().doLogin(userNameCookie.getValue(), passwordCookie.getValue(), request,true)){
-						obj=(User)request.getSession().getAttribute("user"); 
-						if("5".equals(obj.getRightLevel())){
-						}else {
-							syncOperateInfo(obj,url,request);
-						}
-						arg2.doFilter(request, response);
-						return;
-					}else{
-						webExpireInfor(response, request);
-					}
-				}
-				else{
-					webExpireInfor(response, request); 
-				}
-			} else {  
-				if("5".equals(obj.getRightLevel())){
-				}else {
-					syncOperateInfo(obj,url,request);
-				}
-				// 如果session中存在登录者实体，则继续   
-				arg2.doFilter(request, response);  
-			}  
-		} else {  
-			// 如果不执行过滤，则继续   
-			arg2.doFilter(request, response);  
-		}  
-	}
-	private void webExpireInfor(HttpServletResponse response,HttpServletRequest request) throws IOException {
-		// 如果session中不存在登录者实体，则弹出框提示重新登录   
-		// 设置request和response的字符集，防止乱码   
-		response.setCharacterEncoding("utf-8");  
-		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();  
-		String loginPage = RequestUtil.getBasePath(request)+"login.action";  
-		StringBuilder builder = new StringBuilder();  
-		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
-		builder.append("alert('网页过期，请重新登录！');");  
-		builder.append("window.top.location.href='");  
-		builder.append(loginPage);  
-		builder.append("';");  
-		builder.append("</script>");  
-		try {
-			out.print(builder.toString());  
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally{
-			out.close();
-		}
-	}
-	private void temStop(HttpServletResponse response,HttpServletRequest request) throws IOException {
-		// 如果session中不存在登录者实体，则弹出框提示重新登录   
-		// 设置request和response的字符集，防止乱码   
-		response.setCharacterEncoding("utf-8");  
-		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();  
-		try {
-			request.getSession().invalidate();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		String loginPage = RequestUtil.getBasePath(request)+"lockService.action";  
-		StringBuilder builder = new StringBuilder();  
-		builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");  
-		builder.append("window.top.location.href='");  
-		builder.append(loginPage);  
-		builder.append("';");  
-		builder.append("</script>");  
-		try {
-			out.print(builder.toString());  
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally{
-			out.close();
-		}
-		
-	}
-	/**
-	 * 记录用户的操作信息
-	 * @param user
-	 * @param url
-	 */
-	public void syncOperateInfo(User user,String url,HttpServletRequest request){
-		
+            ServiceManager.getBaseSettingServiceImpl().save(baseBean);
+        }
+        Contanst.TEM_STOP = baseBean.getValue().equals("1");
+
+        if(Contanst.TEM_STOP){
+            if(null != role){
+                String authority = role.getRoleAuthority();
+                if(authority.substring(38, 39).equals("2")){
+//						arg2.doFilter(request, response);
+                }else{
+                    if(!url.contains("lockService.action")){
+                        temStop(response,request);
+                    }
+                }
+            }
+        }else{
+            if(url.contains("lockService.action")){
+                webExpireInfor(response, request);
+            }
+        }
+        if (doFilter) {
+            // 执行过滤
+            // 从session中获取登录者实体
+            User obj = (User)request.getSession().getAttribute("user");
+            if (null == obj) {
+                Cookie userNameCookie = RequestUtil.getCookieByName(request, "userName");
+                Cookie passwordCookie = RequestUtil.getCookieByName(request, "userPwd");
+                if(null!=userNameCookie&&null!=passwordCookie&&!StringUtils.isEmpty(userNameCookie.getValue())&&!StringUtils.isEmpty(passwordCookie.getValue())){
+                    if(new IndexController().doLogin(userNameCookie.getValue(), passwordCookie.getValue(), request,true)){
+                        obj=(User)request.getSession().getAttribute("user");
+                        if("5".equals(obj.getRightLevel())){
+                        }else {
+                            syncOperateInfo(obj,url,request);
+                        }
+                        arg2.doFilter(request, response);
+                        return;
+                    }else{
+                        webExpireInfor(response, request);
+                    }
+                }
+                else{
+                    webExpireInfor(response, request);
+                }
+            } else {
+                if("5".equals(obj.getRightLevel())){
+                }else {
+                    syncOperateInfo(obj,url,request);
+                }
+                // 如果session中存在登录者实体，则继续
+                arg2.doFilter(request, response);
+            }
+        } else {
+            // 如果不执行过滤，则继续
+            arg2.doFilter(request, response);
+        }
+    }
+    private void webExpireInfor(HttpServletResponse response,HttpServletRequest request) throws IOException {
+        // 如果session中不存在登录者实体，则弹出框提示重新登录
+        // 设置request和response的字符集，防止乱码
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html; charset=utf-8");
+        PrintWriter out = response.getWriter();
+        String loginPage = RequestUtil.getBasePath(request)+"login.action";
+        StringBuilder builder = new StringBuilder();
+        builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");
+        builder.append("alert('网页过期，请重新登录！');");
+        builder.append("window.top.location.href='");
+        builder.append(loginPage);
+        builder.append("';");
+        builder.append("</script>");
+        try {
+            out.print(builder.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            out.close();
+        }
+    }
+    private void temStop(HttpServletResponse response,HttpServletRequest request) throws IOException {
+        // 如果session中不存在登录者实体，则弹出框提示重新登录
+        // 设置request和response的字符集，防止乱码
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html; charset=utf-8");
+        PrintWriter out = response.getWriter();
+        try {
+            request.getSession().invalidate();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        String loginPage = RequestUtil.getBasePath(request)+"lockService.action";
+        StringBuilder builder = new StringBuilder();
+        builder.append("<script charset=\"utf-8\" type=\"text/javascript\">");
+        builder.append("window.top.location.href='");
+        builder.append(loginPage);
+        builder.append("';");
+        builder.append("</script>");
+        try {
+            out.print(builder.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            out.close();
+        }
+
+    }
+    /**
+     * 记录用户的操作信息
+     * @param user
+     * @param url
+     */
+    public void syncOperateInfo(User user,String url,HttpServletRequest request){
+
 //		Iterator<String> it = operateMap.keySet().iterator();
 //		Date curDate = new Date();
 //		OperateRecordBean bean = new OperateRecordBean();
@@ -247,14 +247,14 @@ public class SessionFilter extends OncePerRequestFilter {
 //				break;
 //			}
 //		}
-	}
-	
-	/**
-	 * 组装操作信息
-	 * @return
-	 */
-	private String fillOperateInfo(String url,User user,HttpServletRequest request){
-		String operateStr = "";
+    }
+
+    /**
+     * 组装操作信息
+     * @return
+     */
+    private String fillOperateInfo(String url,User user,HttpServletRequest request){
+        String operateStr = "";
 //		if(url.contains("/xtsz/saveBarnInfo.action")){
 //			String barnIndex = RequestUtil.getRequestParameter(request, "barnIndex");
 //			operateStr = "("+barnIndex+"仓)";
@@ -307,6 +307,6 @@ public class SessionFilter extends OncePerRequestFilter {
 //			return operateStr;
 //		}
 
-		return operateStr;
-	}
+        return operateStr;
+    }
 }
