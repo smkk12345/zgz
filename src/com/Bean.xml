@@ -45,4 +45,9 @@
 	</bean>
 	
 	<bean id="fileManageDao" class="com.hibernate.houseinfo.dao.FileManageDao"></bean>
+
+
+	<bean id="photoDao" class="com.hibernate.houseinfo.dao.PhotoDao"></bean>
+
+	<bean id="photoService" class="com.hibernate.houseinfo.service.PhotoService"></bean>
 </beans>
