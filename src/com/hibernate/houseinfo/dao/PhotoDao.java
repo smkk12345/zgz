@@ -15,12 +15,13 @@ import java.util.List;
  */
 public class PhotoDao extends BaseDaoImpl<Photo> {
     public List<Photo> listByType(int type, String agreementId) {
+
         Session session = null;
         List<Photo> list = null;
         try{
             session = getSession();
             String hql = "from Photo where type=? and agreementId=? order by  id";
-            list = getSession().createQuery(hql).setInteger(0,type).setString(1,agreementId).list();
+            list = session.createQuery(hql).setInteger(0,type).setString(1,agreementId).list();
         }finally {
             if(session!=null) {
                 session.close();
