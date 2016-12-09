@@ -28,7 +28,7 @@
                 <input type="hidden" name='url' value='{$url}'>
                 <button type="button" class="btn btn-group-lg btn-warning" onclick= "cPassw()">登	录</button>
                 <!--<div class="stat mt10"><a href="#">找回密码</a></div>-->
-                <div class="copy mt20"><a href="">北京佳木东方科技有限公司</a></div>
+                <#--<div class="copy mt20"><a href="">北京佳木东方科技有限公司</a></div>-->
             </div>
         </div>
     </div>
