@@ -12,12 +12,14 @@
                 <td colspan="11"  style="font-weight:bold;font-size:18px;" class="center" >（张郭庄）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>
             <tr>
-                <td class="" colspan=2>被腾退人</td>
+                <td class="" colspan=1>被腾退人</td>
                 <td class="">${bean.names?default("")} </td>
                 <td class="">坐落</td>
                 <td class="" colspan="3">${bean.location?default("")}</td>
-                <td class="" colspan="2">签约时间</td>
+                <td class="" colspan="1">签约时间</td>
                 <td class="" colspan="2">${bean.operatedate?default("")}</td>
+                             	<td class="" colspan=1>超生人口</td>
+                <td class=""colspan=3>${bean.gfbz45?default("")}</td>
             </tr>
             <tr>
                 <td class=""colspan="2">宅基地实测(m<sup>2</sup>)</td>

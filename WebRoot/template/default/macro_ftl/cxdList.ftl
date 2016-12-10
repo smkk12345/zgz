@@ -18,20 +18,51 @@
                         <#if ROW.checkresult=="1">
                             已锁定
                         <#else>
-                            <button type="button"
+                       		<#if (ROW.islock??)>
+                       			<#if ROW.islock=="1">
+                       			 已锁定
+                       			<#else>
+                       			                            <button type="button"
                                     class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
                                     title='编辑'
                                     data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"></button>
                             <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"
                                     title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action"
                                     pname="${ROW.id}"></button>
+                       			</#if>
+                       		<#else>
+                       		<button type="button"
+                                    class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
+                                    title='编辑'
+                                    data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"></button>
+                            <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"
+                                    title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action"
+                                    pname="${ROW.id}"></button>
+                       		</#if>
+                       		
                         </#if>
                     <#else>
-                        <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
-                                title='编辑' data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"></button>
-                        <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"
-                                title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action"
-                                pname="${ROW.id}"></button>
+                        <#if (ROW.islock??)>
+                       			<#if ROW.islock=="1">
+                       			 已锁定
+                       			<#else>
+                       		<button type="button"
+                                    class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
+                                    title='编辑'
+                                    data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"></button>
+                            <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"
+                                    title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action"
+                                    pname="${ROW.id}"></button>
+                       			</#if>
+                       		<#else>
+                       		                            <button type="button"
+                                    class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
+                                    title='编辑'
+                                    data-url="${BASE_PATH}edithousebasic.action?housebasicid=${ROW.id}"></button>
+                            <button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle"
+                                    title='删除' onClick='delBtnClick(this)' data-url="${BASE_PATH}pgqq/del.action"
+                                    pname="${ROW.id}"></button>
+                       		</#if>
                     </#if>
                 </#if>
             </td>
@@ -159,23 +190,42 @@
                         <#if ROW.checkresult=="1">
                             已锁定
                         <#else>
-                            <#if role.roleAuthority[7]=="2">
-                    <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
-                            title='编辑查看'
-                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
-                </#if>
-                <!--<#if role.roleAuthority[8]=="2">
-                    <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
-                            title='数据查看'
-                            data-url="${BASE_PATH}pgzq/fhfa_c_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
-                </#if>-->
+                        <#if (ROW.islock??)>
+                       			<#if ROW.islock=="1">
+                       			 已锁定
+                       			<#else>
+			 						<#if role.roleAuthority[7]=="2">
+			                    	<button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
+			                            title='编辑查看'
+			                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+			                       		</#if>
+			                      </#if>
+                       		<#else>
+		 						<#if role.roleAuthority[7]=="2">
+		                    	<button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
+		                            title='编辑查看'
+		                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+		                       	</#if>
+		                	</#if>
                         </#if>
                     <#else>
-                       <#if role.roleAuthority[7]=="2">
-                    <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
-                            title='编辑查看'
-                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
-                </#if>
+                      <#if (ROW.islock??)>
+                       			<#if ROW.islock=="1">
+                       			 已锁定
+                       			<#else>
+			 						<#if role.roleAuthority[7]=="2">
+			                    	<button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
+			                            title='编辑查看'
+			                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+			                       		</#if>
+			                      </#if>
+                       		<#else>
+		 						<#if role.roleAuthority[7]=="2">
+		                    	<button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-pencil"
+		                            title='编辑查看'
+		                            data-url="${BASE_PATH}pgzq/fhfa_edit_Modal.action?housebasicid=${ROW.housebasicid}&agreenmentid=${(ROW.agreenmentid)!""}"></button>
+		                       	</#if>
+		                	</#if>
                 <!--<#if role.roleAuthority[8]=="2">
                     <button type="button" class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-zoom-in"
                             title='数据查看'
@@ -387,7 +437,6 @@
                         </#if>
                     </#if>
                 </td>
-                <td id="td_protocolnumber${ROW.id}" title="请点击左侧确认签约，获取协议编号"><button>未锁定</button></td>
                 <td id="td_print2${ROW.id}">
                     <#if role.roleAuthority[12]=="2">
                         <#if (ROW.protocolnumber)??>

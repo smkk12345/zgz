@@ -76,6 +76,50 @@ public class AgreenmentController {
 		}
 	}
 
+	@RequestMapping({"/pgzq/sdjs.action"})
+	public ModelAndView sdjs(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			String sql = getFhfaSxhSql(role.getSection(),request,model);
+			String agreenmentsql = new StringBuffer(sql).append(" and c.indexnum is not null ").toString();
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(agreenmentsql,"", (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(agreenmentsql);
+//			List<HouseBasic> list = ServiceManager.getHouseBasicServce().getListBySection(request,model,role.getSection(),(intPageNum-1)*intPageSize,intPageSize);
+//			Integer count = ServiceManager.getHouseBasicServce().getCount(role.getSection());
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "AGREENMENT");
+			model.addAttribute("CURENT_TAB_2", "sdjs");
+			model.addAttribute("CURENT_TAB_3", "sdjs");
+
+			return new ModelAndView(PageConst.PGZQ_sdjs, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
 	
 	private String getFhfaSxhSql(String section,HttpServletRequest request,ModelMap model) {
 		// TODO Auto-generated method stub

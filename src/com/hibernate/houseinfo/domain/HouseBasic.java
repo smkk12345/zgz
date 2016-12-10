@@ -121,7 +121,15 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private Integer peoplecount;
 	//人员信息
 	private String peopleinfo;
+	//锁定、解锁
+	private String islock; //0未锁定   1  锁定
 	
+	public String getIslock() {
+		return islock;
+	}
+	public void setIslock(String islock) {
+		this.islock = islock;
+	}
 	public String getHassplit() {
 		if(StringUtils.isBlank(hassplit)){
 			return null;

@@ -88,6 +88,7 @@ public class DisplayBean extends BaseBean {
 		//l类型  个体工商   1  个人独资
 		private String operatetype;
 		private String operatename;
+		private String islock;
 		
 		//协议
 		private Agreement agreenment = new Agreement();
@@ -315,6 +316,9 @@ public class DisplayBean extends BaseBean {
 	    private String ckzqwbcmjj;
 	    private String fwjkmjj;
 	    private String sbzxmjj;
+	    
+	    private String gfbz50;
+	    private String gfbz45;
 	    
 		public BigDecimal getWjpzyjecbz() {
 			return wjpzyjecbz;
@@ -1245,6 +1249,24 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setSbzxmjj(String sbzxmjj) {
 			this.sbzxmjj = sbzxmjj;
+		}
+		public String getIslock() {
+			return islock;
+		}
+		public void setIslock(String islock) {
+			this.islock = islock;
+		}
+		public String getGfbz50() {
+			return gfbz50;
+		}
+		public String getGfbz45() {
+			return gfbz45;
+		}
+		public void setGfbz50(String gfbz50) {
+			this.gfbz50 = gfbz50;
+		}
+		public void setGfbz45(String gfbz45) {
+			this.gfbz45 = gfbz45;
 		}
 		
 		

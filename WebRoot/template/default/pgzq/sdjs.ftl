@@ -9,11 +9,15 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4 class="bold">协议签订管理</h4>
+            <h4 class="bold">数据锁定与解锁</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
-              <form id="seachfrm"  action="${BASE_PATH}pgzq/fhxy.action" accept-charset="UTF-8" method="post" >
+<!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
+            </div>
+            <#if role.roleAuthority[6]=="2">
+            <div class="fl">
+              <form  action="${BASE_PATH}pgzq/sdjs.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -32,24 +36,17 @@
 	                </div>  
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>安置方式:</label>
-	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
+	                    <select id='atypeChange' class='form-control input-sm fl' style='width:120px;' name='atype' >  
 	                        <option  <#if (atype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
 	                        <option  <#if (atype?default("-1"))=='0'>selected='selected'</#if>  value="0">房屋安置</option>  
 	                        <option  <#if (atype?default("-1"))=='1'>selected='selected'</#if> value="1">货币补偿</option> 
                     	</select>
-	                </div>
-	                <div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>签约状态:</label>
-	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='qianyue' >  
-	                        <option  <#if (qianyue?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-	                        <option  <#if (qianyue?default("-1"))=='0'>selected='selected'</#if>  value="0">已签约</option>  
-	                        <option  <#if (qianyue?default("-1"))=='1'>selected='selected'</#if> value="1">未签约</option> 
-                    	</select>
-	                </div>    
+	                </div>  
                   <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
 	               
 	            </form>
             </div>
+            </#if>
         </div>
 
         <table  class="table table-bordered table-hover">
@@ -60,22 +57,59 @@
                 <th>安置方式</th>
                 <th>认定面积</th>
                 <th>认定人口</th>
-                <th>结算后款</th>
-                <th>打印一</th>
-                <th>确认签约</th>
-                <th>打印二</th>
-                <th>选房顺序号</th>
-                <th>打印三</th>
+                <th>腾退补偿款总和</th>
+                <th id="th_xf">选房购房款</th>
+                <th id="th_jsfh">结算后款</th>
+                <th>操作</th>
             </tr>
-            
-            <@FhxyList list pageNo pageSize/>
-            
+        <#if list?size gt 0>
+	        <#list list as ROW>
+	        <tr id="${ROW.id}">
+	            <td>${ROW.sectionindex}</td>
+	            <td>${ROW.section?default("")}</td>
+	            <td>${ROW.names?default("")}</td>
+	            <td>
+	                <#if (ROW.atype)??>
+	                    <#if ROW.atype?default("0")=="0">
+	                        房屋安置
+	                    <#else>
+	                        货币补偿
+	                    </#if>
+	                <#else>
+	                    未录入
+	                </#if>
+	            </td>
+	            <td>${ROW.fwbcmj?default("")}</td>
+	            <td>${ROW.people?default("")}</td>
+	            <td>${ROW.zjdttzj?default("")}</td>
+	            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
+	            <td class="td_jshk">${ROW.jshk?default("")}</td>
+	            <td>
+	            <#if ROW.islock??> 
+	            	<#if ROW.islock=="1">
+	                    <button type="button" class="btn btn-warning btn-xs ml10" onclick="lock(${ROW.housebasicid},'0')"
+	                    title='解锁'
+	                    data-url="${BASE_PATH}pgqq/lockornot.action?housebasicid=${ROW.housebasicid}&islock=0">解锁</button>
+	                <#else>
+	            	    <button type="button" class="btn btn-success btn-xs ml10   " onclick="lock(${ROW.housebasicid},'1')"
+	                    title='锁定'
+	                    data-url="${BASE_PATH}pgqq/lockornot.action?housebasicid=${ROW.housebasicid}&islock=1">锁定</button>
+		           	</#if>
+	            <#else>
+            		<button type="button" class="btn btn-success btn-xs ml10   " onclick="lock(${ROW.housebasicid},'1')"
+                    title='锁定'
+                    data-url="${BASE_PATH}pgqq/lockornot.action?housebasicid=${ROW.housebasicid}&islock=1">锁定</button>
+	           	</#if>
+	            </td>
+	        </tr>
+	        </#list>
+    	</#if>
         </table>
         <div id="yu-pager" class="fl mb20">
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
-            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/fhxy.action" 
-		 OtherParameter="location=${location?default('')},atype=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')},qianyue=${qianyue?default('')}"/>
+            <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/sdjs.action" 
+            OtherParameter="location=${location?default('')},atype=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')}"/>
             </#if>
         </div>
     </ul>
@@ -86,6 +120,56 @@
 </@override>
 <@extends name = "../base/layout.ftl"/>
 <script type="text/javascript">
+	
+	
+	function lock(housebasicid,islock){
+     //   var p = $(btn).attr("data-url");
+        var url = '${BASE_PATH}'+"pgqq/lockornot.action?housebasicid="+housebasicid+"&"+"islock="+islock;
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: url,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+               alert("操作失败！");
+            },
+            success: function (response) {
+               alert("操作成功！");
+               window.location.reload();//刷新当前页面
+            }
+        })
+	}
+	
+	$(function(){ 
+		$("#atypeChange").change(function(){
+			var selvalue = $(this).val();
+			if(selvalue == '1'){
+				$("#th_xf").hide();
+				$("#th_jsfh").hide();
+				$(".td_azfghk").hide();
+				$(".td_jshk").hide();
+			}else{
+				$("#th_xf").show();
+				$("#th_jsfh").show();
+				$(".td_azfghk").show();
+				$(".td_jshk").show();
+			}
+		})
+		
+		var atype = '${atype}';
+		if(atype == '1'){
+				$("#th_xf").hide();
+				$("#th_jsfh").hide();
+				$(".td_azfghk").hide();
+				$(".td_jshk").hide();
+			}else{
+				$("#th_xf").show();
+				$("#th_jsfh").show();
+				$(".td_azfghk").show();
+				$(".td_jshk").show();
+			}
+		
+	}) 
+	
     $(".modal-dialog").attr("style", "width:95%;");
     function toExcel(inTblId, inWindow) {
         var fileName = '${CommenData.time_jc}' + ".xls";
@@ -139,42 +223,7 @@
             })
         }
     }
-    
-	 function confirmSign(btn) {
-	        if (yu_confirm("您确定签约吗？确定签约后，将不能更改！！！")) {
-	            var url = $(btn).attr("data-url");
-	            var beanid = $(btn).attr("beanid");
-	         //   var searchfrmdata = $("#seachfrm").serialize();
-	            //var par = $("#"+pname);
-	            $.ajax({
-	                cache: true,
-	                type: "POST",
-	                url: url,
-	               // data: searchfrmdata,
-	               // dataType: "json",
-	                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                   	//	location.href="${BASE_PATH}"+"pgzq/fhxy.action";
-                   	alert("123");
-                	},
-	                success: function (response) {
-	                	window.location.reload();//刷新当前页面
-	                	var protocolumnber = response.protocolumnber;
-	                	var displaydate = response.displaydate;
-	                	var indexnum = response.indexnum;
-	                	//alert(beanid);
-	                	//initInnerHtml(beanid,protocolumnber,displaydate,indexnum);
-	                	//location.href="${BASE_PATH}"+"pgzq/fhxy.action";
-	                }
-	            })
-	        }
-	    }
-	    
-	    function initInnerHtml(beanid,protocolumnber,displaydate,indexnum){
-	    	$("#td_displaydate"+beanid).html("123");
-	    	$("#td_protocolnumber"+beanid).innerHTML=protocolumnber;
-	    	$("#td_indexnum"+beanid).innerHTML=indexnum;
-	    	
-	    }
-	    
 
+	
+	
 </script>

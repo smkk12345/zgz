@@ -21,6 +21,8 @@ public class PageConst {
 
     // 棚改中期start
     public final static String PGZQ_fhfa= "/default/pgzq/fhfa.ftl";
+    public final static String PGZQ_sdjs= "/default/pgzq/sdjs.ftl";
+    
     public final static String PGZQ_fhfa_s= "/default/pgzq/fhfa_s.ftl";
     public final static String PGZQ_fhfa_edit_Modal = "/default/pgzq/fhfa_edit_Modal.ftl";
     public final static String PGZQ_fhfa_check_Modal = "/default/pgzq/fhfa_check_Modal.ftl";

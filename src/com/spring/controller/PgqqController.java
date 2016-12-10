@@ -550,7 +550,29 @@ public class PgqqController {
 		}
 	}
 
-	
+	//两个接口   审计审核   返回
+		@ResponseBody
+		@RequestMapping({ "/pgqq/lockornot.action" })
+		public boolean lockornot(HttpServletRequest request,
+				HttpServletResponse response, ModelMap model) {
+			boolean isSuccess = false;
+			try {
+				String islock = request.getParameter("islock");
+				//复核备注
+				String housebasicid = request.getParameter("housebasicid");
+				
+				RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+				HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
+				housebasic.setIslock(islock);
+				ServiceManager.getHouseBasicServce().justUpdateHouseBasic(housebasic);
+				isSuccess = true;
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("error", e.getMessage());
+				return isSuccess;
+			}
+			return isSuccess;
+		}
 	
 	@RequestMapping({ "/checkhousebasic.action" })
 	public ModelAndView checkhousebasic(HttpServletRequest request,

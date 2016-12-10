@@ -125,6 +125,6 @@
 		<property name="sortnum"></property>
 		<property name="hassplit"></property>
 		<property name="fmjcsznxm"></property>
-		
+		<property name="islock"></property>
 	</class>
 </hibernate-mapping>

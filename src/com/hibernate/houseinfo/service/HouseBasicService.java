@@ -85,6 +85,10 @@ public class HouseBasicService {
 		return false;
 	}
 	
+	public void justUpdateHouseBasic(HouseBasic housebasic){
+		houseBasicDao.update(housebasic);
+	}
+	
 	public HouseBasic getHouseBasicById(String id,String section){
 		HouseBasic houseBasic = houseBasicDao.findById(id, section);
 		

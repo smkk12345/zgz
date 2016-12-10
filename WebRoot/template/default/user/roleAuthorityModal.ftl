@@ -189,7 +189,14 @@
                       <input type="checkbox" dataIndex=17 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[17]=="2">checked </#if>> 审核审查
                   </label>
               </div>  
-          </div>   
+          </div>
+          <div class="form-group  fl ml10">
+		         <div class="checkbox fl">
+		            <label>
+		                <input type="checkbox" dataIndex=17 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[52]=="2">checked </#if>> 锁定解锁
+		            </label>
+		        </div> 
+		   </div>       
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>

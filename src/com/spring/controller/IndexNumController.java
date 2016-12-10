@@ -71,6 +71,8 @@ public class IndexNumController {
 					agreenment.setProtocolnumber(indexStr);
 				}
 				ServiceManager.getAgreenmentService().update(agreenment);
+				housebasic.setIslock("1");
+				ServiceManager.getHouseBasicServce().justUpdateHouseBasic(housebasic);
 				map.put("protocolumnber", agreenment.getProtocolnumber());
 				map.put("displaydate", indexNum.getDisplaydate());
 			}else{

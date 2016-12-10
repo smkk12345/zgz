@@ -146,11 +146,11 @@ ${housebasic.people}
                     </select>        
                 </div>-->
             <div class=' aoJianGroup fl'>
-                <label class='fl control-label'>购房标准(50m<sup>2</sup>):</label>
+                <label class='fl control-label'>购房标准(50m<sup>2</sup>)(超生人数):</label>
                 <input type='text' class='form-control input-sm  fl' name='gfbz50'   value="${bean.gfbz50?default("")}"/>人
             </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>购房标准(45m<sup>2</sup>):</label>
+                    <label class='fl control-label'>购房标准(45m<sup>2</sup>)(非超生人数):</label>
                     <input type='text' class='form-control input-sm  fl' name='gfbz45'   value="${bean.gfbz45?default("")}"/>人
                 </div>
             </div>    

@@ -15,8 +15,10 @@
             <tr>
                 <td   colspan=2 style="width: 20px; ">被腾退人</td>
                 <td class="" colspan=2>${bean.names?default("")} </td>
-                <td class="" colspan=2>坐落</td>
-                <td class=""colspan=5>${bean.location?default("")}</td>
+                <td class="" colspan=1>坐落</td>
+                <td class=""colspan=3>${bean.location?default("")}</td>
+             	<td class="" colspan=1>超生人口</td>
+                <td class=""colspan=3>${bean.gfbz45?default("")}</td>
             </tr>
             <tr>
                 <td class="" colspan=2>宅基地实测(㎡)</td>
