@@ -56,7 +56,7 @@ ${housebasic.people}
                 </div>-->
                    <div class=' aoJianGroup fl'>
                        <label class='fl control-label'>认定宅基地面积（㎡）:</label>																		
-                       <input type='text' id="rdzjdallarea" onchange="caculat1()"  class='form-control input-sm' name='rdzjdallarea'  value="${bean.rdzjdallarea?default("")}" />
+                       <input type='text' id="rdzjdallarea"  onchange="caculat1()"  class='form-control input-sm' name='rdzjdallarea'  value="${bean.rdzjdallarea?default("")}" />
                    </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>控制面积（㎡）:</label>
