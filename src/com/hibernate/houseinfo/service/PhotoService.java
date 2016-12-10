@@ -18,4 +18,32 @@ public class PhotoService {
     public List<Photo> list(){
         return null;
     }
+
+    public List<Photo> listByType(int type, String agreementId) {
+        return photoDao.listByType(type,agreementId);
+    }
+
+    public void save(Photo photo) {
+        photoDao.save(photo);
+    }
+
+    public List<Photo> getListByIds(String ids) {
+        return photoDao.getListByIds(ids);
+    }
+
+    public void deletePhoto(Photo photo) {
+        photoDao.deletePhoto(photo);
+    }
+
+    public Photo getPhoto(String id) {
+        return photoDao.getPhoto(id);
+    }
+
+    public Photo prePhoto(String id, String agreementId, int type) {
+        return photoDao.prePhoto(id,agreementId,type);
+    }
+
+    public Photo nextPhoto(String id, String agreementId, int type) {
+        return photoDao.nextPhoto(id,agreementId,type);
+    }
 }
