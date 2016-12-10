@@ -25,7 +25,7 @@
                 $("#print").hide();
                 // $("#title").hide();
                 LODOP = getLodop();
-                LODOP.ADD_PRINT_HTM(45, 80, "90%", "92%", document.body.innerHTML);
+                LODOP.ADD_PRINT_HTM(80, 80, "80%", "83%", document.body.innerHTML);
                 LODOP.ADD_PRINT_HTM("97%", "85%", 0, "45%", "<span tdata='pageNO'>第#页</span>&nbsp;共<span tdata='pageCount'>#</span>页");
                 LODOP.SET_PRINT_STYLEA(0, "ItemType", 1);//循环上一命令（页码）
                 LODOP.PRINTA();
@@ -123,13 +123,14 @@
             }
 
             .xy-print-con .leftTitle {
-                font-size: 12.0pt;
                 text-align: left;
+                font-size: 12.0pt;
                 text-indent: 2em;
-                line-height: 50px;
-                font-weight: bold;
+                line-height: 20.0pt;
                 font-family: 瀹嬩綋;
-                padding-bottom: 5px;
+                font-weight: bold;
+                color: #000;
+               
             }
 
             .rhjc-print-con {
@@ -233,21 +234,21 @@
                 </p>
                 <p class="leftTitle">第一条&nbsp;&nbsp;房屋基本情况</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1、依据乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>）的约定，乙方自愿认购定向安置房共<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;&nbsp;</u>套，总面积为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中:<u>&nbsp;&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;&nbsp;</u>平方米一居室<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${bean.yjs?default("")}&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1、依据乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>）的约定，乙方自愿认购定向安置房共
+                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;&nbsp;</u>套，总面积为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中:<u>&nbsp;&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;&nbsp;</u>平方米一居室
+                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.yjs?default("")}&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;
                         <#if bean.yjs?default(0) gt 0>${bean.yjs?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;70&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-                        &nbsp;&nbsp;&nbsp;${bean.ljs70?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs70?default(0) gt 0>${bean.ljs70?number*70}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-                        &nbsp;&nbsp;&nbsp;${bean.ljs75?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs75?default(0) gt 0>${bean.ljs75?number*75}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-                        &nbsp;&nbsp;&nbsp;${bean.ljs80?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs80?default(0) gt 0>${bean.ljs80?number*80}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;85&nbsp;&nbsp;&nbsp;</u>平方米两居室<u>
-                        &nbsp;&nbsp;&nbsp;${bean.ljs85?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs85?default(0) gt 0>${bean.ljs85?number*85}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110&nbsp;&nbsp;&nbsp;</u>平方米三居室<u>
-                        &nbsp;&nbsp;&nbsp;${bean.sjs?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.sjs?default(0) gt 0>${bean.sjs?number*110}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;70&nbsp;&nbsp;&nbsp;</u>平方米两居室
+                        <u>&nbsp;&nbsp;&nbsp;${bean.ljs70?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs70?default(0) gt 0>${bean.ljs70?number*70}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;</u>平方米两居室
+                        <u>&nbsp;&nbsp;&nbsp;${bean.ljs75?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs75?default(0) gt 0>${bean.ljs75?number*75}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80&nbsp;&nbsp;&nbsp;</u>平方米两居室
+                        <u>&nbsp;&nbsp;&nbsp;${bean.ljs80?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs80?default(0) gt 0>${bean.ljs80?number*80}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;85&nbsp;&nbsp;&nbsp;</u>平方米两居室
+                        <u>&nbsp;&nbsp;&nbsp;${bean.ljs85?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs85?default(0) gt 0>${bean.ljs85?number*85}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110&nbsp;&nbsp;&nbsp;</u>平方米三居室
+                        <u>&nbsp;&nbsp;&nbsp;${bean.sjs?default("")}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.sjs?default(0) gt 0>${bean.sjs?number*110}<#else></#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房建设地点位于张郭庄村棚户区改造和环境整治项目所指定的定向安置房建设区域（最终以政府相关主管部门审批文件为准）。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2、本协议下有关面积最终以政府主管部门备案的实测建筑面积为准。
                 </p>
@@ -255,24 +256,22 @@
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1、根据《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等文件规定的购房标准为：经腾退补偿安置工作组认定的被安置人口，按人均50平方米确定购房指标；违反国家计划生育政策生育二胎及以上的，父母及其超生的子女按人均45平方米确定购房指标。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2、由于安置房户型设计原因，实际购房面积超过购房指标，每宗宅基地不得超过30平方米；违反计划生育政策的被腾退人，实际购房面积不得超过购房指标20平方米。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3、依据《张郭庄村棚户区改造和环境整治项目宅基地权属、认定人口确认结果一览表》的认定结果，乙方购买定向安置房指标内面积为<u>
-                        &nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3、依据《张郭庄村棚户区改造和环境整治项目宅基地权属、认定人口确认结果一览表》的认定结果，乙方购买定向安置房指标内面积为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4、定向安置房售价为4000元/平方米；超过购房指标15平方米以内按照安置售房价即4000元/平方米计算；超过购房指标15—30平方米购房指标的，在安置售房价的基础上上浮50%即6000元/平方米。
                 </p>
                 <p class="leftTitle">第三条&nbsp;&nbsp;房屋价款</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、根据本协议第一条、第二条，乙方购买定向安置房<u>&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;</u>套，总面积为<u>
-                        &nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米，其中：购房指标内为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>
-                    平方米，超过购房指标面积为<u>&nbsp;&nbsp;${bean.czbmj?string("0.00")?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。购房款总价暂定为<u>&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>
-                        &nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("")}&nbsp;&nbsp;&nbsp;</u>），其中：购房指标内的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbngfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>
-                        &nbsp;&nbsp;&nbsp;${bean.dxzbngfk?default()}&nbsp;&nbsp;&nbsp;</u>），超过购房指标的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbwgfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>
-                        &nbsp;&nbsp;&nbsp;${bean.dxzbwgfk?default()}&nbsp;&nbsp;&nbsp;</u>）。购房款的最终结算根据本协议第八条“房款结算及相关费用缴纳”中的约定来确定。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、根据本协议第一条、第二条，乙方购买定向安置房<u>&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;</u>套，总面积为
+                        <u>&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米，其中：购房指标内为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>
+                    平方米，超过购房指标面积为<u>&nbsp;&nbsp;${bean.czbmj?string("0.00")?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。购房款总价暂定为<u>&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
+                        <u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("")}&nbsp;&nbsp;&nbsp;</u>），其中：购房指标内的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbngfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
+                        <u>&nbsp;&nbsp;&nbsp;${bean.dxzbngfk?default()}&nbsp;&nbsp;&nbsp;</u>），超过购房指标的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbwgfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
+                        <u>&nbsp;&nbsp;&nbsp;${bean.dxzbwgfk?default()}&nbsp;&nbsp;&nbsp;</u>）。购房款的最终结算根据本协议第八条“房款结算及相关费用缴纳”中的约定来确定。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2、本协议第三条第1款中的购房款不包括购买该房屋所应缴纳的物业费、供暖费、公共维修基金、契税及其他按照国家相应法律法规及政策所需缴纳的相关费用，上述费用的收费标准根据国家法律法规及政府相关政策执行。
                 </p>
                 <p class="leftTitle">第四条&nbsp;&nbsp;付款方式</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1、根据相关政策规定以及乙方签署的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方在领取腾退补偿总价款的同时，向甲方一次性支付本协议第三条第1款中暂定的购房款<u>
-                        &nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;&nbsp;</u>）。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1、根据相关政策规定以及乙方签署的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方在领取腾退补偿总价款的同时，向甲方一次性支付本协议第三条第1款中暂定的购房款<u>&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;&nbsp;</u>）。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2、若乙方的腾退补偿总价款足以支付定向安置房购房款，乙方同意由甲方指定的银行从乙方腾退补偿总价款中向甲方一次性付清定向安置房购房款。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3、若乙方的腾退补偿总价款不足以支付定向安置房购房款，乙方同意由甲方指定的银行将乙方的腾退补偿总价款全部支付给甲方；同时，乙方根据本协议第四条第1款的约定，将定向安置房购房款差额部分向甲方一次性付清。
                 </p>
@@ -289,14 +288,14 @@
                 </p>
                 <p class="leftTitle">第六条&nbsp;&nbsp;选房顺序及要求</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1、根据“以签订房屋腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的定向安置房选房原则，甲方依据腾退人与乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>
-                        &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）时确定的顺序号(详见本协议附件2)，作为选房顺序的唯一依据。选房工作的具体时间安排由属地政府、腾退主体及甲方根据实际情况决定。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2、乙方于<u>&nbsp;${year?c}&nbsp;</u>年<u>&nbsp;${month?number+1}&nbsp;</u>月<u>
-                        &nbsp;${day}&nbsp;</u>日<u>&nbsp;${hour}&nbsp;</u>时<u>
-                        &nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
-                        &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方可根据上述时点的具体排序进行选房。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3、甲方在选房工作开始之日的15个工作日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>
-                        &nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）的时点排定次序，书面（或电话）通知乙方到指定地点进行选房。乙方应根据确定后的选房顺序在规定的时间及地点进行选房，非因甲方原因造成乙方未能在规定的时间内到达指定地点选房导致其选房顺序号后延的，由此引起的一切责任及后果由乙方自行承担。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1、根据“以签订房屋腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的定向安置房选房原则，甲方依据腾退人与乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号为
+                        <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）时确定的顺序号(详见本协议附件2)，作为选房顺序的唯一依据。选房工作的具体时间安排由属地政府、腾退主体及甲方根据实际情况决定。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2、乙方于<u>&nbsp;${year?c}&nbsp;</u>年<u>&nbsp;${month}&nbsp;</u>月
+                        <u>&nbsp;${day}&nbsp;</u>日<u>&nbsp;${hour}&nbsp;</u>时
+                        <u>&nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：
+                        <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方可根据上述时点的具体排序进行选房。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3、甲方在选房工作开始之日的15个工作日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：
+                        <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）的时点排定次序，书面（或电话）通知乙方到指定地点进行选房。乙方应根据确定后的选房顺序在规定的时间及地点进行选房，非因甲方原因造成乙方未能在规定的时间内到达指定地点选房导致其选房顺序号后延的，由此引起的一切责任及后果由乙方自行承担。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4、乙方在进行选房的同时，必须在本协议附件1所列认定安置人口清单范围内，选定所购定向安置房的实际产权人。实际产权人经政府主管部门和审计机构认定无误后，按照甲方书面（或电话）通知的时间、地点与甲方签订安置房买卖合同。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.5、本协议第六条第4款所述实际产权人的姓名、身份证号码和选定的具体房号，经政府主管部门和审计机构认定无误后不得更改。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.6、本协议第六条第4款所述实际产权人在接到甲方签订安置房买卖合同通知的20个工作日内，未与甲方签订合同的，甲方有权拒绝签订安置房买卖合同，同时本协议自行终止。乙方已付的定向安置房购房款由甲方退还乙方，购房款不计息，甲乙双方互不追究相关责任。
@@ -337,9 +336,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
                 <p class="contex-1" style="margin-top: 20px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </p>
                 <br>
                 <br>
@@ -353,9 +350,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
                 <p class="contex-1" style="margin-top: 20px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </p>
 
                 <p style="page-break-before: always">&nbsp;</p>

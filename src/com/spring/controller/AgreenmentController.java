@@ -607,7 +607,7 @@ public class AgreenmentController {
 			String xynum = bean.getProtocolnumber().replace("-ZZAZ-", "-RGAZ-");
 			String dateStr = bean.getOperatedate();
 			model.addAttribute("year", DateUtil.getYear(dateStr));
-			model.addAttribute("month", DateUtil.getMonth(dateStr));
+			model.addAttribute("month", DateUtil.getMonth(dateStr)+1);
 			model.addAttribute("day", DateUtil.getDay(dateStr));
 			model.addAttribute("hour", DateUtil.getHour(dateStr));
 			model.addAttribute("minute", DateUtil.getMinute(dateStr));
@@ -630,6 +630,14 @@ public class AgreenmentController {
 		}
 	}
 	
+//	public static void main(String[] args){
+//		String dateStr = "2017-1-1 21:30:51";
+//		Date d = new Date();
+//		int n = DateUtil.getMonth(dateStr);
+//		System.out.println(n);
+//	}
+//	
+//	
 	
 	@RequestMapping({ "/pgzq/fhxy_hb_xy_sy_print_Modal.action" })
 	public ModelAndView fhxy_hb_xy_sy_print_Modal(HttpServletRequest request,

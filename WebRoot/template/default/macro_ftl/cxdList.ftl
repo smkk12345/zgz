@@ -260,9 +260,12 @@
             </td>
             <td>${(ROW.fwbcmj)!""}</td>
             <td>${(ROW.people)!""}</td>
-            <td>${(ROW.zjdttbck)!""}</td>
-            <td>${(ROW.azfgfk)!""}</td>
-            <td>${(ROW.wwzjlf)!""}</td>
+            
+            <td>${ROW.zjdttzj?default("")}</td>
+            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
+            <td class="td_jshk">${ROW.jshk?default("")}</td>
+            
+   
 
             <td>
                 <#if role.roleAuthority[15]=="2">
@@ -345,8 +348,7 @@
             </td>
             <td>${(ROW.fwbcmj)!""}</td>
             <td>${(ROW.people)!""}</td>
-            <td>${(ROW.azfgfk)!""}</td>
-            <td>${(ROW.jlfsum)!""}</td>
+            <td>${(ROW.jshk)!""}</td>
             <td>
                 
                  <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印预结单'
@@ -385,7 +387,7 @@
                         </#if>
                     </#if>
                 </td>
-                <td id="td_protocolnumber${ROW.id}" title="请点击左侧确认签约，获取协议编号">${(ROW.protocolnumber)!""}</td>
+                <td id="td_protocolnumber${ROW.id}" title="请点击左侧确认签约，获取协议编号"><button>未锁定</button></td>
                 <td id="td_print2${ROW.id}">
                     <#if role.roleAuthority[12]=="2">
                         <#if (ROW.protocolnumber)??>
