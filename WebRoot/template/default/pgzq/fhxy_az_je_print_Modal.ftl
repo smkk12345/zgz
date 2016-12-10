@@ -140,7 +140,7 @@
             <tr>
                 <td class="" colspan=2>宅基地腾退补偿总价(元)</td>
                 <td class="" colspan=2>${bean.zjdttzj?c?default("")}</td>
-                <td class="" colspan=5>宅基地腾退补偿总价抵扣购房款余额(元)</td>
+                <td class="" colspan=5>宅基地腾退补偿总价款支付购房款后余额(元)</td>
                 <td class="" colspan=2>${bean.jshk?c?default("")}</td>
             </tr>
             </table>
@@ -186,10 +186,10 @@
                 <td class="">4</td>
                 <td class="" colspan=3>装修、设备附属物价款(元)</td>
                 <td class="" colspan=1>${bean.zxsbfswjk?c?default("")}</td>
-                <!--<td class="" colspan=4>补偿总价抵扣购房款余额(元)</td>
+                <!--<td class="" colspan=4>补偿总价款支付购房款后余额(元)</td>
                 <td class="" colspan=1><#if bean.jshk?default(0) gt 0>${bean.jshk?default("")}<#else></#if></td>-->
                 
-               	<td class="" colspan=3 >补偿总价抵扣购房款余额(元)</td>
+               	<td class="" colspan=3 >补偿总价款支付购房款后余额(元)</td>
                 <td class="" colspan=2 ><#if bean.jshk?default(0) gt 0>${bean.jshk?c?default("")}<#else></#if></td>
                 <td class="" colspan=2 ><#if bean.jshk?default(0) lt 0>${bean.jshk?c?default("")}<#else></#if></td>
             </tr>
