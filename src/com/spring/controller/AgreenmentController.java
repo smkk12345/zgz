@@ -431,16 +431,20 @@ public class AgreenmentController {
 			}
 			//交房日期  签约日期后推20天
 			//DisplayBean displayBean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
-			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
-			if(null != indexNum){
-				String operatedate = indexNum.getOperatedate();
-				long time = DateUtil.StringToDate(operatedate).getTime()+Contanst.JFRQ*24*60*60*1000;
+//			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+//			if(null != indexNum){
+//				String operatedate = indexNum.getOperatedate();
+				long time = new Date().getTime()+Contanst.JFRQ*24*60*60*1000;
 				Date date = new Date(time);
 				model.addAttribute("year", DateUtil.getYear(date));
 				model.addAttribute("month", DateUtil.getMonth(date)+1);
 				model.addAttribute("day", DateUtil.getDay(date));
-			}
-			
+//			}
+				long time1 = new Date().getTime();
+				Date date1 = new Date(time1);
+				model.addAttribute("sysyear", DateUtil.getYear(date1));
+				model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
+				model.addAttribute("sysday", DateUtil.getDay(date1));
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -501,15 +505,21 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
-			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
-			if(null != indexNum){
-				String operatedate = indexNum.getOperatedate();
-				long time = DateUtil.StringToDate(operatedate).getTime()+Contanst.JFRQ*24*60*60*1000;
+//			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+//			if(null != indexNum){
+//				String operatedate = indexNum.getOperatedate();
+				long time = new Date().getTime()+Contanst.JFRQ*24*60*60*1000;
 				Date date = new Date(time);
 				model.addAttribute("year", DateUtil.getYear(date));
 				model.addAttribute("month", DateUtil.getMonth(date)+1);
 				model.addAttribute("day", DateUtil.getDay(date));
-			}
+				
+				long time1 = new Date().getTime();
+				Date date1 = new Date(time1);
+				model.addAttribute("sysyear", DateUtil.getYear(date1));
+				model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
+				model.addAttribute("sysday", DateUtil.getDay(date1));
+//			}
 			model.addAttribute("bean", agreenment);
 			//模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -656,6 +666,11 @@ public class AgreenmentController {
 			model.addAttribute("hour", DateUtil.getHour(dateStr));
 			model.addAttribute("minute", DateUtil.getMinute(dateStr));
 			model.addAttribute("second", DateUtil.getSecond(dateStr));
+			long time1 = new Date().getTime();
+			Date date1 = new Date(time1);
+			model.addAttribute("sysyear", DateUtil.getYear(date1));
+			model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
+			model.addAttribute("sysday", DateUtil.getDay(date1));
 			
 			model.addAttribute("bean", bean);
 			model.addAttribute("xynum", xynum);
