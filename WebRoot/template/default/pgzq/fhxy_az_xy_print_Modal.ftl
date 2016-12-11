@@ -337,7 +337,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：
             </p>
             <p class="contex-1" style="margin-top: 20px;">
-                &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
+                &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
                     &nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
                     &nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
             </p>
@@ -349,7 +349,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：
             </p>
             <p class="contex-1" style="margin-top: 20px;">
-                &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
+                &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
                     &nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
                     &nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
             </p>
