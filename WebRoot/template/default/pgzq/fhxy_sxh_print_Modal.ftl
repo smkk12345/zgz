@@ -215,7 +215,7 @@
         </div>
         <div class="modal-body center">
             <div class="content xy-print-con" id="xy-print">
-                <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;协议编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;${xynum?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;协议编号：<u>&nbsp;&nbsp;&nbsp;&nbsp;${xynum?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
                 <p class="title2" style="margin-top: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房认购协议</p>
                 <p class="contex-1" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;甲&nbsp;&nbsp;方：&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
@@ -234,8 +234,8 @@
                 </p>
                 <p class="leftTitle">第一条&nbsp;&nbsp;房屋基本情况</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1、依据乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>）的约定，乙方自愿认购定向安置房共
-                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;&nbsp;</u>套，总面积为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1、依据乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;${bean.protocolnumber?default("/")}&nbsp;</u>）的约定，乙方自愿认购定向安置房共
+                        <u>${bean.xfts?default("")}&nbsp;</u>套，总面积为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中:<u>&nbsp;&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;&nbsp;</u>平方米一居室
                         <u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.yjs?default("")}&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;
                         <#if bean.yjs?default(0) gt 0>${bean.yjs?number*55}<#else></#if>&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
@@ -357,8 +357,8 @@
 
                 <p class="leftTitle" >附件1：认定被安置人口明细表</p>
                 <p class="contex-1" style="margin-top: 10px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）第二条，被腾退房屋中认定的安置人口数为<u>
-                        &nbsp;&nbsp;&nbsp;${bean.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;</u>人，具体情况见下表：
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）第二条，被腾退房屋中认定的安置人口数为
+                        <u>&nbsp;&nbsp;&nbsp;${bean.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;</u>人，具体情况见下表：
                 </p>
                 <div class="contex-1">在册人员</div>
                 <table class="table table-bordered contex-1">
@@ -415,24 +415,24 @@
                     签字：
                 </p>
                 <p class="contex-2">
-                    <u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
+                    <u>&nbsp;${sysyear?c}&nbsp;</u>年
+                        <u>&nbsp;${sysmonth}&nbsp;</u>月
+                        <u>&nbsp;${sysday}&nbsp;</u>日
                 </p>
 
                <p style="page-break-before: always">&nbsp;</p>
                
                 <p class="leftTitle">附件2：</p>
                 <span class="title" style="font-size: 17.0pt">选房顺序号结果通知单</span>
-                <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;认购协议编号：<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${xynum?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                <p class="xy-num" style="margin-top: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;认购协议编号：
+                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${xynum?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
 
-                <p class="contex-1" style="margin-top:50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;</u>（身份证号码为：<u>
-                        &nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;</u>） </p>
+                <p class="contex-1" style="margin-top:50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;</u>（身份证号码为：
+                        <u>&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;</u>） </p>
 
-                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与北京市丰台区长辛店镇张郭庄村民委员会签订了《北京市宅基地房屋腾退补偿安置协议》，并于（具体时间）<u>
-                        &nbsp;&nbsp;${bean.displaydate?default("/")}&nbsp;&nbsp;</u>获取到选房顺序号，您的选房顺序号为
+                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与北京市丰台区长辛店镇张郭庄村民委员会签订了《北京市宅基地房屋腾退补偿安置协议》，并于（具体时间）
+                        <u>&nbsp;&nbsp;${bean.displaydate?default("/")}&nbsp;&nbsp;</u>获取到选房顺序号，您的选房顺序号为
                     &nbsp;&nbsp;${bean.indexNumStr?default("/")}&nbsp;&nbsp;</u>号，您是本村第&nbsp;&nbsp;${bean.indexnum?default("/")}&nbsp;&nbsp;</u>
                     个签约的家庭。
                 </p>
@@ -440,9 +440,9 @@
 
                 <p class="contex-1" style="margin-top:30px; text-align: right">被腾退人确认签字（按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
                 <p class="contex-1" style="margin-top:30px; text-align: right">身份证号：  <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
-                <p class="contex-1" style="margin-top:30px; text-align: right"><u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>
-                        &nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
+                <p class="contex-1" style="margin-top:30px; text-align: right"><u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年
+                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月
+                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 <div style="clear:both; height:20px;"></div>
             </div>
         </div>

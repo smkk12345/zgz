@@ -168,8 +168,8 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u><#if housebasic.zjdarea??>${housebasic.zjdarea?string("0.00")}<#else>0.00</#if></u>平方米；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
                         <u><#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积<u>
-                        <#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积<u>
-                        <#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：<br/>
+                        <#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积
+                        <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></u>平方米；超出宅基地控制面积<u><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></u>平方米。
                 </p>
                 <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
@@ -179,12 +179,12 @@
                         <#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?string("0.00")}<#else>0.00</#if> </u>平方米；地下室建筑面积<u>
                         <#if housebasic.basement??>${housebasic.basement?string("0.00")}<#else>0.00</#if> </u>平方米；棚<u>
                         <#if housebasic.shed??>${housebasic.shed?string("0.00")}<#else>0.00</#if> </u>平方米。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;3.2、经认定工作组认定，认定房屋补偿面积<u>
-                        <#if bean.fwbcmj??>${bean.fwbcmj?string("0.00")}<#else>0.00</#if></u>平方米。
+                    &nbsp;&nbsp;&nbsp;&nbsp;3.2、经认定工作组认定，认定房屋补偿面积
+                        <u style="background-color:#F2F2F2;"><#if bean.fwbcmj??>${bean.fwbcmj?string("0.00")}<#else>0.00</#if></u>平方米。
                 </p>
                 <p class="left-title">第四条&nbsp;&nbsp;被安置人口认定</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;经工作组认定，认定被安置人口共<u>&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
+                    &nbsp;&nbsp;&nbsp;&nbsp;经工作组认定，认定被安置人口共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
                     <#if housebasic.vacatelist??>
                 <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
                 <#list housebasic.vacatelist as vacate>
@@ -211,13 +211,13 @@
 
                 <p class="left-title">第五条&nbsp;&nbsp;宅基地腾退补偿总价</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;5.1、甲方应当向乙方支付宅基地腾退补偿总价人民币<u>&nbsp;&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;&nbsp;</u>（大写人民币：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;5.1、甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1.1、宅基地腾退补偿款<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?c?default("/")}&nbsp;&nbsp;</u>元。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）控制宅基地区位补偿价<u>&nbsp;&nbsp;${bean.kzzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）超控宅基地区位补偿价<u>&nbsp;&nbsp;${bean.ckzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）被腾退房屋重置成新价<u>&nbsp;&nbsp;${bean.bttfwczcxj?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）房屋价款&nbsp;<u>&nbsp;&nbsp;${bean.bttfwczcxj?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）装修、设备、附属物价款<u>&nbsp;&nbsp;${bean.zxsbfswjk?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1.2、各项奖励费、补助各分项合计<u>&nbsp;&nbsp;${bean.jlfsum?c?default("/")}&nbsp;&nbsp;</u>元。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/> 
@@ -249,8 +249,8 @@
                 </p>
                 <p class="left-title">第六条&nbsp;&nbsp;乙方腾退期限及要求</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;6.1  乙方应在<u><#if year??>${year?c}</#if></u>年<u>
-                        ${month?default()}</u>月<u>${day?default()}</u>日前完成腾退。乙方应在腾退前结清所有资源欠费（含乙方使用的水、电等费用），确保房屋和附属物内无任何人员和财产（即房屋和附属物完全具备拆除条件），并将所有房屋及附属物的钥匙交给甲方，由拆除公司验收合格后，甲方认定乙方腾退完毕。<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;6.1  乙方应在<span style="background-color:#F2F2F2;"><u><#if year??>${year?c}</#if></u>年<u>
+                    ${month?default()}</u>月<u>${day?default()}</u>日</span>前完成腾退。乙方应在腾退前结清所有资源欠费（含乙方使用的水、电等费用），确保房屋和附属物内无任何人员和财产（即房屋和附属物完全具备拆除条件），并将所有房屋及附属物的钥匙交给甲方，由拆除公司验收合格后，甲方认定乙方腾退完毕。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;6.2  乙方承诺：在向甲方交付被腾退房屋后，乙方不再对该被腾退房屋主张任何权利。
                 </p>
                 <p class="left-title">第七条&nbsp;&nbsp;宅基地腾退补偿总价支付主体</p>
@@ -294,27 +294,38 @@
                 <br>
                
 
-                <p class="left-title">（签字页）</p>
+            <p class="pageBreak" style="margin-top: 20px;"></p>
+            <p class="left-title">（签字页）</p>
 
-                <p class="contex-1" style="margin-top: 40px;" > 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;甲方：北京市丰台区长辛店镇张郭庄村民委员会
-                </p> 
-                <p class="contex-1" style="margin-top: 30px;"> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：
-                </p> 
-                <p class="contex-1" style="margin-top: 30px;"> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
-                </p> 
-
-                <p class="contex-1" style="margin-top: 150px;"> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方（签字并按指纹）：
-                </p> 
-                <p class="contex-1" style="margin-top: 30px;"> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：
-                </p> 
-                <p class="contex-1" style="margin-top: 30px;"> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
-                </p> 
+            <p class="contex-1" style="margin-top: 20px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;甲方：北京市丰台区长辛店镇张郭庄村民委员会
+            </p>
+            <br>
+            <p class="contex-1" style="margin-top: 20px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+            <br>            
+            <p class="contex-1" style="margin-top: 20px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;${sysyear?c}&nbsp;</u>年
+                    <u>&nbsp;${sysmonth}&nbsp;</u>月
+                    <u>&nbsp;${sysday}&nbsp;</u>日
+            </p>
+            <br>
+            <br>
+            <br>
+            <p class="contex-1" style="margin-top: 50px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;乙方（签字并按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+            <br>
+            <p class="contex-1" style="margin-top: 20px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+            <br>
+            <p class="contex-1" style="margin-top: 20px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;${sysyear?c}&nbsp;</u>年
+                    <u>&nbsp;${sysmonth}&nbsp;</u>月
+                    <u>&nbsp;${sysday}&nbsp;</u>日
+            </p>
 
             </div>
             <div style="clear:both; height:20px;"></div>
