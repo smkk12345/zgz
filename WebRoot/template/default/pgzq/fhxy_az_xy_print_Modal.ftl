@@ -148,7 +148,7 @@
             </div>
         </div>
         <div class="xy-print-con" id="xy-print">
-            <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
+            <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议-${bean.displaydate?default("/")}</p>
             <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;腾退人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村民委员会&nbsp;</u>（以下简称甲方）
             </p>
             <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>${housebasic.names?default("/")}</u> &nbsp;身份证号：<u> ${housebasic.idcard?default("/")}</u>（以下简称乙方）
