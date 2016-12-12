@@ -87,18 +87,18 @@
 	            <td>
 	            <#if ROW.islock??> 
 	            	<#if ROW.islock=="1">
-	                    <button type="button" class="btn btn-warning btn-xs ml10" onclick="lock(${ROW.housebasicid},'0')"
+	                    <button type="button" class="btn btn-warning btn-xs ml10" onclick="lock('${ROW.housebasicid}','0')"
 	                    title='解锁'
-	                    data-url="${BASE_PATH}pgqq/lockornot.action?housebasicid=${ROW.housebasicid}&islock=0">解锁</button>
+	                    >解锁</button>
 	                <#else>
-	            	    <button type="button" class="btn btn-success btn-xs ml10   " onclick="lock(${ROW.housebasicid},'1')"
+	            	    <button type="button" class="btn btn-success btn-xs ml10   " onclick="lock('${ROW.housebasicid}','1')"
 	                    title='锁定'
-	                    data-url="${BASE_PATH}pgqq/lockornot.action?housebasicid=${ROW.housebasicid}&islock=1">锁定</button>
+	                   >锁定</button>
 		           	</#if>
 	            <#else>
-            		<button type="button" class="btn btn-success btn-xs ml10   " onclick="lock(${ROW.housebasicid},'1')"
+            		<button type="button" class="btn btn-success btn-xs ml10   " onclick="lock('${ROW.housebasicid}','1')"
                     title='锁定'
-                    data-url="${BASE_PATH}pgqq/lockornot.action?housebasicid=${ROW.housebasicid}&islock=1">锁定</button>
+                    >锁定</button>
 	           	</#if>
 	            </td>
 	        </tr>
