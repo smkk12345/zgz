@@ -16,28 +16,28 @@ ${housebasic.people}
             <h4><span class="label label-default">一.基本情况：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>被腾退人姓名:</label>
+                    <label class='fl control-label' style="width:220px;">被腾退人姓名:</label>
                     <input type='text'  class='form-control input-sm  ' name='names' value="${housebasic.names?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>房屋坐落:</label>
+                    <label class='fl control-label' style="width:220px;">房屋坐落:</label>
                     <input type='text'  class='form-control input-sm  ' name='location' value="${housebasic.location?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>联系固话:</label>
+                    <label class='fl control-label' style="width:220px;">联系固话:</label>
 
                     <input type='text'  class='form-control input-sm  ' name='telephone' value="${housebasic.telephone?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>手机:</label>
+                    <label class='fl control-label' style="width:220px;">手机:</label>
                     <input type='text'  class='form-control input-sm fl dmDate' name='mobile' value="${housebasic.mobile?default("")}"/>
                 </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>被腾退人身份证号:</label>
+                    <label class='fl control-label' style="width:220px;">被腾退人身份证号:</label>
                     <input type='text'  class='form-control input-sm fl dmDate' name='idcard' value="${housebasic.idcard?default("")}" title='${housebasic.idcard?default("")}'/>
                 </div>               
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>安置意向:</label>
+                    <label class='fl control-label' style="width:220px;">安置意向:</label>
                 </div> 
                 <div class="container-fluid fl">
                     <label class="checkbox-inline">
@@ -55,15 +55,15 @@ ${housebasic.people}
                     <input type='text'  class='form-control input-sm  ' name='scydmj'  value="<#if bean.scydmj??>${bean.scydmj?c}<#else></#if>" />
                 </div>-->
                    <div class=' aoJianGroup fl'>
-                       <label class='fl control-label'>认定宅基地面积（㎡）:</label>																		
+                       <label class='fl control-label' style="width:220px;">认定宅基地面积（㎡）:</label>																		
                        <input type='text' id="rdzjdallarea"  onchange="caculat1()"  class='form-control input-sm' name='rdzjdallarea'  value="${bean.rdzjdallarea?default("")}" />
                    </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>控制面积（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">控制面积（㎡）:</label>
                     <input type='text' id="conhomestarea" onchange="caculat1()"  class='form-control input-sm  ' name='conhomestarea'  value="<#if bean.conhomestarea??>${bean.conhomestarea?c}<#else></#if>" />
                 </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>超控面积（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">超控面积（㎡）:</label>
                     <input type='text' id="overhomesteadarea" readonly  class='form-control input-sm  ' name='overhomesteadarea'  value="<#if bean.overhomesteadarea??>${bean.overhomesteadarea?c}<#else></#if>" />
                 </div>
                 <script type = "text/javascript">
@@ -95,7 +95,7 @@ ${housebasic.people}
                     <input type='text'  class='form-control input-sm  ' name='shed'  value="${housebasic.shed?default("")}" />
                 </div>-->
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>宅基地认定年限:</label>
+                    <label class='fl control-label' style="width:220px;">宅基地认定年限:</label>
                     <select id='homesteadyear' class='form-control input-sm fl' style='width:120px;' name='homesteadyear' >  
                         <option  <#if (bean.homesteadyear?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
                         <option  <#if (bean.homesteadyear?default("-1"))=='0'>selected='selected'</#if>  value="0">82年前</option>  
@@ -103,11 +103,11 @@ ${housebasic.people}
                     </select>  
                 </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>认定房屋面积（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">认定房屋面积（㎡）:</label>
                     <input type='text' class='form-control input-sm  ' name='fwbcmj'  value="<#if bean.fwbcmj??>${bean.fwbcmj?c}<#else></#if>" />   
                 </div>
                    <div class=' aoJianGroup fl'>
-                       <label class='fl control-label'>住房困难户补偿方案:</label>
+                       <label class='fl control-label' style="width:220px;">住房困难户补偿方案:</label>
                        <input type='text' class='form-control input-sm  ' name='zfknhbcfa'  value="${bean.zfknhbcfa?default("")}" />m<sup>2</sup>
                    </div>
             </div>
@@ -129,7 +129,7 @@ ${housebasic.people}
                     <input type='text' class='form-control input-sm  fl' name='parentnames'   value="${bean.parentnames?default("")}"/>       
                 </div>-->
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>认定住房困难:</label>
+                    <label class='fl control-label' style="width:220px;">认定住房困难:</label>
                      <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hardhouse' >  
                         <option  <#if (bean.hardhouse?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
                         <option  <#if (bean.hardhouse?default("-1"))=='0'>selected='selected'</#if>  value="0">是</option>  
@@ -146,11 +146,11 @@ ${housebasic.people}
                     </select>        
                 </div>-->
             <div class=' aoJianGroup fl'>
-                <label class='fl control-label'>购房标准(50m<sup>2</sup>)(非超生人数):</label>
+                <label class='fl control-label' style="width:220px;">购房标准(50m<sup>2</sup>)(非超生人数):</label>
                 <input type='text' class='form-control input-sm  fl' name='gfbz50'   value="${bean.gfbz50?default("")}"/>人
             </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>购房标准(45m<sup>2</sup>)(超生人数):</label>
+                    <label class='fl control-label' style="width:220px;">购房标准(45m<sup>2</sup>)(超生人数):</label>
                     <input type='text' class='form-control input-sm  fl' name='gfbz45'   value="${bean.gfbz45?default("")}"/>人
                 </div>
             </div>    
@@ -158,7 +158,7 @@ ${housebasic.people}
             <h4><span class="label label-default">四.宅基地腾退补偿款：</span></h4>
             <div class='container-fluid con-bg mb10' id="div4">
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>评估方:</label>
+                    <label class='fl control-label' style="width:220px;">评估方:</label>
                     <input type='text' class='form-control input-sm  ' name='pgjg'  readonly title='<#if housebasic.section??><#if housebasic.section == '1' >北京兴庆房地产土地评估有限公司<#elseif housebasic.section == '2' >北京中建华房地产土地评估有限责任公司<#elseif housebasic.section == '3' >北京龙泰房地产评估有限责任公司<#elseif housebasic.section == '4' >北京大地盛业房地产土地评估有限公司<#elseif housebasic.section == '5' >北京建亚恒泰房地产评估有限公司<#elseif housebasic.section == '6' >北京奥隆房地产评估有限责任公司<#elseif housebasic.section == '7' >北京中资房地产土地评估有限公司</#if><#else>请输入评估方名称</#if>' 
                            value="<#if housebasic.section??><#if housebasic.section == '1' >北京兴庆房地产土地评估有限公司<#elseif housebasic.section == '2' >北京中建华房地产土地评估有限责任公司<#elseif housebasic.section == '3' >北京龙泰房地产评估有限责任公司<#elseif housebasic.section == '4' >北京大地盛业房地产土地评估有限公司<#elseif housebasic.section == '5' >北京建亚恒泰房地产评估有限公司<#elseif housebasic.section == '6' >北京奥隆房地产评估有限责任公司<#elseif housebasic.section == '7' >北京中资房地产土地评估有限公司</#if><#else>请输入评估方名称</#if>" />  
                 </div>
@@ -170,95 +170,95 @@ ${housebasic.people}
                     </select>        
                 </div>-->
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>补偿宅基地面积（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">补偿宅基地面积（㎡）:</label>
                     <input type='text' class='form-control input-sm  ' name='bczjdmj'  value="<#if bean.bczjdmj??>${bean.bczjdmj?c}</#if>" />    
                 </div>
                 <div class=' aoJianGroup fl'> 
-                    <label class='fl control-label'>控制面积区位单价(元):</label>
+                    <label class='fl control-label' style="width:220px;">控制面积区位单价(元):</label>
                     <input type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' readonly  value="6000"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>超控面积区位单价(元):</label>
+                    <label class='fl control-label' style="width:220px;">超控面积区位单价(元):</label>
                     <input id="ckmjqwbcdj" type='text' class='form-control input-sm ' readonly  name='ckmjqwbcdj'   
                     value="<#if (bean.homesteadyear?default("-1"))=='0'>3000<#elseif bean.homesteadyear?default("-1")=='1'>1800<#else></#if>"/>      
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>控制宅基地区位价(元):</label>
+                    <label class='fl control-label' style="width:220px;">控制宅基地区位价(元):</label>
                     <input type='text' class='form-control input-sm  ' id='kzzjdqwbcj' name='kzzjdqwbcj'   value="<#if bean.kzzjdqwbcj??>${bean.kzzjdqwbcj?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>超控宅基地区位价(元):</label>
+                    <label class='fl control-label' style="width:220px;">超控宅基地区位价(元):</label>
                     <input type='text' class='form-control input-sm  ' id="ckzjdqwbcj" name='ckzjdqwbcj'   value="<#if bean.ckzjdqwbcj??>${bean.ckzjdqwbcj?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>房屋价款(元):</label>
+                    <label class='fl control-label' style="width:220px;">房屋价款(元):</label>
                     <input type='text' class='form-control input-sm  ' id="bttfwczcxj"  name='bttfwczcxj'   value="<#if bean.bttfwczcxj??>${bean.bttfwczcxj?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>装修设备附属物价款(元):</label>
+                    <label class='fl control-label' style="width:220px;">装修设备附属物价款(元):</label>
                     <input type='text' class='form-control input-sm  ' id="zxsbfswjk" name='zxsbfswjk'   value="<#if bean.zxsbfswjk??>${bean.zxsbfswjk?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>宅基地腾退补偿款(合计)(元):</label>
+                    <label class='fl control-label' style="width:220px;">宅基地腾退补偿款(合计)(元):</label>
                     <input type='text' class='form-control input-sm  ' readonly id="zjdttbck" name='zjdttbck'   value="<#if bean.zjdttbck??>${bean.zjdttbck?c}<#else></#if>"/>       
                 </div>                                              
             </div>  
             <h4><span class="label label-default">五.奖励费 补助费(元)：</span></h4>
             <div class='container-fluid con-bg mb10' id="div5">
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>提前搬家奖(元):</label>
+                    <label class='fl control-label' style="width:220px;">提前搬家奖(元):</label>
                     <input type='text' class='form-control input-sm input_jl input_hj' name='tqbjl' readonly  value="<#if bean.tqbjl??>${bean.tqbjl?c}<#else>5000</#if>" />  
                 </div>            
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>工程配合奖(元):</label>
+                    <label class='fl control-label' style="width:220px;">工程配合奖(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='gcphjl' readonly value="<#if bean.gcphjl??>${bean.gcphjl?c}<#else>100000</#if>" />   
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>腾退促进奖(元):</label>
+                    <label class='fl control-label' style="width:220px;">腾退促进奖(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='ttcjjl' readonly  value="<#if bean.ttcjjl??>${bean.ttcjjl?c}<#else>50000</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>无违章奖励费(元):</label>
+                    <label class='fl control-label' style="width:220px;">无违章奖励费(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='wwzjl'   value="<#if bean.wwzjl??>${bean.wwzjl?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>未建二层及地下室奖励(元):</label>
+                    <label class='fl control-label' style="width:220px;">未建二层及地下室奖励(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='wjecjj'   value="<#if bean.wjecjj??>${bean.wjecjj?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>未经批准已建二层补助(元):</label>
+                    <label class='fl control-label' style="width:220px;">未经批准已建二层补助(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='wjpzyjecbz'   value="<#if bean.wjpzyjecbz??>${bean.wjpzyjecbz?c}<#else>0</#if>"/>       
                 </div> 
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>搬家及家电迁移补助(元):</label>
+                    <label class='fl control-label' style="width:220px;">搬家及家电迁移补助(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='bjbz' readonly  value="<#if bean.bjbz??>${bean.bjbz?c}<#else>12000</#if>"/>       
                 </div>    
                 <div class=' aoJianGroup fl azxy'>      
-                    <label class='fl control-label'>期房补助费(元):</label>
+                    <label class='fl control-label' style="width:220px;">期房补助费(元):</label>
                     <input type='text' id="input-qfbz"  class='form-control input-sm input_hj'  name='qfbz'    value="<#if bean.qfbz??>${bean.qfbz?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>大病补助(元):</label>
+                    <label class='fl control-label' style="width:220px;">大病补助(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='dbbz'   value="<#if bean.dbbz??>${bean.dbbz?c}<#else>0</#if>"/>       
                 </div>    
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>残疾补助(元):</label>
+                    <label class='fl control-label' style="width:220px;">残疾补助(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='cjbz'   value="<#if bean.cjbz??>${bean.cjbz?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>低保户补助(元):</label>
+                    <label class='fl control-label' style="width:220px;">低保户补助(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='dbhbz'   value="<#if bean.dbhbz??>${bean.dbhbz?c}<#else>0</#if>"/>       
                 </div>   
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>独生子女奖励费(元):</label>
+                    <label class='fl control-label' style="width:220px;">独生子女奖励费(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='dsznbz'   value="<#if bean.dsznbz??>${bean.dsznbz?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>一次性停产停业补助费(元):</label>
+                    <label class='fl control-label' style="width:220px;">一次性停产停业补助费(元):</label>
                     <input type='text' class='form-control input-sm  input_jl input_hj' name='tctdbz'   value="<#if bean.tctdbz??>${bean.tctdbz?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>周转补助费(元):</label>
+                    <label class='fl control-label' style="width:220px;">周转补助费(元):</label>
                     <input type='text' id='inputzzbz' readonly class='form-control input-sm  input_jl input_hj' name='zzbz'   value="<#if bean.zzbz??>${bean.zzbz?c}<#else>0</#if>"/>       
                 </div>  
 <!--                <div class=' aoJianGroup fl'>      
@@ -266,24 +266,24 @@ ${housebasic.people}
                     <input type='text' class='form-control input-sm' name='otherbz'   value="<#if bean.otherbz??>${bean.otherbz?c}<#else></#if>"/>       
                 </div>-->
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>滴水补助费(元):</label>
+                    <label class='fl control-label' style="width:220px;">滴水补助费(元):</label>
                     <input type='text' class='form-control input-sm input_jl input_hj' name='dsbzf'   value="<#if bean.dsbzf??>${bean.dsbzf?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>信鸽补助费(元):</label>
+                    <label class='fl control-label' style="width:220px;">信鸽补助费(元):</label>
                     <input type='text' class='form-control input-sm input_jl input_hj' name='xgbzf'   value="<#if bean.xgbzf??>${bean.xgbzf?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>宅基地应批未批补助(元):</label>
+                    <label class='fl control-label' style="width:220px;">宅基地应批未批补助(元):</label>
                     <input type='text' class='form-control input-sm input_jl input_hj' name='zjdypwpbz'   value="<#if bean.zjdypwpbz??>${bean.zjdypwpbz?c}<#else>0</#if>"/>       
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
-                    <label class='fl control-label'>优惠指标未选满补偿(元):</label>
+                    <label class='fl control-label' style="width:220px;">优惠指标未选满补偿(元):</label>
                     <input type='text' id="input_yhzbwxmbc" class='form-control input-sm input_hj' name='yhzbwxmbc'   value="<#if bean.yhzbwxmbc??>${bean.yhzbwxmbc?c}<#else>0</#if>"/>       
                 </div>
                 <div class='container-fluid con-bg mb10'>
                     <div class=' aoJianGroup '>      
-                        <label class='fl control-label'>合计(元):</label>
+                        <label class='fl control-label' style="width:220px;">合计(元):</label>
                         <input id="jlhj" type='text' class='form-control input-sm  ' name='jlfsum' readonly  value="<#if bean.jlfsum??>${bean.jlfsum?c}<#else>0</#if>"/>       
                     </div>   
                 </div>                                                                                                                                 
@@ -291,39 +291,39 @@ ${housebasic.people}
             <h4><span class="label label-default azxy">六.初步选房意向：</span></h4>
             <div class='container-fluid con-bg mb10 azxy' id="div6">
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>安置房源:</label>
+                    <label class='fl control-label' style="width:220px;">安置房源:</label>
                     <input type='text' class='form-control input-sm  ' name='fyxx'  value="${bean.fyxx?default("")}" />    
                 </div>            
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>一居室(55m<sup>2</sup>):</label>
-                    <input type='text' class='form-control input-sm  calc' area=55 name='yjs'  value="${bean.yjs?default("")}" /> （套）   
+                    <label class='fl control-label' style="width:220px;">一居室(55m<sup>2</sup>)（套）  :</label>
+                    <input type='text' class='form-control input-sm  calc' area=55 name='yjs'  value="${bean.yjs?default("")}" />  
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>二居室（70m<sup>2</sup>）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=70 name='ljs70'   value="${bean.ljs70?default("")}"/>  （套）     
+                    <label class='fl control-label' style="width:220px;">二居室（70m<sup>2</sup>）（套）:</label>
+                    <input type='text' class='form-control input-sm  calc' area=70 name='ljs70'   value="${bean.ljs70?default("")}"/>  
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>二居室（75m<sup>2</sup>）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=75 name='ljs75'   value="${bean.ljs75?default("")}"/>  （套）     
+                    <label class='fl control-label' style="width:220px;">二居室（75m<sup>2</sup>）（套）:</label>
+                    <input type='text' class='form-control input-sm  calc' area=75 name='ljs75'   value="${bean.ljs75?default("")}"/>     
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>二居室（80m<sup>2</sup>）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=80 name='ljs80'   value="${bean.ljs80?default("")}"/> （套）      
+                    <label class='fl control-label' style="width:220px;">二居室（80m<sup>2</sup>）（套）:</label>
+                    <input type='text' class='form-control input-sm  calc' area=80 name='ljs80'   value="${bean.ljs80?default("")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>二居室（85m<sup>2</sup>）:</label>
-                    <input type='text' class='form-control input-sm  calc'  area=85 name='ljs85'   value="${bean.ljs85?default("")}"/>   （套）    
+                    <label class='fl control-label' style="width:220px;">二居室（85m<sup>2</sup>）（套）:</label>
+                    <input type='text' class='form-control input-sm  calc'  area=85 name='ljs85'   value="${bean.ljs85?default("")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>三居室（110m<sup>2</sup>）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=110 name='sjs'   value="${bean.sjs?default("")}"/>  （套）     
+                    <label class='fl control-label' style="width:220px;">三居室（110m<sup>2</sup>）（套） :</label>
+                    <input type='text' class='form-control input-sm  calc' area=110 name='sjs'   value="${bean.sjs?default("")}"/>      
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>实际选房套数（套）:</label>
-                    <input id="xfts" type='text' class='form-control input-sm  ' name='xfts'   value="${bean.xfts?default("")}"/> （套）      
+                    <label class='fl control-label' style="width:220px;">实际选房套数（套）:</label>
+                    <input id="xfts" type='text' class='form-control input-sm  ' name='xfts' readonly  value="${bean.xfts?default("")}"/>      
                 </div> 
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>应选面积（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">应选面积（㎡）:</label>
                     <input type='text' id="input_yxmj" class='form-control input-sm  ' name='yxmj'   value="<#if bean.yxmj??>${bean.yxmj?c}<#else></#if>"/>       
                 </div>
               <#-- 	<div class=' aoJianGroup fl'>      
@@ -332,15 +332,15 @@ ${housebasic.people}
                 </div> -->
 
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>实际选房面积（㎡）:</label>
-                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj'   value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
+                    <label class='fl control-label' style="width:220px;">实际选房面积（㎡）:</label>
+                    <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj' readonly  value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
                 </div>  
                  <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>指标内面积(包含15㎡以内)（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">指标内面积(包含15㎡以内)（㎡）:</label>
                     <input  type='text' id = "input_zbnmj" class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>     
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>超指标面积(15㎡以外)（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">超指标面积(15㎡以外)（㎡）:</label>
                     <input type='text' id="input_czbmj" class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
                 </div>  
              <#--   <div class=' aoJianGroup fl'>      
@@ -351,33 +351,33 @@ ${housebasic.people}
                     </select>        
                 </div>  -->                
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>指标内购房款(元):</label>
+                    <label class='fl control-label' style="width:220px;">指标内购房款(元):</label>
                     <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk' readonly <#if (bean.sfcs?default("-1"))=='0'></#if>  value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       
                 </div>  
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>指标外购房款(元):</label>
+                    <label class='fl control-label' style="width:220px;">指标外购房款(元):</label>
                     <input id="zbwgfk" type='text' class='form-control input-sm  ' name='zbwgfk' readonly <#if (bean.sfcs?default("-1"))=='0'></#if>  value="<#if bean.zbwgfk??>${bean.zbwgfk?c}<#else>0</#if>"/>       
                 </div>                   
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>购房款(元):</label>
+                    <label class='fl control-label' style="width:220px;">购房款(元):</label>
                     <input id="azfgfk" type='text' class='form-control input-sm  ' name='azfgfk' readonly  value="<#if bean.azfgfk??>${bean.azfgfk?c}<#else>0</#if>"/>       
                 </div>                             
             </div>  
             <h4><span class="label label-default div_seven">七.其他：</span></h4>
             <div class='container-fluid con-bg mb10' id="div7">
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>腾退时间:</label>
+                    <label class='fl control-label' style="width:220px;">腾退时间:</label>
                     <input type='text' class='form-control input-sm  ' name='ttrq'  value="${bean.ttrq?default("")}" />    
                 </div>
             </div>                 
             <h4><span class="label label-default div_eight">八.评估款，补偿补助及奖励费合计(元)：</span></h4>
             <div class='container-fluid con-bg mb10' id="div8">
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>腾退补偿款总价(元):</label>
+                    <label class='fl control-label' style="width:220px;">腾退补偿款总价(元):</label>
                     <input type='text' id="zjdttzj" class='form-control input-sm  ' readonly name='zjdttzj'  value="<#if bean.zjdttzj??>${bean.zjdttzj?c}<#else>0</#if>" />    
                 </div>
                 <div class=' aoJianGroup fl azxy'>      
-                    <label class='fl control-label'>结算后款(元):</label>
+                    <label class='fl control-label' style="width:220px;">结算后款(元):</label>
                     <input id="jshk" type='text' class='form-control input-sm  ' name='jshk'  readonly value="<#if bean.jshk??>${bean.jshk?c}<#else>0</#if>"/>       
                 </div>
             </div>              
