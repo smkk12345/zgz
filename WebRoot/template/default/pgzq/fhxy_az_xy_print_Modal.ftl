@@ -148,7 +148,7 @@
             </div>
         </div>
         <div class="xy-print-con" id="xy-print">
-            <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议-${bean.displaydate?default("/")}</p>
+            <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
             <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;腾退人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村民委员会&nbsp;</u>（以下简称甲方）
             </p>
             <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>${housebasic.names?default("/")}</u> &nbsp;身份证号：<u> ${housebasic.idcard?default("/")}</u>（以下简称乙方）
@@ -232,7 +232,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）控制宅基地区位补偿价<u>&nbsp;&nbsp;${bean.kzzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）超控宅基地区位补偿价<u>&nbsp;&nbsp;${bean.ckzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）被腾退房屋重置成新价<u>&nbsp;&nbsp;${bean.bttfwczcxj?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）房屋价款&nbsp;<u>&nbsp;&nbsp;${bean.bttfwczcxj?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）装修、设备、附属物价款<u>&nbsp;&nbsp;${bean.zxsbfswjk?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;6.1.2、各项奖励费、补助各分项合计<u>&nbsp;&nbsp;${bean.jlfsum?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/>

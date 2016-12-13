@@ -261,9 +261,9 @@
                 </p>
                 <p class="leftTitle">第三条&nbsp;&nbsp;房屋价款</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、根据本协议第一条、第二条，乙方购买定向安置房<u>&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;</u>套，总面积为
-                        <u>&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米，其中：购房指标内为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>
-                    平方米，超过购房指标面积为<u>&nbsp;&nbsp;${bean.czbmj?string("0.00")?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。购房款总价暂定为<u>&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1、根据本协议第一条、第二条，乙方购买定向安置房<u style="background-color:#F2F2F2;">&nbsp;&nbsp;&nbsp;${bean.xfts?default("")}&nbsp;&nbsp;&nbsp;</u>套，总面积为
+                        <u style="background-color:#F2F2F2;">&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米，其中：购房指标内为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>
+                    平方米，超过购房指标面积为<u>&nbsp;&nbsp;${bean.czbmj?string("0.00")?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。购房款总价暂定为<u style="background-color:#F2F2F2;">&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
                         <u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("")}&nbsp;&nbsp;&nbsp;</u>），其中：购房指标内的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbngfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
                         <u>&nbsp;&nbsp;&nbsp;${bean.dxzbngfk?default()}&nbsp;&nbsp;&nbsp;</u>），超过购房指标的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbwgfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
                         <u>&nbsp;&nbsp;&nbsp;${bean.dxzbwgfk?default()}&nbsp;&nbsp;&nbsp;</u>）。购房款的最终结算根据本协议第八条“房款结算及相关费用缴纳”中的约定来确定。<br/>
@@ -271,7 +271,7 @@
                 </p>
                 <p class="leftTitle">第四条&nbsp;&nbsp;付款方式</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1、根据相关政策规定以及乙方签署的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方在领取腾退补偿总价款的同时，向甲方一次性支付本协议第三条第1款中暂定的购房款<u>&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;&nbsp;</u>）。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1、根据相关政策规定以及乙方签署的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方在领取腾退补偿总价款的同时，向甲方一次性支付本协议第三条第1款中暂定的购房款<u style="background-color:#F2F2F2;">&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("/")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;&nbsp;</u>）。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2、若乙方的腾退补偿总价款足以支付定向安置房购房款，乙方同意由甲方指定的银行从乙方腾退补偿总价款中向甲方一次性付清定向安置房购房款。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3、若乙方的腾退补偿总价款不足以支付定向安置房购房款，乙方同意由甲方指定的银行将乙方的腾退补偿总价款全部支付给甲方；同时，乙方根据本协议第四条第1款的约定，将定向安置房购房款差额部分向甲方一次性付清。
                 </p>
@@ -290,9 +290,9 @@
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1、根据“以签订房屋腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的定向安置房选房原则，甲方依据腾退人与乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号为
                         <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）时确定的顺序号(详见本协议附件2)，作为选房顺序的唯一依据。选房工作的具体时间安排由属地政府、腾退主体及甲方根据实际情况决定。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2、乙方于<u>&nbsp;${year?c}&nbsp;</u>年<u>&nbsp;${month}&nbsp;</u>月
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2、乙方于<span style="background-color:#F2F2F2;"><u>&nbsp;${year?c}&nbsp;</u>年<u>&nbsp;${month}&nbsp;</u>月
                         <u>&nbsp;${day}&nbsp;</u>日<u>&nbsp;${hour}&nbsp;</u>时
-                        <u>&nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：
+                        <u>&nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒</span>签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：
                         <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方可根据上述时点的具体排序进行选房。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3、甲方在选房工作开始之日的15个工作日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：
                         <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）的时点排定次序，书面（或电话）通知乙方到指定地点进行选房。乙方应根据确定后的选房顺序在规定的时间及地点进行选房，非因甲方原因造成乙方未能在规定的时间内到达指定地点选房导致其选房顺序号后延的，由此引起的一切责任及后果由乙方自行承担。<br/>
@@ -326,15 +326,17 @@
                 </p>
                 <p class="leftTitle">（以下无正文）</p>
 
-                <p class="pageBreak" style="margin-top: 330px;">&nbsp;</p>
+                <p class="pageBreak" style="margin-top: 230px;">&nbsp;</p>
 
                 <p class="leftTitle">（签字页）</p>
                 <p class="contex-1" style="margin-top: 50px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;甲方（盖章）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
+                <br>
                 <p class="contex-1" style="margin-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
+                <br>
                 <p class="contex-1" style="margin-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </p>
@@ -346,9 +348,11 @@
                 <p class="contex-1" style="margin-top: 50px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方（签字并按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
+                <br>
                 <p class="contex-1" style="margin-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
+                <br>
                 <p class="contex-1" style="margin-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </p>
@@ -408,16 +412,18 @@
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人（乙方）保证以上信息经确认无误，真实、合法、全面、有效，不存在伪造、欺瞒、误导、过失的任何情形。否则，因此产生的一切责任由被腾退人（乙方）承担。
                 </p>
-                <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人（乙方）按指纹：
+                <p class="leftTitle">（以下无正文）</p>
+                
+               <p class="contex-1" style="margin-top: 250px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人（乙方）按指纹：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-                <p class="contex-2">
-                    签字：
+                <br>
+                <p class="contex-1" style="margin-top: 20px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签字：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-                <p class="contex-2">
-                    <u>&nbsp;${sysyear?c}&nbsp;</u>年
-                        <u>&nbsp;${sysmonth}&nbsp;</u>月
-                        <u>&nbsp;${sysday}&nbsp;</u>日
+                <br>
+                <p class="contex-1" style="margin-top: 20px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </p>
 
                <p style="page-break-before: always">&nbsp;</p>
