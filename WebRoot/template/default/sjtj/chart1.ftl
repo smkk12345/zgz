@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <meta http-equiv="refresh" content="5">
+
     <!--CSS文件-->
     <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
         长辛店镇张郭庄村棚户区改造宅基地腾退奖励期启动
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
-    <div style='margin-top: 50px;color:red;font-size:40px; font-family:"宋体";font-weight:bold;text-align: center;'>
+    <div style='margin-top: 50px;color:red;font-size:40px; font-family:"黑体";font-weight:bold;text-align: center;'>
         截至日期：2016年12月16日 08:00:00点整
     </div>
     <div style='margin-top: 60px;color:#0F0;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
