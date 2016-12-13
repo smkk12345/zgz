@@ -336,11 +336,11 @@ ${housebasic.people}
                     <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj'   value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
                 </div>  
                  <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>指标内面积:</label>
-                    <input  type='text' id = "input_zbnmj" class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>       
+                    <label class='fl control-label'>指标内面积(包含15㎡以内)（㎡）:</label>
+                    <input  type='text' id = "input_zbnmj" class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>     
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>超指标面积:</label>
+                    <label class='fl control-label'>超指标面积(15㎡以外)（㎡）:</label>
                     <input type='text' id="input_czbmj" class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
                 </div>  
              <#--   <div class=' aoJianGroup fl'>      
@@ -349,7 +349,7 @@ ${housebasic.people}
                         <option  <#if (bean.sfcs?default("-1"))=='1'>selected='selected'</#if>  value="1">是</option>  
                         <option  <#if (bean.sfcs?default("-1"))=='0'>selected='selected'</#if> value="0">否</option> 
                     </select>        
-                </div>  -->
+                </div>  -->                
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>指标内购房款(元):</label>
                     <input id="zbngfk" type='text' class='form-control input-sm  ' name='zbngfk' readonly <#if (bean.sfcs?default("-1"))=='0'></#if>  value="<#if bean.zbngfk??>${bean.zbngfk?c}<#else>0</#if>"/>       

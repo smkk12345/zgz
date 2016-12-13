@@ -360,68 +360,71 @@
                 <p style="page-break-before: always">&nbsp;</p>
 
                 <p class="leftTitle" >附件1：认定被安置人口明细表</p>
-                <p class="contex-1" style="margin-top: 10px;">
+                <p class="contex-1" style="margin-top: 5px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市宅基地房屋腾退补偿安置协议》（协议编号：<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）第二条，被腾退房屋中认定的安置人口数为
                         <u>&nbsp;&nbsp;&nbsp;${bean.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;</u>人，具体情况见下表：
                 </p>
-                <div class="contex-1">在册人员</div>
-                <table class="table table-bordered contex-1">
-                    <tr>
-                        <th class="center">序号</th>
-                        <th class="center">姓名</th>
-                        <th class="center">身份证号码</th>
-                        <th class="center">产关</th>
-                    </tr>
 
+            <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 16px !important">
+            <tr>
+
+                <td class="" colspan=9>
+                <table style="margin-top:0px;margin-bottom:0px;padding-top:0px;">
+                    <#if bean.vacatelist??>
                     <#if bean.vacatelist?size gt 0>
-                    <#list bean.vacatelist as vo>
-                    <tr id="${vo.id}">
-                        <td>${vo_index+1}</td>
-                        <td>${vo.name?default("")}</td>
-                        <td>${vo.idcard?default("")}</td>
-                        <td>${vo.changrelate?default("")}</td>
-                    </tr>
-                    </#list>
-                    </#if>
-                </table>
-                <div class="contex-1">非在册人员</div>
-                <table class="table table-bordered contex-1">
+                    <tr ><td colspan=6>在册人员</td></tr>
+                    <#list bean.vacatelist as ROW>
+                    <#if ROW_index % 2 == 2%2>
                     <tr>
-                        <th class="center">序号</th>
-                        <th class="center">姓名</th>
-                        <th class="center">身份证号码</th>
-                        <th class="center">产关</th>
+                    	<td>${ROW.name}</td> <td>${ROW.idcard}</td> <td>${ROW.changrelate}</td>
+                    	<#if bean.vacatelist?size != (ROW_index+1)>
+                    		<td>${bean.vacatelist[ROW_index+1].name}</td> <td>${bean.vacatelist[ROW_index+1].idcard}</td> <td>${bean.vacatelist[ROW_index+1].changrelate}</td>
+                    	<#else>
+                    	<td></td><td></td><td></td>
+                    	</#if>
                     </tr>
-
-                    <#if bean.list?size gt 0>
-                    <#list bean.list as vo>
-                    <tr id="${vo.id}">
-                        <td><#if bean.vacatelist?size gt 0 > ${bean.vacatelist?size+vo_index+1}<#else>${vo_index+1}</#if></td>
-                        <td>${vo.name?default("")}</td>
-                        <td>${vo.idcard?default("")}</td>
-                        <td>${vo.changrelate?default("")}</td>
-                    </tr>
+                    </#if>
                     </#list>
                     </#if>
+                    </#if>
+                    <tr ><td colspan=6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+                    <#if bean.list??>
+                    <#if bean.list?size gt 0>
 
-
+                   <tr ><td colspan=6>非在册人员</td></tr>
+                    <#list bean.list as ROW>
+                     <#if ROW_index % 2 == 2%2>
+                    <tr>
+                    	<td>${ROW.name}</td> <td>${ROW.idcard}</td> <td>${ROW.changrelate}</td>
+                    	<#if bean.list?size != (ROW_index+1)>
+                    		<td>${bean.list[ROW_index+1].name}</td> <td>${bean.list[ROW_index+1].idcard}</td> <td>${bean.list[ROW_index+1].changrelate}</td>
+                    	<#else>
+                    	<td></td><td></td><td></td>
+                    	</#if>
+                    </tr>
+                    </#if>
+                    </#list>
+                    </#if>
+                    </#if>
                 </table>
+                </td>
+            </tr>
+            </table>
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本附件为本协议的有效组成部分，与本协议具有同等的法律效力。
                 </p>
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人（乙方）保证以上信息经确认无误，真实、合法、全面、有效，不存在伪造、欺瞒、误导、过失的任何情形。否则，因此产生的一切责任由被腾退人（乙方）承担。
                 </p>
-                <p class="leftTitle">（以下无正文）</p>
-                
-               <p class="contex-1" style="margin-top: 250px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人（乙方）按指纹：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+    
+               <p class="contex-1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人（乙方）按指纹：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-                <br>
+
                 <p class="contex-1" style="margin-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签字：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-                <br>
+
                 <p class="contex-1" style="margin-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysyear?c}&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysmonth}&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;${sysday}&nbsp;&nbsp;&nbsp;&nbsp;</u>日
                 </p>
