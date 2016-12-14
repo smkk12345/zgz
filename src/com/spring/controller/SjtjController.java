@@ -502,14 +502,14 @@ public class SjtjController {
                 pageSize = "10";
             }
 
-            int yjszs = 315;
-            int ljs70zs = 315;
-            int ljs75zs = 420;
-            int ljs80zs = 315;
-            int ljs85zs = 525;
-            int sjszs = 210;
+            int yjszs = 450;
+            int ljs70zs = 450;
+            int ljs75zs = 600;
+            int ljs80zs = 450;
+            int ljs85zs = 750;
+            int sjszs = 300;
 
-            int[] zsArr = {315, 315, 420, 315, 525, 210};
+            int[] zsArr = {450, 450, 600, 450, 750, 300};
 
             List<BigDecimal> list = ServiceManager.getHouseBasicServce().getSumHouseInfo("", "");
             List<Integer> syList = new ArrayList<Integer>();
@@ -558,15 +558,14 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
             }
+            int yjszs = 450;
+            int ljs70zs = 450;
+            int ljs75zs = 600;
+            int ljs80zs = 450;
+            int ljs85zs = 750;
+            int sjszs = 300;
 
-            int yjszs = 315;
-            int ljs70zs = 315;
-            int ljs75zs = 420;
-            int ljs80zs = 315;
-            int ljs85zs = 525;
-            int sjszs = 210;
-
-            int[] zsArr = {315, 315, 420, 315, 525, 210};
+            int[] zsArr = {450, 450, 600, 450, 750, 300};
 
             List<BigDecimal> list = ServiceManager.getHouseBasicServce().getSumHouseInfo("", "");
             List<Integer> syList = new ArrayList<Integer>();

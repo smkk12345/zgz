@@ -40,6 +40,7 @@
                 <div style='font-size:30px;float: left;width:50%; height:570px' id="chart1"> </div>
                 <div style='font-size:30px;float: left;width:50%; height:570px' id="chart2"> </div>
             </div>
+            <div style="text-align:center;font-size:32px;font-weight:bold;"><span >预计：总计3000套</span></div>
         </div>
 
         <script type="text/javascript">
