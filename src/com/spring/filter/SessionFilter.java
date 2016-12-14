@@ -108,33 +108,33 @@ public class SessionFilter extends OncePerRequestFilter {
             // TODO: handle exception
         }
 
-        BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
-        if(null == baseBean){
-            baseBean = new BaseSettingBean();
-            baseBean.setKey("sd");
-            baseBean.setKeyName("系统锁定");
-            baseBean.setValue("0");
-//			   ServiceManager.getBaseSettingServiceImpl().delete();
-            ServiceManager.getBaseSettingServiceImpl().save(baseBean);
-        }
-        Contanst.TEM_STOP = baseBean.getValue().equals("1");
-
-        if(Contanst.TEM_STOP){
-            if(null != role){
-                String authority = role.getRoleAuthority();
-                if(authority.substring(38, 39).equals("2")){
-//						arg2.doFilter(request, response);
-                }else{
-                    if(!url.contains("lockService.action")){
-                        temStop(response,request);
-                    }
-                }
-            }
-        }else{
-            if(url.contains("lockService.action")){
-                webExpireInfor(response, request);
-            }
-        }
+//        BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
+//        if(null == baseBean){
+//            baseBean = new BaseSettingBean();
+//            baseBean.setKey("sd");
+//            baseBean.setKeyName("系统锁定");
+//            baseBean.setValue("0");
+////			   ServiceManager.getBaseSettingServiceImpl().delete();
+//            ServiceManager.getBaseSettingServiceImpl().save(baseBean);
+//        }
+//        Contanst.TEM_STOP = baseBean.getValue().equals("1");
+//
+//        if(Contanst.TEM_STOP){
+//            if(null != role){
+//                String authority = role.getRoleAuthority();
+//                if(authority.substring(38, 39).equals("2")){
+////						arg2.doFilter(request, response);
+//                }else{
+//                    if(!url.contains("lockService.action")){
+//                        temStop(response,request);
+//                    }
+//                }
+//            }
+//        }else{
+//            if(url.contains("lockService.action")){
+//                webExpireInfor(response, request);
+//            }
+//        }
         if (doFilter) {
             // 执行过滤
             // 从session中获取登录者实体
