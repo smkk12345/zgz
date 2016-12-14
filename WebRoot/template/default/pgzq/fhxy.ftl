@@ -19,8 +19,8 @@
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
 	                </div>
 	            	<div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>手机:</label>
-	                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+	                    <label class='fl control-label'>顺序号:</label>
+	                    <input type='text' class='form-control input-sm  ' name='indexnum' value="${indexnum?default("")}"/>    
 	                </div>
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>房屋坐落:</label>
@@ -58,9 +58,7 @@
                 <th>标段</th>
                 <th>被腾退人</th>
                 <th>安置方式</th>
-                <th>认定面积</th>
-                <th>认定人口</th>
-                <th>结算后款</th>
+				<th>房屋坐落</th>
                 <th>打印一</th>
                 <th>确认签约</th>
                 <th>打印二</th>
@@ -75,7 +73,7 @@
             <#import "../macro_ftl/pager.ftl" as p>
             <#if recordCount??>
             <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="/pgzq/fhxy.action" 
-		 OtherParameter="location=${location?default('')},atype=${atype?default('')},names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')},qianyue=${qianyue?default('')}"/>
+		 OtherParameter="location=${location?default('')},atype=${atype?default('')},names=${names?default('')},indexnum=${indexnum?default('')},idcard=${idcard?default('')},qianyue=${qianyue?default('')}"/>
             </#if>
         </div>
     </ul>

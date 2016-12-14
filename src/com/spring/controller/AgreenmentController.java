@@ -264,6 +264,11 @@ public class AgreenmentController {
 		String qianyue = request.getParameter("qianyue");
 		qianyue = StringUtils.isBlank(qianyue)?"-1":qianyue;
 		
+		if(!StringUtils.isBlank(indexnum)){
+			sb.append(" and c.indexnum = ").append(indexnum);
+			model.addAttribute("indexnum", indexnum);
+		}
+		
 		if(!StringUtils.isBlank(names)){
 			sb.append(" and a.names like '%").append(names).append("%'");
 			model.addAttribute("names", names);
@@ -754,10 +759,11 @@ public class AgreenmentController {
 			}
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
 			String year = indexNum.getOperatedate();
-			String[] arr = year.split("-");
-			model.addAttribute("year", arr[0]);
-			model.addAttribute("month", arr[1]);
-			model.addAttribute("day", arr[2]);
+			long time = DateUtil.StringToDate(year, DateStyle.YYYY_MM_DD_HH_MM_SS).getTime();
+			Date date = new Date(time);
+			model.addAttribute("year", DateUtil.getYear(date));
+			model.addAttribute("month", DateUtil.getMonth(date)+1);
+			model.addAttribute("day", DateUtil.getDay(date));
 			
 			
 			model.addAttribute("bean", agreenment);
@@ -870,6 +876,9 @@ public class AgreenmentController {
 			String housebasicid  = request.getParameter("housebasicid");
 			Agreement agreenment = ServiceManager.getAgreenmentService().getByHouseBasicId(housebasicid);
 			//这种处理方式  1 将agreenment中的 Pro号清理掉 2 将indexnum中的housebasicid变更 3 解除锁定
+			if(Contanst.houseBasicidSet.contains(housebasicid)){
+				Contanst.houseBasicidSet.remove(housebasicid);
+			}
 			boolean unSignStatus = ServiceManager.getHouseBasicServce().unSign(housebasicid,agreenment.getId());
 			return unSignStatus;
 		} catch (Exception e) {

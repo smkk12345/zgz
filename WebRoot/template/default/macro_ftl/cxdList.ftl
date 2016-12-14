@@ -396,9 +396,7 @@
                     未录入
                 </#if>
             </td>
-            <td>${(ROW.fwbcmj)!""}</td>
-            <td>${(ROW.people)!""}</td>
-            <td>${(ROW.jshk)!""}</td>
+            <td>${ROW.location?default("")}</td>
             <td>
                 
                  <button type="button" class="btn btn-danger btn-xs ml10 YL-ModalClick bold" title='打印预结单'

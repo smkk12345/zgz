@@ -28,9 +28,9 @@
                 <td colspan="2">身份证号</td>
                 <td>${bean.idcard?default("")}</td>
                 <td>被腾退家庭购房标准</td>
-                <td style="text-align: left">
-                    50m<sup>2</sup>( ${agreenment.gfbz50?default("")})人<br>
-                    45m<sup>2</sup>( ${agreenment.gfbz45?default("")})人
+                <td style="text-align: left;width:60px;">
+                    50㎡( ${agreenment.gfbz50?default("")})人<br>
+                    45㎡( ${agreenment.gfbz45?default("")})人
                 </td>
                 <td colspan="2">父母及超生子女姓名</td>
                 <td colspan="2">${bean.fmjcsznxm?default("")}</td>
@@ -81,6 +81,8 @@
                 <td colspan="2">认定安置人数</td>
                 <td colspan="2" class=""> ${bean.peoplecount}人</td>
             </tr>
+            </table>
+             <table class="table table-bordered">
             <tr>
                 <td colspan="10">认定宅基地及房屋面积相关</td>
             </tr>
