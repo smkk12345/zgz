@@ -296,31 +296,31 @@ ${housebasic.people}
                 </div>            
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label' style="width:220px;">一居室(55m<sup>2</sup>)（套）  :</label>
-                    <input type='text' class='form-control input-sm  calc' area=55 name='yjs'  value="${bean.yjs?default("")}" />  
+                    <input type='text' class='form-control input-sm  calc' area=55 name='yjs'  value="${bean.yjs?default("0")}" />  
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">二居室（70m<sup>2</sup>）（套）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=70 name='ljs70'   value="${bean.ljs70?default("")}"/>  
+                    <input type='text' class='form-control input-sm  calc' area=70 name='ljs70'   value="${bean.ljs70?default("0")}"/>  
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">二居室（75m<sup>2</sup>）（套）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=75 name='ljs75'   value="${bean.ljs75?default("")}"/>     
+                    <input type='text' class='form-control input-sm  calc' area=75 name='ljs75'   value="${bean.ljs75?default("0")}"/>     
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">二居室（80m<sup>2</sup>）（套）:</label>
-                    <input type='text' class='form-control input-sm  calc' area=80 name='ljs80'   value="${bean.ljs80?default("")}"/>       
+                    <input type='text' class='form-control input-sm  calc' area=80 name='ljs80'   value="${bean.ljs80?default("0")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">二居室（85m<sup>2</sup>）（套）:</label>
-                    <input type='text' class='form-control input-sm  calc'  area=85 name='ljs85'   value="${bean.ljs85?default("")}"/>       
+                    <input type='text' class='form-control input-sm  calc'  area=85 name='ljs85'   value="${bean.ljs85?default("0")}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">三居室（110m<sup>2</sup>）（套） :</label>
-                    <input type='text' class='form-control input-sm  calc' area=110 name='sjs'   value="${bean.sjs?default("")}"/>      
+                    <input type='text' class='form-control input-sm  calc' area=110 name='sjs'   value="${bean.sjs?default("0")}"/>      
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">实际选房套数（套）:</label>
-                    <input id="xfts" type='text' class='form-control input-sm  ' name='xfts' readonly  value="${bean.xfts?default("")}"/>      
+                    <input id="xfts" type='text' class='form-control input-sm  ' name='xfts' readonly  value="${bean.xfts?default("0")}"/>      
                 </div> 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">应选面积（㎡）:</label>

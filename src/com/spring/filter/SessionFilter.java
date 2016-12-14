@@ -107,7 +107,8 @@ public class SessionFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             // TODO: handle exception
         }
-
+//        Map<String, String> map = new HashMap<String, String>();
+//        map.put("", value)
 //        BaseSettingBean baseBean = ServiceManager.getBaseSettingServiceImpl().findValueByKey("sd");
 //        if(null == baseBean){
 //            baseBean = new BaseSettingBean();

@@ -28,6 +28,7 @@ import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.DisplayBean;
 import com.hibernate.houseinfo.domain.HouseBasic;
+import com.hibernate.timers.utils.DateStyle;
 import com.hibernate.timers.utils.DateUtil;
 import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
@@ -129,6 +130,54 @@ public class SjtjController {
 
         }
     }
+    
+    
+//    @RequestMapping({"/sjtj/chart1.action"})
+//    public ModelAndView chart1(HttpServletRequest request,
+//                               HttpServletResponse response, ModelMap model) {
+//        try {
+//        	String from = request.getParameter("from");
+//        	if(!StringUtils.isBlank(from)){
+//        		model.addAttribute("from", from);
+//        	}
+//            Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
+//            List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
+//            double result = 0.00;
+//            if (count > 0 && null != list && list.size() > 0) {
+//                result = 100 * list.size() / Double.parseDouble(count+"");
+//            }
+//            BigDecimal bd = new BigDecimal(result);
+//            BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+//            
+//            Date date = new Date();
+//            String dateStr = "2016-12-16";
+//            Date date1 = DateUtil.StringToDate(dateStr, DateStyle.YYYY_MM_DD);
+//            String dateStr1 = DateUtil.DateToString(date, DateStyle.YYYY_MM_DD);
+//            Date date2 = DateUtil.StringToDate(dateStr1, DateStyle.YYYY_MM_DD);
+//            
+//            int day = DateUtil.getIntervalDays(date2, date1);
+//            model.addAttribute("day", day);
+//            
+//            model.addAttribute("qybl", f1 + "%");
+//            // 模板路径 basePath
+//            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+//            model.addAttribute("BASE_ASSETS_PATH",
+//                    WebConstConfig.getBase_Assets_Path());
+//            model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+//                    WebConstConfig.getBase_Template_Default_Path());
+//            model.addAttribute("bean", new HouseBasic());
+//            model.addAttribute("CURENT_TAB", "SJTJ");
+//            model.addAttribute("CURENT_TAB_2", "chart1");
+//            model.addAttribute("CURENT_TAB_3", "chart1");
+//            return new ModelAndView(PageConst.SJTJ_chart1, model);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            model.addAttribute("error", e.getMessage());
+//            return null;
+//
+//        }
+//    }
+//    
     
     @RequestMapping({"/sjtj/chart7.action"})
     public ModelAndView chart7(HttpServletRequest request,

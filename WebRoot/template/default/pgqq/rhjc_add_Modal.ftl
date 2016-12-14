@@ -86,15 +86,15 @@
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>拟被安置人口:</label>
-                    <input type='text' class='form-control input-sm  ' name='people' value="${bean.people?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='people' readonly value="${bean.people?default("")}"/>        
                 </div>
                  <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='localpeoplecount' value="${bean.localpeoplecount?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='localpeoplecount' readonly value="${bean.localpeoplecount?default("")}"/>        
                 </div>
                  <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>非本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' value="${bean.notlocalpeoplecount?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' readonly value="${bean.notlocalpeoplecount?default("")}"/>        
                 </div>
                   <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>编号:</label>
