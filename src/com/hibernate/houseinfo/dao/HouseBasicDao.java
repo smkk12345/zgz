@@ -33,6 +33,7 @@ import com.hibernate.houseinfo.domain.IndexNum;
 import com.hibernate.houseinfo.domain.VacatePeople;
 import com.hibernate.userInfo.damain.User;
 import com.hibernate.utils.SortUtils;
+import com.spring.ServiceManager;
 
 public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	
@@ -564,6 +565,26 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public boolean unSign(String housebasicid, String agreenmentid) {
+		// TODO Auto-generated method stub
+		//这种处理方式  1 将agreenment中的 Pro号清理掉 2 将indexnum中的housebasicid变更 3 解除锁定
+		
+		String sql1 = " UPDATE agreenment set protocolnumber = null where id = '"+agreenmentid+"'";
+		String sql2 = " UPDATE indexnum set housebasicid = housebasicid"+"_temp" +" WHERE housebasicid = '"+housebasicid+"'";
+		String sql3 = " UPDATE housebasic set islock = '0' where id = '"+housebasicid+"'";
+		Session s = null;
+		try {
+			s = getSession();
+			s.createSQLQuery(sql1.toString()).executeUpdate();
+			s.createSQLQuery(sql2.toString()).executeUpdate();
+			s.createSQLQuery(sql3.toString()).executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	
 	

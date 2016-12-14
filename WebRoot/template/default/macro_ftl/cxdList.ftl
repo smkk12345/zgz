@@ -471,9 +471,9 @@
                 <td colspan=3> 请先选择安置方式！</td>
             </#if>
             <td id="td_indexnum${ROW.id}">
-                <#if ROW.atype?default("0")=="0">
+               <!-- <#if ROW.atype?default("0")=="0">
+            </#if>-->
             ${ROW.indexNumStr?default("")}
-            </#if>
             </td>
             <td id="td_print3${ROW.id}">
                 <#if role.roleAuthority[13]=="2">

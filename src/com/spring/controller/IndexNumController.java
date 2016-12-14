@@ -44,6 +44,7 @@ public class IndexNumController {
 		Map<String,String> map = new HashMap<String, String>();
 		try {
 			String housebsicid = request.getParameter("housebasicid");
+			
 			String agreenmentid = request.getParameter("agreenmentid");
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
 			model.addAttribute("BASE_ASSETS_PATH", WebConstConfig.getBase_Assets_Path());
@@ -58,23 +59,28 @@ public class IndexNumController {
 			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebsicid, "1,2,3,4,5,6,7");
 			if (null == indexNum) {
-				indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user, housebsicid,agreenment.getAtype());
-				//更新协议的
-				int year = DateUtil.getYear(new Date());
-				if(agreenment.getAtype().equals("0")){
-					String indexStr = Contanst.AGREENMENT_TYPE_AZ.replace("?", housebasic.getSection().trim());
-					indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
-					agreenment.setProtocolnumber(indexStr);
+				if(!Contanst.houseBasicidSet.contains(housebsicid)){
+					Contanst.houseBasicidSet.add(housebsicid);
+					indexNum = ServiceManager.getIndexNumService().getIndexNum(ip, user, housebsicid,agreenment.getAtype());
+					//更新协议的
+					int year = DateUtil.getYear(new Date());
+					if(agreenment.getAtype().equals("0")){
+						String indexStr = Contanst.AGREENMENT_TYPE_AZ.replace("?", housebasic.getSection().trim());
+						indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
+						agreenment.setProtocolnumber(indexStr);
+					}else{
+						String indexStr = Contanst.AGREENMENT_TYPE_HB.replace("?", housebasic.getSection().trim());
+						indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
+						agreenment.setProtocolnumber(indexStr);
+					}
+					ServiceManager.getAgreenmentService().update(agreenment);
+					housebasic.setIslock("1");
+					ServiceManager.getHouseBasicServce().justUpdateHouseBasic(housebasic);
+					map.put("protocolumnber", agreenment.getProtocolnumber());
+					map.put("displaydate", indexNum.getDisplaydate());
 				}else{
-					String indexStr = Contanst.AGREENMENT_TYPE_HB.replace("?", housebasic.getSection().trim());
-					indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
-					agreenment.setProtocolnumber(indexStr);
+					
 				}
-				ServiceManager.getAgreenmentService().update(agreenment);
-				housebasic.setIslock("1");
-				ServiceManager.getHouseBasicServce().justUpdateHouseBasic(housebasic);
-				map.put("protocolumnber", agreenment.getProtocolnumber());
-				map.put("displaydate", indexNum.getDisplaydate());
 			}else{
 				map.put("protocolumnber", agreenment.getProtocolnumber());
 				map.put("displaydate", indexNum.getDisplaydate());

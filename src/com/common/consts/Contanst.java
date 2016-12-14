@@ -2,6 +2,7 @@ package com.common.consts;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -38,4 +39,9 @@ public class Contanst {
         add(new String[]{"8","其他档案资料"});
     }
     };
+    
+    //**缓存签约情况id
+    public static HashSet<String> houseBasicidSet = new HashSet<String>();
+    
+    
 }

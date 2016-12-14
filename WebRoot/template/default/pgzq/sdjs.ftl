@@ -57,10 +57,8 @@
                 <th>安置方式</th>
                 <th>认定面积</th>
                 <th>认定人口</th>
-                <th>腾退补偿款总和</th>
-                <th id="th_xf">选房购房款</th>
-                <th id="th_jsfh">结算后款</th>
-                <th>操作</th>
+                <th>锁定/解锁</th>
+                <th>废除签约号</th>
             </tr>
         <#if list?size gt 0>
 	        <#list list as ROW>
@@ -79,9 +77,6 @@
 	                    未录入
 	                </#if>
 	            </td>
-	            <td>${ROW.fwbcmj?default("")}</td>
-	            <td>${ROW.people?default("")}</td>
-	            <td>${ROW.zjdttzj?default("")}</td>
 	            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
 	            <td class="td_jshk">${ROW.jshk?default("")}</td>
 	            <td>
@@ -100,6 +95,11 @@
                     title='锁定'
                     >锁定</button>
 	           	</#if>
+	            </td>
+	            <td class="td_jshk">
+	                <button type="button" class="btn btn-success btn-xs ml10   " onclick="unSign('${ROW.housebasicid}')"
+                    title='解除签约'
+                    >解除签约</button>
 	            </td>
 	        </tr>
 	        </#list>
@@ -125,6 +125,23 @@
 	function lock(housebasicid,islock){
      //   var p = $(btn).attr("data-url");
         var url = '${BASE_PATH}'+"pgqq/lockornot.action?housebasicid="+housebasicid+"&"+"islock="+islock;
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: url,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+               alert("操作失败！");
+            },
+            success: function (response) {
+               alert("操作成功！");
+               window.location.reload();//刷新当前页面
+            }
+        })
+	}
+	
+	function unSign(housebasicid){
+     //   var p = $(btn).attr("data-url");
+        var url = '${BASE_PATH}'+"/pgzq/unSign.action?housebasicid="+housebasicid;
         $.ajax({
             cache: true,
             type: "POST",

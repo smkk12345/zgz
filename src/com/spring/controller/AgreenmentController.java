@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.common.consts.Contanst;
@@ -288,7 +289,7 @@ public class AgreenmentController {
 			if(qianyue.equals("0")){   //已经签约
 				sb.append(" and b.protocolnumber<>''");
 			}else{
-				sb.append(" and b.protocolnumber=''");
+				sb.append(" and (b.protocolnumber='' or  b.protocolnumber is null) ");
 			}
 		}
 		model.addAttribute("qianyue", qianyue);
@@ -430,21 +431,9 @@ public class AgreenmentController {
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
 			//交房日期  签约日期后推20天
-			//DisplayBean displayBean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
-//			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
-//			if(null != indexNum){
-//				String operatedate = indexNum.getOperatedate();
-				long time = new Date().getTime()+Contanst.JFRQ*24*60*60*1000;
-				Date date = new Date(time);
-				model.addAttribute("year", DateUtil.getYear(date));
-				model.addAttribute("month", DateUtil.getMonth(date)+1);
-				model.addAttribute("day", DateUtil.getDay(date));
-//			}
-				long time1 = new Date().getTime();
-				Date date1 = new Date(time1);
-				model.addAttribute("sysyear", DateUtil.getYear(date1));
-				model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
-				model.addAttribute("sysday", DateUtil.getDay(date1));
+			DisplayBean displayBean = ServiceManager.getHouseBasicServce().getDisplayBean(housebasicid);
+			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+			initDate(indexNum,model);
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -458,6 +447,34 @@ public class AgreenmentController {
 			model.addAttribute("error", e.getMessage());
 			return null;
 
+		}
+	}
+	
+	private void initDate(IndexNum indexNum,ModelMap model){
+		if(null != indexNum){
+			String operatedate = indexNum.getOperatedate();
+			long time = DateUtil.StringToDate(operatedate, DateStyle.YYYY_MM_DD_HH_MM_SS).getTime()+Contanst.JFRQ*24*60*60*1000;
+			Date date = new Date(time);
+			model.addAttribute("year", DateUtil.getYear(date));
+			model.addAttribute("month", DateUtil.getMonth(date)+1);
+			model.addAttribute("day", DateUtil.getDay(date));
+			long time1 = DateUtil.StringToDate(operatedate, DateStyle.YYYY_MM_DD_HH_MM_SS).getTime();
+			Date date1 = new Date(time1);
+			model.addAttribute("sysyear", DateUtil.getYear(date1));
+			model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
+			model.addAttribute("sysday", DateUtil.getDay(date1));
+		}else{
+//			String operatedate = indexNum.getOperatedate();
+			long time = new Date().getTime()+Contanst.JFRQ*24*60*60*1000;
+			Date date = new Date(time);
+			model.addAttribute("year", DateUtil.getYear(date));
+			model.addAttribute("month", DateUtil.getMonth(date)+1);
+			model.addAttribute("day", DateUtil.getDay(date));
+			long time1 = new Date().getTime();
+			Date date1 = new Date(time1);
+			model.addAttribute("sysyear", DateUtil.getYear(date1));
+			model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
+			model.addAttribute("sysday", DateUtil.getDay(date1));
 		}
 	}
 	
@@ -505,21 +522,8 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
-//			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
-//			if(null != indexNum){
-//				String operatedate = indexNum.getOperatedate();
-				long time = new Date().getTime()+Contanst.JFRQ*24*60*60*1000;
-				Date date = new Date(time);
-				model.addAttribute("year", DateUtil.getYear(date));
-				model.addAttribute("month", DateUtil.getMonth(date)+1);
-				model.addAttribute("day", DateUtil.getDay(date));
-				
-				long time1 = new Date().getTime();
-				Date date1 = new Date(time1);
-				model.addAttribute("sysyear", DateUtil.getYear(date1));
-				model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
-				model.addAttribute("sysday", DateUtil.getDay(date1));
-//			}
+			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+			initDate(indexNum,model);
 			model.addAttribute("bean", agreenment);
 			//模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -711,11 +715,13 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
-			String year = DateUtil.DateToString(new Date(), DateStyle.YYYY_MM_DD);
-			String[] arr = year.split("-");
-			model.addAttribute("year", arr[0]);
-			model.addAttribute("month", arr[1]);
-			model.addAttribute("day", arr[2]);
+			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+			String year = indexNum.getOperatedate();
+			long time1 = DateUtil.StringToDate(year, DateStyle.YYYY_MM_DD_HH_MM_SS).getTime();
+			Date date1 = new Date(time1);
+			model.addAttribute("year", DateUtil.getYear(date1));
+			model.addAttribute("month", DateUtil.getMonth(date1)+1);
+			model.addAttribute("day", DateUtil.getYear(date1));
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -746,11 +752,14 @@ public class AgreenmentController {
 			if(!StringUtils.isBlank(agreenmentid)&&!"-1000".equals(agreenmentid)){
 				agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
 			}
-			String year = DateUtil.DateToString(new Date(), DateStyle.YYYY_MM_DD);
+			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebasicid);
+			String year = indexNum.getOperatedate();
 			String[] arr = year.split("-");
 			model.addAttribute("year", arr[0]);
 			model.addAttribute("month", arr[1]);
 			model.addAttribute("day", arr[2]);
+			
+			
 			model.addAttribute("bean", agreenment);
 			// 模板路径 basePath
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -842,6 +851,31 @@ public class AgreenmentController {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
 			return null;
+
+		}
+	}
+	
+	/**
+	 * 取消签约
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping({ "/pgzq/unSign.action" })
+	public boolean unSign(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String housebasicid  = request.getParameter("housebasicid");
+			Agreement agreenment = ServiceManager.getAgreenmentService().getByHouseBasicId(housebasicid);
+			//这种处理方式  1 将agreenment中的 Pro号清理掉 2 将indexnum中的housebasicid变更 3 解除锁定
+			boolean unSignStatus = ServiceManager.getHouseBasicServce().unSign(housebasicid,agreenment.getId());
+			return unSignStatus;
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return false;
 
 		}
 	}

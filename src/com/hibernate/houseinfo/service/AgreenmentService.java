@@ -49,4 +49,9 @@ public class AgreenmentService {
 		return agreenmentDao.getById(id);
 	}
 	
+	
+	public Agreement getByHouseBasicId(String id) {
+		return agreenmentDao.getByHouseBasicId(id);
+	}
+	
 }

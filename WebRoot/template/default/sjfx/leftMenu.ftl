@@ -7,13 +7,13 @@
             </span></#if>各标段签约情况统计</a>
     </li>
     </#if>
-     <#if role.roleAuthority[30]=="2">  
+     <!--<#if role.roleAuthority[30]=="2">  
     <li <#if CURENT_TAB_2 =='gbdjftj'>class="active"</#if>><a href="${BASE_PATH}sjfx/gbdjftj.action">
             <#if CURENT_TAB_2 =='gbdjftj'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>各标段交房情况统计</a>
     </li>
-      </#if>
+      </#if>-->
   <!--  <li <#if CURENT_TAB_2 =='bcxytz'>class="active"</#if>><a href="${BASE_PATH}sjfx/bcxytz.action">
             <#if CURENT_TAB_2 =='bcxytz'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">

@@ -5,10 +5,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.RandomUtils;
 import org.hibernate.Session;
 import org.springframework.ui.ModelMap;
 
@@ -329,6 +331,27 @@ public class HouseBasicService {
 	
 	public List<Map<String,Integer>> getListByCheckResult(String subSql){
 		return houseBasicDao.getListByCheckResult(subSql);
+	}
+	public boolean unSign(String housebasicid, String agreenmentid) {
+		// TODO Auto-generated method stub
+		//这种处理方式  1 将agreenment中的 Pro号清理掉 2 将indexnum中的housebasicid变更 3 解除锁定
+		
+		Agreement agreenment  = agreenmentDao.getById(agreenmentid);
+		HouseBasic housebasic = houseBasicDao.getById(housebasicid);
+		IndexNum indexNum = indexNumDao.getByBasicId(housebasicid);
+		try {
+			agreenment.setProtocolnumber(null);
+			agreenmentDao.update(agreenment);
+			
+			housebasic.setIslock("0");
+			houseBasicDao.update(housebasic);
+			indexNum.setHousebasicid(housebasicid+"&"+RandomUtils.nextInt(100000));
+			indexNumDao.update(indexNum);
+		} catch (Exception e) {
+			return false;
+		}
+		
+		return true;
 	}
 	
 }
