@@ -175,7 +175,7 @@ ${housebasic.people}
                 </div>
                 <div class=' aoJianGroup fl'> 
                     <label class='fl control-label' style="width:220px;">控制面积区位单价(元):</label>
-                    <input type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' readonly  value="6000"/>       
+                    <input  type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' readonly  value="6000"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">超控面积区位单价(元):</label>
@@ -457,6 +457,27 @@ ${housebasic.people}
     //
      $("input[name=atype]").click(function () {
         var $selectedvalue = $("input[name='atype']:checked").val();
+    	var p1=$("#homesteadyear").children('option:selected').val();
+		if(p1 == '0'){
+			if($selectedvalue == '0'){
+				$("#kzmjqwbcdj").val(6000);
+				$("#ckmjqwbcdj").val(3000);
+			}else{
+				$("#kzmjqwbcdj").val(26588);
+				$("#ckmjqwbcdj").val(13294);
+			}
+		}else if(p1 == '1'){
+			if($selectedvalue == '0'){
+				$("#kzmjqwbcdj").val(6000);
+				$("#ckmjqwbcdj").val(1800);
+			}else{
+				$("#kzmjqwbcdj").val(26588);
+				$("#ckmjqwbcdj").val(7976.4);
+			}
+		}else{
+			$("#ckmjqwbcdj").val("");
+		};
+        
         if ($selectedvalue === '1') {
             $(".azxy").hide();
            	$(".azxy input[type='text']").attr("disabled","disabled");
@@ -547,10 +568,23 @@ ${housebasic.people}
    		
    		$("#homesteadyear").change(function(){
 			var p1=$(this).children('option:selected').val();
+			var $selectedvalue = $("input[name='atype']:checked").val();
 			if(p1 == '0'){
-				$("#ckmjqwbcdj").val(3000);
+				if($selectedvalue == '0'){
+					$("#kzmjqwbcdj").val(6000);
+					$("#ckmjqwbcdj").val(3000);
+				}else{
+					$("#kzmjqwbcdj").val(26588);
+					$("#ckmjqwbcdj").val(13294);
+				}
 			}else if(p1 == '1'){
-				$("#ckmjqwbcdj").val(1800);
+				if($selectedvalue == '0'){
+					$("#kzmjqwbcdj").val(6000);
+					$("#ckmjqwbcdj").val(1800);
+				}else{
+					$("#kzmjqwbcdj").val(26588);
+					$("#ckmjqwbcdj").val(7976.4);
+				}
 			}else{
 				$("#ckmjqwbcdj").val("");
 			};

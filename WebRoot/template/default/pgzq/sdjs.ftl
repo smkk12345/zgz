@@ -141,6 +141,7 @@
 	
 	function unSign(housebasicid){
      //   var p = $(btn).attr("data-url");
+     if (yu_confirm("确认解除签约该数据？")) {
         var url = '${BASE_PATH}'+"/pgzq/unSign.action?housebasicid="+housebasicid;
         $.ajax({
             cache: true,
@@ -154,6 +155,7 @@
                window.location.reload();//刷新当前页面
             }
         })
+        }
 	}
 	
 	$(function(){ 
