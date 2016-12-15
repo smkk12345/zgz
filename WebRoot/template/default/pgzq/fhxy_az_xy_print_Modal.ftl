@@ -164,9 +164,9 @@
             </p>
             <p class="left-title">第二条&nbsp;&nbsp;宅基地认定</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;2.1、经受托测绘公司现场实测，现状实测用地面积<u>
+                &nbsp;&nbsp;&nbsp;&nbsp;2.1 经受托测绘公司现场实测，现状实测用地面积<u>
                     <#if housebasic.zjdarea??>${housebasic.zjdarea?string("0.00")}<#else>0.00</#if></u>平方米；<br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;2.2、经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
+               &nbsp;&nbsp;&nbsp;&nbsp;2.2 经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
                     <u><#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积
                     <u><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积
                     <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：<br/>
@@ -176,13 +176,13 @@
             </p>
             <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;3.1、经受托测绘公司现场实测，现状实测房屋建筑面积<u>
+                &nbsp;&nbsp;&nbsp;&nbsp;3.1 经受托测绘公司现场实测，现状实测房屋建筑面积<u>
                     <#if housebasic.fwarea??>${housebasic.fwarea?string("0.00")}<#else>0.00</#if> </u>平方米。其中：首层建筑面积<u>
                     <#if housebasic.firstfloorarea??>${housebasic.firstfloorarea?string("0.00")}<#else>0.00</#if></u>平方米；二层及以上建筑面积<u>
                     <#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?string("0.00")}<#else>0.00</#if></u>平方米；地下室建筑面积<u>
                     <#if housebasic.basement??>${housebasic.basement?string("0.00")}<#else>0.00</#if></u>平方米；棚<u>
                     <#if housebasic.shed??>${housebasic.shed?string("0.00")}<#else>0.00</#if></u>平方米。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;3.2、经认定工作组认定，认定房屋补偿面积
+                &nbsp;&nbsp;&nbsp;&nbsp;3.2 经认定工作组认定，认定房屋补偿面积
                     <u style="background-color:#F2F2F2;"><#if bean.fwbcmj??>${bean.fwbcmj?string("0.00")}<#else>0.00</#if></u>平方米。
             </p>
             <p class="left-title">第四条&nbsp;&nbsp;被安置人口认定</p>
@@ -215,7 +215,7 @@
 
             <p class="left-title">第五条&nbsp;&nbsp;安置房补偿</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;5.1、依据《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      张郭庄村棚户区改造              定向安置房项目购买定向安置房。
+                &nbsp;&nbsp;&nbsp;&nbsp;5.1 依据《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      张郭庄村棚户区改造              定向安置房项目购买定向安置房。
                 乙方“实际选房面积”为<u>&nbsp;&nbsp;<#if bean.sjxfmj??>${bean.sjxfmj?string("0.00")}<#else>0.00</#if> &nbsp;&nbsp;</u>平方米，其中一居室
                     <u>&nbsp;&nbsp;${bean.yjs?c?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;
                     <#assign ljs70 = bean.ljs70?default(0)>
@@ -228,15 +228,15 @@
 
             <p class="left-title">第六条&nbsp;&nbsp;宅基地腾退补偿总价</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;6.1、甲方应当向乙方支付宅基地腾退补偿总价人民币<u>&nbsp;&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;6.1.1、宅基地腾退补偿款<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;6.1 甲方应当向乙方支付宅基地腾退补偿总价人民币<u>&nbsp;&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 宅基地腾退补偿款<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地腾退补偿款<u>&nbsp;${bean.zjdttbck?c?default("/")}&nbsp;</u>元。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）控制宅基地区位补偿价<u>&nbsp;&nbsp;${bean.kzzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）超控宅基地区位补偿价<u>&nbsp;&nbsp;${bean.ckzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）房屋价款&nbsp;<u>&nbsp;&nbsp;${bean.bttfwczcxj?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）装修、设备、附属物价款<u>&nbsp;&nbsp;${bean.zxsbfswjk?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;6.1.2、各项奖励费、补助各分项合计<u>&nbsp;&nbsp;${bean.jlfsum?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;6.1.2 各项奖励费、补助各分项合计<u>&nbsp;&nbsp;${bean.jlfsum?c?default("/")}&nbsp;&nbsp;</u>元。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）提前搬家奖（5000元/产权院）<u>&nbsp;&nbsp;${bean.tqbjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）工程配合奖（100000元/产权院）<u>&nbsp;&nbsp;${bean.gcphjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
@@ -263,26 +263,26 @@
             </p>
             <p class="left-title">第七条&nbsp;&nbsp;乙方腾退期限及要求</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;7.1 乙方应在<span style="background-color:#F2F2F2;"><u><#if year??>${year?c}</#if></u>年<u>
+                &nbsp;&nbsp;&nbsp;&nbsp;7.1  乙方应在<span style="background-color:#F2F2F2;"><u><#if year??>${year?c}</#if></u>年<u>
                     ${month?default()}</u>月<u>${day?default()}</u>日</span>前完成腾退。乙方应在腾退前结清所有资源欠费（含乙方使用的水、电等费用），确保房屋和附属物内无任何人员和财产（即房屋和附属物完全具备拆除条件），并将所有房屋及附属物的钥匙交给甲方，由拆除公司验收合格后，甲方认定乙方腾退完毕。<br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;7.2 乙方承诺：在向甲方交付被腾退房屋后，乙方不再对该被腾退房屋主张任何权利。
+               &nbsp;&nbsp;&nbsp;&nbsp;7.2  乙方承诺：在向甲方交付被腾退房屋后，乙方不再对该被腾退房屋主张任何权利。
             </p>
             <p class="left-title">第八条&nbsp;&nbsp;付款结算方式</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;8.1 甲方应当向乙方支付被腾退宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;</u>）。根据乙方签署的《北京市定向安置房认购协议》相关约定，乙方应向定向安置房建设主体支付定向安置房购房款共计
+                &nbsp;&nbsp;&nbsp;&nbsp;8.1  甲方应当向乙方支付被腾退宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;</u>）。根据乙方签署的《北京市定向安置房认购协议》相关约定，乙方应向定向安置房建设主体支付定向安置房购房款共计
                     <u style="background-color:#F2F2F2;">&nbsp;${bean.azfgfk?c?default("/")}&nbsp;</u>元（大写人民币<u>&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;</u>）。甲方在乙方完成交房验收后到指定银行办理宅基地腾退补偿总价款和定向安置房购房款结算。根据结算实际情况，甲乙双方同意按以下第<u>&nbsp;<#if bean.jshk?default(0) gt 0>8.2<#else>8.3</#if>&nbsp;&nbsp;</u>种方式进行结算：<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.2 乙方宅基地腾退补偿总价款足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
+                &nbsp;&nbsp;&nbsp;&nbsp;8.2  乙方宅基地腾退补偿总价款足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
                     &nbsp;</u>个工作日内向乙方开具领款凭证，一次性发放支付定向安置房购房款后的宅基地腾退补偿总价款结算余额
                     <u style="background-color:#F2F2F2;"> &nbsp;<#if bean.jshk?default(0) gt 0>${bean.jshk?c?default("/")}<#else>/</#if>&nbsp;</u>
                     元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) gt 0>${bean.dxjshk?default("/")}<#else>/</#if>&nbsp;</u> ）；<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.3
+                &nbsp;&nbsp;&nbsp;&nbsp;8.3 
                 乙方宅基地腾退补偿总价款不足以支付定向安置房购房款的，甲方将乙方宅基地腾退补偿总价直接支付给定向安置房建设主体，甲方不再向乙方支付宅基地腾退补偿总价款。乙方应按其所签署的《北京市定向安置房认购协议》所约定的期限向定向安置房建设主体补交剩余定向安置房购房款  
                 <#assign jshkabs = bean.jshk?c?default(0)?number>
                 <u  style="background-color:#F2F2F2;"><#if bean.jshk?default(0) lt 0>${(-jshkabs)?c}<#else>/</#if></u>
                 元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) lt 0>${bean.dxjshk?default("/")}<#else>/</#if>&nbsp;</u> ）；<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.4
+                &nbsp;&nbsp;&nbsp;&nbsp;8.4 
                 乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的支付凭证或单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价款领取和定向安置房购房款的支付手续过程中拒绝在相关支付凭证或单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价款的发放。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.5
+                &nbsp;&nbsp;&nbsp;&nbsp;8.5 
                 甲方按照乙方签订本协议之日起至定向安置房交房后  4  个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  1500元/人/月 ，甲方暂按周转期  40个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《张郭庄村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
             </p>
             <p class="left-title">第九条&nbsp;&nbsp;宅基地腾退补偿总价的支付主体</p>
@@ -291,16 +291,16 @@
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司是丰台区长辛店镇张郭庄村棚户区改造和环境整治项目定向安置房的建设主体，甲乙双方同意由北京中建方程投资管理有限公司依照上述约定的方式向乙方收缴购房款。 </p>
             <p class="left-title">第十一条&nbsp;&nbsp;房地权属注销登记</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;11.1
+                &nbsp;&nbsp;&nbsp;&nbsp;11.1 
                 甲、乙双方签订本协议前，乙方应将宅基地使用证或房屋权属证明原件交予甲方，由甲方统一办理注销登记手续。乙方保证上述权属证书合法、真实、有效并具有排他性。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;11.2
+                &nbsp;&nbsp;&nbsp;&nbsp;11.2 
                 因乙方原因未能将宅基地使用证或房屋权属证明原件交予甲方的，或上述权属证书存在虚假、不合法、无效等情况的，致使甲方不能办理注销登记手续、不能办理定向安置房权属证明，导致甲方损失的，由乙方承担全部责任。<br/>
             </p>
             <p class="left-title">第十二条&nbsp;&nbsp;乙方的承诺和保证</p>
             <p class="contex-1">
                 &nbsp;&nbsp;&nbsp;&nbsp;12.1 乙方在“腾退公告”需要实施腾退范围内,无其他土地使用权或房产权利或任何腾退利益或拆迁利益；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;12.2 乙方向甲方提供的所有土地、房屋权属、身份关系证明材料及其他相关证照类材料，均合法、有效、真实、全面；<br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;12.3
+               &nbsp;&nbsp;&nbsp;&nbsp;12.3 
                 乙方保证其在签署本协议之前已取得所有必要的共有权人、亲属（包括父母、继父母、养父母、配偶、子女、继子女、养子女、兄弟姐妹等）及有利益关系的第三人的授权，确认乙方本人有权签署和履行本协议；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;12.4 乙方保证其作为被腾退人主体的合法性和唯一性。
             </p>
@@ -310,11 +310,11 @@
                 向乙方支付违约金。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;13.2 乙方未按本协议第七条规定的期限完成搬迁的，每延期一日，应按本协议第六条约定的宅基地腾退补偿总价的万分之 <u>伍</u>
                 向甲方支付违约金。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;13.3
+                &nbsp;&nbsp;&nbsp;&nbsp;13.3 
                 乙方未按本协议第八条规定的期限向定向安置房建设主体补交房款的，应按照其所签署的《北京市定向安置房认购协议》的相关约定承担违约责任；<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;13.4
+                &nbsp;&nbsp;&nbsp;&nbsp;13.4 
                 若乙方未能确保其作为被腾退人主体的合法性和唯一性，而与甲方签订本协议的，在本协议签署后宅基地上被腾退人发生变更的，乙方除退还宅基地腾退补偿总价及定向安置房外，还应向甲方赔偿宅基地腾退补偿总价的百分之 <u>一</u>。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;13.5
+                &nbsp;&nbsp;&nbsp;&nbsp;13.5 
                 本协议下的宅基地、房屋及附属物上产生的任何纠纷，包括但不限于任何第三人主张权利或引起诉讼、仲裁、纠纷，均与甲方无关，乙方应承担全部责任，由此给甲方造成损失的（包括经济损失和名誉损失），乙方应予以全额赔偿，甲方有权直接从宅基地腾退补偿总价中扣除赔偿金额，有权拒绝交付定向安置房，直至纠纷解决或甲方得到乙方的赔偿。
             </p>
             <p class="left-title">第十四条&nbsp;&nbsp;争议解决</p>
@@ -325,9 +325,9 @@
             </p>
             <p class="left-title">第十五条&nbsp;&nbsp;协议生效及其他事宜</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;15.1本协议自甲方与乙方双方签字、盖章之日起生效。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;15.2本协议未尽事宜由双方另行协商并签订补充协议。补充协议作为本协议的有效组成部分，与本协议有相同的法律效力。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;15.3本协议一式陆份，甲乙双方各持壹份，其余肆份报政府相关部门备案。
+                &nbsp;&nbsp;&nbsp;&nbsp;15.1 本协议自甲方与乙方双方签字、盖章之日起生效。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;15.2 本协议未尽事宜由双方另行协商并签订补充协议。补充协议作为本协议的有效组成部分，与本协议有相同的法律效力。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;15.3 本协议一式陆份，甲乙双方各持壹份，其余肆份报政府相关部门备案。
             </p>
             <p class="left-title">（以下无正文）</p>
             <p style="page-break-before: always">&nbsp;</p>
