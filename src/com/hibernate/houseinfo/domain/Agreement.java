@@ -789,7 +789,7 @@ public class Agreement extends BaseBean {
 	public void setJshk(BigDecimal jshk) {
 		this.jshk = jshk;
 		if(null != jshk){
-			dxjshk = MoneyUtils.change(jshk.doubleValue());
+			dxjshk = MoneyUtils.change(Math.abs(jshk.doubleValue()));
 		}
 	}
 

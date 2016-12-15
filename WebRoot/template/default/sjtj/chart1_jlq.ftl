@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>长辛店镇张郭庄村棚改项目签约选房管理系统11</title>
+    <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -29,20 +29,22 @@
 <#if from?? >
     <#if from = "touch">
         <a href="${BASE_PATH}sjtj/touch.action" class="btn btn-default glyphicon glyphicon-chevron-left"
-           style="position:absolute;left: 20px;top:20px; font-size: 20px;">返回</a>
+           style="position:absolute;left: 20px;top:30px; font-size: 20px;">返回</a>
     </#if>
 </#if>
-    <div style='color:#FFF;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
+    <div style='color:#FFF;font-size:70px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
         长辛店镇张郭庄村棚户区改造宅基地腾退项目
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
-    <div style='margin-top:80px;color:red;font-size:60px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
+    <div style='margin-top:100px;color:red;font-size:70px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
         	奖励期：第${day}天
     </div>
 
-    <div style='margin-top: 60px;color:#FF0;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>
+    <div style='margin-top: 80px;color:#FF0;font-size:60px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
         整体签约比例：<span style="color: red">${qybl?default(0)}</span>
     </div>
+    
+
 </div>
 </body>
 </html>

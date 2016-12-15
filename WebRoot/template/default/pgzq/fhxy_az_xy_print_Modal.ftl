@@ -272,12 +272,13 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;8.2 乙方宅基地腾退补偿总价足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
                     &nbsp;</u>个工作日内向乙方开具领款凭证，一次性发放抵扣定向安置房购房款后的宅基地腾退补偿总价结算余额<u style="background-color:#F2F2F2;">
                     
-                    &nbsp;<#if bean.jshk?default(0) gt 0>${bean.jshk?c?default("/")}<#else></#if>&nbsp;</u>
-                    元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) gt 0>${bean.dxjshk?default("/")}<#else></#if>&nbsp;</u> ）；<br/>
+                    &nbsp;<#if bean.jshk?default(0) gt 0>${bean.jshk?c?default("/")}<#else>/</#if>&nbsp;</u>
+                    元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) gt 0>${bean.dxjshk?default("/")}<#else>/</#if>&nbsp;</u> ）；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;8.3
                 乙方宅基地腾退补偿总价不足以支付定向安置房购房款的，甲方将乙方宅基地腾退补偿总价直接支付给定向安置房建设主体，甲方不再向乙方支付宅基地腾退补偿总价。乙方应按其所签署的《北京市定向安置房认购协议》所约定的期限向定向安置房建设主体补交剩余定向安置房购房款  
                 <#assign jshkabs = bean.jshk?c?default(0)?number>
-                <u><#if bean.jshk?default(0) lt 0>${-jshkabs}<#else></#if></u>;<br/>
+                <u  style="background-color:#F2F2F2;"><#if bean.jshk?default(0) lt 0>${(-jshkabs)?c}<#else>/</#if></u>
+                元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) lt 0>${bean.dxjshk?default("/")}<#else>/</#if>&nbsp;</u> ）；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;8.4
                 乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的相关单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价领取和定向安置房购房款的交付手续过程中拒绝在相关单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价的发放。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;8.5
