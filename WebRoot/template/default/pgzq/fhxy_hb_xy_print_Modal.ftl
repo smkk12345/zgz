@@ -174,7 +174,7 @@
                 </p>
                 <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;3.1、经受托测绘公司现场实测，现状实测房屋建筑面积    <#if housebasic.fwarea??>${housebasic.fwarea?string("0.00")}<#else>0.00</#if>  平方米。其中：首层建筑面积<u>
+                    &nbsp;&nbsp;&nbsp;&nbsp;3.1、经受托测绘公司现场实测，现状实测房屋建筑面积  <u><#if housebasic.fwarea??>${housebasic.fwarea?string("0.00")}<#else>0.00</#if></u>平方米。其中：首层建筑面积<u>
                         <#if housebasic.firstfloorarea??>${housebasic.firstfloorarea?string("0.00")}<#else>0.00</#if> </u>平方米；二层及以上建筑面积<u>
                         <#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?string("0.00")}<#else>0.00</#if> </u>平方米；地下室建筑面积<u>
                         <#if housebasic.basement??>${housebasic.basement?string("0.00")}<#else>0.00</#if> </u>平方米；棚<u>
