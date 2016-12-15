@@ -237,7 +237,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1、依据乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;${bean.protocolnumber?default("/")}&nbsp;</u>）的约定，乙方自愿认购定向安置房共
                         <u>${bean.xfts?default("")}&nbsp;</u>套，总面积为<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.sjxfmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中:<u>&nbsp;&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;&nbsp;</u>平方米一居室
-                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.yjs?default("")}&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;
+                        <u>&nbsp;&nbsp;&nbsp;&nbsp;${bean.yjs?default(0)}&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;
                         <#if bean.yjs?default(0) gt 0>${bean.yjs?number*55}<#else>0</#if>&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;70&nbsp;&nbsp;&nbsp;</u>平方米两居室
                         <u>&nbsp;&nbsp;&nbsp;${bean.ljs70?default(0)}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs70?default(0) gt 0>${bean.ljs70?number*70}<#else>0</#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
