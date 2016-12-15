@@ -289,7 +289,8 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "7";
             }
-            List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", " order by c.time desc ", 0, Integer.parseInt(pageSize));
+            List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+            		.getDisplayBeanList(" and c.id is not null ", " order by c.time desc,c.indexnum desc ", 0, Integer.parseInt(pageSize));
             // 模板路径 basePath
             // 模板路径 basePath
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);

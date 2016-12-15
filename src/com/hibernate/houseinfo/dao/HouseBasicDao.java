@@ -1,8 +1,12 @@
 package com.hibernate.houseinfo.dao;
 
 import java.math.BigInteger;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -477,25 +481,48 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				sb.append(sql);
 			}
 			sb.append(" group by a.section, b.atype order by  (a.section+0) ");
-			
-			
-			List list0 = s.createSQLQuery(sb.toString()).
-					addScalar("qycount",Hibernate.INTEGER).
-					addScalar("section", Hibernate.STRING).
-					addScalar("qytype",Hibernate.STRING).
-					addScalar("qystatus",Hibernate.STRING).
-					list();
-			for (Iterator iterator = list0.iterator(); iterator.hasNext();) {
-				// 每个集合元素都是一个数组，数组元素师person_id,person_name,person_age三列值
-				Object[] objects = (Object[]) iterator.next();
-				
-				AgreenmentSectionBean bean = new AgreenmentSectionBean();
-				bean.setQycount(Integer.parseInt(objects[0]+""));
-				bean.setSection((String)objects[1]);
-				bean.setQytype((String)objects[2]);
-				bean.setQystatus((String)objects[3]);
-				list.add(bean);
+			Connection c = s.connection();
+			Statement state = c.createStatement();
+			try {
+				ResultSet rs = state.executeQuery(sb.toString());
+				while (rs.next()) {
+					String qycount = rs.getString("qycount");
+					String section = rs.getString("section");
+					String qytype = rs.getString("qytype");
+					String qystatus = rs.getString("qystatus");
+					AgreenmentSectionBean bean = new AgreenmentSectionBean();
+					bean.setQycount(Integer.parseInt(qycount));
+					bean.setSection(section);
+					bean.setQytype(qytype);
+					bean.setQystatus(qystatus);
+					list.add(bean);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}finally{
+				state.close();
+				c.close();
 			}
+//			System.out.println("sql0="+new Date().getTime());
+//			List list0 = s.createSQLQuery(sb.toString()).
+//					addScalar("qycount",Hibernate.INTEGER).
+//					addScalar("section", Hibernate.STRING).
+//					addScalar("qytype",Hibernate.STRING).
+//					addScalar("qystatus",Hibernate.STRING).
+//					list();
+//			System.out.println("sql1="+new Date().getTime());
+//			for (Iterator iterator = list0.iterator(); iterator.hasNext();) {
+//				// 每个集合元素都是一个数组，数组元素师person_id,person_name,person_age三列值
+//				Object[] objects = (Object[]) iterator.next();
+//				
+//				AgreenmentSectionBean bean = new AgreenmentSectionBean();
+//				bean.setQycount(Integer.parseInt(objects[0]+""));
+//				bean.setSection((String)objects[1]);
+//				bean.setQytype((String)objects[2]);
+//				bean.setQystatus((String)objects[3]);
+//				list.add(bean);
+//			}
+			System.out.println("sql2="+new Date().getTime());
 			return list;
 		}catch(Exception e){
 			e.printStackTrace();
@@ -516,19 +543,39 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				sb.append(sql);
 			}
 			sb.append(" group by section order by (section+0)");
-			List list0 = s.createSQLQuery(sb.toString()).
-					addScalar("qycount",Hibernate.INTEGER).
-					addScalar("section", Hibernate.STRING).
-					list();
-			for (Iterator iterator = list0.iterator(); iterator.hasNext();) {
-				// 每个集合元素都是一个数组，数组元素师person_id,person_name,person_age三列值
-				Object[] objects = (Object[]) iterator.next();
-				
-				AgreenmentSectionBean bean = new AgreenmentSectionBean();
-				bean.setQycount(Integer.parseInt(objects[0]+""));
-				bean.setSection((String)objects[1]);
-				list.add(bean);
+			
+			Connection c = s.connection();
+			Statement state = c.createStatement();
+			try {
+				ResultSet rs = state.executeQuery(sb.toString());
+				while (rs.next()) {
+					String qycount = rs.getString("qycount");
+					String section = rs.getString("section");
+					AgreenmentSectionBean bean = new AgreenmentSectionBean();
+					bean.setQycount(Integer.parseInt(qycount));
+					bean.setSection(section);
+					list.add(bean);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				state.close();
+				c.close();
 			}
+			
+//			List list0 = s.createSQLQuery(sb.toString()).
+//					addScalar("qycount",Hibernate.INTEGER).
+//					addScalar("section", Hibernate.STRING).
+//					list();
+//			for (Iterator iterator = list0.iterator(); iterator.hasNext();) {
+//				// 每个集合元素都是一个数组，数组元素师person_id,person_name,person_age三列值
+//				Object[] objects = (Object[]) iterator.next();
+//				
+//				AgreenmentSectionBean bean = new AgreenmentSectionBean();
+//				bean.setQycount(Integer.parseInt(objects[0]+""));
+//				bean.setSection((String)objects[1]);
+//				list.add(bean);
+//			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception

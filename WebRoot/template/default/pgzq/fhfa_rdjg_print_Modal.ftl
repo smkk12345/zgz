@@ -7,7 +7,7 @@
 </div>
 <div class="modal-body">
     <div class="container-fluid fhfa-rdjg-print-con" id="xy-print">
-        <table class="table table-bordered">
+              <table class="table table-bordered" style="margin-bottom:0px;">
             <tr>
                 <td colspan="10" class="center">
                 
@@ -82,7 +82,7 @@
                 <td colspan="2" class=""> ${bean.peoplecount}人</td>
             </tr>
             </table>
-             <table class="table table-bordered">
+          <table class="table table-bordered" style="margin-bottom:0px;">
             <tr>
                 <td colspan="10">认定宅基地及房屋面积相关</td>
             </tr>
@@ -156,9 +156,8 @@
                 <td>100%</td>
                 <td colspan="2">宅基地区位补偿价6000元/m<sup>2</sup></td>
             </tr>
-            <tr>
-                <td colspan="10" style="height:5px;"></td>
-            </tr>
+          </table>
+          <table class="table table-bordered" style="margin-bottom:0px;">
             <tr>
                 <td colspan="3">认定序号</td>
                 <td>认定安置<br>人员姓名</td>
@@ -268,7 +267,7 @@
                 <td colspan="2">
                 <#if bean.list?size gt 2>${bean.list[2].changrelate?default("")}</#if>
                 </td>
-                <td rowspan="2" colspan="4">签字（按指纹）</td>
+                <td rowspan="2" colspan="4" style="text-align: left;">签字（按指纹）</td>
             </tr>
             <tr>
                 <td colspan="3">非本址4</td>

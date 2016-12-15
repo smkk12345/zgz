@@ -54,7 +54,6 @@ public class SjfxController {
 			
 			//合计
 			List<AgreenmentSectionBean> list2 = ServiceManager.getHouseBasicServce().getAgSessionBeanList(" and b.id is not null ");
-			
 			List<Map<String,String>> list = initAgReturnList();
 			
 			Map<String,String> map8  = list.get(list.size()-1);
@@ -98,7 +97,6 @@ public class SjfxController {
 			}
 			//插入空数据
 			//数组组装
-			
 			model.addAttribute("list", list);
 			model.addAttribute("sectionMap", Contanst.sectionMap);
 			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -170,13 +168,17 @@ public class SjfxController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			//总数
+			System.out.println("calcstart1="+new Date().getTime());
 			List<AgreenmentSectionBean> list0 = ServiceManager.getHouseBasicServce().getHasOthersBeanList("");
 			//已经交房
+			System.out.println("calcstart2="+new Date().getTime());
 			List<AgreenmentSectionBean> list1 = ServiceManager.getHouseBasicServce().getHasOthersBeanList(" and hasothers = '1' ");
 			//今日交房
+			System.out.println("calcstart3="+new Date().getTime());
 			String dateStr = DateUtil.getDate(new Date());
 			List<AgreenmentSectionBean> list2 = ServiceManager.getHouseBasicServce().getHasOthersBeanList(" and hasothers = '1' and  date_format(jfDate,'%Y-%m-%d') = '"+dateStr+"' ");
 			
+			System.out.println("calcstart4="+new Date().getTime());
 			List<Map<String,String>> list = initHasOthersList();
 			Map<String,String> map8  = list.get(list.size()-1);
 			for (int i = 0; i < list0.size(); i++) {
@@ -193,8 +195,8 @@ public class SjfxController {
 				map.put("ljjf", ag.getQycount()+"");
 				map8.put("ljjf", (Integer.parseInt(map8.get("ljjf"))+ag.getQycount())+"");
 			}
-			for (int i = 0; i < list1.size(); i++) {
-				AgreenmentSectionBean ag = list1.get(i);
+			for (int i = 0; i < list2.size(); i++) {
+				AgreenmentSectionBean ag = list2.get(i);
 				int n = Integer.parseInt(ag.getSection());
 				Map<String,String> map  = list.get(n-1 );
 				map.put("jrjf", ag.getQycount()+"");
@@ -326,7 +328,7 @@ public class SjfxController {
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			String sql = getqysxhtzSql(request,"1",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
+					.getDisplayBeanList(sql," order by c.indexnum  ", (intPageNum - 1) * intPageSize, intPageSize);
 			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
 			model.addAttribute("pageSize", intPageSize);
