@@ -144,7 +144,7 @@
                 <td class="" colspan=2>${bean.jshk?c?default("")}</td>
             </tr>
             <tr>	
-                <td class="" colspan=4>一，宅基地补偿款合计（元）</td>
+                <td class="" colspan=4>一、宅基地补偿款合计（元）</td>
                 <td class="" colspan=2>${bean.zjdttbck?c?default("")}</td>
                 <td class="" colspan=5>房屋重置米均价（元）</td>
             </tr>

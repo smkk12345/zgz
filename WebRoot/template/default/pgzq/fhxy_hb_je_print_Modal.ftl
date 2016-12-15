@@ -111,7 +111,7 @@
                 <td class="" colspan=9>${bean.zjdttzj?c?default("")}</td>
             </tr>
             <tr>	
-                <td class="" colspan=6 >一，宅基地补偿款合计(元)</td>
+                <td class="" colspan=6 >一、宅基地补偿款合计(元)</td>
                 <td class="" colspan=1>${bean.zjdttbck?c?default("")}</td>
                 <td class="" colspan=4 >结算及领款内容</td>
             </tr>

@@ -105,7 +105,11 @@
                     m<sup>2</sup></td>
                 <td>比例</td>
                 <td>100%</td>
-                <td colspan="2">宅基地区位补偿价${agreenment.kzmjqwbcdj?c?default("/")}元/m<sup>2</sup></td>
+                <td colspan="2">宅基地区位补偿价<#if agreenment.atype=='0'>
+                								6000
+                							<#else>
+                								26588
+                							</#if>元/m<sup>2</sup></td>
             </tr>
             <tr>
                 <td>超出控制标准面积</td>
@@ -118,7 +122,11 @@
                     m<sup>2</sup></td>
                 <td>比例</td>
                 <td>50%</td>
-                <td colspan="2">折合区位补偿价 ${agreenment.ckmjqwbcdj?c?default("/")}元/m<sup>2</sup></td>
+                <td colspan="2">折合区位补偿价<#if agreenment.atype=='0'>
+                								3000
+                							<#else>
+                								13294
+                							</#if>元/m<sup>2</sup></td>
             </tr>
             <tr>
                 <td rowspan="2" colspan="2">认定82年后（0.3亩）</td>
@@ -132,7 +140,11 @@
                     m<sup>2</sup></td>
                 <td>比例</td>               
                 <td>100%</td>               
-                <td colspan="2">宅基地区位补偿价${agreenment.kzmjqwbcdj?c?default("/")}元/m<sup>2</sup></td>
+                <td colspan="2">宅基地区位补偿价<#if agreenment.atype=='0'>
+                								6000
+                							<#else>
+                								26588
+                							</#if>元/m<sup>2</sup></td>
             </tr>
             <tr>
                 <td>超出控制宅基地面积</td>
@@ -144,7 +156,11 @@
                     m<sup>2</sup></td>
                 <td>比例</td>
                 <td>30%</td>
-                <td colspan="2">折合区位补偿价 ${agreenment.ckmjqwbcdj?c?default("/")}元/m<sup>2</sup></td>
+                <td colspan="2">折合区位补偿价 <#if agreenment.atype=='0'>
+                								1800
+                							<#else>
+                								7976.4
+                							</#if>元/m<sup>2</sup></td>
             </tr>
             <tr>
                 <td colspan="2">住房困难户</td>
@@ -154,7 +170,7 @@
                     m<sup>2</sup></td>
                 <td>比例</td>
                 <td>100%</td>
-                <td colspan="2">宅基地区位补偿价${agreenment.kzmjqwbcdj?c?default("/")}元/m<sup>2</sup></td>
+                <td colspan="2">宅基地区位补偿价6000元/m<sup>2</sup></td>
             </tr>
           </table>
           <table class="table table-bordered" style="margin-bottom:0px;">

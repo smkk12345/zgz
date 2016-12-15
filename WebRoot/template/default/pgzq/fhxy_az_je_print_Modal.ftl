@@ -148,7 +148,7 @@
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>	
-                <td class="" colspan=4>一，宅基地补偿款合计(元)</td>
+                <td class="" colspan=4>一、宅基地补偿款合计(元)</td>
                 <td class="" colspan=1>${bean.zjdttbck?c?default("")}</td>
                 <td class="" colspan=7>结算方式相关</td>
             </tr>
@@ -192,8 +192,10 @@
                 <td class="" colspan=1><#if bean.jshk?default(0) gt 0>${bean.jshk?default("")}<#else></#if></td>-->
                 
                	<td class="" colspan=3 >补偿总价款支付购房款后余额(元)</td>
+               	
                 <td class="" colspan=2 ><#if bean.jshk?default(0) gt 0>${bean.jshk?c?default("")}<#else></#if></td>
-                <td class="" colspan=2 ><#if bean.jshk?default(0) lt 0>${bean.jshk?c?default("")}<#else></#if></td>
+                <#assign jshkabs = bean.jshk?c?default(0)?number>
+                <td class="" colspan=2 ><#if bean.jshk?default(0) lt 0>${(-jshkabs)?c}<#else></#if></td>
             </tr>
             </table>
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">

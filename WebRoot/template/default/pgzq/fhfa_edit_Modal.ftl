@@ -175,12 +175,12 @@ ${housebasic.people}
                 </div>
                 <div class=' aoJianGroup fl'> 
                     <label class='fl control-label' style="width:220px;">控制面积区位单价(元):</label>
-                    <input  type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' readonly  value="6000"/>       
+                    <input  type='text' class='form-control input-sm  ' id="kzmjqwbcdj" name='kzmjqwbcdj' readonly  value="${bean.kzmjqwbcdj?c}"/>       
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">超控面积区位单价(元):</label>
                     <input id="ckmjqwbcdj" type='text' class='form-control input-sm ' readonly  name='ckmjqwbcdj'   
-                    value="<#if (bean.homesteadyear?default("-1"))=='0'>3000<#elseif bean.homesteadyear?default("-1")=='1'>1800<#else></#if>"/>      
+                    value="${bean.ckmjqwbcdj?c}"/>      
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">控制宅基地区位价(元):</label>

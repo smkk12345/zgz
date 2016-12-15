@@ -675,7 +675,8 @@ public class AgreenmentController {
 			model.addAttribute("hour", DateUtil.getHour(dateStr));
 			model.addAttribute("minute", DateUtil.getMinute(dateStr));
 			model.addAttribute("second", DateUtil.getSecond(dateStr));
-			long time1 = new Date().getTime();
+			
+			long time1 = DateUtil.StringToDate(bean.getOperatedate(), DateStyle.YYYY_MM_DD_HH_MM_SS).getTime();
 			Date date1 = new Date(time1);
 			model.addAttribute("sysyear", DateUtil.getYear(date1));
 			model.addAttribute("sysmonth", DateUtil.getMonth(date1)+1);
