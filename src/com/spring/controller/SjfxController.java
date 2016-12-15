@@ -389,11 +389,6 @@ public class SjfxController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			
-			int intPageSize = Contanst.PAGE_SIZE;
-			String pageNo = request.getParameter("pageNo");
-			if(StringUtils.isEmpty(pageNo)){
-				pageNo = "1";
-			}
 //			<td>${ROW.displaysection}</td> 
 //			<td>${ROW.hj}</td>
 //			<td>${ROW.jrshtj}</td>

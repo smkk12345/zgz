@@ -49,6 +49,8 @@
                   <div class='autoWidthGroup-2 fl '> <button type="submit" class="btn btn-primary btn-xs glyphicon glyphicon-search ">查询</button></div>
 	               
 	            </form>
+	           <!--<a href="${BASE_PATH}pgzq/export.action?viewName=all" class="btn btn-primary btn-xs glyphicon glyphicon-search ">导出</a>-->
+	               
             </div>
         </div>
 

@@ -37,9 +37,9 @@
             </tr>
             <tr>
                 <td colspan="2">实测现状宅基地面积</td>
-                <td class="">${bean.zjdarea?default("")}m<sup>2</sup></td>
+                <td class=""><#if bean.zjdarea??>${bean.zjdarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
                 <td>实测房屋建筑面积</td>
-                <td class="textalign-r">${bean.fwarea?default("")}m<sup>2</sup></td>
+                <td class="textalign-r"><#if bean.zjdarea??>${bean.fwarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
                 <td colspan="2">认定住房困难</td>
                 <td colspan="2" style="">
                 <#if agreenment.hardhouse??>
@@ -88,9 +88,12 @@
             </tr>
             <tr>
                 <td colspan="4">认定宅基地总补偿面积</td>
-                <td colspan="2" class="">${agreenment.rdzjdallarea?default("")}m<sup>2</sup></td>
+               
+                <td colspan="2" class=""> 	
+                <#if agreenment.rdzjdallarea??>${agreenment.rdzjdallarea?number?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
+                </td>
                 <td colspan="2">认定房屋补偿建面</td>
-                <td colspan="2" class="">${agreenment.fwbcmj?default("")}m<sup>2</sup></td>
+                <td colspan="2" class=""><#if agreenment.fwbcmj??>${agreenment.fwbcmj?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
             </tr>
             <tr>
                 <td rowspan="5" style="text-align: justify">其中</td>
@@ -98,11 +101,11 @@
                 <td>控制面积267m<sup>2</sup>以内</td>
                 <td colspan="2" class="">
                 <#if agreenment.homesteadyear?default("-1") == '0'>
-                ${agreenment.conhomestarea?default("")}
+                <#if agreenment.conhomestarea??>${agreenment.conhomestarea?string("0.00")}<#else>0.00</#if>
                 <#else>
 
                 </#if>
-                    m<sup>2</sup></td>
+                   m<sup>2</sup> </td>
                 <td>比例</td>
                 <td>100%</td>
                 <td colspan="2">宅基地区位补偿价<#if agreenment.atype=='0'>
@@ -115,11 +118,11 @@
                 <td>超出控制标准面积</td>
                 <td colspan="2" class="">
                 <#if agreenment.homesteadyear?default("-1") == '0'>
-                ${agreenment.overhomesteadarea?default("")}
+                <#if agreenment.overhomesteadarea??>${agreenment.overhomesteadarea?string("0.00")} <#else>0.00 </#if>
                 <#else>
-
+					
                 </#if>
-                    m<sup>2</sup></td>
+                  m<sup>2</sup> </td>
                 <td>比例</td>
                 <td>50%</td>
                 <td colspan="2">折合区位补偿价<#if agreenment.atype=='0'>
@@ -133,11 +136,11 @@
                 <td>不足0.3亩补足0.3亩控制面积</td>
                 <td colspan="2" class="">
                 <#if agreenment.homesteadyear?default("-1") == '1'>
-                ${agreenment.conhomestarea?default("")}
+                <#if agreenment.conhomestarea??>${agreenment.conhomestarea?string("0.00")}<#else>0.00</#if>
                 <#else>
-
+					
                 </#if>
-                    m<sup>2</sup></td>
+                  m<sup>2</sup></td>  
                 <td>比例</td>               
                 <td>100%</td>               
                 <td colspan="2">宅基地区位补偿价<#if agreenment.atype=='0'>
@@ -150,8 +153,9 @@
                 <td>超出控制宅基地面积</td>
                 <td colspan="2" class="">
                 <#if agreenment.homesteadyear?default("-1") == '1'>
-                ${agreenment.overhomesteadarea?default("")}
+                <#if agreenment.overhomesteadarea??>${agreenment.overhomesteadarea?string("0.00")}<#else>0.00</#if>
                 <#else>
+                
                 </#if>
                     m<sup>2</sup></td>
                 <td>比例</td>
@@ -166,8 +170,11 @@
                 <td colspan="2">住房困难户</td>
                 <td>补偿方案、细则</td>
                 <td colspan="2" class="">
-                ${agreenment.zfknhbcfa?default("")}
-                    m<sup>2</sup></td>
+                <#if agreenment.zfknhbcfa??>
+                	${agreenment.zfknhbcfa?string("0.00")}
+                <#else>
+                </#if>
+                 m<sup>2</sup></td>
                 <td>比例</td>
                 <td>100%</td>
                 <td colspan="2">宅基地区位补偿价6000元/m<sup>2</sup></td>

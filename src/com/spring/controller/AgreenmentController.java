@@ -890,4 +890,20 @@ public class AgreenmentController {
 		}
 	}
 	
+	@ResponseBody
+	@RequestMapping({ "/pgzq/export.action" })
+	public boolean export(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			String viewName  = request.getParameter("viewName");
+			ServiceManager.getHouseBasicServce().export(viewName);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return false;
+
+		}
+	}
+	
 }

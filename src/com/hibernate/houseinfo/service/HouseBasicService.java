@@ -1,5 +1,9 @@
 package com.hibernate.houseinfo.service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -28,6 +32,7 @@ import com.hibernate.houseinfo.domain.OtherInfo;
 import com.hibernate.houseinfo.domain.VacatePeople;
 import com.hibernate.timers.utils.DateStyle;
 import com.hibernate.timers.utils.DateUtil;
+import com.spring.utils.ExportExcel;
 
 public class HouseBasicService {
 
@@ -354,4 +359,24 @@ public class HouseBasicService {
 		return true;
 	}
 	
+	//数据导出
+	
+	public void export(String viewName){
+		ExportExcel exportExcel = new ExportExcel<DisplayBean>();
+        OutputStream out = null;
+		try {
+			out = new FileOutputStream("c://All/all.xls");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+        List<String> fieldList = houseBasicDao.getFieldFromView(viewName);
+        List<Map<String,String>> dataList = houseBasicDao.getDataFromView(viewName);
+        Object[] arr= fieldList.toArray();
+		exportExcel.exportMapExcel("all数据", fieldList, dataList, out, "yyyy-MM-dd");
+		
+	}
+	
+	
+    
 }

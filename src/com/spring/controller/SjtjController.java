@@ -616,6 +616,7 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
             }
+
             int yjszs = 450;
             int ljs70zs = 450;
             int ljs75zs = 600;

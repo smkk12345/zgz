@@ -26,12 +26,13 @@
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>方案审核审计</a></li>
     </#if>
-    
+    <#if role.id=="2">
     <#if role.roleAuthority[52]=="2">
     <li <#if CURENT_TAB_2 =='sdjs'>class="active"</#if>><a href="${BASE_PATH}pgzq/sdjs.action">
             <#if CURENT_TAB_2 =='sdjs'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>锁定/解锁</a></li>
+    </#if>
     </#if>
 </ul>
 </@override>

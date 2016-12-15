@@ -211,31 +211,35 @@
         <div class="leftTitle" style="margin-top: 10px;">3.面积相关：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label' style="font-weight: bold">宅基地测绘面积:${bean.zjdarea?default("/")}</label>
+                <label class='fl control-label' style="font-weight: bold">宅基地测绘面积:
+                <#if bean.zjdarea??>${bean.zjdarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
+                </label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label' style="font-weight: bold">房屋测绘面积:${bean.fwarea?default("/")}</label>
+                <label class='fl control-label' style="font-weight: bold">房屋测绘面积:
+                <#if bean.fwarea??>${bean.fwarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
+                </label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>首层测绘面积:${bean.firstfloorarea?default("/")}</label>
+                <label class='fl control-label'>首层测绘面积:<#if bean.firstfloorarea??>${bean.firstfloorarea?string("0.00")}m<sup>2</sup><#else>/</#if></label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>二层以上面积:${bean.abovetwoarea?default("/")}</label>
+                <label class='fl control-label'>二层以上面积:<#if bean.abovetwoarea??>${bean.abovetwoarea?string("0.00")}m<sup>2</sup><#else>/</#if></label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>地下室面积:${bean.basement?default("/")}</label>
+                <label class='fl control-label'>地下室面积:<#if bean.basement??>${bean.basement?string("0.00")}m<sup>2</sup><#else>/</#if></label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>棚面积:${bean.shed?default("/")}</label>
+                <label class='fl control-label'>棚面积:<#if bean.shed??>${bean.shed?string("0.00")}m<sup>2</sup><#else>/</#if></label>
             </div>
         </div>
         <div class="leftTitle" style="margin-top: 10px;">4.经营状况：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>经营用房面积:${bean.operatearea?default("/")}</label>
+                <label class='fl control-label'>经营用房面积:<#if bean.operatearea??>${bean.operatearea?string("0.00")}m<sup>2</sup><#else>/</#if></label>
             </div>
             <div class=' rhjc-print-group fl'>
-                <label class='fl control-label'>工商备案面积:${bean.businessarea?default("/")}</label>
+                <label class='fl control-label'>工商备案面积:<#if bean.businessarea??>${bean.businessarea?string("0.00")}m<sup>2</sup><#else>/</#if></label>
             </div>
             <div class=' rhjc-print-group fl'>
                 <label class='fl control-label'>经营用途:${bean.operatecontent?default("/")}</label>

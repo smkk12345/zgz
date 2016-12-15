@@ -230,12 +230,12 @@ public class PgqqController {
 			HouseBasic houseBasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebasicid, role.getSection());
 			model.addAttribute("bean", houseBasic);
 			// 模板路径 basePath
-						model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
-						model.addAttribute("BASE_ASSETS_PATH",
-								WebConstConfig.getBase_Assets_Path());
-						model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
-								WebConstConfig.getBase_Template_Default_Path());
-						return new ModelAndView(PageConst.PGQQ_rhjc_print_Modal, model);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+			return new ModelAndView(PageConst.PGQQ_rhjc_print_Modal, model);
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());

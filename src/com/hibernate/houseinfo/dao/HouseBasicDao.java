@@ -3,6 +3,7 @@ package com.hibernate.houseinfo.dao;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,6 +26,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.impl.SQLQueryImpl;
 import org.hibernate.mapping.Array;
+import org.hibernate.transform.Transformers;
 import org.springframework.jdbc.object.SqlQuery;
 import org.springframework.ui.ModelMap;
 
@@ -400,7 +402,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
 			sb.append(" select sum(yjs) as yjs,sum(ljs70) as ljs70, sum(ljs75) as ljs75,sum(ljs80) as ljs80,sum(ljs85) as ljs85," +
-					" sum(sjs) as sjs from agreenment b left join housebasic a on a.id = b.housebasicid where a.id is not null ");			
+					" sum(sjs) as sjs from agreenment b left join housebasic a on a.id = b.housebasicid where a.id is not null ");	
+			sb.append(" and (b.protocolnumber is not null and b.protocolnumber != '')");
 			List<Object[]> list = s.createSQLQuery(sb.toString()).list();
 //			List<Integer> iList = objectListToOrganList(list);
 			Object[] o = list.get(0);
@@ -633,6 +636,50 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		}
 		return true;
 	}
+	
+	//数据导出
+	
+	public List<String> getFieldFromView(String viewName){
+		List<String> list = new ArrayList<String>();
+		Session s = null;
+		try {
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append("SELECT * FROM `1203`.`"+viewName+"`;");
+			Statement state = s.connection().createStatement();
+			ResultSet rs = state.executeQuery(sb.toString());
+			ResultSetMetaData data = rs.getMetaData();
+			
+			for (int j = 0; j < data.getColumnCount(); j++) {
+				list.add(data.getColumnName(j+1));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}finally{
+			s.close();
+		}
+		return list;
+	}
+	
+	
+	public List<Map<String,String>> getDataFromView(String viewName){
+		List<Map<String,String>> list = null;
+		Session s = null;
+		try {
+			s = getSession();
+			StringBuffer sb = new StringBuffer();
+			sb.append("SELECT * FROM `1203`.`"+viewName+"`;");
+			list = s.createSQLQuery(sb.toString())
+					.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+//			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return list;
+	}
+	
 	
 	
 }

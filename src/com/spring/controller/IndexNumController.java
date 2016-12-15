@@ -85,15 +85,12 @@ public class IndexNumController {
 				map.put("protocolumnber", agreenment.getProtocolnumber());
 				map.put("displaydate", indexNum.getDisplaydate());
 			}
-			map.put("indexnum", indexNum.getIndexnum()+"");
-			map.put("indexNum", JSONObject.fromObject(indexNum).toString());
-			System.out.println(JSONObject.fromObject(indexNum).toString());
-			model.addAttribute("indexNum", indexNum);
-//			try {
-//				response.sendRedirect(WebConstConfig.BASE_PATH+"/pgzq/fhxy.action");
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
+			try {
+				map.put("indexnum", indexNum.getIndexnum()+"");
+				map.put("indexNum", JSONObject.fromObject(indexNum).toString());
+				model.addAttribute("indexNum", indexNum);
+			} catch (Exception e) {
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
