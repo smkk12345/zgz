@@ -112,6 +112,14 @@ public class SjtjController {
             BigDecimal bd = new BigDecimal(result);
             BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
             model.addAttribute("qybl", f1 + "%");
+          Date date = new Date();
+          String dateStr = "2016-12-16";
+          Date date1 = DateUtil.StringToDate(dateStr, DateStyle.YYYY_MM_DD);
+          String dateStr1 = DateUtil.DateToString(date, DateStyle.YYYY_MM_DD);
+          Date date2 = DateUtil.StringToDate(dateStr1, DateStyle.YYYY_MM_DD);
+          
+          int day = DateUtil.getIntervalDays(date2, date1);
+          model.addAttribute("day", day);
             // 模板路径 basePath
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",
@@ -131,7 +139,7 @@ public class SjtjController {
         }
     }
     
-    
+ 
 //    @RequestMapping({"/sjtj/chart1.action"})
 //    public ModelAndView chart1(HttpServletRequest request,
 //                               HttpServletResponse response, ModelMap model) {
