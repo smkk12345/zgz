@@ -52,11 +52,11 @@
                 <td class="" colspan=1><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="" colspan=2>区位单价（元）</td>
                 <!--                <td class="">${bean.kzzjdqwbcj?default(0)}</td>-->
-                <td class="" >6000</td>
+                <td class="" >${bean.kzmjqwbcdj?c?default("/")}</td>
                 <td class="" colspan=2>超控面积(㎡)</td>
                 <td class="" ><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></td>
                 <td class="" >区位单价（元）</td>
-                <td class="" ><#if (bean.homesteadyear?default("-1"))=='0'>3000<#else>1800</#if></td>
+                <td class="" >${bean.ckmjqwbcdj?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="" colspan=2>认定房屋面积(㎡)</td>
