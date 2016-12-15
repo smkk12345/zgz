@@ -156,7 +156,7 @@
                 <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>${housebasic.names?default("/")}</u> &nbsp;身份证号：<u>${housebasic.idcard?default("/")}</u>（以下简称乙方）</p>
 
                 <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;依据北京市丰台区长辛店镇人民政府、北京中建方程投资管理有限公司及北京市丰台区长辛店镇张郭庄村村民委员会三方签订的《长辛店镇张郭庄村棚户区改造及环境整治项目委托实施腾退协议》相关内容，长辛店镇人民政府是“长辛店镇张郭庄村棚户区改造和环境整治项目”（以下简称本项目）的责任主体，负责指导、协调本项目全面工作；北京中建方程投资管理有限公司是经丰台区人民政府授权，作为本项目的实施主体，负责本项目腾退补偿资金的筹措；北京市丰台区长辛店镇张郭庄村村民委员会，作为本项目腾退主体即“腾退人”，负责本项目集体土地腾退范围内涉及宅基地及非住宅的腾退工作；“被腾退人” 是指本项目集体土地腾退范围内，持有宅基地批准文件，或宅基地腾退补偿安置工作组认定的宅基地使用权人及影响宅基地房屋腾退的其它构筑物的所有者，每宗宅基地为一产权院。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;为加快腾退范围内宅基地、非住宅房屋腾退补偿安置工作，本项目采取村民自主腾退方式，腾退方式参照拆迁方式进行实施。经甲、乙双方协商一致，同意按照“安置房补偿的方式”对于权属于乙方的宅基地、房屋及附属物进行房屋腾退补偿安置，达成如下协议：
+                    &nbsp;&nbsp;&nbsp;&nbsp;为加快腾退范围内宅基地、非住宅房屋腾退补偿安置工作，本项目采取村民自主腾退方式，腾退方式参照拆迁方式进行实施。经甲、乙双方协商一致，同意按照“完全货币补偿方式”对于权属于乙方的宅基地、房屋及附属物进行房屋腾退补偿安置，达成如下协议：
                 </p>
                 <p class="left-title">第一条&nbsp;&nbsp;腾退依据</p>
                 <p class="contex-1" >&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）
@@ -186,15 +186,17 @@
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;经工作组认定，认定被安置人口共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
                     <#if housebasic.vacatelist??>
-                <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
-                <#list housebasic.vacatelist as vacate>
-                <p class="contex-1" style="line-height:26px;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;${vacate.name}&nbsp;&nbsp;</u>
-                    &nbsp;&nbsp;产关：<u>&nbsp;&nbsp;${vacate.changrelate}&nbsp;&nbsp;</u>
-                    &nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;${vacate.idcard}&nbsp;&nbsp;</u>
-                </p>
-                </#list>
-                </#if>
+	                    <#if housebasic.vacatelist?size gt 0>
+		                <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
+			                <#list housebasic.vacatelist as vacate>
+			                <p class="contex-1" style="line-height:26px;">
+			                    &nbsp;&nbsp;&nbsp;&nbsp;姓名：<u>&nbsp;&nbsp;${vacate.name}&nbsp;&nbsp;</u>
+			                    &nbsp;&nbsp;产关：<u>&nbsp;&nbsp;${vacate.changrelate}&nbsp;&nbsp;</u>
+			                    &nbsp;&nbsp;身份证：<u>&nbsp;&nbsp;${vacate.idcard}&nbsp;&nbsp;</u>
+			                </p>
+			                </#list>
+		                </#if>
+                	</#if>
                 <#if housebasic.list??>
                 <#if housebasic.list?size gt 0>
                 <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;非在册人员：</p>
@@ -211,7 +213,7 @@
 
                 <p class="left-title">第五条&nbsp;&nbsp;宅基地腾退补偿总价</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;5.1、甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;5.1、甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1.1、宅基地腾退补偿款<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?c?default("/")}&nbsp;&nbsp;</u>元。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/> 
@@ -264,7 +266,7 @@
                 </p>
                 <p class="left-title">第九条&nbsp;&nbsp;乙方的承诺和保证</p>
                 <p class="contex-1" > 
-                    &nbsp;&nbsp;&nbsp;&nbsp;9.1  乙方在“腾退公告”需要实施腾退范围内,无其他土地使用权或房产权利或任何腾退利益或拆迁利益；<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;9.1  乙方在“腾退公告”范围内无其他土地使用权或房产权利或任何腾退利益或拆迁利益；<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;9.2  乙方向甲方提供的所有土地、房屋权属、身份关系证明材料及其他相关证照类材料，均合法、有效、真实、全面；<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;9.3  乙方保证其在签署本协议之前已取得所有必要的共有权人、亲属（包括父母、继父母、养父母、配偶、子女、继子女、养子女、兄弟姐妹等）及有利益关系的第三人的授权，确认乙方本人有权签署和履行本协议；<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;9.4  乙方保证其作为被腾退人主体的合法性和唯一性。
