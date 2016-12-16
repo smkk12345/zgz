@@ -37,7 +37,7 @@
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
     <div style='margin-top:100px;color:red;font-size:70px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
-        	奖励期：第${day}天
+        	奖励期：第${day+1}天
     </div>
 
     <div style='margin-top: 80px;color:#FF0;font-size:60px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>

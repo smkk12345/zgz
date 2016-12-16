@@ -23,8 +23,8 @@
     <div class="title">长辛店镇张郭庄村棚户区改造项目多媒体查询系统</div>
     <div class="menu-touch">
         <ul class="row groupMenue">
-            <a href="${BASE_PATH}sjtj/chart1.action?from=touch">
-                <li class="col-sm-6 group bgG group_A group-blue">奖励期倒计时</li>
+            <a href="${BASE_PATH}sjtj/chart1_jlq.action?from=touch">
+                <li class="col-sm-6 group bgG group_A group-blue">累计签约时间</li>
             </a>
             <a href="${BASE_PATH}sjtj/chart2.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">签约排号公示</li>
