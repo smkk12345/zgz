@@ -92,9 +92,9 @@
                     </#list>
                     </#if>
                 </table>
-                    <div style='margin-top: 50px;color:#FF0;font-size:40px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
+                   <!-- <div style='margin-top: 50px;color:#FF0;font-size:40px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
 			        整体签约比例：<span style="color: red">${qybl?default(0)}</span>
-			    </div>
+			    </div>-->
             </div>
         </div>
         <script type="text/javascript">
