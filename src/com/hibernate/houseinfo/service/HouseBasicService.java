@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -320,6 +321,10 @@ public class HouseBasicService {
 		return houseBasicDao.getAgSessionBeanList(sql);
 	}
 	
+	public List<Map<String,String>> getBCKZJMapList(String sql) {
+		return houseBasicDao.getBCKZJMapList(sql);
+	}
+	
 	public List<AgreenmentSectionBean> getHasOthersBeanList(String sql) {
 		return houseBasicDao.getHasOthersBeanList(sql);
 	}
@@ -361,10 +366,10 @@ public class HouseBasicService {
 	
 	//数据导出
 	
-	public void export(String viewName,String fileName,OutputStream output){
+	public void export(String viewName,String fileName,OutputStream output,String sql){
 		ExportExcel exportExcel = new ExportExcel<DisplayBean>();
         List<String> fieldList = houseBasicDao.getFieldFromView(viewName);
-        List<Map<String,String>> dataList = houseBasicDao.getDataFromView(viewName);
+        List<Map<String,String>> dataList = houseBasicDao.getDataFromView(viewName,sql);
         Object[] arr= fieldList.toArray();
 		exportExcel.exportMapExcel(fileName, fieldList, dataList, output, "yyyy-MM-dd");
 		

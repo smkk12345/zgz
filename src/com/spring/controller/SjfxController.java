@@ -117,6 +117,84 @@ public class SjfxController {
 		}
 	}
 	
+	
+	@RequestMapping({"/sjfx/gbdttjetj.action"})
+	public ModelAndView gbdttjetj(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			//数组组装
+			List<Map<String,String>> list0 = ServiceManager.getHouseBasicServce().getBCKZJMapList("0");
+			List<Map<String,String>> list1 = ServiceManager.getHouseBasicServce().getBCKZJMapList("1");
+//			List<Map<String,String>> list3 = ServiceManager.getHouseBasicServce().getBCKZJMapList("");
+			List<Map<String,String>> list = initGbdttjetjReturnList();
+			Map<String,String> map8  = list.get(list.size()-1);
+			for (int i = 0; i < list0.size(); i++) {
+				Map<String,String> map1 = list0.get(i);
+				int n = Integer.parseInt(map1.get("section"));
+				Map<String,String> map  = list.get(n-1 );
+				map.put("az", map1.get("zjdttzj")+"");
+				map8.put("az", (Double.parseDouble(map8.get("az"))+Double.parseDouble(map1.get("zjdttzj")))+"");
+				
+			}
+			for (int i = 0; i < list1.size(); i++) {
+				Map<String,String> map1 = list1.get(i);
+				int n = Integer.parseInt(map1.get("section"));
+				Map<String,String> map  = list.get(n-1 );
+				map.put("hb", map1.get("zjdttzj")+"");
+				map8.put("hb", (Double.parseDouble(map8.get("hb"))+Double.parseDouble(map1.get("zjdttzj")))+"");
+				
+			}
+			for (int i = 0; i < list0.size(); i++) {
+				Map<String,String> map1 = list0.get(i);
+				int n = Integer.parseInt(map1.get("section"));
+				Map<String,String> map  = list.get(n-1 );
+				map.put("hj", map1.get("zjdttzj")+"");
+				map8.put("hj", (Double.parseDouble(map8.get("hj"))+Double.parseDouble(map1.get("zjdttzj")))+"");
+				
+			}			
+			model.addAttribute("list", list);
+			model.addAttribute("sectionMap", Contanst.sectionMap);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "SJFX");
+			model.addAttribute("CURENT_TAB_2", "gbdttjetj");
+			model.addAttribute("CURENT_TAB_3", "gbdttjetj");
+
+			return new ModelAndView(PageConst.SJFX_gbdttjetj, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
+	private List<Map<String, String>> initGbdttjetjReturnList() {
+		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
+		for (int i = 1; i < 8; i++) {
+			Map<String,String> map = new HashMap<String, String>();
+			map.put("section", i+"");
+			map.put("displaysection", Contanst.sectionMap.get(i+""));
+			map.put("az", "0");
+			map.put("hb", "0");
+			map.put("hj", "0");
+			list.add(map);
+		}
+		
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("section", "8");
+		map.put("displaysection", "合计");
+		map.put("az", "0");
+		map.put("hb", "0");
+		map.put("hj", "0");
+		list.add(map);
+		return list;
+	}
+
+
 	private List<Map<String,String>> initAgReturnList(){
 		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
 		for (int i = 1; i < 8; i++) {

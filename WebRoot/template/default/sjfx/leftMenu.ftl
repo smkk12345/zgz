@@ -41,5 +41,11 @@
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>数据导出</a>
     </li>
+    
+   <!-- <li <#if CURENT_TAB_2 =='gbdttjetj'>class="active"</#if>><a href="${BASE_PATH}sjfx/gbdttjetj.action">
+            <#if CURENT_TAB_2 =='gbdttjetj'><span class="yu-tu-fgsj-active"></span>
+            <#else><span class="yu-tu-fgsj-commen">
+            </span></#if>腾退补偿总款统计</a>
+    </li>-->
 </ul>
 </@override>

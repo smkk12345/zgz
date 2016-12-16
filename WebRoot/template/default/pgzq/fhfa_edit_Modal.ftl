@@ -441,11 +441,12 @@ ${housebasic.people}
             	$("#inputzzbz").val(money);
             }
 		}else{
-		    var people = ${housebasic.people};
-            if(people){
-                var money = parseFloat(people)*1500*4;
-            	$("#inputzzbz").val(money);
-            }}
+		    //var people = ${housebasic.people};
+           // if(people){
+               // var money = parseFloat(people)*1500*4;
+            	$("#inputzzbz").val(6000);
+           // }
+           }
 		
 			
 	})  
@@ -483,12 +484,12 @@ ${housebasic.people}
            	$(".azxy input[type='text']").attr("disabled","disabled");
             $(".div_seven").html("六.其他：");
             $(".div_eight").html("七.评估款，补偿补助及奖励费合计：");
-            var people = ${housebasic.people};
-            if(people){
-                var money = parseFloat(people)*1500*4;
-                
-            	$("#inputzzbz").val(money);
-            }
+            //var people = ${housebasic.people};
+            //if(people){
+               // var money = parseFloat(people)*1500*4;
+                //alert("adad");
+            	$("#inputzzbz").val(6000);
+           //}
         }
         else {
             $(".azxy").show();

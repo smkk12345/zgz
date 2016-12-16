@@ -899,6 +899,13 @@ public class AgreenmentController {
 		try {
 			String viewName  = request.getParameter("viewName");
 			String fileName = request.getParameter("fileName");
+			
+			String field = request.getParameter("field");
+			String value = request.getParameter("value");
+			String sql = "";
+			if(!StringUtils.isBlank(field)&&!StringUtils.isBlank(value)){
+				sql = " and "+field +"='"+value+"'";
+			}
 			OutputStream output = response.getOutputStream();
 			response.reset();
 			response.setCharacterEncoding("UTF-8");
@@ -910,7 +917,7 @@ public class AgreenmentController {
 //			response.setHeader("Content-disposition", "attachment; filename=aaa.xls");
 //			response.setContentType("application/vnd.ms-excel;charset=UTF-8");
 //			response.setHeader("Content-disposition","attachment; filename=\""+new String(fileName).getBytes("UTF-8"));
-			ServiceManager.getHouseBasicServce().export(viewName,viewName,output);
+			ServiceManager.getHouseBasicServce().export(viewName,viewName,output,sql);
 			output.close();
 			return true;
 		} catch (Exception e) {

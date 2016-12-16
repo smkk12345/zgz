@@ -1,9 +1,11 @@
 package com.hibernate.houseinfo.dao;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -693,19 +695,62 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	}
 	
 	
-	public List<Map<String,String>> getDataFromView(String viewName){
+	public List<Map<String,String>> getDataFromView(String viewName,String subSql){
 		List<Map<String,String>> list = null;
 		Session s = null;
 		try {
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
-			sb.append("SELECT * FROM `"+viewName+"`;");
+			sb.append("SELECT * FROM `"+viewName+"` where 1= 1 ");
+			if(!StringUtils.isBlank(subSql)){
+				sb.append(subSql);
+			}
 			list = s.createSQLQuery(sb.toString())
 					.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 //			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
+		}
+		return list;
+	}
+
+	public List<Map<String, String>> getBCKZJMapList(String atype) {
+		// TODO Auto-generated method stub
+		List<Map<String, String>> list = new ArrayList<Map<String,String>>();
+		StringBuffer sb = new StringBuffer();
+		sb.append(" select  a.section ,sum(b.zjdttzj) as zjdttzj from agreenment b  ");
+		sb.append(" left join housebasic a on a.id = b.housebasicid ");
+		if(StringUtils.isBlank(atype)){
+			sb.append("   where (b.protocolnumber is not null and b.protocolnumber != '')  group by a.section ");
+		}else{
+			sb.append("   where (b.protocolnumber is not null and b.protocolnumber != '') and b.atype = '"+atype+"' group by a.section ");
+		}
+		Session s = getSession();
+		
+		Connection c = s.connection();
+		Statement state;
+		try {
+			state = c.createStatement();
+			try {
+				ResultSet rs = state.executeQuery(sb.toString());
+				while (rs.next()) {
+					String section = rs.getString("section");
+					String zjdttzj = rs.getString("zjdttzj");
+					Map<String,String> map = new HashMap<String, String>();
+					map.put("section", section);
+					map.put("zjdttzj", zjdttzj);
+					list.add(map);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				state.close();
+				c.close();
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		return list;
 	}

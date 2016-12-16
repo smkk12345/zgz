@@ -311,12 +311,6 @@
             <td>${(ROW.fwbcmj)!""}</td>
             <td>${(ROW.people)!""}</td>
             
-            <td>${ROW.zjdttzj?default("")}</td>
-            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
-            <td class="td_jshk">${ROW.jshk?default("")}</td>
-            
-   
-
             <td>
                 <#if role.roleAuthority[15]=="2">
                     <button type="button" style="color: #006600"
