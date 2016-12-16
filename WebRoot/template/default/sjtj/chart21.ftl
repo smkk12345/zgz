@@ -39,6 +39,7 @@
                     <#if list?size gt 0>
                     <#list list as ROW>
                     <tr>
+                        <#if (ROW.atype?default("0"))=='0'>
                         <td style="color:#FF0;">${ROW.indexNumStr?default("")}</td>
                         <td style="color:#0F0;">
                             <#if ROW.section == "1">
@@ -60,7 +61,29 @@
                         <td style="color:#FF0;"><#if (ROW.atype?default("0"))=='0'>房屋安置<#else><span style="color: red">货币安置</span></#if></td>
                         <td style="color:#FF0;">${ROW.names?default("")}</td>
                         <td style="color:#0F0;">${ROW.displaydate?default("")}</td>
-                    </tr>
+                      <#else>
+                      <td style="color:red;">${ROW.indexNumStr?default("")}</td>
+                        <td style="color:red;">
+                            <#if ROW.section == "1">
+                            第一标段
+                            <#elseif ROW.section == "2">
+                            第二标段
+                            <#elseif ROW.section == "3">
+                            第三标段
+                            <#elseif ROW.section == "4">
+                            第四标段
+                            <#elseif ROW.section == "5">
+                            第五标段
+                            <#elseif ROW.section == "6">
+                            第六标段
+                            <#elseif ROW.section == "7">
+                            第七标段
+                            </#if>
+                        </td>
+                        <td style="color:red;"><#if (ROW.atype?default("0"))=='0'>房屋安置<#else><span style="color: red">货币安置</span></#if></td>
+                        <td style="color:red;">${ROW.names?default("")}</td>
+                        <td style="color:red;">${ROW.displaydate?default("")}</td>
+                      </#if>
                     </#list>
                     </#if>
                 </table>

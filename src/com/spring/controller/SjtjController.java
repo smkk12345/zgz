@@ -293,6 +293,16 @@ public class SjtjController {
             		.getDisplayBeanList(" and c.id is not null ", " order by c.time desc,c.indexnum desc ", 0, Integer.parseInt(pageSize));
             // 模板路径 basePath
             // 模板路径 basePath
+            Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
+            List<DisplayBean> list1 = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
+            double result = 0.00;
+            if (count > 0 && null != list1 && list1.size() > 0) {
+                result = 100 * list1.size() / Double.parseDouble(count+"");
+            }
+            BigDecimal bd = new BigDecimal(result);
+            BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+            model.addAttribute("qybl", f1 + "%");
+            
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",
                     WebConstConfig.getBase_Assets_Path());
@@ -323,7 +333,7 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
             }
-            List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", " order by c.indexnum desc ", 0, Integer.parseInt(pageSize));
+            List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", " order by c.time desc,c.indexnum desc ", 0, Integer.parseInt(pageSize));
             // 模板路径 basePath
             // 模板路径 basePath
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
@@ -369,6 +379,9 @@ public class SjtjController {
         	}
             List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0", "");//已经签约
             List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1", "");//未签约
+            
+//            initList(list0);
+//            initList(list1);
             StringBuffer sb = new StringBuffer();
             sb.append("[{\"name\":\"" + "已签约" + "\",\"data\":");
             sb.append(list0.toString());
@@ -409,6 +422,7 @@ public class SjtjController {
         	}
             List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0", "");//已经签约
             List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1", "");//未签约
+            
             StringBuffer sb = new StringBuffer();
             sb.append("[{\"name\":\"" + "已签约" + "\",\"data\":");
             sb.append(list0.toString());

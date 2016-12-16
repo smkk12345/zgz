@@ -355,7 +355,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 //						"");
 			}
 			List<Object[]> list = s.createSQLQuery(sb.toString()).list();
-			List<Integer> iList = objectListToOrganList(list);
+			List<Integer> iList = objectListToOrganList_new(list);
 			return iList;
 		}catch(Exception e){
 			e.printStackTrace();
@@ -421,6 +421,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	     List<Integer> allOrganList = new ArrayList<Integer>();
 	     for (int x = 0; x < objectList.size(); x++) {
 	    	 String sCount = objectList.get(x)[0].toString();
+	    	 String section  = objectList.get(x)[1].toString();
 	    	 if(StringUtils.isBlank(sCount)){
 	    		 allOrganList.add(0);
 	    	 }else{
@@ -429,7 +430,36 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	     }
 	     return allOrganList;
 	 }
+	 
+	 private List<Integer> objectListToOrganList_new(List<Object[]> objectList) {
+		 List<Integer> allOrganList = new ArrayList<Integer>();
+		 Map<String,Integer> map = objectListToMap(objectList);
+		 allOrganList = objectListToOrganList_new(map);
+		 return allOrganList;
+	 }
+	 
+	 private Map<String,Integer> objectListToMap(List<Object[]> objectList) {
+	     Map<String,Integer> map = new HashMap();
+	     for (int x = 0; x < objectList.size(); x++) {
+	    	 String sCount = objectList.get(x)[0].toString();
+	    	 String section  = objectList.get(x)[1].toString();
+	    	 map.put(section, Integer.parseInt(sCount));
+	     }
+	     return map;
+	 }
 
+	 private List<Integer> objectListToOrganList_new(Map<String,Integer> map) {
+	     List<Integer> allOrganList = new ArrayList<Integer>();
+	     for (int x = 1; x < 8; x++) {
+	    	 if(map.containsKey(""+x)){
+	    		 allOrganList.add(map.get(""+x));
+	    	 }else{
+	    		 allOrganList.add(0);
+	    	 }
+	     }
+	     return allOrganList;
+	 }
+	 
 	public int getCountBySectionindex(String sectionindex, String section) {
 		Session s = null;
 		try{
