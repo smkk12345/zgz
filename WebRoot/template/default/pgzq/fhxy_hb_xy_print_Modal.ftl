@@ -292,12 +292,8 @@
                 </p> 
                 <p class="left-title">（以下无正文）</p>
                 <p style="page-break-before: always">&nbsp;</p>
-                <br>
-                <br>
                
-
-            <p class="pageBreak" style="margin-top: 20px;"></p>
-            <p class="left-title">（签字页）</p>
+            <p class="left-title" style="margin-top: 20px;">（签字页）</p>
 
             <p class="contex-1" style="margin-top: 20px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;甲方：北京市丰台区长辛店镇张郭庄村民委员会

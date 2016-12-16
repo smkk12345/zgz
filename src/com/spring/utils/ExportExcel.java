@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +25,11 @@ import org.apache.poi.hssf.usermodel.HSSFRichTextString;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.CellRangeAddress;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.hssf.util.Region;
+
+import com.common.consts.Contanst;
   
 /** 
  * 利用开源组件POI3.0.2动态导出EXCEL文档 转载时请保留以下信息，注明出处！ 
@@ -254,13 +259,13 @@ public class ExportExcel<T>
   
   
     @SuppressWarnings("unchecked")  
-    public  void  exportMapExcel(String title, List<String> headers,  
+    public  void  exportMapExcel(String viewName, List<String> headers,  
             List<Map<String,String>> dataset, OutputStream out, String pattern)  
     {  
         // 声明一个工作薄  
         HSSFWorkbook workbook = new HSSFWorkbook();  
         // 生成一个表格  
-        HSSFSheet sheet = workbook.createSheet(title);  
+        HSSFSheet sheet = workbook.createSheet(viewName);  
         // 设置表格默认列宽度为15个字节  
         sheet.setDefaultColumnWidth((short) 15);  
         // 生成一个样式  
@@ -305,9 +310,33 @@ public class ExportExcel<T>
         comment.setString(new HSSFRichTextString("可以在POI中添加注释！"));  
         // 设置注释作者，当鼠标移动到单元格上是可以在状态栏中看到该内容.  
         comment.setAuthor("leno");  
-  
+        
+        List<HashMap<String,String>> titleList = Contanst.export_Param_All.get(viewName);
+        int n = 0;
+        if(null != titleList){
+        	
+//        	sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 5));
+//        	sheet.addMergedRegion(new CellRangeAddress(0, 0, 7, 14));
+//        	sheet.addMergedRegion(new CellRangeAddress(0, 0, 16, 25));
+        	HSSFRow row = sheet.createRow(n++); 
+        	int startCol = 0;
+        	for (int i = 0; i < titleList.size(); i++) {
+        		HashMap<String,String> map = titleList.get(i);
+        		sheet.addMergedRegion(new CellRangeAddress(0, 0, i*5, 5*(i+1)-1));
+        		HSSFCell cell = row.createCell(i);
+//                cell.setCellStyle(style);  
+                cell.setCellValue(map.get("title"));  
+              // 四个参数分别是：起始行号，终止行号， 起始列号，终止列号  new Region(0, startCol,0,startCol
+                //      0 0 0 19 
+                //      0 0 20 26
+//               sheet.addMergedRegion(new CellRangeAddress(0, 0, startCol, -1+startCol+Integer.parseInt(map.get("length"))));
+//               break;
+//               startCol = Integer.parseInt(map.get("length"));
+     		}
+        }
+       
         // 产生表格标题行  
-        HSSFRow row = sheet.createRow(0);  
+        HSSFRow row = sheet.createRow(n++);  
         for (short i = 0; i < headers.size(); i++)  
         {  
             HSSFCell cell = row.createCell(i);  
@@ -320,7 +349,7 @@ public class ExportExcel<T>
         
         for (int i = 0; i < dataset.size(); i++) {
         	Map<String,String> map = dataset.get(i);
-        	row = sheet.createRow(i);  
+        	row = sheet.createRow(i+n);  
 			for (int j = 0; j < headers.size(); j++) {
 				HSSFCell cell = row.createCell(j); 
 				try {

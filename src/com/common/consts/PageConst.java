@@ -49,7 +49,8 @@ public class PageConst {
     public final static String SJFX_qysxhtz = "/default/sjfx/qysxhtz.ftl";
 
     public final static String SJFX_shtz = "/default/sjfx/shtz.ftl";
-
+    public final static String SJFX_export = "/default/sjfx/export.ftl";
+    
 
     public final static String DAGL_dagl_model = "/default/dagl/dagl_Modal.ftl";
     public final static String DAGL_dagl = "/default/dagl/dagl.ftl";

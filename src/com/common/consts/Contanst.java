@@ -43,5 +43,49 @@ public class Contanst {
     //**缓存签约情况id
     public static HashSet<String> houseBasicidSet = new HashSet<String>();
     
+    public static HashMap<String,String> export_TitleMap = new HashMap<String, String>(){{
+        put("all", "所有标段全信息表");
+        put("people", "所有标段人口信息表");
+        put("area", "所有标段面积信息表");
+    }};
+    
+    public static HashMap<String,List<HashMap<String,String>>> export_Param_All = new HashMap<String, List<HashMap<String,String>>>(){{
+    	put("all1", new ArrayList<HashMap<String,String>>(){{
+    		add(new HashMap<String, String>(){{
+    			 put("title", "一、基本情况");
+    			 put("length", "20");
+    		}});
+    		add(new HashMap<String, String>(){{
+    			 put("title", "二、认定面积信息");
+    			 put("length", "6");
+    		}});
+    		add(new HashMap<String, String>(){{
+    			 put("title","三、认定人口信息" );
+    			 put("length", "3");
+    		}});
+    		add(new HashMap<String, String>(){{
+    			put("title","四、宅基地腾退补偿款" );
+    			put("length", "9");
+    		}});
+       		add(new HashMap<String, String>(){{
+	       		put("title", "五、奖励费、补助费");
+	       		put("length", "19");
+	   		}});
+	   		add(new HashMap<String, String>(){{
+	   			put("title", "六、初步选房意向");
+	   			put("length", "15");
+	   		}});
+	   		add(new HashMap<String, String>(){{
+		   		put("title", "七、其他");
+		   		put("length", "1");
+	   		}});
+	   		add(new HashMap<String, String>(){{
+		   		put("title","八、评估款、补偿款");
+		   		put("length", "2");
+	   		}});    		
+    	}});
+    }};
+    
+    
     
 }

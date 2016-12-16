@@ -55,7 +55,7 @@
                 <th>标段</th>
                 <th>被腾退人</th>
                 <th>安置方式</th>
-                <th>认定面积</th>
+                <th>房屋坐落</th>
                 <th>认定人口</th>
                 <th>锁定/解锁</th>
                 <th>废除签约号</th>
@@ -77,8 +77,8 @@
 	                    未录入
 	                </#if>
 	            </td>
-	            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
-	            <td class="td_jshk">${ROW.jshk?default("")}</td>
+	            <td >${ROW.location?default("")}</td>
+	            <td >${ROW.people?default("")}</td>
 	            <td>
 	            <#if ROW.islock??> 
 	            	<#if ROW.islock=="1">

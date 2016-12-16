@@ -473,4 +473,27 @@ public class SjfxController {
 		return list ;
 	}
 	
+	
+	@RequestMapping({"/sjfx/export.action"})
+	public ModelAndView export(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "SJFX");
+			model.addAttribute("CURENT_TAB_2", "export");
+			model.addAttribute("CURENT_TAB_3", "export");
+
+			return new ModelAndView(PageConst.SJFX_export, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
 }

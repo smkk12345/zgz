@@ -675,13 +675,13 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		try {
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
-			sb.append("SELECT * FROM `1203`.`"+viewName+"`;");
+			sb.append("SELECT * FROM `"+viewName+"`;");
 			Statement state = s.connection().createStatement();
 			ResultSet rs = state.executeQuery(sb.toString());
 			ResultSetMetaData data = rs.getMetaData();
 			
 			for (int j = 0; j < data.getColumnCount(); j++) {
-				list.add(data.getColumnName(j+1));
+				list.add(data.getColumnLabel(j+1));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -699,7 +699,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		try {
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
-			sb.append("SELECT * FROM `1203`.`"+viewName+"`;");
+			sb.append("SELECT * FROM `"+viewName+"`;");
 			list = s.createSQLQuery(sb.toString())
 					.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 //			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();

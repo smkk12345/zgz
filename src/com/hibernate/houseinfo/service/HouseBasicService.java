@@ -361,19 +361,12 @@ public class HouseBasicService {
 	
 	//数据导出
 	
-	public void export(String viewName){
+	public void export(String viewName,String fileName,OutputStream output){
 		ExportExcel exportExcel = new ExportExcel<DisplayBean>();
-        OutputStream out = null;
-		try {
-			out = new FileOutputStream("c://All/all.xls");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}  
         List<String> fieldList = houseBasicDao.getFieldFromView(viewName);
         List<Map<String,String>> dataList = houseBasicDao.getDataFromView(viewName);
         Object[] arr= fieldList.toArray();
-		exportExcel.exportMapExcel("all数据", fieldList, dataList, out, "yyyy-MM-dd");
+		exportExcel.exportMapExcel(fileName, fieldList, dataList, output, "yyyy-MM-dd");
 		
 	}
 	

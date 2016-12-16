@@ -1,6 +1,8 @@
 package com.spring.controller;
 
+import java.io.OutputStream;
 import java.math.BigDecimal;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -896,14 +898,27 @@ public class AgreenmentController {
 			HttpServletResponse response, ModelMap model) {
 		try {
 			String viewName  = request.getParameter("viewName");
-			ServiceManager.getHouseBasicServce().export(viewName);
+			String fileName = request.getParameter("fileName");
+			OutputStream output = response.getOutputStream();
+			response.reset();
+			response.setCharacterEncoding("UTF-8");
+			request.setCharacterEncoding("UTF-8");
+		    response.setContentType("application/octet-stream;charset=utf-8");  
+		    response.setHeader("Content-Disposition", "attachment;filename="  
+		            + new String(viewName.getBytes(),"UTF-8") + ".xls");  
+			
+//			response.setHeader("Content-disposition", "attachment; filename=aaa.xls");
+//			response.setContentType("application/vnd.ms-excel;charset=UTF-8");
+//			response.setHeader("Content-disposition","attachment; filename=\""+new String(fileName).getBytes("UTF-8"));
+			ServiceManager.getHouseBasicServce().export(viewName,viewName,output);
+			output.close();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
 			return false;
-
 		}
 	}
+	
 	
 }
