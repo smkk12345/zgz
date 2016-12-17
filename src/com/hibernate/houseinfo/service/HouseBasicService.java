@@ -86,11 +86,79 @@ public class HouseBasicService {
 			boolean result4 = otherInfoDao.batchSave(houseBasic.getDeformityList(),houseBasic.getId());
 			boolean result5 = vacatePeopleDao.batchSave(houseBasic.getList(),houseBasic.getId());
 			boolean result6 = vacatePeopleDao.batchSave(houseBasic.getVacatelist(),houseBasic.getId());
+			
+			//计算金钱
+			calcMony(houseBasic);
+			
 			return t!= null &&result2&&result3&&result4&&result5&&result6;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	
+	private void calcMony(HouseBasic houseBasic) {
+		Agreement agreenment = agreenmentDao.getByHouseBasicId(houseBasic.getId());
+		if(null == agreenment){
+			return ;
+		}
+		//如果是货币   直接返回
+		if(agreenment.getAtype().equals("1")){
+			return;
+		}
+		//人数变化之后  影响周转补助费  ---- 补助费 --腾退总价 -- 计算后款
+		//补助费  + 奖励费 = 补助费合计 a
+		//宅基地补偿款  b
+		//购房款  c
+		//腾退补偿总价 d = a+b
+		//计算后款 f = d - c
+		try {
+			int people = houseBasic.getPeople();
+			double zzbz = people*1500*40;
+			double sum = 0.00;
+			sum = getSumValue(sum,agreenment.getTqbjl());
+			sum = getSumValue(sum,agreenment.getGcphjl());
+			sum = getSumValue(sum,agreenment.getTtcjjl());
+			sum = getSumValue(sum,agreenment.getWwzjl());
+			sum = getSumValue(sum,agreenment.getWjecjj());
+			sum = getSumValue(sum,agreenment.getWjpzyjecbz());
+			sum = getSumValue(sum,agreenment.getBjbz());
+			sum = getSumValue(sum,agreenment.getQfbz());
+			sum = getSumValue(sum,agreenment.getDbbz());
+			sum = getSumValue(sum,agreenment.getCjbz());
+			sum = getSumValue(sum,agreenment.getDbhbz());
+			//奖励费
+			sum = getSumValue(sum,agreenment.getDsznbz());
+			sum = getSumValue(sum,agreenment.getTctdbz());
+			sum = sum+zzbz;
+			sum = getSumValue(sum,agreenment.getDsbzf());
+			sum = getSumValue(sum,agreenment.getXgbzf());
+			sum = getSumValue(sum,agreenment.getZjdypwpbz());
+			sum = getSumValue(sum,agreenment.getYhzbwxmbc());
+			sum = getSumValue(sum,agreenment.getZjdypwpbz());
+			agreenment.setJlfsum(new BigDecimal(sum));
+			//奖励补助费计算完毕
+			sum = getSumValue(sum, agreenment.getZjdttbck());
+			//腾退补偿总价
+			double zjdttzj = sum;
+			
+			double jshk = zjdttzj-agreenment.getAzfgfk().doubleValue();
+		
+			agreenment.setZjdttzj(new BigDecimal(zjdttzj));
+			agreenment.setJshk(new BigDecimal(jshk));
+			agreenmentDao.update(agreenment);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private double getSumValue(double sum,BigDecimal bd){
+		if(null != bd){
+			return  (sum+bd.doubleValue());
+		}else{
+			return  (sum);
+		}
 	}
 	
 	public void justUpdateHouseBasic(HouseBasic housebasic){
@@ -367,11 +435,15 @@ public class HouseBasicService {
 	//数据导出
 	
 	public void export(String viewName,String fileName,OutputStream output,String sql){
-		ExportExcel exportExcel = new ExportExcel<DisplayBean>();
-        List<String> fieldList = houseBasicDao.getFieldFromView(viewName);
-        List<Map<String,String>> dataList = houseBasicDao.getDataFromView(viewName,sql);
-        Object[] arr= fieldList.toArray();
-		exportExcel.exportMapExcel(fileName, fieldList, dataList, output, "yyyy-MM-dd");
+		try {
+			ExportExcel exportExcel = new ExportExcel<DisplayBean>();
+			List<String> fieldList = houseBasicDao.getFieldFromView(viewName);
+			List<Map<String,String>> dataList = houseBasicDao.getDataFromView(viewName,sql);
+			Object[] arr= fieldList.toArray();
+			exportExcel.exportMapExcel(fileName, fieldList, dataList, output, "yyyy-MM-dd");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 	}
 	

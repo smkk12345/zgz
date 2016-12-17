@@ -262,6 +262,9 @@ public class ExportExcel<T>
     public  void  exportMapExcel(String viewName, List<String> headers,  
             List<Map<String,String>> dataset, OutputStream out, String pattern)  
     {  
+    	try {
+			
+		
         // 声明一个工作薄  
         HSSFWorkbook workbook = new HSSFWorkbook();  
         // 生成一个表格  
@@ -368,6 +371,8 @@ public class ExportExcel<T>
 				
 			}
 		}
+        
+    	
         try  
         {  
             workbook.write(out);  
@@ -375,7 +380,11 @@ public class ExportExcel<T>
         catch (IOException e)  
         {  
             e.printStackTrace();  
-        }  
+        } 
+        
+    	} catch (Exception e) {
+			// TODO: handle exception
+		}
     }  
     
 }  

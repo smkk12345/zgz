@@ -450,7 +450,7 @@ ${housebasic.people}
 		
 			
 	})  
-
+	
 //设置模态框高度和宽度  
     $("#fhfa-edit-con").css("height", ($(window).height() - 150) + "px");
     $("#fhfa-edit-con").css("overflow-y", "scroll");
@@ -503,6 +503,35 @@ ${housebasic.people}
             	$("#inputzzbz").val(money);
             }
         }
+        
+		var sum = 0.00;
+		$('.input_jl').each(function (index,domEle){
+			var text = $(domEle).val();
+			if(text){
+				sum = sum+parseFloat(text);
+			}
+		});
+		var qfbz = $("#input-qfbz").val();
+		var inputyhzbwxmbc = $("#input_yhzbwxmbc").val();
+		if(qfbz){
+   			var $selectedvalue = $("input[name='atype']:checked").val();
+	        if ($selectedvalue === '0') {
+				sum = sum+parseFloat(qfbz);
+	        }
+		}
+		if(inputyhzbwxmbc){
+			var $selectedvalue = $("input[name='atype']:checked").val();
+	        if ($selectedvalue === '0') {
+				sum = sum+parseFloat(inputyhzbwxmbc);
+	        }
+		}
+		$("#jlhj").val(sum.toFixed(2));
+		var temp = (parseFloat($("#zjdttbck").val())+sum).toFixed(2);
+		$("#zjdttzj").val(temp);
+		//var temp1 = parseFloat($("#azfgfk").val());
+		//$("#jshk").val((temp-temp1).toFixed(2));
+   			
+   		
      });
 
 
