@@ -169,10 +169,7 @@
                &nbsp;&nbsp;&nbsp;&nbsp;2.2 经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
                     <u><#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积
                     <u><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积
-                    <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：<br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积
-                    <u><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></u>平方米；超出宅基地控制面积
-                    <u><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></u>平方米。
+                    <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。
             </p>
             <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
             <p class="contex-1">
