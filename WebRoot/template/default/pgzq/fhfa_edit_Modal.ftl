@@ -1,11 +1,13 @@
 ﻿
 <div class="modal-header clearfix">
     <h4 class="modal-title pull-left m0">房屋征收安置补偿方案信息登记单（基本情况，房屋信息，部分补助信息是从入户信息中提取，如有调整，请到入户信息管理中修改）</h4>
+    <div class="fr">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+    </div>
 </div>
 <div class="modal-body rhjc-add-con" id="fhfa-edit-con">
     <form id='rhjcAddForm' modelAttribute = "Agreement" action="${BASE_PATH}/pgzq/saveAgreenment.action"
           accept-charset="UTF-8" method="post">
-${housebasic.people}
         <input type="hidden" class='form-control input-sm ' name='aid' value="${bean.id?default("")}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='housebasicid' value="${housebasic.id?default("")}" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='protocolnumber' value="${bean.protocolnumber?default("")}" style="width: 0px;"/>

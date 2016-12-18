@@ -144,7 +144,8 @@ public class HouseBasicService {
 			double zjdttzj = sum;
 			
 			double jshk = zjdttzj-agreenment.getAzfgfk().doubleValue();
-		
+			
+			agreenment.setZzbz(new BigDecimal(zzbz));
 			agreenment.setZjdttzj(new BigDecimal(zjdttzj));
 			agreenment.setJshk(new BigDecimal(jshk));
 			agreenmentDao.update(agreenment);
