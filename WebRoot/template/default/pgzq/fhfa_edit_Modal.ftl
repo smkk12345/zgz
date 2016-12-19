@@ -68,12 +68,13 @@
                     <label class='fl control-label' style="width:220px;">超控面积（㎡）:</label>
                     <input type='text' id="overhomesteadarea" readonly  class='form-control input-sm  ' name='overhomesteadarea'  value="<#if bean.overhomesteadarea??>${bean.overhomesteadarea?c}<#else></#if>" />
                 </div>
+                <!-- 超控面积的算法 -->
                 <script type = "text/javascript">
                     $(document).ready(function(){
-                        $("#overhomesteadarea").val(($("#rdzjdallarea").val()-$("#conhomestarea").val()).toFixed(2));
+                        $("#overhomesteadarea").val(($("#bczjdmj").val()-$("#conhomestarea").val()).toFixed(2));
                     });
                     function caculat1(){
-                        $("#overhomesteadarea").val(($("#rdzjdallarea").val()-$("#conhomestarea").val()).toFixed(2));
+                        $("#overhomesteadarea").val(($("#bczjdmj").val()-$("#conhomestarea").val()).toFixed(2));
                     }
                 </script>
               <#--  <div class=' aoJianGroup fl'>
@@ -173,7 +174,7 @@
                 </div>-->
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label' style="width:220px;">补偿宅基地面积（㎡）:</label>
-                    <input type='text' class='form-control input-sm  ' name='bczjdmj'  value="<#if bean.bczjdmj??>${bean.bczjdmj?c}</#if>" />    
+                    <input type='text' class='form-control input-sm  ' id='bczjdmj' name='bczjdmj'  value="<#if bean.bczjdmj??>${bean.bczjdmj?c}</#if>" />    
                 </div>
                 <div class=' aoJianGroup fl'> 
                     <label class='fl control-label' style="width:220px;">控制面积区位单价(元):</label>
