@@ -121,7 +121,7 @@
                                             fontWeight: "bold",
                                     }
                             },
-                            colors: ['#84C1FF', '#ff4330'],
+                            colors: ['#ff4330', '#84C1FF'],
                             credits: {//去掉右下角标识
                             text: ''
                             },
@@ -185,7 +185,7 @@
                                             fontWeight: "bold",
                                     }
                             },
-                            colors: ['#84C1FF', '#ff4330'],
+                            colors: ['#ff4330', '#84C1FF'],
                             credits: {//去掉右下角标识
                             text: ''
                             },
