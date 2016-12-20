@@ -40,20 +40,8 @@
                 <td class=""><#if bean.zjdarea??>${bean.zjdarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
                 <td>实测房屋建筑面积</td>
                 <td class="textalign-r"><#if bean.zjdarea??>${bean.fwarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
-                <td colspan="2">认定住房困难</td>
-                <td colspan="2" style="">
-                <#if agreenment.hardhouse??>
-                    <#if  agreenment.hardhouse?default("-1") == '-1'>
-                        数据未录入
-                    <#elseif agreenment.hardhouse?default("-1") == '0'>
-                        是
-                    <#elseif agreenment.hardhouse?default("-1") == '1'>
-                        否
-                    </#if>
-                <#else>
-                    数据未录入
-                </#if>
-                </td>
+                <td colspan="2">经营面积</td>
+                <td colspan="2" class="textalign-c" ><#if bean.operatearea??>${bean.operatearea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
             </tr>
             <tr>
                 <td colspan="2">被腾退人拟选择补偿方式</td>
@@ -87,7 +75,7 @@
                 <td colspan="10">认定宅基地及房屋面积相关</td>
             </tr>
             <tr>
-                <td colspan="4">认定宅基地总补偿面积</td>
+                <td colspan="4">认定宅基地面积</td>
                
                 <td colspan="2" class=""> 	
                 <#if agreenment.rdzjdallarea??>${agreenment.rdzjdallarea?number?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
@@ -98,7 +86,8 @@
             <tr>
                 <td rowspan="5" style="text-align: justify">其中</td>
                 <td rowspan="2" colspan="2">认定82年前（0.4亩）</td>
-                <td>控制面积267m<sup>2</sup>以内</td>
+                <td>控制面积267m<sup>2</sup>以内<br>
+                (单宗不足0.3亩补足0.3亩，<br>0.3亩至0.4亩之间及分签据实)</td>
                 <td colspan="2" class="">
                 <#if agreenment.homesteadyear?default("-1") == '0'>
                 <#if agreenment.conhomestarea??>${agreenment.conhomestarea?string("0.00")}<#else>0.00</#if>
@@ -133,7 +122,7 @@
             </tr>
             <tr>
                 <td rowspan="2" colspan="2">认定82年后（0.3亩）</td>
-                <td>不足0.3亩补足0.3亩控制面积</td>
+                <td>不足0.3亩补足0.3亩控制面积<br>或分签据实</td>
                 <td colspan="2" class="">
                 <#if agreenment.homesteadyear?default("-1") == '1'>
                 <#if agreenment.conhomestarea??>${agreenment.conhomestarea?string("0.00")}<#else>0.00</#if>

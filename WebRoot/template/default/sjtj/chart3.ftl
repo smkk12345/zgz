@@ -121,7 +121,7 @@
                                             fontWeight: "bold",
                                     }
                             },
-                            colors: ['#84C1FF', '#ff4330'],
+                            colors: ['#84C1FF','#ff4330'],
                             credits: {//去掉右下角标识
                             text: ''
                             },
@@ -235,11 +235,12 @@
                             }
                             },
                             series: [{
-                            name: '已签约',
-                                    data: [${zyqy}],
-                            }, {
                             name: '未签约',
-                                    data: [${zwqy}],
+                            data: [${zwqy}],
+                      
+                            }, {
+                            name: '已签约',
+                            data: [${zyqy}],
                             }]
                     });
                     })
