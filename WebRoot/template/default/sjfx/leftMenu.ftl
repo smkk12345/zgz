@@ -29,13 +29,13 @@
     </#if>
       
           
-    <#if role.roleAuthority[31]=="2">  
+    <!--<#if role.roleAuthority[31]=="2">  
     <li <#if CURENT_TAB_2 =='shtz'>class="active"</#if>><a href="${BASE_PATH}sjfx/shtz.action">
             <#if CURENT_TAB_2 =='shtz'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>审核台账</a>
     </li>
-    </#if>
+    </#if>-->
     <li <#if CURENT_TAB_2 =='export'>class="active"</#if>><a href="${BASE_PATH}sjfx/export.action">
             <#if CURENT_TAB_2 =='export'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
