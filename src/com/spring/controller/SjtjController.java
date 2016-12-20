@@ -383,11 +383,11 @@ public class SjtjController {
 //            initList(list0);
 //            initList(list1);
             StringBuffer sb = new StringBuffer();
-            sb.append("[{\"name\":\"" + "已签约" + "\",\"data\":");
-            sb.append(list0.toString());
-            sb.append("},");
-            sb.append("{\"name\":\"" + "未签约" + "\",\"data\":");
+            sb.append("[{\"name\":\"" + "未签约" + "\",\"data\":");
             sb.append(list1.toString());
+            sb.append("},");
+            sb.append("{\"name\":\"" + "已签约" + "\",\"data\":");
+            sb.append(list0.toString());
             sb.append("}]");
 
 
@@ -424,11 +424,11 @@ public class SjtjController {
             List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1", "");//未签约
             
             StringBuffer sb = new StringBuffer();
-            sb.append("[{\"name\":\"" + "已签约" + "\",\"data\":");
-            sb.append(list0.toString());
-            sb.append("},");
-            sb.append("{\"name\":\"" + "未签约" + "\",\"data\":");
+            sb.append("[{\"name\":\"" + "未签约" + "\",\"data\":");
             sb.append(list1.toString());
+            sb.append("},");
+            sb.append("{\"name\":\"" + "已签约" + "\",\"data\":");
+            sb.append(list0.toString());
             sb.append("}]");
 
 
