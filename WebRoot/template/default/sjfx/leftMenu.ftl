@@ -36,11 +36,11 @@
             </span></#if>审核台账</a>
     </li>
     </#if>-->
-    <li <#if CURENT_TAB_2 =='export'>class="active"</#if>><a href="${BASE_PATH}sjfx/export.action">
+    <!--<li <#if CURENT_TAB_2 =='export'>class="active"</#if>><a href="${BASE_PATH}sjfx/export.action">
             <#if CURENT_TAB_2 =='export'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>数据导出</a>
-    </li>
+    </li>-->
     
    <!-- <li <#if CURENT_TAB_2 =='gbdttjetj'>class="active"</#if>><a href="${BASE_PATH}sjfx/gbdttjetj.action">
             <#if CURENT_TAB_2 =='gbdttjetj'><span class="yu-tu-fgsj-active"></span>

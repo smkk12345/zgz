@@ -621,6 +621,10 @@ public class AgreenmentController {
 			if(StringUtils.isEmpty(agreenment.getId())){
 				agreenment.setId(null);
 			}
+			if(agreenment.getAtype().equals("1")){
+				agreenment.setQfbz(new BigDecimal(0));
+				agreenment.setYhzbwxmbc(new BigDecimal(0));
+			}
 			ServiceManager.getHouseBasicServce().updateBaseInfo(housebasic);
 			ServiceManager.getAgreenmentService().save(agreenment);
 			

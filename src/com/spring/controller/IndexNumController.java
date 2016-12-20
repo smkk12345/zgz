@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -72,6 +73,8 @@ public class IndexNumController {
 						String indexStr = Contanst.AGREENMENT_TYPE_HB.replace("?", housebasic.getSection().trim());
 						indexStr  =indexStr + year+"-"+getIndexNumStr(indexNum.getIndexnum());
 						agreenment.setProtocolnumber(indexStr);
+						agreenment.setQfbz(new BigDecimal(0));
+						agreenment.setYhzbwxmbc(new BigDecimal(0));
 					}
 					ServiceManager.getAgreenmentService().update(agreenment);
 					housebasic.setIslock("1");
