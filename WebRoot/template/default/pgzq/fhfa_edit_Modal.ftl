@@ -174,7 +174,7 @@
                 </div>-->
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label' style="width:220px;">补偿宅基地面积（㎡）:</label>
-                    <input type='text' class='form-control input-sm  ' id='bczjdmj' name='bczjdmj'  value="<#if bean.bczjdmj??>${bean.bczjdmj?c}</#if>" />    
+                    <input type='text' class='form-control input-sm  ' id='bczjdmj' name='bczjdmj'  onchange="caculat1()"  value="<#if bean.bczjdmj??>${bean.bczjdmj?c}</#if>" />    
                 </div>
                 <div class=' aoJianGroup fl'> 
                     <label class='fl control-label' style="width:220px;">控制面积区位单价(元):</label>
