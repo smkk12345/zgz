@@ -183,7 +183,7 @@
                 </p>
                 <p class="left-title">第四条&nbsp;&nbsp;被安置人口认定</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;经工作组认定，认定被安置人口共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
+                    &nbsp;&nbsp;&nbsp;&nbsp;经工作组认定，认定被腾退人（推举）<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
                     <#if housebasic.vacatelist??>
 	                    <#if housebasic.vacatelist?size gt 0>
 		                <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
@@ -261,7 +261,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;8.1 甲乙双方签订本协议，项目审计部门审核通过后，甲方及时通知乙方在约定期限内进行搬迁，搬迁完毕并经拆除公司验收合格后，房屋交甲方拆除。 <br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;8.2 甲方在乙方完成交房验收后<u>20</u>个工作日内，向乙方开具领款凭证。  <br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;8.3 乙方按照有关规定，持甲方开具的领款凭证到甲方指定地点一次性领取宅基地腾退补偿总价。 <br/> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;8.4 甲方向乙方一次性支付<u>4</u>个月周转补助费，被腾退安置人口享受周转补助费的标准为  <u>1500</u>元/人/月。 <br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;8.4 甲方向乙方一次性支付<u>4</u>个月周转补助费，享受周转补助费的标准为  <u>1500</u>元/人/月。 <br/> 
                 </p>
                 <p class="left-title">第九条&nbsp;&nbsp;乙方的承诺和保证</p>
                 <p class="contex-1" > 
