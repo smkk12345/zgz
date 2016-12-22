@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
-        <meta http-equiv="refresh" content="5">
         <!--CSS文件-->
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
@@ -30,7 +29,7 @@
         <div class="container-fluid" style="padding: 10px;height:100%">
             <div style="text-align: center;font-size:17px;font-weight: bold;">长辛店镇张郭庄村棚改项目各标段签约情况</div>
             <div id='currentDate' style='margin-top: 10px;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
-            <div style='margin-top: 10px;color:#FF0;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;height:400px'>
+            <div style='margin-top: 10px;color:#FF0;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;height:300px'>
                 <div style='float: left;width:50%; height:400px' id="chart1"> </div>
                 <div style='float: left;width:50%; height:400px' id="chart3"> </div>
             </div>
@@ -230,12 +229,12 @@
                                     }
                             }
                             },
-                            series: [{
-                            name: '已签约',
-                                    data: [${zyqy}],
-                            }, {
+                            series: [ {
                             name: '未签约',
                                     data: [${zwqy}],
+                            },{
+                            name: '已签约',
+                                    data: [${zyqy}],
                             }]
                     });
                     })

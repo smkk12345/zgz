@@ -364,7 +364,7 @@ public class HouseBasicService {
 		// TODO Auto-generated method stub
 		HouseBasic houseBasic = houseBasicDao.getById(housebasicid);
 		houseBasic.setHasothers("1");
-		houseBasic.setJfDate(DateUtil.DateToString(new Date(),DateStyle.YYYY_MM_DD_HH_MM_SS_EN));
+		houseBasic.setJfDate(DateUtil.DateToString(new Date(),DateStyle.YYYY_MM_DD_HH_MM_SS));
 		houseBasicDao.update(houseBasic);
 	}
 	

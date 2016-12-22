@@ -43,6 +43,10 @@
     <div style='margin-top: 80px;color:#FF0;font-size:60px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
         整体签约比例：<span style="color: red">${qybl?default(0)}</span>
     </div>
+   <div style='margin-top: 80px;color:#FF0;font-size:45px; font-family:"Microsoft YaHei";font-weight:bold;text-align: center;'>
+           累计签约户数：<span style="color: red">&nbsp;${yqy?default(50)}户</span> &nbsp;&nbsp;&nbsp;&nbsp;房屋安置:<span style="color: red">&nbsp;${az?default(50)}户</span>&nbsp;&nbsp;&nbsp;&nbsp;货币补偿：<span style="color: red">&nbsp;${hb?default(50)}户</span>
+    </div>
+
     
 
 </div>

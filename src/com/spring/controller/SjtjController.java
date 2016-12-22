@@ -1,3 +1,4 @@
+
 package com.spring.controller;
 
 import java.math.BigDecimal;
@@ -167,6 +168,15 @@ public class SjtjController {
             model.addAttribute("day", day);
             
             model.addAttribute("qybl", f1 + "%");
+            
+            List<DisplayBean> azList = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null and b.atype = '0' ", "", 0, 0);
+            List<DisplayBean> hbList = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null and b.atype = '1' ", "", 0, 0);
+
+            model.addAttribute("yqy", list.size());
+//            model.addAttribute("wqy", count - list.size());
+            model.addAttribute("az", azList.size());
+            model.addAttribute("hb", hbList.size());
+            
             // 模板路径 basePath
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",

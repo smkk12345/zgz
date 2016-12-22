@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
-        <meta http-equiv="refresh" content="5">
+        
         <!--CSS文件-->
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
@@ -25,10 +25,10 @@
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/Projector.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
-        <div class='container-fluid' style="background-color:#000; padding:10px;height:100%">
+        <div class='container-fluid' style="background-color:#000; padding:5px;height:100%">
             <div style='color:#FFF;font-size:17px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚改项目签约排号情况实时公示</div>
             <div style='margin-top: 10px;color:#FFF;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;'>
-                <table class="table table-bordered mt10" width="100%" border="0" cellspacing="1" cellpadding="10" align="center" bgcolor="#FFFFFF">
+                <table class="table table-bordered " width="100%" border="0" cellspacing="1" cellpadding="10" align="center" bgcolor="#FFFFFF">
                     <tr>
                         <td>签约顺序号</td>
                         <td>所属标段</td>
