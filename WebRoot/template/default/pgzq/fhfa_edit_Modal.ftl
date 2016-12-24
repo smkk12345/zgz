@@ -654,8 +654,8 @@
         $("#zbngfk,#zbwgfk").change(function(){
         	var temp = (parseFloat($("#zbngfk").val())+parseFloat($("#zbwgfk").val())).toFixed(2);
        		$("#azfgfk").val(temp);
-       	<#--	var qfbz=parseFloat($("#azfgfk").val())*0.1;
-       		$("#input-qfbz").val(qfbz).toFixed(2);-->
+       //	var qfbz=parseFloat($("#azfgfk").val())*0.1;
+       	//	$("#input-qfbz").val(qfbz).toFixed(2);-->
        		var temp1 = parseFloat($("#zjdttzj").val());
        		//$("#jshk").val((temp1-temp).toFixed(2));
    		});
