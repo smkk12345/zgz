@@ -116,25 +116,25 @@
                 <td class=""  colspan=1>1</td>
                 <td class="" colspan=4>控制区位补偿价（元）</td>
                 <td class="" colspan=1>${bean.kzzjdqwbcj?c?default("")}</td>
-                <td class="" colspan=5 >0</td>
+                <td class="" colspan=5 >/</td>
             </tr>
             <tr>
                 <td class="">2</td>
                 <td class="" colspan=4>超控制区位补偿价（元）</td>
                 <td class="" colspan=1>${bean.ckzjdqwbcj?c?default("")}</td>
-                <td class="" colspan=5>0</td>
+                <td class="" colspan=5>/</td>
             </tr>
             <tr>
                 <td class="">3</td>
                 <td class="" colspan=4>房屋价款（元）</td>
                 <td class="" colspan=1>${bean.bttfwczcxj?c?default("")}</td>
-                <td class="" colspan=5>${bean.fwjkmjj?default("")}</td>
+                <td class="" colspan=5>/</td>
             </tr>
             <tr>
                 <td class="">4</td>
                 <td class="" colspan=4>装修、设备附属物价款（元）</td>
                 <td class="" colspan=1>${bean.zxsbfswjk?c?default("")}</td>
-                <td class="" colspan=5>${bean.sbzxmjj?default("")}</td>
+                <td class="" colspan=5>/</td>
             </tr>
             </table>
              <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
