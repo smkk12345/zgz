@@ -331,6 +331,46 @@ public class SjtjController {
         }
     }
     
+    @RequestMapping({"/sjtj/chart2_scroll.action"})
+    public ModelAndView chart2_scroll(HttpServletRequest request,
+                               HttpServletResponse response, ModelMap model) {
+        try {
+        	String from = request.getParameter("from");
+        	if(!StringUtils.isBlank(from)){
+        		model.addAttribute("from", from);
+        	}
+            List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+            		.getDisplayBeanList(" and c.id is not null ", " order by c.time desc,c.indexnum desc ", 0, 0);
+            // 模板路径 basePath
+            // 模板路径 basePath
+            Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
+            List<DisplayBean> list1 = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
+            double result = 0.00;
+            if (count > 0 && null != list1 && list1.size() > 0) {
+                result = 100 * list1.size() / Double.parseDouble(count+"");
+            }
+            BigDecimal bd = new BigDecimal(result);
+            BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+            model.addAttribute("qybl", f1 + "%");
+            
+            model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+            model.addAttribute("BASE_ASSETS_PATH",
+                    WebConstConfig.getBase_Assets_Path());
+            model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+                    WebConstConfig.getBase_Template_Default_Path());
+            model.addAttribute("list", list);
+            model.addAttribute("CURENT_TAB", "SJTJ");
+            model.addAttribute("CURENT_TAB_2", "chart2_scroll");
+            model.addAttribute("CURENT_TAB_3", "chart2_scroll");
+            return new ModelAndView(PageConst.SJTJ_chart2_scroll, model);
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("error", e.getMessage());
+            return null;
+
+        }
+    }
+    
     @RequestMapping({"/sjtj/chart21.action"})
     public ModelAndView chart21(HttpServletRequest request,
                                HttpServletResponse response, ModelMap model) {

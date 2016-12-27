@@ -74,6 +74,7 @@ public class PageConst {
     public final static String SJTJ_chart1 = "/default/sjtj/chart1.ftl";
     public final static String SJTJ_chart1_jlq = "/default/sjtj/chart1_jlq.ftl";
     public final static String SJTJ_chart2 = "/default/sjtj/chart2.ftl";
+    public final static String SJTJ_chart2_scroll = "/default/sjtj/chart2_scroll.ftl";
     public final static String SJTJ_chart3 = "/default/sjtj/chart3.ftl";
     public final static String SJTJ_chart4 = "/default/sjtj/chart4.ftl";
     public final static String SJTJ_chart5 = "/default/sjtj/chart5.ftl";

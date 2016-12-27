@@ -403,10 +403,9 @@ public class SjfxController {
 			}
 			
 			int intPageNum = Integer.parseInt(pageNo);
-			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
 			String sql = getqysxhtzSql(request,"1",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-					.getDisplayBeanList(sql," order by c.indexnum  ", (intPageNum - 1) * intPageSize, intPageSize);
+					.getDisplayBeanList(sql," order by c.time desc ", (intPageNum - 1) * intPageSize, intPageSize);
 			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
 			
 			model.addAttribute("pageSize", intPageSize);
