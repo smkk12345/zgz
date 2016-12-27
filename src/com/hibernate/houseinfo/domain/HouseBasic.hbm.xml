@@ -126,5 +126,6 @@
 		<property name="hassplit"></property>
 		<property name="fmjcsznxm"></property>
 		<property name="islock"></property>
+		<property name="azrkxx"></property>
 	</class>
 </hibernate-mapping>

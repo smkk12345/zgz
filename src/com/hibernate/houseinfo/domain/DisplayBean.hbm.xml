@@ -130,5 +130,6 @@
    <property name="islock"></property>
    <property name="gfbz50"></property>
     <property name="gfbz45"></property>
+    <property name="azrkxx"></property>
 	</class>
 </hibernate-mapping>

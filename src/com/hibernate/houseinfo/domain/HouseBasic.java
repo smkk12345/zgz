@@ -123,7 +123,15 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private String peopleinfo;
 	//锁定、解锁
 	private String islock; //0未锁定   1  锁定
+	//安置人口认定选项  0 4.1  1 4.2
+	private String azrkxx; 
 	
+	public String getAzrkxx() {
+		return azrkxx;
+	}
+	public void setAzrkxx(String azrkxx) {
+		this.azrkxx = azrkxx;
+	}
 	public String getIslock() {
 		return islock;
 	}

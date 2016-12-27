@@ -307,7 +307,8 @@ public class DisplayBean extends BaseBean {
 	  //优惠指标未选满补偿
 	    private BigDecimal yhzbwxmbc=new BigDecimal(0);
 	    
-	    
+		//安置人口认定选项  0 4.1  1 4.2
+		private String azrkxx; 
 		
 		//是否满足不足200平米补助200平米:
 	    private String bzbzmj="1";
@@ -1267,6 +1268,12 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setGfbz45(String gfbz45) {
 			this.gfbz45 = gfbz45;
+		}
+		public String getAzrkxx() {
+			return azrkxx;
+		}
+		public void setAzrkxx(String azrkxx) {
+			this.azrkxx = azrkxx;
 		}
 		
 		

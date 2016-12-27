@@ -104,6 +104,14 @@
                     <label class='fl control-label'>父母及超生子女姓名:</label>
                     <input type='text' class='form-control input-sm  ' name='fmjcsznxm' value="${bean.fmjcsznxm?default("")}"/>
                 </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>货币补偿方式人员选定:</label>
+                    <select id='azrkxx' class='form-control input-sm fl' style='width:120px;' name='azrkxx' >  
+                        <option <#if (bean.azrkxx?default("0"))=='0'>selected='selected'</#if> value="0">推举非安置人员</option>  
+                        <option <#if (bean.azrkxx?default("-1"))=='1'>selected='selected'</#if> value="1">被安置人员</option> 
+                    </select>
+                </div>	
+                 
             </div>
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
             <div class='container-fluid con-bg mb10' id="div2">	

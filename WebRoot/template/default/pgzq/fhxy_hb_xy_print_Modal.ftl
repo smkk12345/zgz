@@ -183,7 +183,27 @@
                 </p>
                 <p class="left-title">第四条&nbsp;&nbsp;被安置人口认定</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;4.1 经工作组认定，认定被腾退人（共同推举非安置人员）共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
+                    &nbsp;&nbsp;&nbsp;&nbsp;4.1 经工作组认定，认定被腾退人（共同推举非安置人员）共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;
+                    <#if housebasic.azrkxx??>
+                    	<#if housebasic.azrkxx == '0'>
+                    		${housebasic.peoplecount?default("/")}
+                    	<#else>
+                    	／
+                    	</#if>
+                    <#else>
+                    	${housebasic.peoplecount?default("/")}
+                    </#if>&nbsp;&nbsp;</u>人。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;4.2 经工作组认定，认定被安置人口共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;
+                    <#if housebasic.azrkxx??>
+                    	<#if housebasic.azrkxx == '0'>
+                    		/
+                    	<#else>
+                    	${housebasic.peoplecount?default("/")}
+                    	</#if>
+                    <#else>
+                    ／
+                    </#if>&nbsp;&nbsp;</u>人。
+                    分别是：
                     <#if housebasic.vacatelist??>
 	                    <#if housebasic.vacatelist?size gt 0>
 		                <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
