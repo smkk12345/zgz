@@ -437,18 +437,15 @@
 			$("#div8 button").attr("readonly",true);
 		} 
 		var selectedvalue = '${bean.atype}';
-		if(selectedvalue==='0'){
-			var people = ${housebasic.people};
-            if(people){
-                var money = parseInt(people)*1500*40;
-            	$("#inputzzbz").val(money);
-            }
-		}else{
-		    //var people = ${housebasic.people};
-           // if(people){
-               // var money = parseFloat(people)*1500*4;
+		if(selectedvalue==='1'){
             	$("#inputzzbz").val(6000);
-           // }
+		}
+		else{
+		    var people = ${housebasic.people};
+            if(people){
+            var money = parseFloat(people)*1500*40;
+            	$("#inputzzbz").val(money);
+           }
            }
 		
 			
