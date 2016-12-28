@@ -14,10 +14,6 @@
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>触摸屏展示</a>
     </li>
-    <li <#if CURENT_TAB_2 =='chart2_scroll'>class="active"</#if>><a href="${BASE_PATH}sjtj/chart2_scroll.action" target="_blank">
-            <#if CURENT_TAB_2 =='chart2_scroll'><span class="yu-tu-fgsj-active"></span>
-            <#else><span class="yu-tu-fgsj-commen">
-            </span></#if>滚动</a>
-    </li>
+
 </ul>
 </@override>

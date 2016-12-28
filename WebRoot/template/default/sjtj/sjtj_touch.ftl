@@ -41,6 +41,9 @@
             <a href="${BASE_PATH}sjtj/chart6.action?from=touch">
                 <li class="col-sm-6 group bgG group_A group-blue">安置及房源情况</li>
             </a>
+            <a href="${BASE_PATH}sjtj/chart2_scroll.action?from=touch">
+                <li class="col-sm-6 group bgG group_A group-blue">滚动签约排号</li>
+            </a>
         </ul>
     </div>
 
