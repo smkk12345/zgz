@@ -340,7 +340,7 @@ public class SjtjController {
         		model.addAttribute("from", from);
         	}
             List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-            		.getDisplayBeanList(" and c.id is not null ", " order by c.time desc,c.indexnum desc ", 0, 0);
+            		.getDisplayBeanList(" and c.id is not null ", " order by c.time,c.indexnum ", 0, 0);
             // 模板路径 basePath
             // 模板路径 basePath
             Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
