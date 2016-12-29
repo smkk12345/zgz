@@ -377,14 +377,14 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			StringBuffer sb = new StringBuffer();
 			if(!StringUtils.isBlank(type)){
 				if(type.equals("0")){
-					sb.append(" select count(id) as count from housebasic where hasothers = '").append(type).append("'");
-					sb.append(" or hasothers is null ");
+					sb.append(" select count(a.id) as count from housebasic a left join indexnum b on a.id = b.housebasicid where (a.hasothers = '").append(type).append("'");
+					sb.append(" or a.hasothers is null  or a.hasothers='' ) and (b.id is not null) ");
 				}else{
 					sb.append(" select count(id) as count from housebasic where hasothers = '").append(type).append("'");
 				}
 			}
 			if(!StringUtils.isBlank(dateStr)){
-				sb.append(" and date_format(jfDate,'yyyy-MM-dd') = '").append(dateStr).append("'");
+				sb.append(" and date_format(jfDate,'%Y-%m-%d') = '").append(dateStr).append("'");
 			}
 			List<BigInteger> list = s.createSQLQuery(sb.toString()).list();
 //			List<Integer> iList = objectListToOrganList(list);

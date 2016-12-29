@@ -245,9 +245,13 @@ public class SjtjController {
             for (int i = 0; i < list0.size(); i++) {
                 result = result + list0.get(i);
             }
+            //已经交房
             Integer yjf = ServiceManager.getHouseBasicServce().getSumHasOthers("1", "");
+            //未交房
             Integer wjf = ServiceManager.getHouseBasicServce().getSumHasOthers("0", "");
+            //当日交房
             Integer jrjf = ServiceManager.getHouseBasicServce().getSumHasOthers("1", DateUtil.getDate(new Date()));
+            
             model.addAttribute("zqy", result);
             model.addAttribute("yjf", yjf);
             model.addAttribute("wjf", wjf);
