@@ -376,6 +376,7 @@ public class ExportExcel<T>
         try  
         {  
             workbook.write(out);  
+//            workbook.
         }  
         catch (IOException e)  
         {  
@@ -383,7 +384,9 @@ public class ExportExcel<T>
         } 
         
     	} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			
 		}
     }  
     

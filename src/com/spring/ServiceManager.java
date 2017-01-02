@@ -1,6 +1,8 @@
 package com.spring;
 
 import org.hibernate.SessionFactory;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
 import com.hibernate.baseSettingInfo.service.impl.AlarmServiceImpl;
 import com.hibernate.baseSettingInfo.service.impl.BaseSettingServiceImpl;
 import com.hibernate.baseSettingInfo.service.impl.GrainTypeServiceImpl;
@@ -39,6 +41,9 @@ public class ServiceManager {
     
     private static FileManageService fileManageService;
     
+    private static ThreadPoolTaskExecutor threadPoolTaskExecutor;
+    
+    
     public static Object getServiceBean(String beanName) {
 
         Object serviceBean = null;
@@ -59,6 +64,14 @@ public class ServiceManager {
         }
     }
     
+    public static ThreadPoolTaskExecutor getThreadPoolTaskExecutor() {
+        if (threadPoolTaskExecutor == null) {
+        	threadPoolTaskExecutor = (ThreadPoolTaskExecutor) ServiceManager.getServiceBean("threadPoolTaskExecutor");
+            return threadPoolTaskExecutor;
+        } else {
+            return threadPoolTaskExecutor;
+        }
+    }
     public static UserInfoServiceImpl getUserService() {
         if (userInfoServiceImpl == null) {
             userInfoServiceImpl = (UserInfoServiceImpl) ServiceManager.getServiceBean("userServiceImpl");
@@ -67,7 +80,6 @@ public class ServiceManager {
             return userInfoServiceImpl;
         }
     }
-
     public static IndexNumService getIndexNumService() {
         if (indexNumService == null) {
         	indexNumService = (IndexNumService) ServiceManager.getServiceBean("indexNumService");

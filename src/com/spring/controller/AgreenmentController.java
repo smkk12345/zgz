@@ -1,5 +1,7 @@
 package com.spring.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
@@ -21,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.common.consts.Contanst;
 import com.common.consts.PageConst;
 import com.common.consts.WebConstConfig;
+import com.common.fileupload.UploadFileUtils;
 import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.domain.Agreement;
 import com.hibernate.houseinfo.domain.DisplayBean;
@@ -898,38 +901,103 @@ public class AgreenmentController {
 	
 	@ResponseBody
 	@RequestMapping({ "/pgzq/export.action" })
-	public boolean export(HttpServletRequest request,
-			HttpServletResponse response, ModelMap model) {
+	public void export(HttpServletRequest request,
+			final HttpServletResponse response, ModelMap model) {
 		try {
-			String viewName  = request.getParameter("viewName");
-			String fileName = request.getParameter("fileName");
+			
+			if(Contanst.lasttime>0){
+				long curtime = new Date().getTime();
+				if(curtime-Contanst.lasttime<3000){
+					System.err.println("return");
+					return ;
+				}else{
+					Contanst.lasttime = new Date().getTime();
+					System.err.println("do");
+				}
+			}else{
+				Contanst.lasttime = new Date().getTime();
+			}
+			final String viewName  = request.getParameter("viewName");
+			final String fileName = request.getParameter("fileName");
 			
 			String field = request.getParameter("field");
 			String value = request.getParameter("value");
-			String sql = "";
-			if(!StringUtils.isBlank(field)&&!StringUtils.isBlank(value)){
-				sql = " and "+field +"='"+value+"'";
-			}
-			OutputStream output = response.getOutputStream();
+			final String sql = "";
+//			if(!StringUtils.isBlank(field)&&!StringUtils.isBlank(value)){
+//				sql = " and "+field +"='"+value+"'";
+//			}
+			
 			response.reset();
 			response.setCharacterEncoding("UTF-8");
 			request.setCharacterEncoding("UTF-8");
-		    response.setContentType("application/octet-stream;charset=utf-8");  
+			response.setContentType("application/vnd.ms-excel;charset=utf-8");
+//		    response.setContentType("application/octet-stream;charset=utf-8");  
 		    response.setHeader("Content-Disposition", "attachment;filename="  
 		            + new String(viewName.getBytes(),"UTF-8") + ".xls");  
 			
 //			response.setHeader("Content-disposition", "attachment; filename=aaa.xls");
 //			response.setContentType("application/vnd.ms-excel;charset=UTF-8");
 //			response.setHeader("Content-disposition","attachment; filename=\""+new String(fileName).getBytes("UTF-8"));
-			ServiceManager.getHouseBasicServce().export(viewName,viewName,output,sql);
-			output.close();
-			return true;
+		    final OutputStream output = response.getOutputStream();
+		    ServiceManager.getHouseBasicServce().export(viewName,viewName,output,sql);
+		    output.flush();// 刷新流  
+		    output.close();// 关闭流  
+			return ;
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error", e.getMessage());
-			return false;
+			return ;
 		}
 	}
 	
+	/**
+	 * 文件存储到远程服务器再下载
+	 * @param request
+	 * @param response
+	 * @param model
+	 */
+	@ResponseBody
+	@RequestMapping({ "/pgzq/exportremote.action" })
+	public void exportremote(HttpServletRequest request,
+			final HttpServletResponse response, ModelMap model) {
+		try {
+			
+			final String viewName  = request.getParameter("viewName");
+			final String fileName = request.getParameter("fileName");
+			
+			String field = request.getParameter("field");
+			String value = request.getParameter("value");
+			final String sql = "";
+//				File f=new File("d:\\kk.xls");  
+//			        try{  
+//			            f.createNewFile();  
+//			            OutputStream os=new FileOutputStream(f);  
+//			            te.exportClassroom(os);  
+//			        }catch(Exception e){  
+//			            e.printStackTrace();  
+//			        }  
+			String path = request.getRealPath("/export");
+			String newfileName = viewName+new Date().getTime()+".xls";
+			
+			path = UploadFileUtils.getDoPath(path);
+			UploadFileUtils.mkDir(path);
+			try {
+				OutputStream out = new FileOutputStream(path+newfileName);
+				ServiceManager.getHouseBasicServce().export(viewName,viewName,out,sql);
+				out.flush();// 刷新流  
+				out.close();// 关闭流  
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+//		    output.flush();// 刷新流  
+//		    output.close();// 关闭流  
+			response.sendRedirect(WebConstConfig.BASE_PATH+"export\\"+newfileName);
+			return ;
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return ;
+		}
+	}
 	
 }
