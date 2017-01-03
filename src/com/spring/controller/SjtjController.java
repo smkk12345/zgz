@@ -245,9 +245,13 @@ public class SjtjController {
             for (int i = 0; i < list0.size(); i++) {
                 result = result + list0.get(i);
             }
+            //已经交房
             Integer yjf = ServiceManager.getHouseBasicServce().getSumHasOthers("1", "");
+            //未交房
             Integer wjf = ServiceManager.getHouseBasicServce().getSumHasOthers("0", "");
+            //当日交房
             Integer jrjf = ServiceManager.getHouseBasicServce().getSumHasOthers("1", DateUtil.getDate(new Date()));
+            
             model.addAttribute("zqy", result);
             model.addAttribute("yjf", yjf);
             model.addAttribute("wjf", wjf);
@@ -340,7 +344,7 @@ public class SjtjController {
         		model.addAttribute("from", from);
         	}
             List<DisplayBean> list = ServiceManager.getHouseBasicServce()
-            		.getDisplayBeanList(" and c.id is not null ", " order by c.time desc,c.indexnum desc ", 0, 0);
+            		.getDisplayBeanList(" and c.id is not null ", " order by c.time,c.indexnum ", 0, 0);
             // 模板路径 basePath
             // 模板路径 basePath
             Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");

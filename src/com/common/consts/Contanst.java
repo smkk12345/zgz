@@ -43,6 +43,10 @@ public class Contanst {
     //**缓存签约情况id
     public static HashSet<String> houseBasicidSet = new HashSet<String>();
     
+    //换成IO操作时间 3秒内点击无效
+    public static long lasttime = 0;
+    
+    
     public static HashMap<String,String> export_TitleMap = new HashMap<String, String>(){{
         put("all", "所有标段全信息表");
         put("people", "所有标段人口信息表");

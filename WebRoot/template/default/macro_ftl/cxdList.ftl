@@ -519,7 +519,7 @@
             <td>${ROW.sectionindex}</td>
             <td>${ROW.section?default("")}</td>
             <td>${ROW.names?default("")}</td>
-            <td>${ROW.mobile?default("")}</td>
+
             <td>${ROW.idcard?default("")}</td>
             <td>
                 <#if (ROW.atype)??>

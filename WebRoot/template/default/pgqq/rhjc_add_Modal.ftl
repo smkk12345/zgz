@@ -23,28 +23,19 @@
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
-                <div class=' aoJianGroup fl' style="width: 240px !important;">
+                <div class=' aoJianGroup fl' >
                     <label class='fl control-label'>房屋坐落:</label>
                     <input type='text'style="width: 240px !important;" class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text' class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
+                    <input type='text'style="width: 200px !important;" class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>身份证:</label>
-                    <input type='text' class='form-control input-sm  ' name='idcard' value="${bean.idcard?default("")}"/>    
+                    <input type='text' style="width: 240px !important;" class='form-control input-sm  ' name='idcard' value="${bean.idcard?default("")}"/>    
                 </div>
-                <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control input-sm fl dmDate' name='mobile' value="${bean.mobile?default("")}"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>联系固话:</label>
-
-                    <input type='text' class='form-control input-sm  ' name='telephone' value="${bean.telephone?default("")}"/>       
-                </div>
-                <div class=' aoJianGroup fl'>      
+               <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>性别:</label>
                     <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='sex' >  
                         <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
@@ -56,6 +47,12 @@
                     <label class='fl control-label'>年龄:</label>
                     <input type='text' class='form-control input-sm fl ' name='age' value="${bean.age?default("")}"/>        
                 </div>
+                <div class=' aoJianGroup fl'>
+                    <label class='fl control-label'>手机:</label>
+                    <input type='text' class='form-control input-sm fl dmDate' name='mobile' value="${bean.mobile?default("")}"/>        
+                </div>
+
+
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>备用联系电话:</label>
                     <input type='text' class='form-control input-sm  ' name='remobile' value="${bean.remobile?default("")}"/>        
@@ -72,18 +69,8 @@
                         <option <#if (bean.ownership?default("-1"))=='4'>selected='selected'</#if> value="4">其他</option> 
                     </select>  
                 </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>房屋间数:</label>
-                    <input type='text' class='form-control input-sm  ' name='housecount' value="${bean.housecount?default("")}"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>本址在册户口簿数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='localbook' value="${bean.localbook?default("")}"/>        
-                </div>
-                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>非本址在册户口簿数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='notlocalbook' value="${bean.notlocalbook?default("")}"/>        
-                </div>
+
+
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>拟被安置人口:</label>
                     <input type='text' class='form-control input-sm  ' name='people' readonly value="${bean.people?default("")}"/>        

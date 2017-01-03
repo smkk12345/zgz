@@ -234,7 +234,7 @@
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1 甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1.1 宅基地腾退补偿款<br/> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?c?default("/")}&nbsp;&nbsp;</u>元。<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?c?default("/")}&nbsp;&nbsp;</u>元。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）控制宅基地区位补偿价<u>&nbsp;&nbsp;${bean.kzzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）超控宅基地区位补偿价<u>&nbsp;&nbsp;${bean.ckzjdqwbcj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>

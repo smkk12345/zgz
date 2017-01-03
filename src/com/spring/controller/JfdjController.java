@@ -130,6 +130,7 @@ public class JfdjController {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and a.section in ("+section+")");
+		sb.append(" and c.id is not null ");
 		sb.append(" and (a.hasothers = ").append(type).append(")");
 		String names = request.getParameter("names");
 		String mobile = request.getParameter("mobile");

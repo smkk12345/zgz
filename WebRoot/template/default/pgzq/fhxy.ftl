@@ -18,18 +18,16 @@
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
 	                </div>
-	            	<div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>顺序号:</label>
-	                    <input type='text' class='form-control input-sm  ' name='indexnum' value="${indexnum?default("")}"/>    
-	                </div>
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>房屋坐落:</label>
 	                    <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}" />
 	                </div>  
 	            	<div class='autoWidthGroup-2 fl '>
-	                    <label class='fl control-label'>身份证号:</label>
-	                    <input type='text' class='form-control input-sm  ' name='idcard' value="${idcard?default("")}" />
-	                </div>  
+	                    <label class='fl control-label'>顺序号:</label>
+	                    <input type='text' class='form-control input-sm  ' name='indexnum' value="${indexnum?default("")}"/>    
+	                </div>
+
+ 
 	                <div class='autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>安置方式:</label>
 	                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='atype' >  
