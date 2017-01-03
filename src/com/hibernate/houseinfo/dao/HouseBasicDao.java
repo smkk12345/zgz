@@ -518,8 +518,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			sb.append(" group by a.section, b.atype order by  (a.section+0) ");
 			Connection c = s.connection();
 			Statement state = c.createStatement();
+			ResultSet rs = state.executeQuery(sb.toString());
 			try {
-				ResultSet rs = state.executeQuery(sb.toString());
 				while (rs.next()) {
 					String qycount = rs.getString("qycount");
 					String section = rs.getString("section");
@@ -535,8 +535,14 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			} catch (Exception e) {
 				// TODO: handle exception
 			}finally{
-				state.close();
-				c.close();
+				try {
+					rs.close();
+					state.close();
+					c.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				
 			}
 //			System.out.println("sql0="+new Date().getTime());
 //			List list0 = s.createSQLQuery(sb.toString()).
@@ -581,8 +587,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			
 			Connection c = s.connection();
 			Statement state = c.createStatement();
+			ResultSet rs = state.executeQuery(sb.toString());
 			try {
-				ResultSet rs = state.executeQuery(sb.toString());
 				while (rs.next()) {
 					String qycount = rs.getString("qycount");
 					String section = rs.getString("section");
@@ -594,8 +600,13 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally{
-				state.close();
-				c.close();
+				try {
+					rs.close();
+					state.close();
+					c.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
 			}
 			
 //			List list0 = s.createSQLQuery(sb.toString()).
@@ -674,14 +685,15 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	public List<String> getFieldFromView(String viewName){
 		List<String> list = new ArrayList<String>();
 		Session s = null;
+		Statement state = null;
+		ResultSet rs = null;
 		try {
 			s = getSession();
 			StringBuffer sb = new StringBuffer();
 			sb.append("SELECT * FROM `"+viewName+"`;");
-			Statement state = s.connection().createStatement();
-			ResultSet rs = state.executeQuery(sb.toString());
+			state = s.connection().createStatement();
+			rs = state.executeQuery(sb.toString());
 			ResultSetMetaData data = rs.getMetaData();
-			
 			for (int j = 0; j < data.getColumnCount(); j++) {
 				list.add(data.getColumnLabel(j+1));
 			}
@@ -689,6 +701,16 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			e.printStackTrace();
 			// TODO: handle exception
 		}finally{
+			try {
+				if(null != rs){
+					rs.close();
+				}
+				if(null != state){
+					state.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 			s.close();
 		}
 		return list;
@@ -710,7 +732,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 //			List<DisplayBean> list = s.createSQLQuery(sb.toString()).addEntity(DisplayBean.class).list();
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return list;
 	}
@@ -732,8 +754,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		Statement state;
 		try {
 			state = c.createStatement();
+			ResultSet rs = state.executeQuery(sb.toString());
 			try {
-				ResultSet rs = state.executeQuery(sb.toString());
 				while (rs.next()) {
 					String section = rs.getString("section");
 					String zjdttzj = rs.getString("zjdttzj");
@@ -745,8 +767,14 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally{
-				state.close();
-				c.close();
+				try {
+					rs.close();
+					state.close();
+					c.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				
 			}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
