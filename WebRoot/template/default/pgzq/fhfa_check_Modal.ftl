@@ -30,7 +30,7 @@
         </div>
 
 
-        <div >
+       <!-- <div >
             <h4><span class="label label-default">一.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10'>
                 <div class=' chkstyle fl'>
@@ -216,7 +216,7 @@
                     <label class='fl control-label'>结算后款:${bean.wwzjlf?default("/")}</label>
                 </div>
             </div>  
-        </div>
+        </div>	 -->
     </div>
 </from>
 <script type = "text/javascript">
