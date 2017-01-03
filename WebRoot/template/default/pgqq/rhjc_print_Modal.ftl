@@ -7,7 +7,7 @@
 </div>
 <div class="modal-body ">
     <div class="container-fluid rhjc-print-con" id="xy-print">
-        <div class="title" style="margin-top: 5px;">张郭庄村宅基地腾退拟定基本信息一览表</div>
+        <div class="title" style="margin-top: 5px;">李家裕村宅基地腾退拟定基本信息一览表</div>
         <div class="leftTitle" style="margin-top: 5px;">1.基本数据录入：&nbsp;</div>
         <div class="contex-1 container-fluid" style="margin-top: 0px;">
             <div class=' rhjc-print-group fl'>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+        <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -149,24 +149,24 @@
         </div>
         <div class="xy-print-con" id="xy-print">
             <p class="title2" style="">北京市宅基地房屋腾退补偿安置协议</p>
-            <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;腾退人：<u>&nbsp;北京市丰台区长辛店镇张郭庄村民委员会&nbsp;</u>（以下简称甲方）
+            <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;腾退人：<u>&nbsp;北京市丰台区长辛店镇李家裕村民委员会&nbsp;</u>（以下简称甲方）
             </p>
             <p class="contex-1" style="margin-top: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>${housebasic.names?default("/")}</u> &nbsp;身份证号：<u> ${housebasic.idcard?default("/")}</u>（以下简称乙方）
             </p>
 
-            <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;依据北京市丰台区长辛店镇人民政府、北京中建方程投资管理有限公司及北京市丰台区长辛店镇张郭庄村民委员会三方签订的《长辛店镇张郭庄村棚户区改造及环境整治项目委托实施腾退协议》相关内容，长辛店镇人民政府是“长辛店镇张郭庄村棚户区改造和环境整治项目”（以下简称本项目）的责任主体，负责指导、协调本项目全面工作；北京中建方程投资管理有限公司是经丰台区人民政府授权，作为本项目的实施主体，负责本项目腾退补偿资金的筹措；北京市丰台区长辛店镇张郭庄村民委员会。作为本项目腾退主体即“腾退人”，负责本项目集体土地腾退范围内涉及宅基地及非住宅的腾退工作；“被腾退人”
+            <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;依据北京市丰台区长辛店镇人民政府、北京中建方程投资管理有限公司及北京市丰台区长辛店镇李家裕村民委员会三方签订的《长辛店镇李家裕村棚户区改造及环境整治项目委托实施腾退协议》相关内容，长辛店镇人民政府是“长辛店镇李家裕村棚户区改造和环境整治项目”（以下简称本项目）的责任主体，负责指导、协调本项目全面工作；北京中建方程投资管理有限公司是经丰台区人民政府授权，作为本项目的实施主体，负责本项目腾退补偿资金的筹措；北京市丰台区长辛店镇李家裕村民委员会。作为本项目腾退主体即“腾退人”，负责本项目集体土地腾退范围内涉及宅基地及非住宅的腾退工作；“被腾退人”
                 是指本项目集体土地腾退范围内，持有宅基地批准文件，或宅基地腾退补偿安置工作组认定的宅基地使用权人及影响宅基地房屋腾退的其它构筑物的所有者，每宗宅基地为一产权院。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;为加快腾退范围内宅基地、非住宅房屋腾退补偿安置工作，本项目采取村民自主腾退方式，腾退方式参照拆迁方式进行实施。经甲、乙双方协商一致，同意按照“安置房补偿的方式”对于权属于乙方的宅基地、房屋及附属物进行房屋腾退补偿安置，达成如下协议：
             </p>
             <p class="left-title">第一条&nbsp;&nbsp;腾退依据</p>
-            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发[2016]27号）、经北京市丰台区长辛店镇张郭庄村民代表大会通过的《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件。
+            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发[2016]27号）、经北京市丰台区长辛店镇李家裕村民代表大会通过的《李家裕村宅基地腾退补偿安置方案》及《李家裕村宅基地腾退补偿安置实施细则》等相关文件。
                 甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>&nbsp;&nbsp;${housebasic.location?default("/")}&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。
             </p>
             <p class="left-title">第二条&nbsp;&nbsp;宅基地认定</p>
             <p class="contex-1">
                 &nbsp;&nbsp;&nbsp;&nbsp;2.1 经受托测绘公司现场实测，现状实测用地面积<u>
                     <#if housebasic.zjdarea??>${housebasic.zjdarea?string("0.00")}<#else>0.00</#if></u>平方米；<br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;2.2 经张郭庄村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
+               &nbsp;&nbsp;&nbsp;&nbsp;2.2 经李家裕村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
                     <u><#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积
                     <u><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积
                     <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。
@@ -184,7 +184,7 @@
             </p>
             <p class="left-title">第四条&nbsp;&nbsp;被安置人口认定</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;经张郭庄村宅基地面积和人口认定工作组认定，认定被安置人口共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
+                &nbsp;&nbsp;&nbsp;&nbsp;经李家裕村宅基地面积和人口认定工作组认定，认定被安置人口共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${housebasic.peoplecount?default("/")}&nbsp;&nbsp;</u>人，分别是：
                 <#if housebasic.vacatelist??>
                 <#if housebasic.vacatelist?size gt 0>
             <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;在册人员：</p>
@@ -212,7 +212,7 @@
 
             <p class="left-title">第五条&nbsp;&nbsp;安置房补偿</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;5.1 依据《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      张郭庄村棚户区改造              定向安置房项目购买定向安置房。
+                &nbsp;&nbsp;&nbsp;&nbsp;5.1 依据《李家裕村宅基地腾退补偿安置方案》及《李家裕村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      李家裕村棚户区改造              定向安置房项目购买定向安置房。
                 乙方“实际选房面积”为<u>&nbsp;&nbsp;<#if bean.sjxfmj??>${bean.sjxfmj?string("0.00")}<#else>0.00</#if> &nbsp;&nbsp;</u>平方米，其中一居室
                     <u>&nbsp;&nbsp;${bean.yjs?c?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;
                     <#assign ljs70 = bean.ljs70?default(0)>
@@ -280,12 +280,12 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;8.4 
                 乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的支付凭证或单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价款领取和定向安置房购房款的支付手续过程中拒绝在相关支付凭证或单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价款的发放。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;8.5 
-                甲方按照乙方签订本协议之日起至定向安置房交房后 <u>4</u>个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  <u>1500</u>元/人/月 ，甲方暂按周转期 <u>40</u>个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《张郭庄村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
+                甲方按照乙方签订本协议之日起至定向安置房交房后 <u>4</u>个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  <u>1500</u>元/人/月 ，甲方暂按周转期 <u>40</u>个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《李家裕村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
             </p>
             <p class="left-title">第九条&nbsp;&nbsp;宅基地腾退补偿总价的支付主体</p>
-            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇张郭庄村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p>
+            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇李家裕村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p>
             <p class="left-title">第十条&nbsp;&nbsp;定向安置房的建设主体</p>
-            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司是丰台区长辛店镇张郭庄村棚户区改造和环境整治项目定向安置房的建设主体，甲乙双方同意由北京中建方程投资管理有限公司依照上述约定的方式向乙方收缴购房款。 </p>
+            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司是丰台区长辛店镇李家裕村棚户区改造和环境整治项目定向安置房的建设主体，甲乙双方同意由北京中建方程投资管理有限公司依照上述约定的方式向乙方收缴购房款。 </p>
             <p class="left-title">第十一条&nbsp;&nbsp;房地权属注销登记</p>
             <p class="contex-1">
                 &nbsp;&nbsp;&nbsp;&nbsp;11.1 
@@ -335,7 +335,7 @@
             <p class="left-title">（签字页）</p>
 
             <p class="contex-1" style="margin-top: 20px;">
-                &nbsp;&nbsp;&nbsp;&nbsp;甲方：北京市丰台区长辛店镇张郭庄村民委员会
+                &nbsp;&nbsp;&nbsp;&nbsp;甲方：北京市丰台区长辛店镇李家裕村民委员会
             </p>
             <br>
             <p class="contex-1" style="margin-top: 20px;">

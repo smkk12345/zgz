@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+        <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -26,7 +26,7 @@
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/CanvasRenderer.js"></script>
         <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/stats.min.js"></script>
         <div class='container-fluid' style="background-color:#000; padding:5px;height:100%">
-            <div style='color:#FFF;font-size:17px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇张郭庄村棚改项目签约排号情况实时公示</div>
+            <div style='color:#FFF;font-size:17px; font-family:"宋体";font-weight:bold;text-align: center;'>长辛店镇李家裕村棚改项目签约排号情况实时公示</div>
             <div style='margin-top: 10px;color:#FFF;font-size:14px; font-family:"宋体";font-weight:bold;text-align: center;'>
                 <table class="table table-bordered " width="100%" border="0" cellspacing="1" cellpadding="10" align="center" bgcolor="#FFFFFF">
                     <tr>

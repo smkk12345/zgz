@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+    <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -33,7 +33,7 @@
     </#if>
 </#if>
     <div style='color:#FFF;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
-        长辛店镇张郭庄村棚户区改造宅基地腾退奖励期启动
+        长辛店镇李家裕村棚户区改造宅基地腾退奖励期启动
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
     <div style='margin-top: 50px;color:red;font-size:40px; font-family:"黑体";font-weight:bold;text-align: center;'>

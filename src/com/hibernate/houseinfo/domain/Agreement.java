@@ -198,7 +198,19 @@ public class Agreement extends BaseBean {
     
     private String kzkxmj;
     
+    private String rdyj;
     
+    
+	public String getRdyj() {
+		return rdyj;
+	}
+
+
+	public void setRdyj(String rdyj) {
+		this.rdyj = rdyj;
+	}
+
+
 	public String getKzkxmj() {
 		return kzkxmj;
 	}

@@ -25,19 +25,19 @@
             <div class='container-fluid con-bg mb10' id="div1">
                 <div class=' aoJianGroup fl' >
                     <label class='fl control-label'>房屋坐落:</label>
-                    <input type='text'style="width: 240px !important;" class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
+                    <input type='text' style="width: 160px;" class='form-control input-sm  ' name='location' value="${bean.location?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>被腾退人姓名:</label>
-                    <input type='text'style="width: 200px !important;" class='form-control input-sm  ' name='names' value="${bean.names?default("")}"/>    
+                    <input type='text' class='form-control input-sm  ' style="width: 160px;" name='names' value="${bean.names?default("")}"/>    
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>身份证:</label>
-                    <input type='text' style="width: 240px !important;" class='form-control input-sm  ' name='idcard' value="${bean.idcard?default("")}"/>    
+                    <input type='text' style="width: 160px " class='form-control input-sm  ' name='idcard' value="${bean.idcard?default("")}"/>    
                 </div>
                <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>性别:</label>
-                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='sex' >  
+                    <select id='sexsel' class='form-control input-sm fl' style='width:160px;' name='sex' >  
                         <option  <#if (bean.sex?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
                         <option  <#if (bean.sex?default("-1"))=='0'>selected='selected'</#if>  value="0">男</option>  
                         <option  <#if (bean.sex?default("-1"))=='1'>selected='selected'</#if> value="1">女</option> 
@@ -45,22 +45,22 @@
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>年龄:</label>
-                    <input type='text' class='form-control input-sm fl ' name='age' value="${bean.age?default("")}"/>        
+                    <input type='text' class='form-control input-sm fl ' style="width: 160px;" name='age' value="${bean.age?default("")}"/>        
                 </div>
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control input-sm fl dmDate' name='mobile' value="${bean.mobile?default("")}"/>        
+                    <input type='text' class='form-control input-sm fl dmDate' style="width: 160px;" name='mobile' value="${bean.mobile?default("")}"/>        
                 </div>
 
 
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>备用联系电话:</label>
-                    <input type='text' class='form-control input-sm  ' name='remobile' value="${bean.remobile?default("")}"/>        
+                    <input type='text' class='form-control input-sm  ' style="width: 160px;" name='remobile' value="${bean.remobile?default("")}"/>        
                 </div>
 
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label'>权属取得方式:</label>
-                    <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='ownership' >  
+                    <select id='sexsel' class='form-control input-sm fl' style="width: 160px;" name='ownership' >  
                         <option <#if (bean.ownership?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
                         <option <#if (bean.ownership?default("-1"))=='0'>selected='selected'</#if> value="0">自有</option>  
                         <option <#if (bean.ownership?default("-1"))=='1'>selected='selected'</#if> value="1">老宅</option> 
@@ -72,32 +72,26 @@
 
 
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>拟被安置人口:</label>
-                    <input type='text' class='form-control input-sm  ' name='people' readonly value="${bean.people?default("")}"/>        
+                    <label class='fl control-label' >拟被安置人口:</label>
+                    <input type='text' class='form-control input-sm  ' style="width: 160px;" name='people' readonly value="${bean.people?default("")}"/>        
                 </div>
                  <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='localpeoplecount' readonly value="${bean.localpeoplecount?default("")}"/>        
+                    <label class='fl control-label' >本址在册户籍数量:</label>
+                    <input type='text' class='form-control input-sm  '  style="width: 160px;" name='localpeoplecount' readonly value="${bean.localpeoplecount?default("")}"/>        
                 </div>
                  <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>非本址在册户籍数量:</label>
-                    <input type='text' class='form-control input-sm  ' name='notlocalpeoplecount' readonly value="${bean.notlocalpeoplecount?default("")}"/>        
+                    <label class='fl control-label' >非本址在册户籍数量:</label>
+                    <input type='text' class='form-control input-sm  ' style="width: 160px;" name='notlocalpeoplecount' readonly value="${bean.notlocalpeoplecount?default("")}"/>        
                 </div>
                   <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>编号:</label>
-                    <input type='text' class='form-control input-sm  ' name='sectionindex' value="${bean.sectionindex?default("")}"/>        
+                    <label class='fl control-label' >编号:</label>
+                    <input type='text' class='form-control input-sm  ' style="width: 160px;" name='sectionindex' value="${bean.sectionindex?default("")}"/>        
                 </div>
                 <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>父母及超生子女姓名:</label>
-                    <input type='text' class='form-control input-sm  ' name='fmjcsznxm' value="${bean.fmjcsznxm?default("")}"/>
+                    <label class='fl control-label' >父母及超生子女姓名:</label>
+                    <input type='text' class='form-control input-sm  ' style="width: 160px;" name='fmjcsznxm' value="${bean.fmjcsznxm?default("")}"/>
                 </div>
-                <div class=' aoJianGroup fl'>
-                    <label class='fl control-label'>货币补偿方式人员选定:</label>
-                    <select id='azrkxx' class='form-control input-sm fl' style='width:120px;' name='azrkxx' >  
-                        <option <#if (bean.azrkxx?default("0"))=='0'>selected='selected'</#if> value="0">推举非安置人员</option>  
-                        <option <#if (bean.azrkxx?default("-1"))=='1'>selected='selected'</#if> value="1">被安置人员</option> 
-                    </select>
-                </div>	
+
                  
             </div>
             <h4><span class="label label-default">2.被腾退房屋户籍登记情况：</span></h4>
@@ -108,14 +102,13 @@
                     </tr>
                     <tr>
                         <th></th>
-                        <th class="center">户主</th>
                         <th class="center">户籍性质</th>
                         <th class="center">姓名</th>
-                        <th class="center">身份证号</th>
+                        <th class="center" style=" width:220px;">身份证号</th>
                         <th class="center">产关</th>
                         <th class="center">性别</th>
                         <th class="center">年齡</th>
-                        <th class="center">婚否</th>
+                        <th class="center">生活状态</th>
                         <th class="center"></th>
                     </tr>
 
@@ -124,21 +117,14 @@
                     <tr class="add-list-1">
                         <td><input type="hidden" class='form-control input-sm ' name='vtype' value="0" style="width: 0px;"/>        </td>
                         <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
-                                <option <#if (vacate.householder?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-                                <option <#if (vacate.householder?default("-1"))=='0'>selected='selected'</#if> value="0">户主</option>  
-                                <option <#if (vacate.householder?default("-1"))=='1'>selected='selected'</#if> value="1">非户主</option> 
-                            </select>
-                        </td>
-                        <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
                                 <option <#if (vacate.householdtype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-                                <option <#if (vacate.householdtype?default("-1"))=='0'>selected='selected'</#if> value="0">居</option>  
-                                <option <#if (vacate.householdtype?default("-1"))=='1'>selected='selected'</#if> value="1">农</option> 
+                                <option <#if (vacate.householdtype?default("-1"))=='0'>selected='selected'</#if> value="0">城镇</option>  
+                                <option <#if (vacate.householdtype?default("-1"))=='1'>selected='selected'</#if> value="1">农业</option> 
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vname' value="${vacate.name?default("")}"/>        </td>
-                        <td><input type='text' class='form-control input-sm  ' name='vidcard' value="${vacate.idcard?default("")}"/>        </td>
+                        <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='vidcard' value="${vacate.idcard?default("")}"/>        </td>
                         <td><input type='text' class='form-control input-sm  ' name='changrelate' value="${vacate.changrelate?default("")}"/>        </td>
                         <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='vsex' >  
@@ -148,13 +134,9 @@
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vage' value="${vacate.age?default("")}"/></td>
-                        <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
-                                <option <#if (vacate.hasmarry?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
-                                <option <#if (vacate.hasmarry?default("-1"))=='0'>selected='selected'</#if> value="0">已婚</option>  
-                                <option <#if (vacate.hasmarry?default("-1"))=='1'>selected='selected'</#if> value="1">未婚</option> 
-                            </select>
-                        </td>
+                        
+                        <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${vacate.hasmarry?default("")}"/>        </td>
+                        
 
                         <td>
                             <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-1');">删除</button>
@@ -165,17 +147,10 @@
                     <tr class="add-list-1">
                         <td><input type="hidden" class='form-control input-sm ' name='vtype' value="0" style="width: 0px;"/>        </td>
                         <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
-                                <option  value="-1">请选择</option>  
-                                <option  value="0">户主</option>  
-                                <option  value="1">非户主</option> 
-                            </select>
-                        </td>
-                        <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
                                 <option  value="-1">请选择</option>  
-                                <option  value="0">居</option>  
-                                <option  value="1">农</option> 
+                                <option  value="0">城镇</option>  
+                                <option  value="1">农业</option> 
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vname' />        </td>
@@ -190,13 +165,8 @@
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vage' /></td>
                         
-                        <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
-                                <option  value="-1">请选择</option>  
-                                <option  value="0">已婚</option>  
-                                <option  value="1">未婚</option> 
-                            </select>
-                        </td>
+                        <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${vacate.hasmarry?default("")}"/>        </td>
+                        
                         <td>
                             <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-1');">删除</button>
                         </td>                        	
@@ -212,14 +182,13 @@
                     </tr>
                     <tr>
                         <th></th>
-                        <th class="center">户主</th>
                         <th class="center">户籍性质</th>
                         <th class="center">姓名</th>
                         <th class="center">身份证号</th>
                         <th class="center">产关</th>
                         <th class="center">性别</th>
                         <th class="center">年齡</th>
-                        <th class="center">婚否</th>
+                        <th class="center">生活状态</th>
                         <th class="center"></th>
                     </tr>
                     <#if bean.list?size gt 0>
@@ -227,17 +196,10 @@
                     <tr class="add-list-2">
                         <td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
                         <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
-                                <option <#if (cate.householder?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-                                <option <#if (cate.householder?default("-1"))=='0'>selected='selected'</#if> value="0">户主</option>  
-                                <option <#if (cate.householder?default("-1"))=='1'>selected='selected'</#if> value="1">非户主</option> 
-                            </select>
-                        </td>
-                        <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
                                 <option <#if (cate.householdtype?default("-1"))=='-1'>selected='selected'</#if> value="-1">请选择</option>  
-                                <option <#if (cate.householdtype?default("-1"))=='0'>selected='selected'</#if> value="0">居</option>  
-                                <option <#if (cate.householdtype?default("-1"))=='1'>selected='selected'</#if> value="1">农</option> 
+                                <option <#if (cate.householdtype?default("-1"))=='0'>selected='selected'</#if> value="0">城镇</option>  
+                                <option <#if (cate.householdtype?default("-1"))=='1'>selected='selected'</#if> value="1">农业</option> 
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vname' value="${cate.name?default("")}"/>        </td>
@@ -252,13 +214,8 @@
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vage' value="${cate.age?default("")}"/></td>
-                        <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
-                                <option <#if (cate.hasmarry?default("-1"))=='-1'>selected='selected'</#if>  value="-1">请选择</option>  
-                                <option <#if (cate.hasmarry?default("-1"))=='0'>selected='selected'</#if> value="0">已婚</option>  
-                                <option <#if (cate.hasmarry?default("-1"))=='1'>selected='selected'</#if> value="1">未婚</option> 
-                            </select>
-                        </td>
+                                <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${vacate.hasmarry?default("")}"/>        </td>
+                        
                         <td>
                             <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
                         </td>
@@ -268,17 +225,10 @@
                     <tr class="add-list-2">
                         <td><input type="hidden" class='form-control input-sm ' name='vtype' value="1" style="width: 0px;"/>        </td>
                         <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householder' >  
-                                <option  value="-1">请选择</option>  
-                                <option  value="0">户主</option>  
-                                <option  value="1">非户主</option> 
-                            </select>
-                        </td>
-                        <td>
                             <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='householdtype' >  
                                 <option  value="-1">请选择</option>  
-                                <option  value="0">居</option>  
-                                <option  value="1">农</option> 
+                                <option  value="0">城镇</option>  
+                                <option  value="1">农业</option> 
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vname' />        </td>
@@ -292,13 +242,8 @@
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vage' />        </td>
-                        <td>
-                            <select id='sexsel' class='form-control input-sm fl' style='width:120px;' name='hasmarry' >  
-                                <option   value="-1">请选择</option>  
-                                <option  value="0">已婚</option>  
-                                <option  value="1">未婚</option> 
-                            </select>
-                        </td>
+                          <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${vacate.hasmarry?default("")}"/>        </td>
+                        
                         <td>
                             <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
                         </td>
@@ -312,38 +257,12 @@
                     </tbody>
                 </table>
             </div>
-            <h4><span class="label label-default">3.面积相关：</span></h4>
-            <div class='container-fluid con-bg mb10' id="div3">	
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>宅基地测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='zjdarea' value="<#if bean.zjdarea??>${bean.zjdarea?c}<#else></#if>"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>房屋测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='fwarea' value="<#if bean.fwarea??>${bean.fwarea?c}<#else></#if>" />        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>首层测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='firstfloorarea' value="<#if bean.firstfloorarea??>${bean.firstfloorarea?c}<#else></#if>"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>二层以上面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="<#if bean.abovetwoarea??>${bean.abovetwoarea?c}<#else></#if>"/>        
-                </div>
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>地下室面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='basement' value="<#if bean.basement??>${bean.basement?c}<#else></#if>"/>        
-                </div>
-                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label'>棚面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='shed' value="<#if bean.shed??>${bean.shed?c}<#else></#if>"/>        
-                </div>
-            </div>
-            <h4><span class="label label-default">4.经营状况：</span></h4>
+            
+            <h4><span class="label label-default">3.经营状况：</span></h4>
             <div class='container-fluid con-bg mb10' id="div4">	
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>经营用房面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='operatearea' value="<#if bean.operatearea??>${bean.operatearea?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' readonly name='operatearea' value="<#if bean.operatearea??>${bean.operatearea?c}<#else></#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label'>工商备案面积:</label>
@@ -400,7 +319,7 @@
                     <input type='text' class='form-control input-sm  ' name='license'   placeholder='执照编号' value="${bean.license?default("")}"/>        
                 </div>
             </div>
-            <h4><span class="label label-default">5.其他，残疾，大病，低保等：</span></h4>
+            <h4><span class="label label-default">4.其他，残疾，大病，低保等：</span></h4>
             <div class='container-fluid con-bg mb10' id="div5">	
                 <table id="table1" class="table">
                     <thead>
@@ -467,7 +386,7 @@
                     </tbody>
                 </table>
             </div>
-            <h4><span class="label label-default">6.备注：</span></h4>
+            <h4><span class="label label-default">5.备注：</span></h4>
             <div class='container-fluid con-bg mb10'>
                 <textarea class="form-control" rows="5" name="remark" placeholder="备注(选填，限1500字)" >${bean.remark?default("")}</textarea>
             </div>

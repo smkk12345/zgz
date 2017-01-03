@@ -605,6 +605,11 @@ public class AgreenmentController {
 			HttpServletResponse response, ModelMap model,Agreement agreenment,HouseBasic housebasic,String housebasicid) {
 		try {
 			housebasic.setId(housebasicid);
+			
+			String azrkxx = request.getParameter("azrkxx");
+			String operatearea = request.getParameter("operatearea");
+			housebasic.setOperatearea(new BigDecimal(Double.parseDouble(operatearea)));
+			housebasic.setAzrkxx(azrkxx);
 			String aid = request.getParameter("aid");
 			if(!StringUtils.isBlank(aid)){
 				agreenment.setId(aid);

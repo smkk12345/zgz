@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+    <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
     <meta charset="UTF-8">
     <!--CSS文件-->
     <link href="/assets/libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">

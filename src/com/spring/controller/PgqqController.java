@@ -364,7 +364,6 @@ public class PgqqController {
 	//被腾退人信息
 	private void initVacatePeople(HttpServletRequest request,
 			HouseBasic housebasic) {
-		String[] householders = request.getParameterValues("householder");
 		String[] householdtype = request.getParameterValues("householdtype");
 		String[] names = request.getParameterValues("vname");
 		String[] idcards = request.getParameterValues("vidcard");
@@ -399,7 +398,6 @@ public class PgqqController {
 			v.setName(names[i]);
 			v.setHousebasicid("");
 			v.setChangrelate(changrelate[i]);
-			v.setHouseholder(householders[i]);
 			v.setHouseholdtype(householdtype[i]);
 			v.setIdcard(idcards[i]);
 			v.setSex(sexs[i]);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>长辛店镇张郭庄村棚改项目签约选房管理系统</title>
+        <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -230,7 +230,7 @@
                 <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;身份证号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
 
-                <p class="contex-1" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据《中华人民共和国城市房地产管理法》、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等相关文件，甲、乙双方在平等、自愿、公平、协商一致的基础上，就定向安置房认购事宜达成如下协议：
+                <p class="contex-1" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据《中华人民共和国城市房地产管理法》、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《李家裕村宅基地腾退补偿安置方案》及《李家裕村宅基地腾退补偿安置实施细则》等相关文件，甲、乙双方在平等、自愿、公平、协商一致的基础上，就定向安置房认购事宜达成如下协议：
                 </p>
                 <p class="leftTitle">第一条&nbsp;&nbsp;房屋基本情况</p>
                 <p class="contex-1">
@@ -249,14 +249,14 @@
                         <u>&nbsp;&nbsp;&nbsp;${bean.ljs85?default(0)}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs85?default(0) gt 0>${bean.ljs85?number*85}<#else>0</#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110&nbsp;&nbsp;&nbsp;</u>平方米三居室
                         <u>&nbsp;&nbsp;&nbsp;${bean.sjs?default(0)}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.sjs?default(0) gt 0>${bean.sjs?number*110}<#else>0</#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房建设地点位于张郭庄村棚户区改造和环境整治项目所指定的定向安置房建设区域（最终以政府相关主管部门审批文件为准）。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房建设地点位于李家裕村棚户区改造和环境整治项目所指定的定向安置房建设区域（最终以政府相关主管部门审批文件为准）。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 本协议下有关面积最终以政府主管部门备案的实测建筑面积为准。
                 </p>
                 <p class="leftTitle">第二条&nbsp;&nbsp;购房标准及售价</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 根据《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《张郭庄村宅基地腾退补偿安置方案》及《张郭庄村宅基地腾退补偿安置实施细则》等文件规定的购房标准为：经腾退补偿安置工作组认定的被安置人口，按人均50平方米确定购房指标；违反国家计划生育政策生育二胎及以上的，父母及其超生的子女按人均45平方米确定购房指标。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 根据《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《李家裕村宅基地腾退补偿安置方案》及《李家裕村宅基地腾退补偿安置实施细则》等文件规定的购房标准为：经腾退补偿安置工作组认定的被安置人口，按人均50平方米确定购房指标；违反国家计划生育政策生育二胎及以上的，父母及其超生的子女按人均45平方米确定购房指标。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2 由于安置房户型设计原因，实际购房面积超过购房指标，每宗宅基地不得超过30平方米；违反计划生育政策的被腾退人，实际购房面积不得超过购房指标20平方米。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3 依据《张郭庄村棚户区改造和环境整治项目宅基地权属、认定人口确认结果一览表》的认定结果，乙方购买定向安置房指标内面积为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3 依据《李家裕村棚户区改造和环境整治项目宅基地权属、认定人口确认结果一览表》的认定结果，乙方购买定向安置房指标内面积为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4 定向安置房售价为4000元/平方米；超过购房指标15平方米以内按照安置售房价即4000元/平方米计算；超过购房指标15—30平方米购房指标的，在安置售房价的基础上上浮50%即6000元/平方米。
                 </p>
                 <p class="leftTitle">第三条&nbsp;&nbsp;房屋价款</p>
@@ -440,12 +440,12 @@
                 <p class="contex-1" style="margin-top:50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人：<u>&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;</u>（身份证号码为：
                         <u>&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;</u>） </p>
 
-                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与北京市丰台区长辛店镇张郭庄村民委员会签订了《北京市宅基地房屋腾退补偿安置协议》，并于（具体时间）
+                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您与北京市丰台区长辛店镇李家裕村民委员会签订了《北京市宅基地房屋腾退补偿安置协议》，并于（具体时间）
                         <u>&nbsp;&nbsp;${bean.displaydate?default("/")}&nbsp;&nbsp;</u>获取到选房顺序号，您的选房顺序号为
                     &nbsp;&nbsp;${bean.indexNumStr?default("/")}&nbsp;&nbsp;</u>号，您是本村第&nbsp;&nbsp;${bean.indexnum?default("/")}&nbsp;&nbsp;</u>
                     个签约的家庭。
                 </p>
-                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人及全体家庭成员已完全知悉并同意《丰台区长辛店镇张郭庄村宅基地腾退补偿实施细则》等相关规定，“以签订腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的选房原则。</p>
+                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人及全体家庭成员已完全知悉并同意《丰台区长辛店镇李家裕村宅基地腾退补偿实施细则》等相关规定，“以签订腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的选房原则。</p>
                 <p class="contex-1" style="margin-top:30px; text-align: right">被腾退人确认签字（按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
                 <p class="contex-1" style="margin-top: 20px;text-align: right;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>

@@ -404,6 +404,14 @@ public class HouseBasicService {
 		h.setLocation(housebasic.getLocation());
 		h.setTelephone(housebasic.getTelephone());
 		h.setMobile(housebasic.getMobile());
+		h.setZjdarea(housebasic.getZjdarea());
+		h.setFwarea(housebasic.getFwarea());
+		h.setFirstfloorarea(housebasic.getFirstfloorarea());
+		h.setAbovetwoarea(housebasic.getAbovetwoarea());
+		h.setBasement(housebasic.getBasement());
+		h.setShed(housebasic.getShed());
+		h.setAzrkxx(housebasic.getAzrkxx());
+		h.setOperatearea(housebasic.getOperatearea());
 		houseBasicDao.update(h);
 	}
 	
