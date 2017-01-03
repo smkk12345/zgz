@@ -7,6 +7,13 @@
             </span></#if>各标段签约情况统计</a>
     </li>
     </#if>
+    
+    <li <#if CURENT_TAB_2 =='yqykxtj'>class="active"</#if>><a href="${BASE_PATH}sjfx/yqykxtj.action">
+            <#if CURENT_TAB_2 =='yqykxtj'><span class="yu-tu-fgsj-active"></span>
+            <#else><span class="yu-tu-fgsj-commen">
+            </span></#if>已签约款项统计</a>
+    </li>
+    
      <!--<#if role.roleAuthority[30]=="2">  
     <li <#if CURENT_TAB_2 =='gbdjftj'>class="active"</#if>><a href="${BASE_PATH}sjfx/gbdjftj.action">
             <#if CURENT_TAB_2 =='gbdjftj'><span class="yu-tu-fgsj-active"></span>

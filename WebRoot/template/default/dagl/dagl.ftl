@@ -54,11 +54,7 @@
                 <th>被腾退人</th>
                 <th>房屋坐落</th>
                 <th>安置方式</th>
-                <th>认定面积</th>
-                <th>认定人口</th>
-                <th>腾退补偿款总和</th>
-                <th>选房购房款</th>
-                <th>结算后款</th>
+                
                 <th>操作</th>
             </tr>
             <#if list?size gt 0>
@@ -79,11 +75,7 @@
 	                    未录入
 	                </#if>
 	            </td>
-	            <td>${ROW.fwbcmj?default("")}</td>
-	            <td>${ROW.rdbazrk?default("")}</td>
-	            <td>${ROW.zjdttzj?default("")}</td>
-	            <td>${ROW.azfgfk?default("")}</td>
-	            <td>${ROW.jshk?default("")}</td>
+
 	            <td>
                     <a href="${BASE_PATH}/photo/uploadType.action?agreementId=${ROW.housebasicid}" target="_blank" class="btn btn-success btn-xs ml10 glyphicon glyphicon-edit"></a>
 	            </td>

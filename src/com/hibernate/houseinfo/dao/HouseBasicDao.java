@@ -784,5 +784,123 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 	}
 	
 	
+//	select  a.zqyhs as '总签约户数',b.fwazqyhs as '房屋安置签约户数',c.hbazqyhs as '货币补偿签约户数'
+//	,d.ttbczj as '腾退补偿款总价(元)',e.fwazttbczj as '房屋安置腾退补偿款总价(元)',f.hbazttbczj as '货币补偿退补偿款总价(元)'
+//	,g.gfk as '购房款(元)',h.jshk as'结算后款(元)',i.rdzjdallarea as '认定宅基地面积' from 
+//
+//	(select count(indexnum) as zqyhs,1 as id  from indexnum) a
+//
+//	left join (select count(id) as fwazqyhs,1 as id   from aznum) b on a.id = b.id
+//
+//	left join (select count(id) as hbazqyhs,1 as id  from hbnum) c on a.id = c.id
+//
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')) d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1') f on a.id=f.id
+	
+	
+//	left join(select sum(b.azfgfk) as gfk,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and b.atype = '0') g on a.id = g.id
+	
+//	left join(select sum(b.jshk) as jshk,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and b.atype = '0') h on a.id = h.id
+//	left join(select sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')) i on a.id = i.id
+	
+	
+	public List<Map<String, String>> getSumKuan() {
+		// TODO Auto-generated method stub
+		List<Map<String, String>> list = new ArrayList<Map<String,String>>();
+		StringBuffer sb = new StringBuffer();
+		sb.append(" select  a.zqyhs ,b.fwazqyhs ,c.hbazqyhs  ");
+		sb.append(" ,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj  ");
+		sb.append(" ,g.gfk ,h.jshk ,i.rdzjdallarea  from  ");
+		sb.append(" (select count(indexnum) as zqyhs,1 as id  from indexnum) a ");
+		sb.append(" left join (select count(id) as fwazqyhs,1 as id   from aznum) b on a.id = b.id ");
+		sb.append(" left join (select count(id) as hbazqyhs,1 as id  from hbnum) c on a.id = c.id ");
+		sb.append("  left join ( ");
+		
+		sb.append(" select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b ");
+		sb.append(" left join housebasic a on a.id = b.housebasicid ");
+		sb.append(" where (b.protocolnumber is not null and b.protocolnumber != '')) d on  a.id = d.id ");
+		
+		sb.append(" left join (select sum(b.zjdttzj) as fwazttbczj,1 as id from agreenment b  ");
+		sb.append(" left join housebasic a on a.id = b.housebasicid ");
+		sb.append(" where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0') e on  a.id = e.id ");
+		sb.append(" left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b  ");
+		sb.append("  left join housebasic a on a.id = b.housebasicid ");
+		sb.append(" where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1') f on a.id=f.id ");
+		sb.append(" left join(select sum(b.azfgfk) as gfk,1 as id from agreenment b  ");
+		sb.append(" left join housebasic a on a.id = b.housebasicid ");
+		sb.append("  where (b.protocolnumber is not null and b.protocolnumber != '') and b.atype = '0') g on a.id = g.id ");
+		sb.append(" left join(select sum(b.jshk) as jshk,1 as id from agreenment b  ");
+		sb.append(" left join housebasic a on a.id = b.housebasicid ");
+		sb.append(" where (b.protocolnumber is not null and b.protocolnumber != '') and b.atype = '0') h on a.id = h.id ");
+		sb.append(" left join(select sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b  ");
+		sb.append(" left join housebasic a on a.id = b.housebasicid ");
+		sb.append(" where (b.protocolnumber is not null and b.protocolnumber != '')) i on a.id = i.id ");
+		
+		Session s = getSession();
+		
+		Connection c = s.connection();
+		Statement state;
+		try {
+			state = c.createStatement();
+			ResultSet rs = state.executeQuery(sb.toString());
+			try {
+				while (rs.next()) {
+					sb.append(" select  a.zqyhs ,b.fwazqyhs ,c.hbazqyhs  ");
+					sb.append(" ,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj  ");
+					sb.append(" ,g.gfk ,h.jshk ,i.rdzjdallarea  from  ");
+					
+					String zqyhs = rs.getString("zqyhs");
+					String fwazqyhs = rs.getString("fwazqyhs");
+					String hbazqyhs = rs.getString("hbazqyhs");
+					String ttbczj = rs.getString("ttbczj");
+					String fwazttbczj = rs.getString("fwazttbczj");
+					String hbazttbczj = rs.getString("hbazttbczj");
+					String gfk = rs.getString("gfk");
+					String jshk = rs.getString("jshk");
+					String rdzjdallarea = rs.getString("rdzjdallarea");
+					
+					Map<String,String> map = new HashMap<String, String>();
+					map.put("zqyhs", zqyhs);
+					map.put("fwazqyhs", fwazqyhs);
+					map.put("hbazqyhs", hbazqyhs);
+					map.put("ttbczj", ttbczj);
+					map.put("fwazttbczj", fwazttbczj);
+					map.put("hbazttbczj", hbazttbczj);
+					map.put("gfk", gfk);
+					map.put("jshk", jshk);
+					map.put("rdzjdallarea", rdzjdallarea);
+					list.add(map);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				try {
+					rs.close();
+					state.close();
+					c.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return list;
+	}
 	
 }

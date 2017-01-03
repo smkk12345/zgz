@@ -447,6 +447,8 @@ public class HouseBasicService {
 		
 	}
 	
-	
+	public List<Map<String, String>> getSumKuan() {
+		return houseBasicDao.getSumKuan();
+	}
     
 }

@@ -178,7 +178,7 @@
                     未录入
                 </#if>
             </td>
-            <td>${ROW.fwbcmj?default("")}</td>
+            <td>${ROW.rdzjdallarea?default("")}</td>
             <td>${ROW.people?default("")}</td>
             <td>${ROW.zjdttzj?default("")}</td>
             <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
@@ -262,8 +262,7 @@
                     未录入
                 </#if>
             </td>
-            <td>${ROW.fwbcmj?default("")}</td>
-            <td>${ROW.rdbazrk?default("")}</td>
+            <td>${ROW.rdzjdallarea?default("")}</td>
             <td>${ROW.zjdttzj?default("")}</td>
             <td>${ROW.azfgfk?default("")}</td>
             <td>${ROW.jshk?default("")}</td>
