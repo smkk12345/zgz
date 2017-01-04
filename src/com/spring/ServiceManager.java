@@ -41,7 +41,6 @@ public class ServiceManager {
     
     private static FileManageService fileManageService;
     
-    private static ThreadPoolTaskExecutor threadPoolTaskExecutor;
     
     
     public static Object getServiceBean(String beanName) {
@@ -64,14 +63,6 @@ public class ServiceManager {
         }
     }
     
-    public static ThreadPoolTaskExecutor getThreadPoolTaskExecutor() {
-        if (threadPoolTaskExecutor == null) {
-        	threadPoolTaskExecutor = (ThreadPoolTaskExecutor) ServiceManager.getServiceBean("threadPoolTaskExecutor");
-            return threadPoolTaskExecutor;
-        } else {
-            return threadPoolTaskExecutor;
-        }
-    }
     public static UserInfoServiceImpl getUserService() {
         if (userInfoServiceImpl == null) {
             userInfoServiceImpl = (UserInfoServiceImpl) ServiceManager.getServiceBean("userServiceImpl");

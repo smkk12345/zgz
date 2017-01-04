@@ -141,12 +141,15 @@ public class HouseBasicService {
 			sum = getSumValue(sum, agreenment.getZjdttbck());
 			//腾退补偿总价
 			double zjdttzj = sum;
-			
-			double jshk = zjdttzj-agreenment.getAzfgfk().doubleValue();
+			if(null !=agreenment.getAzfgfk()){
+				double jshk = zjdttzj-agreenment.getAzfgfk().doubleValue();
+				agreenment.setJshk(new BigDecimal(jshk));
+			}else{
+				agreenment.setJshk(new BigDecimal(zjdttzj));
+			}
 			
 			agreenment.setZzbz(new BigDecimal(zzbz));
 			agreenment.setZjdttzj(new BigDecimal(zjdttzj));
-			agreenment.setJshk(new BigDecimal(jshk));
 			agreenmentDao.update(agreenment);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="cxd"
- 
-context-root="cxd"  id="myeclipse.1477621932277"
+  name="ljy"
+  id="myeclipse.1477621932277"
+  context-root="/"
   j2ee-spec="1.4"
-  archive="cxd.war">
+  archive="ljy.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>

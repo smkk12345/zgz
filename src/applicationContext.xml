@@ -15,7 +15,7 @@
 		<property name="password" value="cxd565656"></property> -->
 		
 		<property name="url"  
-			value="jdbc:mysql://127.0.0.1:3306/1203?useUnicode=true&amp;characterEncoding=utf-8">
+			value="jdbc:mysql://127.0.0.1:3306/cxd_1113?useUnicode=true&amp;characterEncoding=utf-8">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
@@ -43,14 +43,7 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="threadPoolTaskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
-		<property name="corePoolSize" value="10"></property>
-	<property name="maxPoolSize" value="50" />
-	<property name="keepAliveSeconds" value="300"/>
-	<property name="rejectedExecutionHandler">
-			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>
-	</property>
-	</bean>
+
 	<!-- aop测试区代码
 	<bean id="aopTest" class="aop.AopTest"></bean>
 	<bean id="mainExecute" class="aop.MainExecute"></bean>

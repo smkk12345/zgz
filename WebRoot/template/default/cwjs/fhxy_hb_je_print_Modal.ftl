@@ -9,7 +9,7 @@
     <div class="container-fluid fhfa-rdjg-print-con"  id="xy-print" >
        <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 6px !important">
             <tr>
-                <td class=""colspan="11" style="font-weight:bold;" class="center">（李家裕）村宅基地房屋“完全货币”方式金额审查表（ ${bean.section}  ）标段</td>
+                <td class=""colspan="11" style="font-weight:bold;" class="center">（李家峪）村宅基地房屋“完全货币”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>
             <tr>
                 <td class="" colspan="2">被腾退人</td>

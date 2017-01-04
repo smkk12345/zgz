@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
+        <title>长辛店镇李家峪村棚改项目签约选房管理系统</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -32,7 +32,7 @@
             <a href="${BASE_PATH}sjtj/touch.action" class="btn btn-primary glyphicon glyphicon-chevron-left"
                style="position:absolute;left: 20px;top:20px; font-size: 20px;">返回</a>
         </#if>
-            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇李家裕村棚改项目各标段签约情况</div>
+            <div style="text-align: center;font-size:36px;font-weight: bold;">长辛店镇李家峪村棚改项目各标段签约情况</div>
             <div id='currentDate' style='margin-top: 20px;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;'></div>
             <div style='margin-top: 20px;color:#FF0;font-size:20px; font-family:"宋体";font-weight:bold;text-align: center;height:500px'>
                 <div style='float: left;width:50%; height:600px' id="chart1"> </div>

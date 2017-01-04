@@ -12,7 +12,7 @@
 
         <table class="table1" cellpadding="0" cellspacing="0" width="650px;"  border="1">
             <tr>
-                <td class="td_content_1"colspan="10">（   李家裕村 ）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
+                <td class="td_content_1"colspan="10">（   李家峪村 ）村宅基地房屋“安置房补偿”方式金额审查表（ ${bean.section}  ）标段</td>
             </tr>
             <tr>
                 <td class="td_content_1">被腾退人</td>

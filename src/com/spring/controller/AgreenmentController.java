@@ -608,7 +608,11 @@ public class AgreenmentController {
 			
 			String azrkxx = request.getParameter("azrkxx");
 			String operatearea = request.getParameter("operatearea");
-			housebasic.setOperatearea(new BigDecimal(Double.parseDouble(operatearea)));
+			if(StringUtils.isBlank(operatearea)){
+				housebasic.setOperatearea(new BigDecimal(0));
+			}else{
+				housebasic.setOperatearea(new BigDecimal(Double.parseDouble(operatearea)));
+			}
 			housebasic.setAzrkxx(azrkxx);
 			String aid = request.getParameter("aid");
 			if(!StringUtils.isBlank(aid)){

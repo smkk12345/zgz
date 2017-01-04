@@ -24,54 +24,27 @@
       		<label class="control-label" for="remarks">标段信息:</label>
   			<label class="checkbox-inline">
        			<input type="checkbox" id="inlineCheckbox1"  
-       				<#if bean.section?index_of('1')!=-1>
+       				<#if bean.section?index_of('8')!=-1>
        				checked="checked"
        				</#if>
-       			 name="section1" value="1"> 第一标段
+       			 name="section1" value="8"> 第八标段
    			</label>
   	   		<label class="checkbox-inline">
       			<input type="checkbox" 
-      			    <#if bean.section?index_of('2')!=-1>
+      			    <#if bean.section?index_of('9')!=-1>
        				checked="checked"
        				</#if>
-      			name="section2" value="2"> 第二标段
+      			name="section2" value="9"> 第九标段
        		</label>
       		<label class="checkbox-inline">
       			<input type="checkbox" 
-      			    <#if bean.section?index_of('3')!=-1>
+      			    <#if bean.section?index_of('10')!=-1>
        				checked="checked"
        				</#if>
- 				name="section3" value="3"> 第三标段
+ 				name="section3" value="10"> 第十标段
       		</label>
-      		<label class="checkbox-inline">
-       			<input type="checkbox" 
-       			 <#if bean.section?index_of('4')!=-1>
-       				checked="checked"
-       				</#if>
-       			 name="section4" value="4"> 第四标段
-   			</label>
-  	   		<label class="checkbox-inline">
-      			<input type="checkbox"
-      			    <#if bean.section?index_of('5')!=-1>
-       				checked="checked"
-       				</#if> name="section5" value="5"> 第五标段
-       		</label>
-      		<label class="checkbox-inline">
-      			<input type="checkbox" 
-      			    <#if bean.section?index_of('6')!=-1>
-       				checked="checked"
-       				</#if> name="section6" value="6"> 第六标段
-      		</label>
-      		<label class="checkbox-inline">
-      			<input type="checkbox" 
-      			    <#if bean.section?index_of('7')!=-1>
-       				checked="checked"
-       				</#if> name="section7" value="7"> 第七标段
-      		</label>
+      		
        </div>
-       
-
-       
        
         <div class="autoGroup fl"> 
       		<label class="control-label" for="remarks">备注</label>

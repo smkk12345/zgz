@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>长辛店镇李家裕村棚改项目签约选房管理系统</title>
+    <title>长辛店镇李家峪村棚改项目签约选房管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -20,7 +20,7 @@
 </head>
 <body oncontextmenu="return false" style="overflow: hidden" class="sjtj-touch">
 <div class="container-fluid">
-    <div class="title">长辛店镇李家裕村棚户区改造项目多媒体查询系统</div>
+    <div class="title">长辛店镇李家峪村棚户区改造项目多媒体查询系统</div>
     <div class="menu-touch">
         <ul class="row groupMenue">
             <a href="${BASE_PATH}sjtj/chart1_jlq.action?from=touch">
