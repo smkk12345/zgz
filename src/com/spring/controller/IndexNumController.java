@@ -58,7 +58,7 @@ public class IndexNumController {
 			User user = (User)request.getSession().getAttribute("user");
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
 			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
-			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebsicid, "1,2,3,4,5,6,7");
+			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebsicid, "1,2,3,4,5,6,7,8,9,10");
 			if (null == indexNum) {
 				if(!Contanst.houseBasicidSet.contains(housebsicid)){
 					Contanst.houseBasicidSet.add(housebsicid);
