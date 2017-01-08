@@ -12,8 +12,8 @@ public class Contanst {
 
     public static boolean TEM_STOP = false;//系统暂时锁
 
-    public static String AGREENMENT_TYPE_AZ = "BJFC-PG-ZGZ-ZZ?B-ZZAZ-";//BJFC-PG-ZGZ-ZZ1B-ZZAZ-2016-001
-    public static String AGREENMENT_TYPE_HB = "BJFC-PG-ZGZ-ZZ?B-ZZHB-";//BJFC-PG-ZGZ-ZZ1B-ZZHB-2016-001
+    public static String AGREENMENT_TYPE_AZ = "BJFC-PG-LJY-ZZ?B-ZZAZ-";//BJFC-PG-ZGZ-ZZ1B-ZZAZ-2016-001
+    public static String AGREENMENT_TYPE_HB = "BJFC-PG-LJY-ZZ?B-ZZHB-";//BJFC-PG-ZGZ-ZZ1B-ZZHB-2016-001
 
     public static Integer JFRQ = 10;
 
