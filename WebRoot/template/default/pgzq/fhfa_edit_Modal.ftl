@@ -14,6 +14,8 @@
  		<input type="hidden" class='form-control input-sm ' name='zxsbfsw' value="<#if bean.zxsbfsw??>${bean.zxsbfsw?c}<#else></#if>" style="width: 0px;"/>
  		<input type="hidden" class='form-control input-sm ' name='fwjk' value="<#if bean.fwjk??>${bean.fwjk?c}<#else></#if>" style="width: 0px;"/>
  		<input type="hidden" id＝"input_people" class='form-control input-sm ' name='people' value="${housebasic.people}" style="width: 0px;"/>
+
+ 		
         <div class='ml15' >
             <h4><span class="label label-default">1.安置意向选择：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">

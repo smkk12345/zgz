@@ -403,10 +403,10 @@ public class HouseBasicService {
 	public void updateBaseInfo(HouseBasic housebasic) {
 		HouseBasic h = houseBasicDao.getById(housebasic.getId());
 		h.setNames(housebasic.getNames());
-		h.setIdcard(housebasic.getIdcard());
+//		h.setIdcard(housebasic.getIdcard());
 		h.setLocation(housebasic.getLocation());
-		h.setTelephone(housebasic.getTelephone());
-		h.setMobile(housebasic.getMobile());
+//		h.setTelephone(housebasic.getTelephone());
+//		h.setMobile(housebasic.getMobile());
 		h.setZjdarea(housebasic.getZjdarea());
 		h.setFwarea(housebasic.getFwarea());
 		h.setFirstfloorarea(housebasic.getFirstfloorarea());

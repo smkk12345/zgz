@@ -20,6 +20,15 @@
         <input type="hidden" class='form-control input-sm ' name='issplit' value="${issplit}" style="width: 0px;"/>
         <input type="hidden" class='form-control input-sm ' name='islock' value="${islock?default("0")}" style="width: 0px;"/>
         
+         <input type="hidden" class='form-control input-sm ' name='zjdarea' value="${bean.zjdarea?default("0")}" style="width: 0px;"/>
+          <input type="hidden" class='form-control input-sm ' name='fwarea' value="${bean.fwarea?default("0")}" style="width: 0px;"/>
+           <input type="hidden" class='form-control input-sm ' name='firstfloorarea' value="${bean.firstfloorarea?default("0")}" style="width: 0px;"/>
+            <input type="hidden" class='form-control input-sm ' name='abovetwoarea' value="${bean.abovetwoarea?default("0")}" style="width: 0px;"/>
+             <input type="hidden" class='form-control input-sm ' name='basement' value="${bean.basement?default("0")}" style="width: 0px;"/>
+             <input type="hidden" class='form-control input-sm ' name='shed' value="${bean.shed?default("0")}" style="width: 0px;"/>
+        
+
+        
         <div id='aoJianiIndex+'>
             <h4><span class="label label-default">1.基本数据录入：</span></h4>
             <div class='container-fluid con-bg mb10' id="div1">
@@ -214,7 +223,7 @@
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vage' value="${cate.age?default("")}"/></td>
-                                <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${vacate.hasmarry?default("")}"/>        </td>
+                                <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${cate.hasmarry?default("")}"/>        </td>
                         
                         <td>
                             <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
@@ -242,7 +251,7 @@
                             </select>
                         </td>
                         <td><input type='text' class='form-control input-sm  ' name='vage' />        </td>
-                          <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${vacate.hasmarry?default("")}"/>        </td>
+                          <td><input type='text' class='form-control input-sm  ' style=" width:220px;" name='hasmarry' value="${cate.hasmarry?default("")}"/>        </td>
                         
                         <td>
                             <button type="button" class="btn btn-info btn-xs glyphicon glyphicon-remove-sign" onclick="javascript:delthis(this, 'add-list-2');">删除</button>
