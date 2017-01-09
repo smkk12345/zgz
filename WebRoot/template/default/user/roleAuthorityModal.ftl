@@ -165,7 +165,7 @@
           <div class="form-group fl ml10">
                <div class="checkbox fl">
                   <label>
-                      <input type="checkbox" dataIndex=14 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[14]=="2">checked </#if>> 方案审核审计查询
+                      <input type="checkbox" dataIndex=14 name="chkItem" class="subItem_levelOne_1" <#if bean.roleAuthority[14]=="2">checked </#if>> 认定及审计查询
                   </label>
               </div>  
           </div> 

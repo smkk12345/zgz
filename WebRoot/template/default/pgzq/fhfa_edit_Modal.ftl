@@ -53,38 +53,38 @@
             
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">宅基地测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='zjdarea' value="<#if housebasic.zjdarea??>${housebasic.zjdarea?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' name='zjdarea' value="<#if housebasic.zjdarea??>${housebasic.zjdarea?c}<#else>0</#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">房屋测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='fwarea' value="<#if housebasic.fwarea??>${housebasic.fwarea?c}<#else></#if>" />        
+                    <input type='text' class='form-control input-sm  ' name='fwarea' value="<#if housebasic.fwarea??>${housebasic.fwarea?c}<#else>0</#if>" />        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">首层测绘面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='firstfloorarea' value="<#if housebasic.firstfloorarea??>${housebasic.firstfloorarea?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' name='firstfloorarea' value="<#if housebasic.firstfloorarea??>${housebasic.firstfloorarea?c}<#else>0</#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">二层以上面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="<#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' name='abovetwoarea' value="<#if housebasic.abovetwoarea??>${housebasic.abovetwoarea?c}<#else>0</#if>"/>        
                 </div>
                 <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">地下室面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='basement' value="<#if housebasic.basement??>${housebasic.basement?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' name='basement' value="<#if housebasic.basement??>${housebasic.basement?c}<#else>0</#if>"/>        
                 </div>
                  <div class=' aoJianGroup fl'>      
                     <label class='fl control-label' style="width:220px;">棚面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='shed' value="<#if housebasic.shed??>${housebasic.shed?c}<#else></#if>"/>        
+                    <input type='text' class='form-control input-sm  ' name='shed' value="<#if housebasic.shed??>${housebasic.shed?c}<#else>0</#if>"/>        
                 </div>
             </div>             	
             <h4><span class="label label-default">3.认定面积信息：</span></h4>
             <div class='container-fluid con-bg mb10' id="div2">
              <div class=' aoJianGroup fl' >
-                    <label class='fl control-label' style="width:220px;">货币补偿方式人员选定:</label>
+                    <label class='fl control-label' style="width:220px;">认定依据:</label>
                     <select id='rdyj' class='form-control input-sm fl' style="width: 120px;" name='rdyj' >  
                         <option <#if (bean.rdyj?default("0"))=='0'>selected='selected'</#if> value="0">宅基地原始批单</option>  
                         <option <#if (bean.rdyj?default("-1"))=='1'>selected='selected'</#if> value="1">认定小组认定</option> 
-                         <option <#if (bean.rdyj?default("-1"))=='2'>selected='selected'</#if> value="1">翻建表</option> 
-                          <option <#if (bean.rdyj?default("-1"))=='3'>selected='selected'</#if> value="1">其他</option> 
+                         <option <#if (bean.rdyj?default("-1"))=='2'>selected='selected'</#if> value="2">翻建表</option> 
+                          <option <#if (bean.rdyj?default("-1"))=='3'>selected='selected'</#if> value="3">其他</option> 
                     </select>
                 </div>	
                <#-- <div class=' aoJianGroup fl'>
