@@ -9,7 +9,7 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4 class="bold">分户方案审核审计</h4>
+            <h4 class="bold">认定及审计</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
