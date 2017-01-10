@@ -656,6 +656,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			s.close();
 		}
 		return result;
 	}
@@ -676,6 +678,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally{
+			s.close();
 		}
 		return true;
 	}
@@ -733,6 +737,8 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			s.close();
 		}
 		return list;
 	}
@@ -774,7 +780,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				} catch (Exception e2) {
 					e2.printStackTrace();
 				}
-				
+				s.close();
 			}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -895,7 +901,219 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				} catch (Exception e2) {
 					e2.printStackTrace();
 				}
-				
+				s.close();
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return list;
+	}
+	
+//	select  
+//	'-1' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  ) a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')) d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'1' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '1') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='1') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='1') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='1') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'2' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '2') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='2') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='2') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='2') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'3' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '3') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='3') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='3') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='3') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'4' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '4') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='4') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='4') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='4') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'5' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '5') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='5') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='5') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='5') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'6' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '6') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='6') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='6') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='6') f on a.id=f.id
+//	)
+//	union all
+//	(select  
+//	'7' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj 
+//	,e.gfk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from 
+//
+//	(select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '7') a
+//	left join (
+//	select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='7') d on  a.id = d.id
+//	left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='7') e on  a.id = e.id
+//	left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b 
+//	  left join housebasic a on a.id = b.housebasicid
+//	     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='7') f on a.id=f.id
+//	)
+	
+	public List<Map<String, String>> getSumKuan1() {
+		// TODO Auto-generated method stub
+		List<Map<String, String>> list = new ArrayList<Map<String,String>>();
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append(" select '-1' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid   where  b.id is not null ) a  left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a   left join indexnum b on  a.housebasicid = b.housebasicid   where  (a.protocolnumber IS NOT NULL  AND a.protocolnumber != '') and b.id is not null) b on a.id = b.id    left join (  select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join indexnum b on a.housebasicid = b.housebasicid   where  (a.protocolnumber IS NOT NULL  AND a.protocolnumber != '') and b.id is not null and a.atype = '0') c on a.id=c.id      left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join indexnum b on a.housebasicid = b.housebasicid     where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.id is not null and a.atype = '1')d on a.id = d.id ");
+		sb.append(" union all ");
+		sb.append(" select '1' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='1' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='1' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='1' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='1' and a.atype = '1')d on a.id = d.id ");
+		//sb.append(" (select    '1' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '1') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='1') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='1') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='1') f on a.id=f.id) ");
+		sb.append(" union all ");
+		sb.append(" select '2' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='2' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='2' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='2' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='2' and a.atype = '1')d on a.id = d.id ");
+//		sb.append(" (select  '2' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '2') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='2') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='2') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='2') f on a.id=f.id) ");
+		sb.append(" union all ");
+		sb.append(" select '3' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='3' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='3' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='3' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='3' and a.atype = '1')d on a.id = d.id ");
+//		sb.append(" (select  '3' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '3') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='3') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='3') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='3') f on a.id=f.id)");
+		sb.append(" union all ");
+		sb.append(" select '4' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='4' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='4' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='4' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='4' and a.atype = '1')d on a.id = d.id ");
+//		sb.append(" (select  '4' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '4') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='4') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='4') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='4') f on a.id=f.id) ");
+		sb.append(" union all ");
+		sb.append(" select '5' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='5' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='5' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='5' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='5' and a.atype = '1')d on a.id = d.id ");
+//		sb.append(" (select  '5' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '5') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='5') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='5') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='5') f on a.id=f.id) ");
+		sb.append(" union all ");
+		sb.append(" select '6' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='6' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='6' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='6' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='6' and a.atype = '1')d on a.id = d.id ");
+//		sb.append(" (select  '6' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '6') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='6') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='6') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='6') f on a.id=f.id) ");
+		sb.append(" union all ");
+		sb.append(" select '7' as section,ttbczj,fwazttbczj,hbazttbczj,gfk,jshk,zjdttbck,rdzjdallarea,fwarea from (SELECT 1 as id,sum(a.fwarea) as fwarea from housebasic a left join indexnum b on a.id = b.housebasicid where  b.id is not null and a.section='7' ) a left join   (select 1 as id,sum(a.zjdttzj) as ttbczj,sum(a.zjdttbck) as zjdttbck,sum(a.rdzjdallarea) as rdzjdallarea from agreenment a  left join housebasic b on  a.housebasicid = b.id  where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='7' ) b on a.id = b.id    left join (	select 1 as id,sum(a.zjdttzj) as fwazttbczj,sum(a.azfgfk) as gfk,sum(a.jshk) as jshk from agreenment a left join housebasic b on a.housebasicid = b.id    where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='7' and a.atype = '0') c on a.id=c.id        	left join(	select 1 as id ,sum(a.zjdttzj) as hbazttbczj from agreenment a left join housebasic b on a.housebasicid = b.id   where  (a.protocolnumber IS NOT NULL    AND a.protocolnumber != '') and b.section='7' and a.atype = '1')d on a.id = d.id ");
+//		sb.append(" (select  '7' as section,d.ttbczj ,e.fwazttbczj ,f.hbazttbczj ,e.gfk ,e.jshk ,e.zjdttbck ,e.rdzjdallarea ,a.fwarea  from (select 1 as id, sum(fwarea) as fwarea from housebasic  where section = '7') a  left join (  select sum(b.zjdttzj) as ttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid  where (b.protocolnumber is not null and b.protocolnumber != '') and a.section='7') d on  a.id = d.id  left join (select sum(b.zjdttzj) as fwazttbczj,sum(b.azfgfk) as gfk,sum(b.jshk) as jshk,sum(b.zjdttbck) as zjdttbck,sum(b.rdzjdallarea) as rdzjdallarea,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid	where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '0' and a.section='7') e on  a.id = e.id  left join(select sum(b.zjdttzj) as hbazttbczj,1 as id from agreenment b   left join housebasic a on a.id = b.housebasicid     where (b.protocolnumber is not null and b.protocolnumber != '')  and b.atype = '1' and a.section='7') f on a.id=f.id) ");
+		Session s = getSession();
+		Connection c = s.connection();
+		Statement state;
+		try {
+			state = c.createStatement();
+			ResultSet rs = state.executeQuery(sb.toString());
+			try {
+				while (rs.next()) {
+					
+					String section = rs.getString("section");
+					String ttbczj = rs.getString("ttbczj");
+					String fwazttbczj = rs.getString("fwazttbczj");
+					String hbazttbczj = rs.getString("hbazttbczj");
+					String gfk = rs.getString("gfk");
+					String jshk = rs.getString("jshk");
+					String zjdttbck = rs.getString("zjdttbck");
+					String rdzjdallarea = rs.getString("rdzjdallarea");
+					String fwarea = rs.getString("fwarea");
+					
+					Map<String,String> map = new HashMap<String, String>();
+					map.put("section", section);
+					map.put("ttbczj", ttbczj);
+					map.put("fwazttbczj", fwazttbczj);
+					map.put("hbazttbczj", hbazttbczj);
+					map.put("gfk", gfk);
+					map.put("jshk", jshk);
+					map.put("zjdttbck", zjdttbck);
+					map.put("rdzjdallarea", rdzjdallarea);
+					map.put("fwarea", fwarea);
+					list.add(map);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				try {
+					rs.close();
+					state.close();
+					c.close();
+					s.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
 			}
 		} catch (SQLException e1) {
 			e1.printStackTrace();
