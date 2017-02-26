@@ -1,4 +1,4 @@
-<div class="modal-header clearfix">
+﻿<div class="modal-header clearfix">
     <h4 class="modal-title pull-left m0">查看认定结果确认一览表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -40,7 +40,9 @@
                 <td class=""><#if bean.zjdarea??>${bean.zjdarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
                 <td>实测房屋建筑面积</td>
                 <td class="textalign-r"><#if bean.zjdarea??>${bean.fwarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
-                <td colspan="2">经营面积</td>
+                <td colspan="3">
+                <label class="" style=" font-weight:normal"><input class="check-box" type="checkbox"> 单宗经营控制面积 </label>
+            <label class="" style=" font-weight:normal"><input class="check-box" type="checkbox"> 分签单元经营认定面积</label></td>
                 <td colspan="2" class="textalign-c" ><#if bean.operatearea??>${bean.operatearea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
             </tr>
             <tr>
