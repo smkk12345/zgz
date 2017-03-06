@@ -11,7 +11,7 @@
             <tr>
                 <td colspan="10" class="center">
                 
-                    <div class="title">李家峪村棚户区改造项目第${bean.section}标段宅基地权属、安置人口认定结果一览表</div>
+                    <div class="title">张郭庄村棚户区改造项目(李家峪村)第${bean.section}标段宅基地权属、安置人口认定结果一览表</div>
                 </td>
             </tr>
             <tr>
