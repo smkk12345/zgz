@@ -90,6 +90,10 @@ public class DisplayBean extends BaseBean {
 		private String operatename;
 		private String islock;
 		
+		private String cf;
+		private String cfdate;
+		private String bcklq;
+		private String bcklqdate;
 		//协议
 		private Agreement agreenment = new Agreement();
 		//顺序号
@@ -1274,6 +1278,30 @@ public class DisplayBean extends BaseBean {
 		}
 		public void setAzrkxx(String azrkxx) {
 			this.azrkxx = azrkxx;
+		}
+		public String getCf() {
+			return cf;
+		}
+		public void setCf(String cf) {
+			this.cf = cf;
+		}
+		public String getCfdate() {
+			return cfdate;
+		}
+		public void setCfdate(String cfdate) {
+			this.cfdate = cfdate;
+		}
+		public String getBcklq() {
+			return bcklq;
+		}
+		public void setBcklq(String bcklq) {
+			this.bcklq = bcklq;
+		}
+		public String getBcklqdate() {
+			return bcklqdate;
+		}
+		public void setBcklqdate(String bcklqdate) {
+			this.bcklqdate = bcklqdate;
 		}
 		
 		

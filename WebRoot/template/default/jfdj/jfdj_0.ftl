@@ -24,8 +24,8 @@
                     <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
                 </div>
                 <div class='autoWidthGroup-2 fl '>
-                    <label class='fl control-label'>手机:</label>
-                    <input type='text' class='form-control input-sm  ' name='mobile' value="${mobile?default("")}"/>    
+                    <label class='fl control-label'>坐落:</label>
+                    <input type='text' class='form-control input-sm  ' name='location' value="${location?default("")}"/>    
                 </div>
                 <div class='autoWidthGroup-2 fl '>
                     <label class='fl control-label'>身份证号:</label>
@@ -55,7 +55,7 @@
         <#import "../macro_ftl/pager.ftl" as p>
         <#if recordCount??>
         <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="jfdj_0.action" 
-             OtherParameter="names=${names?default('')},mobile=${mobile?default('')},idcard=${idcard?default('')}"/>
+             OtherParameter="names=${names?default('')},location=${location?default('')},idcard=${idcard?default('')}"/>
             </#if>
     </div>
 </ul>

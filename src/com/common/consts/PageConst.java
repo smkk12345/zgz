@@ -62,6 +62,11 @@ public class PageConst {
     public final static String PGZQ_sxh= "/default/pgzq/sxh.ftl";
     public final static String CWJS_01_PRINT_MODEL= "/default/cwjs/cwjs_01_print_Modal.ftl";
     public final static String CWJS_01= "/default/cwjs/cwjs.ftl";
+    
+    public final static String CWJS_bcklq_0= "/default/cwjs/bcklq_0.ftl";
+    public final static String CWJS_bcklq_1= "/default/cwjs/bcklq_1.ftl";
+    
+    
 
     public final static String PGZQ_kbxy_print = "/default/pgzq/kbxyprint";
     public final static String PGZQ_fbxy_print = "/default/pgzq/fbxyprint";
@@ -69,6 +74,9 @@ public class PageConst {
     //
     public final static String JFDJ_DJ_0 = "/default/jfdj/jfdj_0.ftl";
     public final static String JFDJ_DJ_1 = "/default/jfdj/jfdj_1.ftl";
+    public final static String JFDJ_CF_0 = "/default/jfdj/cfdj_0.ftl";
+    public final static String JFDJ_CF_1 = "/default/jfdj/cfdj_1.ftl";
+    
     public final static String SJTJ = "/default/sjtj/sjtj.ftl";
     public final static String SJTJ_TOUCH ="/default/sjtj/sjtj_touch.ftl";
 

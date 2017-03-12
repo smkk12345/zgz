@@ -371,6 +371,23 @@ public class HouseBasicService {
 		houseBasicDao.update(houseBasic);
 	}
 	
+	public void confirmcf(String housebasicid) {
+		// TODO Auto-generated method stub
+		HouseBasic houseBasic = houseBasicDao.getById(housebasicid);
+		houseBasic.setCf("1");
+		houseBasic.setCfdate(DateUtil.DateToString(new Date(),DateStyle.YYYY_MM_DD_HH_MM_SS));
+		houseBasicDao.update(houseBasic);
+	}
+	
+	public void confirmbcklq(String housebasicid) {
+		// TODO Auto-generated method stub
+		HouseBasic houseBasic = houseBasicDao.getById(housebasicid);
+		houseBasic.setBcklq("1");
+		houseBasic.setBcklqdate(DateUtil.DateToString(new Date(),DateStyle.YYYY_MM_DD_HH_MM_SS));
+		houseBasicDao.update(houseBasic);
+	}
+	
+	
 	public List<Integer> getListGroupBySection(String type,String dateStr){
 		return houseBasicDao.getListGroupBySection(type,dateStr);
 	}

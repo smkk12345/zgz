@@ -8,10 +8,10 @@
     </li>
     </#if>
     
-    <li <#if CURENT_TAB_2 =='yqykxtj'>class="active"</#if>><a href="${BASE_PATH}sjfx/yqykxtj.action">
+   <!-- <li <#if CURENT_TAB_2 =='yqykxtj'>class="active"</#if>><a href="${BASE_PATH}sjfx/yqykxtj.action">
             <#if CURENT_TAB_2 =='yqykxtj'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
-            </span></#if>已签约款项统计</a>
+            </span></#if>已签约款项统计</a>-->
     </li>
     
      <!--<#if role.roleAuthority[30]=="2">  
@@ -43,7 +43,7 @@
             </span></#if>审核台账</a>
     </li>
     </#if>-->
-    <li <#if CURENT_TAB_2 =='export'>class="active"</#if>><a href="${BASE_PATH}sjfx/export.action">
+    <!--<li <#if CURENT_TAB_2 =='export'>class="active"</#if>><a href="${BASE_PATH}sjfx/export.action">
             <#if CURENT_TAB_2 =='export'><span class="yu-tu-fgsj-active"></span>
             <#else><span class="yu-tu-fgsj-commen">
             </span></#if>数据导出</a>

@@ -452,7 +452,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 
 	 private List<Integer> objectListToOrganList_new(Map<String,Integer> map) {
 	     List<Integer> allOrganList = new ArrayList<Integer>();
-	     for (int x = 1; x < 8; x++) {
+	     for (int x = 8; x < 11; x++) {
 	    	 if(map.containsKey(""+x)){
 	    		 allOrganList.add(map.get(""+x));
 	    	 }else{

@@ -9,8 +9,8 @@
 <div class="container-fluid rhjc">
     <div class="page-title">
         <ul class="nav nav-pills menu mb10">
-            <li role="presentation" class="active"><a href="${BASE_PATH}jfdj/jfdj_1.action">已交房</a></li>
-            <li role="presentation" ><a href="${BASE_PATH}jfdj/jfdj_0.action">未交房</a></li>
+            <li role="presentation" ><a href="${BASE_PATH}jfdj/cfdj_1.action">已拆房</a></li>
+            <li role="presentation" class="active"><a href="${BASE_PATH}jfdj/cfdj_0.action">未拆房</a></li>
         </ul>
     </div>
     <div class="top-ation mb10 clearfix">
@@ -18,7 +18,7 @@
             <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
         </div>
         <div class="fl">
-            <form  action="${BASE_PATH}/jfdj/jfdj_1.action" accept-charset="UTF-8" method="post" >
+            <form  action="${BASE_PATH}jfdj/jfdj_0.action" accept-charset="UTF-8" method="post" >
                 <div class=' autoWidthGroup-2 fl '>
                     <label class='fl control-label'>被腾退人姓名:</label>
                     <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
@@ -42,20 +42,19 @@
             <th>编号</th>
             <th>标段</th>
             <th>被腾退人</th>
-            <th>手机</th>
             <th>身份证</th>
             <th>安置方式</th>
             <th>房屋坐落</th>
-            <th>房屋间数</th>
+            <th>拆房时间</th>
 
             <th>操作</th>
         </tr>
-        <@JfdjList list pageNo pageSize/>
+        <@CfdjList list pageNo pageSize/>
     </table>
     <div id="yu-pager" class="fl mb20">
         <#import "../macro_ftl/pager.ftl" as p>
         <#if recordCount??>
-        <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="jfdj_1.action" 
+        <@p.pager pageNo=pageNo pageSize=pageSize recordCount=recordCount toURL="jfdj_0.action" 
              OtherParameter="names=${names?default('')},location=${location?default('')},idcard=${idcard?default('')}"/>
             </#if>
     </div>
@@ -131,10 +130,10 @@
                 url: url,
                 dataType: "json",
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    location.href = "${BASE_PATH}" + "/jfdj_1.action";
+                    location.href = "${BASE_PATH}" + "/jfdj/jfdj_1.action";
                 },
                 success: function (response) {
-                    location.href = "${BASE_PATH}" + "/jfdj_1.action";
+                    location.href = "${BASE_PATH}" + "/jfdj/jfdj_1.action";
                 }
             })
         }

@@ -131,5 +131,9 @@
    <property name="gfbz50"></property>
     <property name="gfbz45"></property>
     <property name="azrkxx"></property>
+    <property name="cf"></property>
+    <property name="cfdate"></property>
+    		<property name = "bcklq"></property>
+		<property name = "bcklqdate"></property>
 	</class>
 </hibernate-mapping>

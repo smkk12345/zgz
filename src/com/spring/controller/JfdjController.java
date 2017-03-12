@@ -48,7 +48,7 @@ public class JfdjController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getJfdjSql(role.getSection(),request,"'0' or hasothers is null or hasothers = '' ",model);
+			String sql = getJfdjSql(role.getSection(),request,"'0' or a.hasothers is null or a.hasothers = ''  ",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
 			
@@ -97,7 +97,7 @@ public class JfdjController {
 			
 			int intPageNum = Integer.parseInt(pageNo);
 			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
-			String sql = getJfdjSql(role.getSection(),request,"1",model);
+			String sql = getJfdjSql(role.getSection(),request,"1 ",model);
 			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
 					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
 			
@@ -131,17 +131,19 @@ public class JfdjController {
 		StringBuffer sb = new StringBuffer();
 		sb.append(" and a.section in ("+section+")");
 		sb.append(" and c.id is not null ");
+		sb.append("  and a.checkresult ='1' ");
 		sb.append(" and (a.hasothers = ").append(type).append(")");
 		String names = request.getParameter("names");
-		String mobile = request.getParameter("mobile");
+		String location = request.getParameter("location");
 		String idcard = request.getParameter("idcard");
 		if(!StringUtils.isBlank(names)){
 			sb.append(" and a.names like '%").append(names).append("%'");
 			model.addAttribute("names", names);
 		}
-		if(!StringUtils.isBlank(mobile)){
-			sb.append(" and a.mobile ='").append(mobile).append("'");
-			model.addAttribute("mobile", mobile);
+		if(!StringUtils.isBlank(location)){
+			sb.append(" and a.location like '%").append(location).append("%'");
+//			sb.append(" and a.mobile ='").append(mobile).append("'");
+			model.addAttribute("location", location);
 		}
 		if(!StringUtils.isBlank(idcard)){
 			sb.append(" and a.idcard ='").append(idcard).append("'");
@@ -166,5 +168,147 @@ public class JfdjController {
 			return map;
 		}
 	}
+	
+	/**
+	 * 未拆房
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping({"/jfdj/cfdj_0.action"})
+	public ModelAndView cfdj_0(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			String sql = getCfdjSql(role.getSection(),request,"'0' or a.cf is null or a.cf = '' ",model);
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "JFDJ");
+			model.addAttribute("CURENT_TAB_2", "cfdj");
+			model.addAttribute("CURENT_TAB_3", "cfdj_0");
+
+			return new ModelAndView(PageConst.JFDJ_CF_0, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+
+	/**
+	 * 已交房
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping({"/jfdj/cfdj_1.action"})
+	public ModelAndView cfdj_1(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		try {
+			
+			int intPageSize = Contanst.PAGE_SIZE;
+			String pageNo = request.getParameter("pageNo");
+			if(StringUtils.isEmpty(pageNo)){
+				pageNo = "1";
+			}
+			
+			int intPageNum = Integer.parseInt(pageNo);
+			RoleBean role = (RoleBean)request.getSession().getAttribute("role");
+			String sql = getCfdjSql(role.getSection(),request,"1  ",model);
+			List<DisplayBean> list = ServiceManager.getHouseBasicServce()
+					.getDisplayBeanList(sql,"", (intPageNum - 1) * intPageSize, intPageSize);
+			
+			Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(sql);
+			
+			model.addAttribute("pageSize", intPageSize);
+			model.addAttribute("pageNo", intPageNum);
+			model.addAttribute("recordCount", count);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
+			model.addAttribute("BASE_ASSETS_PATH",
+					WebConstConfig.getBase_Assets_Path());
+			model.addAttribute("BASE_TEMPLATE_DEFAULT_PATH",
+					WebConstConfig.getBase_Template_Default_Path());
+
+			model.addAttribute("CURENT_TAB", "JFDJ");
+			model.addAttribute("CURENT_TAB_2", "cfdj");
+			model.addAttribute("CURENT_TAB_3", "cfdj_1");
+
+			return new ModelAndView(PageConst.JFDJ_CF_1, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			return null;
+		}
+	}
+	
+	private String getCfdjSql(String section,HttpServletRequest request,String type,ModelMap model) {
+		// TODO Auto-generated method stub
+		StringBuffer sb = new StringBuffer();
+		sb.append(" and a.section in ("+section+")");
+		sb.append(" and c.id is not null ");
+		sb.append("  and a.hasothers ='1' ");
+		sb.append(" and (a.cf = ").append(type).append(")");
+		String names = request.getParameter("names");
+		String location = request.getParameter("location");
+		String idcard = request.getParameter("idcard");
+		if(!StringUtils.isBlank(names)){
+			sb.append(" and a.names like '%").append(names).append("%'");
+			model.addAttribute("names", names);
+		}
+		if(!StringUtils.isBlank(location)){
+			sb.append(" and a.location like '%").append(location).append("%'");
+//			sb.append(" and a.mobile ='").append(mobile).append("'");
+			model.addAttribute("location", location);
+		}
+		if(!StringUtils.isBlank(idcard)){
+			sb.append(" and a.idcard ='").append(idcard).append("'");
+			model.addAttribute("idcard", idcard);
+		}
+		return sb.toString();
+	}
+
+	@RequestMapping({"/confirmcf.action"})
+	public Map<String,String> confirmcf(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model) {
+		Map<String,String> map = new HashMap<String, String>();
+		try {
+			String housebasicid = request.getParameter("housebasicid");
+			ServiceManager.getHouseBasicServce().confirmcf(housebasicid);
+			map.put("success", "true");
+			return map;
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+			map.put("success", "false");
+			return map;
+		}
+	}
+	
 	
 }

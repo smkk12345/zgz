@@ -559,6 +559,103 @@
     </#if>
 </#macro>
 
+<!--拆房等级-->
+<#macro CfdjList items  pageNo pageSize>
+    <#if items?size gt 0>
+        <#list items as ROW>
+        <tr id="${ROW.id}">
+            <td>${ROW.sectionindex}</td>
+            <td>${ROW.section?default("")}</td>
+            <td>${ROW.names?default("")}</td>
+
+            <td>${ROW.idcard?default("")}</td>
+            <td>
+                <#if (ROW.atype)??>
+                    <#if ROW.atype?default("0")=="0">
+                        房屋安置
+                    <#else>
+                        货币补偿
+                    </#if>
+                <#else>
+                    未录入
+                </#if>
+            </td>
+            <td>${(ROW.location)!""}</td>
+            <td>${(ROW.cfdate)!""}</td>
+            <td>
+                <#if (ROW.cf)??>
+                    <#if ROW.cf?default("0")=="1">
+                        已经拆房
+                    <#else>
+                        <#if role.roleAuthority[33]=="2">
+                            <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认拆房'
+                                    onclick="confirmcf(this)"
+                                    data-url="${BASE_PATH}confirmcf.action?housebasicid=${ROW.housebasicid}">确认拆房
+                            </button>
+                        </#if>
+                    </#if>
+                <#else>
+                    <#if role.roleAuthority[33]=="2">
+                        <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认拆房'
+                                onclick="confirmcf(this)"
+                                data-url="${BASE_PATH}confirmcf.action?housebasicid=${ROW.housebasicid}">确认拆房
+                        </button>
+                    </#if>
+                </#if>
+            </td>
+        </tr>
+        </#list>
+    </#if>
+</#macro>
+
+<!--补偿款领取-->
+<#macro BcklqList items  pageNo pageSize>
+    <#if items?size gt 0>
+        <#list items as ROW>
+        <tr id="${ROW.id}">
+            <td>${ROW.sectionindex}</td>
+            <td>${ROW.section?default("")}</td>
+            <td>${ROW.names?default("")}</td>
+
+            <td>${ROW.idcard?default("")}</td>
+            <td>
+                <#if (ROW.atype)??>
+                    <#if ROW.atype?default("0")=="0">
+                        房屋安置
+                    <#else>
+                        货币补偿
+                    </#if>
+                <#else>
+                    未录入
+                </#if>
+            </td>
+            <td>${(ROW.location)!""}</td>
+            <td>${(ROW.bcklqdate)!""}</td>
+            <td>
+                <#if (ROW.bcklq)??>
+                    <#if ROW.bcklq?default("0")=="1">
+                        已经领取补偿款
+                    <#else>
+                        <#if role.roleAuthority[33]=="2">
+                            <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认领取补偿款'
+                                    onclick="confirmbcklq(this)"
+                                    data-url="${BASE_PATH}confirmbcklq.action?housebasicid=${ROW.housebasicid}">确认领取补偿款
+                            </button>
+                        </#if>
+                    </#if>
+                <#else>
+                    <#if role.roleAuthority[33]=="2">
+                        <button type="button" class="btn btn-success btn-xs ml10  bold" title='确认领取补偿款'
+                                onclick="confirmbcklq(this)"
+                                data-url="${BASE_PATH}confirmbcklq.action?housebasicid=${ROW.housebasicid}">确认领取补偿款
+                        </button>
+                    </#if>
+                </#if>
+            </td>
+        </tr>
+        </#list>
+    </#if>
+</#macro>
 
 
 <!--签约排号管理-->

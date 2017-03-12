@@ -116,6 +116,11 @@ public class HouseBasic extends BaseBean implements Serializable {
 	private Integer sortnum;
 	//是否二级
 	private String hassplit;//0 未分  1  分过
+	//拆饭
+	private String cf;
+	private String cfdate;
+	private String bcklq;
+	private String bcklqdate;
 	
 	//人数
 	private Integer peoplecount;
@@ -198,6 +203,18 @@ public class HouseBasic extends BaseBean implements Serializable {
 	List<OtherInfo> basicLivingList = new ArrayList<OtherInfo>();
 	//残疾
 	List<OtherInfo> deformityList = new ArrayList<OtherInfo>();
+	public String getCfdate() {
+		return cfdate;
+	}
+	public void setCfdate(String cfdate) {
+		this.cfdate = cfdate;
+	}
+	public String getCf() {
+		return cf;
+	}
+	public void setCf(String cf) {
+		this.cf = cf;
+	}
 	//otherList
 	List<OtherInfo> otherList = new ArrayList<OtherInfo>();
 	
@@ -529,5 +546,17 @@ public class HouseBasic extends BaseBean implements Serializable {
 	}
 	public void setFmjcsznxm(String fmjcsznxm) {
 		this.fmjcsznxm = fmjcsznxm;
+	}
+	public String getBcklq() {
+		return bcklq;
+	}
+	public void setBcklq(String bcklq) {
+		this.bcklq = bcklq;
+	}
+	public String getBcklqdate() {
+		return bcklqdate;
+	}
+	public void setBcklqdate(String bcklqdate) {
+		this.bcklqdate = bcklqdate;
 	}
 }

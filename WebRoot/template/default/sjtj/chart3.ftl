@@ -126,7 +126,7 @@
                             text: ''
                             },
                             xAxis: {
-                            categories: ['1标段', '2标段', '3标段', '4标段', "5标段", '6标段', '7标段']
+                            categories: ['8标段', '9标段', '10标段']
                             },
                             yAxis: {
                             allowDecimals: false,

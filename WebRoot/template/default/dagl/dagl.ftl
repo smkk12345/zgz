@@ -9,7 +9,7 @@
 <div class="container-fluid rhjc">
     <ul class="nav nav-pills menu mb5 clearfix">
         <div class="page-title">
-            <h4 class="bold">财务结算</h4>
+            <h4 class="bold">档案管理</h4>
         </div>
         <div class="top-ation mb10 clearfix">
             <div class="fl">
@@ -77,7 +77,10 @@
 	            </td>
 
 	            <td>
-                    <a href="${BASE_PATH}/photo/uploadType.action?agreementId=${ROW.housebasicid}" target="_blank" class="btn btn-success btn-xs ml10 glyphicon glyphicon-edit"></a>
+	            <button type="button"
+                                    class="btn btn-success btn-xs ml10 YL-ModalClick glyphicon glyphicon-edit"
+                                    data-url="${BASE_PATH}dagl/dagl_model.action?housebasicid=${ROW.id}"></button>
+                    <!--<a href="${BASE_PATH}/photo/uploadType.action?agreementId=${ROW.housebasicid}"  class="btn btn-success btn-xs ml10 glyphicon glyphicon-edit"></a>-->
 	            </td>
 	        </tr>
 	        </#list>
