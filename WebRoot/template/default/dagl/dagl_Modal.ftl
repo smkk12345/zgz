@@ -12,7 +12,7 @@
                 <input id="cxdfile" style="width:200px;" type="file" name="cxdfile">    
             </div>
 		</form>
-		 <button   class=" fl control-label btn btn-primary btn-save" onclick="submitfile()">上传1</button>    
+		 <button   class=" fl control-label btn btn-primary btn-save" onclick="submitfile()">上传</button>    
 		 <table id="fileTable" class="table">
             <tr>
                 <td colspan="12" style="text-align: center;font-weight: bold">档案列表</td>

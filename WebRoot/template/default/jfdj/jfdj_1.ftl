@@ -42,13 +42,14 @@
             <th>编号</th>
             <th>标段</th>
             <th>被腾退人</th>
-            <th>手机</th>
+
             <th>身份证</th>
             <th>安置方式</th>
             <th>房屋坐落</th>
-            <th>房屋间数</th>
+          <!--<th>交房时间</th>-->
 
-            <th>操作</th>
+
+            <th>状态</th>
         </tr>
         <@JfdjList list pageNo pageSize/>
     </table>

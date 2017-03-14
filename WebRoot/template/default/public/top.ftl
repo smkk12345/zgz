@@ -24,7 +24,7 @@
                     	<#else>
                     		href="${BASE_PATH}jfdj/jfdj_0.action"
                     	</#if>
-                    	>交房信息管理</a></li>  
+                    	>交房拆房管理</a></li>  
                     </#if>
                     <#if role.roleAuthority[18]=="2">
                     	<li><a <#if CURENT_TAB == 'SJTJ'>class="active"</#if> 
@@ -36,11 +36,11 @@
                     		href="${BASE_PATH}dzdt/bd1.action"
                     	>电子地图</a></li>  
                     </#if> -->
-                     <#if role.roleAuthority[28]=="2">
+                     <!--<#if role.roleAuthority[28]=="2">
                     	<li><a <#if CURENT_TAB == 'SJFX'>class="active"</#if> 
                     		href="${BASE_PATH}sjfx/gbdqytj.action"
                     	>数据统计</a></li>  
-                    </#if>         
+                    </#if> -->         
                     <#if role.roleAuthority[14]=="2">
                     	<li><a <#if CURENT_TAB == 'CWJS'>class="active"</#if> 
                     		href="${BASE_PATH}cwjs/cwjs.action"

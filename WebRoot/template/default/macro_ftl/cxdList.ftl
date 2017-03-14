@@ -532,7 +532,7 @@
                 </#if>
             </td>
             <td>${(ROW.location)!""}</td>
-            <td>${(ROW.housecount)!""}</td>
+
             <td>
                 <#if (ROW.hasothers)??>
                     <#if ROW.hasothers?default("0")=="1">

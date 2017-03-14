@@ -47,7 +47,7 @@
             <th>房屋坐落</th>
             <th>领取时间</th>
 
-            <th>操作</th>
+            <th>状态</th>
         </tr>
         <@BcklqList list pageNo pageSize/>
     </table>
