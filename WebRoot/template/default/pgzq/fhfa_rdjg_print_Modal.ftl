@@ -46,7 +46,7 @@
                 <td colspan="2" class="textalign-c" ><#if bean.operatearea??>${bean.operatearea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
             </tr>
             <tr>
-                <td colspan="2">被腾退人拟定选择补偿方式</td>
+                <td colspan="2">被腾退人拟选择补偿方式</td>
                 <td style="">
                 <#if agreenment.atype=='0'>
                     &nbsp;&nbsp;安置房补偿方式&nbsp;&nbsp;
