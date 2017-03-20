@@ -27,7 +27,7 @@
 	        <#list list as vo>
 	       
 	        <tr id="${vo.id}">
-	            <td><a href="${BASE_PATH}upload/${vo.path}">${vo.filename?default("")}</a></td>
+	            <td><a href="${BASE_PATH}upload/${vo.path}" target="_blank">${vo.filename?default("")}</a></td>
 	            <td>${vo.sufffix?default("")}</td>
 	            <td>${vo.updateTime?default("")}</td>
 	            <td><button type="button" class="btn btn-warning btn-xs ml10 glyphicon glyphicon-remove-circle delfilebtn"

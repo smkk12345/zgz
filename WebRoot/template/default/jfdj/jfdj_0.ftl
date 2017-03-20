@@ -45,8 +45,6 @@
             <th>身份证</th>
             <th>安置方式</th>
             <th>房屋坐落</th>
-
-
             <th>操作</th>
         </tr>
         <@JfdjList list pageNo pageSize/>

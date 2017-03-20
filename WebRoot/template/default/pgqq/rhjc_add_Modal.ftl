@@ -26,6 +26,7 @@
             <input type="hidden" class='form-control input-sm ' name='abovetwoarea' value="${bean.abovetwoarea?default("0")}" style="width: 0px;"/>
              <input type="hidden" class='form-control input-sm ' name='basement' value="${bean.basement?default("0")}" style="width: 0px;"/>
              <input type="hidden" class='form-control input-sm ' name='shed' value="${bean.shed?default("0")}" style="width: 0px;"/>
+             <input type="hidden" class='form-control input-sm ' name='azrkxx' value="${bean.azrkxx?default("0")}" style="width: 0px;"/>
         
 
         

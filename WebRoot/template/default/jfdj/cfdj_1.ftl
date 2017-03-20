@@ -9,7 +9,7 @@
 <div class="container-fluid rhjc">
     <div class="page-title">
         <ul class="nav nav-pills menu mb10">
-            <li role="presentation" ><a href="${BASE_PATH}jfdj/cfdj_1.action">已拆房</a></li>
+            <li role="presentation" ><a href="${BASE_PATH}jfdj/cfdj_0.action">已拆房</a></li>
             <li role="presentation" class="active"><a href="${BASE_PATH}jfdj/cfdj_0.action">未拆房</a></li>
         </ul>
     </div>
@@ -45,7 +45,7 @@
             <th>身份证</th>
             <th>安置方式</th>
             <th>房屋坐落</th>
-            <th>拆房时间</th>
+           <th>交房时间</th>
 
             <th>操作</th>
         </tr>

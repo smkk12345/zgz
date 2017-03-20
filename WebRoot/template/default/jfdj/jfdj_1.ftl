@@ -46,9 +46,7 @@
             <th>身份证</th>
             <th>安置方式</th>
             <th>房屋坐落</th>
-          <!--<th>交房时间</th>-->
-
-
+          	<th>交房时间</th>
             <th>状态</th>
         </tr>
         <@JfdjList list pageNo pageSize/>

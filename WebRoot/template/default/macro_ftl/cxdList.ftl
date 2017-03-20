@@ -532,7 +532,11 @@
                 </#if>
             </td>
             <td>${(ROW.location)!""}</td>
-
+			<#if (ROW.hasothers)??>
+                    <#if ROW.hasothers?default("0")=="1">
+                    <td>${(ROW.jfDate)!""}</td>
+                    </#if>
+             </#if>
             <td>
                 <#if (ROW.hasothers)??>
                     <#if ROW.hasothers?default("0")=="1">
@@ -581,7 +585,11 @@
                 </#if>
             </td>
             <td>${(ROW.location)!""}</td>
-            <td>${(ROW.cfdate)!""}</td>
+            <#if (ROW.cf)??>
+                <#if ROW.cf?default("0")=="1">
+                	<td>${(ROW.cfdate)!""}</td>
+                </#if>
+            </#if>
             <td>
                 <#if (ROW.cf)??>
                     <#if ROW.cf?default("0")=="1">
@@ -630,7 +638,11 @@
                 </#if>
             </td>
             <td>${(ROW.location)!""}</td>
-            <td>${(ROW.bcklqdate)!""}</td>
+            <#if (ROW.bcklq)??>
+                <#if ROW.bcklq?default("0")=="1">
+        			<td>${(ROW.bcklqdate)!""}</td>
+        		</#if>
+            </#if>
             <td>
                 <#if (ROW.bcklq)??>
                     <#if ROW.bcklq?default("0")=="1">

@@ -149,7 +149,8 @@ public class SjtjController {
         	if(!StringUtils.isBlank(from)){
         		model.addAttribute("from", from);
         	}
-            Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
+//            Integer count = ServiceManager.getHouseBasicServce().getCount(request, " and  b.id IS NOT NULL ");
+            Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(" and  b.id IS NOT NULL ");
             List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
             double result = 0.00;
             if (count > 0 && null != list && list.size() > 0) {

@@ -16,7 +16,7 @@
 <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
             </div>
             <div class="fl">
-              <form  action="${BASE_PATH}cwjs/cwjs.action" accept-charset="UTF-8" method="post" >
+              <form  action="${BASE_PATH}dagl/list.action" accept-charset="UTF-8" method="post" >
 	            	<div class=' autoWidthGroup-2 fl '>
 	                    <label class='fl control-label'>被腾退人:</label>
 	                    <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   

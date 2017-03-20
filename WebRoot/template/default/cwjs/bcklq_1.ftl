@@ -9,7 +9,7 @@
 <div class="container-fluid rhjc">
     <div class="page-title">
         <ul class="nav nav-pills menu mb10">
-            <li role="presentation" class="active"><a href="${BASE_PATH}bcklq/bcklq_1.action">已领取补偿款</a></li>
+            <li role="presentation" class="active"><a href="${BASE_PATH}cwjs/bcklq_1.action">已领取补偿款</a></li>
             <li role="presentation" ><a href="${BASE_PATH}bcklq/bcklq_0.action">未领取补偿款</a></li>
         </ul>
     </div>
@@ -18,7 +18,7 @@
             <!--                <button class="btn btn-primary btn-xs glyphicon glyphicon-export">导出</button>-->
         </div>
         <div class="fl">
-            <form  action="${BASE_PATH}jfdj/jfdj_0.action" accept-charset="UTF-8" method="post" >
+            <form  action="${BASE_PATH}bcklq/bcklq_1.action" accept-charset="UTF-8" method="post" >
                 <div class=' autoWidthGroup-2 fl '>
                     <label class='fl control-label'>被腾退人姓名:</label>
                     <input type='text' class='form-control input-sm  ' name='names' value="${names?default("")}"/>   
