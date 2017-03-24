@@ -1,4 +1,11 @@
-﻿<div class="modal-header clearfix">
+﻿<style>
+	checkbox{
+	width:8px;
+	height:8px;
+	margin:0 auto;
+}
+</style>
+<div class="modal-header clearfix">
     <h4 class="modal-title pull-left m0">查看认定结果确认一览表</h4>
     <div class="fr">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -175,17 +182,21 @@
             <tr>
                 <td colspan="3">认定序号</td>
                 <td>认定安置<br>人员姓名</td>
-                <td colspan="2">与被腾退人关系</td>
+                <td colspan="1">产关</td>
+                <td colspan="3">安置状况</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>
             </tr>
      <#if bean.vacatelist??>
-        <#if bean.vacatelist?size lt 16>
+        <#if bean.vacatelist?size lt 13>
             <#if bean.vacatelist?size lt 1>
                     <tr>
                         <td colspan="3">本址1</td>
                         <td></td>
-                        <td colspan="2"></td>
-                        <td colspan="4" rowspan="15"></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
+                        <td colspan="4" rowspan="12"></td>
                     </tr>
 
             <#else>
@@ -194,23 +205,32 @@
                         <tr>
                             <td colspan="3">本址${vacate_index+1}</td>
                             <td>${vacate.name?default("")}</td>
-                            <td colspan="2">${vacate.changrelate?default("")}</td>
-                            <td colspan="4" rowspan="15"></td>
+                            <td colspan="1">${vacate.changrelate?default("")}</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;"  type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>                         
+                            <td colspan="4" rowspan="12"></td>
                         </tr>
                     <#else>
                         <tr>
                             <td colspan="3">本址${vacate_index+1}</td>
                             <td>${vacate.name?default("")}</td>
-                            <td colspan="2">${vacate.changrelate?default("")}</td>
+                            <td colspan="1">${vacate.changrelate?default("")}</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
                         </tr>
                     </#if>
                 </#list>
             </#if>
-            <#list 1..(15-bean.vacatelist?size) as t>
+            <#list 1..(12-bean.vacatelist?size) as t>
                 <tr>
                     <td colspan="3">本址${bean.vacatelist?size+t_index+1}</td>
                     <td></td>
-                    <td colspan="2"></td>
+                    <td colspan="1"></td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
                 </tr>
             </#list>
         <#else>
@@ -219,14 +239,20 @@
                     <tr>
                         <td colspan="3">本址${vacate_index+1}</td>
                         <td>${vacate.name?default("")}</td>
-                        <td colspan="2">${vacate.changrelate?default("")}</td>
+                        <td colspan="1">${vacate.changrelate?default("")}</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
                         <td colspan="4" rowspan="${bean.vacatelist?size}"></td>
                     </tr>
                 <#else>
                     <tr>
                         <td colspan="3">本址${vacate_index+1}</td>
                         <td>${vacate.name?default("")}</td>
-                        <td colspan="2">${vacate.changrelate?default("")}</td>
+                        <td colspan="1">${vacate.changrelate?default("")}</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
                     </tr>
                 </#if>
             </#list>
@@ -234,19 +260,25 @@
 
 
      <#else>
-         <#list 1..15 as t>
+         <#list 1..12 as t>
              <#if t_index == 1>
                  <tr>
                      <td colspan="3">本址${t_index+1}</td>
                      <td></td>
-                     <td colspan="2"></td>
-                     <td colspan="4" rowspan="15"></td>
+                     <td colspan="1"></td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
+                     <td colspan="4" rowspan="12"></td>
                  </tr>
              <#else>
                  <tr>
                      <td colspan="3">本址${t_index+1}</td>
                      <td>${vacate.name?default("")}</td>
-                     <td colspan="2"></td>
+                     <td colspan="1"></td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                        <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                        <td colspan="1"></td>
                  </tr>
              </#if>
          </#list>
@@ -256,9 +288,12 @@
                 <td>
                 <#if bean.list?size gt 0>${bean.list[0].name?default("")}</#if>
                 </td>
-                <td colspan="2">
+                <td colspan="1">
                 <#if bean.list?size gt 0>${bean.list[0].changrelate?default("")}</#if>
                 </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
                 <td rowspan="2" colspan="4">
                     被腾退人特别保证如下：<br>
                     我本人完全知悉补偿方案和认定程序，对上述确认各项结果均无异议。
@@ -269,18 +304,24 @@
                 <td>
                 <#if bean.list?size gt 1> ${bean.list[1].name?default("")}</#if>
                 </td>
-                <td colspan="2">
+                <td colspan="1">
                 <#if bean.list?size gt 1>${bean.list[1].changrelate?default("")}</#if>
                 </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
             </tr>
             <tr>
                 <td colspan="3">非本址3</td>
                 <td>
                 <#if bean.list?size gt 2>${bean.list[2].name?default("")}</#if>
                 </td>
-                <td colspan="2">
+                <td colspan="1">
                 <#if bean.list?size gt 2>${bean.list[2].changrelate?default("")}</#if>
                 </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
                 <td rowspan="2" colspan="4" style="text-align: left;">签字（按指纹）</td>
             </tr>
             <tr>
@@ -288,20 +329,65 @@
                 <td>
                 <#if bean.list?size gt 3>${bean.list[3].name?default("")}</#if>
                 </td>
-                <td colspan="2">
+                <td colspan="1">
                 <#if bean.list?size gt 3> ${bean.list[3].changrelate?default("")}</#if>
                 </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
             </tr>
             <tr>
                 <td colspan="3">非本址5</td>
                 <td>
                 <#if bean.list?size gt 4> ${bean.list[4].name?default("")}</#if>
                 </td>
-                <td colspan="2">
+                <td colspan="1">
                 <#if bean.list?size gt 4> ${bean.list[4].changrelate?default("")}</#if>
                 </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
                 <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
             </tr>
+            <tr>
+                <td colspan="3">非本址6</td>
+                <td>
+                <#if bean.list?size gt 5> ${bean.list[5].name?default("")}</#if>
+                </td>
+                <td colspan="1">
+                <#if bean.list?size gt 5> ${bean.list[5].changrelate?default("")}</#if>
+                </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
+                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+            </tr>
+            <tr>
+                <td colspan="3">非本址7</td>
+                <td>
+                <#if bean.list?size gt 6> ${bean.list[6].name?default("")}</#if>
+                </td>
+                <td colspan="1">
+                <#if bean.list?size gt 6> ${bean.list[6].changrelate?default("")}</#if>
+                </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
+                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+            </tr>
+            <tr>
+                <td colspan="3">非本址8</td>
+                <td>
+                <#if bean.list?size gt 7> ${bean.list[7].name?default("")}</#if>
+                </td>
+                <td colspan="1">
+                <#if bean.list?size gt 7> ${bean.list[7].changrelate?default("")}</#if>
+                </td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
+                <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
+                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+            </tr>                                    
         </table>
     </div>
 </div>
