@@ -211,8 +211,13 @@
             <div class='container-fluid con-bg mb10' id="div4">
                 <div class=' aoJianGroup fl'>
                     <label class='fl control-label' style="width:220px;">评估方:</label>
-                    <input type='text' class='form-control input-sm  ' name='pgjg'  readonly title='<#if housebasic.section??><#if housebasic.section == '1' >北京兴庆房地产土地评估有限公司<#elseif housebasic.section == '2' >北京中建华房地产土地评估有限责任公司<#elseif housebasic.section == '3' >北京龙泰房地产评估有限责任公司<#elseif housebasic.section == '4' >北京大地盛业房地产土地评估有限公司<#elseif housebasic.section == '5' >北京建亚恒泰房地产评估有限公司<#elseif housebasic.section == '6' >北京奥隆房地产评估有限责任公司<#elseif housebasic.section == '7' >北京中资房地产土地评估有限公司</#if><#else>请输入评估方名称</#if>' 
+                   <!-- <input type='text' class='form-control input-sm  ' name='pgjg'  readonly title='<#if housebasic.section??><#if housebasic.section == '1' >北京兴庆房地产土地评估有限公司<#elseif housebasic.section == '2' >北京中建华房地产土地评估有限责任公司<#elseif housebasic.section == '3' >北京龙泰房地产评估有限责任公司<#elseif housebasic.section == '4' >北京大地盛业房地产土地评估有限公司<#elseif housebasic.section == '5' >北京建亚恒泰房地产评估有限公司<#elseif housebasic.section == '6' >北京奥隆房地产评估有限责任公司<#elseif housebasic.section == '7' >北京中资房地产土地评估有限公司</#if><#else>请输入评估方名称</#if>' 
                            value="<#if housebasic.section??><#if housebasic.section == '1' >北京兴庆房地产土地评估有限公司<#elseif housebasic.section == '2' >北京中建华房地产土地评估有限责任公司<#elseif housebasic.section == '3' >北京龙泰房地产评估有限责任公司<#elseif housebasic.section == '4' >北京大地盛业房地产土地评估有限公司<#elseif housebasic.section == '5' >北京建亚恒泰房地产评估有限公司<#elseif housebasic.section == '6' >北京奥隆房地产评估有限责任公司<#elseif housebasic.section == '7' >北京中资房地产土地评估有限公司</#if><#else>请输入评估方名称</#if>" />  
+                   -->
+                    <input type='text' class='form-control input-sm  ' name='pgjg'  readonly title='<#if housebasic.section??><#if housebasic.section == '8' >北京华信房地产土地评估有限公司<#elseif housebasic.section == '9' >北京仁达房地产土地评估有限责任公司<#elseif housebasic.section == '10' >中财宝信(北京)房地产评估有限责任公司</#if><#else>请输入评估方名称</#if>' 
+                           value="<#if housebasic.section??><#if housebasic.section == '8' >北京华信房地产土地评估有限公司<#elseif housebasic.section == '9' >北京仁达房地产土地评估有限责任公司<#elseif housebasic.section == '10' >中财宝信(北京)房地产评估有限责任公司</#if><#else>请输入评估方名称</#if>" />  
+                             
+                   
                 </div>
                 <!--<div class=' aoJianGroup fl' >
                     <label class='fl control-label' style="150px !important">是否满足不足200平米补助200平米:</label>

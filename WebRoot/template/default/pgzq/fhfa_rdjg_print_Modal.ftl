@@ -196,7 +196,7 @@
                         <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                         <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                         <td colspan="1"></td>
-                        <td colspan="4" rowspan="12"></td>
+                        <td colspan="4" rowspan="15"></td>
                     </tr>
 
             <#else>
@@ -209,7 +209,7 @@
                         <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;"  type="checkbox">未安置</td>
                         <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                         <td colspan="1"></td>                         
-                            <td colspan="4" rowspan="12"></td>
+                            <td colspan="4" rowspan="15"></td>
                         </tr>
                     <#else>
                         <tr>
@@ -269,7 +269,7 @@
                         <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                         <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                         <td colspan="1"></td>
-                     <td colspan="4" rowspan="12"></td>
+                        <td colspan="4" rowspan="15"></td>
                  </tr>
              <#else>
                  <tr>
@@ -294,10 +294,6 @@
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
-                <td rowspan="2" colspan="4">
-                    被腾退人特别保证如下：<br>
-                    我本人完全知悉补偿方案和认定程序，对上述确认各项结果均无异议。
-                </td>
             </tr>
             <tr>
                 <td colspan="3">非本址2</td>
@@ -322,7 +318,7 @@
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
-                <td rowspan="2" colspan="4" style="text-align: left;">签字（按指纹）</td>
+                <!-- <td rowspan="2" colspan="4" style="text-align: left;">签字（按指纹）</td>-->
             </tr>
             <tr>
                 <td colspan="3">非本址4</td>
@@ -335,6 +331,10 @@
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
+                <td rowspan="2" colspan="4">
+                    被腾退人特别保证如下：<br>
+                    我本人完全知悉补偿方案和认定程序，对上述确认各项结果均无异议。
+                </td>
             </tr>
             <tr>
                 <td colspan="3">非本址5</td>
@@ -347,7 +347,7 @@
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
-                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+                <!--<td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>-->
             </tr>
             <tr>
                 <td colspan="3">非本址6</td>
@@ -360,7 +360,8 @@
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
-                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+                <!--<td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>-->
+               <td rowspan="2" colspan="4" style="text-align: left;">签字（按指纹）</td>
             </tr>
             <tr>
                 <td colspan="3">非本址7</td>
@@ -373,7 +374,7 @@
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">未安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">已安置</td>
                 <td colspan="1"><input style="margin-top:1px;height:8px;width:8px;" type="checkbox">腾内</td>
-                <td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>
+                <!--<td colspan="4">签字日期：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日</td>-->
             </tr>
             <tr>
                 <td colspan="3">非本址8</td>

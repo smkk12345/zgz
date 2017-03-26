@@ -1,4 +1,4 @@
-<!--基础数据-->
+﻿<!--基础数据-->
 <#macro HousebasicList items  pageNo pageSize>
     <#if items?size gt 0>
         <#list items as ROW>
@@ -180,9 +180,9 @@
             </td>
             <td>${ROW.rdzjdallarea?default("")}</td>
             <td>${ROW.people?default("")}</td>
-            <td>${ROW.zjdttzj?default("")}</td>
-            <td class="td_azfghk">${ROW.azfgfk?default("")}</td>
-            <td class="td_jshk">${ROW.jshk?default("")}</td>
+        <!--<td>${ROW.zjdttzj?default("")}</td>-->
+        <!-- <td class="td_azfghk">${ROW.azfgfk?default("")}</td>-->
+        <!-- <td class="td_jshk">${ROW.jshk?default("")}</td>-->
             <td>
             
             <#if role.roleAuthority[3]=="2">
@@ -263,9 +263,9 @@
                 </#if>
             </td>
             <td>${ROW.rdzjdallarea?default("")}</td>
-            <td>${ROW.zjdttzj?default("")}</td>
-            <td>${ROW.azfgfk?default("")}</td>
-            <td>${ROW.jshk?default("")}</td>
+       <!-- <td>${ROW.zjdttzj?default("")}</td>-->
+       <!-- <td>${ROW.azfgfk?default("")}</td>-->
+       <!-- <td>${ROW.jshk?default("")}</td>-->
             <td>
               <#if (ROW.protocolnumber)??>
                             <#if (ROW.protocolnumber?length>0)>

@@ -1,4 +1,4 @@
-<#include "leftMenu.ftl"/>
+﻿<#include "leftMenu.ftl"/>
 <#include "../macro_ftl/cxdList.ftl">
 <@override name="main_right">
 <script src="${BASE_ASSETS_PATH}libs/mrdoob-three/three.min.js"></script>
@@ -57,9 +57,9 @@
                 <th>安置方式</th>
                 <th>认定宅基地面积</th>
                 <th>认定人口</th>
-                <th>腾退补偿款总和</th>
-                <th id="th_xf">选房购房款</th>
-                <th id="th_jsfh">结算后款</th>
+        <!--    <th>腾退补偿款总和</th>   -->
+         <!--   <th id="th_xf">选房购房款</th>  -->
+          <!--  <th id="th_jsfh">结算后款</th>  -->
                 <th>操作</th>
             </tr>
             <@XyList list pageNo pageSize/>
