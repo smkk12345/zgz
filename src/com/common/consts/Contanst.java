@@ -18,9 +18,9 @@ public class Contanst {
     public static Integer JFRQ = 10;
 
     public static HashMap<String,String> sectionMap = new HashMap<String, String>(){{
-        put("8", "第一标段");
-        put("9", "第二标段");
-        put("10", "第三标段");
+        put("8", "第八标段");
+        put("9", "第九标段");
+        put("10", "第十标段");
 
     }};
 

@@ -135,5 +135,8 @@
     <property name="cfdate"></property>
     		<property name = "bcklq"></property>
 		<property name = "bcklqdate"></property>
+		
+		<property name = "jfDate"></property>
+		
 	</class>
 </hibernate-mapping>

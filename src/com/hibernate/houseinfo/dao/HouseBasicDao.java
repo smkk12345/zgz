@@ -342,7 +342,7 @@ public class HouseBasicDao extends BaseDaoImpl<HouseBasic> {
 				sb.append(" select count(a.id) as count ,a.section from housebasic a " +
 						"left join agreenment b on a.id = b.housebasicid " +
 						" left join indexnum c on a.id = c.housebasicid "+
-						"where c.indexnum is null ");
+						"where c.indexnum is null and b.id is not null ");
 				
 				if(!StringUtils.isBlank(dateStr)){
 					sb.append(dateStr);

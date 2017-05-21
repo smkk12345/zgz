@@ -60,7 +60,7 @@ public class SjfxController {
 			for (int i = 0; i < list0.size(); i++) {
 				AgreenmentSectionBean ag = list0.get(i);
 				int n = Integer.parseInt(ag.getSection());
-				Map<String,String> map  = list.get(n-1 );
+				Map<String,String> map  = list.get(n-8 );
 				if(ag.getQytype().equals("0")){
 					map.put("ljaz", ag.getQycount()+"");
 					
@@ -74,7 +74,7 @@ public class SjfxController {
 			for (int i = 0; i < list1.size(); i++) {
 				AgreenmentSectionBean ag = list1.get(i);
 				int n = Integer.parseInt(ag.getSection());
-				Map<String,String> map  = list.get(n-1 );
+				Map<String,String> map  = list.get(n-8 );
 				if(ag.getQytype().equals("0")){
 					map.put("dtaz", ag.getQycount()+"");
 					map8.put("dtaz", (Integer.parseInt(map8.get("dtaz"))+ag.getQycount())+"");
@@ -86,7 +86,7 @@ public class SjfxController {
 			for (int i = 0; i < list2.size(); i++) {
 				AgreenmentSectionBean ag = list2.get(i);
 				int n = Integer.parseInt(ag.getSection());
-				Map<String,String> map  = list.get(n-1 );
+				Map<String,String> map  = list.get(n-8 );
 				if(ag.getQytype().equals("0")){
 					map.put("hjaz", ag.getQycount()+"");
 					map8.put("hjaz", (Integer.parseInt(map8.get("hjaz"))+ag.getQycount())+"");
@@ -131,7 +131,7 @@ public class SjfxController {
 			for (int i = 0; i < list0.size(); i++) {
 				Map<String,String> map1 = list0.get(i);
 				int n = Integer.parseInt(map1.get("section"));
-				Map<String,String> map  = list.get(n-1 );
+				Map<String,String> map  = list.get(n-8 );
 				map.put("az", map1.get("zjdttzj")+"");
 				map8.put("az", (Double.parseDouble(map8.get("az"))+Double.parseDouble(map1.get("zjdttzj")))+"");
 				
@@ -139,7 +139,7 @@ public class SjfxController {
 			for (int i = 0; i < list1.size(); i++) {
 				Map<String,String> map1 = list1.get(i);
 				int n = Integer.parseInt(map1.get("section"));
-				Map<String,String> map  = list.get(n-1 );
+				Map<String,String> map  = list.get(n-8 );
 				map.put("hb", map1.get("zjdttzj")+"");
 				map8.put("hb", (Double.parseDouble(map8.get("hb"))+Double.parseDouble(map1.get("zjdttzj")))+"");
 				
@@ -147,7 +147,7 @@ public class SjfxController {
 			for (int i = 0; i < list0.size(); i++) {
 				Map<String,String> map1 = list0.get(i);
 				int n = Integer.parseInt(map1.get("section"));
-				Map<String,String> map  = list.get(n-1 );
+				Map<String,String> map  = list.get(n-8 );
 				map.put("hj", map1.get("zjdttzj")+"");
 				map8.put("hj", (Double.parseDouble(map8.get("hj"))+Double.parseDouble(map1.get("zjdttzj")))+"");
 				
@@ -174,7 +174,7 @@ public class SjfxController {
 	
 	private List<Map<String, String>> initGbdttjetjReturnList() {
 		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
-		for (int i = 1; i < 8; i++) {
+		for (int i = 8; i < 11; i++) {
 			Map<String,String> map = new HashMap<String, String>();
 			map.put("section", i+"");
 			map.put("displaysection", Contanst.sectionMap.get(i+""));
@@ -185,7 +185,7 @@ public class SjfxController {
 		}
 		
 		Map<String,String> map = new HashMap<String, String>();
-		map.put("section", "8");
+		map.put("section", "11");
 		map.put("displaysection", "合计");
 		map.put("az", "0");
 		map.put("hb", "0");
@@ -197,7 +197,7 @@ public class SjfxController {
 
 	private List<Map<String,String>> initAgReturnList(){
 		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
-		for (int i = 1; i < 8; i++) {
+		for (int i = 8; i < 11; i++) {
 			Map<String,String> map = new HashMap<String, String>();
 			map.put("section", i+"");
 			map.put("displaysection", Contanst.sectionMap.get(i+""));
@@ -216,7 +216,7 @@ public class SjfxController {
 		}
 		
 		Map<String,String> map = new HashMap<String, String>();
-		map.put("section", "8");
+		map.put("section", "11");
 		map.put("displaysection", "合计");
 		map.put("hj", "0");
 		map.put("hjhb", "0");

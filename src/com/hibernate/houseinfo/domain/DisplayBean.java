@@ -167,6 +167,14 @@ public class DisplayBean extends BaseBean {
 		private Integer ljs85;
 		//三居室
 		private Integer sjs;
+		//交房日期 
+		private String jfDate;
+		public String getJfDate() {
+			return jfDate;
+		}
+		public void setJfDate(String jfDate) {
+			this.jfDate = jfDate;
+		}
 		//安置房购房款
 		private BigDecimal azfgfk;
 		private String dxazfgfk;

@@ -22,7 +22,7 @@ import com.hibernate.userInfo.damain.RoleBean;
 import com.spring.ServiceManager;
 
 /**
- * 财务结算
+ * 财务结算  未安置   已安置  腾内
  * @author yulei
  */
 @Controller

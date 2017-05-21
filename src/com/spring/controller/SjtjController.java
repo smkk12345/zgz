@@ -432,6 +432,7 @@ public class SjtjController {
         	if(!StringUtils.isBlank(from)){
         		model.addAttribute("from", from);
         	}
+        	  
             List<Integer> list0 = ServiceManager.getHouseBasicServce().getListGroupBySection("0", "");//已经签约
             List<Integer> list1 = ServiceManager.getHouseBasicServce().getListGroupBySection("1", "");//未签约
             
