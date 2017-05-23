@@ -338,6 +338,10 @@
                     <label class='fl control-label' style="width:220px;">优惠指标未选满补偿(元):</label>
                     <input type='text' id="input_yhzbwxmbc" class='form-control input-sm input_hj' name='yhzbwxmbc'   value="<#if bean.yhzbwxmbc??>${bean.yhzbwxmbc?c}<#else>0</#if>"/>       
                 </div>
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label' style="width:220px;">棚改支持签约奖励（元）:</label>
+                    <input type='text'  class='form-control input-sm input_jl input_hj' name='pgzcqyjl'   value="<#if bean.pgzcqyjl??>${bean.pgzcqyjl?c}<#else>0</#if>"/>       
+                </div>
                 <div class='container-fluid con-bg mb10'>
                     <div class=' aoJianGroup fl'>      
                         <label class='fl control-label' style="width:220px;">合计(元):</label>

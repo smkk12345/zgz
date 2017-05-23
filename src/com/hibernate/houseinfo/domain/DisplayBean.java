@@ -167,6 +167,17 @@ public class DisplayBean extends BaseBean {
 		private Integer ljs85;
 		//三居室
 		private Integer sjs;
+		//棚改支持签约奖励（元）
+		private BigDecimal pgzcqyjl;
+		
+		public BigDecimal getPgzcqyjl() {
+			return pgzcqyjl;
+		}
+
+
+		public void setPgzcqyjl(BigDecimal pgzcqyjl) {
+			this.pgzcqyjl = pgzcqyjl;
+		}
 		//交房日期 
 		private String jfDate;
 		public String getJfDate() {

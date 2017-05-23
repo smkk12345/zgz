@@ -267,6 +267,7 @@
                     <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
                     <#assign qtbzhj =dsbzf?number+xgbzf?number+zjdypwpbz?number>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）其他补助费<u>&nbsp;&nbsp;${qtbzhj?c}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）棚改支持签约奖励（200000元/院）<u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 </p>
                 <p class="left-title">第六条&nbsp;&nbsp;乙方腾退期限及要求</p>
                 <p class="contex-1" >

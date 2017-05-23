@@ -40,9 +40,11 @@
 
            <tr>
 			    <td class="" colspan=3>认定宅基地面积(㎡)</td>
-                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></td>
-                <td class="" colspan=3>补偿宅基地面积(㎡)</td>
-                <td class="" colspan=2><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
+                <td class="" colspan=2><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></td>
+                <td class="" colspan=2>补偿宅基地面积(㎡)</td>
+                <td class="" colspan=1><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
+				<td class="" colspan=2>是否住房困难户</td>
+            	<td class="" colspan=1><#if (bean.hardhouse?default("-1"))=='0'>是<#else>否</#if></td>
 			</tr>
             <tr>
                 <td class="" colspan=2>控制面积(㎡)</td>
@@ -198,7 +200,9 @@
                 <td class="">7</td>
                 <td class=""  colspan=4>搬家及家电迁移补助（12000元/院）</td>
                 <td class="" colspan=1>${bean.bjbz?c?default("/")}</td>
-				<td class=""  colspan=6></td>
+				<td class="">14</td>
+                <td class=""  colspan=4>棚改支持签约奖励（200000元/院）</td>
+                <td class="" colspan=1>${bean.pgzcqyjl?c?default("/")}</td>
             </tr> 
             <tr>
             	 <td class="" colspan=1 >备注</td>

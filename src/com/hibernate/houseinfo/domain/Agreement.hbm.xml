@@ -94,6 +94,6 @@
 		
 		<property name="sfcs"></property>
 		<property name="rdyj"></property>
-
+		<property name="pgzcqyjl"></property>
 	</class>
 </hibernate-mapping>

@@ -92,6 +92,19 @@ public class Agreement extends BaseBean {
 	private BigDecimal wwzjl;
 	//未建二层及地下室奖励费
 	private BigDecimal wjecjj;
+	//棚改支持签约奖励（元）
+	private BigDecimal pgzcqyjl;
+	
+	public BigDecimal getPgzcqyjl() {
+		return pgzcqyjl;
+	}
+
+
+	public void setPgzcqyjl(BigDecimal pgzcqyjl) {
+		this.pgzcqyjl = pgzcqyjl;
+	}
+
+
 	//未经批准已建二层补助
 	private BigDecimal wjpzyjecbz;
 	// 补助费合计

@@ -249,7 +249,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（12）独生子女奖励费（30000元/父母光荣证）<u>&nbsp;&nbsp;${bean.dsznbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）一次性停产停业综合补助费（1000元/平方米）<u>&nbsp;&nbsp;${bean.tctdbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）周转补助费（1500元/人/月） <u>&nbsp;&nbsp;${bean.zzbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-
+				
                 <#assign dsbzf = bean.dsbzf?c?default(0)>
                 <#assign xgbzf = bean.xgbzf?c?default(0)>
                 <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
@@ -257,6 +257,7 @@
                 <#assign qtbzhj = dsbzf?number+xgbzf?number+zjdypwpbz?number+yhzbwxmbc?number>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${qtbzhj?c}&nbsp;&nbsp;</u>元；<br/>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（16）棚改支持签约奖励（200000元/院） <u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
             </p>
             <p class="left-title">第七条&nbsp;&nbsp;乙方腾退期限及要求</p>
             <p class="contex-1">

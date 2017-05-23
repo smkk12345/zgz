@@ -45,9 +45,11 @@
             </tr>
             <tr>
                 <td class="" colspan=3>认定宅基地面积(m<sup>2</sup>)</td>
-                <td class="" colspan=3><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></td>
-                <td class="" colspan=3>补偿宅基地面积(m<sup>2</sup>)</td>
-                <td class="" colspan=2><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
+                <td class="" colspan=2><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></td>
+                <td class="" colspan=2>补偿宅基地面积(m<sup>2</sup>)</td>
+                <td class="" colspan=1><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
+            	<td class="" colspan=2>是否住房困难户</td>
+            	<td class="" colspan=1><#if (bean.hardhouse?default("-1"))=='0'>是<#else>否</#if></td>
             </tr>
             <tr>
                 <td class="" colspan=2>控制面积(m<sup>2</sup>)</td>
@@ -256,12 +258,15 @@
                 <td class="">5</td>
                 <td class="" colspan=4>未建二层及地下室奖励（500元/㎡）</td>
                 <td class="" >${bean.wjecjj?c?default("/")}</td>
-                <td class="" colspan=6 rowspan="7" style="text-align: left;vertical-align:top !important">备注:${bean.remark?default("/")}</td>
+                <td class="">16</td>
+                <td class="" colspan=4>棚改支持签约奖励（200000元/院）</td>
+                <td class="">${bean.pgzcqyjl?c?default("/")}</td>
             </tr>
             <tr>
                 <td class="">6</td>
                 <td class="" colspan=4>未经批准已建二层补助（500元/㎡）</td>
                 <td class="" >${bean.wjpzyjecbz?c?default("/")}</td>
+                <td class="" colspan=6 rowspan="6" style="text-align: left;vertical-align:top !important">备注:${bean.remark?default("/")}</td>
             </tr> 
             <tr>
                 <td class="">7</td>
