@@ -128,6 +128,9 @@
    <property name="zzbz"></property>
    <property name="rdzjdallarea"></property>
    <property name="islock"></property>
+   <property name="hardhouse"></property>
+   <property name="operatearea1"></property>
+   <property name="operatearea2"></property>
    <property name="gfbz50"></property>
     <property name="gfbz45"></property>
     <property name="azrkxx"></property>

@@ -446,10 +446,12 @@ public class SjtjController {
             sb.append(list0.toString());
             sb.append("}]");
 
-
+            Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(" and  b.id IS NOT NULL ");
+            List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
+            
             model.addAttribute("chartSeries", sb);
-            model.addAttribute("zyqy", getSumList(list0));
-            model.addAttribute("zwqy", getSumList(list1));
+            model.addAttribute("zyqy", list.size());
+            model.addAttribute("zwqy", count - list.size());
             // 模板路径 basePath
             model.addAttribute("BASE_PATH", WebConstConfig.BASE_PATH);
             model.addAttribute("BASE_ASSETS_PATH",
@@ -541,7 +543,7 @@ public class SjtjController {
             if (StringUtils.isBlank(pageSize)) {
                 pageSize = "10";
             }
-            Integer count = ServiceManager.getHouseBasicServce().getCount(request, "");
+            Integer count = ServiceManager.getHouseBasicServce().getDisPlayCount(" and  b.id IS NOT NULL ");
             List<DisplayBean> list = ServiceManager.getHouseBasicServce().getDisplayBeanList(" and c.id is not null ", "", 0, 0);
             double result = 0.00;
             if (count > 0 && null != list && list.size() > 0) {

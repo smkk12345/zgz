@@ -105,6 +105,26 @@ public class Agreement extends BaseBean {
 	}
 
 
+	public BigDecimal getOperatearea1() {
+		return operatearea1;
+	}
+
+	
+	public void setOperatearea1(BigDecimal operatearea1) {
+		this.operatearea1 = operatearea1;
+	}
+
+	
+	public BigDecimal getOperatearea2() {
+		return operatearea2;
+	}
+
+	
+	public void setOperatearea2(BigDecimal operatearea2) {
+		this.operatearea2 = operatearea2;
+	}
+	
+
 	//未经批准已建二层补助
 	private BigDecimal wjpzyjecbz;
 	// 补助费合计
@@ -168,8 +188,12 @@ public class Agreement extends BaseBean {
 	
 	//父母以及超生子女姓名
 	private String parentnames;
-	//认定住房空难
+	//认定住房困难
 	private String hardhouse;
+	//分签单元一经营认定面积
+	private BigDecimal operatearea1;
+	//分签单元二经营认定面积
+	private BigDecimal operatearea2;
 	//被腾退家庭购房标准
     private String gfbz50;
     private String gfbz45;

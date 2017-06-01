@@ -47,7 +47,7 @@
                 <td class="" colspan=2>补偿宅基地面积(㎡)</td>
                 <td class="" colspan=1><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></td>
                 <td class="" colspan=2>是否住房困难户</td>
-            	<td class="" colspan=1><#if (bean.hardhouse?default("-1"))=='0'>是<#else>否</#if></td>
+            	<td class="" colspan=1><#if (bean.hardhouse?default("-1"))=='0'>是<#elseif (bean.hardhouse?default("-1"))=='1'>否<#else>未选择</#if></td>
             </tr>
             <tr>
                 <td class="" colspan=2>控制面积(㎡)</td>

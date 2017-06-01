@@ -22,14 +22,14 @@
                 </td>
             </tr>
             <tr>
-                <td rowspan="4">基本数据</td>
+             
                 <td colspan="2">被腾退人姓名</td>
                 <td>${bean.names?default("")}</td>
                 <td>被腾宅基地坐落</td>
-                <td colspan="3">${bean.location?default("")}</td>
-                <td>认定日期</td>
-                <td><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>年<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>月<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>日
-                </td>
+                <td colspan="2">${bean.location?default("")}</td>
+                <td colspan="2"><input class="check-box" type="checkbox">认定分表</td>
+                <td colspan="2"><input class="check-box" type="checkbox">单宗总表</td>
+               
             </tr>
             <tr>
                 <td colspan="2">身份证号</td>
@@ -39,29 +39,17 @@
                     50㎡( ${agreenment.gfbz50?default("")})人<br>
                     45㎡( ${agreenment.gfbz45?default("")})人
                 </td>
-                <td colspan="2">父母及超生子女姓名</td>
+                <td colspan="1">父母及超生子女姓名</td>
                 <td colspan="2">${bean.fmjcsznxm?default("")}</td>
+                <td><input class="check-box" type="checkbox">超生家庭</td>
             </tr>
+                     
             <tr>
                 <td colspan="2">实测现状宅基地面积</td>
                 <td class=""><#if bean.zjdarea??>${bean.zjdarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
                 <td>实测房屋建筑面积</td>
                 <td class="textalign-r"><#if bean.zjdarea??>${bean.fwarea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
-                <td colspan="3">
-                <label class="" style=" font-weight:normal"><input class="check-box" type="checkbox"> 单宗经营控制面积 </label>
-            <label class="" style=" font-weight:normal"><input class="check-box" type="checkbox"> 分签单元经营认定面积</label></td>
-                <td colspan="2" class="textalign-c" ><#if bean.operatearea??>${bean.operatearea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
-            </tr>
-            <tr>
-                <td colspan="2">被腾退人拟选择补偿方式</td>
-                <td style="">
-                <#if agreenment.atype=='0'>
-                    &nbsp;&nbsp;安置房补偿方式&nbsp;&nbsp;
-                <#else>
-                    &nbsp;&nbsp;货币&nbsp;&nbsp;
-                </#if>
-                </td>
-                <td>宅基地认定年限</td>
+                <td>认定年限</td>
                 <td style="">
                 <#if agreenment.homesteadyear??>
                     <#if  agreenment.homesteadyear?default("-1") == '-1'>
@@ -75,25 +63,55 @@
                     数据未录入
                 </#if>
                 </td>
-                <td colspan="2">认定安置人数</td>
-                <td colspan="2" class=""> ${bean.peoplecount}人</td>
+                <td>安置方式</td>
+                <td style="">
+                <#if agreenment.atype=='0'>
+                    &nbsp;&nbsp;安置房补偿方式&nbsp;&nbsp;
+                <#else>
+                    &nbsp;&nbsp;货币&nbsp;&nbsp;
+                </#if>
+                </td>
+            </tr>
+               <tr>
+                <td colspan="2">单宗经营控制面积</td>
+                <td><#if bean.operatearea??>${bean.operatearea?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
+                <td colspan="1">分签单元一经营认定面积</td>
+                <td><#if agreenment.operatearea1??>${agreenment.operatearea1?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
+                </td>
+                <td colspan="2">分签单元二经营认定面积</td>
+                <td colspan="2"><#if agreenment.operatearea2??>${agreenment.operatearea2?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">认定安置总人数</td>
+                <td>${bean.peoplecount}</td>
+                <td colspan="1">本址被安置人员</td>
+                <td>${bean.localpeoplecount}</td>
+                <td colspan="2">非本址被安置人员</td>
+                <td colspan="2">${bean.notlocalpeoplecount}</td>
+                
             </tr>
             </table>
           <table class="table table-bordered" style="margin-bottom:0px;">
             <tr>
-                <td colspan="10">认定宅基地及房屋面积相关</td>
+                <td colspan="11">认定宅基地及房屋面积相关</td>
             </tr>
             <tr>
-                <td colspan="4">认定宅基地面积</td>
+                <td colspan="2">认定宅基地面积</td>
                
                 <td colspan="2" class=""> 	
                 <#if agreenment.rdzjdallarea??>${agreenment.rdzjdallarea?number?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
+                </td>
+                <td colspan="2">补偿宅基地面积</td>
+                <td colspan="2" class="">
+                <#if agreenment.bczjdmj??>${agreenment.bczjdmj?number?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if>
                 </td>
                 <td colspan="2">认定房屋补偿建面</td>
                 <td colspan="2" class=""><#if agreenment.fwbcmj??>${agreenment.fwbcmj?string("0.00")}m<sup>2</sup><#else>0.00m<sup>2</sup></#if></td>
             </tr>
             <tr>
-                <td rowspan="5" style="text-align: justify">其中</td>
+               
                 <td rowspan="2" colspan="2">认定82年前（0.4亩）</td>
                 <td>控制面积267m<sup>2</sup>以内<br>
                 (单宗不足0.3亩补足0.3亩，<br>0.3亩至0.4亩之间及分签据实)</td>
@@ -106,7 +124,7 @@
                    m<sup>2</sup> </td>
                 <td>比例</td>
                 <td>100%</td>
-                <td colspan="2">宅基地区位补偿价<#if agreenment.atype=='0'>
+                <td colspan="4">宅基地区位补偿价<#if agreenment.atype=='0'>
                 								6000
                 							<#else>
                 								26588
@@ -123,7 +141,7 @@
                   m<sup>2</sup> </td>
                 <td>比例</td>
                 <td>50%</td>
-                <td colspan="2">折合区位补偿价<#if agreenment.atype=='0'>
+                <td colspan="4">折合区位补偿价<#if agreenment.atype=='0'>
                 								3000
                 							<#else>
                 								13294
@@ -141,7 +159,7 @@
                   m<sup>2</sup></td>  
                 <td>比例</td>               
                 <td>100%</td>               
-                <td colspan="2">宅基地区位补偿价<#if agreenment.atype=='0'>
+                <td colspan="4">宅基地区位补偿价<#if agreenment.atype=='0'>
                 								6000
                 							<#else>
                 								26588
@@ -158,7 +176,7 @@
                     m<sup>2</sup></td>
                 <td>比例</td>
                 <td>30%</td>
-                <td colspan="2">折合区位补偿价 <#if agreenment.atype=='0'>
+                <td colspan="4">折合区位补偿价 <#if agreenment.atype=='0'>
                 								1800
                 							<#else>
                 								7976.4
@@ -175,13 +193,13 @@
                  m<sup>2</sup></td>
                 <td>比例</td>
                 <td>100%</td>
-                <td colspan="2">宅基地区位补偿价6000元/m<sup>2</sup></td>
+                <td colspan="4">宅基地区位补偿价6000元/m<sup>2</sup></td>
             </tr>
           </table>
           <table class="table table-bordered" style="margin-bottom:0px;">
             <tr>
                 <td colspan="3">认定序号</td>
-                <td>认定安置<br>人员姓名</td>
+                <td>认定人员</td>
                 <td colspan="1">产关</td>
                 <td colspan="3">安置状况</td>
                 <td colspan="4">村腾退认定工作小组确认签字（盖章）</td>

@@ -153,15 +153,25 @@
                     <input type='text' class='form-control input-sm  ' name='fwbcmj'  value="<#if bean.fwbcmj??>${bean.fwbcmj?c}<#else></#if>" />   
                 </div>
                 
-                <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label' style="width:220px;">经营用房面积:</label>
-                    <input type='text' class='form-control input-sm  ' name='operatearea' value="<#if housebasic.operatearea??>${housebasic.operatearea?c}<#else></#if>"/>        
-                </div>
-                
-               <div class=' aoJianGroup fl'>
+                <div class=' aoJianGroup fl'>
                    <label class='fl control-label' style="width:220px;">住房困难户补偿方案:</label>
                    <input type='text' class='form-control input-sm  ' name='zfknhbcfa'  value="${bean.zfknhbcfa?default("")}" />m<sup>2</sup>
                </div>
+                
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label' style="width:202px;">经营用房面积:</label>
+                    <input type='text' class='form-control input-sm  ' name='operatearea' value="<#if housebasic.operatearea??>${housebasic.operatearea?c}<#else></#if>"/>        
+                </div>
+          
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label' style="width:220px;">分签单元一经营认定面积:</label>
+                     <input type='text' class='form-control input-sm  ' name='operatearea1'  value="<#if bean.operatearea1??>${bean.operatearea1?c}<#else></#if>" />   
+                </div>
+                
+                <div class=' aoJianGroup fl'>      
+                    <label class='fl control-label' style="width:220px;">分签单元二经营认定面积:</label>
+                     <input type='text' class='form-control input-sm  ' name='operatearea2'  value="<#if bean.operatearea2??>${bean.operatearea2?c}<#else></#if>" />   
+                </div>
             </div>
 
 

@@ -178,6 +178,27 @@ public class DisplayBean extends BaseBean {
 		public void setPgzcqyjl(BigDecimal pgzcqyjl) {
 			this.pgzcqyjl = pgzcqyjl;
 		}
+		
+	
+		public BigDecimal getOperatearea1() {
+			return operatearea1;
+		}
+
+
+		public void setOperatearea1(BigDecimal operatearea1) {
+			this.operatearea1 = operatearea1;
+		}
+		
+		
+		public BigDecimal getOperatearea2() {
+			return operatearea2;
+		}
+
+
+		public void setOperatearea2(BigDecimal operatearea2) {
+			this.operatearea2 = operatearea2;
+		}
+		
 		//交房日期 
 		private String jfDate;
 		public String getJfDate() {
@@ -343,6 +364,10 @@ public class DisplayBean extends BaseBean {
 	    
 	    private String gfbz50;
 	    private String gfbz45;
+	    private String hardhouse;
+		private BigDecimal operatearea1;
+		private BigDecimal operatearea2;
+	    
 	    
 		public BigDecimal getWjpzyjecbz() {
 			return wjpzyjecbz;
@@ -1322,7 +1347,10 @@ public class DisplayBean extends BaseBean {
 		public void setBcklqdate(String bcklqdate) {
 			this.bcklqdate = bcklqdate;
 		}
-		
-		
-		
+		public String getHardhouse() {
+			return hardhouse;
+		}
+		public void setHardhouse(String hardhouse) {
+			this.hardhouse = hardhouse;
+		}
 }
