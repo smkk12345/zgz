@@ -162,7 +162,7 @@
                 <td class="">4</td>
                 <td class="" colspan=5>无违章奖励（500元/㎡）</td>
                 <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
-                <td class="" colspan=4 rowspan=11 style="text-align: left;vertical-align:top !important">备注：${bean.remark?default("/")}</td>
+                <td class="" colspan=4 rowspan=12 style="text-align: left;vertical-align:top !important">备注：${bean.remark?default("/")}</td>
             </tr>
             <tr>
                 <td class="">5</td>

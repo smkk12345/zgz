@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
-        <!--CSS文件-->
+        C
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" >
@@ -367,39 +367,42 @@
 
             <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 16px !important">
             <tr>
-
                 <td class="" colspan=9>
-                <table style="margin-top:0px;margin-bottom:0px;padding-top:0px;">
+                <table style="margin-top:0px;margin-bottom:0px;padding-top:0px;" border="1">
                     <#if bean.vacatelist??>
                     <#if bean.vacatelist?size gt 0>
-                    <tr ><td colspan=6>在册人员</td></tr>
+                    <tr ><td colspan=8>在册人员</td></tr>
+                       <tr ><td>序号</td><td>姓名</td><td>身份证号</td><td>产关</td><td>序号</td><td>姓名</td><td>身份证号</td><td>产关</td></tr>
                     <#list bean.vacatelist as ROW>
                     <#if ROW_index % 2 == 2%2>
                     <tr>
-                    	<td>${ROW.name}</td> <td>${ROW.idcard}</td> <td>${ROW.changrelate}</td>
+                    
+                    	<td>${ROW_index+1}</td><td>${ROW.name}</td> <td>${ROW.idcard}</td> <td>${ROW.changrelate}</td>
                     	<#if bean.vacatelist?size != (ROW_index+1)>
-                    		<td>${bean.vacatelist[ROW_index+1].name}</td> <td>${bean.vacatelist[ROW_index+1].idcard}</td> <td>${bean.vacatelist[ROW_index+1].changrelate}</td>
+                    		<td>${ROW_index+2}</td><td>${bean.vacatelist[ROW_index+1].name}</td> <td>${bean.vacatelist[ROW_index+1].idcard}</td> <td>${bean.vacatelist[ROW_index+1].changrelate}</td>
                     	<#else>
-                    	<td></td><td></td><td></td>
+                    	<td></td><td></td><td></td><td></td>
                     	</#if>
                     </tr>
                     </#if>
                     </#list>
                     </#if>
                     </#if>
-                    <tr ><td colspan=6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+                    <tr ><td colspan=8>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
                     <#if bean.list??>
                     <#if bean.list?size gt 0>
 
-                   <tr ><td colspan=6>非在册人员</td></tr>
+                   <tr ><td colspan=8>非在册人员</td></tr>
+                    <tr ><td>序号</td><td>姓名</td><td>身份证号</td><td>产关</td><td>序号</td><td>姓名</td><td>身份证号</td><td>产关</td></tr>
+                   
                     <#list bean.list as ROW>
                      <#if ROW_index % 2 == 2%2>
                     <tr>
-                    	<td>${ROW.name}</td> <td>${ROW.idcard}</td> <td>${ROW.changrelate}</td>
+                    	<td>${ROW_index+1}</td><td>${ROW.name}</td> <td>${ROW.idcard}</td> <td>${ROW.changrelate}</td>
                     	<#if bean.list?size != (ROW_index+1)>
-                    		<td>${bean.list[ROW_index+1].name}</td> <td>${bean.list[ROW_index+1].idcard}</td> <td>${bean.list[ROW_index+1].changrelate}</td>
+                    		<td>${ROW_index+2}</td><td>${bean.list[ROW_index+1].name}</td> <td>${bean.list[ROW_index+1].idcard}</td> <td>${bean.list[ROW_index+1].changrelate}</td>
                     	<#else>
-                    	<td></td><td></td><td></td>
+                    	<td></td><td></td><td></td><td></td>
                     	</#if>
                     </tr>
                     </#if>
