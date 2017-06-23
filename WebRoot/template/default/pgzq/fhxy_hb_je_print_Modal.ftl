@@ -160,55 +160,64 @@
             </tr>
             <tr>
                 <td class="">4</td>
-                <td class="" colspan=5>无违章奖励（500元/㎡）</td>
-                <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
+                <td class="" colspan=5>棚改支持签约奖励（200000元/院）</td>
+                <td class="">${bean.pgzcqyjl?c?default("0")}</td>
+               
                 <td class="" colspan=4 rowspan=12 style="text-align: left;vertical-align:top !important">备注：${bean.remark?default("/")}</td>
             </tr>
             <tr>
                 <td class="">5</td>
-                <td class="" colspan=5>未建二层及地下室奖励（500元/㎡）</td>
-                <td class="" >${bean.wjecjj?c?default("/")}</td>
+                <td class="" colspan=5>无违章奖励（500元/㎡）</td>
+                <td class="" colspan=1>${bean.wwzjl?c?default("/")}</td>
+          
             </tr>
             <tr>
                 <td class="">6</td>
-                <td class="" colspan=5>未经批准已建二层补助（500元/㎡）</td>
-                <td class="" >${bean.wjpzyjecbz?c?default("/")}</td>
+                <td class="" colspan=5>未建二层及地下室奖励（500元/㎡）</td>
+                <td class="" >${bean.wjecjj?c?default("/")}</td>
+           
             </tr> 
             <tr>
                 <td class="">7</td>
-                <td class="" colspan=5>搬家及家电迁移补助（12000元/院）</td>
-                <td class="" >${bean.bjbz?c?default("/")}</td>
+                <td class="" colspan=5>未经批准已建二层补助（500元/㎡）</td>
+                <td class="" >${bean.wjpzyjecbz?c?default("/")}</td>
+             
             </tr>  
             <tr>
                 <td class="">8</td>
-                <td class="" colspan=5>大病补助（50000元/人）</td>
-                <td class="">${bean.dbbz?c?default("/")}</td>
+                <td class="" colspan=5>搬家及家电迁移补助（12000元/院）</td>
+                <td class="" >${bean.bjbz?c?default("/")}</td>
 
             </tr> 
             <tr>
                 <td class="">9</td>
-                <td class="" colspan=5>残疾补助（30000元/人）</td>
-                <td class="">${bean.cjbz?c?default("/")}</td>
+                <td class="" colspan=5>大病补助（50000元/人）</td>
+                <td class="">${bean.dbbz?c?default("/")}</td>
+               
             </tr> 
             <tr>
                 <td class="">10</td>
-                <td class="" colspan=5>低保补助（30000元/人）</td>
-                <td class="">${bean.dbhbz?c?default("/")}</td>
+                <td class="" colspan=5>残疾补助（30000元/人）</td>
+                <td class="">${bean.cjbz?c?default("/")}</td>
+             
             </tr>
             <tr>
                 <td class="">11</td>
-                <td class="" colspan=5>独生子女（30000元/人）</td>
-                <td class="" >${bean.dsznbz?c?default("/")}</td>
+                <td class="" colspan=5>低保补助（30000元/人）</td>
+                <td class="">${bean.dbhbz?c?default("/")}</td>
+              
             </tr>  
             <tr>
                 <td class="">12</td>
-                <td class="" colspan=5>一次性停产停业补助（1000元/㎡）</td>
-                <td class="">${bean.tctdbz?c?default("/")}</td>
+                <td class="" colspan=5>独生子女（30000元/人）</td>
+                <td class="" >${bean.dsznbz?c?default("/")}</td>
+                
             </tr>  
             <tr>
                 <td class="">13</td>
-                <td class="" colspan=5>周转补助费（1500元/人/月）</td>
-                <td class="">${bean.zzbz?c?default("/")}</td>
+                <td class="" colspan=5>一次性停产停业补助（1000元/㎡）</td>
+                <td class="">${bean.tctdbz?c?default("/")}</td>
+              
             </tr> 
             <tr>
 		        <#assign dsbzf = bean.dsbzf?c?default(0)>
@@ -216,13 +225,14 @@
 				<#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
 				<#assign qtbzhj =dsbzf?number+xgbzf?number+zjdypwpbz?number>
                 <td class="">14</td>
-                <td class="" colspan=5>滴水补助、信鸽补助、其他补助35万(元)</td>
-                <td class="">${qtbzhj?c}</td>
+                <td class="" colspan=5>周转补助费（1500元/人/月）</td>
+                <td class="">${bean.zzbz?c?default("/")}</td>
+              
             </tr>  
            <tr>
                 <td class="">15</td>
-                <td class="" colspan=5>棚改支持签约奖励（200000元/院）</td>
-                <td class="">${bean.pgzcqyjl?c?default("0")}</td>
+                <td class="" colspan=5>滴水补助、信鸽补助、其他补助35万(元)</td>
+                <td class="">${qtbzhj?c}</td>
             </tr>                  
         </table>
     </div>

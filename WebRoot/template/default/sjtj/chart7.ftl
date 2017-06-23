@@ -92,7 +92,7 @@
 
     function createtime(timeDate, times) {
 
-        var grt = new Date("12/01/2016 00:00:00");
+        var grt = new Date("6/26/2017 00:00:00");
 
         now.setTime(now.getTime() + 250);
         days = 1+(now-grt) / 1000 / 60 / 60 / 24;

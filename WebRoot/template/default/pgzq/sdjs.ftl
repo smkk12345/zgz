@@ -58,7 +58,7 @@
                 <th>房屋坐落</th>
                 <th>认定人口</th>
                 <th>锁定/解锁</th>
-                <th>废除签约号</th>
+               <!-- <th>废除签约号</th>-->
             </tr>
         <#if list?size gt 0>
 	        <#list list as ROW>
@@ -96,11 +96,11 @@
                     >锁定</button>
 	           	</#if>
 	            </td>
-	            <td class="td_jshk">
+	           <!-- <td class="td_jshk">
 	                <button type="button" class="btn btn-success btn-xs ml10   " onclick="unSign('${ROW.housebasicid}')"
                     title='解除签约'
                     >解除签约</button>
-	            </td>
+	            </td> -->
 	        </tr>
 	        </#list>
     	</#if>
