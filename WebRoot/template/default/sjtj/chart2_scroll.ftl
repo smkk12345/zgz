@@ -43,7 +43,7 @@
                     <#if list?size gt 0>
                     <#list list as ROW>
                     <tr >
-                    <#if (ROW.atype?default("0"))=='0'>
+                    <#if (ROW.atype?default("0"))=='0' || (ROW.atype?default("0"))=='1'>
                         <td style="color:#FF0;">${ROW.indexNumStr?default("")}</td>
                         <td style="color:#0F0;">
                             <#if ROW.section == "8">
