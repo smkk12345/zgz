@@ -247,27 +247,27 @@
                         <u>&nbsp;&nbsp;${bean.gcphjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）腾退促进奖（50000院/产权院）
                         <u>&nbsp;&nbsp;${bean.ttcjjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）无违章奖励费（500元/平方米）<u>&nbsp;&nbsp;${bean.wwzjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（5）未建二层及地下室奖励费（500元/平方米）
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）棚改支持签约奖励（200000元/院）<u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（5）无违章奖励费（500元/平方米）<u>&nbsp;&nbsp;${bean.wwzjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（6）未建二层及地下室奖励费（500元/平方米）
                        <u> &nbsp;&nbsp;${bean.wjecjj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（6）未经批准已建二层或地下室补助费（500元/平方米）<u>&nbsp;&nbsp;${bean.wjpzyjecbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（7）搬家及家电迁移补助费（12000元/产权院）
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（7）未经批准已建二层或地下室补助费（500元/平方米）<u>&nbsp;&nbsp;${bean.wjpzyjecbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（8）搬家及家电迁移补助费（12000元/产权院）
                         <u>&nbsp;&nbsp;${bean.bjbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（8）大病补助费（50000元/人）<u>&nbsp;&nbsp;${bean.dbbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（9）残疾补助（30000元/证）<u>&nbsp;&nbsp;${bean.cjbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（10）低保户补助（30000元/证）<u>&nbsp;&nbsp;${bean.dbhbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（11）独生子女奖励费（30000元/父母光荣证）
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（9）大病补助费（50000元/人）<u>&nbsp;&nbsp;${bean.dbbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（10）残疾补助（30000元/证）<u>&nbsp;&nbsp;${bean.cjbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（11）低保户补助（30000元/证）<u>&nbsp;&nbsp;${bean.dbhbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（12）独生子女奖励费（30000元/父母光荣证）
                         <u>&nbsp;&nbsp;${bean.dsznbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（12）一次性停产停业综合补助费（1000元/平方米）
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）一次性停产停业综合补助费（1000元/平方米）
                         <u>&nbsp;&nbsp;${bean.tctdbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（13）一次性给予4个月周转补助费（1500元/月）
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）一次性给予4个月周转补助费（1500元/月）
                         <u>&nbsp;&nbsp;${bean.zzbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     <#assign dsbzf = bean.dsbzf?c?default(0)>
                     <#assign xgbzf = bean.xgbzf?c?default(0)>
                     <#assign zjdypwpbz = bean.zjdypwpbz?c?default(0)>
                     <#assign qtbzhj =dsbzf?number+xgbzf?number+zjdypwpbz?number>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（14）其他补助费<u>&nbsp;&nbsp;${qtbzhj?c}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）棚改支持签约奖励（200000元/院）<u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${qtbzhj?c}&nbsp;&nbsp;</u>元；<br/>
                 </p>
                 <p class="left-title">第六条&nbsp;&nbsp;乙方腾退期限及要求</p>
                 <p class="contex-1" >
