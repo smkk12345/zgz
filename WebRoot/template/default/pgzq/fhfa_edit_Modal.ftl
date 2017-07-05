@@ -408,11 +408,11 @@
                     <input id="sjxfmj" type='text' class='form-control input-sm  ' name='sjxfmj' readonly  value="<#if bean.sjxfmj??>${bean.sjxfmj?c}<#else></#if>"/>       
                 </div>  
                  <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label' style="width:220px;">指标内面积(包含15㎡以内)（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">指标内面积（㎡）(4000元/㎡):</label>
                     <input  type='text' id = "input_zbnmj" class='form-control input-sm  ' name='zbnmj'   value="<#if bean.zbnmj??>${bean.zbnmj?c}<#else></#if>"/>     
                 </div>
                 <div class=' aoJianGroup fl'>      
-                    <label class='fl control-label' style="width:220px;">超指标面积(15㎡以外)（㎡）:</label>
+                    <label class='fl control-label' style="width:220px;">超指标面积（㎡）(6000元/㎡):</label>
                     <input type='text' id="input_czbmj" class='form-control input-sm  ' name='czbmj'   value="<#if bean.czbmj??>${bean.czbmj?c}<#else></#if>"/>       
                 </div>  
              <#--   <div class=' aoJianGroup fl'>      

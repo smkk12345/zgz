@@ -114,7 +114,7 @@ public class SjtjController {
             BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
             model.addAttribute("qybl", f1 + "%");
           Date date = new Date();
-          String dateStr = "2016-12-16";
+          String dateStr = "2017-07-07";
           Date date1 = DateUtil.StringToDate(dateStr, DateStyle.YYYY_MM_DD);
           String dateStr1 = DateUtil.DateToString(date, DateStyle.YYYY_MM_DD);
           Date date2 = DateUtil.StringToDate(dateStr1, DateStyle.YYYY_MM_DD);
@@ -160,7 +160,7 @@ public class SjtjController {
             BigDecimal f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
             
             Date date = new Date();
-            String dateStr = "2017-6-26";
+            String dateStr = "2017-07-07";
             Date date1 = DateUtil.StringToDate(dateStr, DateStyle.YYYY_MM_DD);
             String dateStr1 = DateUtil.DateToString(date, DateStyle.YYYY_MM_DD);
             Date date2 = DateUtil.StringToDate(dateStr1, DateStyle.YYYY_MM_DD);
