@@ -369,7 +369,7 @@
                         <u>&nbsp;&nbsp;&nbsp;${bean.peoplecount?default("/")}&nbsp;&nbsp;&nbsp;</u>人，具体情况见下表：
                 </p>
 
-            <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 16px !important">
+         <!-- <table class="table table-bordered" style="margin-bottom:0px;font-family: '宋体';font-size: 16px !important"> -->
             <tr>
                 <td class="" colspan=9>
                 <table style="margin-top:0px;margin-bottom:0px;padding-top:0px;" border="1">
@@ -416,7 +416,7 @@
                 </table>
                 </td>
             </tr>
-            </table>
+           <!-- </table>-->
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本附件为本协议的有效组成部分，与本协议具有同等的法律效力。
                 </p>

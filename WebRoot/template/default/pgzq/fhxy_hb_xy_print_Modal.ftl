@@ -164,6 +164,7 @@
                     、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》
                     （丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发[2016]27号）、经北京市丰台区长辛店镇李家峪村民代表大会通过的《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》、《李家峪村现状楼房腾退补偿实施细则》等相关文件。
                     甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>&nbsp;&nbsp;${housebasic.location?default("/")}&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。</p>
+                <br>
                 <p class="left-title">第二条&nbsp;&nbsp;宅基地认定</p>
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;2.1 经受托测绘公司现场实测，现状实测用地面积<u><#if housebasic.zjdarea??>${housebasic.zjdarea?string("0.00")}<#else>0.00</#if></u>平方米；<br/>
@@ -173,6 +174,7 @@
                         <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：
                 &nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u style=""><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></u>平方米；超出宅基地控制面积<u style=""><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></u>平方米。
                 </p>
+                <br>
                 <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;3.1 经受托测绘公司现场实测，现状实测房屋建筑面积  <u><#if housebasic.fwarea??>${housebasic.fwarea?string("0.00")}<#else>0.00</#if></u>平方米。其中：首层建筑面积<u>
@@ -183,6 +185,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;3.2 经认定工作组认定，认定房屋补偿面积
                         <u style="background-color:#F2F2F2;"><#if bean.fwbcmj??>${bean.fwbcmj?string("0.00")}<#else>0.00</#if></u>平方米。
                 </p>
+                <br>
                 <p class="left-title">第四条&nbsp;&nbsp;被安置人口认定</p>
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;4.1 经工作组认定，认定被腾退人（共同推举非安置人员）共<u style="background-color:#F2F2F2;">&nbsp;&nbsp;
@@ -231,7 +234,7 @@
                 </#if>
                 </#if>
                
-
+                <br>
                 <p class="left-title">第五条&nbsp;&nbsp;宅基地腾退补偿总价</p>
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1 甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费、周转补助费等。具体如下：<br/> 
@@ -271,6 +274,7 @@
                     <#assign qtbzhj =dsbzf?number+xgbzf?number+zjdypwpbz?number>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（15）其他补助费<u>&nbsp;&nbsp;${qtbzhj?c}&nbsp;&nbsp;</u>元；<br/>
                 </p>
+                <br>
                 <p class="left-title">第六条&nbsp;&nbsp;乙方腾退期限及要求</p>
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;6.1 乙方应在本协议生效后20日内完成腾退搬迁等事项。乙方应在腾退前结清所有资源欠费（含乙方使用的水、电等费用），确保房屋和附属物内无任何人员和财产（即房屋和附属物完全具备拆除条件），并将所有房屋及附属物的钥匙交给甲方，由拆除公司验收合格后，甲方认定乙方腾退完毕。<br/> 
