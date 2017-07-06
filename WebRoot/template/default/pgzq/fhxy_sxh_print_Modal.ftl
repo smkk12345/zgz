@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
-        C
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
         <link href="${BASE_ASSETS_PATH}libs/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" >
@@ -225,11 +224,15 @@
                 <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮政编码： <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100072 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>联系电话：
                     <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;010-83819397&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-                <p class="contex-1" style="margin-top: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙&nbsp;&nbsp;方：&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                <p class="contex-1" style="margin-top: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙&nbsp;&nbsp;方：&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.names?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-                <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;身份证号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;身份证号：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${bean.idcard?default("/")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
                 </p>
-
+                <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通讯地址：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                </p>
+                <p class="contex-1" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮政编码： <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>联系电话：
+                    <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+                </p>
                 <p class="contex-1" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据《中华人民共和国城市房地产管理法》、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》等相关文件，甲、乙双方在平等、自愿、公平、协商一致的基础上，在满足项目进入预签约期或正式签约期限内签订补偿安置协议前提下，就定向安置房认购事宜达成如下协议：
                 </p>
                 <p class="leftTitle">第一条&nbsp;&nbsp;房屋基本情况</p>
@@ -249,12 +252,12 @@
                         <u>&nbsp;&nbsp;&nbsp;${bean.ljs85?default(0)}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.ljs85?default(0) gt 0>${bean.ljs85?number*85}<#else>0</#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110&nbsp;&nbsp;&nbsp;</u>平方米三居室
                         <u>&nbsp;&nbsp;&nbsp;${bean.sjs?default(0)}&nbsp;&nbsp;&nbsp;</u>套，合计面积<u>&nbsp;&nbsp;&nbsp;<#if bean.sjs?default(0) gt 0>${bean.sjs?number*110}<#else>0</#if>&nbsp;&nbsp;&nbsp;&nbsp;</u>平方米；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房建设地点位于李家峪村棚户区改造和环境整治项目所指定的定向安置房建设区域（最终以政府相关主管部门审批文件为准）。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定向安置房建设地点位于张郭庄村棚户区改造和环境整治项目所指定的定向安置房建设区域（最终以政府相关主管部门审批文件为准）。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 本协议下有关面积最终以政府主管部门备案的实测建筑面积为准。
                 </p>
                 <p class="leftTitle">第二条&nbsp;&nbsp;购房标准及售价</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 根据《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》等文件规定的购房标准为：经腾退补偿安置工作组认定的被安置人口，按人均50平方米确定购房指标；违反国家计划生育政策生育二胎及以上的，父母及其超生的子女按人均45平方米确定购房指标。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 根据《长辛店镇宅基地腾退补偿安置指导意见》（丰长发〔2016〕27号）、《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》、《李家峪村现状楼房腾退补偿实施细则》等文件规定的购房标准为：经腾退补偿安置工作组认定的被安置人口，按人均50平方米确定购房指标；违反国家计划生育政策生育二胎及以上的，父母及其超生的子女按人均45平方米确定购房指标。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2 由于安置房户型设计原因，实际购房面积超过购房指标，每宗宅基地不得超过30平方米；违反计划生育政策的被腾退人，实际购房面积不得超过购房指标20平方米。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3 依据《李家峪村棚户区改造和环境整治项目宅基地权属、认定人口确认结果一览表》的认定结果，乙方购买定向安置房指标内面积为<u>&nbsp;&nbsp;&nbsp;${bean.zbnmj?string("0.00")?default("")}&nbsp;&nbsp;&nbsp;</u>平方米。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4 定向安置房售价为4000元/平方米；超过购房指标15平方米以内按照安置售房价即4000元/平方米计算；超过购房指标15—30平方米购房指标的，在安置售房价的基础上上浮50%即6000元/平方米。
@@ -266,7 +269,7 @@
                     平方米，超过购房指标面积为<u>&nbsp;&nbsp;${bean.czbmj?string("0.00")?default("/")}&nbsp;&nbsp;&nbsp;</u>平方米。购房款总价暂定为<u style="background-color:#F2F2F2;">&nbsp;&nbsp;&nbsp;${bean.azfgfk?c?default("")}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
                         <u>&nbsp;&nbsp;&nbsp;${bean.dxazfgfk?default("")}&nbsp;&nbsp;&nbsp;</u>），其中：购房指标内的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbngfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
                         <u>&nbsp;&nbsp;&nbsp;${bean.dxzbngfk?default()}&nbsp;&nbsp;&nbsp;</u>），超过购房指标的购房款为<u>&nbsp;&nbsp;&nbsp;${bean.zbwgfk?c?default()}&nbsp;&nbsp;&nbsp;</u>元（大写人民币：
-                        <u>&nbsp;&nbsp;&nbsp;${bean.dxzbwgfk?default()}&nbsp;&nbsp;&nbsp;</u>）。购房款的最终结算根据本协议第八条“房款结算及相关费用缴纳”中的约定来确定。<br/>
+                        <u>&nbsp;&nbsp;&nbsp;${bean.dxzbwgfk?default()}&nbsp;&nbsp;&nbsp;</u>）。购房款的最终结算根据本协议第九条“房款结算及相关费用缴纳”中的约定来确定。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2 本协议第三条第1款中的购房款不包括购买该房屋所应缴纳的物业费、供暖费、公共维修基金、契税及其他按照国家相应法律法规及政策所需缴纳的相关费用，上述费用的收费标准根据国家法律法规及政府相关政策执行。
                 </p>
                 <p class="leftTitle">第四条&nbsp;&nbsp;协议生效和终止</p>
@@ -313,7 +316,7 @@
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.1 本协议下乙方所认购的定向安置房面积与实测建筑面积不一致的，甲乙双方同意，按照实测建筑面积据实结算购房款。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2 甲乙双方同意按照本协议第六条第4款所述安置房买卖合同中的相关约定，对定向安置房购房款进行结算，实行多退少补，并向甲方缴纳相关费用包括但不仅限于公共维修基金、契税等。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.3 因购房款结算，涉及乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）中的腾退补偿总价不做调整。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.3 本协议生效后，因购房款结算，涉及乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）中的腾退补偿总价不做调整。
                 </p>
                 <p class="leftTitle">第十条&nbsp;&nbsp;争议解决方式及其他</p>
                 <p class="contex-1">
@@ -449,7 +452,9 @@
                     &nbsp;&nbsp;${bean.indexNumStr?default("/")}&nbsp;&nbsp;</u>号，您是本村第&nbsp;&nbsp;${bean.indexnum?default("/")}&nbsp;&nbsp;</u>
                     个签约的家庭。
                 </p>
-                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人及全体家庭成员已完全知悉并同意《丰台区长辛店镇李家峪村宅基地腾退补偿实施细则》等相关规定，“以签订腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的选房原则。</p>
+                <p class="contex-1" style="margin-top:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;被腾退人及全体家庭成员已完全知悉并同意《李家峪村宅基地腾退补偿安置方案》、《李家峪村宅基地腾退补偿安置实施细则》、《李家峪村现状楼房腾退补偿实施细则》等相关规定，在《北京市宅基地房屋腾退补偿安置协议》生效前提下，“以签订腾退补偿安置协议日期为
+准，先签订腾退补偿安置协议的先选房”的选房原则。
+                </p>
                 <p class="contex-1" style="margin-top:30px; text-align: right">被腾退人确认签字（按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
                 <p class="contex-1" style="margin-top: 20px;text-align: right;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>

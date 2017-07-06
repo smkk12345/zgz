@@ -161,7 +161,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;经甲、乙双方协商一致，同意按照“安置房补偿的方式”对于权属于乙方的宅基地、房屋及附属物进行房屋腾退补偿安置，达成如下协议：
             </p>
             <p class="left-title">第一条&nbsp;&nbsp;腾退依据</p>
-            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发[2016]27号）、经北京市丰台区长辛店镇李家峪村民代表大会通过的《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》等相关文件。
+            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;依据《北京市集体土地房屋拆迁管理办法》（北京市人民政府令第124号）、《北京市人民政府关于加强农村村民建房用地管理若干规定》（北京市人民政府令1989年第39号）、《丰台区人民政府关于〈北京市集体土地房屋拆迁管理办法〉的实施意见》（丰政发[2009]54号）、《长辛店镇宅基地腾退补偿安置指导意见》（丰长发[2016]27号）、经北京市丰台区长辛店镇李家峪村民代表大会通过的《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》、《李家峪村现状楼房腾退补偿实施细则》等相关文件。
                 甲方作为本项目腾退主体，需要对权属于乙方的在本项目腾退范围内坐落于<u>&nbsp;&nbsp;${housebasic.location?default("/")}&nbsp;&nbsp;</u>的宅基地、房屋及附属物进行自主腾退。
             </p>
             <p class="left-title">第二条&nbsp;&nbsp;宅基地认定</p>
@@ -171,7 +171,8 @@
                &nbsp;&nbsp;&nbsp;&nbsp;2.2 经李家峪村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
                     <u><#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积
                     <u><#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积
-                    <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。
+                    <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：
+                &nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u style=""><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></u>平方米；超出宅基地控制面积<u style=""><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></u>平方米。
             </p>
             <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
             <p class="contex-1">
@@ -214,7 +215,7 @@
 
             <p class="left-title">第五条&nbsp;&nbsp;安置房补偿</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;5.1 依据《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      李家峪村棚户区改造              定向安置房项目购买定向安置房。
+                &nbsp;&nbsp;&nbsp;&nbsp;5.1 依据《李家峪村宅基地腾退补偿安置方案》及《李家峪村宅基地腾退补偿安置实施细则》、《李家峪村现状楼房腾退补偿实施细则》等相关文件规定，结合乙方的定向安置房选房意愿，乙方可以在本项目指定的      李家峪村棚户区改造              定向安置房项目购买定向安置房。
                 乙方“实际选房面积”为<u>&nbsp;&nbsp;<#if bean.sjxfmj??>${bean.sjxfmj?string("0.00")}<#else>0.00</#if> &nbsp;&nbsp;</u>平方米，其中一居室
                     <u>&nbsp;&nbsp;${bean.yjs?c?default("/")}&nbsp;&nbsp;</u>套，二居室<u>&nbsp;&nbsp;
                     <#assign ljs70 = bean.ljs70?default(0)>
@@ -240,7 +241,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）提前搬家奖（5000元/产权院）<u>&nbsp;&nbsp;${bean.tqbjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）工程配合奖（100000元/产权院）<u>&nbsp;&nbsp;${bean.gcphjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）腾退促进奖（50000院/产权院）<u>&nbsp;&nbsp;${bean.ttcjjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）棚改支持签约奖励（200000元/院） <u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/> 
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）棚改支持签约奖励费（200000元/院） <u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/> 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（5）无违章奖励费（500元/平方米）<u>&nbsp;&nbsp;${bean.wwzjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（6）未建二层及地下室奖励费（500元/平方米）<u>&nbsp;&nbsp;${bean.wjecjj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（7）未经批准已建二层或地下室补助费（500元/平方米）<u>&nbsp;&nbsp;${bean.wjpzyjecbz?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
@@ -286,9 +287,9 @@
                 甲方按照乙方签订本协议生效之日起至定向安置房交房后 <u>4</u>个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  <u>1500</u>元/人/月 ，甲方暂按周转期 <u>40</u>个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《李家峪村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
             </p>
             <p class="left-title">第九条&nbsp;&nbsp;宅基地腾退补偿总价的支付主体</p>
-            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇李家峪村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p>
+            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇张郭庄村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p>
             <p class="left-title">第十条&nbsp;&nbsp;定向安置房的建设主体</p>
-            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司是丰台区长辛店镇李家峪村棚户区改造和环境整治项目（李家峪村）定向安置房的建设主体，甲乙双方同意由北京中建方程投资管理有限公司依照上述约定的方式向乙方收缴购房款。 </p>
+            <p class="contex-1">&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司是丰台区长辛店镇张郭庄村棚户区改造和环境整治项目（李家峪村）定向安置房的建设主体，甲乙双方同意由北京中建方程投资管理有限公司依照上述约定的方式向乙方收缴购房款。 </p>
             <p class="left-title">第十一条&nbsp;&nbsp;房地权属注销登记</p>
             <p class="contex-1">
                 &nbsp;&nbsp;&nbsp;&nbsp;11.1 
@@ -354,15 +355,14 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </p>
             <br>            
-            <p class="contex-1" style="margin-top: 20px;">
+            <p class="contex-1" style="margin-top: 15px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;</u>年
                     <u>&nbsp;&nbsp;&nbsp;&nbsp;</u>月
                     <u>&nbsp;&nbsp;&nbsp;&nbsp;</u>日
             </p>
             <br>
             <br>
-            <br>
-            <p class="contex-1" style="margin-top: 50px;">
+            <p class="contex-1" style="margin-top: 30px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;乙方（签字并按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </p>
             <br>
@@ -370,8 +370,19 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </p>
             <br>
-            <p class="contex-1" style="margin-top: 20px;">
+            <p class="contex-1" style="margin-top: 15px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;${sysyear?c}&nbsp;</u>年
+                    <u>&nbsp;${sysmonth}&nbsp;</u>月
+                    <u>&nbsp;${sysday}&nbsp;</u>日
+            </p>
+            <br>
+            <br>
+            <p class="contex-1" style="margin-top: 30px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;腾退服务公司经办人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+            <br>
+            <p class="contex-1" style="margin-top: 15px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;签字日期：<u>&nbsp;${sysyear?c}&nbsp;</u>年
                     <u>&nbsp;${sysmonth}&nbsp;</u>月
                     <u>&nbsp;${sysday}&nbsp;</u>日
             </p>

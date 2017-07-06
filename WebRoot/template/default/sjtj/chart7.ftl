@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <meta http-equiv="refresh" content="1000">
+	<meta http-equiv="refresh" content="5">
     <!--CSS文件-->
     <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="${BASE_ASSETS_PATH}libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
@@ -36,12 +36,16 @@
         长辛店镇李家峪村棚户区改造宅基地腾退项目
     </div>
     <!--    <div id='currentDate' style='margin-top: 20px;color:#FFF;font-size:25px; font-family:"宋体";font-weight:bold;text-align: center;'></div>-->
-    <div style='margin-top: 70px;color:#0F0;font-size:90px; font-family:"宋体";font-weight:bold;text-align: center;'>
-        政策咨询期
+    <div style='margin-top: 50px;color:red;font-size:40px; font-family:"黑体";font-weight:bold;text-align: center;'>
+        截至日期：2017年07月07日 09:00:00点整
     </div>
-    <div style='margin-top: 90px;color:#FF0;font-size:115px; font-family:"宋体";font-weight:bold;text-align: center;'>
-        第<span id="timeDate2" style="color: red"></span>天
+    <div style='margin-top: 60px;color:#0F0;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
+       距预签约奖励期剩余<span id="timeDate2" style="color: red"></span>天<span id="times2"
+                                                                 style="color: red; width:230px !important;"></span>
     </div>
+    <!-- <div style='margin-top: 50px;color:#FF0;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>
+        整体签约比例：<span style="color: red">${qybl?default(0)}</span>
+    </div>-->
 </div>
 
 <script type="text/javascript">
@@ -92,10 +96,10 @@
 
     function createtime(timeDate, times) {
 
-        var grt = new Date("6/27/2017 00:00:00");
+        var grt = new Date("07/07/2017 09:00:00");
 
         now.setTime(now.getTime() + 250);
-        days = 1+(now-grt) / 1000 / 60 / 60 / 24;
+        days = (grt - now) / 1000 / 60 / 60 / 24;
         dnum = Math.floor(days);
         hours = (grt - now) / 1000 / 60 / 60 - (24 * dnum);
         hnum = Math.floor(hours);
@@ -114,7 +118,8 @@
         }
 
         document.getElementById(timeDate).innerHTML = dnum;
-        document.getElementById(timeDate2).innerHTML = days;
+        document.getElementById(times).innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+
         //setTimeout("createtime("+timeDate+","+times+")",250);
     }
 

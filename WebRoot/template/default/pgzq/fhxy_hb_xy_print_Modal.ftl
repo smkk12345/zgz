@@ -170,7 +170,8 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;2.2 经李家峪村宅基地面积和人口认定工作组认定，乙方宅基地合法批准认定年限为
                         <u><#if (bean.homesteadyear?default("-1"))=='1'>82年后<#else>82年前</#if></u>。认定宅基地面积<u>
                         <#if bean.rdzjdallarea??>${(bean.rdzjdallarea?number)?string("0.00")}<#else>0.00</#if></u>平方米，补偿宅基地面积
-                        <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。
+                        <u style="background-color:#F2F2F2;"><#if bean.bczjdmj??>${bean.bczjdmj?string("0.00")}<#else>0.00</#if></u>平方米。其中：
+                &nbsp;&nbsp;&nbsp;&nbsp;宅基地控制面积<u style=""><#if bean.conhomestarea??>${bean.conhomestarea?string("0.00")}<#else>0.00</#if></u>平方米；超出宅基地控制面积<u style=""><#if bean.overhomesteadarea??>${bean.overhomesteadarea?string("0.00")}<#else>0.00</#if></u>平方米。
                 </p>
                 <p class="left-title">第三条&nbsp;&nbsp;房屋补偿面积</p>
                 <p class="contex-1" >
@@ -233,7 +234,7 @@
 
                 <p class="left-title">第五条&nbsp;&nbsp;宅基地腾退补偿总价</p>
                 <p class="contex-1" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;5.1 甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费等。具体如下：<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;5.1 甲方应当向乙方支付宅基地腾退补偿总价人民币<u style="background-color:#F2F2F2;">&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;</u>元（大写人民币：<u>&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;</u>），包含宅基地腾退补偿款、被腾退房屋重置成新价、及各项奖励费、补助费、周转补助费等。具体如下：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;5.1.1 宅基地腾退补偿款<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;经<u>&nbsp;&nbsp;${bean.pgjg?default("/")}&nbsp;&nbsp;</u>评估，宅基地腾退补偿款<u>&nbsp;&nbsp;${bean.zjdttbck?c?default("/")}&nbsp;&nbsp;</u>元。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;其中包括：<br/> 
@@ -248,7 +249,7 @@
                         <u>&nbsp;&nbsp;${bean.gcphjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）腾退促进奖（50000院/产权院）
                         <u>&nbsp;&nbsp;${bean.ttcjjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）棚改支持签约奖励（200000元/院）<u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）棚改支持签约奖励费（200000元/院）<u>&nbsp;&nbsp;${bean.pgzcqyjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（5）无违章奖励费（500元/平方米）<u>&nbsp;&nbsp;${bean.wwzjl?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（6）未建二层及地下室奖励费（500元/平方米）
                        <u> &nbsp;&nbsp;${bean.wjecjj?c?default("/")}&nbsp;&nbsp;</u>元；<br/>
@@ -277,7 +278,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;6.3 乙方承诺：在向甲方交付被腾退房屋后，乙方不再对该被腾退房屋主张任何权利。
                 </p>
                 <p class="left-title">第七条&nbsp;&nbsp;宅基地腾退补偿总价支付主体</p>
-                <p class="contex-1" >&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇李家峪村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p> 
+                <p class="contex-1" >&nbsp;&nbsp;&nbsp;&nbsp;北京中建方程投资管理有限公司作为丰台区长辛店镇张郭庄村棚户区改造和环境整治项目实施主体，负责项目腾退补偿资金的筹措。甲乙双方同意由北京中建方程投资管理有限公司按照上述约定的方式向乙方发放各项腾退补偿款项。 </p> 
                 <p class="left-title">第八条&nbsp;&nbsp;付款方式</p>
                 <p class="contex-1" >
                     &nbsp;&nbsp;&nbsp;&nbsp;8.1 本协议生效后，且在项目审计部门审核通过后，甲方及时通知乙方在搬迁期限内进行搬迁，搬迁完毕并经拆除公司验收合格后，房屋交甲方拆除。 <br/> 
@@ -287,9 +288,9 @@
                 </p>
                 <p class="left-title">第九条&nbsp;&nbsp;乙方的承诺和保证</p>
                 <p class="contex-1" > 
-                    &nbsp;&nbsp;&nbsp;&nbsp;9.1 乙方在“腾退公告”范围内无其他土地使用权或房产权利或任何腾退利益或拆迁利益；<br/> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;9.2 乙方向甲方提供的所有土地、房屋权属、身份关系证明材料及其他相关证照类材料，均合法、有效、真实、全面；<br/> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;9.3 乙方保证其在签署本协议之前已取得所有必要的共有权人、亲属（包括父母、继父母、养父母、配偶、子女、继子女、养子女、兄弟姐妹等）及有利益关系的第三人的授权，确认乙方本人有权签署和履行本协议；<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;9.1 乙方在“腾退暂停公告”需要实施腾退范围内，无其他土地使用权或房产权利或任何腾退利益或拆迁利益。<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;9.2 乙方向甲方提供的所有土地、房屋权属、身份关系证明材料及其他相关材料，均合法、有效、真实、全面。<br/> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;9.3 乙方保证其在签署本协议之前已取得所有必要的共有权人、亲属（包括父母、继父母、养父母、配偶、子女、继子女、养子女、兄弟姐妹等）及有利益关系的第三人的授权，确认乙方本人有权签署和履行本协议。<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;9.4 乙方保证其作为被腾退人主体的合法性和唯一性。
                 </p> 
                 <p class="left-title">第十条&nbsp;&nbsp;房地权属注销登记</p>
@@ -309,7 +310,7 @@
                 <p class="contex-1" > 
                     &nbsp;&nbsp;&nbsp;&nbsp;本协议生效后，在履行中如发生争议，甲、乙双方应争取协商解决；协商不成的，甲、乙双方同意按以下第<u>&nbsp;2&nbsp;</u>种方式解决：<br/> 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)向北京仲裁委员会申请仲裁；<br/> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)向腾退宅基地、房屋及附属物所在地的人民法院提起诉讼。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)向被腾退房屋所在地的人民法院提起诉讼。
                 </p> 
                 <p class="left-title">第十三条&nbsp;&nbsp;协议生效及其他事宜</p>
                 <p class="contex-1" > 
@@ -340,15 +341,14 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;法定代表人或委托代理人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </p>
             <br>            
-            <p class="contex-1" style="margin-top: 20px;">
+            <p class="contex-1" style="margin-top: 15px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;&nbsp;&nbsp;&nbsp;</u>年
                     <u>&nbsp;&nbsp;&nbsp;&nbsp;</u>月
                     <u>&nbsp;&nbsp;&nbsp;&nbsp;</u>日
             </p>
             <br>
             <br>
-            <br>
-            <p class="contex-1" style="margin-top: 50px;">
+            <p class="contex-1" style="margin-top: 30px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;乙方（签字并按指纹）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </p>
             <br>
@@ -356,12 +356,22 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;委托代理人(签字并按指纹)：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
             </p>
             <br>
-            <p class="contex-1" style="margin-top: 20px;">
+            <p class="contex-1" style="margin-top: 15px;">
                 &nbsp;&nbsp;&nbsp;&nbsp;签署时间：<u>&nbsp;${sysyear?c}&nbsp;</u>年
                     <u>&nbsp;${sysmonth}&nbsp;</u>月
                     <u>&nbsp;${sysday}&nbsp;</u>日
             </p>
-
+            <br>
+            <br>
+            <p class="contex-1" style="margin-top: 30px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;腾退服务公司经办人（签字）：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+            </p>
+            <br>
+            <p class="contex-1" style="margin-top: 15px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;签字日期：<u>&nbsp;${sysyear?c}&nbsp;</u>年
+                    <u>&nbsp;${sysmonth}&nbsp;</u>月
+                    <u>&nbsp;${sysday}&nbsp;</u>日
+            </p>
             </div>
             <div style="clear:both; height:20px;"></div>
         </div>
