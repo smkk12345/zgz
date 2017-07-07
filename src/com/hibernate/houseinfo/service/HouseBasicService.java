@@ -136,6 +136,7 @@ public class HouseBasicService {
 			sum = getSumValue(sum,agreenment.getXgbzf());
 			sum = getSumValue(sum,agreenment.getZjdypwpbz());
 			sum = getSumValue(sum,agreenment.getYhzbwxmbc());
+			sum = getSumValue(sum,agreenment.getPgzcqyjl());
 			agreenment.setJlfsum(new BigDecimal(sum));
 			//奖励补助费计算完毕
 			sum = getSumValue(sum, agreenment.getZjdttbck());
