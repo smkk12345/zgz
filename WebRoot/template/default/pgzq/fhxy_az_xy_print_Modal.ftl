@@ -264,26 +264,26 @@
             </p>
             <p class="left-title">第七条&nbsp;&nbsp;乙方腾退期限及要求</p>
             <p class="contex-1">
-                &nbsp;&nbsp;&nbsp;&nbsp;7.1  乙方应在本协议生效后20日内完成腾退搬迁等事项。并在实际腾退搬迁前结清所有资源欠费（含乙方使用的水、电、天然气等费用），确保房屋和附属物内无任何人员和财产（即房屋和附属物完全具备拆除条件），并将所有房屋及附属物的钥匙交给甲方，由拆除公司验收合格后，甲方认定乙方腾退完毕。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;7.1  乙方应在本协议生效且经项目审计部门审核通过后20日内完成腾退搬迁等事项。并在实际腾退搬迁前结清所有资源欠费（含乙方使用的水、电、天然气等费用），确保房屋和附属物内无任何人员和财产（即房屋和附属物完全具备拆除条件），并将所有房屋及附属物的钥匙交给甲方，由拆除公司验收合格后，甲方认定乙方腾退完毕。<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;7.2  乙方不得拆除原房屋(包含全部未被认定房屋)中房屋设备和建筑材料,并负责所有人员按期搬迁.未搬迁的,乙方承担未按期搬迁的相关责任。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;7.3  乙方承诺：在向甲方交付被腾退房屋后，乙方不再对该被腾退房屋主张任何权利。
+                &nbsp;&nbsp;&nbsp;&nbsp;7.3  乙方承诺：在向甲方交付被腾退房屋后，乙方不再对该被腾退房屋享有并主张任何权利。
             </p>
             <p class="left-title">第八条&nbsp;&nbsp;付款结算方式</p>
             <p class="contex-1">
                 &nbsp;&nbsp;&nbsp;&nbsp;8.1  本协议生效后，甲方应当向乙方支付被腾退宅基地腾退补偿总价为人民币<u style="background-color:#F2F2F2;">&nbsp;&nbsp;${bean.zjdttzj?c?default("/")}&nbsp;&nbsp;</u>元（大写人民币：<u>&nbsp;&nbsp;${bean.dxzjdttzj?default("/")}&nbsp;&nbsp;</u>）。根据乙方签署的《北京市定向安置房认购协议》相关约定，乙方应向定向安置房建设主体支付定向安置房购房款共计
                     <u style="background-color:#F2F2F2;">&nbsp;${bean.azfgfk?c?default("/")}&nbsp;</u>元（大写人民币<u>&nbsp;&nbsp;${bean.dxazfgfk?default("/")}&nbsp;&nbsp;</u>）。甲方在乙方完成交房验收后到指定银行办理宅基地腾退补偿总价款和定向安置房购房款结算。根据结算实际情况，甲乙双方同意按以下第<u>&nbsp;<#if bean.jshk?default(0) gt 0>8.2<#else>8.3</#if>&nbsp;&nbsp;</u>种方式进行结算：<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.2  本协议生效后，乙方宅基地腾退补偿总价款足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
+                &nbsp;&nbsp;&nbsp;&nbsp;8.1.1  本协议生效后，乙方宅基地腾退补偿总价款足以支付定向安置房购房款的，由甲方在项目审计部门审核通过后<u>&nbsp;20
                     &nbsp;</u>个工作日内向乙方开具领款凭证，一次性发放支付定向安置房购房款后的宅基地腾退补偿总价款结算余额
                     <u style="background-color:#F2F2F2;"> &nbsp;<#if bean.jshk?default(0) gt 0>${bean.jshk?c?default("/")}<#else>/</#if>&nbsp;</u>
                     元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) gt 0>${bean.dxjshk?default("/")}<#else>/</#if>&nbsp;</u> ）；<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.3 
+                &nbsp;&nbsp;&nbsp;&nbsp;8.1.2 
                 本协议生效后，乙方宅基地腾退补偿总价款不足以支付定向安置房购房款的，甲方将乙方宅基地腾退补偿总价直接支付给定向安置房建设主体，甲方不再向乙方支付宅基地腾退补偿总价款。乙方应按其所签署的《北京市定向安置房认购协议》所约定的期限向定向安置房建设主体补交剩余定向安置房购房款  
                 <#assign jshkabs = bean.jshk?c?default(0)?number>
                 <u  style="background-color:#F2F2F2;"><#if bean.jshk?default(0) lt 0>${(-jshkabs)?c}<#else>/</#if></u>
                 元（大写人民币：<u>&nbsp;<#if bean.jshk?default(0) lt 0>${bean.dxjshk?default("/")}<#else>/</#if>&nbsp;</u> ）；<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.4 
+                &nbsp;&nbsp;&nbsp;&nbsp;8.2 
                 乙方同意在甲方指定银行为双方办理宅基地腾退补偿总价付款业务及定向安置房购房款收款业务的支付凭证或单据上签字（盖章）。如乙方在办理宅基地腾退补偿总价款领取和定向安置房购房款的支付手续过程中拒绝在相关支付凭证或单据上签字，甲方和指定银行有权终止宅基地腾退补偿总价款的发放。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;8.5 
+                &nbsp;&nbsp;&nbsp;&nbsp;8.3 
                 甲方按照乙方签订本协议生效之日起至定向安置房交房后 <u>4</u>个月计算周转补助费，被腾退安置人口享受周转补助费的标准为  <u>1500</u>元/人/月 ，甲方暂按周转期 <u>40</u>个月 （含安置房交房后4个月）向乙方支付周转补助费。若实际周转期短于暂定周转期，乙方按实际剩余期限向甲方退还剩余期限的周转补助费；若实际周转期超过暂定周转期，甲方按照《李家峪村宅基地腾退补偿安置实施细则》的规定向乙方继续核发周转补助费，甲方无需因实际周转期超过暂定周转期而向乙方支付其它任何形式的补偿或费用。
             </p>
             <p class="left-title">第九条&nbsp;&nbsp;宅基地腾退补偿总价的支付主体</p>

@@ -40,7 +40,7 @@
         截至日期：2017年07月07日 09:00:00点整
     </div>
     <div style='margin-top: 60px;color:#0F0;font-size:60px; font-family:"宋体";font-weight:bold;text-align: center;'>
-       距预签约奖励期剩余<span id="timeDate2" style="color: red"></span>天<span id="times2"
+       距预签约奖励期开始剩余<br><span id="timeDate2" style="color: red"></span>天<span id="times2"
                                                                  style="color: red; width:230px !important;"></span>
     </div>
     <!-- <div style='margin-top: 50px;color:#FF0;font-size:50px; font-family:"宋体";font-weight:bold;text-align: center;'>

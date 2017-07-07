@@ -274,8 +274,8 @@
                 </p>
                 <p class="leftTitle">第四条&nbsp;&nbsp;协议生效和终止</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1 以腾退人与乙方签订《北京市宅基地房屋腾退补偿安置协议》正式生效前提下,本协议甲方与乙方双方签字、盖章之日起生效。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2 乙方所在腾退范围内在预签协议期内未达到85%，腾退范围内补偿安置工作、安置房认购签约工作自动终止，本协议不生效。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1 乙方所在腾退范围内在预签协议期内未达到85%，腾退范围内补偿安置工作、安置房认购签约工作自动终止，本协议不生效。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2 乙方所在腾退范围内在预签协议期内达到85%的，本协议生效，生效日期位本协议加以双方签字盖章之日。<br/>
                 </p>
                 <p class="leftTitle">第五条&nbsp;&nbsp;补偿安置协议生效后付款方式</p>
                 <p class="contex-1">
@@ -298,24 +298,22 @@
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1 根据“以签订房屋腾退补偿安置协议日期为准，先签订腾退补偿安置协议的先选房”的定向安置房选房原则，甲方依据腾退人与乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号为
                         <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）时确定的顺序号(详见本协议附件2)，作为选房顺序的唯一依据。选房工作的具体时间安排由属地政府、腾退主体及甲方根据实际情况决定。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2 乙方于<span style="background-color:#F2F2F2;"><u>&nbsp;${year?c}&nbsp;</u>年<u>&nbsp;${month}&nbsp;</u>月
-                        <u>&nbsp;${day}&nbsp;</u>日<u>&nbsp;${hour}&nbsp;</u>时
-                        <u>&nbsp;${minute}&nbsp;</u>分<u>&nbsp;${second}&nbsp;</u>秒</span>签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2 乙方于<span style="background-color:#F2F2F2;"><u>${bean.displaydate?default("/")}</u></span>签署了《北京市宅基地房屋腾退补偿安置协议》（协议编号：
                         <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>），乙方可根据上述时点的具体排序进行选房。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3 甲方在选房工作开始之日的15个工作日前，根据乙方签订《北京市宅基地房屋腾退补偿安置协议》（协议编号：
                         <u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）的时点排定次序，书面（或电话）通知乙方到指定地点进行选房。乙方应根据确定后的选房顺序在规定的时间及地点进行选房，非因甲方原因造成乙方未能在规定的时间内到达指定地点选房导致其选房顺序号后延的，由此引起的一切责任及后果由乙方自行承担。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4 乙方在进行选房的同时，必须在本协议附件1所列认定安置人口明细表，选定所购定向安置房的实际产权人。实际产权人经政府主管部门和审计机构认定无误后，按照甲方书面（或电话）通知的时间、地点与甲方签订安置房买卖合同。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.5 本协议第六条第4款所述实际产权人的姓名、身份证号码和选定的具体房号，经政府主管部门和审计机构认定无误后不得更改。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6 本协议第六条第4款所述实际产权人在接到甲方签订安置房买卖合同通知的20个工作日内，未与甲方签订合同的，甲方有权拒绝签订安置房买卖合同，同时本协议自行终止。乙方已付的定向安置房购房款由甲方退还乙方，购房款不计息，甲乙双方互不追究相关责任。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.5 本协议第七条第4款所述实际产权人的姓名、身份证号码和选定的具体房号，经政府主管部门和审计机构认定无误后不得更改。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6 本协议第七条第4款所述实际产权人在接到甲方签订安置房买卖合同通知的20个工作日内，未与甲方签订合同的，甲方有权拒绝签订安置房买卖合同，同时本协议自行终止。乙方已付的定向安置房购房款由甲方退还乙方，购房款不计息，甲乙双方互不追究相关责任。
                 </p>
                 <p class="leftTitle">第八条&nbsp;&nbsp;房屋交付</p>
                 <p class="contex-1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方同意甲方按照本协议第六条第4款所述安置房买卖合同中的相关约定，向实际产权人交付定向安置房。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方同意甲方按照本协议第七条第4款所述安置房买卖合同中的相关约定，向实际产权人交付定向安置房。
                 </p>
                 <p class="leftTitle">第九条&nbsp;&nbsp;购房款结算及相关费用缴纳</p>
                 <p class="contex-1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.1 本协议下乙方所认购的定向安置房面积与实测建筑面积不一致的，甲乙双方同意，按照实测建筑面积据实结算购房款。<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2 甲乙双方同意按照本协议第六条第4款所述安置房买卖合同中的相关约定，对定向安置房购房款进行结算，实行多退少补，并向甲方缴纳相关费用包括但不仅限于公共维修基金、契税等。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2 甲乙双方同意按照本协议第七条第4款所述安置房买卖合同中的相关约定，对定向安置房购房款进行结算，实行多退少补，并向甲方缴纳相关费用包括但不仅限于公共维修基金、契税等。<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.3 本协议生效后，因购房款结算，涉及乙方与腾退人签订的《北京市宅基地房屋腾退补偿安置协议》（协议编号为<u>&nbsp;&nbsp;&nbsp;${bean.protocolnumber?default("/")}&nbsp;&nbsp;&nbsp;</u>）中的腾退补偿总价不做调整。
                 </p>
                 <p class="leftTitle">第十条&nbsp;&nbsp;争议解决方式及其他</p>
