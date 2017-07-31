@@ -500,7 +500,11 @@
 		} 
 		var selectedvalue = '${bean.atype}';
 		if(selectedvalue==='1'){
-            	$("#inputzzbz").val(6000);
+		    var people = ${housebasic.people};
+            if(people){
+            var money = parseFloat(people)*6000;
+            	$("#inputzzbz").val(money);
+           }
 		}
 		else{
 		    var people = ${housebasic.people};
@@ -545,12 +549,11 @@
             $(".azxy").hide();
            	$(".azxy input[type='text']").attr("disabled","disabled");
             $(".div_eight").html("7.评估款，补偿补助及奖励费合计：");
-            //var people = ${housebasic.people};
-            //if(people){
-               // var money = parseFloat(people)*1500*4;
-                //alert("adad");
-            	$("#inputzzbz").val(6000);
-           //}
+              var people = ${housebasic.people};
+              if(people){
+                var money = parseFloat(people)*6000;
+            	$("#inputzzbz").val(money);
+           }
         }
         else {
             $(".azxy").show();

@@ -175,6 +175,7 @@ public class SjtjController {
 
             model.addAttribute("yqy", list.size());
 //            model.addAttribute("wqy", count - list.size());
+            model.addAttribute("wqy", 290 - list.size());
             model.addAttribute("az", azList.size());
             model.addAttribute("hb", hbList.size());
             

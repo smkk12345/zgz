@@ -103,19 +103,21 @@ public class HouseBasicService {
 		if(null == agreenment){
 			return ;
 		}
-		//如果是货币   直接返回
-		if(agreenment.getAtype().equals("1")){
-			return;
-		}
 		//人数变化之后  影响周转补助费  ---- 补助费 --腾退总价 -- 计算后款
 		//补助费  + 奖励费 = 补助费合计 a
 		//宅基地补偿款  b
 		//购房款  c
 		//腾退补偿总价 d = a+b
 		//计算后款 f = d - c
+		double zzbz = 0.00;
 		try {
 			int people = houseBasic.getPeople();
-			double zzbz = people*1500*40;
+			//如果是货币   每人6000元
+			if(agreenment.getAtype().equals("1")){
+			   zzbz = people*6000;
+			}else{
+			   zzbz = people*1500*40;
+			}
 			double sum = 0.00;
 			sum = getSumValue(sum,agreenment.getTqbjl());
 			sum = getSumValue(sum,agreenment.getGcphjl());
