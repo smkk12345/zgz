@@ -22,16 +22,33 @@
 
         <script>
             function doPrint() {
-                $("#print").hide();
-                // $("#title").hide();
-                LODOP = getLodop();
-                LODOP.ADD_PRINT_HTM(80, 80, "80%", "83%", document.body.innerHTML);
-                LODOP.ADD_PRINT_HTM("97%", "85%", 0, "45%", "<span tdata='pageNO'>第#页</span>&nbsp;共<span tdata='pageCount'>#</span>页");
-                LODOP.SET_PRINT_STYLEA(0, "ItemType", 1);//循环上一命令（页码）
-                LODOP.PRINTA();
-                $("#print").show();
-                //$("#title").show();
-
+            	var p = '${BASE_PATH}'+"indexnum/validate.action";
+            	var curid = '${bean.id}';
+            	$.ajax({
+                cache: true,
+                type: "POST",
+                url: p,
+                dataType: "json",
+                data: {agreenmentid: curid},
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                   location.href="${BASE_PATH}"+"/index.action";
+                },
+                success: function (response) {
+                   if(response.success == '1'){
+                    $("#print").hide();
+	                // $("#title").hide();
+	                LODOP = getLodop();
+	                LODOP.ADD_PRINT_HTM(80, 80, "80%", "83%", document.body.innerHTML);
+	                LODOP.ADD_PRINT_HTM("97%", "85%", 0, "45%", "<span tdata='pageNO'>第#页</span>&nbsp;共<span tdata='pageCount'>#</span>页");
+	                LODOP.SET_PRINT_STYLEA(0, "ItemType", 1);//循环上一命令（页码）
+	                LODOP.PRINTA();
+	                $("#print").show();
+	                //$("#title").show();
+                   }else{
+                   	 alert("您好，您选择的部分房源已选完，请联系拆迁人员重新选房，谢谢");
+                   }
+                }
+            })
             }
         </script>
 

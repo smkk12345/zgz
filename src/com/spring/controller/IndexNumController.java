@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.ServiceUnavailableException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -58,6 +59,11 @@ public class IndexNumController {
 			User user = (User)request.getSession().getAttribute("user");
 			IndexNum indexNum = ServiceManager.getIndexNumService().getIndexNum(housebsicid);
 			Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+			Map<String,Integer> validateMap = ServiceManager.getAgreenmentService().validateHouseOperte(agreenment);
+			if(!validateMap.isEmpty()){
+				map.put("success", "0");
+				return map;
+			}
 			HouseBasic housebasic = ServiceManager.getHouseBasicServce().getHouseBasicById(housebsicid, "1,2,3,4,5,6,7,8,9,10");
 			if (null == indexNum) {
 				if(!Contanst.houseBasicidSet.contains(housebsicid)){
@@ -99,9 +105,30 @@ public class IndexNumController {
 			model.addAttribute("error", e.getMessage());
 			return null;
 		}
+		map.put("success", "1");
 		return map;
 	}
 
+	@RequestMapping({ "/indexnum/validate.action" })
+	@ResponseBody
+	public Map<String,String> validate(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+		Map<String,String> map = new HashMap<String, String>();
+		String agreenmentid = request.getParameter("agreenmentid");
+		Agreement agreenment = ServiceManager.getAgreenmentService().getById(agreenmentid);
+		if(!StringUtils.isEmpty(agreenment.getProtocolnumber())){
+			map.put("success", "1");
+			return map;
+		}
+		Map<String,Integer> validateMap = ServiceManager.getAgreenmentService().validateHouseOperte(agreenment);
+		if(!validateMap.isEmpty()){
+			map.put("success", "0");
+			return map;
+		}
+		map.put("success", "1");
+		return map;
+	}
+
+	
 	private String getIndexNumStr(Long indexNum2) {
 		// TODO Auto-generated method stub
 		if(null != indexNum2){

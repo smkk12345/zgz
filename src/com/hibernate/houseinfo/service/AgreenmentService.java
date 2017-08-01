@@ -1,5 +1,9 @@
 package com.hibernate.houseinfo.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.common.consts.Contanst;
 import com.common.utils.StringUtils;
 import com.hibernate.houseinfo.dao.AgreenmentDao;
 import com.hibernate.houseinfo.domain.Agreement;
@@ -53,5 +57,44 @@ public class AgreenmentService {
 	public Agreement getByHouseBasicId(String id) {
 		return agreenmentDao.getByHouseBasicId(id);
 	}
+	/**
+	 * 已经签约的
+	 * @return
+	 */
+	private Agreement getLeftHouse(){
+		return agreenmentDao.getLeftHouse();
+	}
+	
+	
+	public Map<String,Integer> validateHouseOperte(Agreement agreenment){
+		Agreement qyHouse =  agreenmentDao.getLeftHouse();
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		
+		if(Contanst.yjszs-qyHouse.getYjs()<agreenment.getYjs()){
+			map.put("jys", Contanst.yjszs-qyHouse.getYjs()-agreenment.getYjs());
+		}
+		
+		if(Contanst.ljs70zs-qyHouse.getLjs70()<agreenment.getLjs70()){
+			map.put("jys", Contanst.ljs70zs-qyHouse.getLjs70()-agreenment.getLjs70());
+		}
+		
+		if(Contanst.ljs75zs-qyHouse.getLjs75()<agreenment.getLjs75()){
+			map.put("jys", Contanst.ljs75zs-qyHouse.getLjs75()-agreenment.getLjs75());
+		}
+		
+		if(Contanst.ljs80zs-qyHouse.getLjs80()<agreenment.getLjs80()){
+			map.put("jys", Contanst.ljs80zs-qyHouse.getLjs80()-agreenment.getLjs80());
+		}
+		
+		if(Contanst.ljs85zs-qyHouse.getLjs85()<agreenment.getLjs85()){
+			map.put("jys", Contanst.ljs85zs-qyHouse.getLjs85()-agreenment.getLjs85());
+		}
+		
+		if(Contanst.sjszs-qyHouse.getYjs()<agreenment.getYjs()){
+			map.put("jys", Contanst.sjszs-qyHouse.getYjs()-agreenment.getYjs());
+		}
+		return map;
+	}
+	
 	
 }

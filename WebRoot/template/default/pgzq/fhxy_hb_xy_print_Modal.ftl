@@ -22,7 +22,7 @@
 
         <script>
             function doPrint() {
-                $("#print").hide();
+ 				$("#print").hide();
                 // $("#title").hide();
                 LODOP = getLodop();
                 LODOP.ADD_PRINT_HTM(80, 80, "80%", "83%", document.body.innerHTML);
@@ -31,7 +31,6 @@
                 LODOP.PRINTA();
                 $("#print").show();
                 //$("#title").show();
-
             }
         </script>
 

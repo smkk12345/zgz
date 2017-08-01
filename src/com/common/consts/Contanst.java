@@ -88,5 +88,11 @@ public class Contanst {
     }};
     
     
+    public static int yjszs = 238;
+    public static int ljs70zs = 216;
+    public static int ljs75zs = 140;
+    public static int ljs80zs = 110;
+    public static int ljs85zs = 292;
+    public static int sjszs = 192;
     
 }

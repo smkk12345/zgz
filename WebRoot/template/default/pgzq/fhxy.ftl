@@ -155,13 +155,17 @@
                    	alert("123");
                 	},
 	                success: function (response) {
-	                	window.location.reload();//刷新当前页面
-	                	var protocolumnber = response.protocolumnber;
-	                	var displaydate = response.displaydate;
-	                	var indexnum = response.indexnum;
-	                	//alert(beanid);
-	                	//initInnerHtml(beanid,protocolumnber,displaydate,indexnum);
-	                	//location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+	                	if(response.success=='0'){
+	                		alert("您好，您选择的部分房源已选完，请联系拆迁人员重新选房，谢谢");
+	                	}else{
+		                	window.location.reload();//刷新当前页面
+		                	var protocolumnber = response.protocolumnber;
+		                	var displaydate = response.displaydate;
+		                	var indexnum = response.indexnum;
+		                	//alert(beanid);
+		                	//initInnerHtml(beanid,protocolumnber,displaydate,indexnum);
+		                	//location.href="${BASE_PATH}"+"pgzq/fhxy.action";
+	                	}
 	                }
 	            })
 	        }
