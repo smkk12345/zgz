@@ -635,12 +635,12 @@ public class SjtjController {
 
             int yjszs = 238;
             int ljs70zs = 216;
-            int ljs75zs = 150;
-            int ljs80zs = 120;
+            int ljs75zs = 140;
+            int ljs80zs = 110;
             int ljs85zs = 292;
             int sjszs = 192;
 
-            int[] zsArr = {238, 216, 150, 120, 292, 192};
+            int[] zsArr = {238, 216, 140, 110, 292, 192};
 
             List<BigDecimal> list = ServiceManager.getHouseBasicServce().getSumHouseInfo("", "");
             List<Integer> syList = new ArrayList<Integer>();
