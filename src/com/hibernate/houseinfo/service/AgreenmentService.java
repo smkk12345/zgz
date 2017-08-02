@@ -90,8 +90,8 @@ public class AgreenmentService {
 			map.put("jys", Contanst.ljs85zs-qyHouse.getLjs85()-agreenment.getLjs85());
 		}
 		
-		if(Contanst.sjszs-qyHouse.getYjs()<agreenment.getYjs()){
-			map.put("jys", Contanst.sjszs-qyHouse.getYjs()-agreenment.getYjs());
+		if(Contanst.sjszs-qyHouse.getSjs()<agreenment.getSjs()){
+			map.put("sjs", Contanst.sjszs-qyHouse.getSjs()-agreenment.getSjs());
 		}
 		return map;
 	}
